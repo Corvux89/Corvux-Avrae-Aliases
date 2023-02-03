@@ -37,9 +37,7 @@ elif cover.lower() in ['three', '3', '3/4']:
 elif cover.lower() in ['total', 'complete', 'full']:
     effect="Full Cover"
     desc="A target with total cover can’t be targeted directly by an attack or a power, although some powers can reach such a target by including it in an area of effect. A target has total cover if it is completely concealed by an obstacle."
-    peffect={
-
-    }
+    peffect={}
 else:
     err(f"{cover} is not a valid option")
 
