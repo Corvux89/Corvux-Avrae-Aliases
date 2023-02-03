@@ -1,9 +1,10 @@
 {
-  "f": [
+  "maneuvers": [
     {
       "name": "Administer Aid",
       "cc": "Academic Superiority",
-      "damage": "-(1d4"
+      "type": "Heal",
+      "sub": "Mental"
     }
   ]
 }
