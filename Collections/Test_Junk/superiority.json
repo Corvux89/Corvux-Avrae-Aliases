@@ -1,10 +1,39 @@
-{
-  "maneuvers": [
-    {
-      "name": "Administer Aid",
-      "cc": "Academic Superiority",
-      "type": "Heal",
-      "sub": "Mental"
-    }
-  ]
-}
+[
+  {
+    "name": "Administer Aid",
+    "description": "You can expend a superiority die to tend to a creature you can touch. The creature regains a number of hit points equal to the number rolled + your maneuver ability modifier.",
+    "type": "Heal",
+    "sub": "Mental",
+    "apply_mod": true,
+    "effect": []
+  },
+  {
+    "name": "Administer Pain",
+    "description": "Testing",
+    "type": "Damage",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Adrenaline Hit",
+    "description": "You expend one superiority die to inject a creature with regenerative medication that temporarily enhances their agility. When you do so, a creature you can touch regains hit points equal to the superiority die roll. Additionally, until the start of your next turn, when that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.",
+    "type": "Heal",
+    "sub": "Mental",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Adrenaline Hit",
+        "duration": "1",
+        "description": "When that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier."
+      }
+    ]
+  },
+  {
+    "name": "Assist",
+    "description": "*Prerequisite: Proficiency in Medicine*\n\nWhen you make an Medicine check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "sub": "General",
+    "apply_mod": false,
+    "effect": []
+  }
+]

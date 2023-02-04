@@ -4,11 +4,14 @@ com = combat()
 a = argparse(&ARGS&)
 targ = a.last('t')
 i = '-i' in &ARGS&
-cc = "Academic Superiority"
-lvl = int(get("ScholarLevel",0))
-bonus = max(int(wisdomMod), int(intelligenceMod), int(charismaMod), 0)
+cc = "Superiority Dice"
+mental_bonus = max(int(wisdomMod), int(intelligenceMod), int(charismaMod), 0)
+physical_bonus = max(int(strengthMod), int(dexterityMod), int(constitutionMod),0)
+general_bonus = max(mental_bonus, physical_bonus,0)
+mi = a.last('mi')
+gvar = load_json(get_gvar("662ecc7f-9b2e-4588-851d-12f199d27d0a"))
 
-v = lvl >= 1 or i
+v = c.cc_exists(cc) or i
 
 base = f'''embed -thumb {image} -color {color}'''
 
@@ -19,32 +22,63 @@ if v and not i:
         return base + f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
 
 if v:
-    if lvl > 16:
-        sd = "1d12"
-    elif lvl > 12:
-        sd = "1d10"
-    elif lvl > 8:
-        sd = "1d8"
-    elif lvl > 4:
-        sd = "1d6"
-    else:
-        sd = "1d4"
+    maneuver = None
+    for g in gvar:
+        if &ARGS&[0].lower() == g.name.lower():
+            maneuver=g
+            break
 
-    base += f''' -title "{name} uses a {cc} die" '''
+    if maneuver is None:
+        return err("Maneuver is not found/supported")
+
+    if maneuver.type in ["Heal", "Damage", "Roll"]:
+        lvl = c.get_cc_max(cc)
+        if lvl > 10:
+            sd = "1d12"
+        elif lvl > 8:
+            sd = "1d10"
+        elif lvl > 6:
+            sd = "1d8"
+        elif lvl > 4:
+            sd = "1d6"
+        else:
+            sd = "1d4"
+
+        roll_str = sd
+
+        if mi:
+            roll_str += f"mi{mi}"
+
+        if maneuver.apply_mod:
+            bonus = mental_bonus if maneuver.sub == "Mental" else physical_bonus if maneuver.sub == "Physical" else general_bonus
+            roll_str += f"+ {bonus}"
+
+        tar = com.get_combatant(targ)
+
+    if maneuver.type=="Heal":
+        output = vroll(roll_str)
+        if tar:
+            tar.modify_hp(output.total, overflow=False)
+
+    elif maneuver.type == "Damage":
+        roll_result = vroll(roll_str) if not tar else tar.damage(roll_str)
+        output = roll_result if not tar else roll_result.damage
+
+    elif maneuver.type == "Roll":
+        output = vroll(roll_str)
+
+    if effect := maneuver.effect and tar:
+        for e in effect:
+            tar.add_effect(e.name, duration=e.duration, desc=e.description)
+
+    base += f''' -title "{name} uses a {cc} die to {maneuver.name}" '''
     base += f'''-desc "You have {c.get_cc_max(cc)} {cc} dice which are {sd}, and you earn more at higher levels, as shown in the Superiority Dice Quantity column of the scholar table. This die changes as you gain scholar levels, as shown in the Superiority Dice Size column of the scholar table. A superiority die is expended when you use it." '''
     base += f''' -f "You need to take a short or long rest to replinish your {cc}." '''
 
-    tar = com.get_combatant(targ)
-
-    if not tar:
-        err(f"{tar} is not a valid target.")
-
-    heal = vroll(sd + "+" +  str(bonus))
-
-    tar.modify_hp(heal.total, overflow=False)
-
-    base += f''' -f "{tar.name}|{heal}" '''
-    base += f''' -footer "{tar.name}: {tar.hp_str()}\n" '''
+    base += f''' -f "{maneuver.name}|{maneuver.description}" '''
+    base += f''' -f "Effect|{output}" '''
+    if tar:
+        base += f''' -footer "{tar.name}: {tar.hp_str()}\n" '''
 
     if not i:
         c.mod_cc(cc, -1)

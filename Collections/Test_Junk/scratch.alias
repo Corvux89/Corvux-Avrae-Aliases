@@ -1,0 +1,48 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+i = '-i' in &ARGS&
+targ = a.get('t')
+rr = a.get('rr')
+adv = a.adv()
+dc = int(a.last('dc')) if a.last('dc') else 10
+count = {}
+
+base = f'''embed -thumb {image} -color {color}'''
+base += f''' -title "{name} casts Barrage!" '''
+base += f''' -desc "You launch 4d6 tiny projectiles at up to four creatures you can see within range. The projectiles can be divided between the targets as desired. Each target must make a Dexterity saving throw. A target takes 1 kinetic damage per projectile, or half as much damage on a successful save. \n\n **Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you launch an additional 1d6 projectiles and can target one additional creature for each slot level above 1st." '''
+footer = ""
+
+for t in targ:
+    if curTarg := com.get_combatant(t):
+        if curTarg.name in count:
+            count[curTarg.name]+=1
+        else:
+            count[curTarg.name]=1
+    elif curTarg := com.get_group(t):
+        for gTarg in curTarg.combatants:
+            if gTarg.name in count:
+                count[gTarg.name]+=1
+            else:
+                count[gTarg.name]=1
+
+for c in count:
+    combatant = com.get_combatant(c)
+    save = combatant.save('dexterity', adv=True) if adv else combatant.save('dexterity') if targ else vroll('1d20')
+    tname = combatant.name
+
+    if save.total >= dc:
+        base += f''' -f "{tname}|{save}; **Success!**" '''
+    elif save.total < dc:
+        damage = count[tname]
+        combatant.modify_hp(-damage)
+        base += f''' -f "{tname}|{save}; *Fail*\n**Damage:** {damage}[energy]" '''
+        footer += f''' "{tname}: {combatant.hp_str()} \n" '''
+
+
+if footer != "":
+    base += f''' -f "Outcome|{footer}" '''
+
+return base
+</drac2>
