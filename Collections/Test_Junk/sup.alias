@@ -1,0 +1,40 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+gvar = load_json(get_gvar("662ecc7f-9b2e-4588-851d-12f199d27d0a"))
+using(sup='d93a6249-468d-4bb4-92e0-2f8bb629cf04')
+fail = 'fail' in &ARGS&
+targets = a.get('t')
+coms  = [com.get_combatant(x) for x in targets] if com else []
+i = '-i' in &ARGS&
+cc = "Superiority Dice"
+mi = a.last('mi')
+v = c.cc_exists(cc) or i
+
+base = f'''embed -thumb {image} -color {color}'''
+if v and not i:
+    if not c.cc_exists(cc):
+        return base + f'''-title "{name} has no custom counter {cc}!" '''
+    elif not c.get_cc(cc):
+        return base + f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+if v:
+    m = None
+    output = None
+    for g in gvar:
+        if &ARGS&[0].lower() == g.name.lower():
+            m=g
+            break
+
+    if m is None:
+        return err("m is not found/supported")
+
+    lvl = c.get_cc_max(cc)
+    sd = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
+    mod = sup.get_bonus(m, com)
+    dc = 8 + proficiencyBonus + mod
+
+    base += f''' -f "Test|{sup.get_bonus(m)}" '''
+
+    return base
+</drac2>
