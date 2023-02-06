@@ -1,0 +1,29 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+gvar = load_json(get_gvar("874901ba-d611-4418-b1c8-8ef43be23764"))
+
+base = f'''embed -thumb {image} -color {color}'''
+
+output = None
+m = None
+for g in gvar:
+    if &ARGS&[0].lower() == g.name.lower():
+        m=g
+        break
+
+if m is None or m == "":
+    return err("m is not found/supported")
+
+if com:
+    com.me.add_effect(m.name, duration=1)
+
+
+base += f''' -title "{name} assumes {m.name} lightsaber form" '''
+base += f''' -f "Effect|{m.description}" '''
+if output != "":
+    base += output
+
+return base
+</drac2>

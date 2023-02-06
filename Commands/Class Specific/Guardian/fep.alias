@@ -1,0 +1,75 @@
+<drac2>
+c = character()
+com = combat()
+args = argparse(&ARGS&)
+targ = args.last('t')
+crit = 'crit' in &ARGS&
+l = 1 if not args.last('l') else args.last('l')
+cc = "Force Points"
+lvl = max(int(get("GuardianlightLevel",0)), int(get("GuardiandarkLevel",0)),0)
+dtype = "Energy" if not args.last('type') else args.last('type')
+i = '-i' in &ARGS&
+
+if not str(l).isdigit():
+    err(f"{l} is not a valid level of {cc}, make sure to use a number.")
+
+if int(l) > proficiencyBonus:
+  err(f"{l} is too high of a level for guardian , make sure to use a number that is {proficiencyBonus} or lower.")
+
+if lvl == 0:
+    err(f"You're not a Guardian...try again when you're cool")
+elif lvl < 2:
+    err(f"Too low level for this. Try again when you're stronger")
+
+v = c.cc_exists(cc) or i
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if c.get_cc(cc) < int(l):
+        base += f''' -title "{name} doesn't have enough {cc} remaining to strike at level {l}" '''
+        return base
+
+    roll_str = "1d8"
+
+    if int(l) > 1:
+        roll_str += f"+ {str(min(int(l)-1,3))}d8"
+
+    roll_str +=  f"[{dtype}]"
+
+    if com and targ:
+        try:
+            t = com.get_combatant(targ)
+        except:
+            err(f"Invalid target")
+
+        dam = t.damage(roll_str, crit)
+
+        base += f''' -f "{t.name}|{dam.damage}" '''
+        base += f''' -footer "{t.name}: {t.hp_str()}" '''
+    else:
+        if crit:
+            crit = 2
+        else:
+            crit = 1
+
+        dam = vroll(roll_str, crit)
+
+        if targ:
+            base += f''' -f "{targ}|**Damage:** {dam}" '''
+        else:
+            base += f''' -f "Meta|**Damage:** {dam}" '''
+
+    base += f''' -title "{name} uses Force Empowered Strikes!" '''
+    base += f''' -desc "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more additional damage than the amount shown in the Focused Strikes column of the guardian table." '''
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+elif not c.get_cc(cc):
+    base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+
+if not i:
+    c.mod_cc(cc, -int(l))
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-{l})" '''
+
+return base
+</drac2>

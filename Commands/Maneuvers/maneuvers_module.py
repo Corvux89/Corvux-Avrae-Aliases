@@ -25,8 +25,11 @@ def get_roll_str(m, cc, mi):
 def add_effect(m, com):
     output = ""
     for e in m.effect:
-        com.add_effect(e.name, duration=e.duration, desc=e.description)
-        output += f"**Effect:** - {e.name} added\n"
+        if e.duration:
+            com.add_effect(e.name, duration=e.duration, desc=f"{e.description}\n [Source: {character().name}]")
+        else:
+            com.add_effect(e.name, desc=f"{e.description}\n [Source: {character().name}]")
+        output += f"**Effect:** [{e.name}] added\n"
 
     return output
 
@@ -57,7 +60,11 @@ def perform(m, coms, roll_str, dc, fail):
     output = ""
     if m.type in  ["Heal", "T_Heal"]:
         heal = vroll(roll_str)
-        output += f''' -f "Meta|{heal} [healing]" '''
+        if m.type == "Heal":
+            output += f''' -f "Meta|{heal} [healing]" '''
+        else:
+            output += f''' -f "Meta|{heal} [temp healing]" '''
+
         if len(coms) > 0:
             for com in coms:
                 f_str = f"{com.hp} + {heal.total} [healing]\n"

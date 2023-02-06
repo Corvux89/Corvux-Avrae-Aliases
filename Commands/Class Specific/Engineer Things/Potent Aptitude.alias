@@ -1,0 +1,56 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+target = a.last('t')
+
+cc="Potent Aptitude"
+i = '-i' in &ARGS&
+v = c.cc_exists(cc) or i
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if not target:
+    return err("Missing target")
+
+try:
+    combatant=com.get_combatant(target)
+except:
+    return err("Either you're not in combat, or you have an invalid target")
+
+if v and (combatant:= com.get_combatant(target)):
+    lvl = c.get_cc_max(cc)
+    pad = "1d12" if lvl > 5 else "1d10" if lvl > 4 else "1d8" if lvl > 3 else "1d6" if lvl > 2 else "1d4"
+
+    combatant.add_effect(cc, duration=100, desc=f"The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost. Current die size: {pad}",
+        buttons=[{
+            "label": f"Use {cc}",
+            "verb": "is using assistance",
+            "style": 3,
+            "automation": [{
+                "type": "remove_ieffect"
+                },
+                {
+                "type": "roll",
+                "dice": pad,
+                "name": cc,
+                "displayName": cc
+                }]
+            }])
+
+    base += f''' -f "Meta|**Effect:** [{cc}] added to {combatant.name}" '''
+
+    base += f''' -title "{name} uses their {cc}!" '''
+    base += f''' -f "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost." '''
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+elif not c.get_cc(cc):
+    base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+
+if not i:
+    c.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>

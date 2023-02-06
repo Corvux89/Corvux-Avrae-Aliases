@@ -6,16 +6,20 @@ gvar = load_json(get_gvar("662ecc7f-9b2e-4588-851d-12f199d27d0a"))
 using(sup='d93a6249-468d-4bb4-92e0-2f8bb629cf04')
 fail = 'fail' in &ARGS&
 targets = a.get('t')
-coms  = [com.get_combatant(x) for x in targets] if com else []
 i = '-i' in &ARGS&
 cc = "Superiority Dice"
-f_add = ["Damage", "Heal", "Add_Damage"]
+f_add = ["Damage", "Heal", "Add_Damage", "T_Heal"]
 mi = a.last('mi')
 v = c.cc_exists(cc) or i
 
+if not com:
+    return err("You must be in combat")
+
+coms  = [com.get_combatant(x) for x in targets] if com else []
+
 for com in coms:
         if not com:
-            return err(f"{com} is not a valid target")
+            return err(f"Invalid target/targets")
 
 base = f'''embed -thumb {image} -color {color}'''
 

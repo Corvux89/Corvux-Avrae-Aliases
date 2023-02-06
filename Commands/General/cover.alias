@@ -3,13 +3,21 @@ c = character()
 com = combat()
 a = argparse(&ARGS&)
 targ = a.last('t')
+tar = ""
 cover = a.last('cover')
 dur = 1
 
-tar = com.get_combatant(targ)
+if not com:
+    return err("You must be in combat")
+
+if not targ:
+    tar = com.me
 
 if not tar:
-    tar = com.me
+    try:
+        tar = com.get_combatant(targ)
+    except:
+        return err("Invalid target")
 
 if not cover:
     err(f"Specify what type of cover with the `-cover` parameter")

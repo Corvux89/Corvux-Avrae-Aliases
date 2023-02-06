@@ -361,5 +361,294 @@
     "save": "",
     "apply_mod": false,
     "effect": []
+  },
+  {
+    "name": "Flex",
+    "description": "*Prerequisite: Proficiency in Athletics*\n\nWhen you make an Athletics check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Flourish",
+    "description": "*Prerequisite: Proficiency in Sleight of Hand*\n\nWhen you make an Sleight of Hand check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Force Resonance",
+    "description": "*Prerequisite: The ability to cast force powers*\n\nImmediately after you deal damage to a target with a force attack, you can expend a superiority die and target a second creature that you can see within 30 feet of the first creature. Roll the die, and the second creature takes force damage equal to the roll + your forcecasting modifier.",
+    "type": "Damage",
+    "c_type": "",
+    "d_type": "Force",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": true,
+    "effect": []
+  },
+  {
+    "name": "Fortune and Glory",
+    "description": "*Prerequisite: The ability to cast force powers*\n\nWhen you would make a weapon attack against a target within 30 feet, you can instead manipulate the Force to expend a superiority die and make a Sleight of Hand check using your universal forcecasting ability to plant something on the target, conceal an object on the target, lift the target’s purse, or take something from its pocket. Roll the superiority die, and add the result to the check",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Goading Attack",
+    "description": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "Wisdom",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Goading Attack",
+        "duration": "1",
+        "description": "The target has disadvantage on all attack rolls against targets other than"
+      }
+    ]
+  },
+  {
+    "name": "Hacked Communications",
+    "description": "*Prerequisite: Proficiency in Technology*\n\nAs an action, you may expend a superiority die, and choose any number of creatures that you can see within 60 feet of you that have commlinks, headcomms, or other such communications devices. Each creature must succeed on a Constitution saving throw or take sonic damage equal to the number rolled on the dice + your maneuver ability modifier (minimum of one). Additionally, on a failed save, their communication devices are disabled until rebooted.",
+    "type": "Damage",
+    "c_type": "",
+    "d_type": "Sonic",
+    "sub": "Mental",
+    "save": "Constitution",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Hacked Communications",
+        "duration": "",
+        "description": "Communication devices are disabled until rebooted"
+      }
+    ]
+  },
+  {
+    "name": "Handle Animal",
+    "description": "*Prerequisite: Proficiency in Animal Handling*\n\nWhen you make an Animal Handling check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Heads Up",
+    "description": "When a friendly creature who can see or hear you makes a saving throw, you can use your reaction and expend a superiority die, adding the number rolled to the result of the saving throw.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Incite",
+    "description": "*Prerequisite: Proficiency in Persuasion*\n\nOn your turn, you can use an action and expend one superiority die to bolster the resolve of one of an ally within 30 feet who can see or hear you. The ally can add your maneuver ability modifier to every damage roll they make until the start of your next turn.",
+    "type": "Mod",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Incite",
+        "duration": "1",
+        "description": "Add the maneuver ability modifier to every damage roll they make until the start of your next turn"
+      }
+    ]
+  },
+  {
+    "name": "Inner Strength",
+    "description": "As an action, you can expend and roll one superiority die, gaining temporary hit points equal to the result of the roll + your maneuver ability modifier.",
+    "type": "T_Heal",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": true,
+    "effect": []
+  },
+  {
+    "name": "Intimidating Presence",
+    "description": "*Prerequisite: Proficiency in Intimidation*\n\nAs an action, you can make a Charisma (Intimidation) check and expend one superiority die to attempt to frighten a humanoid creature who can see or hear you within 60 feet. Add the superiority die to the roll. The target makes a contested Wisdom (Insight) check. If your check succeeds, the target is frightened of you until the end of your next turn.",
+    "type": "Check",
+    "c_type": "Charisma",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "Wisdom",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Frightened",
+        "duration": "1",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Investigate",
+    "description": "*Prerequisite: Proficiency in Investigation*\n\nWhen you make an Investigation check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Lunging Attack",
+    "description": "When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack’s damage roll.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Physical",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Maneuvering Attack",
+    "description": "When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack’s damage roll, and you choose a friendly creature who can see or hear you.\n\nThat creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Menacing Attack",
+    "description": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "Wisdom",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Frightened",
+        "duration": "1",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Mind Over Matter",
+    "description": "When you are forced to make an Intelligence, Wisdom, or Charisma saving throw, you can expend a superiority die to change the saving throw ability to your maneuver ability modifier.",
+    "type": "Mod",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Neutralize",
+    "description": "*Prerequisite: Proficiency in Nature*\n\nWhen you make an Nature check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Neuroblock",
+    "description": "*Prerequisite: Proficiency in Medicine*\n\nWhen you make an attack roll, you can expend a superiority die and add it to the attack roll. On a hit, the creature’s next attack has disadvantage and it cannot regain hit points until the start of your next turn.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "No Escape",
+    "description": "Whenever you or an ally you can see makes an opportunity attack, you can expend a superiority die. If the attack hits, roll the superiority die and add the result to the damage roll. Additionally, the affected creature gains 4 slowed levels until the start of its next turn.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Physical",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "One Step Ahead",
+    "description": "When you roll initiative and you are not surprised, you can expend a superiority die and add the number rolled to your Initiative check.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Physical",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "One With Shadows",
+    "description": "*Prerequisite: Proficiency in Stealth*\n\nWhen you are in an area of dim light or darkness, you can use your action and expend one superiority die to become invisible until you move or take a hostile action.",
+    "type": "Effect",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "Invisible",
+        "duration": "",
+        "description": "Invisible until you move or take a hostile action."
+      }
+    ]
+  },
+  {
+    "name": "One with the Force",
+    "description": "*Prerequisite: The ability to cast force powers*\n\nOnce per turn, when you make a Constitution saving throw to maintain concentration on a force power, you can expend a superiority die and add the number rolled to the saving throw.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Overcapacity Powers",
+    "description": "*Prerequisite: The ability to cast tech powers*\n\nWhen you cast a tech power of 1st-level or higher, you may expend a superiority die to cast the power at a higher level, provided it does not exceed your Maximum Power Level. Roll the superiority die, and add it to the level at which you are casting the power. You can choose to cast it at this new power level or lower.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
   }
 ]

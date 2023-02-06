@@ -12,14 +12,15 @@ v = lvl >= 1
 
 base = f'''embed -thumb {image} -color {color}'''
 
-if v:
+try:
     tar = com.get_combatant(targ)
+except:
+    return err("Invalid target")
 
-    if not tar:
-        err(f"{tar} is not a valid target.")
+if v:
 
     base += f''' -title "{name} uses {eff} on {tar.name}" '''
-    base += f''' -desc "You are able to analyze a creature, develop a plan on how to best overcome any potential obstacle, and execute that plan with ruthless efficiency. As a bonus action on your turn, you can analyze a creature you can see within 60 feet of you. For the next minute, or until you analyze another target, you gain the following benefits:" '''
+    base += f''' -f "Effect|You are able to analyze a creature, develop a plan on how to best overcome any potential obstacle, and execute that plan with ruthless efficiency. As a bonus action on your turn, you can analyze a creature you can see within 60 feet of you. For the next minute, or until you analyze another target, you gain the following benefits:" '''
     base += f''' -f "When you analyze a hostile creature|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is Intelligence, instead of Strength or Dexterity. You must use the same modifier for both rolls." '''
     base += f''' -f "When you analyze a friendly creature|The target can end your Critical Analysis on them (no action required) to add your Critical Analysis ability modifier, which is Intelligence, to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest." '''
 
