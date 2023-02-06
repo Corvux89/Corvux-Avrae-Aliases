@@ -55,7 +55,7 @@ def calc_damage(m, damage, com):
 
 def perform(m, coms, roll_str, dc, fail):
     output = ""
-    if m.type == "Heal":
+    if m.type in  ["Heal", "T_Heal"]:
         heal = vroll(roll_str)
         output += f''' -f "Meta|{heal} [healing]" '''
         if len(coms) > 0:
@@ -64,7 +64,11 @@ def perform(m, coms, roll_str, dc, fail):
                 if m.effect:
                     f_str += add_effect(m, com)
                 output += f''' -f "{com.name}|{f_str}" '''
-                com.modify_hp(heal.total, overflow=False)
+
+                if m.type == "Heal":
+                    com.modify_hp(heal.total, overflow=False)
+                elif m.type == "T_Heal":
+                    com.set_temp_hp(heal.total)
 
     if m.save:
         m_str=""

@@ -245,5 +245,121 @@
         "description": "The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
       }
     ]
+  },
+  {
+    "name": "Effective Flanking",
+    "description": "As a bonus action, you choose a target within 30 feet that you can see to make a Wisdom saving throw. On a failed save, roll a superiority die; the result is added to the first attack roll against the creature before the start of your next turn.\n\n**Improved**\nWhen you use the Effective Flanking maneuver, you add the result of the superiority die to both the attack and damage roll for the first attack against the creature before the start of your next turn.\n\n**Greater**\nWhen you use the Effective Flanking maneuver, you add your maneuver ability modifier to both the attack and damage roll for the first attack against the creature before the start of your next turn.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": true,
+    "effect": []
+  },
+  {
+    "name": "Empathize",
+    "description": "*Prerequisite: Proficiency in Insight*\n\nWhen you make an Insight check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Encouraging Pace",
+    "description": "You can use a bonus action to expend and roll a superiority die. When you do so, a number of friendly creatures equal to your maneuver ability modifier can immediately use their reaction to move a number of feet equal to 5 times the number rolled on the superiority die.",
+    "type": "Mod",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Encouraging Speech",
+    "description": "*Prerequisite: Proficiency in Persuastion*\n\nYou can expend a superiority die to give an encouraging speech, spending the next minute rallying your allies. You grant two allies temporary hit points equal to the amount rolled on the superiority die + your maneuver ability modifier.\n\nThis increases to three allies at 5th level, four allies at 9th level, five allies at 13th level, and six allies at 17th level.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": true,
+    "effect": []
+  },
+  {
+    "name": "Enhancement Injection",
+    "description": "*Prerequisite: Proficiency in Medicine*\n\nAs an action, you can expend one superiority die to inject a creature you can touch with enhancements, granting them temporary hit points equal to the superiority die roll + your maneuver ability modifier, which last for 1 minute. Additionally, when the target makes a Strength or Constitution check or saving throw while it has these temporary hit points, it gains a bonus equal to your maneuver ability modifier.",
+    "type": "T_Heal",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": true,
+    "effect": [
+      {
+        "name": "Enhancement Injection",
+        "duration": "10",
+        "description": "Grants temp HP. Additionally, when the target makes a Strength or Constitution check or saving throw while it has these temporary hit points, it gains a bonus equal to your maneuver ability modifier."
+      }
+    ]
+  },
+  {
+    "name": "Evasive Footwork",
+    "description": "When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Exploit Weakness",
+    "description": "When you hit a creature with a weapon attack, you can expend a superiority die and deal additional true damage equal to the number rolled.",
+    "type": "Damage",
+    "c_type": "",
+    "d_type": "True",
+    "sub": "Physical",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Fast Access Programs",
+    "description": "*Prerequisite: The ability to cast tech powers*\n\nWhen you cast a tech power of 1st-level or higher that has a casting time of 1 action, you can expend a superiority die to change the casting time to 1 bonus action for this casting.",
+    "type": "Effect",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Feinting Attack",
+    "description": "You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature this turn. If that attack hits, add the superiority die to the attack’s damage roll.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "General",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
+  },
+  {
+    "name": "Firewall",
+    "description": "*Prerequisite: the ability to cast tech power*\n\nWhen you or an ally you can see within 60 feet make a saving throw against a tech power, you can use your reaction to expend a superiority die, adding the number rolled to the result of that saving throw.",
+    "type": "Roll",
+    "c_type": "",
+    "d_type": "",
+    "sub": "Mental",
+    "save": "",
+    "apply_mod": false,
+    "effect": []
   }
 ]
