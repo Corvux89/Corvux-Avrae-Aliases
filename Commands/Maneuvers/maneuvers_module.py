@@ -24,8 +24,17 @@ def get_roll_str(m, cc, mi):
 
 def add_effect(m, com):
     output = ""
+    peff = ""
     for e in m.effect:
-        com.add_effect(e.name, duration=e.get('duration'), desc=f"{e.get('description') if not None else ''}\n [Source: {character().name}]", end=True if e.get('end') else False, passive_effects=e.get('p_effect'))
+        for p in combat().me.effects:
+            if p.name == e.name:
+                peff = p
+                break
+
+        if peff == "":
+            peff = combat().me.add_effect(e.name, duration=e.get('duration'),  end=True if e.get('end') else False)
+        com.add_effect(e.name, desc=f"{e.get('description') if not None else ''}\n [Source: {character().name}]",
+                       end=True if e.get('end') else False, passive_effects=e.get('p_effect'), parent=peff)
         output += f"**Effect:** [{e.name}] added\n"
 
     return output
@@ -145,7 +154,7 @@ def perform(m, coms, roll_str, dc, fail):
                 if m.type in ["Damage", "Add_Damage"]:
                     f_str += f"**Damage:** {calc_damage(m, damage, com)}"
 
-                if m.effect:
+                if m.effect and m.type not in ["Heal", "T_Heal"]:
                     f_str += add_effect(m, com)
 
                 if f_str != "":
