@@ -25,10 +25,7 @@ def get_roll_str(m, cc, mi):
 def add_effect(m, com):
     output = ""
     for e in m.effect:
-        if e.duration:
-            com.add_effect(e.name, duration=e.duration, desc=f"{e.description}\n [Source: {character().name}]")
-        else:
-            com.add_effect(e.name, desc=f"{e.description}\n [Source: {character().name}]")
+        com.add_effect(e.name, duration=e.get('duration'), desc=f"{e.get('description') if not None else ''}\n [Source: {character().name}]", end=True if e.get('end') else False, passive_effects=e.get('p_effect'))
         output += f"**Effect:** [{e.name}] added\n"
 
     return output
