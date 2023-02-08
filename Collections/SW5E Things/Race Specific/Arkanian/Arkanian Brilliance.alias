@@ -1,0 +1,74 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+save = a.last('save')
+check = a.last('check')
+mi = a.last('mi')
+adv = 'adv' in &ARGS&
+dis = 'dis' in &ARGS&
+dc = a.last('dc')
+cc = "Arkanian Brilliance"
+i = '-i' in &ARGS&
+v = c.cc_exists(cc) or i
+phrase = a.last('phrase')
+
+
+base = f'''embed -thumb {image} -color {color}'''
+roll_str = ""
+sk = None
+
+if v:
+    if not c.get_cc(cc) and not i:
+        base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+        return base
+
+    if save:
+        for (n, cskill) in c.saves:
+            if save in n.lower():
+                sk = cskill
+                break
+    elif check:
+        for (n, cskill) in c.skills:
+            if check in n.lower():
+                sk = cskill
+                break
+
+
+    if (save or check) and sk is None:
+        return err("Save/Check not valid")
+    elif save or check:
+        roll_str += f"{sk.d20(base_adv=True if adv or sk.adv else False if dis or sk.adv == False else None, min_val=mi if mi else None)}+1d4"
+        f_str = f"**{'Save' if save else 'Check' if check else ''}:**"
+    else:
+        roll_str += "1d4"
+        f_str = f"**Roll:**"
+
+    if mi and not (save or check):
+        roll_str += f"mi{mi}"
+
+    out_roll = vroll(roll_str)
+    f_str += f" {out_roll}"
+
+    if dc:
+        if out_toll.total <dc:
+            f_str += f"; *Failure!*"
+        else:
+            f_str += f"; **Success!**"
+
+    base += f''' -f "Meta|{f_str}" '''
+
+    base += f''' -title "{name} uses Arkanian Brilliance!" '''
+    base += f''' -f "Effect|Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest." '''
+    if phrase:
+        base += f''' -desc "{phrase}" '''
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+if not i:
+    c.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>

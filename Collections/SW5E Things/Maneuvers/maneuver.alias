@@ -11,6 +11,7 @@ cc = "Superiority Dice"
 f_add = ["Damage", "Heal", "Add_Damage", "T_Heal"]
 mi = a.last('mi')
 v = c.cc_exists(cc) or i
+override = a.last('type')
 
 if not com:
     return err("You must be in combat")
@@ -36,13 +37,13 @@ if v:
             break
 
     if m is None or m == "":
-        return err("{&ARG&[0]} is not a found/supported maneuver")
+        return err(f"{&ARGS&[0]} is not a found/supported maneuver")
 
-    mod = sup.get_bonus(m)
+    mod = sup.get_bonus(m, override)
     dc = 8 + proficiencyBonus + mod if not a.last('dc') else int(a.last('dc'))
-    roll_str = sup.get_roll_str(m, cc, mi)
+    roll_str = sup.get_roll_str(m, cc, mi, override)
 
-    base += sup.perform(m, coms, roll_str, dc, fail)
+    base += sup.perform(m, coms, roll_str, dc, fail, override)
 
     base += f''' -title "{name} uses a {cc} die to {m.name}" '''
     base += f''' -f "{m.name} Effect|{m.description}" '''

@@ -1,16 +1,19 @@
 
-def get_bonus(m):
+def get_bonus(m, override = None):
     s = character().stats
     m_mod = max(s.get_mod("wisdom"), s.get_mod("intelligence"), s.get_mod("charisma"), 0)
     p_mod = max(s.get_mod("strength"), s.get_mod("dexterity"), s.get_mod("constitution"), 0)
-    if m.sub == "Mental":
+
+    if (m.sub == "Mental" and not override) or 'men' in override.lower():
         return m_mod
-    elif m.sub == "Physical":
+    elif (m.sub == "Physical" and not override) or 'phy' in override.lower():
         return p_mod
+    elif 'gen' in override.lower():
+        return max(m_mod, p_mod)
     else:
         return max(m_mod, p_mod)
 
-def get_roll_str(m, cc, mi):
+def get_roll_str(m, cc, mi, override = None):
     lvl = character().get_cc_max(cc)
     out_str = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
 
@@ -18,7 +21,7 @@ def get_roll_str(m, cc, mi):
         out_str += f'mi{mi}'
 
     if m.apply_mod:
-        out_str += f'+ {get_bonus(m)}'
+        out_str += f'+ {get_bonus(m, override)}'
 
     return out_str
 
@@ -62,7 +65,7 @@ def calc_damage(m, damage, com):
     return f_str
 
 
-def perform(m, coms, roll_str, dc, fail):
+def perform(m, coms, roll_str, dc, fail, override = None):
     output = ""
     if m.type in  ["Heal", "T_Heal"]:
         heal = vroll(roll_str)
@@ -99,7 +102,7 @@ def perform(m, coms, roll_str, dc, fail):
             else:
                 r_str = f"1d20 + {skill.value}"
             if m.apply_mod:
-                r_str += f'+ {get_bonus(m)}'
+                r_str += f'+ {get_bonus(m, override)}'
 
             ch = vroll(r_str)
             m_str += f"**{m.c_type} save DC:** {ch}\n"
@@ -110,7 +113,7 @@ def perform(m, coms, roll_str, dc, fail):
         if m.type == "Roll":
             m_str += f"**Roll:** {vroll(roll_str)}\n"
         elif m.type == "Mod":
-            m_str += f"**{m.sub} Mod:** {get_bonus(m)}\n"
+            m_str += f"**{m.sub} Mod:** {get_bonus(m, override)}\n"
 
         output += f''' -f "Meta|{m_str}" '''
 
