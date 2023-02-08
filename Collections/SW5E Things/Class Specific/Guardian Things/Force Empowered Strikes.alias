@@ -25,7 +25,7 @@ v = c.cc_exists(cc) or i
 base = f'''embed -thumb {image} -color {color}'''
 
 if v:
-    if c.get_cc(cc) < int(l):
+    if c.get_cc(cc) < int(l) and not i:
         base += f''' -title "{name} doesn't have enough {cc} remaining to strike at level {l}" '''
         return base
 

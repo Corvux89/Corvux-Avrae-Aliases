@@ -1,0 +1,12 @@
+<drac2>
+
+c = character()
+
+base = f'''embed -thumb {image} -color {color}'''
+
+base += f''' -title "Troubleshooting" '''
+
+base += f''' -f "Level|{c.levels}" '''
+
+return base
+</drac2>

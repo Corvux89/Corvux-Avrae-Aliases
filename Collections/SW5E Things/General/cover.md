@@ -1,13 +1,11 @@
 **TAKE COVER!!!**
 
-Use `!cover -cover [type]` to apply cover to yourself, or you can apply
+Use `!cover [type] [*ARGS]` to apply cover to yourself, or you can apply
 cover to a target using `!cover -cover [type] -t [target]`
 
 **Valid Arguments**
 
 `-t [target]` - The target of the cover. If not provided will apply to the player running the command
-
-'-cover [cover]' - Type of cover
 
 **Types of Cover**
 1/4 Cover = 'quarter', '1/4'

@@ -3,24 +3,11 @@ c = character()
 com = combat()
 a = argparse(&ARGS&)
 targ = a.last('t')
-tar = ""
-cover = a.last('cover')
+cover = &ARGS&[0]
 dur = 1
 
-if not com:
-    return err("You must be in combat")
-
-if not targ:
-    tar = com.me
-
-if not tar:
-    try:
-        tar = com.get_combatant(targ)
-    except:
-        return err("Invalid target")
-
 if not cover:
-    err(f"Specify what type of cover with the `-cover` parameter")
+    err(f"Specify the type of cover")
 
 base = f'''embed -thumb {image} -color {color}'''
 
@@ -49,11 +36,22 @@ elif cover.lower() in ['total', 'complete', 'full']:
 else:
     err(f"{cover} is not a valid option")
 
-base += f''' -title "{tar.name} takes {effect}" '''
+if com:
+    if targ:
+        try:
+            t = com.get_combatant(targ)
+        except:
+            err(f"Invalid Target")
+    else:
+        t = com.me
+
+    t.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
+    base += f''' -title "{t.name} takes {effect}" '''
+else:
+    base += f''' -title "{name} takes {effect}" '''
+
 base += f''' -desc "{desc}" '''
 base += f''' -f "Effect|{effect} [1 round]" '''
-
-tar.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
 
 return base
 

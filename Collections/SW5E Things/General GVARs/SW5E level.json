@@ -11,7 +11,7 @@
         "reset": "long",
         "display": "bubble",
         "classLevel": "BerserkerLevel",
-        "desc": "On your turn, you can enter a rage as a bonus action if you aren't wearing heavy armor.\n\nWhile raging, you gain the following benefits:\n\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a berserker, as shown in the Rage Damage column of the berserker table.\n- You have resistance to kinetic and energy damage.\n\nIf you are able to cast powers, you can't cast them or concentrate on them while raging.\n\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious, you don heavy armor, or if your turn ends and you haven't taken a hostile action or taken damage since your last turn. You can also end your rage on your turn as a bonus action.\n\nYou can enter a rage a number of times as shown for your berserker level in the Rages column of the berserker table. You regain all expended uses when you complete a long rest.",
+        "desc": "On your turn, you can enter a rage as a bonus action if you aren't wearing heavy armor.\n\nWhile raging, you gain the following benefits:\n\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a berserker, as shown in the Rage Damage column of the berserker table.\n- You have resistance to kinetic and energy damage.\n\nIf you are able to cast powers, you can't cast them or concentrate on them while raging.\n\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious, you don heavy armor, or if your turn ends and you haven't taken a hostile action or taken damage since your last turn. You can also end your rage on your turn as a bonus action.\n\nYou can enter a rage a number of times as shown for your berserker level in the Rages column of the berserker table. You regain all expended uses when you complete a long rest."
       }]
   },
   {
@@ -31,7 +31,7 @@
         "reset": "long",
         "display": "default",
         "classLevel": "BerserkerLevel",
-        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest.",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
       },
       {
         "name": "Powerful Presence",
@@ -2082,7 +2082,16 @@
 "display": "bubble",
 "reset": "short",
 "desc": "You have an uncanny knack for succeeding when you need to. Your Dexterity and Intelligence scores increase by 2. Your maximum for those scores increases by 2. Additionally, if your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20."
-}
+},
+  {
+    "name": "Skill's Exploit",
+    "classLevel": "OperativeLevel",
+    "level": 1,
+    "value": "proficiencyBonus",
+    "display": "bubble",
+    "reset": "long",
+    "desc": "You learn an exploit that enhances your ability to apply your knowledge to combat situations. You can take this exploit multiple times."
+  }
 ]
 },
 {
