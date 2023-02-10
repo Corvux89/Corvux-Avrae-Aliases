@@ -1,0 +1,21 @@
+<drac2>
+ch,cc,a,out = character(),"Primitive Nerves",&ARGS&,''
+hp = "&1&" if "&1&" in a and "&1&".isdecimal() else (constitutionMod + 12)
+i = argparse(a).last('i')
+hp = int(hp)
+if ch.cc_exists(cc):
+    v = ch.get_cc(cc)
+    stend = vroll(f"""1d12 + {constitutionMod}""")
+    heal = min(stend.total,hp)
+    if v or i:
+        diff = ch.max_hp - ch.hp
+        ch.modify_hp(heal,overflow=False)
+        if not i: ch.mod_cc(cc,-1)
+        out += f"""embed -title "{name} uses {cc}!" -f "Damage Reduction|{stend}" -f "{cc}|{ch.cc_str(cc)} {'(-1)' if not i else ''}" -desc "When you take damage, you can use your reaction to reduce the damage taken by 1d12+{constitutionMod}." -footer "{name}'s HP: {ch.hp_str()} (+{min(heal,diff)})" """
+    else:
+        out += f"""embed -title "{name} attempt to use {cc}!" -desc "{name} has no more uses of {cc} to use!" -f "{cc}|{ch.cc_str(cc)}" """
+else:
+    err("You are no Tognath! You have no Primitive Nerves to call upon!")
+out += f"""-thumb {image} -color {color} """
+return out
+</drac2>
