@@ -1,0 +1,89 @@
+{
+  "archaeologistkit": {
+    "key": "archaeologistkit",
+    "name": "Archaeologist Kit",
+    "type": "other",
+    "abilities": [
+      "survival",
+      "investigation",
+      "persuasion"
+    ]
+  },
+  "armormechsimplements": {
+    "key": "armormechsimplements",
+    "name": "Armormech's Implements",
+    "type": "artisan",
+    "abilities": [
+      "intelligence",
+      "investigation",
+      "stealth"
+    ]
+  },
+  "armstechsimplements": {
+    "key": "armstechsimplements",
+    "name": "Armstech's Implements",
+    "type": "artisan",
+    "abilities": [
+      "intelligence",
+      "investigation"
+    ]
+  },
+  "artificersimplements": {
+    "key": "artificersimplements",
+    "name": "Artificer's Implements",
+    "type": "artisan",
+    "abilities": [
+      "insight",
+      "intelligence"
+    ]
+  },
+  "brewerskit": {
+    "key": "brewerskit",
+    "name": "Brewer's Kit",
+    "type": "artisan",
+    "abilities": [
+      "intelligence",
+      "medicine",
+      "persuasion"
+    ]
+  },
+  "chefskit": {
+    "key": "chefskit",
+    "name": "Chef's Kit",
+    "type": "artisan",
+    "abilities": [
+      "intelligence",
+      "medicine",
+      "survival"
+    ]
+  },
+  "constructorsimplements": {
+    "key": "constructorsimplements",
+    "name": "Constructor's Implements",
+    "abilities": [
+      "intelligence",
+      "investigation",
+      "perception"
+    ]
+  },
+  "cybertechsimplements": {
+    "key": "cybertechsimpelements",
+    "name": "Cybertech's Implements",
+    "type": "artisan",
+    "abilities": [
+      "intelligence",
+      "investigation"
+    ]
+  },
+  "demolitionskit": {
+    "key": "demolitionskit",
+    "name": "Demolitions Kit",
+    "type": "other",
+    "abilities": [
+      "intelligence",
+      "investigation",
+      "perception"
+    ]
+  }
+
+}
