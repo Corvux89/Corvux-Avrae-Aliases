@@ -1,73 +1,68 @@
-[
-  {
-    "name": "Shotgun",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Shotgun",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 30/120), Burst 2, Reload 4, Strength 11, Two-handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Burst - Shotgun",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 30/120), Burst 2, Reload 4, Strength 11, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Shotgun",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
-    ],
-    "_v": 2
-  }
-]
+{
+  "name": "Test",
+  "automation": [
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "roll",
+          "dice": "2d6 + 4 [fire]",
+          "name": "damage",
+          "hidden": false
+        },
+        {
+          "type": "save",
+          "stat": "dex",
+          "fail": [
+            {
+              "type": "ieffect2",
+              "name": "Blind",
+              "duration": "10",
+              "effects": null,
+              "attacks": [],
+              "buttons": [
+                {
+                  "label": "Save",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [],
+                          "success": [
+                            {
+                              "type": "remove_ieffect",
+                              "removeParent": "always"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "verb": "Attempts to save",
+                  "style": "1",
+                  "defaultDC": "14",
+                  "defaultAttackBonus": null,
+                  "defaultCastingMod": null
+                }
+              ],
+              "end": false,
+              "conc": false,
+              "desc": null,
+              "stacking": false,
+              "save_as": null,
+              "parent": null
+            }
+          ],
+          "success": [],
+          "dc": "14"
+        }
+      ]
+    }
+  ],
+  "_v": 2
+}

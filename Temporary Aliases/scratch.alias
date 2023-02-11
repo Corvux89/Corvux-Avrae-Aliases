@@ -1,22 +1,7 @@
 <drac2>
-c = character()
-com = combat()
-a = argparse(&ARGS&)
-targ = name if not a.last('t') else a.last('t')
-
-base = f'''embed -thumb {image} -color {color}'''
-
-
-if com:
-    t = com.get_combatant(targ)
-
-    base += f''' -f "{t.name}|Effect: {t.add_effect("Way of the Mynock", duration=10)}\n{t.add_effect("Saber Ward", duration=2, end=True, passive_effects={"resistances": ['kinetic', 'energy', 'ion']})}" '''
-
-base += f''' -title "{name if not com else t.name} enters the Way of the Mynock Form!" '''
-
-base += f''' -f "Effect|As a bonus action, you can enter a defensive stance for one minute. As a part of this bonus action, and as a bonus action on each of your turns, you can cast the saber ward power. When you do so, you have a number of special reactions equal to your proficiency bonus that you can only use to cast the saber reflect force power.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest." '''
-
-
-return base
+cc = 'Force Points'
+ch = character()
+if ch.cc_exists(cc):
+  ch.mod_cc(cc, -1)
+  return f''' -phrase "They use {get('their', 'their')} double strike!" -d "{'1d4' if level < 5 else '1d6' if level < 9 else '1d8' if level < 13 else '1d10'}" -f "{cc}|{ch.cc_str(cc)} (-1)\n\nWhen you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled." '''
 </drac2>
-
