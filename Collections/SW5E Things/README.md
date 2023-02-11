@@ -16,4 +16,6 @@ If you see an issue, or have a request of something you would like added you can
 
 `4573b73e-b1cf-43b6-a9bf-833e54300781` - Skill's Exploits
 
+`cf4a953b-f57b-4985-b053-be39236f3ffc` - Grenades
+
 `d93a6249-468d-4bb4-92e0-2f8bb629cf04` - Module for Maneuvers
