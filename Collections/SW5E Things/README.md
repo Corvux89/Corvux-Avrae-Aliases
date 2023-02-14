@@ -8,7 +8,9 @@ If you see an issue, or have a request of something you would like added you can
 
 **GVAR REFERENCES**
 
-`eb7f38f9-8157-4db9-97af-6978c3b2678a` - Class info for `!level`
+`eb7f38f9-8157-4db9-97af-6978c3b2678a` - Class info for `!level` through Guardians
+
+`092d79bf-002a-415c-9dac-04b404f873db` - Class infor for `!level` from Monk on
 
 `662ecc7f-9b2e-4588-851d-12f199d27d0a` - Maneuvers
 

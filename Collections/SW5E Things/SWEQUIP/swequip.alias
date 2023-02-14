@@ -1,0 +1,68 @@
+<drac2>
+args = &ARGS&
+gvar = load_json(get_gvar("c97af7b5-8734-4e3a-a361-382a7b3b3c3a"))
+output = "output" in args
+counter = ""
+
+if output:
+    args.remove("output")
+
+if len(args)>1 and "-" not in args[1] and args[1] not in "offhandnoprofdouble":
+    weapon = " ".join([args[0], args[1]])
+else:
+    weapon = args[0]
+
+args = argparse(args)
+attacks = []
+
+for x in gvar:
+    if x.name.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').lower() == weapon.lower():
+        attacks.append(x)
+if not attacks:
+    err(f"I can't find a weapon named {weapon}.")
+
+if "counter" in str(attacks[0]):
+    json = f"""{dump_json(attacks[0])}"""
+    index = json.find('"counter": "') + 12
+    counter = str(json[index:json[index:].find('"')+index])
+    attack_text = str(attacks[0].automation[1].get("text")).lower()
+    reload = int(attack_text[attack_text.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
+    character().create_cc(counter, 0, reload, None, 'bubble', reload)
+
+if args.get('b'):
+    for i, attack in enumerate(attacks):
+        attacks[i] = load_json(dump_json(attack).replace('attackBonus": "',f'attackBonus": "{args.last("b")}+'))
+
+if args.get('d'):
+    for i, attack in enumerate(attacks):
+        attacks[i] = load_json(dump_json(attack).replace('d}[', 'd}' + f'+{args.last("d")} ['))
+
+if args.get('criton'):
+    for i, attack in enumerate(attacks):
+        attacks[i] = load_json(dump_json(attack).replace('_v": 2', f'_v": 2,"criton":{args.last("criton")}'))
+
+if args.get('c'):
+    for i, attack in enumerate(attacks):
+        attacks[i] = load_json(dump_json(attack).replace('_v": 2', f'_v": 2,"extra_crit_damage": "{args.last("c")}"'))
+
+if args.get('noprof'):
+    for i, attack in enumerate(attacks):
+        attacks[i] = load_json(dump_json(attack).replace('proficiencyBonus+', '').replace('+proficiencyBonus',''))
+
+if args.get('offhand'):
+    if "light" in str(attacks[0].automation[1].get("text")).lower():
+        attacks.append(load_json(dump_json(attacks[0]).replace('"name": "', '"name": "Offhand ').replace('+{dexterityMod}','').replace('+{strengthMod}', '').replace('+{max(strengthMod,dexterityMod)}', '')))
+
+if args.get('double'):
+    if "double" in str(attacks[0].automation[1].get("text")).lower():
+        attacks.append(load_json(dump_json(attacks[0]).replace('"name": "', '"name": "Double ').replace('+dexterityMod','').replace('+strengthMod', '').replace('+max(strengthMod,dexterityMod)','')))
+
+if output:
+    n = '\n'
+    if counter:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' -f "The following counter was created for **{name}**:" -f "{counter}|{character().cc_str(counter)}"'''
+    else:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' '''
+else:
+    return f'attack import {dump_json(attacks)}'
+</drac2>
