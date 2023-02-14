@@ -32,12 +32,12 @@ if v:
     m = None
     output = None
     for g in gvar:
-        if &ARGS&[0].lower() == g.name.lower():
+        if "&1&".lower() in g.name.lower():
             m=g
             break
 
     if m is None or m == "":
-        return err(f"{&ARGS&[0]} is not a found/supported maneuver")
+        return err(f"Maneuver not found/supported")
 
     mod = sup.get_bonus(m, override)
     dc = 8 + proficiencyBonus + mod if not a.last('dc') else int(a.last('dc'))
