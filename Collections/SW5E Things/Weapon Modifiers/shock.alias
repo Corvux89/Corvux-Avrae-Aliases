@@ -8,7 +8,7 @@ tadv = 'tadv' in &ARGS&
 tdis = 'tdis' in &ARGS&
 fail = 'fail' in &ARGS&
 dc = 13 if not a.last('dc') else int(a.last('dc'))
-i = '-i' in &ARGS&
+crit = 'crit' in &ARGS&
 dtype = "Lightning"
 
 base = f'''embed -thumb {image} -color {color}'''
@@ -31,17 +31,23 @@ if com and targ:
     s = t.save("Dexterity", adv=True if tadv else False if tdis else None)
 
     if s.total < dc or fail:
-        f_str = f"{s}; *Failure!*\n{t.damage(roll_str).damage}\n**Effect Added:** [Shocked]"
+        f_str = f"{s}; *Failure!*\n{t.damage(roll_str, crit).damage}\n**Effect Added:** [Shocked]"
         t.add_effect("Shocked", duration=1, end=True, desc="Can't take reactions.\n-Can take either an action or a bonus action, but not both")
     else:
         f_str = f"{s}; **Success!**"
 
     base += f''' -f "Meta|{m_str}" '''
     base += f''' -f "{t.name}|{f_str}" '''
+    base += f''' -footer "{t.name}: {t.hp_str()}" '''
 
 else:
-     m_str += f"**Damage:** {vroll(roll_str)}"
-     base += f''' -f "Meta|{m_str}" '''
+    if crit:
+        crit = 2
+    else:
+        crit = 1
+    m_str += f"**Damage:** {vroll(roll_str, crit)}"
+    base += f''' -f "Meta|{m_str}" '''
+
 
 
 base += f''' -title "{name} uses their shocking property" '''

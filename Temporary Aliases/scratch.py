@@ -1,3 +1,24 @@
+import binascii
+import random
+import string
+
+
+def test(base: str):
+    abbreviation = "TF1234"
+
+    base_str = base[:4]
+
+    if len(base_str) < 4:
+        base_str+= "".join(random.choices(string.ascii_letters, k=(4-len(base_str))))
+
+    base_str = binascii.hexlify(bytes(base_str, encoding='utf-8'))
+
+    base_str = base_str.decode("utf-8")
+
+    transponder = f"{abbreviation}_{base_str}_BD:1"
+    print(f'{transponder}')
+
+
 
 def get_bonus(m, override = None):
     s = character().stats

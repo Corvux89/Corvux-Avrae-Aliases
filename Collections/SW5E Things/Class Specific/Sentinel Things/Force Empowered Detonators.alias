@@ -1,0 +1,91 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+fail = 'fail' in &ARGS&
+tadv = 'tadv' in &ARGS&
+tdis = 'tdis' in &ARGS&
+s = "DEX" if not a.last('save') else a.last('save')
+lvl = max(int(get("SentineldarkLevel",0)), int(get("SentinellightLevel",0)),0)
+targets = a.get('t')
+odc = a.last('dc')
+i = '-i' in &ARGS&
+cc = "Force-Empowered Detonators"
+footer = ""
+v = c.cc_exists(cc) or i
+
+if lvl == 0:
+    err(f"You're not a Sentinel.....try again")
+
+if com and targets:
+    coms  = [com.get_combatant(x) for x in targets] if com else []
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if s.lower() in ["dex", "dexterity"]:
+    s = 'DEX'
+    dtype='force'
+elif s.lower() in ['con', 'constitution']:
+    s = 'CON'
+    dtype='necrotic'
+elif s.lower() in ['wis', 'wisdom']:
+    s = 'WIS'
+    dtype='psychic'
+else:
+    return err(f"Not a valid save for this ability")
+
+if v:
+    if not c.get_cc(cc) and not i:
+        base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+        return base
+
+    forceMod = charismaMod if get("SentineldarkLevel",0) > 0 else wisdomMod
+    dc = 8 + proficiencyBonus + forceMod if odc is None else odc
+    mod = max(int(charismaMod), int(wisdomMod), 0)
+    roll_str = f"1{'d4' if lvl < 5 else 'd6' if lvl < 9 else 'd8' if lvl < 13 else 'd10' if lvl < 17 else 'd12'} + {mod} [{dtype}]"
+    out = vroll(roll_str)
+
+    base += f''' -f "Meta|**Damage:** {out}\n**DC:** {dc}" '''
+
+    if com and targets:
+        for t in coms:
+            tsave = t.save(s, adv=True if tadv else False if tdis else None)
+
+            if tsave.total < dc or fail:
+                f_str = f"{s} Save: {tsave}; Failure!\n"
+                damage = out.total if out else ""
+            else:
+                f_str = f"{s} Save: {tsave}; **Success!**\n"
+                damage = floor(out.total / 2) if out else ""
+
+            if t.resistances.is_immune(dtype):
+                f_str += f"**Damage:** {damage} * 0 = `0`"
+            elif t.resistances.is_resistant(dtype):
+                d = floor(damage / 2)
+                t.modify_hp(-d)
+                f_str += f"**Damage:** {damage} / 2 = `{d}`"
+            elif t.resistances.is_vulnerable(dtype):
+                d = damage * 2
+                t.modify_hp(-d)
+                f_str += f"**Damage:** {damage} * 2 = `{d}`"
+            else:
+                t.modify_hp(-damage)
+                f_str += f"**Damage:** {damage}"
+
+            footer += f"{t.name}: {t.hp_str()}\n"
+            base += f''' -f "{t.name}|{f_str}" '''
+
+        base += f''' -footer "{footer}" '''
+
+    base += f''' -f "Effect|You can create two grenades. You must have a demolitions kit in order to create these grenades. Your grenades can only be used by you, and they lose their potency at the end of your next short or long rest.\n\nYour grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw one of these grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 5 feet must make a Dexterity, Constitution, or Wisdom saving throw (your choice when you generate the grenade) against your universal force save DC. A creature takes damage using your Kinetic Combat die + your Wisdom or Charisma modifier (your choice) on a failed save, or half as much on a successful one. The damage is force for Dexterity, necrotic for Constitution, or psychic for Wisdom.\n\nYou can make additional grenades at higher level: three at 5th level, four at 9th level, five at 13th level, and six at 17th level." '''
+    base += f''' -title "{name} uses {cc}!" '''
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+if not i:
+    c.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>
