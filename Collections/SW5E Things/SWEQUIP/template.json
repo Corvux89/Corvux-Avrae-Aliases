@@ -7,7 +7,6 @@
         "mighty": "max(strengthMod,dexterityMod)",
         "brutal": { "extra_crit_damage": "1d12" },
         "keen": { "criton":  19 }
-
       }
     ]
   },
@@ -36,35 +35,6 @@
             "amount": "1",
             "allowOverflow": false,
             "errorBehavior": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Power cell (range 90/360), Fixed, Rapid 4, Reload 8, Strength 11, Two-handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Rapid - Affixed Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "2d8+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
           }
         ]
       },
