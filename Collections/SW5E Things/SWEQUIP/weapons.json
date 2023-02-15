@@ -308,7 +308,7 @@
       }
     ],
     "_v": 2
-},
+  },
   {
     "name": "Burst - Assault Cannon",
     "automation": [
@@ -1133,9 +1133,90 @@
     ],
     "_v": 2
   },
-
-
-
+  {
+    "name": "Cesta",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disguised, Double (1d8) finesse, Special\nThis specialized gungan staff can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using a cesta you are holding. The grenade can be thrown at a short distance of 60ft and a long distance of 240ft. When throwing a grenade at long range, creatures within the radius of the grenade’s explosion have advantage on the saving throw. If you lack proficiency in the cesta, you must roll the damage dice twice and take the lesser total."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Chained Dagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disarming, Finesse, Reach"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Chained Lightdagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disarming, Finesse, Luminous, Reach"
+      }
+    ],
+    "_v": 2
+  },
   {
     "name": "Rapid - Chaingun",
     "automation": [
@@ -1149,7 +1230,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d10+{dexterityMod} [energy]",
+                "damage": "4d4+{dexterityMod} [kinetic]",
                 "overheal": false
               }
             ],
@@ -1160,12 +1241,12 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 60/240), Auto, Rapid 6, Reload 12, Strength 15, Two-handed"
+        "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
       },
       {
         "type": "counter",
         "counter": "Chaingun",
-        "amount": "6",
+        "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
       }
@@ -1201,6 +1282,287 @@
     "_v": 2
   },
   {
+    "name": "Claymoresaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Luminous, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Compound Bow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(dexterityMod, strengthMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(dexterityMod, strengthMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mighty, Silent, Special (range 75/300), Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Crossguard Saber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Defensive 1, Dexterity 13, Heavy, Luminous, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Crossguard Saber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Defensive 1, Dexterity 13, Heavy, Luminous, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Crosssaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{ceil(strengthMod*1.5)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+ceil(strengthMod*1.5)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 15, Double (2d4 energy), Heavy, Luminous, Reach"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Cryo Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [cold]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Burst 2, Power cell (range 75/300), Reload 4, Strength 13, Two-handed, Vicious 1"
+      },
+      {
+        "type": "counter",
+        "counter": "Cryo Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cryo Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Cryo Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 45/180), Reload 12, Two-handed, Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cryo Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [cold]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Cryo Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Reload 8, Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cryo Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [cold]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Cryo Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 50/200), Reload 4, Strength 11, Two-handed, Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Cycler Rifle",
     "automation": [
       {
@@ -1230,7 +1592,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 100/400), Rapid 2, Reload 8, Two-handed"
+        "text": "Rapid 2, Reload 8, Slug cartridge (range 90/360), Strength 11, Two-handed"
       }
     ],
     "_v": 2
@@ -1259,7 +1621,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 100/400), Rapid 2, Reload 8, Two-handed"
+        "text": "Rapid 2, Reload 8, Slug cartridge (range 90/360), Strength 11, Two-handed"
       },
       {
         "type": "counter",
@@ -1267,6 +1629,306 @@
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Dire Vibroblade",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Dire Vibroblade",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Diresword",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{ceil(strengthMod*1.5)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+ceil(strengthMod*1.5)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Dire 1, Heavy"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disguised Blade",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disarming, Disguised, Finesse, Light"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disruptor Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{dexterityMod} [acid]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Disruptor Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 13, Power cell (range 60/240), Reload 8, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disruptor Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [acid]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Disruptor Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 13, Power cell (range 45/180), Reload 12, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disruptor Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [acid]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Disruptor Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 13, Power cell (range 60/240), Reload 4, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disruptor Sniper",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d12+{dexterityMod} [acid]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Disruptor Sniper",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 13, Power cell (range 120/480), Reeload 2, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Disruptorshiv",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disruptive, Finesse, Shocking 13"
       }
     ],
     "_v": 2
@@ -1384,6 +2046,472 @@
     "_v": 2
   },
   {
+    "name": "Dual-Phase Saber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Hidden, Luminous, Versatile (1d12), Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Dual-Phase Saber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d12+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Hidden, Luminous, Versatile (1d12), Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Echostaff",
+    "automation": [
+      {
+        "type": "target",
+        "meta": [],
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "meta": [],
+            "hit": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d4[sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "When you hit a creature with a weapon with the sonorous property, you can force it to make a Constitution saving throw, DC equal to the sonorous number. On a failed save, the creature takes an additional 1d4 sonic damage and becomes deafened until the end of its next turn."
+                  }
+                ],
+                "success": [],
+                "dc": "13"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "meta": [],
+        "text": "Double (1d6 kinetic), Finesse, Sonorous 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrobaton",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Light, Shocking 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrohammer",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{ceil(strengthMod*1.5)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+ceil(strengthMod*1.5)"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Heavy, Shocking 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electroprod",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disruptive, Shocking 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrostaff",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Double (1d6 kinetic), Finesse, Shocking 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrovoulge",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Reach, Shocking 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrowhip",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "save",
+            "meta": [],
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "meta": [],
+                "damage": "1d4[lightning]",
+                "overheal": false
+              },
+              {
+                "type": "text",
+                "meta": [],
+                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+              }
+            ],
+            "success": [],
+            "dc": "13"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Disruptive, Reach, Shocking 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Energy Bow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+          },
+          {
+            "type": "counter",
+            "counter": "Energy Bow",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 80/320), Mighty, Reload 4, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Energy Slingshot",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+          },
+          {
+            "type": "counter",
+            "counter": "Energy Slingshot",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 20/80), Disruptive, Fixed, Mighty, Reload 20, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Greatsaber",
     "automation": [
       {
@@ -1411,6 +2539,110 @@
     ],
     "_v": 2
   },
+  {
+    "name": "Guard Shoto",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Defensive 1, Finesse, Light, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Hand BKG",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Hand BKG",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Disintegrate 13, Keen 1, Power cell (range 50/200), Reload 4, Strength 15"
+      }
+    ],
+    "_v": 2,
+    "extra_crit_damage": "1d10",
+    "criton": 19
+  },
+  {
+    "name": "Hand Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Keen 1, Light, Power cell (range 40/160), Reload 8"
+      }
+    ],
+    "_v": 2,
+    "criton": 19
+  },
+
+
+
+
+
+
+
+
+
+
   {
     "name": "Heavy Bowcaster",
     "automation": [
@@ -3822,649 +5054,6 @@
     "_v": 2
   },
   {
-    "name": "Chained Dagger",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disarming, Finesse, Reach, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Chained Lightdagger",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disarming, Finesse, Luminous, Reach, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Claymore Saber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "3d4+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 13, Luminous, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Crossguard Saber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{strengthMod}+{{max(strengthMod//2,1)}} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Defensive 1, Dexterity 13, Heavy, Luminous, Versatile(1d10)"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Two-Handed Crossguard Saber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{strengthMod}+{{max(strengthMod//2,1)}} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Defensive 1, Dexterity 13, Heavy, Luminous, Versatile(1d10)"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Disruptor Pistol",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{dexterityMod} [acid]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Disruptor Pistol",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 60/240), Disintegrate 13, Reload 16"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Disruptor Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{dexterityMod} [acid]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Disruptor Rifle",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 100/400), Disintegrate 13, Reload 1, Strength 11, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Disruptorshiv",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disruptive, Finesse, Shocking 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Dual-Phase Saber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 11, Keen 1, Luminous, Versatile(1d10)"
-      }
-    ],
-    "_v": 2,
-    "criton": 19
-  },
-  {
-    "name": "Two-Handed Dual-Phase Saber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 11, Keen 1, Luminous, Versatile(1d10)"
-      }
-    ],
-    "_v": 2,
-    "criton": 19
-  },
-  {
-    "name": "Echostaff",
-    "automation": [
-      {
-        "type": "target",
-        "meta": [],
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "meta": [],
-            "hit": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "meta": [],
-                "stat": "con",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[sonic]",
-                    "overheal": false
-                  },
-                  {
-                    "type": "text",
-                    "meta": [],
-                    "text": "When you hit a creature with a weapon with the sonorous property, you can force it to make a Constitution saving throw, DC equal to the sonorous number. On a failed save, the creature takes an additional 1d4 sonic damage and becomes deafened until the end of its next turn."
-                  }
-                ],
-                "success": [],
-                "dc": "13"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "meta": [],
-        "text": "Double (1d6 kinetic), Finesse, Sonorous 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Electrobaton",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Finesse, Light, Shocking 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Electrohammer",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d4+{strengthMod}+{{max(strengthMod//2,1)}} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Heavy, Shocking 13, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Electroprod",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [lightning]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disruptive, Shocking 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Electrostaff",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Double (1d6 kinetic), Finesse, Shocking 13, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Electrovoulge",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{strengthMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[lightning]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Reach, Shocking 13, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Energy Bow",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
-          },
-          {
-            "type": "counter",
-            "counter": "Energy Bow",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 80/320), Mighty, Reload 12, Silent, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
     "name": "Flechette Mag, Fragmentation - Flechette Cannon",
     "automation": [
       {
@@ -4583,63 +5172,6 @@
     "_v": 2,
     "proper": false,
     "verb": null
-  },
-  {
-    "name": "Guard Shoto",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{max(strengthMod,dexterityMod)} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Defensive 1, Finesse, Light, Luminous"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Hand Blaster",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 40/160), Keen 1, Light, Reload 12"
-      }
-    ],
-    "_v": 2,
-    "criton": 19
   },
   {
     "name": "IWS - Blaster",

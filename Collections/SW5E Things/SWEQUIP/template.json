@@ -1,5 +1,17 @@
 [
   {
+    "weaponProperties": [
+      {
+        "heavy": "ceil(strengthMod*1.5)",
+        "finesse": "max(strengthMod,dexterityMod)",
+        "mighty": "max(strengthMod,dexterityMod)",
+        "brutal": { "extra_crit_damage": "1d12" },
+        "keen": { "criton":  19 }
+
+      }
+    ]
+  },
+  {
     "name": "Affixed Rifle",
     "automation": [
       {
