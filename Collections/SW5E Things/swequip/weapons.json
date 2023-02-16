@@ -4087,151 +4087,6 @@
     ],
     "_v": 2
   },
-
-
-
-
-
-
-
-
-
-
-  {
-    "name": "Heavy Shotgun",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Heavy Shotgun",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 30/120), Burst 4, Reload 12, Strength 13, Two-handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Burst - Heavy Shotgun",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 30/120), Burst 4, Reload 12, Strength 13, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Shotgun",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Burst - Light Repeater",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "1d6+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 60/240), Auto, Burst 8, Reload 16, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Light Repeater",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Light Ring",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Finesse, Hidden, Luminous, Returning, Thrown (range 30/90)"
-      }
-    ],
-    "_v": 2
-  },
   {
     "name": "Lightdagger",
     "automation": [
@@ -4256,6 +4111,34 @@
       {
         "type": "text",
         "text": "Finesse, Hidden, Light, Luminous, Thrown (range 20/60)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightfist",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disguised, Disruptive, Fixed, Light, Luminous"
       }
     ],
     "_v": 2
@@ -4289,6 +4172,391 @@
     "_v": 2
   },
   {
+    "name": "Lightglaive",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Dexterity 13, Luminous, Reach, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightkatana",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Hidden, Luminous, Piercing 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Lightkatana",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Hidden, Luminous, Piercing 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Lightning Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "6",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightnodachi",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 17, Luminous, Piercing 1, Two-handed, Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightring",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Hidden, Luminous, Returning, Thrown (range 25/75)"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Lightsaber",
     "automation": [
       {
@@ -4311,13 +4579,41 @@
       },
       {
         "type": "text",
-        "text": "Hidden, Luminous, Versatile (1d8)"
+        "text": "Hidden, Luminous, Versatile (2d4)"
       }
     ],
     "_v": 2
   },
   {
     "name": "Two-Handed Lightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Luminous, Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightsaber Pike",
     "automation": [
       {
         "type": "target",
@@ -4339,13 +4635,13 @@
       },
       {
         "type": "text",
-        "text": "Hidden, Luminous, Versatile (1d8)"
+        "text": "Dexterity 11, Double (1d8 energy), Luminous, Reach"
       }
     ],
     "_v": 2
   },
   {
-    "name": "Lightsaber Pike",
+    "name": "Lightstaff",
     "automation": [
       {
         "type": "target",
@@ -4356,7 +4652,7 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "1d10+{strengthMod} [energy]",
+                "damage": "2d4+{strengthMod} [energy]",
                 "overheal": false
               }
             ],
@@ -4368,6 +4664,69 @@
       {
         "type": "text",
         "text": "Dexterity 11, Luminous, Reach, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Mancatcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reach, Special, Two-handed\nWhen you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon’s damage."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Marksman Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Marksman Blaster",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 125/500), Reload 8, Strength 13, Two-handed"
       }
     ],
     "_v": 2
@@ -4458,7 +4817,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 40/160), Rapid 10, Reload 20, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
+        "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
       }
     ],
     "_v": 2
@@ -4487,14 +4846,62 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 40/160), Rapid 10, Reload 20, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
+        "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
       },
       {
         "type": "counter",
         "counter": "Needler",
-        "amount": "10",
+        "amount": "12",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Nervebaton",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "wis",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d4[psychic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional 1d4 psychic damage and becomes frightened of you until the start of its next turn."
+                  }
+                ],
+                "success": [],
+                "dc": "13"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disruptive, Neuralizing 13"
       }
     ],
     "_v": 2
@@ -4516,7 +4923,7 @@
                 "effects": "",
                 "end": false,
                 "conc": false,
-                "desc": "A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net’s effects. While a creature is restrained by a net, you can make no further attacks with it."
+                "desc": "A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net's effects. While a creature is restrained by a net, you can make no further attacks with it."
               }
             ],
             "miss": [],
@@ -4526,7 +4933,253 @@
       },
       {
         "type": "text",
-        "text": "Light, finesse, special, thrown (range 15)\n\nA Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net’s effects. While a creature is restrained by a net, you can make no further attacks with it."
+        "text": "Light, Finesse, Special, Thrown (range 15)\n\nA Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net's effects. While a creature is restrained by a net, you can make no further attacks with it."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Neuronic whip",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d4[lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+                  }
+                ],
+                "success": [],
+                "dc": "15"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reach, Shocking 15, Specialized (shocking)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Nightstinger Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Nightstinger Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 125/500), Reload 2, Silent, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Phase knife",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Disguised, Hidden, Keen 1, Light, Luminous, Vicious 1"
+      }
+    ],
+    "_v": 2,
+    "criton": 19
+  },
+  {
+    "name": "Pikesaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Luminous, Reach, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Radiation Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [necrotic]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Radiation Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 75/300), Auto, Burst 2, Disruptive, Piercing 1, Reload 4, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Radrifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [necrotic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Radrifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 15, Power cell (range 120/480), Reload 8, Specialized (disintegrate), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
       }
     ],
     "_v": 2
@@ -4544,7 +5197,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [energy]",
+                "damage": "1d8+{dexterityMod} [energy]",
                 "overheal": false
               }
             ],
@@ -4555,7 +5208,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 80/320), Auto, Burst 4, Rapid 4, Reload 8, Strength 13, Two-handed"
+        "text": "Auto, Burst 4, Power cell (range 75/300), Rapid 4, Reload 8, Strength 11, Two-handed"
       },
       {
         "type": "counter",
@@ -4580,7 +5233,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d4+{dexterityMod} [energy]",
+                "damage": "2d8+{dexterityMod} [energy]",
                 "overheal": false
               }
             ],
@@ -4591,7 +5244,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 80/320), Auto, Burst 4, Rapid 4, Reload 8, Strength 13, Two-handed"
+        "text": "Auto, Burst 4, Power cell (range 75/300), Rapid 4, Reload 8, Strength 11, Two-handed"
       },
       {
         "type": "counter",
@@ -4599,6 +5252,76 @@
         "amount": "4",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Retrosaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Retrosaber",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Reckless 1, Versatile (1d10)\n\nThe retrosaber is an ancient type of lightweapon that requires a power cell to function. Once four attacks have been made with a retrosaber, a character must replace the power cell using an action or bonus action. You must have one free hand to replace the power cell."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Retrosaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Retrosaber",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Reckless 1, Versatile (1d10)\n\nThe retrosaber is an ancient type of lightweapon that requires a power cell to function. Once four attacks have been made with a retrosaber, a character must replace the power cell using an action or bonus action. You must have one free hand to replace the power cell."
       }
     ],
     "_v": 2
@@ -4615,7 +5338,7 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "1d8+{dexterityMod} [kinetic]",
+                "damage": "2d4+{dexterityMod} [kinetic]",
                 "overheal": false
               }
             ],
@@ -4633,7 +5356,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 30/120), Rapid 6, Reload 6, Strength 11"
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
       }
     ],
     "_v": 2
@@ -4651,7 +5374,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d8+{dexterityMod} [kinetic]",
+                "damage": "4d4+{dexterityMod} [kinetic]",
                 "overheal": false
               }
             ],
@@ -4662,18 +5385,476 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 30/120), Rapid 6, Reload 6, Strength 11"
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
       },
       {
         "type": "counter",
         "counter": "Revolver",
-        "amount": "6",
+        "amount": "4",
         "allowOverflow": false,
         "errorBehaviour": "raise"
       }
     ],
     "_v": 2
   },
+  {
+    "name": "Electrobaton",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Defensive 1, Light"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Electrobaton",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d4[lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+                  }
+                ],
+                "success": [],
+                "dc": "13"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Defensive 1, Light, Shocking 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Fragmentation - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d10",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [kinetic]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Incendiary - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d8",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [fire]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Ion - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [ion]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Missile, Fragmentation - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d10",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [kinetic]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
+    "name": "Missile, Incendiary - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d8",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [fire]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
+    "name": "Missile, Ion - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [ion]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+
+
+
+
   {
     "name": "Saberspear",
     "automation": [
@@ -5924,409 +7105,6 @@
       {
         "type": "text",
         "text": "Disguised, Finesse, Luminous"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Lightfist",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disruptive, Disguised, Fixed, Light, Luminous"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Lightglaive",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d12+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 13, Luminous, Reach, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Mancatcher",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{strengthMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Reach, Special, Two-Handed\n\nWhen you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon’s damage."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Nervebaton",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d6+{strengthMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          },
-          {
-            "type": "save",
-            "meta": [],
-            "stat": "wis",
-            "fail": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "1d4[psychic]",
-                "overheal": false
-              },
-              {
-                "type": "text",
-                "meta": [],
-                "text": "When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional 1d4 psychic damage and becomes frightened of you until the start of its next turn."
-              }
-            ],
-            "success": [],
-            "dc": "13"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disruptive, Neuralizing 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Nightstinger Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d12+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Nightstinger Rifle",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 120/480), Silent, Reload 2, Strength 13, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Railgun",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Railgun",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 150/600), Piercing 1, Reload 1, Strength 15, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Retrosaber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d4+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Retrosaber",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Keen 1, Luminous, Special, Vicious 1\n\nThe retrosaber is an ancient type of lightweapon that requires a power cell to function. Once four attacks have been made with a retrosaber, a character must replace the power cell using an action or bonus action (the character’s choice). You must have one free hand to replace the power cell."
-      }
-    ],
-    "_v": 2,
-    "criton": 19
-  },
-  {
-    "name": "Rocket, Fragmentation - Rocket Launcher",
-    "automation": [
-      {
-        "type": "target",
-        "target": 1,
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "roll",
-            "dice": "2d10",
-            "name": "damage"
-          },
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{{damage}} [kinetic]"
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "({{damage}})/2 [kinetic]"
-              }
-            ],
-            "dc": "14"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "*Rocket, Fragmentation.*  This rocket launcher ammunition deals 2d6 kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 2d10 kinetic damage on a failed save or half as much on a successful one.\n\nAmmunition (range 100/120), Reload 1, Special, Strength 13, Two-Handed\n\nRather than traditional power cells, the rocket launcher fires specialized projectiles in the form of rockets. When firing a rocket at long range, or if you don’t meet the rocket launcher’s strength requirement, creatures within the radius of the rocket’s explosion have advantage on the saving throw."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Rocket, Incendiary - Rocket Launcher",
-    "automation": [
-      {
-        "type": "target",
-        "target": 1,
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "roll",
-            "dice": "2d8",
-            "name": "damage"
-          },
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{{damage}} [fire]"
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "({{damage}})/2 [fire]"
-              }
-            ],
-            "dc": "14"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "*Rocket, Incendiary.*  This rocket launcher ammunition deals 2d6 kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes, setting the ground beneath it in a 15 foot radius ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 2d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage.\n\nAmmunition (range 100/120), Reload 1, Special, Strength 13, Two-Handed\n\nRather than traditional power cells, the rocket launcher fires specialized projectiles in the form of rockets. When firing a rocket at long range, or if you don’t meet the rocket launcher’s strength requirement, creatures within the radius of the rocket’s explosion have advantage on the saving throw."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Rocket, Ion - Rocket Launcher",
-    "automation": [
-      {
-        "type": "target",
-        "target": 1,
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "roll",
-            "dice": "2d6",
-            "name": "damage"
-          },
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{{damage}} [ion]"
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "({{damage}})/2 [ion]"
-              }
-            ],
-            "dc": "14"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "*Rocket, Ion.*  This rocket launcher ammunition deals 2d6 kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 2d6 ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren’t being worn or carried are disabled until rebooted.\n\nAmmunition (range 100/120), Reload 1, Special, Strength 13, Two-Handed\n\nRather than traditional power cells, the rocket launcher fires specialized projectiles in the form of rockets. When firing a rocket at long range, or if you don’t meet the rocket launcher’s strength requirement, creatures within the radius of the rocket’s explosion have advantage on the saving throw."
       }
     ],
     "_v": 2

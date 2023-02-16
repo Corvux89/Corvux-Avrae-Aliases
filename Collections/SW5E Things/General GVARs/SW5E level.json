@@ -263,6 +263,15 @@
         "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
       },
       {
+        "name": "Force Recovery",
+        "level": 1,
+        "value": 1,
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+      },
+      {
         "name": "Force Shield",
         "level": 2,
         "value": "proficiencyBonus",
@@ -587,6 +596,15 @@
         "display": "default",
         "classLevel": "ConsulardarkLevel",
         "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Force Recovery",
+        "level": 1,
+        "value": 1,
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
       },
       {
         "name": "Force Shield",

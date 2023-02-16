@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "Star Wars 5e Player's Handbook Species",
     "featureResources": "99440ba2-33d5-42f1-a857-59aa44000114",
     "counters": [],
@@ -201,13 +202,15 @@
   },
   {
     "name": "human",
-    "counters": [{
-      "name": "Defiant",
-      "reset": "short",
-      "level": 1,
-      "use": "",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Defiant",
+        "reset": "short",
+        "level": 1,
+        "use": "",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Human",
       "size": "Medium",
@@ -218,13 +221,15 @@
   },
   {
     "name": "ithorian",
-    "counters": [{
-      "name": "Sonic Scream",
-      "reset": "long",
-      "level": 1,
-      "use": "use sonicScream -t [targets]",
-      "value": 2
-    }],
+    "counters": [
+      {
+        "name": "Sonic Scream",
+        "reset": "long",
+        "level": 1,
+        "use": "use sonicScream -t [targets]",
+        "value": 2
+      }
+    ],
     "cvars": {
       "race": "Ithorian",
       "speed": "30 ft.",
@@ -236,7 +241,8 @@
   },
   {
     "name": "jawa",
-    "counters": [{
+    "counters": [
+      {
         "name": "Ion Blast",
         "reset": "none",
         "level": 1,
@@ -330,7 +336,8 @@
   },
   {
     "name": "sith pureblood",
-    "counters": [{
+    "counters": [
+      {
         "name": "Denounce",
         "reset": "none",
         "level": 1,
@@ -372,13 +379,15 @@
   },
   {
     "name": "trandoshan",
-    "counters": [{
-      "name": "Saving Face",
-      "reset": "short",
-      "level": 1,
-      "use": "use savingFace",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Saving Face",
+        "reset": "short",
+        "level": 1,
+        "use": "use savingFace",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Trandoshan",
       "speed": "30 ft.",
@@ -391,13 +400,15 @@
   },
   {
     "name": "tusken",
-    "counters": [{
-      "name": "Intimidating Roar",
-      "reset": "long",
-      "level": 1,
-      "use": "racecast '(SW) Fear' -t [targets]",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Intimidating Roar",
+        "reset": "long",
+        "level": 1,
+        "use": "racecast '(SW) Fear' -t [targets]",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Tusken",
       "speed": "30 ft.",
@@ -437,13 +448,15 @@
   },
   {
     "name": "zabrak",
-    "counters": [{
-      "name": "Second Heart",
-      "level": 1,
-      "reset": "long",
-      "value": 1,
-      "use": "use secondHeart"
-    }],
+    "counters": [
+      {
+        "name": "Second Heart",
+        "level": 1,
+        "reset": "long",
+        "value": 1,
+        "use": "use secondHeart"
+      }
+    ],
     "cvars": {
       "race": "Zabrak",
       "senses": "Darkvision 60 ft.",
@@ -460,12 +473,14 @@
   },
   {
     "name": "aing-tii",
-    "counters": [{
-      "name": "Force Push/Pull",
-      "reset": "none",
-      "level": 1,
-      "use": "racecast 'Force Push/Pull' [-t target]"
-    }],
+    "counters": [
+      {
+        "name": "Force Push/Pull",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Force Push/Pull' [-t target]"
+      }
+    ],
     "cvars": {
       "race": "Aing-Tii",
       "languages": "Galactic Basic, Aing-Tii"
@@ -484,7 +499,8 @@
   },
   {
     "name": "anomid",
-    "counters": [{
+    "counters": [
+      {
         "name": "Minor Hologram",
         "reset": "none",
         "level": 1,
@@ -510,13 +526,15 @@
   },
   {
     "name": "anzellan",
-    "counters": [{
-      "name": "Tinker",
-      "reset": "long",
-      "level": 1,
-      "use": "tinker",
-      "value": 2
-    }],
+    "counters": [
+      {
+        "name": "Tinker",
+        "reset": "long",
+        "level": 1,
+        "use": "tinker",
+        "value": 2
+      }
+    ],
     "cvars": {
       "race": "Anzellan",
       "speed": "20 ft.",
@@ -553,13 +571,15 @@
   },
   {
     "name": "arkanian",
-    "counters": [{
-      "name": "Arkanian Brilliance",
-      "reset": "long",
-      "level": 1,
-      "use": "arkanianBrilliance",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Arkanian Brilliance",
+        "reset": "long",
+        "level": 1,
+        "use": "arkanianBrilliance",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Arkanian",
       "senses": "Darkvision 60 ft.",
@@ -568,13 +588,15 @@
   },
   {
     "name": "balosar",
-    "counters": [{
-      "name": "Snap Senses",
-      "reset": "short",
-      "level": 1,
-      "use": "snapSenses",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Snap Senses",
+        "reset": "short",
+        "level": 1,
+        "use": "snapSenses",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Balosar",
       "resist": "Poison",
@@ -583,13 +605,15 @@
   },
   {
     "name": "barabel",
-    "counters": [{
-      "name": "Tooth and Nail",
-      "reset": "short",
-      "level": 1,
-      "use": "toothAndNail",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Tooth and Nail",
+        "reset": "short",
+        "level": 1,
+        "use": "toothAndNail",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Barabel",
       "senses": "Darkvision 60 ft.",
@@ -615,7 +639,8 @@
   },
   {
     "name": "chadra-fan",
-    "counters": [{
+    "counters": [
+      {
         "name": "Second Heart",
         "reset": "long",
         "level": 1,
@@ -657,13 +682,15 @@
   },
   {
     "name": "chironian",
-    "counters": [{
-      "name": "Powerful Charge",
-      "reset": "short",
-      "level": 1,
-      "use": "powerfulCharge",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Powerful Charge",
+        "reset": "short",
+        "level": 1,
+        "use": "powerfulCharge",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Chironian",
       "speed": "40 ft.",
@@ -672,13 +699,15 @@
   },
   {
     "name": "clawdite",
-    "counters": [{
-      "name": "Unsettling Visage",
-      "reset": "short",
-      "level": 1,
-      "use": "unsettlingVisage",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Unsettling Visage",
+        "reset": "short",
+        "level": 1,
+        "use": "unsettlingVisage",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Clawdite",
       "languages": "Galactic Basic, Clawdite"
@@ -694,13 +723,15 @@
   },
   {
     "name": "colicoid",
-    "counters": [{
-      "name": "Cannibalize",
-      "reset": "short",
-      "level": 1,
-      "use": "cannibalize",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Colicoid",
       "senses": "Darkvision 60 ft.",
@@ -720,13 +751,15 @@
   },
   {
     "name": "defel",
-    "counters": [{
-      "name": "Hidden Step",
-      "reset": "short",
-      "level": 1,
-      "use": "hiddenStep",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Hidden Step",
+        "reset": "short",
+        "level": 1,
+        "use": "hiddenStep",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Defel",
       "size": "Small",
@@ -745,13 +778,15 @@
   },
   {
     "name": "dug",
-    "counters": [{
-      "name": "Fury of the Small",
-      "reset": "long",
-      "level": 1,
-      "use": "furyOfTheSmall",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Fury of the Small",
+        "reset": "long",
+        "level": 1,
+        "use": "furyOfTheSmall",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Dug",
       "size": "Small",
@@ -761,13 +796,15 @@
   },
   {
     "name": "echani",
-    "counters": [{
-      "name": "Echani Art",
-      "reset": "long",
-      "level": 1,
-      "use": "echaniArt",
-      "value": "wisdomMod"
-    }],
+    "counters": [
+      {
+        "name": "Echani Art",
+        "reset": "long",
+        "level": 1,
+        "use": "echaniArt",
+        "value": "wisdomMod"
+      }
+    ],
     "cvars": {
       "race": "Echani",
       "languages": "Galactic Basic"
@@ -783,13 +820,15 @@
   },
   {
     "name": "falleen",
-    "counters": [{
-      "name": "Enthralling Pheromones",
-      "reset": "short",
-      "level": 1,
-      "use": "enthrallingPheromones",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Enthralling Pheromones",
+        "reset": "short",
+        "level": 1,
+        "use": "enthrallingPheromones",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Falleen",
       "languages": "Galactic Basic, Falleen"
@@ -797,7 +836,8 @@
   },
   {
     "name": "felucian",
-    "counters": [{
+    "counters": [
+      {
         "name": "Burst",
         "reset": "none",
         "level": 1,
@@ -823,13 +863,15 @@
   },
   {
     "name": "flesh raider",
-    "counters": [{
-      "name": "Cannibalize",
-      "reset": "short",
-      "level": 1,
-      "use": "cannibalize",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Flesh Raider",
       "senses": "Darkvision 60 ft.",
@@ -882,13 +924,15 @@
   },
   {
     "name": "harch",
-    "counters": [{
-      "name": "Bite",
-      "reset": "short",
-      "level": 1,
-      "use": "bite",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Bite",
+        "reset": "short",
+        "level": 1,
+        "use": "bite",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Harch",
       "speed": "30 ft., Climb 30 ft.",
@@ -907,13 +951,15 @@
   },
   {
     "name": "ho’din",
-    "counters": [{
-      "name": "Second Heart",
-      "reset": "long",
-      "level": 1,
-      "use": "secondHeart",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Second Heart",
+        "reset": "long",
+        "level": 1,
+        "use": "secondHeart",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Ho’din",
       "speed": "30 ft., Climb 30 ft.",
@@ -957,12 +1003,14 @@
   },
   {
     "name": "kaminoan",
-    "counters": [{
-      "name": "Temporary Boost",
-      "reset": "none",
-      "level": 1,
-      "use": "racecast 'Temporary Boost' [-t target]"
-    }],
+    "counters": [
+      {
+        "name": "Temporary Boost",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Temporary Boost' [-t target]"
+      }
+    ],
     "cvars": {
       "race": "Kaminoan",
       "languages": "Galactic Basic, Kaminoan"
@@ -970,13 +1018,15 @@
   },
   {
     "name": "karkarodon",
-    "counters": [{
-      "name": "Bite",
-      "reset": "short",
-      "level": 1,
-      "use": "bite",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Bite",
+        "reset": "short",
+        "level": 1,
+        "use": "bite",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Karkarodon",
       "speed": "30 ft., Swim 30 ft.",
@@ -1010,13 +1060,15 @@
   },
   {
     "name": "kushiban",
-    "counters": [{
-      "name": "Grovel, Cower, Beg",
-      "reset": "short",
-      "level": 1,
-      "use": "use 'grovelCowerBeg' -t [targets]",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use 'grovelCowerBeg' -t [targets]",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Kushiban",
       "languages": "Galactic Basic, Kushiban",
@@ -1035,7 +1087,8 @@
   },
   {
     "name": "lannik",
-    "counters": [{
+    "counters": [
+      {
         "name": "Guidance",
         "reset": "none",
         "level": 1,
@@ -1084,7 +1137,8 @@
   },
   {
     "name": "miraluka",
-    "counters": [{
+    "counters": [
+      {
         "name": "Mind Trick",
         "reset": "none",
         "level": 1,
@@ -1130,13 +1184,15 @@
   },
   {
     "name": "munn",
-    "counters": [{
-      "name": "Three Hearts",
-      "reset": "long",
-      "level": 1,
-      "use": "threeHearts",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Three Hearts",
+        "reset": "long",
+        "level": 1,
+        "use": "threeHearts",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Munn",
       "languages": "Galactic Basic, Munn"
@@ -1153,13 +1209,15 @@
   },
   {
     "name": "neimoidian",
-    "counters": [{
-      "name": "Grovel, Cower, Beg",
-      "reset": "short",
-      "level": 1,
-      "use": "use 'grovelCowerBeg' -t [targets]",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use 'grovelCowerBeg' -t [targets]",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Neimoidian",
       "senses": "Darkvision 60 ft.",
@@ -1168,13 +1226,15 @@
   },
   {
     "name": "noghri",
-    "counters": [{
-      "name": "Powerful Leap",
-      "reset": "short",
-      "level": 1,
-      "use": "powerfulLeap",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Powerful Leap",
+        "reset": "short",
+        "level": 1,
+        "use": "powerfulLeap",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Noghri",
       "languages": "Galactic Basic, Honorghran"
@@ -1182,13 +1242,15 @@
   },
   {
     "name": "nothoiin",
-    "counters": [{
-      "name": "Hightened Reflexes",
-      "reset": "short",
-      "level": 1,
-      "use": "hightenedReflexes",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Hightened Reflexes",
+        "reset": "short",
+        "level": 1,
+        "use": "hightenedReflexes",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Nothoiin",
       "languages": "Galactic Basic"
@@ -1196,13 +1258,15 @@
   },
   {
     "name": "ortolan",
-    "counters": [{
-      "name": "Grovel, Cower, Beg",
-      "reset": "short",
-      "level": 1,
-      "use": "use grovelCowerBeg -t [targets]",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use grovelCowerBeg -t [targets]",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Ortolan",
       "languages": "Galactic Basic, Ortolan",
@@ -1212,13 +1276,15 @@
   },
   {
     "name": "pa'lowick",
-    "counters": [{
-      "name": "Sonic Scream",
-      "reset": "long",
-      "level": 1,
-      "use": "use sonicScream -t [targets]",
-      "value": 2
-    }],
+    "counters": [
+      {
+        "name": "Sonic Scream",
+        "reset": "long",
+        "level": 1,
+        "use": "use sonicScream -t [targets]",
+        "value": 2
+      }
+    ],
     "cvars": {
       "race": "Pa'lowick",
       "speed": "30 ft., Swim 30 ft.",
@@ -1238,13 +1304,15 @@
   },
   {
     "name": "pau'an",
-    "counters": [{
-      "name": "Vigilant",
-      "reset": "short",
-      "level": 1,
-      "use": "vigilant",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Vigilant",
+        "reset": "short",
+        "level": 1,
+        "use": "vigilant",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Pau'an",
       "senses": "Darkvision 60 ft.",
@@ -1261,13 +1329,15 @@
   },
   {
     "name": "quarren",
-    "counters": [{
-      "name": "Ink Cloud",
-      "reset": "long",
-      "level": 1,
-      "use": "use inkCloud -t [targets]",
-      "value": 2
-    }],
+    "counters": [
+      {
+        "name": "Ink Cloud",
+        "reset": "long",
+        "level": 1,
+        "use": "use inkCloud -t [targets]",
+        "value": 2
+      }
+    ],
     "cvars": {
       "race": "Quarren",
       "speed": "30 ft., Swim 30 ft., CLimb 30 ft.",
@@ -1277,13 +1347,15 @@
   },
   {
     "name": "rakata",
-    "counters": [{
-      "name": "Cannibalize",
-      "reset": "short",
-      "level": 1,
-      "use": "cannibalize",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Rakata",
       "speed": "30 ft., Swim 30 ft.",
@@ -1320,7 +1392,8 @@
   },
   {
     "name": "selkath",
-    "counters": [{
+    "counters": [
+      {
         "name": "Temporary Boost",
         "reset": "none",
         "level": 1,
@@ -1436,7 +1509,8 @@
   },
   {
     "name": "ugnaught",
-    "counters": [{
+    "counters": [
+      {
         "name": "Mending",
         "reset": "none",
         "level": 1,
@@ -1473,7 +1547,8 @@
   },
   {
     "name": "umbaran",
-    "counters": [{
+    "counters": [
+      {
         "name": "Ward",
         "reset": "none",
         "level": 1,
@@ -1536,13 +1611,15 @@
   },
   {
     "name": "zeltron",
-    "counters": [{
-      "name": "Enthralling Pheromones",
-      "reset": "short",
-      "level": 1,
-      "use": "enthrallingPheromones",
-      "value": 1
-    }],
+    "counters": [
+      {
+        "name": "Enthralling Pheromones",
+        "reset": "short",
+        "level": 1,
+        "use": "enthrallingPheromones",
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Zeltron",
       "resist": "Poison",

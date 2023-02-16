@@ -1,0 +1,62 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+targets = a.get('t')
+i = '-i' in &ARGS&
+cc = "Fyrnock's Instinct"
+dmg = strengthMod if not a.last('dmg') else int(a.last('dmg'))
+dtype = "kinetic" if not a.last('dtype') else a.last('dtype')
+
+if com:
+    targs  = [com.get_combatant(x) for x in targets] if com else []
+
+    for t in targs:
+            if not t:
+                return err(f"Invalid target/targets")
+
+v = c.cc_exists(cc) or i
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if not c.get_cc(cc) and not i:
+        base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+        return base
+
+    base += f''' -f "Meta|**Damage:** {dmg} [{dtype}]" '''
+
+    if com:
+        for t in targs:
+            f_str = "**Damage:** "
+            if t.resistances.is_immune(dtype):
+                f_str += f"{dmg} * 0 [{dtype}] = `0`\n"
+            elif t.resistances.is_resistant(dtype):
+                d = floor(dmg / 2)
+                t.modify_hp(-d)
+                f_str += f"{dmg} / 2 [{dtype}] = `{d}`\n"
+            elif t.resistances.is_vulnerable(dtype):
+                d = dmg * 2
+                t.modify_hp(-d)
+                f_str += f"{dmg} * 2 [{dtype}] = `{d}`\n"
+            else:
+                f_str += f"{dmg} [{dtype}] = `{dmg}`\n"
+                t.modify_hp(-dmg)
+
+            base += f''' -f "{t.name}|{f_str}" '''
+        foot_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targs])
+        base += f''' -footer "{foot_str}" '''
+
+
+    base += f''' -f "Effect|While raging, you can use your bonus action to leap up to 30 feet to an empty space you can see. When you land you deal kinetic damage equal to your Strength modifier to each creature within 5 feet of where you land" '''
+    base += f''' -title "{name} uses {cc}!" '''
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+if not i:
+    c.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>
