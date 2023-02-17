@@ -5851,12 +5851,66 @@
     "proper": false,
     "verb": null
   },
-
-
-
-
   {
-    "name": "Saberspear",
+    "name": "Burst - Rotary Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 75/300), Rapid 2, Reload 8, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Rotary Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 75/300), Rapid 2, Reload 8, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Saberaxe",
     "automation": [
       {
         "type": "target",
@@ -5879,6 +5933,204 @@
       {
         "type": "text",
         "text": "Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Sabergauntlet",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Fixed, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Sabermace",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Dexterity 13, Hidden, Luminous, Versatile (1d10)"
+      }
+    ],
+    "_v": 2,
+    "extra_crit_damage": "1d8"
+  },
+  {
+    "name": "Two-Handed Sabermace",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Dexterity 13, Hidden, Luminous, Versatile (1d10)"
+      }
+    ],
+    "_v": 2,
+    "extra_crit_damage": "1d10"
+  },
+  {
+    "name": "Saberspear",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Luminous, Thrown (range 20/60), Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Saberspear",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Luminous, Thrown (range 20/60), Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Saberspear - Doublesaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Double (1d8 energy), Finesse, Luminous\n\nModal (double-saber and tech-staff)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Saberspear - Techstaff",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": " Dexterity 11, Double (2d4 kinetic), Light"
       }
     ],
     "_v": 2
@@ -5907,6 +6159,77 @@
       {
         "type": "text",
         "text": "Finesse, Hidden, Luminous, Reach"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Scatter Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Scatter Blaster",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 40/160), Burst 3, Reload 12, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Scatter Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 40/160), Burst 3, Reload 12, Strength 13, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Scatter Blaster",
+        "amount": "3",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5941,7 +6264,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 20/80), Burst 4, Reload 4"
+        "text": "Burst 2, Reload 8, Slug cartridge (range 30/120), Strength 11"
       }
     ],
     "_v": 2
@@ -5970,11 +6293,84 @@
       },
       {
         "type": "text",
-        "text": "Ammunition (range 20/80), Burst 4, Reload 4"
+        "text": "Burst 2, Reload 8, Slug cartridge (range 30/120), Strength 11"
       },
       {
         "type": "counter",
         "counter": "Scattergun",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Sentry Gun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d12+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Sentry Gun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal, Keen 1, Reload 4, Special (range 120/480), Strength 19, Two-handed\n\nBefore firing the sentry gun, you must deploy it using an action unless you meet its strength requirement. Alternatively, if you’re able to make multiple attacks with the Attack action, this action replaces one of them.  While deployed in this way, you treat this weapon’s strength number as two steps less (from 19 to 15), your speed is reduced by half, and you cannot fire this weapon at long range. You can collapse the sentry gun as an action or bonus action."
+      }
+    ],
+    "_v": 2,
+    "criton": 19,
+    "extra_crit_damage": "1d12"
+  },
+  {
+    "name": "Burst - Shatter Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 75/300), Auto, Burst 4, Reload 8, Silent, Strength 15, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Shatter Cannon",
         "amount": "4",
         "allowOverflow": false,
         "errorBehaviour": "raise"
@@ -5982,6 +6378,154 @@
     ],
     "_v": 2
   },
+  {
+    "name": "Shatter Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Light, Reload 12, Silent, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Shatter Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 100/400), Reload 8, Silent, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Shockwhip",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d4[lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
+                  }
+                ],
+                "success": [],
+                "dc": "13"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reach, Shocking 13"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Shortbow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mighty, Silent, Special (range 60/240), Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+
+
   {
     "name": "Shotgun",
     "automation": [
@@ -7105,234 +7649,6 @@
       {
         "type": "text",
         "text": "Disguised, Finesse, Luminous"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Burst - Rotary Cannon",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 100/400), Auto, Burst, Rapid. Special, Strength 19, Two-handed\n\nRather than traditional power cells, the rotary cannon uses specialized power generator that allow it to fire continuously for 10 minutes. Replacing a power generator takes an action.\n\nThe rotary cannon requires the use of a tripod unless you meet its strength requirement, which is included in the price. Over the course of 1 minute, you can deploy or collapse the rotary cannon on the tripod. While deployed, your speed is reduced to 0."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Rapid - Rotary Cannon",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "4d6+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 100/400), Auto, Burst, Rapid. Special, Strength 19, Two-handed\n\nRather than traditional power cells, the rotary cannon uses specialized power generator that allow it to fire continuously for 10 minutes. Replacing a power generator takes an action.\n\nThe rotary cannon requires the use of a tripod unless you meet its strength requirement, which is included in the price. Over the course of 1 minute, you can deploy or collapse the rotary cannon on the tripod. While deployed, your speed is reduced to 0."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Saberaxe",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d8+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Brutal 1"
-      }
-    ],
-    "_v": 2,
-    "extra_crit_damage": "1d8"
-  },
-  {
-    "name": "Shatter Cannon",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Shatter Cannon",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 80/320), Burst 4, Reload 8, Silent, Strength 15, Two-Handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Burst - Shatter Cannon",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "1d10+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 80/320), Burst 4, Reload 8, Silent, Strength 15, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Shatter Cannon",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Shatter Pistol",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Shatter Pistol",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 40/160), Light, Reload 20, Silent"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Shatter Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Shatter Rifle",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition (range 120/480), Reload 2, Silent, Strength 13, Two-Handed"
       }
     ],
     "_v": 2
