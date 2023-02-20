@@ -3711,6 +3711,28 @@
     ]
   },
   {
+    "Class": "Sentinellight",
+    "subclass": "Iron",
+    "counters": [
+      {
+        "name": "Force-Empowered Self",
+        "level": 7,
+        "value": "proficiencyBonus",
+        "classLevel": "SentinellightLevel",
+        "reset": "short",
+        "display": "bubble"
+      },
+      {
+        "name": "Kinetic Mastery",
+        "level": 18,
+        "value": "6",
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
     "Class": "Sentineldark",
     "hitDie": "d8",
     "subclassLevel": 3,
@@ -3942,6 +3964,28 @@
         "value": "proficiencyBonus",
         "classLevel": "SentinellightLevel",
         "reset": "short",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentineldark",
+    "subclass": "Iron",
+    "counters": [
+      {
+        "name": "Force-Empowered Self",
+        "level": 7,
+        "value": "proficiencyBonus",
+        "classLevel": "SentineldarkLevel",
+        "reset": "short",
+        "display": "bubble"
+      },
+      {
+        "name": "Kinetic Mastery",
+        "level": 18,
+        "value": "6",
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
         "display": "bubble"
       }
     ]

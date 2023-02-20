@@ -1,6 +1,6 @@
 <drac2>
 args = &ARGS&
-gvar = load_json(get_gvar("c97af7b5-8734-4e3a-a361-382a7b3b3c3a"))
+gvar = load_json(get_gvar("799c0a03-762d-4fe4-b270-b640bcc3bb30")) + load_json(get_gvar("ef21fed4-8472-4b0b-a375-54ae476ef38a"))
 output = "output" in args
 counter = ""
 
