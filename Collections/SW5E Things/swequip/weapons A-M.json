@@ -2681,6 +2681,490 @@
     "_v": 2
   },
   {
+    "name": "Grenade, Corrosive",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [acid]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [acid]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes 2d8 acid damage on a failed save, or half as much as on a successful one. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Cryo",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [cold]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [cold]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes 2d6 cold damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, a creature gains 1 slowed level for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Deafening",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [sonic]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [sonic]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes 2d6 sonic damage on a failed save, or half as much as on a successful one.\n\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Electrifying",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [lightning]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Shocked",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [lightning]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 lightning damage on a failed save, or half as much as on a successful one.\n\nAdditionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Flash",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Blind",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. On a failed save, a creature is blinded for 1 minute. At the start of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Fragmentation",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d10",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [kinetic]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 kinetic damage on a failed save, or half as much as on a successful one."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Gas",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [poison]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Poisoned",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [poison]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, filling the air in a 10-foot-radius sphere with yellow-green fog for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it.\n\nWhen a creature enters the fog or starts its turn there, it creature must make a DC 14 Constitution saving throw. The creature takes 2d6 poison damage on a failed save, or half as much damage on a successful one. Additionally, on a failed save, the creature is poisoned while it is in the cloud. Droids, constructs and humanoids wearing appropriate protective equipment are unaffected."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Incendiary",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [fire]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, setting the ground in a 10-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren’t being worn or carried.\n\nWhen a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes 2d8 fire damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Ion",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [ion]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius are disabled until rebooted."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Panic",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [psychic]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Frightened",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [psychic]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Wisdom saving throw. A creature takes 2d6 psychic damage on a failed save, or half as much as on a successful one.\n\nAdditionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Plasma",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d10",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type":"damage",
+                "damage": "{damage} [energy]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2) [energy]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 energy damage on a failed save, or half as much as on a successful one."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grenade, Stun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Unconscious",
+                "duration": 10,
+                "effects": "",
+                "desc": ""
+
+              }
+            ],
+            "success": [],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. On a failed save, a creature is stunned until the end of their next turn.\n\nAdditionally, on a failed save, a creature is unconscious for 1 minute, until it takes damage, or until someone uses an action to shake or slap the creature awake. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Guard Shoto",
     "automation": [
       {
