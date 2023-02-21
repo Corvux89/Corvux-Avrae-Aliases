@@ -1,11 +1,11 @@
 Add SW5e attacks to your character.
 
-`!swequip weapon name`
+`!swequip "weapon name"`
 
-This will create the appropriate counter for weapons with ammunition (except Wrist Launcher).
+This will create the appropriate counter for weapons with ammunition.
 Adds Burst, Rapid, and Two-Handed Attack variants for those weapons that have them.
 
-Currently includes every PHB weapon.
+For weapons with ammo, the format would be "Ammo type, Subtype - Weapon". Ex: "Missile, Fragmentation - Wrist Launcher"
 
 __Available Arguments__
 `-b` add a bonus to your to-hit

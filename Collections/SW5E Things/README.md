@@ -12,13 +12,13 @@ If you see an issue, or have a request of something you would like added you can
 
 `2f0a8c13-ad94-488f-9f1b-d44af24db1c4` - Class info for `!level`
 
+`ef21fed4-8472-4b0b-a375-54ae476ef38a` - Race info for `!setrace`
+
 `662ecc7f-9b2e-4588-851d-12f199d27d0a` - Maneuvers
 
 `874901ba-d611-4418-b1c8-8ef43be23764` - Lightsaber Forms
 
 `4573b73e-b1cf-43b6-a9bf-833e54300781` - Skill's Exploits
-
-`cf4a953b-f57b-4985-b053-be39236f3ffc` - Grenades
 
 `d93a6249-468d-4bb4-92e0-2f8bb629cf04` - Module for Maneuvers
 
