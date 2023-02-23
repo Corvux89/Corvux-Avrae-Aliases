@@ -2190,7 +2190,7 @@
               }
             ],
             "miss": [],
-            "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
           }
         ]
       },

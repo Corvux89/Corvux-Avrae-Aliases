@@ -1,0 +1,63 @@
+{
+  "name": "Acidic Strike",
+  "level": 0,
+  "school": "Tech",
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Varies",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 round",
+  "ritual": false,
+  "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in a thick acidic slime until the start of your next turn. Until the start of your next turn, if the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take 1d8 acid damage. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 acid damage to the target, and the damage the target takes for taking grappling or maintaining a grapple increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+  "concentration": false,
+  "automation": [
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Acid Splash",
+          "duration": "1",
+          "save_as": "parent"
+        }
+      ]
+    },
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Acid Splash",
+          "parent": "parent",
+          "buttons": [
+            {
+              "label": "Acid Splash (Grappled Damage)",
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "1d8 [acid]",
+                      "higher": {},
+                      "cantripScale": true
+                    }
+                  ]
+                }
+              ],
+              "style": "4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
