@@ -1,6 +1,6 @@
 Aliases and snippets for the Resolute SW5E server. This is an active work in progress for the Resolute SW5E server.
 
-Some of this are updates of R to the Ichie's work, that is out of date. Some of this is my won work. 
+Some of this are updates of R to the Ichie's work, that is either out of date, or copied over so we don't have multiple collections for the same thing. Some of this is my own work.
 
 You can view the source code for these (plus some of my scratch work) on my [GitHub](https://github.com/Corvux89/Corvux-Avrae-Aliases).
 
