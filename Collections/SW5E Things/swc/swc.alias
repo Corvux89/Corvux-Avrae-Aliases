@@ -1,0 +1,66 @@
+<drac2>
+args = &ARGS&
+if not args:
+    return f'''embed -title "Need help rolling a check?" -desc "This command takes all the same arguments as `{ctx.prefix}check`.  For the Star Wars 5e system, History is replaced by Lore, Arcana is replaced by Technology, and Religion is replaced by Piloting." -footer "Alias by @R to the Ichie#6193"'''
+if args[0].lower() in "lore":
+    args.remove(args[0])
+    args.insert(0,"History")
+elif args[0].lower() in "technology":
+    args.remove(args[0])
+    args.insert(0,"Arcana")
+elif args[0].lower() in "piloting":
+    args.remove(args[0])
+    args.insert(0,"Religion")
+if args[0].lower() in "history":
+    if len(args) > 1 and args[1].lower() in "strengthdexterityintelligencewissdomcharismaconstitution":
+        if args[1].lower() in "strength":
+            ability = "Strength"
+        elif args[1].lower() in "dexterity":
+            ability = "Dexterity"
+        elif args[1].lower() in "intelligence":
+            ability = "Intelligence"
+        elif args[1].lower() in "wisdom":
+            ability = "Wisdom"
+        elif args[1].lower() in "charisma":
+            ability = "Charisma"
+        elif args[1].lower() in "constitution":
+            ability = "Constitution"
+        args.append(f'-title "[name] makes a {ability} (Lore) check!"')
+    else:
+        args.append(f'-title "[name] makes a Lore check!"')
+elif args[0].lower() in "arcana":
+    if len(args) > 1 and args[1].lower() in "strengthdexterityintelligencewissdomcharismaconstitution":
+        if args[1].lower() in "strength":
+            ability = "Strength"
+        elif args[1].lower() in "dexterity":
+            ability = "Dexterity"
+        elif args[1].lower() in "intelligence":
+            ability = "Intelligence"
+        elif args[1].lower() in "wisdom":
+            ability = "Wisdom"
+        elif args[1].lower() in "charisma":
+            ability = "Charisma"
+        elif args[1].lower() in "constitution":
+            ability = "Constitution"
+        args.append(f'-title "[name] makes a {ability} (Technology) check!"')
+    else:
+        args.append(f'-title "[name] makes a Technology check!"')
+elif args[0].lower() in "religion":
+    if len(args) > 1 and args[1].lower() in "strengthdexterityintelligencewissdomcharismaconstitution":
+        if args[1].lower() in "strength":
+            ability = "Strength"
+        elif args[1].lower() in "dexterity":
+            ability = "Dexterity"
+        elif args[1].lower() in "intelligence":
+            ability = "Intelligence"
+        elif args[1].lower() in "wisdom":
+            ability = "Wisdom"
+        elif args[1].lower() in "charisma":
+            ability = "Charisma"
+        elif args[1].lower() in "constitution":
+            ability = "Constitution"
+        args.append(f'-title "[name] makes a {ability} (Piloting) check!"')
+    else:
+        args.append(f'-title "[name] makes a Piloting check!"')
+return f'check {" ".join(args)}'
+</drac2>

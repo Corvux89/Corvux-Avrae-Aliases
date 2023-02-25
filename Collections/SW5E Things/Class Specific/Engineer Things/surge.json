@@ -1,0 +1,229 @@
+[{
+    "type": "effect",
+    "desc": "Roll on this table at the start of each of your turns for the next minute, ignoring this result on subsequent rolls.",
+    "effect": ["Surging", 10, ""]
+  },
+  {
+    "type": "text",
+    "desc": "For the next minute, you can see any invisible creature if you have line of sight to it."
+  },
+  {
+    "type": "text",
+    "desc": "A DRK-1 tracker droid appears with 5 feet of you, then disappears 1 minute later."
+  },
+  {
+    "type": "cast",
+    "desc": "You cast explosion as a 3rd-level spell centered on yourself without expending tech points.",
+    "cast": ["explosion", "3", "self"]
+  },
+  {
+    "type": "cast",
+    "desc": "You cast homing rockets as a 5th-level spell (7 darts) without expending tech points.",
+    "cast": ["homing rockets", "5", ""]
+  },
+  {
+    "type": "roll",
+    "desc": "Roll a d10. Your height changes by a number of inches equal to the roll. If odd, you shrink. If even, you grow.",
+    "roll": "1d10"
+  },
+  {
+    "type": "effect",
+    "desc": "You fall asleep standing for 1 minute or until you take damage.",
+    "effect": ["Asleep", 10, ""]
+  },
+  {
+    "type": "effect",
+    "desc": "For the next minute, you regain 5 hit points at the start of each of your turns.",
+    "effect": ["Surge - 5hp/turn", 10, ""]
+  },
+  {
+    "type": "text",
+    "desc": "You grow a long beard made of feathers that remains until you sneeze."
+  },
+  {
+    "type": "cast",
+    "desc": "You cast oil slick centered on yourself without expending tech points.",
+    "cast": ["oil slick", "1", "self"]
+  },
+  {
+    "type": "text",
+    "desc": "Creatures have disadvantage on the first saving throw they make against you in the next minute."
+  },
+  {
+    "type": "text",
+    "desc": "Your skin turns a vibrant shade of blue. Any effect that ends a curse ends this."
+  },
+  {
+    "type": "text",
+    "desc": "You grow an extra eye, granting advantage on Wisdom (Perception) checks that rely on sight for 1 minute."
+  },
+  {
+    "type": "text",
+    "desc": "For the next minute, all your tech powers with a casting time of 1 action have a casting time of 1 bonus action."
+  },
+  {
+    "type": "text",
+    "desc": "You teleport up to 60 feet to an unoccupied space of your choice that you can see."
+  },
+  {
+    "type": "effect",
+    "desc": "You take 2d10 lightning damage and are shocked for 1 minute.",
+    "effect": ["Shocked", 10, ""]
+  },
+  {
+    "type": "text",
+    "desc": "Maximize the damage of the next damaging tech power you cast within the next minute."
+  },
+  {
+    "type": "roll",
+    "desc": "Roll a d10. Your age changes by a number of years equal to the roll. If the roll is odd, you get younger (minimum 1 year old). If the roll is even, you get older.",
+    "roll": "1d10"
+  },
+  {
+    "type": "effect",
+    "desc": "You start running uncontrollably for 1 minute, moving your entire speed each turn.",
+    "effect": ["Running", 10, ""]
+  },
+  {
+    "type": "health",
+    "desc": "You regain 2d10 hit points.",
+    "roll": "2d10"
+  },
+  {
+    "type": "text",
+    "desc": "Each creature within 30 feet of you is subjected to the gleaming outline tech power for 1 minute."
+  },
+  {
+    "type": "effect",
+    "desc": "For the next minute, you can teleport up to 20 feet as a bonus action on each of your turns.",
+    "effect": ["Surge - Teleport", 10, ""]
+  },
+  {
+    "type": "effect",
+    "desc": "You are blinded and deafened for 1 minute.",
+    "effect": ["Blinded and Deafened", 10, ""]
+  },
+  {
+    "type": "text",
+    "desc": "You have disadvantage on the first ability check, attack roll, or saving throw you make each turn for 1 minute."
+  },
+  {
+    "type": "effect",
+    "desc": "You canʼt speak for the next minute. Whenever you try, pink bubbles float out of your mouth.",
+    "effect": ["Surge - Muted", 10, ""]
+  },
+  {
+    "type": "effect",
+    "desc": "A shimmering energy barrier grants you a +2 bonus to AC for 1 minute.",
+    "effect": ["Surge - Energy Barrier", 10, "-ac +2"]
+  },
+  {
+    "type": "roll",
+    "desc": "You are immune to being intoxicated by alcohol for the next 5d6 days.",
+    "roll": "5d6"
+  },
+  {
+    "type": "text",
+    "desc": "Your hair falls out but grows back within 24 hours. If you don’t have hair, you instead grow it for 24 hours."
+  },
+  {
+    "type": "effect",
+    "desc": "For 1 minute, any flammable object not worn or carried you touch bursts into flame.",
+    "effect": ["Surge - Flametouch", 10, ""]
+  },
+  {
+    "type": "ccint",
+    "desc": "You regain tech points equal to your Intelligence modifier (minimum of one)."
+  },
+  {
+    "type": "text",
+    "desc": "For the next minute, you shout whenever you speak."
+  },
+  {
+    "type": "cast",
+    "desc": "You cast smoke cloud centered on yourself without expending tech points.",
+    "cast": ["smoke cloud", 1, ""]
+  },
+  {
+    "type": "roll",
+    "desc": "Up to three creatures you choose within 30 feet of you take 4d10 lightning damage.",
+    "roll": "4d10"
+  },
+  {
+    "type": "effect",
+    "desc": "You are frightened by the nearest creature until the end of your next turn.",
+    "effect": ["Surge - Frightened", 1, ""]
+  },
+  {
+    "type": "text",
+    "desc": "Each creature within 30 feet of you becomes invisible for 1 minute, or until it attacks or casts a power."
+  },
+  {
+    "type": "effect",
+    "desc": "You gain resistance to all damage for the next minute.",
+    "effect": ["Surge", 10, " -resist acid -resist cold -resist energy -resist fire -resist force -resist ion -resist kinetic -resist lightning -resist necrotic -resist poison -resist psychic -resist sonic"]
+  },
+  {
+    "type": "roll",
+    "desc": "A random creature within 60 feet of you becomes poisoned for 1d4 hours.",
+    "roll": "1d4"
+  },
+  {
+    "type": "effect",
+    "desc": "You emit bright light in a 30-foot radius for 1 minute.",
+    "effect": ["Surge - Glowing", 10, ""]
+  },
+  {
+    "type": "cast",
+    "desc": "Each creature within 30 feet of you except you gains the benefits of mirror image for 1 minute."
+  },
+  {
+    "type": "text",
+    "desc": "Illusory butterflies and flower petals flutter in the air within 10 feet of you for the next minute."
+  },
+  {
+    "type": "text",
+    "desc": "You can take one additional action immediately."
+  },
+  {
+    "type": "roll",
+    "desc": "Each creature within 30 feet of you takes 1d10 necrotic damage and you gain hit points equal to the damage.",
+    "roll": "1d10[necrotic]"
+  },
+  {
+    "type": "cast",
+    "desc": "You cast mirror image without expending tech points.",
+    "cast": ["mirror image", "2", "self"]
+  },
+  {
+    "type": "effect",
+    "desc": "You are frozen in carbonite and paralyzed for 1 minute or until you take damage.",
+    "effect": ["Frozen", 10, ""]
+  },
+  {
+    "type": "effect",
+    "desc": "You turn invisible and can’t make sound for 1 minute, or until you attack or cast a power.",
+    "effect": ["Surge - Invisible", 10, ""]
+  },
+  {
+    "type": "effect",
+    "desc": "If you die within the next minute, you immediately come back to life as if by the defibrillate spell.",
+    "effect": ["Surge - Defibrillate", 10, ""]
+  },
+  {
+    "type": "text",
+    "desc": "Your size increases by one size category for the next minute."
+  },
+  {
+    "type": "text",
+    "desc": "You and all creatures within 30 feet of you gain vulnerability to piercing damage for the next minute."
+  },
+  {
+    "type": "text",
+    "desc": "You are surrounded by faint, ethereal music for the next minute."
+  },
+  {
+    "type": "cc",
+    "desc": "You regain half your expended tech points."
+  }
+]
