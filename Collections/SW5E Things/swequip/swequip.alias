@@ -35,7 +35,7 @@ if args.get('b'):
 
 if args.get('d'):
     for i, attack in enumerate(attacks):
-        attacks[i] = load_json(dump_json(attack).replace('d}[', 'd}' + f'+{args.last("d")} ['))
+        attacks[i] = load_json(dump_json(attack).replace('d} [', 'd}' + f'+{args.last("d")} ['))
 
 if args.get('criton'):
     for i, attack in enumerate(attacks):
