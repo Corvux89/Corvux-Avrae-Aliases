@@ -25,7 +25,3 @@ If you see an issue, or have a request of something you would like added you can
 `799c0a03-762d-4fe4-b270-b640bcc3bb30` - Weapons A-M
 
 `ef21fed4-8472-4b0b-a375-54ae476ef38a` - Weapons N-Z
-
-`6269cf7a-0df9-4789-992c-29dbc20ac053` - `!fpcast` spell list
-
-`e9fa4672-b75f-42a6-a32e-29e205ccb387` - Engineer surge table
