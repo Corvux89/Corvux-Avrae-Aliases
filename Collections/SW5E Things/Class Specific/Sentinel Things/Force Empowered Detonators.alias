@@ -42,10 +42,10 @@ if v:
     forceMod = charismaMod if get("SentineldarkLevel",0) > 0 else wisdomMod
     dc = 8 + proficiencyBonus + forceMod if odc is None else odc
     mod = max(int(charismaMod), int(wisdomMod), 0)
-    roll_str = f"1{'d4' if lvl < 5 else 'd6' if lvl < 9 else 'd8' if lvl < 13 else 'd10' if lvl < 17 else 'd12'} + {mod} [{dtype}]"
+    roll_str = f"1{'d4' if lvl < 5 else 'd6' if lvl < 9 else 'd8' if lvl < 13 else 'd10' if lvl < 17 else 'd12'} + {mod}"
     out = vroll(roll_str)
 
-    base += f''' -f "Meta|**Damage:** {out}\n**DC:** {dc}" '''
+    base += f''' -f "Meta|**Damage:** {out} [{dtype}]\n**DC:** {dc}" '''
 
     if com and targets:
         for t in coms:
@@ -53,24 +53,12 @@ if v:
 
             if tsave.total < dc or fail:
                 f_str = f"{s} Save: {tsave}; Failure!\n"
-                damage = out.total if out else ""
+                d_str = f"{out.total} [{dtype}]"
             else:
                 f_str = f"{s} Save: {tsave}; **Success!**\n"
-                damage = floor(out.total / 2) if out else ""
+                d_str = f"{floor(out.total / 2)} [{dtype}]"
 
-            if t.resistances.is_immune(dtype):
-                f_str += f"**Damage:** {damage} * 0 = `0`"
-            elif t.resistances.is_resistant(dtype):
-                d = floor(damage / 2)
-                t.modify_hp(-d)
-                f_str += f"**Damage:** {damage} / 2 = `{d}`"
-            elif t.resistances.is_vulnerable(dtype):
-                d = damage * 2
-                t.modify_hp(-d)
-                f_str += f"**Damage:** {damage} * 2 = `{d}`"
-            else:
-                t.modify_hp(-damage)
-                f_str += f"**Damage:** {damage}"
+            f_str += f"{t.damage(d_str).damage}"
 
             footer += f"{t.name}: {t.hp_str()}\n"
             base += f''' -f "{t.name}|{f_str}" '''
