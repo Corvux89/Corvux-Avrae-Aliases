@@ -24,26 +24,13 @@ if v:
         base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
         return base
 
-    base += f''' -f "Meta|**Damage:** {dmg} [{dtype}]" '''
+    d_str = f"{dmg} [{dtype}]"
+    base += f''' -f "Meta|**Damage:** {d_str}" '''
 
     if com:
         for t in targs:
-            f_str = "**Damage:** "
-            if t.resistances.is_immune(dtype):
-                f_str += f"{dmg} * 0 [{dtype}] = `0`\n"
-            elif t.resistances.is_resistant(dtype):
-                d = floor(dmg / 2)
-                t.modify_hp(-d)
-                f_str += f"{dmg} / 2 [{dtype}] = `{d}`\n"
-            elif t.resistances.is_vulnerable(dtype):
-                d = dmg * 2
-                t.modify_hp(-d)
-                f_str += f"{dmg} * 2 [{dtype}] = `{d}`\n"
-            else:
-                f_str += f"{dmg} [{dtype}] = `{dmg}`\n"
-                t.modify_hp(-dmg)
+            base += f''' -f "{t.name}|{t.damage(d_str).damage}" '''
 
-            base += f''' -f "{t.name}|{f_str}" '''
         foot_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targs])
         base += f''' -footer "{foot_str}" '''
 

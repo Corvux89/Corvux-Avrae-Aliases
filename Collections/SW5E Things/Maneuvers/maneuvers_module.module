@@ -13,19 +13,7 @@ def get_bonus(m, override = None):
     else:
         return max(m_mod, p_mod)
 
-def get_roll_str(m, cc, mi, override = None):
-    lvl = character().get_cc_max(cc)
-    out_str = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
-
-    if mi:
-        out_str += f'mi{mi}'
-
-    if m.apply_mod:
-        out_str += f'+ {get_bonus(m, override)}'
-
-    return out_str
-
-def get_roll_str2(m, lvl, override = None):
+def get_roll_str(m, lvl, mi, override = None):
     out_str = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
 
     if mi:
@@ -82,19 +70,23 @@ def calc_damage(m, damage, com):
 
     return f_str
 
-def perform2(m, coms, **kwargs):
+def perform(m, coms, **kwargs):
     output = ""
     lvl = kwargs['lvl']
     override = kwargs['override']
-    roll_str = get_roll_str2(m, lvl, override)
-    dc = kwargs['dc']
+    mi = kwargs['mi']
+    roll_str = get_roll_str(m, lvl, mi, override)
     bonus = get_bonus(m, override)
+    dc = kwargs['dc'] if kwargs['dc'] else f"{8 + character().stats.prof_bonus + bonus}"
+    fail = kwargs['fail']
+    tdis = kwargs['tdis']
+    tadv = kwargs['tadv']
     m_str=""
 
 
     if m.type in ["Heal", "T_Heal"]:
         heal = vroll(roll_str)
-        heal_str = f"|{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
+        heal_str = f"{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
         output += f''' -f "Meta|{heal_str}" '''
 
         if len(coms) > 0:
@@ -137,106 +129,35 @@ def perform2(m, coms, **kwargs):
         else:
             m_str += f"**DC:** {dc}"
 
-        if len(coms) > 0:
-            for com in coms:
-
-
-
-
-
-
-
-def perform(m, coms, roll_str, dc, fail, override = None):
-    output = ""
-    if m.type in  ["Heal", "T_Heal"]:
-        heal = vroll(roll_str)
-        if m.type == "Heal":
-            output += f''' -f "Meta|{heal} [healing]" '''
-        else:
-            output += f''' -f "Meta|{heal} [temp healing]" '''
-
-        if len(coms) > 0:
-            for com in coms:
-                f_str = f"{com.hp} + {heal.total} [healing]\n"
-                if m.effect:
-                    f_str += add_effect(m, com, override)
-                output += f''' -f "{com.name}|{f_str}" '''
-
-                if m.type == "Heal":
-                    com.modify_hp(heal.total, overflow=False)
-                elif m.type == "T_Heal":
-                    com.set_temp_hp(heal.total)
-
-    if m.save:
-        m_str=""
-        if m.type in ["Damage", "Add_Damage"]:
-            damage = vroll(roll_str)
-            m_str += f"**Damage:** {damage} {m.d_type}\n"
-
-        if m.type == "Check":
-            for (n, s) in character().skills:
-                if n.lower() == m.c_type.lower():
-                    skill = s
-                    break
-            if skill.adv:
-                    r_str = f"2d20kh1 + {skill.value}"
-            else:
-                r_str = f"1d20 + {skill.value}"
-            if m.apply_mod:
-                r_str += f'+ {get_bonus(m, override)}'
-
-            ch = vroll(r_str)
-            m_str += f"**{m.c_type} save DC:** {ch}\n"
-            dc = ch.total
-        else:
-            m_str += f"**{m.save} save DC:** {dc}\n"
-
-        if m.type == "Roll":
-            m_str += f"**Roll:** {vroll(roll_str)}\n"
-        elif m.type == "Mod":
-            m_str += f"**{m.sub} Mod:** {get_bonus(m, override)}\n"
-
         output += f''' -f "Meta|{m_str}" '''
 
-        if len(coms)>0:
+        if len(coms) > 0:
             for com in coms:
-                s = com.save(m.save)
+                s = com.save(m.save, adv=True if tadv else False if tdis else None)
+                f_str = ""
 
                 if m.type == "Add_Damage":
-                    f_str = "**Damage:** "
-                    f_str += calc_damage(m, damage, com)
+                    f_str += f"{com.damage(damage_str).damage}\n"
 
-                if s.total < dc or fail:
-                    f_str = f"{s}; *Failure!*\n"
-                    if m.type == "Damage":
-                        f_str += "**Damage:** "
-                        f_str += calc_damage(m, damage, com)
+                if s.total < int(dc) or fail:
+                    f_str += f"{s}; *Failure!*\n"
+                    if m.type=="Damage":
+                        f_str += f"{com.damage(damage_str).damage}\n"
 
                     if m.effect:
                         f_str += add_effect(m, com, override)
-
-                    output += f''' -f "{com.name}|{f_str}" '''
-
                 else:
-                    output += f''' -f "{com.name}|{s}; **Success!**" '''
+                    f_str += f"{s}; **Success!**\n"
+
+                output += f''' -f "{com.name}|{f_str}" '''
     else:
-        if m.type == "Damage":
-            damage = vroll(roll_str)
-            if m.d_type:
-                output += f''' -f "Meta|**Damage:** {damage} [{m.d_type}]" '''
-            else:
-                output += f''' -f "Meta|**Damage:** {damage}" '''
-
-        elif m.type == "Roll":
-            output += f''' -f "Meta|**Roll:** {vroll(roll_str)}" '''
-        elif m.type == "Mod":
-            output += f''' -f "Meta|**{m.sub} Mod:** {get_bonus(m)}" '''
-
+        output += f''' -f "Meta|{m_str}" '''
         if len(coms)>0:
             for com in coms:
-                f_str = ""
+                f_str=""
+
                 if m.type in ["Damage", "Add_Damage"]:
-                    f_str += f"**Damage:** {calc_damage(m, damage, com)}"
+                    f_str += f"{com.damage(damage_str).damage}\n"
 
                 if m.effect and m.type not in ["Heal", "T_Heal"]:
                     f_str += add_effect(m, com, override)

@@ -41,6 +41,7 @@ if v:
         roll_str += f"+ {bonus}"
 
     dmg = vroll(roll_str)
+    d_str = f"{dmg.total} [{dtype}]"
 
     base += f''' -f "Meta|**Damage:** {dmg} [{dtype}]\n**DC:** {dc}" '''
 
@@ -55,20 +56,7 @@ if v:
                 f_str = f"DEX Save: {s}; **Success!**\n"
                 damage = floor(dmg.total / 2)
 
-            f_str += "**Damage:** "
-            if t.resistances.is_immune(dtype):
-                f_str += f"{damage} * 0 [{dtype}] = `0`\n"
-            elif t.resistances.is_resistant(dtype):
-                d = floor(damage / 2)
-                t.modify_hp(-d)
-                f_str += f"{damage} / 2 [{dtype}] = `{d}`\n"
-            elif t.resistances.is_vulnerable(dtype):
-                d = damage * 2
-                t.modify_hp(-d)
-                f_str += f"{damage} * 2 [{dtype}] = `{d}`\n"
-            else:
-                f_str += f"{damage} [{dtype}] = `{damage}`\n"
-                t.modify_hp(-damage)
+            f_str += f"{t.damage(d_str).damage}"
 
             base += f''' -f "{t.name}|{f_str}" '''
         foot_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targs])

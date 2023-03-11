@@ -5,6 +5,8 @@ a = argparse(&ARGS&)
 gvar = load_json(get_gvar("662ecc7f-9b2e-4588-851d-12f199d27d0a"))
 using(sup='d93a6249-468d-4bb4-92e0-2f8bb629cf04')
 fail = 'fail' in &ARGS&
+tadv = 'tadv' in &ARGS&
+tdis = 'tdis' in &ARGS&
 targets = a.get('t')
 i = '-i' in &ARGS&
 cc = "Superiority Dice"
@@ -12,6 +14,7 @@ f_add = ["Damage", "Heal", "Add_Damage", "T_Heal"]
 mi = a.last('mi')
 v = c.cc_exists(cc) or i
 override = a.last('type')
+dc = None if not a.last('dc') else int(a.last('dc'))
 
 if not com:
     return err("You must be in combat")
@@ -39,11 +42,7 @@ if v:
     if m is None or m == "":
         return err(f"Maneuver not found/supported")
 
-    mod = sup.get_bonus(m, override)
-    dc = 8 + proficiencyBonus + mod if not a.last('dc') else int(a.last('dc'))
-    roll_str = sup.get_roll_str(m, cc, mi, override)
-
-    base += sup.perform(m, coms, roll_str, dc, fail, override)
+    base += sup.perform(m, coms, lvl=c.get_cc_max(cc), override=override, dc=dc, fail=fail, tdis=tdis, tadv=tadv, mi=mi)
 
     base += f''' -title "{name} uses a {cc} die to {m.name}" '''
     base += f''' -f "{m.name} Effect|{m.description}" '''
