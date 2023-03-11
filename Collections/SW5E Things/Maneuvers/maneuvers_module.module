@@ -25,6 +25,18 @@ def get_roll_str(m, cc, mi, override = None):
 
     return out_str
 
+def get_roll_str2(m, lvl, override = None):
+    out_str = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
+
+    if mi:
+        out_str += f'mi{mi}'
+
+    if m.apply_mod:
+        out_str += f'+ {get_bonus(m, override)}'
+
+    return out_str
+
+
 def add_effect(m, com, override=None):
     output = ""
     peff = ""
@@ -66,9 +78,72 @@ def calc_damage(m, damage, com):
             com.modify_hp(-damage.total)
     else:
         com.modify_hp(-damage.total)
-        f_str += f"'{damage.total}\n'"
+        f_str += f"'{damage.total}`\n"
 
     return f_str
+
+def perform2(m, coms, **kwargs):
+    output = ""
+    lvl = kwargs['lvl']
+    override = kwargs['override']
+    roll_str = get_roll_str2(m, lvl, override)
+    dc = kwargs['dc']
+    bonus = get_bonus(m, override)
+    m_str=""
+
+
+    if m.type in ["Heal", "T_Heal"]:
+        heal = vroll(roll_str)
+        heal_str = f"|{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
+        output += f''' -f "Meta|{heal_str}" '''
+
+        if len(coms) > 0:
+            for com in coms:
+                f_str = f"{com.hp} + {heal_str}\n"
+                if m.effect:
+                    f_str += add_effect(m, com, override)
+                output+= f''' -f "{com.name}|{f_str}" '''
+
+                if m.type == "Heal":
+                    com.modify_hp(heal.total, overflow=False)
+                elif m.type == "T_Heal":
+                    com.set_temp_hp(heal.total)
+    elif m.type in ["Damage", "Add_Damage"]:
+        damage = vroll(roll_str)
+        damage_str = f"{damage.total} {'' if not m.get('d_type') else f'[{m.d_type}]'}"
+        m_str+= f"**Damage:** {damage_str}\n"
+    elif m.type == "Roll":
+        m_str += f"**Roll:** {vroll(roll_str)}\n"
+    elif m.type == "Mod":
+        m_str += f"**Mod: {bonus}\n"
+
+    if m.save:
+        if m.type == "Check":
+            for (n, s) in character().skills:
+                if n.lower() == m.c_type.lower():
+                    skill = s
+                    break
+            if skill.adv:
+                r_str = f"2d20kh1"
+            else:
+                r_str = f"1d20"
+            r_str += f" + {skill.value}"
+            if m.apply_mod:
+                r_str += f" + {bonus}"
+
+            chk = vroll(r_str)
+            m_str += f"**DC:** {chk}"
+            dc = chk.total
+        else:
+            m_str += f"**DC:** {dc}"
+
+        if len(coms) > 0:
+            for com in coms:
+
+
+
+
+
 
 
 def perform(m, coms, roll_str, dc, fail, override = None):

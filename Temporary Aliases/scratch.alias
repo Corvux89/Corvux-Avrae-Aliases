@@ -1,1 +1,21 @@
-!snippet cs -d1 1d8 -f "Colossus Slayer|Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hit point maximum. You can deal this extra damage only once per turn, and this damage is the same type as the weapon’s damage."
+<drac2>
+a = argparse(&ARGS&)
+c = character()
+com = combat()
+targ = com.get_combatant(a.last('t'))
+base = f'''embed -thumb {image} -color {color}'''
+base += f''' -title "Testing" '''
+base += f''' -desc "Testing stuff" '''
+
+r = vroll("1d20 + 3")
+
+damage = f"{r.total} [fire]"
+
+base += f''' -f "test|{damage}" '''
+
+base += f''' -f "{targ.name}|{targ.damage(damage).damage}" '''
+
+base += f''' -footer "{targ.name}|{targ.hp_str()}" '''
+
+return base
+</drac2>
