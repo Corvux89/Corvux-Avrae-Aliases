@@ -14,7 +14,7 @@ def get_bonus(m, override = None):
         return max(m_mod, p_mod)
 
 def get_roll_str(m, lvl, mi, override = None):
-    out_str = "1d12" if lvl > 10 else "1d10" if lvl > 8 else "1d8" if lvl > 6 else "1d6" if lvl > 4 else "1d4"
+    out_str = "1d12" if lvl > 5 else "1d10" if lvl > 4 else "1d8" if lvl > 3 else "1d6" if lvl > 2 else "1d4"
 
     if mi:
         out_str += f'mi{mi}'
@@ -151,11 +151,11 @@ def perform(m, coms, **kwargs):
 
                 output += f''' -f "{com.name}|{f_str}" '''
     else:
-        output += f''' -f "Meta|{m_str}" '''
+        if m.type not in ["Heal", "T_Heal"]:
+            output += f''' -f "Meta|{m_str}" '''
         if len(coms)>0:
             for com in coms:
                 f_str=""
-
                 if m.type in ["Damage", "Add_Damage"]:
                     f_str += f"{com.damage(damage_str).damage}\n"
 

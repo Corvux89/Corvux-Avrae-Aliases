@@ -16,7 +16,9 @@ v = c.cc_exists(cc) or i
 override = a.last('type')
 dc = None if not a.last('dc') else int(a.last('dc'))
 
-if not com:
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+elif not com:
     return err("You must be in combat")
 
 coms  = [com.get_combatant(x) for x in targets] if com else []
@@ -52,9 +54,6 @@ if v:
     if len(coms)>0 and m.type in f_add:
         f_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in coms])
         base += f''' -footer "{f_str}" '''
-
-if not c.cc_exists(cc):
-    base += f''' -title "{name} has no custom counter {cc}!" '''
 
 if not i:
     c.mod_cc(cc, -1)
