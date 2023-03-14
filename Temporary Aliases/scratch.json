@@ -1,43 +1,39 @@
 {
-    "name": "Pressure Crush",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+  "name": "Splitsaber",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "2d4+{strengthMod} [energy]",
+              "overheal": false
+            }
+            {
+              "type": "save",
+              "stat": "dex",
+              "dc": "min(8+{strengthMod}, 13)",
+              "success": [],
+              "fail": [
+                {
+                  "type": "daa"
+                }
+              ]
+            }
+          ],
+          "miss": [],
+          "attackBonus": "proficiencyBonus+strengthMod"
+        }
+      ]
     },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You attempt to crush the body of a creature you touch. The target must make a Strength saving throw. If the creature is grappled or restrained by you or an effect you control, it makes the saving throw with disadvantage. On a failed save, the creature takes 1d12 kinetic damage.\r\n\r\nThis power's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d12",
-        "name": "damage",
-        "cantripScale": true
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "str",
-            "fail" : [
-              {
-                "type": "damage",
-                "damage": "{damage} [kinetic]"
-              }
-            ],
-            "success": []
-          }
-        ]
-      }
-    ]
-  }
+    {
+      "type": "text",
+      "text": "Double (2d4 energy), Interlocking, Luminous"
+    }
+  ],
+  "_v": 2
+}

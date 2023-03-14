@@ -2593,6 +2593,34 @@
     "_v": 2
   },
   {
+    "name": "Two-Handed Splitsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Double (2d4 energy), Interlocking, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Splitshoto",
     "automation": [
       {
@@ -2740,7 +2768,7 @@
     "_v": 2
   },
   {
-    "name": "Splitsaber",
+    "name": "Sunsaber",
     "automation": [
       {
         "type": "target",
@@ -2768,7 +2796,7 @@
     "_v": 2
   },
   {
-    "name": "Two-Handed Splitsaber",
+    "name": "Two-Handed Sunsaber",
     "automation": [
       {
         "type": "target",
