@@ -1,263 +1,43 @@
 {
-  "automation": [
-    {
-      "target": "each",
-      "sortBy": null,
-      "type": "target",
-      "effects": [
-        {
-          "buttons": [
-            {
-              "defaultAttackBonus": null,
-              "label": "Moonbeam (End of Turn)",
-              "verb": "ends their turn in the Moonbeam",
-              "style": "4",
-              "defaultDC": "caster.spellbook.dc or 10",
-              "defaultCastingMod": null,
-              "automation": [
-                {
-                  "name": "damage",
-                  "dice": "2d10 [radiant]",
-                  "higher": {
-                    "9": "7d10 [radiant]",
-                    "8": "6d10 [radiant]",
-                    "7": "5d10 [radiant]",
-                    "6": "4d10 [radiant]",
-                    "5": "3d10 [radiant]",
-                    "4": "2d10 [radiant]",
-                    "3": "1d10 [radiant]"
-                  },
-                  "type": "roll"
-                },
-                {
-                  "target": "self",
-                  "type": "target",
-                  "effects": [
-                    {
-                      "condition": "caster.creature_type and ('shapechanger' in caster.creature_type.lower())",
-                      "errorBehaviour": "false",
-                      "onFalse": [
-                        {
-                          "stat": "con",
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({damage})/2"
-                            }
-                          ],
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{damage}"
-                            }
-                          ],
-                          "type": "save"
-                        }
-                      ],
-                      "type": "condition",
-                      "onTrue": [
-                        {
-                          "stat": "con",
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({damage})/2"
-                            }
-                          ],
-                          "adv": -1,
-                          "type": "save",
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{damage}"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "text": "asdf",
-                  "type": "text"
-                }
-              ]
-            },
-            {
-              "defaultAttackBonus": null,
-              "label": "Leave Moonbeam",
-              "verb": "leaves the range of Moonbeam",
-              "style": "3",
-              "defaultDC": null,
-              "defaultCastingMod": null,
-              "automation": [
-                {
-                  "removeParent": null,
-                  "type": "remove_ieffect"
-                }
-              ]
-            }
-          ],
-          "type": "ieffect2",
-          "effects": {
-            "attack_advantage": -1
-          },
-          "desc": "Any creature that starts its turn in the area must succeed on a Constitution saving throw or take radiant damage",
-          "name": "In a Moonbeam",
-          "duration": 11
-        }
-      ]
+    "name": "Pressure Crush",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
     },
-    {
-      "target": "self",
-      "type": "target",
-      "effects": [
-        {
-          "stacking": false,
-          "buttons": null,
-          "parent": null,
-          "type": "ieffect2",
-          "attacks": [
-            {
-              "attack": {
-                "verb": "shifts their",
-                "automation": [
-                  {
-                    "target": "each",
-                    "sortBy": null,
-                    "type": "target",
-                    "effects": [
-                      {
-                        "buttons": [
-                          {
-                            "defaultAttackBonus": null,
-                            "label": "Moonbeam (End of Turn)",
-                            "verb": "ends their turn in the Moonbeam",
-                            "style": "4",
-                            "defaultDC": "caster.spellbook.dc or 10",
-                            "defaultCastingMod": null,
-                            "automation": [
-                              {
-                                "name": "damage",
-                                "dice": "2d10 [radiant]",
-                                "higher": {
-                                  "9": "7d10 [radiant]",
-                                  "8": "6d10 [radiant]",
-                                  "7": "5d10 [radiant]",
-                                  "6": "4d10 [radiant]",
-                                  "5": "3d10 [radiant]",
-                                  "4": "2d10 [radiant]",
-                                  "3": "1d10 [radiant]"
-                                },
-                                "type": "roll"
-                              },
-                              {
-                                "target": "self",
-                                "type": "target",
-                                "effects": [
-                                  {
-                                    "condition": "caster.creature_type and ('shapechanger' in caster.creature_type.lower())",
-                                    "errorBehaviour": "false",
-                                    "onFalse": [
-                                      {
-                                        "stat": "con",
-                                        "success": [
-                                          {
-                                            "type": "damage",
-                                            "damage": "({damage})/2"
-                                          }
-                                        ],
-                                        "fail": [
-                                          {
-                                            "type": "damage",
-                                            "damage": "{damage}"
-                                          }
-                                        ],
-                                        "type": "save"
-                                      }
-                                    ],
-                                    "type": "condition",
-                                    "onTrue": [
-                                      {
-                                        "stat": "con",
-                                        "success": [
-                                          {
-                                            "type": "damage",
-                                            "damage": "({damage})/2"
-                                          }
-                                        ],
-                                        "adv": -1,
-                                        "type": "save",
-                                        "fail": [
-                                          {
-                                            "type": "damage",
-                                            "damage": "{damage}"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "text": "asdf",
-                                "type": "text"
-                              }
-                            ]
-                          },
-                          {
-                            "defaultAttackBonus": null,
-                            "label": "Leave Moonbeam",
-                            "verb": "leaves the range of Moonbeam",
-                            "style": "3",
-                            "defaultDC": null,
-                            "defaultCastingMod": null,
-                            "automation": [
-                              {
-                                "removeParent": null,
-                                "type": "remove_ieffect"
-                              }
-                            ]
-                          }
-                        ],
-                        "type": "ieffect2",
-                        "effects": {
-                          "attack_advantage": -1
-                        },
-                        "desc": "Any creature that starts its turn in the area must succeed on a Constitution saving throw or take radiant damage",
-                        "name": "In a Moonbeam",
-                        "duration": 11
-                      }
-                    ]
-                  },
-                  {
-                    "text": "asdf",
-                    "type": "text"
-                  }
-                ],
-                "proper": false,
-                "name": "Moonbeam",
-                "_v": 2
-              },
-              "defaultAttackBonus": null,
-              "defaultCastingMod": null,
-              "defaultDC": null
-            }
-          ],
-          "effects": null,
-          "desc": "You can use an action to move the beam up to 60 feet in any direction",
-          "end": false,
-          "name": "Silvery Beam",
-          "duration": 10,
-          "conc": false
-        }
-      ]
-    },
-    {
-      "text": "asdf",
-      "type": "text"
-    }
-  ],
-  "name": "Moonbeam (Test)",
-  "_v": 2
-}
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You attempt to crush the body of a creature you touch. The target must make a Strength saving throw. If the creature is grappled or restrained by you or an effect you control, it makes the saving throw with disadvantage. On a failed save, the creature takes 1d12 kinetic damage.\r\n\r\nThis power's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d12",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "str",
+            "fail" : [
+              {
+                "type": "damage",
+                "damage": "{damage} [kinetic]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      }
+    ]
+  }

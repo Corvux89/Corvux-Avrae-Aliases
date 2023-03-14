@@ -1,21 +1,33 @@
 <drac2>
-a = argparse(&ARGS&)
 c = character()
 com = combat()
-targ = com.get_combatant(a.last('t'))
+a = argparse(&ARGS&)
+targets = a.get('t')
+i = '-i' in &ARGS&
+cc = "Fyrnock's Instinct"
+dtype = "kinetic" if not a.last('dtype') else a.last('dtype')
+
+if com:
+    targs  = [com.get_combatant(x) for x in targets] if com else []
+
+    for t in targs:
+            if not t:
+                return err(f"Invalid target/targets")
+
 base = f'''embed -thumb {image} -color {color}'''
-base += f''' -title "Testing" '''
-base += f''' -desc "Testing stuff" '''
 
-r = vroll("1d20 + 3")
+dmg = vroll("1d6")
+d_str = f"-{dmg.total} [healing]"
+base += f''' -f "Meta|**Damage:** {d_str}" '''
 
-damage = f"{r.total} [fire]"
+if com:
+    for t in targs:
+        base += f''' -f "{t.name}|{t.damage(d_str, overheal=False).damage}" '''
 
-base += f''' -f "test|{damage}" '''
+    foot_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targs])
+    base += f''' -footer "{foot_str}" '''
 
-base += f''' -f "{targ.name}|{targ.damage(damage).damage}" '''
-
-base += f''' -footer "{targ.name}|{targ.hp_str()}" '''
+base += f''' -title "{name} uses their test alias!!" '''
 
 return base
 </drac2>

@@ -47,29 +47,6 @@ def add_effect(m, com, override=None):
 
     return output
 
-# I hate this function..I'll eventually make it better but it works for now
-def calc_damage(m, damage, com):
-    f_str = ""
-    if m.d_type != "":
-        if com.resistances.is_immune(m.d_type):
-            f_str += f"{damage.total} * 0 [{m.d_type}] = `0`\n"
-        elif com.resistances.is_resistant(m.d_type):
-            d = floor(damage.total / 2)
-            f_str += f"{damage.total} / 2 [{m.d_type}] = `{d}`\n"
-            com.modify_hp(-d)
-        elif com.resistances.is_vulnerable(m.d_type):
-            d = floor(damage.total * 2)
-            f_str += f"{damage.total} * 2 [{m.d_type}] = `{d}`\n"
-            com.modify_hp(-d)
-        else:
-            f_str += f"{damage.total} [{m.d_type}] = `{damage.total}`\n"
-            com.modify_hp(-damage.total)
-    else:
-        com.modify_hp(-damage.total)
-        f_str += f"'{damage.total}`\n"
-
-    return f_str
-
 def perform(m, coms, **kwargs):
     output = ""
     lvl = kwargs['lvl']
@@ -86,24 +63,26 @@ def perform(m, coms, **kwargs):
 
     if m.type in ["Heal", "T_Heal"]:
         heal = vroll(roll_str)
-        heal_str = f"{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
-        output += f''' -f "Meta|{heal_str}" '''
+        heal_str = f"-{heal.total} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
+        output += f''' -f "Meta|{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}" '''
 
         if len(coms) > 0:
             for com in coms:
-                f_str = f"{com.hp} + {heal_str}\n"
+                f_str = ""
+                if m.type == "Heal":
+                    f_str += f"{com.damage(heal_str, overheal=False).damage}\n"
+                elif m.type == "T_Heal":
+                    f_str += f"**Temp HP**: {heal_str}\n"
+                    com.set_temp_hp(heal.total)
+
                 if m.effect:
                     f_str += add_effect(m, com, override)
                 output+= f''' -f "{com.name}|{f_str}" '''
 
-                if m.type == "Heal":
-                    com.modify_hp(heal.total, overflow=False)
-                elif m.type == "T_Heal":
-                    com.set_temp_hp(heal.total)
     elif m.type in ["Damage", "Add_Damage"]:
         damage = vroll(roll_str)
         damage_str = f"{damage.total} {'' if not m.get('d_type') else f'[{m.d_type}]'}"
-        m_str+= f"**Damage:** {damage_str}\n"
+        m_str+= f"**Damage:** {damage} {'' if not m.get('d_type') else f'[{m.d_type}]'}\n"
     elif m.type == "Roll":
         m_str += f"**Roll:** {vroll(roll_str)}\n"
     elif m.type == "Mod":
