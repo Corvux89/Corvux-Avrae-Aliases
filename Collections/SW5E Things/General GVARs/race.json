@@ -207,7 +207,7 @@
         "name": "Defiant",
         "reset": "short",
         "level": 1,
-        "use": "",
+        "use": "racecast 'Defiant' [-t target]",
         "value": 1
       }
     ],

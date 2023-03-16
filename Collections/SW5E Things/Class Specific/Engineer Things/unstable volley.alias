@@ -41,8 +41,6 @@ if v:
         roll_str += f"+ {bonus}"
 
     dmg = vroll(roll_str)
-    d_str = f"{dmg.total} [{dtype}]"
-
     base += f''' -f "Meta|**Damage:** {dmg} [{dtype}]\n**DC:** {dc}" '''
 
     if com:
@@ -51,10 +49,10 @@ if v:
 
             if s.total < dc or fail:
                 f_str = f"DEX Save: {s}; Failure!\n"
-                damage = dmg.total
+                d_str = f"{dmg.total} [{dtype}]"
             else:
                 f_str = f"DEX Save: {s}; **Success!**\n"
-                damage = floor(dmg.total / 2)
+                d_str = f"{floor(dmg.total / 2)} [{dtype}]"
 
             f_str += f"{t.damage(d_str).damage}"
 
