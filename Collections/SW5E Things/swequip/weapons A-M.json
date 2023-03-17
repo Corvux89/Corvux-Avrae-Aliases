@@ -1310,7 +1310,7 @@
     "_v": 2
   },
   {
-    "name": "Compound Bow",
+    "name": "Arrow - Compound Bow",
     "automation": [
       {
         "type": "target",
@@ -1323,6 +1323,158 @@
                 "type": "damage",
                 "damage": "1d8+{max(dexterityMod, strengthMod)} [kinetic]",
                 "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(dexterityMod, strengthMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mighty, Silent, Special (range 75/300), Two-handed\n\nRather than traditional power cells, the compound bow fires specialized projectiles in the form of arrows. You can make a ranged weapon attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one arrow. \n\nDrawing the ammunition from a quiver, case, or other container is part of the attack. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Arrow, Combustive - Compound Bow",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8 [fire]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "1",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(dexterityMod, strengthMod)} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(dexterityMod, strengthMod)"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mighty, Silent, Special (range 75/300), Two-handed\n\nRather than traditional power cells, the compound bow fires specialized projectiles in the form of arrows. You can make a ranged weapon attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one arrow. \n\nDrawing the ammunition from a quiver, case, or other container is part of the attack. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Arrow, Electroshock - Compound Bow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(dexterityMod, strengthMod)} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d3[ion]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "An electroshock arrow is a specialized arrow for use with bow weapons. When you hit a creature with this arrow, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d3 ion damage and becomes stunned until the start of its next turn. On a successful save, a creature takes half damage and isn’t stunned. Once the arrow hits a target, it no longer gives a bonus."
+                  }
+                ],
+                "success": [],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(dexterityMod, strengthMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Mighty, Silent, Special (range 75/300), Two-handed\n\nRather than traditional power cells, the compound bow fires specialized projectiles in the form of arrows. You can make a ranged weapon attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one arrow. \n\nDrawing the ammunition from a quiver, case, or other container is part of the attack. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Arrow, Noisemaker - Compound Bow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(dexterityMod, strengthMod)} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "meta": [],
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "meta": [],
+                    "damage": "1d6[sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "text",
+                    "meta": [],
+                    "text": "A noisemaker arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it generates an explosion of sound that can be heard up to 100 feet away. If the target of the attack is a creature, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the end of its next turn. Once the arrow hits a target, it no longer gives a bonus."
+                  }
+                ],
+                "success": [],
+                "dc": "14"
               }
             ],
             "miss": [],
