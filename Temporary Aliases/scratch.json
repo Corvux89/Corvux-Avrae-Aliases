@@ -1,0 +1,30 @@
+{
+  "name": "Arkanian Brilliance",
+  "level": 0,
+  "school": "A",
+  "automation": [
+    {
+      "type": "roll",
+      "dice": "1d4",
+      "name": "Bonus"
+    },
+    {
+      "type": "text",
+      "text": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest."
+    }
+  ],
+  "classes": "",
+  "subclasses": "",
+  "casttime": "free action",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": false
+  },
+  "duration": "Instantaneous",
+  "ritual": false,
+  "description": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest.",
+  "higherlevels": "",
+  "concentration": false
+}

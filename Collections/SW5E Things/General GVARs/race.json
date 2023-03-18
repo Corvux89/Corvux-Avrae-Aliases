@@ -207,7 +207,7 @@
         "name": "Defiant",
         "reset": "short",
         "level": 1,
-        "use": "racecast 'Defiant' [-t target]",
+        "use": "racecast 'Defiant'",
         "value": 1
       }
     ],
@@ -574,9 +574,9 @@
     "counters": [
       {
         "name": "Arkanian Brilliance",
-        "reset": "long",
+        "reset": "short",
         "level": 1,
-        "use": "arkanianBrilliance",
+        "use": "racecast 'Arkanian Billiance'",
         "value": 1
       }
     ],

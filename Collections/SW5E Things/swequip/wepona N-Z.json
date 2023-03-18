@@ -668,6 +668,331 @@
     "_v": 2
   },
   {
+    "name": "Rapid - Cartridge, Corrosive - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      },
+      {
+        "type": "counter",
+        "counter": "Revolver",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      },
+      {
+        "type": "counter",
+        "counter": "Revolver",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": "",
+                    "end": false,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": "",
+                    "end": false,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      },
+      {
+        "type": "counter",
+        "counter": "Revolver",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Rocket, Fragmentation - Rocket Launcher",
     "automation": [
       {
@@ -724,7 +1049,7 @@
       },
       {
         "type": "text",
-        "text": "Special (range 150/600), Strength 13, Reload 1, Two-handed"
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
       }
     ],
     "_v": 2
@@ -786,7 +1111,7 @@
       },
       {
         "type": "text",
-        "text": "Special (range 150/600), Reload 1, Strength 13, Two-handed"
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
       }
     ],
     "_v": 2
@@ -848,7 +1173,7 @@
       },
       {
         "type": "text",
-        "text": "Special (range 150/600), Reload 1, Strength 13, Two-handed"
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
       }
     ],
     "_v": 2

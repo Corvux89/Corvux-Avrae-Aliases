@@ -38,5 +38,13 @@
     ],
     "feature": "Defiant",
     "featureDesc": "Humans are known to be stubborn and often refuse to give up, even against the worst odds. When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a d4 and add it to their roll (no action required). Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+  },
+  {
+    "name": "arkanian",
+    "limitedUse": [
+      "Arkanian Brilliance"
+    ],
+    "feature": "Arkanian Brilliance",
+    "featureDesc": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest."
   }
 ]
