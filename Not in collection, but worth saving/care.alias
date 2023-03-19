@@ -1,0 +1,25 @@
+<drac2>
+c = character()
+a = argparse(&ARGS&)
+fail = 'fail' in &ARGS&
+adv = 'adv' in &ARGS&
+dis = 'dis' in &ARGS&
+dc = 19 if not a.last('dc') else int(a.last('dc'))
+
+
+base = f'''embed -thumb {image} -color {color}'''
+
+base += f''' -title "{name} rolls for caring!" '''
+base += f''' -f "Meta|**DC**: {dc}" '''
+
+out = vroll("1d20")
+
+if out.total < dc or fail:
+    f_str = f"Do I care?: {out}; Failure!\n"
+else:
+    f_str = f"Do I care?: {out}; **Success!\n**"
+
+base += f''' -f "Caring|{f_str}" '''
+
+return base
+</drac2>
