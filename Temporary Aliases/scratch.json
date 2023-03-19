@@ -1,30 +1,56 @@
 {
-  "name": "Arkanian Brilliance",
-  "level": 0,
-  "school": "A",
-  "automation": [
-    {
-      "type": "roll",
-      "dice": "1d4",
-      "name": "Bonus"
-    },
-    {
-      "type": "text",
-      "text": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest."
-    }
-  ],
-  "classes": "",
+  "name": "Force Barrier",
+  "level": 2,
+  "school": "Force",
+  "classes": "Light",
   "subclasses": "",
-  "casttime": "free action",
-  "range": "Self",
+  "casttime": "1 action",
+  "range": "30 feet",
   "components": {
     "verbal": false,
     "somatic": false,
-    "material": false
+    "material": ""
   },
-  "duration": "Instantaneous",
+  "duration": "8 hours",
   "ritual": false,
-  "description": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest.",
-  "higherlevels": "",
-  "concentration": false
+  "description": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
+  "concentration": false,
+  "automation": [
+    {
+      "type": "variable",
+      "name": "increase",
+      "value": 5,
+      "higher": {
+        "3": 10,
+        "4": 15,
+        "5": 20,
+        "6": 25,
+        "7": 30,
+        "8": 35,
+        "9": 40
+      }
+    },
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Force Barrier",
+          "duration": 800,
+          "effects": {
+            "max_hp_bonus": "{increase}"
+          }
+        },
+        {
+          "type": "damage",
+          "damage": "-{increase} [healing]"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration."
+    }
+  ]
 }
