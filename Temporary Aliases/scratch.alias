@@ -1,0 +1,5 @@
+!snippet ds <drac2>
+cc = 'Force Points'
+ch = character()
+if ch.cc_exists(cc):
+  return f''' -phrase "They use {get('their', 'their')} double strike!" -d "{'1d4' if level < 5 else '1d6' if level < 9 else '1d8' if level < 13 else '1d10'}{ch.mod_cc(cc, -1)}" -f "{cc}|{ch.cc_str(cc)} (-1)\n\nWhen you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled." '''
