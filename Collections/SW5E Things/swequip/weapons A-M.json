@@ -3934,6 +3934,13 @@
             ],
             "miss": [],
             "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Hand Blaster",
+            "amount": 1,
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
       },

@@ -6,7 +6,7 @@ targ = a.last('t')
 lvl = int(get("ScholarLevel",0))
 eff = "Critical Analysis"
 dur = 10
-mod = str(intelligenceMod)
+mod = str(intelligenceMod) if not a.last('mod') else int(a.last('mod'))
 
 v = lvl >= 1
 
@@ -21,8 +21,8 @@ if com:
 if v:
     if com:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
-        peff = com.me.add_effect(eff,duration=dur)
-        tar.add_effect(eff,parent=peff,duration=dur,desc=f"Modifier is {mod}")
+        peff = com.me.add_effect(eff,duration=dur,desc=f"Currently analyzing {tar.name}")
+        tar.add_effect(eff,parent=peff,duration=dur,desc=f"Critical Analysis modifier is {mod}")
 
         if not tar.monster_name:
             tar.add_effect("Critically Analyzed", desc=f"{name} has used Critical Analysis on you. Cannot benefit again until you complete a short/long rest"

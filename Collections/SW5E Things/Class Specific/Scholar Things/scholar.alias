@@ -1,15 +1,15 @@
 <drac2>
 
-cm = "sch"
+cm = ctx.prefix + ctx.alias
 cl = "Scholar"
 
 base = f'''embed -thumb {image} -color {color}'''
 
 base += f''' -title "How to use your {cl} skills" '''
 
-base += f''' -desc "Here are the subcommands to `!{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `!help {cm} [command]" '''
+base += f''' -desc "Here are the subcommands to `{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `{ctx.prefix}help {ctx.alias} [command]`" '''
 
-base += f''' -f "Analysis|To use Critical Analysis: `!{cm} analysis -t [target]`" '''
+base += f''' -f "Analysis|To use Critical Analysis: `{cm} analysis [-t target] [-mod mod]`\nUse -t to target all targets, and -mod to override the default modifier" '''
 
 return base
 </drac2>

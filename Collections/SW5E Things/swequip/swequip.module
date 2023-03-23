@@ -2,15 +2,8 @@ def processAttacks(attacks, args):
     out = []
     for i, a in enumerate(attacks):
         attack = dump_json(a)
-        nAttack = ""
         counter = ""
         prop = str(a.automation[len(a.automation)-1].get("text")).lower()
-
-        if "counter" in str(a):
-            index = attack.find('"counter": "') + 12
-            counter = str(attack[index:attack[index:].find('"')+index])
-            reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
-            character().create_cc(counter, 0, reload, None, 'bubble', reload)
 
         if args.get('b'):
             attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
@@ -28,36 +21,34 @@ def processAttacks(attacks, args):
             attack=attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
 
         if args.get('offhand') and "light" in prop:
-            nAttack=attack
-            nAttack=nAttack.replace('"name": "', '"name": "Offhand ')
+            attack=attack.replace('"name": "', '"name": "Offhand ')
+            if "counter" in str(a):
+                    attack=attack.replace('"counter": "', '"counter": "Offhand ')
             if "finesse" in prop:
-                nAttack = nAttack.replace('+{max(strengthMod,dexterityMod)}', '')
+                attack = attack.replace('+{max(strengthMod,dexterityMod)}', '')
             elif "heavy" in prop:
-                nAttack = nAttack.replace('+{ceil(strengthMod*1.5)}', '')
-            nAttack = nAttack.replace('+{dexterityMod}', '')
-            nAttack = nAttack.replace('+{strengthMod}', '')
+                attack = attack.replace('+{ceil(strengthMod*1.5)}', '')
+            attack = attack.replace('+{dexterityMod}', '')
+            attack = attack.replace('+{strengthMod}', '')
 
         if args.get('double') and "double" in prop:
-            nAttack=attack
-            nAttack=nAttack.replace('"name": "', '"name": "Double ')
+            attack=attack.replace('"name": "', '"name": "Double ')
             if "finesse" in prop:
-                nAttack = nAttack.replace('+max(strengthMod,dexterityMod)','')
+                attack = attack.replace('+max(strengthMod,dexterityMod)','')
             elif "heavy" in prop:
-                nAttack = nAttack.replace('+{ceil(strengthMod*1.5)}','')
-            nAttack = nAttack.replace('+dexterityMod', '')
-            nAttack = nAttack.replace('+strengthMod', '')
+                attack = attack.replace('+{ceil(strengthMod*1.5)}','')
+            attack = attack.replace('+dexterityMod', '')
+            attack = attack.replace('+strengthMod', '')
 
         if args.get('gwm') and ('two-handed' in a.name.lower() or "heavy" in prop):
-            nAttack=attack
-            nAttack = nAttack.replace('"name": "', '"name": "Great ')
-            nAttack = nAttack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            nAttack = nAttack.replace('} [', '}' + f'+{character().stats.prof_bonus*2} [')
+            attack = attack.replace('"name": "', '"name": "Great ')
+            attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
+            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus*2} [')
 
         if args.get('sharp'):
-            nAttack = attack
-            nAttack = nAttack.replace('"name": "', '"name": "Sharpshooter ')
-            nAttack = nAttack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            nAttack = nAttack.replace('} [', '}' + f'+{character().stats.prof_bonus * 2} [')
+            attack = attack.replace('"name": "', '"name": "Sharpshooter ')
+            attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
+            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus * 2} [')
 
         if args.get('heavy'):
             if "finesse" in prop:
@@ -65,10 +56,13 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
+        if "counter" in str(a):
+            index = attack.find('"counter": "') + 12
+            counter = str(attack[index:attack[index:].find('"')+index])
+            reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
+            character().create_cc(counter, 0, reload, None, 'bubble', reload)
 
         out.append(load_json(attack))
-        if nAttack:
-            out.append(load_json(nAttack))
 
     return out, counter
 

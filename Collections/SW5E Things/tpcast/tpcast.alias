@@ -16,8 +16,9 @@ if homebrew:
     for g in homebrew:
         gvar += load_json(get_gvar(g))
 spell = None
+sover = f"(SW) {args[0].lower()}"
 for s in gvar:
-    if args[0].lower() == s.name.lower():
+    if args[0].lower() == s.name.lower() or sover == s.name.lower():
         spell = s
         break
 if spell is None:
@@ -27,7 +28,7 @@ if spell is None:
             break
 if spell is None:
     return err("I don't think that's a supported power.  Make sure it is spelled correctly and is in your `brewspells` if it's unofficial.")
-if spell.name not in character().spellbook and not ignore:
+if spell.name not in character().spellbook and spell.name.replace("(SW) ", '').lower() not in character().spellbook and not ignore:
     return err(f"I don't think you know {spell.name}.  Make sure it is added to your spellbook or try to cast it again with `-i` to ignore requirements. If you didn't intend to use {spell.name}, try using quotes around the power name.")
 splevel = max(a.last('l', default = 0, type_=int), spell.level)
 points = point_list[splevel]

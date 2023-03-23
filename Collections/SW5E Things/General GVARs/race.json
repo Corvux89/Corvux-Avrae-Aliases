@@ -226,8 +226,8 @@
         "name": "Sonic Scream",
         "reset": "long",
         "level": 1,
-        "use": "use sonicScream -t [targets]",
-        "value": 2
+        "use": "racecast 'SonicScream' -t [targets]",
+        "value": "proficiencyBonus"
       }
     ],
     "cvars": {
