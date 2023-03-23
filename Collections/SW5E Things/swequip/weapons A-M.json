@@ -5042,15 +5042,15 @@
         ]
       },
       {
-        "type": "text",
-        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
-      },
-      {
         "type": "counter",
         "counter": "Repeating Blaster",
         "amount": "5",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
       }
     ],
     "_v": 2

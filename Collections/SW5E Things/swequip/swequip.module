@@ -40,7 +40,7 @@ def processAttacks(attacks, args):
             attack = attack.replace('+dexterityMod', '')
             attack = attack.replace('+strengthMod', '')
 
-        if args.get('gwm') and ('two-handed' in a.name.lower() or "heavy" in prop):
+        if args.get('gwm') and ('two-handed' in a.name.lower() or "heavy" in prop or 'two-handed' in prop):
             attack = attack.replace('"name": "', '"name": "Great ')
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus*2} [')
@@ -50,17 +50,22 @@ def processAttacks(attacks, args):
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus * 2} [')
 
+        if args.get('rapid'):
+            return err(f"{a.automation[0]}")
+
         if args.get('heavy'):
             if "finesse" in prop:
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}','+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
+
         if "counter" in str(a):
             index = attack.find('"counter": "') + 12
             counter = str(attack[index:attack[index:].find('"')+index])
-            reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
-            character().create_cc(counter, 0, reload, None, 'bubble', reload)
+            if not character().cc_exists(counter):
+                reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
+                character().create_cc(counter, 0, reload, None, 'bubble', reload)
 
         out.append(load_json(attack))
 

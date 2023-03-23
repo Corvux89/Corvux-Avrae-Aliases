@@ -1353,6 +1353,24 @@
     }
   },
   {
+    "name": "pantoran",
+    "counters": [
+      {
+        "name": "Impose Order",
+        "reset": "long",
+        "level": 1,
+        "value": 1,
+        "use": "racecast 'Impose Order' -t [targets]"
+      }
+    ],
+    "cvars": {
+      "race": "Pantoran",
+      "speed": "30ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Pantoran"
+    }
+  },
+  {
     "name": "patrolian",
     "counters": [],
     "cvars": {

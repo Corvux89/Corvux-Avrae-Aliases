@@ -86,7 +86,7 @@ def perform(m, coms, **kwargs):
     elif m.type == "Roll":
         m_str += f"**Roll:** {vroll(roll_str)}\n"
     elif m.type == "Mod":
-        m_str += f"**Mod: {bonus}\n"
+        m_str += f"**Mod**: {bonus}\n"
 
     if m.save:
         if m.type == "Check":
