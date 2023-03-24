@@ -17,8 +17,9 @@ __GVAR REFERENCES__
 `874901ba-d611-4418-b1c8-8ef43be23764` - Lightsaber Forms
 `4573b73e-b1cf-43b6-a9bf-833e54300781` - Skill's Exploits
 `df07d6ae-140d-45b1-b026-de831064acab` - SWEQUIP Support module
-`799c0a03-762d-4fe4-b270-b640bcc3bb30` - Weapons A-M
-`ef21fed4-8472-4b0b-a375-54ae476ef38a` - Weapons N-Z
+`799c0a03-762d-4fe4-b270-b640bcc3bb30` - Weapons A-G
+`dee962fb-f71d-4e17-9b6f-c86cf1a58c33` - Weapons H-P
+`ef21fed4-8472-4b0b-a375-54ae476ef38a` - Weapons R-Z
 `6269cf7a-0df9-4789-992c-29dbc20ac053` - GVAR for `!fpcast`
 `e45f68f5-96d4-4f52-96c8-862734dfa7ff` - GVAR for `!tpcast`
 `e9fa4672-b75f-42a6-a32e-29e205ccb387` - Unstable Engineering Surge Table

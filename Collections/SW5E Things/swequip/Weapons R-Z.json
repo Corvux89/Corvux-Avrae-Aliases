@@ -1,296 +1,5 @@
 [
   {
-    "name": "Needler",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Needler",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Rapid - Needler",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "success": [],
-            "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      },
-      {
-        "type": "counter",
-        "counter": "Needler",
-        "amount": "12",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Nervebaton",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "meta": [],
-                "stat": "wis",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[psychic]",
-                    "overheal": false
-                  },
-                  {
-                    "type": "text",
-                    "meta": [],
-                    "text": "When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional 1d4 psychic damage and becomes frightened of you until the start of its next turn."
-                  }
-                ],
-                "success": [],
-                "dc": "13"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Disruptive, Neuralizing 13"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Net",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "ieffect",
-                "name": "Restrained (Net)",
-                "duration": "-1",
-                "effects": "",
-                "end": false,
-                "conc": false,
-                "desc": "A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net's effects. While a creature is restrained by a net, you can make no further attacks with it."
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Light, Finesse, Special, Thrown (range 15)\n\nA Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net's effects. While a creature is restrained by a net, you can make no further attacks with it."
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Neuronic whip",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "meta": [],
-                "stat": "dex",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[lightning]",
-                    "overheal": false
-                  },
-                  {
-                    "type": "text",
-                    "meta": [],
-                    "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."
-                  }
-                ],
-                "success": [],
-                "dc": "15"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Reach, Shocking 15, Specialized (shocking)"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Nightstinger Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{dexterityMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Nightstinger Rifle",
-            "amount": "1",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Power cell (range 125/500), Reload 2, Silent, Strength 11, Two-handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Phase knife",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 11, Disguised, Hidden, Keen 1, Light, Luminous, Vicious 1"
-      }
-    ],
-    "_v": 2,
-    "criton": 19
-  },
-  {
-    "name": "Pikesaber",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10+{strengthMod} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dexterity 11, Luminous, Reach, Two-handed"
-      }
-    ],
-    "_v": 2
-  },
-  {
     "name": "Burst - Radiation Cannon",
     "automation": [
       {
@@ -362,7 +71,7 @@
     "_v": 2
   },
   {
-    "name": "Railgun",
+    "name": "Cartridge, Slug - Railgun",
     "automation": [
       {
         "type": "target",
@@ -375,6 +84,196 @@
                 "type": "damage",
                 "damage": "2d6+{dexterityMod} [kinetic]",
                 "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Corrosive - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": "",
+                    "end": false,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
               }
             ],
             "miss": [],
