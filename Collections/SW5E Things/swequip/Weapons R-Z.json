@@ -3431,15 +3431,15 @@
         ]
       },
       {
-        "type": "text",
-        "text": "Auto, Rapid 4, Light, Power cell (range 30/120), Reload 16, Strength 11"
-      },
-      {
         "type": "counter",
         "counter": "Subrepeater",
         "amount": "4",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Auto, Rapid 4, Light, Power cell (range 30/120), Reload 16, Strength 11"
       }
     ],
     "_v": 2
