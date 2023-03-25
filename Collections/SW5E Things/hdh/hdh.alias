@@ -1,7 +1,9 @@
 <drac2>
 com = combat()
 ch = character()
+a = argparse(&ARGS&)
 num = int("&1&") if "&1&" in &ARGS& and "&1&".isdecimal() else 1
+b = int(a.last('b')) if a.last('b') else None
 i = '-i' in &ARGS&
 
 try:
@@ -18,7 +20,7 @@ if ch.cc_exists(cc):
         base += f''' -f "Hit Die Remaining|{ch.get_cc(cc)}" '''
         return base
 
-    roll_str = f"-{num}{d_size} [healing]"
+    roll_str = f"-{num}{d_size} {'+'+b if b else ''} [healing]"
     base += f''' -title "{name} uses {num} hit die!" '''
 
     if com:
