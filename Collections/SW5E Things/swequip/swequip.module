@@ -50,6 +50,10 @@ def processAttacks(attacks, args):
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus * 2} [')
 
+        if args.get('enhanced'):
+            attack = attack.replace('} [', '} [enhanced ')
+            attack = attack.replace('[lightning]', '[enhanced lightning]')
+
         if args.get('rapid'):
             return err(f"{a.automation[0]}")
 
@@ -71,3 +75,16 @@ def processAttacks(attacks, args):
 
     return out, counter
 
+def processName(name):
+    out = name
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'')
+    out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace("Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
+    out = out.replace("Rocket, Fragmentation - ",'').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
+    out = out.replace("Missile, Fragmentation - ", '').replace("Missile, Incendiary - ", '').replace("Missile, Ion - ", '')
+    out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace("Arrow, Noisemaker - ", '')
+    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace("Dart, Panic - ", '')
+    out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace("Projector Canister, Incendiary - ", '')
+    out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
+    out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
+
+    return out

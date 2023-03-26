@@ -2156,7 +2156,7 @@
     "extra_crit_damage": "1d12"
   },
   {
-    "name": "Burst - Shatter Cannon",
+    "name": "Burst - Cartridge, Slug - Shatter Cannon",
     "automation": [
       {
         "type": "target",
@@ -2192,7 +2192,212 @@
     "_v": 2
   },
   {
-    "name": "Shatter Pistol",
+    "name": "Burst - Cartridge, Gas - Shatter Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": "",
+                        "end": false,
+                        "desc": ""
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  },
+                  {
+                    "type": "text",
+                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 75/300), Auto, Burst 4, Reload 8, Silent, Strength 15, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Shatter Cannon",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Shatter Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 [acid]",
+                        "overheal": false
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 / 2 [acid]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  },
+                  {
+                    "type": "text",
+                    "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 75/300), Auto, Burst 4, Reload 8, Silent, Strength 15, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Shatter Cannon",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Shatter Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d10+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
+                  {
+                    "type": "condition",
+                    "condition": "lastSaveRollTotal<14",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 [lightning]",
+                        "overheal": false
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 / 2 [lightning]",
+                        "overheal": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 75/300), Auto, Burst 4, Reload 8, Silent, Strength 15, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Shatter Cannon",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Slug - Shatter Pistol",
     "automation": [
       {
         "type": "target",
@@ -2227,7 +2432,197 @@
     "_v": 2
   },
   {
-    "name": "Shatter Rifle",
+    "name": "Cartridge, Corrosive - Shatter Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Light, Reload 12, Silent, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Shatter Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Light, Reload 12, Silent, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Shatter Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": "",
+                    "end": false,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Light, Reload 12, Silent, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Slug - Shatter Rifle",
     "automation": [
       {
         "type": "target",
@@ -2240,6 +2635,196 @@
                 "type": "damage",
                 "damage": "2d4+{dexterityMod} [kinetic]",
                 "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 100/400), Reload 8, Silent, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Corrosive - Shatter Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 100/400), Reload 8, Silent, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Shatter Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Shatter Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 100/400), Reload 8, Silent, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Shatter Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": "",
+                    "end": false,
+                    "desc": ""
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
               }
             ],
             "miss": [],
@@ -5959,7 +6544,7 @@
     "verb": null
   },
   {
-    "name": "Projector Canister, Corrosive - Wrist Launcher",
+    "name": "Projector Canister, Incendiary - Wrist Launcher",
     "automation": [
       {
         "type": "roll",

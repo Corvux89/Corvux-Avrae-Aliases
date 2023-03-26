@@ -19,7 +19,7 @@ args = argparse(args)
 attacks = []
 
 for x in gvar:
-    if x.name.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').lower() == weapon.lower():
+    if sup.processName(x.name).lower() == weapon.lower():
         attacks.append(x)
 if not attacks:
     err(f"I can't find a weapon named {weapon}.")
