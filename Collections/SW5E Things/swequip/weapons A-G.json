@@ -16,7 +16,7 @@
               }
             ],
             "miss": [],
-            "attackBonus": "proficiencyBonus +dexterityMod"
+            "attackBonus": "proficiencyBonus+dexterityMod"
           },
           {
             "type": "counter",
@@ -38,6 +38,11 @@
     "name": "Rapid - Affixed Rifle",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d8+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -47,18 +52,60 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d8+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Affixed Rifle",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Power cell (range 90/360), Fixed, Rapid 4, Reload 8, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Anti-Material Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d4+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Blaster",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 180/720), Auto, Reload 2, Penetrating 2, Strength 19, Two-handed"
       }
     ],
     "_v": 2
@@ -548,6 +595,11 @@
     "name": "Burst - ARC Caster",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [lightning]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -557,7 +609,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4 + {dexterityMod} [lightning]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -567,15 +619,15 @@
         ]
       },
       {
-        "type": "text",
-        "text": "Power cell (range 60/240), Burst 8, Rapid 4, Reload 9, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
-      },
-      {
         "type": "counter",
         "counter": "ARC Caster",
         "amount": "8",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Burst 8, Rapid 4, Reload 9, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
@@ -583,6 +635,11 @@
   {
     "name": "Rapid - ARC Caster",
     "automation": [
+      {
+        "type": "roll",
+        "dice": "4d4+{dexterityMod} [lightning]",
+        "name": "damage"
+      },
       {
         "type": "target",
         "target": "each",
@@ -593,7 +650,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d4+{dexterityMod} [lightning]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -655,6 +712,11 @@
     "name": "Burst - Assault Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d12+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -664,7 +726,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d12+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -845,6 +907,11 @@
     "name": "Burst - BKG",
     "automation": [
       {
+        "type": "roll",
+        "dice": "3d4+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -854,7 +921,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "3d4+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -881,6 +948,11 @@
     "name": "Burst - Blaster Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d6+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -890,7 +962,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d6+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -910,6 +982,11 @@
     "name": "Rapid - Blaster Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "4d6+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -919,7 +996,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d6+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -1192,7 +1269,7 @@
     "_v": 2
   },
   {
-    "name": "Bolt-Thrower",
+    "name": "Bolt - Bolt-Thrower",
     "automation": [
       {
         "type": "target",
@@ -1205,6 +1282,262 @@
                 "type": "damage",
                 "damage": "2d6+{dexterityMod} [kinetic]",
                 "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Bolt-Thrower",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Silent, Special (range 90/360), Strength 13, Two-handed\n\nRather than traditional power cells, the bolt-thrower fires specialized projectiles in the form of bolts."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Bolt, Deafening - Bolt-Thrower",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "2d4 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Bolt-Thrower",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Silent, Special (range 90/360), Strength 13, Two-handed\n\nRather than traditional power cells, the bolt-thrower fires specialized projectiles in the form of bolts."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Bolt, Electrifying - Bolt-Thrower",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "2d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Shocked",
+                    "duration": 10,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                    "buttons": [
+                      {
+                        "label": "Resist Shock",
+                        "style": 3,
+                        "verb": "attempts to resist shock",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Bolt-Thrower",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Silent, Special (range 90/360), Strength 13, Two-handed\n\nRather than traditional power cells, the bolt-thrower fires specialized projectiles in the form of bolts."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Bolt, Panic - Bolt-Thrower",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "wis",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "2d4 [psychic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Frightened",
+                    "duration": 10,
+                    "effects": {
+                      "attack_advantage": -1,
+                      "check_dis": ["all"]
+                    },
+                    "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
+                    "buttons": [
+                      {
+                        "label": "Resist Fright",
+                        "style": 3,
+                        "verb": "attempts to resist fright",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "wis",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
               }
             ],
             "miss": [],
@@ -1265,6 +1598,11 @@
     "name": "Burst - Bowcaster",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d10+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -1274,7 +1612,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -1443,6 +1781,11 @@
     "name": "Rapid - Carbine Rifle",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d8+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1452,7 +1795,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d8+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
