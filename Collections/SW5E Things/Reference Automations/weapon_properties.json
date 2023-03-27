@@ -1,0 +1,34 @@
+[
+  {
+    "type": "ieffect2",
+    "name": "Shocked",
+    "duration": 1,
+    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+    "buttons": [
+      {
+        "label": "Resist Shock",
+        "style": 3,
+        "verb": "attempts to resist shock",
+        "automation": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [],
+                "success": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "dc": 14
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -324,7 +324,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -390,7 +390,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -1501,7 +1501,9 @@
                     "duration": 10,
                     "effects": {
                       "attack_advantage": -1,
-                      "check_dis": ["all"]
+                      "check_dis": [
+                        "all"
+                      ]
                     },
                     "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
                     "buttons": [
@@ -1906,6 +1908,11 @@
     "name": "Rapid - Cartridge, Slug - Chaingun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "4d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1915,25 +1922,25 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Chaingun",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
-      },
-      {
-        "type": "counter",
-        "counter": "Chaingun",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -1942,6 +1949,11 @@
     "name": "Rapid - Cartridge, Corrosive - Chaingun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "4d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1951,7 +1963,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -1980,19 +1992,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Chaingun",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
       }
     ],
     "_v": 2
@@ -2000,6 +2012,11 @@
   {
     "name": "Rapid - Cartridge, Electrifying - Chaingun",
     "automation": [
+      {
+        "type": "roll",
+        "dice": "",
+        "name": "damage"
+      },
       {
         "type": "target",
         "target": "each",
@@ -2046,15 +2063,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Chaingun",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
       },
       {
         "type": "text",
@@ -2067,6 +2084,11 @@
     "name": "Rapid - Cartridge, Gas - Chaingun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "4d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -2076,7 +2098,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "4d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -2113,19 +2135,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Chaingun",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1"
       }
     ],
     "_v": 2
@@ -2218,11 +2240,6 @@
     "name": "Arrow, Combustive - Compound Bow",
     "automation": [
       {
-        "type": "roll",
-        "dice": "1d8 [fire]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "1",
         "effects": [
@@ -2239,6 +2256,11 @@
             "attackBonus": "proficiencyBonus+max(dexterityMod, strengthMod)"
           }
         ]
+      },
+      {
+        "type": "roll",
+        "dice": "1d8 [fire]",
+        "name": "damage"
       },
       {
         "type": "target",

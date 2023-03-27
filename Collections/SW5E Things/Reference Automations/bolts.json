@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Deafening",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "con",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "2d4 [sonic]",
+            "overheal": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Deafened",
+            "duration": 10,
+            "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+            "buttons": [
+              {
+                "label": "Resist Deafened",
+                "style": 3,
+                "verb": "attempts to resist deafened",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [],
+                        "success": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "dc": 14
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "success": [],
+        "dc": 14
+      },
+      {
+        "type": "text",
+        "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ]
+  },
+  {
+    "name": "Electrifying",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "dex",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "2d4 [lightning]",
+            "overheal": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Shocked",
+            "duration": 10,
+            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+            "buttons": [
+              {
+                "label": "Resist Shock",
+                "style": 3,
+                "verb": "attempts to resist shock",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [],
+                        "success": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "dc": 14
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "success": [],
+        "dc": 14
+      },
+      {
+        "type": "text",
+        "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ]
+  },
+  {
+    "name": "Panic",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "wis",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "2d4 [psychic]",
+            "overheal": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Frightened",
+            "duration": 10,
+            "effects": {
+              "attack_advantage": -1,
+              "check_dis": [
+                "all"
+              ]
+            },
+            "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
+            "buttons": [
+              {
+                "label": "Resist Fright",
+                "style": 3,
+                "verb": "attempts to resist fright",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "wis",
+                        "fail": [],
+                        "success": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "dc": 14
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "success": [],
+        "dc": 14
+      },
+      {
+        "type": "text",
+        "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+      }
+    ]
+  }
+]
