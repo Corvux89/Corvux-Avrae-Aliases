@@ -2,6 +2,97 @@
   {
     "name": "Combustive",
     "notes": "Need to setup a roll, then additional target. Ensure main attack is target 1",
-    "automation": []
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8 [fire]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Electroshock",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "dex",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "1d3[ion]",
+            "overheal": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Stunned",
+            "duration": 1,
+            "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+          }
+        ],
+        "success": [
+          {
+            "type": "damage",
+            "damage": "1d3 / 2 [ion]",
+            "overheal": false
+          }
+        ],
+        "dc": "14"
+      },
+      {
+        "type": "text",
+        "text": "An electroshock arrow is a specialized arrow for use with bow weapons. When you hit a creature with this arrow, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d3 ion damage and becomes stunned until the start of its next turn. On a successful save, a creature takes half damage and isn’t stunned. Once the arrow hits a target, it no longer gives a bonus."
+      }
+    ]
+  },
+  {
+    "name": "Noisemaker",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "con",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "1d6 [sonic]",
+            "overheal": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Deafened",
+            "duration": 1,
+            "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing."
+          }
+        ],
+        "success": [],
+        "dc": "14"
+      },
+      {
+        "type": "text",
+        "text": "A noisemaker arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it generates an explosion of sound that can be heard up to 100 feet away. If the target of the attack is a creature, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the end of its next turn. Once the arrow hits a target, it no longer gives a bonus."
+      }
+    ]
   }
 ]
