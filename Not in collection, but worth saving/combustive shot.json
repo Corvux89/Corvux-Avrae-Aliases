@@ -1,0 +1,88 @@
+{
+  "name": "Combustive Shot",
+  "level": 0,
+  "school": "Tech",
+  "automation": [
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "roll",
+          "dice": "{'' if level < 5 else '1d6' if level < 11 else '2d6' if level < 17 else '3d6'}",
+          "name": "damage",
+          "cantripScale": false,
+          "displayName": "Damage"
+        },
+        {
+          "type": "damage",
+          "damage": "{damage} [fire]",
+          "cantripScale": true
+        },
+        {
+          "type": "ieffect2",
+          "name": "Ignited",
+          "duration": "2",
+          "buttons": [
+            {
+              "automation": [
+                {
+                  "type": "remove_ieffect"
+                }
+              ],
+              "label": "Put Flames Out",
+              "verb": "Puts Themself Out",
+              "style": "3"
+            },
+            {
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "{ieffect.desc.split()[-1]} [fire]",
+                      "higher": {
+                        "1": "",
+                        "5": ""
+                      },
+                      "cantripScale": false
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "- A creature that is ignited suffers fire damage at the end of each of its turns\n- If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."
+                }
+              ],
+              "label": "Let it Burn",
+              "verb": "Lets the Flames Go Out",
+              "style": "4",
+              "defaultCastingMod": "max(charismaMod, wisdomMod,0)"
+            }
+          ],
+          "desc": "{{max(intelligenceMod, 0)}}{{'' if level < 5 else \"+1d4\" if level < 11 else \"+2d4\" if level < 17 else \"+3d4\"}}"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power’s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level."
+    }
+  ],
+  "classes": "",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Self (Varies)",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 round",
+  "ritual": false,
+  "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power’s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level.",
+  "higherlevels": "",
+  "concentration": false
+}
