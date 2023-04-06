@@ -2,6 +2,7 @@
 args = &ARGS&
 a = argparse(args)
 cc = "Tech Points"
+pb = "Personal Barrier"
 out = []
 spell = ""
 ignore = a.get('i')
@@ -40,5 +41,8 @@ character().mod_cc(cc,-points) if not ignore else ''
 args.remove(args[0])
 out.append(" ".join(args))
 out.append(f'-f "{cc} (-{points})|{character().cc_str(cc)}"') if not ignore and not a.get('-h') else ''
+if character().cc_exists(pb):
+    character().mod_cc(pb,+points)
+    out.append(f'-f "{pb} ({points})|{character().cc_str(pb)}"') if not ignore and not a.get('-h') else ''
 return f'cast "{spell.name}" {" ".join(out)} -i'
 </drac2>

@@ -1,0 +1,30 @@
+<drac2>
+c = character()
+com = combat()
+args = argparse(&ARGS&)
+dmg = max(intelligenceMod, 1)
+dmg_str = f"{dmg} [energy]"
+targs = args.get('t')
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if com and targs:
+    targets  = [com.get_combatant(x) for x in targs] if com else []
+
+    for t in targets:
+        if not com:
+            return err(f"Invalid target/targets")
+        else:
+            base += f''' -f "{t.name}|{t.damage(dmg_str, overheal=False).damage}" '''
+
+    f_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targets])
+    base += f''' -footer "{f_str}" '''
+else:
+    for t in targs:
+        base += f''' -f {t}|**Damage**: {dmg_str} = `{dmg}` '''
+
+base += f''' -f "Effect|You gain access to a powerful personal barrier. Whenever you complete a short or long rest, you create a barrier on yourself that lasts until you finish a short or long rest. That barrier has hit points equal to twice your scout level + your Intelligence modifier. Your barrier can never have hit points greater than twice your scout level + your Intelligence modifier.\n\nWhenever you take damage, the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, you take any remaining damage.\n\nWhile the barrier has 0 hit points, it can’t absorb damage, but its power remains. Whenever you cast a tech power of 1st level or higher, your barrier regains hit points equal to the number of tech points spent." '''
+base += f''' -f "Additionally|\n\nAdditionally, for as long as your barrier has hit points, you gain the following benefits:\n\n -You are considered proficient in Constitution saving throws for the purpose of maintaining concentration on tech powers.\n -Hostile creatures that hit you with melee attacks take energy damage equal to your Intelligence modifier (minimum of one)." '''
+
+return base
+</drac2>

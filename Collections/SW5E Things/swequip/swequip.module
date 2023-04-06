@@ -5,6 +5,9 @@ def processAttacks(attacks, args):
         counter = ""
         prop = str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
 
+        if args.get('title'):
+            attack=attack.replace(f'"name": "{a.name}"', f'"name": "{args.last("title")}"')
+
         if args.get('b'):
             attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
 

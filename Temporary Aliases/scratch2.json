@@ -1,0 +1,43 @@
+{
+  "name": "Pressure Crush",
+  "level": 0,
+  "school": "Tech",
+  "automation": [
+    {
+      "type": "roll",
+      "dice": "1d12",
+      "name": "damage",
+      "cantripScale": true
+    },
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "str",
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "{damage} [kinetic]"
+            }
+          ],
+          "success": []
+        }
+      ]
+    }
+  ],
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Touch",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Instantaneous",
+  "ritual": false,
+  "description": "You attempt to crush the body of a creature you touch. The target must make a Strength saving throw. If the creature is grappled or restrained by you or an effect you control, it makes the saving throw with disadvantage. On a failed save, the creature takes 1d12 kinetic damage.\r\n\r\nThis power's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).",
+  "concentration": false
+}

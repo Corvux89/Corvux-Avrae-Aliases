@@ -1,30 +1,41 @@
 {
-  "type": "ieffect2",
-  "name": "Shocked",
-  "duration": 10,
-  "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
-  "buttons": [
+  "name": "Shock",
+  "level": 0,
+  "school": "Force",
+  "classes": "Dark",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "120 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Instantaneous",
+  "ritual": false,
+  "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+  "concentration": false,
+  "automation": [
     {
-      "label": "Resist Shock",
-      "style": 3,
-      "verb": "attempts to resist shock",
-      "automation": [
+      "type": "roll",
+      "dice": "1d10",
+      "name": "damage",
+      "cantripScale": true
+    },
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
         {
-          "type": "target",
-          "target": "self",
-          "effects": [
+          "type": "attack",
+          "hit": [
             {
-              "type": "save",
-              "stat": "dex",
-              "fail": [],
-              "success": [
-                {
-                  "type": "remove_ieffect"
-                }
-              ],
-              "dc": 14
+              "type": "damage",
+              "damage": "{damage} [lightning]",
+              "overheal": false
             }
-          ]
+          ],
+          "miss": []
         }
       ]
     }
