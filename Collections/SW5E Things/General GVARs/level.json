@@ -3189,7 +3189,18 @@
   {
     "Class": "Scout",
     "subclass": "Bulwark",
-    "counters": []
+    "counters": [
+      {
+        "name": "Personal Barrier",
+        "value": [0,0,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40],
+        "modifier": "intelligenceMod",
+        "level": 3,
+        "classLevel": "ScoutLevel",
+        "display": "default",
+        "reset": "short",
+        "desc": "You gain access to a powerful personal barrier. Whenever you complete a short or long rest, you create a barrier on yourself that lasts until you finish a short or long rest. That barrier has hit points equal to twice your scout level + your Intelligence modifier. Your barrier can never have hit points greater than twice your scout level + your Intelligence modifier."
+      }
+    ]
   },
   {
     "Class": "Scout",

@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "description": "",
+    "type": "[Damage, Heal, Add_Damage, Roll, Mod, Check, Effect, T_Heal]",
+    "c_type": "",
+    "d_type": "",
+    "sub": "[Mental, Physical, General]",
+    "save": "",
+    "apply_mod": false,
+    "effect": [
+      {
+        "name": "",
+        "duration": "",
+        "description": ""
+      }
+    ]
+  }

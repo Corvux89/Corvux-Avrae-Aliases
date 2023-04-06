@@ -1,0 +1,10 @@
+adv
+-title "[name] attacks recklessly with [aname]!"
+-f "Reckless Attack|Melee attacks using Strength this turn have advantage. All attacks made against you until the start of your next turn have advantage."
+
+<drac2>
+out = []
+if combat() and (me := combat().me):
+  # Add reminder text for the DM
+  me.add_effect("Attacked Recklessly", duration=1, desc="All attacks made against you until the start of your next turn have advantage.")
+</drac2>

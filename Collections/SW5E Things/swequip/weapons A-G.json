@@ -4305,7 +4305,33 @@
                 "name": "Slowed",
                 "duration": 10,
                 "effects": "",
-                "desc": ""
+                "desc": "Some abilities, effects, and hazards can lead to a special condition called slowed. Slowed is measured in four levels. An effect can give a creature one or more levels of slowed, as specified in the effect’s description.\n - At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success.",
+                "buttons": [
+                  {
+                    "label": "Resist Slow",
+                    "style": 3,
+                    "verb": "attempts to resist slow",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "dc": "14"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "success": [
@@ -4350,7 +4376,33 @@
                 "name": "Deafened",
                 "duration": 10,
                 "effects": "",
-                "desc": ""
+                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.\n - At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success.",
+                "buttons": [
+                  {
+                    "label": "Resist Deafened",
+                    "style": 3,
+                    "verb": "attempts to resist deafened",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "dc": 14
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "success": [
@@ -4391,37 +4443,37 @@
                 "damage": "{damage} [lightning]"
               },
               {
-                    "type": "ieffect2",
-                    "name": "Shocked",
-                    "duration": 10,
-                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
-                    "buttons": [
+                "type": "ieffect2",
+                "name": "Shocked",
+                "duration": 10,
+                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                "buttons": [
+                  {
+                    "label": "Resist Shock",
+                    "style": 3,
+                    "verb": "attempts to resist shock",
+                    "automation": [
                       {
-                        "label": "Resist Shock",
-                        "style": 3,
-                        "verb": "attempts to resist shock",
-                        "automation": [
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
                           {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
+                            "type": "save",
+                            "stat": "dex",
+                            "fail": [],
+                            "success": [
                               {
-                                "type": "save",
-                                "stat": "dex",
-                                "fail": [],
-                                "success": [
-                                  {
-                                    "type": "remove_ieffect"
-                                  }
-                                ],
-                                "dc": 14
+                                "type": "remove_ieffect"
                               }
-                            ]
+                            ],
+                            "dc": 14
                           }
                         ]
                       }
                     ]
                   }
+                ]
+              }
             ],
             "success": [
               {

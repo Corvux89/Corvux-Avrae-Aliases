@@ -1,0 +1,34 @@
+<drac2>
+c = character()
+com = combat()
+args = argparse(&ARGS&)
+amt = "&1&" if "&1&" in &ARGS& and "&1&".isdecimal() else 1
+amt = int(amt)
+i = '-i' in &ARGS&
+cc = "Personal Barrier"
+
+base = f'''embed -thumb {image} -color {color}'''
+
+v = c.cc_exists(cc) or i
+
+if v:
+    if c.get_cc(cc) < amt and not i:
+        base += f''' -title "{name} doesn't have enough {cc} remaining to use their personal barrier" '''
+        return base
+
+    if com:
+        base += f''' -f "{name}|{com.me.damage(f"-{amt} [healing]", overheal=False).damage}" '''
+    else:
+        c.modify_hp(-{amt}, overflow=False)
+        base += f''' -f {name}|{c.hp_str()} '''
+
+    base += f''' -footer "{name}: {c.hp_str()}" '''
+
+    if not i:
+        c.mod_cc(cc, -{amt})
+        base += f''' -f "{cc}|{c.cc_str(cc)} (-{amt})" '''
+else:
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+return base
+</drac2>

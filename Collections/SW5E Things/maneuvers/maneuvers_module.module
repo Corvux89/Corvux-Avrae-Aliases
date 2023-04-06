@@ -1,0 +1,147 @@
+
+def get_bonus(m, override = None):
+    s = character().stats
+    m_mod = max(s.get_mod("wisdom"), s.get_mod("intelligence"), s.get_mod("charisma"), 0)
+    p_mod = max(s.get_mod("strength"), s.get_mod("dexterity"), s.get_mod("constitution"), 0)
+
+    if (m.sub == "Mental" and not override) or (override and  'men' in override.lower()):
+        return m_mod
+    elif (m.sub == "Physical" and not override) or (override and 'phy' in override.lower()):
+        return p_mod
+    elif override and 'gen' in override.lower():
+        return max(m_mod, p_mod)
+    else:
+        return max(m_mod, p_mod)
+
+def get_roll_str(m, lvl, mi, override = None):
+    out_str = "1d12" if lvl > 5 else "1d10" if lvl > 4 else "1d8" if lvl > 3 else "1d6" if lvl > 2 else "1d4"
+
+    if mi:
+        out_str += f'mi{mi}'
+
+    if m.apply_mod:
+        out_str += f'+ {get_bonus(m, override)}'
+
+    return out_str
+
+
+def add_effect(m, com, override=None):
+    output = ""
+    peff = ""
+    for e in m.effect:
+        for p in combat().me.effects:
+            if p.name == e.name:
+                peff = p
+                break
+
+        if peff == "":
+            peff = combat().me.add_effect(e.name, duration=e.get('duration'),  end=True if e.get('end') else False)
+
+        description = e.get('description') if not None else ''
+        if "mod" in description.lower():
+            description += f"\n -Modifier: {get_bonus(m, override)}"
+        com.add_effect(e.name, desc=f"{description}\n -[Source: {character().name}]",
+                       end=True if e.get('end') else False, passive_effects=e.get('p_effect'), parent=peff)
+
+        output += f"**Effect:** {e.name} {'['+e.get('duration')+' rounds]' if e.get('duration') else ''}\n"
+
+    return output
+
+def perform(m, coms, **kwargs):
+    output = ""
+    lvl = kwargs['lvl']
+    override = kwargs['override']
+    mi = kwargs['mi']
+    roll_str = get_roll_str(m, lvl, mi, override)
+    bonus = get_bonus(m, override)
+    dc = kwargs['dc'] if kwargs['dc'] else f"{8 + character().stats.prof_bonus + bonus}"
+    fail = kwargs['fail']
+    tdis = kwargs['tdis']
+    tadv = kwargs['tadv']
+    m_str=""
+
+
+    if m.type in ["Heal", "T_Heal"]:
+        heal = vroll(roll_str)
+        heal_str = f"-{heal.total} {'[healing]' if m.type == 'Heal' else '[temp healing]'}"
+        output += f''' -f "Meta|{heal} {'[healing]' if m.type == 'Heal' else '[temp healing]'}" '''
+
+        if len(coms) > 0:
+            for com in coms:
+                f_str = ""
+                if m.type == "Heal":
+                    f_str += f"{com.damage(heal_str, overheal=False).damage}\n"
+                elif m.type == "T_Heal":
+                    f_str += f"**Temp HP**: {heal_str}\n"
+                    com.set_temp_hp(heal.total)
+
+                if m.effect:
+                    f_str += add_effect(m, com, override)
+                output+= f''' -f "{com.name}|{f_str}" '''
+
+    elif m.type in ["Damage", "Add_Damage"]:
+        damage = vroll(roll_str)
+        damage_str = f"{damage.total} {'' if not m.get('d_type') else f'[{m.d_type}]'}"
+        m_str+= f"**Damage:** {damage} {'' if not m.get('d_type') else f'[{m.d_type}]'}\n"
+    elif m.type == "Roll":
+        m_str += f"**Roll:** {vroll(roll_str)}\n"
+    elif m.type == "Mod":
+        m_str += f"**Mod**: {bonus}\n"
+
+    if m.save:
+        if m.type == "Check":
+            for (n, s) in character().skills:
+                if n.lower() == m.c_type.lower():
+                    skill = s
+                    break
+            if skill.adv:
+                r_str = f"2d20kh1"
+            else:
+                r_str = f"1d20"
+            r_str += f" + {skill.value}"
+            if m.apply_mod:
+                r_str += f" + {bonus}"
+
+            chk = vroll(r_str)
+            m_str += f"**DC:** {chk}"
+            dc = chk.total
+        else:
+            m_str += f"**DC:** {dc}"
+
+        output += f''' -f "Meta|{m_str}" '''
+
+        if len(coms) > 0:
+            for com in coms:
+                s = com.save(m.save, adv=True if tadv else False if tdis else None)
+                f_str = ""
+
+                if m.type == "Add_Damage":
+                    f_str += f"{com.damage(damage_str).damage}\n"
+
+                if s.total < int(dc) or fail:
+                    f_str += f"{s}; *Failure!*\n"
+                    if m.type=="Damage":
+                        f_str += f"{com.damage(damage_str).damage}\n"
+
+                    if m.effect:
+                        f_str += add_effect(m, com, override)
+                else:
+                    f_str += f"{s}; **Success!**\n"
+
+                output += f''' -f "{com.name}|{f_str}" '''
+    else:
+        if m.type not in ["Heal", "T_Heal"]:
+            output += f''' -f "Meta|{m_str}" '''
+        if len(coms)>0:
+            for com in coms:
+                f_str=""
+                if m.type in ["Damage", "Add_Damage"]:
+                    f_str += f"{com.damage(damage_str).damage}\n"
+
+                if m.effect and m.type not in ["Heal", "T_Heal"]:
+                    f_str += add_effect(m, com, override)
+
+                if f_str != "":
+                    output += f''' -f "{com.name}|{f_str}" '''
+
+    return output

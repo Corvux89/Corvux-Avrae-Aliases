@@ -1,0 +1,63 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+gvar = load_json(get_gvar("662ecc7f-9b2e-4588-851d-12f199d27d0a"))
+using(sup='d93a6249-468d-4bb4-92e0-2f8bb629cf04')
+fail = 'fail' in &ARGS&
+tadv = 'tadv' in &ARGS&
+tdis = 'tdis' in &ARGS&
+targets = a.get('t')
+i = '-i' in &ARGS&
+cc = "Superiority Dice"
+f_add = ["Damage", "Heal", "Add_Damage", "T_Heal"]
+mi = a.last('mi')
+v = c.cc_exists(cc) or i
+override = a.last('type')
+dc = None if not a.last('dc') else int(a.last('dc'))
+
+if not c.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+elif not com:
+    return err("You must be in combat")
+
+coms  = [com.get_combatant(x) for x in targets] if com else []
+
+for com in coms:
+        if not com:
+            return err(f"Invalid target/targets")
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if not c.get_cc(cc) and not i:
+        base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+        return base
+
+    m = None
+    output = None
+    for g in gvar:
+        if "&1&".lower() in g.name.lower():
+            m=g
+            break
+
+    if m is None or m == "":
+        return err(f"Maneuver not found/supported")
+
+    base += sup.perform(m, coms, lvl=c.get_cc_max(cc), override=override, dc=dc, fail=fail, tdis=tdis, tadv=tadv, mi=mi)
+
+    base += f''' -title "{name} uses a {cc} die to {m.name}" '''
+    base += f''' -f "{m.name} Effect|{m.description}" '''
+    if output != "":
+        base += output
+
+    if len(coms)>0 and m.type in f_add:
+        f_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in coms])
+        base += f''' -footer "{f_str}" '''
+
+if not i:
+    c.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>

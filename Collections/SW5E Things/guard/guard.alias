@@ -1,0 +1,22 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+t = a.last('t')
+desc = "Any attack roll made against the guarded ally has disadvantage if you can see the attacker, as long as the ally is within 5 feet of you.\n - Additionally, if an attack would hit the guarded ally, you can instead have it hit you (no action required). If you do so, the attacker chooses the maximum amount of damage instead of rolling."
+
+base = f'''embed -thumb {image} -color {color}'''
+
+
+if com and t:
+    targ = com.get_combatant(t)
+    if com.me is None:
+        return err("Current character not in combat")
+    peff = com.me.add_effect("Guard", duration=1, desc=desc)
+    targ.add_effect("Guard", parent=peff, desc=desc)
+
+base += f''' -title "{name} is going to guard{' ' + targ.name if t and com else ' ' + t if t else ''}!" '''
+base += f''' -f "Effect|You can defend an ally within 5 feet of you. When you take the Guard action, you focus entirely on preventing attacks from reaching your ally. Until the start of your next turn, any attack roll made against the guarded ally has disadvantage if you can see the attacker, as long as the ally is within 5 feet of you.\n\nAdditionally, if an attack would hit the guarded ally, you can instead have it hit you (no action required). If you do so, the attacker chooses the maximum amount of damage instead of rolling." '''
+
+return base
+</drac2>

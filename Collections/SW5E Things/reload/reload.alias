@@ -1,0 +1,25 @@
+<drac2>
+c = character()
+weap = "&1&" if "&1&" in &ARGS& else None
+count = 0
+
+base = f'''embed -thumb {image} -color {color}'''
+
+for a in c.attacks:
+    attack = dump_json(a.raw)
+    if "counter" in str(a.raw) and (weap is None or (weap.lower() in a.name.lower())):
+        index = attack.find('"counter": "')+12
+        counter = str(attack[index:attack[index:].find('"')+index])
+
+        if (cc := c.cc(counter)) and cc.value != cc.max:
+            count+=1
+            cc.reset()
+            base += f''' -f "{cc.name}|{cc.full_str()}" '''
+
+        if count==0:
+            base += f''' -title "No weapons needed reloading" '''
+        else:
+            base += f''' -title "{name} reloads their weapons!" '''
+
+return base
+</drac2>
