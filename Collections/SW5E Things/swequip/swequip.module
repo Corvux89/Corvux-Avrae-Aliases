@@ -57,8 +57,15 @@ def processAttacks(attacks, args):
             attack = attack.replace('} [', '} [enhanced ')
             attack = attack.replace('[lightning]', '[enhanced lightning]')
 
-        if args.get('rapid'):
-            return err(f"{a.automation[0]}")
+        if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
+            attack = attack.replace('"name": "', '"name": "Gunning - ')
+            attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
+            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus} [')
+
+        if args.get('dev'):
+            attack = updateName(a, attack, "Test")
+            return err(f"{attack}")
+
 
         if args.get('heavy'):
             if "finesse" in prop:
@@ -92,3 +99,10 @@ def processName(name):
     out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace("Bolt, Panic - ", '')
 
     return out
+
+def updateName(a, attack, prefix):
+    attack.replace(f'"name": "{a.name}"', f'"name": "{prefix} - {a.name}"')
+    attack.replace(f'"counter": {processName(a.name)}"', f'"counter": "{prefix} - {processName(a.name)}"')
+    return err(f"{attack}")
+    return attack
+

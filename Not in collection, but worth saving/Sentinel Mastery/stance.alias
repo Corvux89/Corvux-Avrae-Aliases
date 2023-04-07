@@ -1,0 +1,11 @@
+<drac2>
+
+base = f'''embed -thumb {image} -color {color}'''
+
+base += f''' -f "Meta|**Special Reactions**: {proficiencyBonus}" '''
+
+base += f''' -f "Effect|You’ve mastered techniques to take advantage of every drop in any enemy’s guard; in tight spaces you are indomitable. You gain the following benefits:\n\n -Creatures within your reach provoke opportunity attacks from you even if they take the Disengage action.\n -When you take the Dodge action, once per round, you can take two reactions on the same turn, instead of only one. You can only take one reaction per trigger.\n -You can use a bonus action to enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you have a number of special reactions equal to your proficiency bonus that you can only use to make opportunity attacks." '''
+base += f''' -title "{name} assumes their Sentinel Mastery stance!" '''
+
+return base
+</drac2>

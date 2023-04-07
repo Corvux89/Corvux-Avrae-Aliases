@@ -21,7 +21,7 @@ if ch.cc_exists(cc):
         base += f''' -f "Hit Die Remaining|{ch.get_cc(cc)}" '''
         return base
 
-    roll_str = f"-{num}{d_size}{f'mi{mi}' if mi else ''} {f'+{b}' if b else ''} [healing]"
+    roll_str = f"-{num}{d_size}{f'mi{mi}' if mi else ''} {f'-{b}' if b else ''} [healing]"
     base += f''' -title "{name} uses {num} hit die!" '''
 
     if com:

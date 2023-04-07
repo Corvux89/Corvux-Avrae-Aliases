@@ -1,38 +1,12 @@
 <drac2>
-com = combat()
-ch = character()
 num = int("&1&") if "&1&" in &ARGS& and "&1&".isdecimal() else 1
-i = '-i' in &ARGS&
 
-try:
-    d_size = str([c.name for c in character().consumables if  'Hit Dice' in c.name][0]).replace('Hit Dice (','').replace(')','')
-except:
-    return err(f"Hit die doesn't look to be setup. Please run `!level` first or set up the die")
+out = f"-b {max(intelligenceMod, 1)}"
 
-base = f'''embed -thumb {image} -color {color}'''
-cc = f"Hit Dice ({d_size})"
+out += f"-mi {max(constitutionMod*2, 1)}"
 
-if ch.cc_exists(cc):
-    if ch.get_cc(cc)<num:
-        base += f''' -title "{name} doesn't have enough hit die remaining for this." '''
-        base += f''' -f "Hit Die Remaining|{ch.get_cc(cc)}" '''
-        return base
+if '-i' in &ARGS&:
+    out += " -i"
 
-    roll_str = f"-{num}{d_size} [healing]"
-    base += f''' -title "{name} uses {num} hit die!" '''
-
-    if com:
-        base += f''' -f "{name}|{com.me.damage(roll_str, overheal=False).damage}" '''
-        base += f''' -footer "{name}: {com.me.hp_str()}" '''
-    else:
-        h = vroll(roll_str)
-        ch.modify_hp(-h.total, overflow=False)
-        base += f''' -f "{name}|**Damage**: {h}" '''
-        base += f''' -footer "{name}: {ch.hp_str()}" '''
-
-if not i:
-    ch.mod_cc(cc, -num)
-    base += f''' -f "{cc}|{ch.cc_str(cc)} (-{num})" '''
-
-return base
+return f"hdh {num} {out}"
 </drac2>
