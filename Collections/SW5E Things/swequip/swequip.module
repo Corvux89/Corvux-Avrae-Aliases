@@ -1,15 +1,16 @@
 def processAttacks(attacks, args):
     out = []
+    c = character()
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
-        prop = str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
+        prop = getProperties(attack)
 
         if args.get('title'):
             attack = attack.replace(f'{processName(a.name)}', f'{args.last("title")}')
 
         if args.get('b'):
-            attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
+            attack=attack.replace('getAttackBonus": "', f'getAttackBonus": "{args.last("b")}+')
 
         if args.get('d'):
             attack=attack.replace('} [', '}' + f'+{args.last("d")} [')
@@ -24,9 +25,7 @@ def processAttacks(attacks, args):
             attack=attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
 
         if args.get('offhand'):
-            attack=attack.replace('"name": "', '"name": "Offhand ')
-            if "counter" in str(a):
-                    attack=attack.replace('"counter": "', '"counter": "Offhand ')
+            attack = updateName(attack, "Offhand")
             if "finesse" in prop:
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}', '')
             elif "heavy" in prop:
@@ -35,7 +34,7 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{strengthMod}', '')
 
         if args.get('double'):
-            attack=attack.replace('"name": "', '"name": "Double ')
+            attack = updateName(attack, "Double", False)
             if "finesse" in prop:
                 attack = attack.replace('+max(strengthMod,dexterityMod)','')
             elif "heavy" in prop:
@@ -44,28 +43,26 @@ def processAttacks(attacks, args):
             attack = attack.replace('+strengthMod', '')
 
         if args.get('gwm'):
-            attack = attack.replace('"name": "', '"name": "Great ')
+            attack = updateName(attack, "Great", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus*2} [')
+            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus*2} [')
 
         if args.get('sharp'):
-            attack = attack.replace('"name": "', '"name": "Sharpshooter ')
+            attack = updateName(attack, "Sharpshooter", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus * 2} [')
+            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus * 2} [')
 
         if args.get('enhanced'):
             attack = attack.replace('} [', '} [enhanced ')
             attack = attack.replace('[lightning]', '[enhanced lightning]')
 
         if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
-            attack = attack.replace('{"name": "', '{"name": "Gunning - ')
+            attack = attack.replace('"success": []',
+                                    '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
+            out.append(load_json(attack))
+            attack = updateName(attack, "Gunning", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus} [')
-            attack = attack.replace('"success": []', '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
-
-        if args.get('dev'):
-            attack = updateName(a, attack, "Test")
-            return err(f"{attack}")
+            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus} [')
 
         if args.get('heavy'):
             if "finesse" in prop:
@@ -76,9 +73,9 @@ def processAttacks(attacks, args):
         if "counter" in str(a):
             index = attack.find('"counter": "') + 12
             counter = str(attack[index:attack[index:].find('"')+index])
-            if not character().cc_exists(counter):
+            if not c.cc_exists(counter):
                 reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
-                character().create_cc(counter, 0, reload, None, 'bubble', reload)
+                c.create_cc(counter, 0, reload, None, 'bubble', reload)
 
         out.append(load_json(attack))
 
@@ -99,11 +96,18 @@ def processName(name):
 
     return out
 
-def updateName(a, attack, prefix, counterUpdate=True):
+def updateName(attack, prefix, cupdate=True):
+    a = load_json(attack)
     test = attack
-    test.replace('{"name": "', f'{"{"}"name": "{prefix} - ')
-    if counterUpdate:
-        test.replace(f'"counter": "', f'"counter": "{prefix} -  ')
-    return err(f"{test}")
+    test = test.replace(f'"name": "{a.name}"', f'"name": "{prefix} - {a.name}"')
+    if cupdate and "counter" in test:
+        index = test.find('"counter": "') + 12
+        counter = str(test[index:test[index:].find('"') + index])
+        test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} {counter}"')
     return test
+
+def getProperties(attack):
+        a = load_json(attack)
+        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
+            "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
 

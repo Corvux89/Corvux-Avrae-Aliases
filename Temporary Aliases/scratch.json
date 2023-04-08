@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "Rapid - Cartridge, Electrifying - Chaingun",
   "automation": [
     {
       "type": "target",
@@ -11,7 +11,7 @@
           "fail": [
             {
               "type": "damage",
-              "damage": "4d4+{dexterityMod}+3 [kinetic]",
+              "damage": "4d4+{dexterityMod} [kinetic]",
               "overheal": false
             },
             {
@@ -25,7 +25,7 @@
                 },
                 {
                   "type": "ieffect",
-                  "name": "Gunning - Shocked",
+                  "name": "Shocked",
                   "duration": "1",
                   "effects": "",
                   "end": true,
@@ -58,7 +58,7 @@
               "overheal": false
             }
           ],
-          "dc": "8+dexterityMod"
+          "dc": "8+proficiencyBonus+dexterityMod"
         }
       ]
     },
