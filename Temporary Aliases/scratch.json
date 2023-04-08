@@ -1,43 +1,79 @@
-  {
-    "name": "Shock",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d10",
-        "name": "damage",
-        "cantripScale": true
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "{damage} [lightning]",
-                "overheal": false
-              }
-            ],
-            "miss": []
-          }
-        ]
-      }
-    ],
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+{
+  "name": "test",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "dex",
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "4d4+{dexterityMod}+3 [kinetic]",
+              "overheal": false
+            },
+            {
+              "type": "condition",
+              "condition": "lastSaveRollTotal<14",
+              "onTrue": [
+                {
+                  "type": "damage",
+                  "damage": "1d4 [lightning]",
+                  "overheal": false
+                },
+                {
+                  "type": "ieffect",
+                  "name": "Gunning - Shocked",
+                  "duration": "1",
+                  "effects": "",
+                  "end": true,
+                  "conc": null,
+                  "desc": null,
+                  "stacking": null,
+                  "save_as": null,
+                  "parent": null
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "damage",
+                  "damage": "1d4 / 2 [lightning]",
+                  "overheal": false
+                }
+              ],
+              "errorBehaviour": null
+            },
+            {
+              "type": "text",
+              "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn\u2019t shocked.",
+              "title": "Effect"
+            }
+          ],
+          "success": [
+            {
+              "type": "damage",
+              "damage": "{dexterityMod}",
+              "overheal": false
+            }
+          ],
+          "dc": "8+dexterityMod"
+        }
+      ]
     },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
-    "concentration": false
-  }
+    {
+      "type": "counter",
+      "counter": "Chaingun",
+      "amount": "2",
+      "allowOverflow": false,
+      "errorBehaviour": "raise"
+    },
+    {
+      "type": "text",
+      "text": "Auto, Rapid 2, Reload 8, Slug cartridge (range 80/320), Strength 13, Two-handed, Vicious 1",
+      "title": "Effect"
+    }
+  ],
+  "_v": 2
+}

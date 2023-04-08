@@ -58,21 +58,20 @@ def processAttacks(attacks, args):
             attack = attack.replace('[lightning]', '[enhanced lightning]')
 
         if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
-            attack = attack.replace('"name": "', '"name": "Gunning - ')
+            attack = attack.replace('{"name": "', '{"name": "Gunning - ')
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{character().stats.prof_bonus} [')
+            attack = attack.replace('"success": []', '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
 
         if args.get('dev'):
             attack = updateName(a, attack, "Test")
             return err(f"{attack}")
-
 
         if args.get('heavy'):
             if "finesse" in prop:
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}','+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
-
 
         if "counter" in str(a):
             index = attack.find('"counter": "') + 12
@@ -100,9 +99,11 @@ def processName(name):
 
     return out
 
-def updateName(a, attack, prefix):
-    attack.replace(f'"name": "{a.name}"', f'"name": "{prefix} - {a.name}"')
-    attack.replace(f'"counter": {processName(a.name)}"', f'"counter": "{prefix} - {processName(a.name)}"')
-    return err(f"{attack}")
-    return attack
+def updateName(a, attack, prefix, counterUpdate=True):
+    test = attack
+    test.replace('{"name": "', f'{"{"}"name": "{prefix} - ')
+    if counterUpdate:
+        test.replace(f'"counter": "', f'"counter": "{prefix} -  ')
+    return err(f"{test}")
+    return test
 
