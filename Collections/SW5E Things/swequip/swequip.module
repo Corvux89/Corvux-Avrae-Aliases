@@ -70,7 +70,11 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
-        if "counter" in str(a):
+        if args.get('dev'):
+            attack = buildBurst(attack, args)
+
+
+        if "counter" in attack:
             index = attack.find('"counter": "') + 12
             counter = str(attack[index:attack[index:].find('"')+index])
             if not c.cc_exists(counter):
@@ -111,3 +115,57 @@ def getProperties(attack):
         return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
             "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
 
+
+def buildBurst(attack, args):
+    a = load_json(attack)
+    dindex = attack.find('"damage": "') + 11
+    damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
+
+    cindex = attack.find('"counter": "') + 12
+    cName = str(attack[cindex:attack[cindex:].find('"') + cindex])
+
+    automationRoll = {}
+    automationRoll["type"] = "roll"
+    automationRoll["dice"] = damage_str
+    automationRoll["name"] = "damage"
+
+    dmg = {}
+    dmg["type"] = "damage"
+    dmg["damage"] = "{damage}"
+    dmg["overheal"] = False
+
+    save = {}
+    save["type"] = "save"
+    save["stat"] = "dex"
+    save["fail"] = []
+    save["fail"].append(dmg)
+    save["success"] = []
+    save["dc"] = "8+proficiencyBonus+dexterityMod"
+
+    counter = {}
+    counter["type"] = "counter"
+    counter["counter"] = cName
+    counter["amount"] = "2" if args.last('dev') != '' else args.last('dev')
+    counter["allowOverflow"] = False
+    counter["errorBehavior"] = "raise"
+
+    target = {}
+    target["type"] = "target"
+    target["target"] = "each"
+    target["effects"] = []
+    target["effects"].append(save)
+
+    text = {}
+    text["type"] = "text"
+    text["text"] = f"{getProperties(attack)}, Burst {counter['amount']}"
+
+    burstAttack = {}
+    burstAttack["name"] = f"Burst - {a.name}"
+    burstAttack["automation"] = []
+    burstAttack["automation"].append(automationRoll)
+    burstAttack["automation"].append(target)
+    burstAttack["automation"].append(counter)
+    burstAttack["automation"].append(text)
+    burstAttack["_v"] = 2
+
+    return dump_json(burstAttack)
