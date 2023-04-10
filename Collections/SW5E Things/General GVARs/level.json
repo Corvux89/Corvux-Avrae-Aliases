@@ -227,6 +227,21 @@
     ]
   },
   {
+    "Class": "Berserker",
+    "subclass": "Champion",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "BerserkerLevel",
+        "display": "bubble",
+        "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice Quantity column of the Champion Superiority table. This die changes as you gain berserker levels, as shown in the Superiority Dice Size column of the Champion Superiority table. A superiority die is expended when you use it.\n\nYou regain all of your expended superiority dice when you finish a short or long rest."
+      }
+    ]
+  },
+  {
     "Class": "Consularlight",
     "hitDie": "d6",
     "subclassLevel": 3,

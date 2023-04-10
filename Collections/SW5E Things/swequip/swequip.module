@@ -19,7 +19,12 @@ def processAttacks(attacks, args):
             attack=attack.replace('_v": 2', f'_v": 2,"criton":{args.last("criton")}')
 
         if args.get('c'):
-            attack=attack.replace('_v": 2', f'_v": 2,"extra_crit_damage": "{args.last("c")}"')
+            if "extra_crit_damage" in attack:
+                index = attack.find('"extra_crit_damage": "') + 22
+                crit = str(attack[index:attack[index:].find('"') + index])
+                attack = attack.replace(f'"extra_crit_damage": "{crit}"', f'"extra_crit_damage": "{crit}+{args.last("c")}"')
+            else:
+                attack=attack.replace('_v": 2', f'_v": 2,"extra_crit_damage": "{args.last("c")}"')
 
         if args.get('noprof'):
             attack=attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
