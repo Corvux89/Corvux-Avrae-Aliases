@@ -33,6 +33,8 @@ elif cover.lower() in ['total', 'complete', 'full']:
     effect="Full Cover"
     desc="A target with total cover can’t be targeted directly by an attack or a power, although some powers can reach such a target by including it in an area of effect. A target has total cover if it is completely concealed by an obstacle."
     peffect={}
+elif cover.lower() in ['none', 'clear']:
+    effect = None
 else:
     err(f"{cover} is not a valid option")
 
@@ -45,13 +47,23 @@ if com:
     else:
         t = com.me
 
-    t.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
-    base += f''' -title "{t.name} takes {effect}" '''
+    if effect:
+        t.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
+        base += f''' -title "{t.name} takes {effect}" '''
+    else:
+        t.remove_effect("Cover")
+        base += f''' -title "{t.name} is revealed!" '''
 else:
-    base += f''' -title "{name} takes {effect}" '''
+    if effect:
+        base += f''' -title "{name} takes {effect}" '''
+    else:
+        base += f''' -title "{name} is revealed!" '''
 
-base += f''' -desc "{desc}" '''
-base += f''' -f "Effect|{effect} [1 round]" '''
+if effect:
+    base += f''' -desc "{desc}" '''
+    base += f''' -f "Effect|{effect} [1 round]" '''
+else:
+    base += f''' -f "Effect|Cover removed" '''
 
 return base
 

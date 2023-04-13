@@ -38,5 +38,5 @@ for critter in critdb["creatures"]:
 with open("KFC.json", "w") as outfile:
     json.dump(kfcdb, outfile)
 
-print ('here')
+print ('Done!')
 

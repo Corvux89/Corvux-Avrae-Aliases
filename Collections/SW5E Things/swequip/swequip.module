@@ -10,7 +10,7 @@ def processAttacks(attacks, args):
             attack = attack.replace(f'{processName(a.name)}', f'{args.last("title")}')
 
         if args.get('b'):
-            attack=attack.replace('getAttackBonus": "', f'getAttackBonus": "{args.last("b")}+')
+            attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
 
         if args.get('d'):
             attack=attack.replace('} [', '}' + f'+{args.last("d")} [')
