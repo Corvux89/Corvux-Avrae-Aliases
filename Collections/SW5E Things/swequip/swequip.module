@@ -11,6 +11,8 @@ def processAttacks(attacks, args):
 
         if args.get('b'):
             attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
+            if "burst" in a.name.lower() or "rapid" in a.name.lower():
+                attack=attack.replace('"8+proficiencyBonus', f'"8+proficiencyBonus+{args.last("b")}')
 
         if args.get('d'):
             attack=attack.replace('} [', '}' + f'+{args.last("d")} [')
@@ -74,10 +76,6 @@ def processAttacks(attacks, args):
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}','+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
-
-        if args.get('dev'):
-            attack = buildBurst(attack, args)
-
 
         if "counter" in attack:
             index = attack.find('"counter": "') + 12

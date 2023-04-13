@@ -6,9 +6,6 @@ def processPower(args):
     out = []
     point_list = [0,2,3,4,5,6,7,8,9,10]
     keyword = None if not args else args[0].lower()
-    var = get_svar("sw5e", None)
-    var = None if not var else load_json(var)
-    ovr = None if not var else var["castMod"]
 
     if not keyword:
         return "help power"
@@ -17,27 +14,31 @@ def processPower(args):
     tp = load_json(get_gvar("e45f68f5-96d4-4f52-96c8-862734dfa7ff"))
 
     # Find the power, and identify the type
-    if spell := search(keyword, fp):
-        cc = "Force Points"
-        if "light" in spell.classes.lower() and not wi and not ovr:
-            out.append('-with wis')
-        elif "dark" in spell.classes.lower() and not wi and not ovr:
-            out.append('-with cha')
-        elif not wi:
-            if ovr:
-                out.append(f'-with {ovr}')
-            elif c.stats.wisdom > c.stats.charisma:
-                out.append('-with wis')
-            else:
-                out.append('-with cha')
-    elif spell := search(keyword, tp):
-        cc = "Tech Points"
+    if c.cc_exists('Force Points') and not c.cc_exists("Tech Points") and not ignore:
+        if spell := search(keyword, fp):
+            cc = "Force Points"
+            if not wi:
+                out.append(getWith(spell))
+        else:
+            spell = None
+    elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:
+        if spell := search(keyword, tp):
+            cc = "Tech Points"
+        else:
+            spell = None
     else:
-        spell = None
+        if spell := search(keyword, fp):
+            cc = "Force Points"
+            if not wi:
+                out.append(getWith(spell))
+        elif spell := search(keyword, tp):
+            cc = "Tech Points"
+        else:
+            spell = None
 
     # Validation
     if spell is None:
-        return err("I don't think that's a supported power. Make sure it is spelled correctly or ping a Dragonspeaker")
+        return err("I don't think that's a supported power. Make sure it is spelled correctly or let us know")
     if spell.name not in c.spellbook and spell.name.replace("(SW) ",'').lower() not in c.spellbook and not ignore:
         return err(f"I don't think you know {spell.name}.  Make sure it is added to your spellbook or try to cast it "
                    f"again with `-i` to ignore requirements. If you didn't intend to use {spell.name}, try "
@@ -78,3 +79,20 @@ def search(keyword, gvar):
             break
 
     return spell
+
+def getWith(spell):
+    c = character()
+    var = get_svar("sw5e", None)
+    var = None if not var else load_json(var)
+    ovr = None if not var else var["castMod"]
+
+    if ovr:
+        return f'-with {ovr}'
+    elif "light" in spell.classes.lower():
+        return '-with wis'
+    elif "dark" in spell.classes.lower():
+        return '-with cha'
+    elif c.stats.wisdom > c.stats.charisma:
+        return '-with wis'
+    else:
+        return '-with cha'
