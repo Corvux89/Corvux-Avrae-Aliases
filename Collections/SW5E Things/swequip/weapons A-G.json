@@ -4508,7 +4508,33 @@
                 "name": "Blind",
                 "duration": 10,
                 "effects": "",
-                "desc": ""
+                "desc": "A blinded creature can’t see and automatically fails any ability check that requires sight.\n - Unless a creature benefits from powers or a special sense, attack rolls against the creature have advantage, and the creature’s attack rolls have disadvantage.",
+                "buttons": [
+                  {
+                    "label": "Resist Blind",
+                    "style": 3,
+                    "verb": "attempts to resist blind",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "dc": 14
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "success": [],
@@ -4585,8 +4611,13 @@
                 "type": "ieffect2",
                 "name": "Poisoned",
                 "duration": 10,
-                "effects": "",
-                "desc": ""
+                "effects": {
+                  "attack_advantage": -1,
+                  "check_dis": [
+                    "all"
+                  ]
+                },
+                "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
               }
             ],
             "success": [
@@ -4707,7 +4738,33 @@
                 "name": "Frightened",
                 "duration": 10,
                 "effects": "",
-                "desc": ""
+                "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.",
+                "buttons": [
+                  {
+                    "label": "Resist Frightened",
+                    "style": 3,
+                    "verb": "attempts to resist frightened",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "dc": 14
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "success": [
@@ -4781,7 +4838,33 @@
                 "name": "Unconscious",
                 "duration": 10,
                 "effects": "",
-                "desc": ""
+                "desc": "An unconscious creature is incapacitated (see the condition), can’t move or speak, and is unaware of its surroundings\n - The creature drops whatever it’s holding and falls prone.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                "buttons": [
+                  {
+                    "label": "Resist Unconscious",
+                    "style": 3,
+                    "verb": "attempts to resist unconscious",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "dc": 14
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ],
             "success": [],
