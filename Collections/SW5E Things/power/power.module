@@ -74,9 +74,15 @@ def search(keyword, gvar):
     spell = ""
 
     for s in gvar:
-        if keyword == s.name.lower() or sover == s.name.lower() or keyword in s.name.lower():
+        if keyword == s.name.lower() or sover == s.name.lower():
             spell = s
             break
+
+    if spell is None:
+        for s in gvar:
+            if keyword in s.name.lower():
+                spell = s
+                break
 
     return spell
 
