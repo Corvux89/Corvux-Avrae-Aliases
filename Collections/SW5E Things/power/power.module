@@ -40,8 +40,8 @@ def processPower(args):
     if spell is None:
         return err("I don't think that's a supported power. Make sure it is spelled correctly or let us know")
     if spell.name not in c.spellbook and spell.name.replace("(SW) ",'').lower() not in c.spellbook and not ignore:
-        return err(f"I don't think you know {spell.name}.  Make sure it is added to your spellbook or try to cast it "
-                   f"again with `-i` to ignore requirements. If you didn't intend to use {spell.name}, try "
+        return err(f"I don't think you know {spell.name.replace('(SW) ', '')}.  Make sure it is added to your spellbook or try to cast it "
+                   f"again with `-i` to ignore requirements. If you didn't intend to use {spell.name.replace('(SW) ', '')}, try "
                    f"using quotes around the power name.")
 
     # Figure out the cost
@@ -70,7 +70,7 @@ def processPower(args):
     return f'cast "{spell.name}" {" ".join(out)} -i'
 
 def search(keyword, gvar):
-    sover = f"(SW) {keyword}"
+    sover = f"(sw) {keyword}"
     spell = ""
 
     for s in gvar:

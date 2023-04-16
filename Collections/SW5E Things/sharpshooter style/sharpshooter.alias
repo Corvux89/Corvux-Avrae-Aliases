@@ -1,0 +1,29 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+targ = a.last('t')
+eff = "Sharpshooter Style"
+dur = 1
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if com:
+    try:
+        tar = com.get_combatant(targ)
+    except:
+        return err("Invalid target")
+
+
+if com:
+    base += f''' -title "{name} uses {eff} on {tar.name}" '''
+    peff = com.me.add_effect(eff,duration=dur,desc=f"Marking {tar.name}")
+    tar.add_effect(eff,parent=peff,duration=dur,desc=f"Marked by {com.me.name}\n - If target moves at least 5 feet before the start of {name}'s next turn, they provoke an opportunity attack")
+
+
+base += f''' -f "Effect|You can use your bonus action to mark a target greater than 30 feet from you that you can see. If you do so, and that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack." '''
+
+base += f'''-f "Effect|{eff} [1 round]" '''
+
+return base
+</drac2>

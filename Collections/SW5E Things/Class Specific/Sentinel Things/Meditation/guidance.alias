@@ -1,0 +1,46 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+targ = a.get('t')
+cc="Force Points"
+i = '-i' in &ARGS&
+die = "1d6" if level < 5 else "1d8" if level < 11  else "1d10" if level < 17 else "1d12"
+
+base = f'''embed -thumb {image} -color {color}'''
+base += f''' -title "{name} casts Guidance!" '''
+base += f''' -f "Meta|**Guidance die**: {die}" '''
+
+if com:
+    peff = com.me.add_effect("Guidance", concentration=True, duration=10)
+    base += f''' -f "{name}|{peff}" '''
+    if targ:
+        for target in targ:
+            t = com.get_combatant(target)
+            eff = t.add_effect(f'Guided',desc=f'Roll {die} and add the number rolled to one ability check of its choice. The power then ends.',
+            parent = peff,
+            buttons=[
+            {
+                "label": "Guidance",
+                "style": "3",
+                "verb": "uses Guidance",
+                "automation": [
+
+                    {
+                        "type": "roll",
+                        "dice": f"{die}",
+                        "name": "Guidance"
+                    },
+                    {
+                        "type": "remove_ieffect"
+                    }
+                ]
+            }
+            ])
+            base += f''' -f "{t.name}|{eff}" '''
+
+base += f''' -f "Effect|You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. The power then ends.\n\nThis power’s die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level." '''
+base += f''' -f "Path of Meditation - Sage Counsel|You learn the guidance force power, which does not count against your total powers known. Additionally, this power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12)." '''
+
+return base
+</drac2>
