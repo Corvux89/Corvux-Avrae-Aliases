@@ -71,7 +71,7 @@ def processPower(args):
 
 def search(keyword, gvar):
     sover = f"(sw) {keyword}"
-    spell = ""
+    spell = None
 
     for s in gvar:
         if keyword == s.name.lower() or sover == s.name.lower():
