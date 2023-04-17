@@ -1,43 +1,62 @@
 {
-  "name": "Pressure Crush",
-  "level": 0,
-  "school": "Tech",
-  "automation": [
-    {
-      "type": "roll",
-      "dice": "1d12",
-      "name": "damage",
-      "cantripScale": true
+    "name": "(SW) Sage Counsel - Guidance",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Guidance",
+            "duration": "10",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "{ieffect.desc.split()[-1]}",
+                    "name": "Guidance"
+                  },
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Guidance",
+                "style": "3"
+              }
+            ],
+            "desc": "1{'d6' if level < 5 else 'd8' if level < 11 else 'd10' if level < 17 else 'd12'}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch one willing creature. Once before the power ends, the target can roll a {'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+        "title": "Effect"
+      },
+      {
+        "type": "text",
+        "text": "You learn the guidance force power, which does not count against your total powers known. Additionally, this power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).",
+        "title": "Sage Council"
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
     },
-    {
-      "type": "target",
-      "target": "all",
-      "effects": [
-        {
-          "type": "save",
-          "stat": "str",
-          "fail": [
-            {
-              "type": "damage",
-              "damage": "{damage} [kinetic]"
-            }
-          ],
-          "success": []
-        }
-      ]
-    }
-  ],
-  "classes": "None",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "Touch",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "Instantaneous",
-  "ritual": false,
-  "description": "You attempt to crush the body of a creature you touch. The target must make a Strength saving throw. If the creature is grappled or restrained by you or an effect you control, it makes the saving throw with disadvantage. On a failed save, the creature takes 1d12 kinetic damage.\r\n\r\nThis power's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).",
-  "concentration": false
-}
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+    "concentration": true
+  }
+
+
+    if spell.name == "(SW) Guidance" and (load_json(get("subclass")).SentinellightLevel == "Meditation" or load_json(get("subclass")).SentineldarkLevel) and c.level > 3:
+        spell.name = "(SW) Sage Counsel - Guidance"

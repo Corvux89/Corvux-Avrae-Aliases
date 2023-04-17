@@ -51,6 +51,8 @@ def processPower(args):
     if a.get('p'):
         points += int(a.last('p'))
 
+    #Pre Cost Processing
+
     # Pay the cost
     if not ignore and c.get_cc(cc) < points:
         return err("You don't have enough {cc} to cast that power")
@@ -59,7 +61,7 @@ def processPower(args):
     out.append(" ".join(args))
     out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('-h') else ''
 
-    # Post Processing
+    # Post  Cast Processing
     if cc == "Tech Points" and c.cc_exists("Personal Barrier") and not ignore and not a.get('h'):
         c.mod_cc("Personal Barrier", +points)
         out.append(f''' -f "Personal Barrier ({points})|{c.cc_str("Personal Barrier")}" ''')

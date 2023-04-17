@@ -1686,24 +1686,6 @@
     "concentration": false
   },
   {
-    "name": "Electromesh",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 hour",
-    "ritual": false,
-    "description": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\r\n\r\nIf the mesh isn't anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\r\n\r\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\r\n\r\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\r\n\r\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
-    "concentration": true
-  },
-  {
     "name": "Electroshock",
     "level": 0,
     "school": "Tech",
@@ -2884,24 +2866,6 @@
     "concentration": false
   },
   {
-    "name": "Force Throw",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "90 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You use the Force to move a Large or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 90 feet, a Small creature or object can be moved up to 60 feet, a Medium creature or object can be moved up to 30 feet, and a Large creature or object can be moved up to 10 feet. If at the end of this movement the creature or object strikes another creature or object, they both take 2d8 force damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the range you can throw a creature or object increases by 10 feet, to a maximum of 90 feet, and the power's damage increases by 1d8.",
-    "concentration": false
-  },
-  {
     "name": "Force Trance",
     "level": 3,
     "school": "Force",
@@ -3410,24 +3374,6 @@
     "concentration": false
   },
   {
-    "name": "(SW) Guidance",
-    "level": 0,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
-    "concentration": true
-  },
-  {
     "name": "Hallucination",
     "level": 2,
     "school": "Force",
@@ -3569,24 +3515,6 @@
     "duration": "1 hour",
     "ritual": false,
     "description": "Until the power ends or you use an action to dismiss it, you can disguise yourself through the use of a hologram emitter. You can appear to be shorter or taller by about a foot and change the appearance of your body weight, but you cannot change the basic structure of your body. The hologram can include your clothes, armor, weapons, and other belongings on your person. \r\n\r\nThe illusion is only visual, so any sort of physical contact will only interact with the real size and shape of you. A creature can use its action to make an Intelligence (Investigation) check against your tech save DC, seeing through the hologram on a success.",
-    "concentration": false
-  },
-  {
-    "name": "Homing Rockets",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You lock on to one or more targets within range and expel a series of three small explosives. Each explosive hits a creature of your choice that you can see within range. An explosive deals 1d4 + 1 fire damage to its target. The explosives all strike simultaneously, and you can direct them to hit one creature or several.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -5604,24 +5532,6 @@
     "ritual": false,
     "description": "You attempt to alter a droid or construct's memories. One droid or construct that you can see must make a Wisdom saving throw. If you are fighting the creature, it has advantage on the saving throw. On a failed save, the target becomes charmed by you for the duration. The charmed target is incapacitated and unaware of its surroundings, though it can still hear you. If it takes any damage or is targeted by another power, this power ends, and none of the target's memories are modified.\r\n\r\nWhile this charm lasts, you can affect the target's memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity and exacting detail, change its memory of the details of the event, or create a memory of some other event.\r\n\r\nThe target's mind fills in any gaps in the altered memory. If the power ends before you have finished prescribing the modified memories, the creature's memory isn't altered. Otherwise, the modified memories take hold when the power ends.\r\n\r\nA modified memory doesn't necessarily affect how the target behaves, particularly if the memory contradicts the target's core programming, alignment, or beliefs. An illogical modified memory, such as implanting a memory of how much the target enjoyed dousing itself in acid, is dismissed, perhaps as a glitch. The DM might deem a modified memory too nonsensical to affect a target in a significant manner.\r\n\r\nA *remove virus* or similar power cast on the target restores its true memory.\r\n\r\n***Overcharge Tech.*** If you cast this power using a tech slot of 6th level or higher, you can alter the target's memories of an event that took place up to 7 days ago (6th level), 30 days ago (7th level), 1 year ago (8th level), or any time in the creature's past (9th level).",
     "concentration": true
-  },
-  {
-    "name": "Rime Shot",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid. \r\n\r\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level.",
-    "concentration": false
   },
   {
     "name": "Rime Strike",
@@ -7778,20 +7688,20 @@
         "effects": [
           {
             "type": "roll",
-            "dice": "1d8",
-            "name": "damage",
+            "dice": "1d1",
+            "name": "tast",
             "cantripScale": true,
-            "displayName": "Damage"
+            "hidden": true
           },
           {
             "type": "damage",
-            "damage": "{damage} [fire]",
-            "cantripScale": true
+            "damage": "{{lastRoll-1}}d6 [fire]",
+            "cantripScale": false
           },
           {
             "type": "ieffect2",
             "name": "Ignited",
-            "duration": "2",
+            "duration": "1",
             "buttons": [
               {
                 "automation": [
@@ -7828,9 +7738,10 @@
                 "label": "Let it Burn",
                 "verb": "Lets the Flames Go Out",
                 "style": "4",
-                "defaultCastingMod": "max(charismaMod, wisdomMod,0)"
+                "defaultCastingMod": "max(intelligenceMod,0)"
               }
             ],
+            "end": true,
             "desc": "{{max(intelligenceMod, 0)}}{{'' if level < 5 else \"+1d4\" if level < 11 else \"+2d4\" if level < 17 else \"+3d4\"}}"
           }
         ]
@@ -9092,6 +9003,440 @@
     "duration": "Until triggered",
     "ritual": false,
     "description": "You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can’t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\nBlaster. This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\nPitfall. This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power’s duration. Flying creatures avoid this trap.\n\nSnare. This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\nBlaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\nPitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\nSnare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Force Throw",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Throw",
+            "duration": "1",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Force Throw",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "2d8 [force]",
+                      "name": "damage",
+                      "higher": {
+                        "3": "1d8 [force]",
+                        "4": "2d8 [force]",
+                        "5": "3d8 [force]",
+                        "6": "4d8 [force]",
+                        "7": "5d8 [force]",
+                        "8": "6d8 [force]",
+                        "9": "7d8 [force]"
+                      }
+                    },
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{damage}",
+                          "higher": {
+                            "3": "1d8 [force]",
+                            "4": "2d8 [force]",
+                            "5": "3d8 [force]",
+                            "6": "4d8 [force]",
+                            "7": "5d8 [force]",
+                            "8": "6d8 [force]",
+                            "9": "7d8 [force]"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "verb": "casts",
+                  "proper": true,
+                  "phrase": "If at the end of this movement the creature or object strikes another creature or object, they both take 2d8 force damage.",
+                  "activation_type": 1
+                }
+              }
+            ],
+            "end": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You use the Force to move a Large or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 90 feet, a Small creature or object can be moved up to 60 feet, a Medium creature or object can be moved up to 30 feet, and a Large creature or object can be moved up to 10 feet. If at the end of this movement the creature or object strikes another creature or object, they both take 2d8 force damage."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "90 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You use the Force to move a Large or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 90 feet, a Small creature or object can be moved up to 60 feet, a Medium creature or object can be moved up to 30 feet, and a Large creature or object can be moved up to 10 feet. If at the end of this movement the creature or object strikes another creature or object, they both take 2d8 force damage.",
+    "higherlevels": "Force Potency. When you cast this power using a force slot of 3rd level or higher, the range you can throw a creature or object increases by 10 feet, to a maximum of 90 feet, and the power’s damage increases by 1d8.",
+    "concentration": false
+  },
+  {
+    "name": "Electromesh",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Electromeshing",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Electromesh",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Restrained (Electromesh)",
+                              "duration": "601",
+                              "effects": {
+                                "attack_advantage": "-1",
+                                "save_dis": [
+                                  "dex"
+                                ]
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "check",
+                                          "ability": [
+                                            "strength"
+                                          ],
+                                          "dc": "spell",
+                                          "success": [
+                                            {
+                                              "type": "remove_ieffect",
+                                              "removeParent": "if_no_children"
+                                            }
+                                          ],
+                                          "fail": [],
+                                          "contestTie": "neither"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Break Free (Electromesh)",
+                                  "verb": "attempts to break free of the Electromesh",
+                                  "style": "1",
+                                  "defaultCastingMod": "lastSaveDC"
+                                }
+                              ],
+                              "desc": "The target is restrained as long as it remains in the webs or until it breaks free\n - A target restrained by the webs can use its action to make a Strength check against your spell save DC\n - If it succeeds, it is no longer restrained",
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
+                    }
+                  ],
+                  "proper": true
+                }
+              }
+            ],
+            "end": false,
+            "conc": false,
+            "stacking": false,
+            "save_as": "webbing"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Restrained (Electromesh)",
+                "duration": "601",
+                "effects": {
+                  "attack_advantage": "-1",
+                  "save_dis": [
+                    "dex"
+                  ]
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "check",
+                            "ability": [
+                              "strength"
+                            ],
+                            "dc": "spell",
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "removeParent": "if_no_children"
+                              }
+                            ],
+                            "fail": [],
+                            "contestTie": "neither"
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Break Free (Electromesh)",
+                    "verb": "attempts to break free of the Electromesh",
+                    "style": "1",
+                    "defaultCastingMod": "lastSaveDC"
+                  }
+                ],
+                "desc": "The target is restrained as long as it remains in the webs or until it breaks free\n - A target restrained by the webs can use its action to make a Strength check against your spell save DC\n - If it succeeds, it is no longer restrained",
+                "parent": "webbing"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet (20 ft. cube)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 hour",
+    "ritual": false,
+    "description": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
+    "concentration": true
+  },
+  {
+    "name": "(SW) Guidance",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Guidance",
+            "duration": "10",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "{ieffect.desc.split()[-1]}",
+                    "name": "Guidance"
+                  },
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Guidance",
+                "style": "3"
+              }
+            ],
+            "desc": "1{'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch one willing creature. Once before the power ends, the target can roll a {'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+        "title": "Effect"
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+    "concentration": true
+  },
+  {
+    "name": "Homing Rockets",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4+1 [missile fire]",
+        "name": "damage"
+      },
+      {
+        "type": "condition",
+        "condition": "any(targets)",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "all",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "variable",
+            "name": "darts",
+            "value": "3",
+            "higher": {
+              "2": "4",
+              "3": "5",
+              "4": "6",
+              "5": "7",
+              "6": "8",
+              "7": "9",
+              "8": "10",
+              "9": "11"
+            }
+          },
+          {
+            "type": "text",
+            "text": "**Total Damage:** {damage} * {darts} [darts] = {int(damage) * darts}"
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You lock on to one or more targets within range and expel a series of three small explosives. Each explosive hits a creature of your choice that you can see within range. An explosive deals 1d4 + 1 fire damage to its target. The explosives all strike simultaneously, and you can direct them to hit one creature or several."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You lock on to one or more targets within range and expel a series of three small explosives. Each explosive hits a creature of your choice that you can see within range. An explosive deals 1d4 + 1 fire damage to its target. The explosives all strike simultaneously, and you can direct them to hit one creature or several.",
+    "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Rime Shot",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d1",
+            "name": "tast",
+            "cantripScale": true,
+            "hidden": true
+          },
+          {
+            "type": "damage",
+            "damage": "{{lastRoll-1}}d6 [cold]",
+            "cantripScale": false
+          },
+          {
+            "type": "ieffect2",
+            "name": "Slowed",
+            "duration": "1",
+            "end": true,
+            "desc": "Some abilities, effects, and hazards can lead to a special condition called slowed. Slowed is measured in four levels. An effect can give a creature one or more levels of slowed, as specified in the effect’s description.\n\nSlowed Level\nLevel\tEffect\n1\tSpeed reduced by 15 feet\n2\tSpeed reduced by 25 feet\n3\tSpeed reduced by 30 feet\n4\tSpeed reduced to 0, and can’t benefit from any bonus to speed"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (Varies)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level.",
+    "higherlevels": "",
     "concentration": false
   }
 ]

@@ -1,0 +1,151 @@
+def meditate(args):
+    c = character()
+    com = combat()
+    a = argparse(args)
+    targ = a.get('t')
+    i = '-i' in args
+    improved = 'improved' in args
+    master = 'master' in args
+    tdis = 'tdis' in args
+    tadv = 'tadv' in args
+    fail = 'fail' in args
+    tpass = 'pass' in args
+
+    disp_name = f"{'Improved ' if improved else 'Master ' if master else ''}Battle Meditation"
+
+    cc = "Force Points"
+    fc = "Legendary Battle Meditation" if master else "Turbulent Presence" if improved else "Unbreakable"
+
+    dc = 8 + c.stats.prof_bonus + get_mod()
+    dc = dc if not a.get('dc') else int(a.last('dc'))
+
+    die = 'd10' if master else 'd8' if improved else 'd6'
+    cost = 10 if master else 6 if improved else 3
+
+    out = f'''embed -thumb {a.get('image')} -color {a.get('color')}'''
+
+    v = c.cc_exists(cc) or i
+
+    if v:
+        if c.cc_exists(fc) and not c.get_cc(od) and not i:
+            if c.get(cc) < cost:
+                return err("You do not have enough resources to cast this")
+
+        out += f''' -title "{c.name} casts {disp_name}!" '''
+        out += f''' -f "Meta|**Meditation die**: 1{die}\n**DC**: {dc}" '''
+
+        if com:
+            parent_effect = com.me.add_effect(disp_name, concentration=True, duration=10,
+                                              passive_effects={"to_hit_bonus": f"1{die}", "save_bonus": f"1{die}"},
+                                              attacks=get_attacks(disp_name, dc, die))
+            out += f''' -f "{c.name}|{parent_effect}" '''
+
+            if targ:
+                for target in targ:
+                    try:
+                        t = com.get_combatant(target)
+                    except:
+                        return err(f"`{target}` is not a valid target")
+
+                    if t.monster_name:
+                        s = t.save("cha", adv=True if tadv else False if tdis else None)
+                        f_str    = f"{s}; "
+
+                        if tpass:
+                            f_str += "**Automatic Pass!**\n"
+                        elif fail:
+                            f_str += f"*Automatic Failure!*\n"
+                            eff = t.add_effect(f'Meditating',buttons=get_buttons(disp_name, dc),
+                                               passive_effects={"to_hit_bonus": f"-1{die}", "save_bonus": f"-1{die}"},
+                                               parent=parent_effect)
+                            f_str += f"**Effect**: {eff}"
+                        elif s.total > dc:
+                            f_str += f"**Success!**\n"
+                        else:
+                            f_str += f"*Failure!*\n"
+                            eff = t.add_effect(f'Meditating', buttons=get_buttons(disp_name, dc),
+                                               passive_effects={"to_hit_bonus": f"-1{die}", "save_bonus": f"-1{die}"},
+                                               parent=parent_effect)
+                            f_str += f"**Effect**: {eff}"
+
+                        out += f''' -f "{t.name}|{f_str}" '''
+                    else:
+                        eff = t.add_effect("Meditating", passive_effects={"to_hit_bonus": f"1{die}", "save_bonus": f"1{die}"})
+                        out += f''' -f "{t.name}|**Effect**: {eff}" '''
+
+        return out
+    else:
+        return err(f"No custom counter called {cc} exists")
+
+
+def get_buttons(disp_name, dc):
+    buttons = []
+
+    save = {"type": "save", "stat": "cha", "dc": dc, "fail": [], "success": []}
+    save["success"].append(get_remove_effect())
+    save["success"].append(get_immune_effect())
+
+    target = {"type": "target", "target": "self", "effects": []}
+    target["effects"].append(save)
+
+    leave = {"label": f"Leaves {disp_name}", "style": 3, "verb": f"Leaves {disp_name}", "automation": []}
+    leave["automation"].append(get_remove_effect())
+
+    start = {"label": f"{disp_name} - Start of Turn", "style": 4, "verb": f"Starts their turn in {disp_name}",
+             "automation": []}
+    start["automation"].append(target)
+
+    buttons.append(leave)
+    buttons.append(start)
+
+    return buttons
+
+def get_attacks(disp_name, dc, die):
+    attacks = []
+
+    e_pass_effect = {"to_hit_bonus": f"-1{die}", "save_bonus": f"-1{die}"}
+    e_effect = {"type": "ieffect2", "name": "Meditating", "effects": e_pass_effect,
+                "buttons": get_buttons(disp_name, dc), "parent": disp_name}
+
+    save = {"type": "save", "stat": "cha", "dc": dc, "fail": [], "success": []}
+    save["fail"].append(e_effect)
+    save["success"].append(get_immune_effect())
+
+    e_target = {"type": "target", "target": "each", "effects": []}
+    e_target["effects"].append(save)
+
+    e_text = {"type": "text",
+              "text": f"Whenever a hostile creature enters your meditation or starts its turn there, it must make a "
+                      f"Charisma saving throw. On a failed save, it must roll a {die} and subtract the number rolled from "
+                      f"each attack roll or saving throw it makes before the end of your next turn. On a successful "
+                      f"save, it is immune to this power for 1 day."}
+
+    e_attack = {"name": "Enemy - Spread Battle Meditation", "automation": [], "_v": 2}
+    e_attack["automation"].append(e_target)
+    e_attack["automation"].append(e_text)
+
+    attack = {"attack": e_attack}
+
+
+    attacks.append(attack)
+
+    return attacks
+
+def get_immune_effect():
+    return {"type": "ieffect2", "name": "Immune to Battle Meditation"}
+
+def get_remove_effect():
+    return {"type": "remove_ieffect"}
+
+def get_mod():
+    c = character()
+    svar = get_svar("sw5e", None)
+    var = None if not svar else load_json(svar)
+    ovr = None if not var else var["castMod"]
+
+    if ovr:
+        return c.stats.get_mod(ovr)
+    elif get("sentinelLight"):
+        return c.stats.get_mod("wis")
+    else:
+        return c.stats.get_mod("cha")
