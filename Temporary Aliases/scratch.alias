@@ -1,12 +1,3 @@
 <drac2>
-num = int("&1&") if "&1&" in &ARGS& and "&1&".isdecimal() else 1
-
-out = f"-b {max(intelligenceMod, 1)}"
-
-out += f"-mi {max(constitutionMod*2, 1)}"
-
-if '-i' in &ARGS&:
-    out += " -i"
-
-return f"hdh {num} {out}"
+return err(f"{load_json(get('subclass')).SentinellightLevel}")
 </drac2>

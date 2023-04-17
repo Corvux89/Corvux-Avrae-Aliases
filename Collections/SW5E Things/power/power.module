@@ -51,7 +51,9 @@ def processPower(args):
     if a.get('p'):
         points += int(a.last('p'))
 
-    #Pre Cost Processing
+    #Pre Cost Processing v
+    if ctx.author.id == 225752877316964352 and a.get('dev'):
+        return err(f"{load_json(c.get('subclass')).SentinellightLevel}")
 
     # Pay the cost
     if not ignore and c.get_cc(cc) < points:
