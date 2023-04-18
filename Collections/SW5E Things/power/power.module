@@ -51,9 +51,10 @@ def processPower(args):
     if a.get('p'):
         points += int(a.last('p'))
 
-    #Pre Cost Processing v
-    if ctx.author.id == 225752877316964352 and a.get('dev'):
-        return err(f"{load_json(c.get('subclass')).SentinellightLevel}")
+    #Pre Cost Processing
+    if (load_json(c.get_cvar('subclass')).get('SentinellightLevel') == "Meditation" and c.levels.get("Sentinellight", 0) > 3) or (load_json(c.get_cvar('subclass')).get('SentineldarkLevel') == "Meditation" and c.levels.get("Sentineldark", 0) > 3):
+        if spell.name == "(SW) Guidance":
+            spell["name"] = "(SW) Sage Counsel - Guidance"
 
     # Pay the cost
     if not ignore and c.get_cc(cc) < points:
@@ -74,6 +75,7 @@ def processPower(args):
     return f'cast "{spell.name}" {" ".join(out)} -i'
 
 def search(keyword, gvar):
+    c = character()
     sover = f"(sw) {keyword}"
     spell = None
 

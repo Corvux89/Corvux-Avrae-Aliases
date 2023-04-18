@@ -1,3 +1,4 @@
 <drac2>
-return err(f"{load_json(get('subclass')).SentinellightLevel}")
+c = character()
+return err(f"{c.levels.get('SentinellightLevel')}")
 </drac2>
