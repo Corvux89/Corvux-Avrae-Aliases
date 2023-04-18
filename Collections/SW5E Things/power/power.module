@@ -52,9 +52,29 @@ def processPower(args):
         points += int(a.last('p'))
 
     #Pre Cost Processing
+
+    # Sentinel - Path of Meditation
     if (load_json(c.get_cvar('subclass')).get('SentinellightLevel') == "Meditation" and c.levels.get("Sentinellight", 0) > 3) or (load_json(c.get_cvar('subclass')).get('SentineldarkLevel') == "Meditation" and c.levels.get("Sentineldark", 0) > 3):
         if spell.name == "(SW) Guidance":
             spell["name"] = "(SW) Sage Counsel - Guidance"
+        if spell.name == "Battle Meditation" and c.cc_exists("Unbreakable Focus"):
+            if c.get_cc("Unbreakable Focus") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Unbreakable Focus", -1)
+                out.append(f''' -f "Unbreakable Focus (-1)|{c.cc_str("Unbreakable Focus")}" ''')
+            spell["name"] = "Unbreakable Focus - Battle Meditation"
+        elif spell.name == "Improved Battle Meditation" and c.cc_exists("Turbulent Presence"):
+            if c.get_cc("Turbulent Presence") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Turbulent Presence", -1)
+                out.append(f''' -f "Turbulent Presence (-1)|{c.cc_str("Turbulent Presence")}" ''')
+            spell["name"] = "Turbulent Presence - Improved Battle Meditation"
+        elif spell.name == "Mater Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
+            if c.get_cc("Legendary Battle Meditation") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Legendary Battle Meditation", -1)
+                out.append(f''' -f "Legendary Battle Meditation (-1)|{c.cc_str("Legendary Battle Meditation")}" ''')
+            spell["name"] = "Legendary Battle Meditation - Master Battle Meditation"
 
     # Pay the cost
     if not ignore and c.get_cc(cc) < points:
@@ -64,14 +84,18 @@ def processPower(args):
     out.append(" ".join(args))
     out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('-h') else ''
 
-    # Post  Cast Processing
+    # Post Cast Processing
+
+    # Scout - Bulwark
     if cc == "Tech Points" and c.cc_exists("Personal Barrier") and not ignore and not a.get('h'):
         c.mod_cc("Personal Barrier", +points)
         out.append(f''' -f "Personal Barrier ({points})|{c.cc_str("Personal Barrier")}" ''')
 
+    # Troubleshooting
     if a.get('dev'):
         return err(f'cast "{spell.name}" {" ".join(out)} -i')
 
+    # Send it!
     return f'cast "{spell.name}" {" ".join(out)} -i'
 
 def search(keyword, gvar):

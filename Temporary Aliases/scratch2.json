@@ -1,26 +1,35 @@
 {
-  "name": "Enemy - Spread Battle Meditation",
+  "label": "Battle Meditation - 1d12",
+  "verb": "ups the Meditation die to 1d12!",
   "automation": [
     {
       "type": "target",
-      "target": "each",
+      "target": "children",
       "effects": [
         {
-          "type": "save",
-          "stat": "cha",
-          "fail": [
+          "type": "condition",
+          "condition": "target.creature_type is None",
+          "onTrue": [
             {
               "type": "ieffect2",
               "name": "Meditating",
-              "duration": null,
               "effects": {
-                "to_hit_bonus": "-1d4",
-                "save_bonus": "-1d4"
+                "to_hit_bonus": "1d12",
+                "save_bonus": "1d12"
               },
-              "attacks": [],
+              "parent": "ieffect"
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "ieffect2",
+              "name": "Meditating",
+              "effects": {
+                "to_hit_bonus": "-1d12",
+                "save_bonus": "-1d12"
+              },
               "buttons": [
                 {
-                  "label": "Battle Meditation - Start of Turn",
                   "automation": [
                     {
                       "type": "target",
@@ -37,30 +46,19 @@
                             {
                               "type": "ieffect2",
                               "name": "Immune to Battle Meditation",
-                              "duration": null,
-                              "effects": null,
-                              "attacks": [],
-                              "buttons": [],
-                              "end": false,
-                              "conc": false,
-                              "desc": "Immune to this power for 1 day",
-                              "stacking": false,
-                              "save_as": null,
-                              "parent": null
+                              "desc": "Immune to this power for 1 day"
                             }
                           ]
                         }
                       ]
                     }
                   ],
+                  "label": "Battle Meditation - Start of Turn",
                   "verb": "Starts their turn in Battle Meditation",
                   "style": "4",
-                  "defaultDC": "{lastSaveDC}",
-                  "defaultAttackBonus": null,
-                  "defaultCastingMod": null
+                  "defaultDC": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
                 },
                 {
-                  "label": "Leave Battle Meditation",
                   "automation": [
                     {
                       "type": "remove_ieffect"
@@ -72,55 +70,21 @@
                         {
                           "type": "ieffect2",
                           "name": "Immune to Battle Meditation",
-                          "duration": null,
-                          "effects": null,
-                          "attacks": [],
-                          "buttons": [],
-                          "end": false,
-                          "conc": false,
-                          "desc": "Immune to this power for 1 day",
-                          "stacking": false,
-                          "save_as": null,
-                          "parent": null
+                          "desc": "Immune to this power for 1 day"
                         }
                       ]
                     }
                   ],
+                  "label": "Leave Battle Meditation",
                   "verb": "Leaves Battle Meditation",
-                  "style": "3",
-                  "defaultDC": null,
-                  "defaultAttackBonus": null,
-                  "defaultCastingMod": null
+                  "style": "3"
                 }
               ],
-              "end": false,
-              "conc": false,
-              "desc": null,
-              "stacking": false,
-              "save_as": null,
-              "parent": "Battle Meditation"
+              "parent": "ieffect"
             }
-          ],
-          "success": [
-            {
-              "type": "ieffect2",
-              "name": "Immune to Battle Meditation",
-              "duration": null,
-              "effects": null,
-              "attacks": [],
-              "buttons": [],
-              "end": false,
-              "conc": false,
-              "desc": "Immune to this power for 1 day",
-              "stacking": false,
-              "save_as": null,
-              "parent": null
-            }
-          ],
-          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
+          ]
         }
       ]
     }
-  ],
-  "_v": 2
+  ]
 }
