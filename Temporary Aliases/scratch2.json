@@ -1,62 +1,126 @@
 {
-    "name": "(SW) Sage Counsel - Guidance",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Guidance",
-            "duration": "10",
-            "buttons": [
-              {
-                "automation": [
-                  {
-                    "type": "roll",
-                    "dice": "{ieffect.desc.split()[-1]}",
-                    "name": "Guidance"
-                  },
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ],
-                "label": "Guidance",
-                "style": "3"
-              }
-            ],
-            "desc": "1{'d6' if level < 5 else 'd8' if level < 11 else 'd10' if level < 17 else 'd12'}"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You touch one willing creature. Once before the power ends, the target can roll a {'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
-        "title": "Effect"
-      },
-      {
-        "type": "text",
-        "text": "You learn the guidance force power, which does not count against your total powers known. Additionally, this power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).",
-        "title": "Sage Council"
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
-    "concentration": true
-  }
-
-
-    if spell.name == "(SW) Guidance" and (load_json(get("subclass")).SentinellightLevel == "Meditation" or load_json(get("subclass")).SentineldarkLevel) and c.level > 3:
-        spell.name = "(SW) Sage Counsel - Guidance"
+  "name": "Enemy - Spread Battle Meditation",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "cha",
+          "fail": [
+            {
+              "type": "ieffect2",
+              "name": "Meditating",
+              "duration": null,
+              "effects": {
+                "to_hit_bonus": "-1d4",
+                "save_bonus": "-1d4"
+              },
+              "attacks": [],
+              "buttons": [
+                {
+                  "label": "Battle Meditation - Start of Turn",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "cha",
+                          "fail": [],
+                          "success": [
+                            {
+                              "type": "remove_ieffect"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Immune to Battle Meditation",
+                              "duration": null,
+                              "effects": null,
+                              "attacks": [],
+                              "buttons": [],
+                              "end": false,
+                              "conc": false,
+                              "desc": "Immune to this power for 1 day",
+                              "stacking": false,
+                              "save_as": null,
+                              "parent": null
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "verb": "Starts their turn in Battle Meditation",
+                  "style": "4",
+                  "defaultDC": "{lastSaveDC}",
+                  "defaultAttackBonus": null,
+                  "defaultCastingMod": null
+                },
+                {
+                  "label": "Leave Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "remove_ieffect"
+                    },
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Immune to Battle Meditation",
+                          "duration": null,
+                          "effects": null,
+                          "attacks": [],
+                          "buttons": [],
+                          "end": false,
+                          "conc": false,
+                          "desc": "Immune to this power for 1 day",
+                          "stacking": false,
+                          "save_as": null,
+                          "parent": null
+                        }
+                      ]
+                    }
+                  ],
+                  "verb": "Leaves Battle Meditation",
+                  "style": "3",
+                  "defaultDC": null,
+                  "defaultAttackBonus": null,
+                  "defaultCastingMod": null
+                }
+              ],
+              "end": false,
+              "conc": false,
+              "desc": null,
+              "stacking": false,
+              "save_as": null,
+              "parent": "Battle Meditation"
+            }
+          ],
+          "success": [
+            {
+              "type": "ieffect2",
+              "name": "Immune to Battle Meditation",
+              "duration": null,
+              "effects": null,
+              "attacks": [],
+              "buttons": [],
+              "end": false,
+              "conc": false,
+              "desc": "Immune to this power for 1 day",
+              "stacking": false,
+              "save_as": null,
+              "parent": null
+            }
+          ],
+          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
+        }
+      ]
+    }
+  ],
+  "_v": 2
+}

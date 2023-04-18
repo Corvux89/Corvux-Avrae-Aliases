@@ -58,7 +58,7 @@ def processPower(args):
 
     # Pay the cost
     if not ignore and c.get_cc(cc) < points:
-        return err("You don't have enough {cc} to cast that power")
+        return err(f"You don't have enough {cc} to cast that power")
     c.mod_cc(cc, -points) if not ignore else ''
     args.remove(args[0])
     out.append(" ".join(args))

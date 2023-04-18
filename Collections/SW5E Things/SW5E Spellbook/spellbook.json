@@ -3608,24 +3608,6 @@
     "concentration": false
   },
   {
-    "name": "Improved Battle Meditation",
-    "level": 5,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
-    "concentration": true
-  },
-  {
     "name": "Improved Dark Side Tendrils",
     "level": 3,
     "school": "Force",
@@ -4362,24 +4344,6 @@
     "ritual": false,
     "description": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
     "concentration": false
-  },
-  {
-    "name": "Master Battle Meditation",
-    "level": 9,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (30-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
-    "concentration": true
   },
   {
     "name": "Master Feedback",
@@ -9483,41 +9447,22 @@
     "name": "Battle Meditation",
     "level": 2,
     "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (5-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
-    "concentration": true,
     "automation": [
-      {
-        "type": "variable",
-        "name": "dc",
-        "value": "{spell_dc}"
-      },
       {
         "type": "target",
         "target": "self",
         "effects": [
           {
             "type": "ieffect2",
-            "name": "Battle Meditation",
+            "name": "Meditating",
             "effects": {
               "to_hit_bonus": "1d4",
               "save_bonus": "1d4"
             },
-            "duration": 10,
-            "save_as": "bmed",
             "attacks": [
               {
                 "attack": {
+                  "_v": 2,
                   "name": "Enemy - Spread Battle Meditation",
                   "automation": [
                     {
@@ -9527,7 +9472,6 @@
                         {
                           "type": "save",
                           "stat": "cha",
-                          "dc": "dc",
                           "fail": [
                             {
                               "type": "ieffect2",
@@ -9536,22 +9480,45 @@
                                 "to_hit_bonus": "-1d4",
                                 "save_bonus": "-1d4"
                               },
-                              "parent": "bmed",
                               "buttons": [
                                 {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "cha",
+                                          "fail": [],
+                                          "success": [
+                                            {
+                                              "type": "remove_ieffect"
+                                            },
+                                            {
+                                              "type": "ieffect2",
+                                              "name": "Immune to Battle Meditation",
+                                              "desc": "Immune to this power for 1 day"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
                                   "label": "Battle Meditation - Start of Turn",
                                   "verb": "Starts their turn in Battle Meditation",
                                   "style": "4",
+                                  "defaultDC": "{lastSaveDC}"
+                                },
+                                {
                                   "automation": [
                                     {
-                                      "type": "save",
-                                      "stat": "cha",
-                                      "dc": "spell_dc",
-                                      "fail": [],
-                                      "success": [
-                                        {
-                                          "type": "remove_ieffect"
-                                        },
+                                      "type": "remove_ieffect"
+                                    },
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
                                         {
                                           "type": "ieffect2",
                                           "name": "Immune to Battle Meditation",
@@ -9559,9 +9526,13 @@
                                         }
                                       ]
                                     }
-                                  ]
+                                  ],
+                                  "label": "Leave Battle Meditation",
+                                  "verb": "Leaves Battle Meditation",
+                                  "style": "3"
                                 }
-                              ]
+                              ],
+                              "parent": "ieffect"
                             }
                           ],
                           "success": [
@@ -9570,16 +9541,21 @@
                               "name": "Immune to Battle Meditation",
                               "desc": "Immune to this power for 1 day"
                             }
-                          ]
+                          ],
+                          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
                         }
                       ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               },
               {
                 "attack": {
+                  "_v": 2,
                   "name": "Ally - Spread Battle Meditation",
                   "automation": [
                     {
@@ -9593,15 +9569,19 @@
                             "to_hit_bonus": "1d4",
                             "save_bonus": "1d4"
                           },
-                          "parent": "bmed"
+                          "parent": "ieffect"
                         }
                       ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw."
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               }
-            ]
+            ],
+            "save_as": "bmed"
           }
         ]
       },
@@ -9635,34 +9615,37 @@
                       "to_hit_bonus": "-1d4",
                       "save_bonus": "-1d4"
                     },
-                    "parent": "bmed",
                     "buttons": [
                       {
-                        "label": "Battle Meditation - Start of Turn",
                         "automation": [
                           {
-                            "type": "save",
-                            "stat": "cha",
-                            "fail": [],
-                            "success": [
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
                               {
-                                "type": "remove_ieffect"
-                              },
-                              {
-                                "type": "ieffect2",
-                                "name": "Immune to Battle Meditation",
-                                "desc": "Immune to this power for 1 day"
+                                "type": "save",
+                                "stat": "cha",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  },
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Immune to Battle Meditation",
+                                    "desc": "Immune to this power for 1 day"
+                                  }
+                                ]
                               }
-                            ],
-                            "dc": "{sell_dc}"
+                            ]
                           }
                         ],
+                        "label": "Battle Meditation - Start of Turn",
                         "verb": "Starts their turn in Battle Meditation",
                         "style": "4",
-                        "defaultDC": "spell_dc"
+                        "defaultDC": "{lastSaveDC}"
                       },
                       {
-                        "label": "Leave Battle Meditation",
                         "automation": [
                           {
                             "type": "remove_ieffect"
@@ -9679,20 +9662,544 @@
                             ]
                           }
                         ],
+                        "label": "Leave Battle Meditation",
                         "verb": "Leaves Battle Meditation",
                         "style": "3",
-                        "defaultDC": "spell_dc"
+                        "defaultDC": "spell"
                       }
-                    ]
+                    ],
+                    "parent": "bmed"
                   }
                 ],
                 "success": []
               }
-            ],
-            "errorBehavior": "raise"
+            ]
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       }
-    ]
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (5-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Battle Meditation",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Meditating",
+            "effects": {
+              "to_hit_bonus": "1d6",
+              "save_bonus": "1d6"
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Enemy - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "cha",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Meditating",
+                              "effects": {
+                                "to_hit_bonus": "-1d6",
+                                "save_bonus": "-1d6"
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "cha",
+                                          "fail": [],
+                                          "success": [
+                                            {
+                                              "type": "remove_ieffect"
+                                            },
+                                            {
+                                              "type": "ieffect2",
+                                              "name": "Immune to Battle Meditation",
+                                              "desc": "Immune to this power for 1 day"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Battle Meditation - Start of Turn",
+                                  "verb": "Starts their turn in Battle Meditation",
+                                  "style": "4",
+                                  "defaultDC": "{lastSaveDC}"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    },
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "ieffect2",
+                                          "name": "Immune to Battle Meditation",
+                                          "desc": "Immune to this power for 1 day"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Leave Battle Meditation",
+                                  "verb": "Leaves Battle Meditation",
+                                  "style": "3"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Immune to Battle Meditation",
+                              "desc": "Immune to this power for 1 day"
+                            }
+                          ],
+                          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Ally - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Meditating",
+                          "effects": {
+                            "to_hit_bonus": "1d6",
+                            "save_bonus": "1d6"
+                          },
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw."
+                    }
+                  ]
+                }
+              }
+            ],
+            "save_as": "bmed"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type is None",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Meditating",
+                "effects": {
+                  "to_hit_bonus": "1d6",
+                  "save_bonus": "1d6"
+                },
+                "parent": "bmed"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "save",
+                "stat": "cha",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Meditating",
+                    "effects": {
+                      "to_hit_bonus": "-1d6",
+                      "save_bonus": "-1d6"
+                    },
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "cha",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  },
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Immune to Battle Meditation",
+                                    "desc": "Immune to this power for 1 day"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Battle Meditation - Start of Turn",
+                        "verb": "Starts their turn in Battle Meditation",
+                        "style": "4",
+                        "defaultDC": "{lastSaveDC}"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          },
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Immune to Battle Meditation",
+                                "desc": "Immune to this power for 1 day"
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Leave Battle Meditation",
+                        "verb": "Leaves Battle Meditation",
+                        "style": "3",
+                        "defaultDC": "spell"
+                      }
+                    ],
+                    "parent": "bmed"
+                  }
+                ],
+                "success": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "concentration": true
+  },
+  {
+    "name": "Master Battle Meditation",
+    "level": 9,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Meditating",
+            "effects": {
+              "to_hit_bonus": "1d8",
+              "save_bonus": "1d8"
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Enemy - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "cha",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Meditating",
+                              "effects": {
+                                "to_hit_bonus": "-1d8",
+                                "save_bonus": "-1d8"
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "cha",
+                                          "fail": [],
+                                          "success": [
+                                            {
+                                              "type": "remove_ieffect"
+                                            },
+                                            {
+                                              "type": "ieffect2",
+                                              "name": "Immune to Battle Meditation",
+                                              "desc": "Immune to this power for 1 day"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Battle Meditation - Start of Turn",
+                                  "verb": "Starts their turn in Battle Meditation",
+                                  "style": "4",
+                                  "defaultDC": "{lastSaveDC}"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    },
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "ieffect2",
+                                          "name": "Immune to Battle Meditation",
+                                          "desc": "Immune to this power for 1 day"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Leave Battle Meditation",
+                                  "verb": "Leaves Battle Meditation",
+                                  "style": "3"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Immune to Battle Meditation",
+                              "desc": "Immune to this power for 1 day"
+                            }
+                          ],
+                          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Ally - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Meditating",
+                          "effects": {
+                            "to_hit_bonus": "1d8",
+                            "save_bonus": "1d8"
+                          },
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw."
+                    }
+                  ]
+                }
+              }
+            ],
+            "save_as": "bmed"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type is None",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Meditating",
+                "effects": {
+                  "to_hit_bonus": "1d8",
+                  "save_bonus": "1d8"
+                },
+                "parent": "bmed"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "save",
+                "stat": "cha",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Meditating",
+                    "effects": {
+                      "to_hit_bonus": "-1d8",
+                      "save_bonus": "-1d8"
+                    },
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "cha",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  },
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Immune to Battle Meditation",
+                                    "desc": "Immune to this power for 1 day"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Battle Meditation - Start of Turn",
+                        "verb": "Starts their turn in Battle Meditation",
+                        "style": "4",
+                        "defaultDC": "{lastSaveDC}"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          },
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Immune to Battle Meditation",
+                                "desc": "Immune to this power for 1 day"
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Leave Battle Meditation",
+                        "verb": "Leaves Battle Meditation",
+                        "style": "3",
+                        "defaultDC": "spell"
+                      }
+                    ],
+                    "parent": "bmed"
+                  }
+                ],
+                "success": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (30-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "concentration": true
   }
 ]
