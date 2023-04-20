@@ -6,6 +6,10 @@ def processAttacks(attacks, args):
         counter = ""
         prop = getProperties(attack)
 
+        if args.get('dev'):
+            a = buildBase(attack, args)
+            return err(f"{a}")
+
         if args.get('title'):
             attack = attack.replace(f'{processName(a.name)}', f'{args.last("title")}')
 
@@ -118,57 +122,35 @@ def getProperties(attack):
         return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
             "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
 
-
-def buildBurst(attack, args):
-    a = load_json(attack)
+def get_damage_str(attack):
     dindex = attack.find('"damage": "') + 11
     damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
+    return damage_str
 
-    cindex = attack.find('"counter": "') + 12
-    cName = str(attack[cindex:attack[cindex:].find('"') + cindex])
+def buildBase(attack, args):
+    a = load_json(attack)
+    weapon = {"name": f"{a.name}", "_v": 2, "automation": []}
+    damage_str = get_damage_str(attack)
 
-    automationRoll = {}
-    automationRoll["type"] = "roll"
-    automationRoll["dice"] = damage_str
-    automationRoll["name"] = "damage"
+    attack_auto = {"type": "attack", "hit": [], "miss": [], }
 
-    dmg = {}
-    dmg["type"] = "damage"
-    dmg["damage"] = "{damage}"
-    dmg["overheal"] = False
+    target = {"type": "target", "target": "each", "effects": []}
 
-    save = {}
-    save["type"] = "save"
-    save["stat"] = "dex"
-    save["fail"] = []
-    save["fail"].append(dmg)
-    save["success"] = []
-    save["dc"] = "8+proficiencyBonus+dexterityMod"
+    base_damage = {"type": "damage", "damage": damage_str}
+    attack_auto["hit"].append(base_damage)
 
-    counter = {}
-    counter["type"] = "counter"
-    counter["counter"] = cName
-    counter["amount"] = "2" if args.last('dev') != '' else args.last('dev')
-    counter["allowOverflow"] = False
-    counter["errorBehavior"] = "raise"
+    if args.get('dev'):
+        devnum = 13 if args.last('dev') != '' else int(args.last('dev'))
 
-    target = {}
-    target["type"] = "target"
-    target["target"] = "each"
-    target["effects"] = []
-    target["effects"].append(save)
+        disEffect = {"type": "ieffect2", "name": "Disintegrated", "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."}
+        condition = {"type": "condition", "condition": f"target.hp <= 0", "onTrue": [disEffect], "onFalse": []}
+        save = {"type": "save", "stat": "con", "fail": [condition], "success": [], "dc": devnum}
+        attack_auto["hit"].append(save)
 
-    text = {}
-    text["type"] = "text"
-    text["text"] = f"{getProperties(attack)}, Burst {counter['amount']}"
 
-    burstAttack = {}
-    burstAttack["name"] = f"Burst - {a.name}"
-    burstAttack["automation"] = []
-    burstAttack["automation"].append(automationRoll)
-    burstAttack["automation"].append(target)
-    burstAttack["automation"].append(counter)
-    burstAttack["automation"].append(text)
-    burstAttack["_v"] = 2
+    target['effects'].append(attack_auto)
 
-    return dump_json(burstAttack)
+    weapon["automation"].append(target)
+
+    return dump_json(weapon)
+

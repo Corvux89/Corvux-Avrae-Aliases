@@ -40,7 +40,7 @@ if v:
         try:
             t = com.get_combatant(targ)
         except:
-            err(f"Invalid target")
+            return err(f"Invalid target")
 
         dam = t.damage(roll_str, crit)
 
