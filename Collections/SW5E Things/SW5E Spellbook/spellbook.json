@@ -6967,24 +6967,6 @@
     "concentration": true
   },
   {
-    "name": "Voltaic Shielding",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 hour",
-    "ritual": false,
-    "description": "A protective barrier surrounds you, manifesting as crackling lightning that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 lightning damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, both the temporary hit points and the lightning damage increase by 5 for each slot.",
-    "concentration": false
-  },
-  {
     "name": "(SW) Wall of Light",
     "level": 6,
     "school": "Force",
@@ -11841,24 +11823,11 @@
     "name": "Flame Sweep",
     "level": 1,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15-foot cone)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A thin sheet of flames shoots forth from you. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\nThe fire ignites any flammable objects in the area that aren't being worn or carried.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false,
     "automation": [
       {
         "type": "roll",
-        "name": "damage",
         "dice": "3d6 [fire]",
+        "name": "damage",
         "higher": {
           "2": "1d6[fire]",
           "3": "2d6 [fire]",
@@ -11896,6 +11865,100 @@
         "type": "text",
         "text": "A thin sheet of flames shoots forth from you. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire ignites any flammable objects in the area that aren't being worn or carried.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
       }
-    ]
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15-foot cone)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A thin sheet of flames shoots forth from you. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\nThe fire ignites any flammable objects in the area that aren't being worn or carried.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Voltaic Shielding",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "amount",
+        "value": "5",
+        "higher": {
+          "2": "10",
+          "3": "15",
+          "4": "20",
+          "5": "25",
+          "6": "30",
+          "7": "35",
+          "8": "45"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "temphp",
+            "amount": "{amount}"
+          },
+          {
+            "type": "ieffect2",
+            "name": "Voltaic Shielding",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Voltaic Shielding",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc} [lightning]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Drop Voltaic Shielding",
+                "verb": "drops Voltaic Shielding",
+                "style": "1"
+              }
+            ],
+            "desc": "{amount}"
+          }
+        ]
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "A protective barrier surrounds you, manifesting as crackling lightning that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 lightning damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, both the temporary hit points and the lightning damage increase by 5 for each slot.",
+    "concentration": false
   }
 ]

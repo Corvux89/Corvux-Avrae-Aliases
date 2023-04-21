@@ -1,4 +1,4 @@
 <drac2>
 c = character()
-return err(f"{c.levels.get('SentinellightLevel')}")
+return err(f"{','.join([x.name for x in c.actions])}")
 </drac2>

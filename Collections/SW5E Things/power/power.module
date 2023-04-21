@@ -93,7 +93,7 @@ def processPower(args):
 
     # Troubleshooting
     if a.get('dev'):
-        return err(f'cast "{spell.name}" {" ".join(out)} -i')
+        return err(f'cast "{spell.name}" {" ".join(out)} -i \n\n ARGS = {args}')
 
     # Send it!
     return f'cast "{spell.name}" {" ".join(out)} -i'

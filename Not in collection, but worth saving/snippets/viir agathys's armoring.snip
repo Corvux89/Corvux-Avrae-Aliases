@@ -1,0 +1,19 @@
+<drac2>
+c = character()
+cc = "Viir Agathys's Armoring"
+
+v = c.cc_exists(cc) and c.get_cc(cc)
+
+if v:
+    c.mod_cc(cc, -1)
+    out = f''' -f "{cc}|This armor has 3 charges. As an action, you can spend 1 or more charges to cast the voltaic shielding tech power, 1 charge per level. All expended charges are regained after you complete a long rest.\n\n*This armoring grants access to renowned engineer Viir Agathys’s signature tech power.*" '''
+    out += f''' -f "{cc} (-1)|{c.cc_str(cc)}" '''
+
+else:
+    if not c.cc_exists(cc):
+        out = f''' -f "{cc}|Custom counter for this item does not exist." '''
+    else:
+        out = f''' -f "{cc}|Not enough charges left to use this item." '''
+
+return out
+</drac2>

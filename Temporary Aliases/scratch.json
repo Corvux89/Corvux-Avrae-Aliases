@@ -1,40 +1,80 @@
 {
-  "name": "Blaster Pistol",
-  "_v": "2",
+  "name": "Voltaic Shielding",
+  "level": 1,
+  "school": "Tech",
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 hour",
+  "ritual": false,
+  "description": "A protective barrier surrounds you, manifesting as crackling lightning that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 lightning damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, both the temporary hit points and the lightning damage increase by 5 for each slot.",
+  "concentration": false,
   "automation": [
     {
+      "type": "variable",
+      "name": "amount",
+      "value": "5",
+      "higher": {
+        "2": "10",
+        "3": "15",
+        "4": "20",
+        "5": "25",
+        "6": "30",
+        "7": "35",
+        "8": "40",
+        "8": "45"
+      }
+    },
+    {
       "type": "target",
-      "target": "each",
+      "target": "self",
       "effects": [
         {
-          "type": "attack",
-          "hit": [
+          "type": "temphp",
+          "amount": "{amount}"
+        },
+        {
+          "type": "ieffect2",
+          "name": "Voltaic Shielding",
+          "desc": "{amount}",
+          "attacks": [
             {
-              "type": "damage",
-              "damage": "1d6+{dexterityMod} [energy]"
-            },
-            {
-              "type": "save",
-              "stat": "con",
-              "fail": [
-                {
-                  "type": "condition",
-                  "condition": "target.hp <= 0",
-                  "onTrue": [
-                    {
-                      "type": "ieffect2",
-                      "name": "Disintegrated",
-                      "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
-                    }
-                  ],
-                  "onFalse": []
-                }
-              ],
-              "success": [],
-              "dc": 18
+              "attack": {
+                "name": "Voltaic Shielding",
+                "_v": 2,
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "all",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "{ieffect.desc} [lightning]"
+                      }
+                    ]
+                  }
+                ]
+              }
             }
           ],
-          "miss": []
+          "buttons": [
+            {
+              "label": "Drop Voltaic Shielding",
+              "verb": "drops Voltaic Shielding",
+              "style": 1,
+              "automation": [
+                {
+                  "type": "remove_ieffect"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
