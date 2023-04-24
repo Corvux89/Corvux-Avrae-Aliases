@@ -2,7 +2,7 @@
 c = character()
 com = combat()
 a = argparse(&ARGS&)
-targ = a.last('t')
+targ = a.get('t')
 cover = &ARGS&[0]
 dur = 1
 
@@ -41,27 +41,59 @@ else:
 if com:
     if targ:
         try:
-            t = com.get_combatant(targ)
+            targs = [com.get_combatant(x) for x in targ]
         except:
-            err(f"Invalid Target")
+            err(f"Invalid Target in loop")
     else:
-        t = com.me
+        targs = [com.me]
 
-    if effect:
-        t.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
-        base += f''' -title "{t.name} takes {effect}" '''
+    for t in targs:
+        if not t:
+            return err(f"Invalid Target")
+        if effect:
+            eff = t.add_effect(effect, duration=dur, desc=desc, passive_effects=peffect)
+            base += f''' -f "{t.name}|{eff}" '''
+        else:
+            t.remove_effect("Cover")
+            base += f''' -f "{t.name}|Revealed!" '''
+
+    if len(targs) > 1:
+        if effect:
+            base += f''' -title "Multiple targets take {effect}" '''
+        else:
+            base += f''' -title "Multiple targets are revealed!" '''
     else:
-        t.remove_effect("Cover")
-        base += f''' -title "{t.name} is revealed!" '''
+        if effect:
+            base += f''' -title "{targs[0].name} takes {effect}" '''
+        else:
+            base += f''' -title "{targs[0].name} is revealed!" '''
+
 else:
-    if effect:
-        base += f''' -title "{name} takes {effect}" '''
+    if targ:
+        for t in targ:
+            if effect:
+                base += f''' -f "{t}|{effect}" '''
+            else:
+                base += f''' -f "{t}|Revealed!" '''
     else:
-        base += f''' -title "{name} is revealed!" '''
+        if effect:
+            base += f''' -title "{name} takes {effect}" '''
+        else:
+            base += f''' -title "{name} is revealed!" '''
+
+    if targ:
+        if effect:
+            base += f''' -title "{'Multiple targets' if len(targ) > 1 else targ[0]} take {effect}" '''
+        else:
+            base += f''' -title "{'Multiple targets' if len(targ) > 1 else targ[0]} are revealed!" '''
+    else:
+        if effect:
+            base += f''' -title "{name} takes {effect}" '''
+        else:
+            base += f''' -title "{name} is revealed!" '''
 
 if effect:
     base += f''' -desc "{desc}" '''
-    base += f''' -f "Effect|{effect} [1 round]" '''
 else:
     base += f''' -f "Effect|Cover removed" '''
 
