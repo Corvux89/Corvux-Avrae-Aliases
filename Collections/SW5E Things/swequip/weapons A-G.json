@@ -38,11 +38,6 @@
     "name": "Rapid - Affixed Rifle",
     "automation": [
       {
-        "type": "roll",
-        "dice": "2d8+{dexterityMod} [energy]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -52,7 +47,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "2d8+{dexterityMod} [energy]",
                 "overheal": false
               }
             ],
@@ -670,11 +665,6 @@
     "name": "Rapid - ARC Caster",
     "automation": [
       {
-        "type": "roll",
-        "dice": "4d4+{dexterityMod} [lightning]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -684,25 +674,25 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "4d4+{dexterityMod} [lightning]",
                 "overheal": false
               }
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Power cell (range 60/240), Burst 8, Rapid 4, Reload 9, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "ARC Caster",
         "amount": "4",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Burst 8, Rapid 4, Reload 9, Strength 11, Two-handed\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
@@ -1016,11 +1006,6 @@
     "name": "Rapid - Blaster Cannon",
     "automation": [
       {
-        "type": "roll",
-        "dice": "4d6+{dexterityMod} [energy]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -1030,7 +1015,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "4d6+{dexterityMod} [energy]",
                 "overheal": false
               }
             ],
@@ -1817,11 +1802,6 @@
     "name": "Rapid - Carbine Rifle",
     "automation": [
       {
-        "type": "roll",
-        "dice": "2d8+{dexterityMod} [energy]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1831,7 +1811,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "2d8+{dexterityMod} [energy]",
                 "overheal": false
               }
             ],
@@ -1942,11 +1922,6 @@
     "name": "Rapid - Cartridge, Slug - Chaingun",
     "automation": [
       {
-        "type": "roll",
-        "dice": "4d4+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1956,7 +1931,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "4d4+{dexterityMod} [kinetic]",
                 "overheal": false
               }
             ],
@@ -1983,11 +1958,6 @@
     "name": "Rapid - Cartridge, Corrosive - Chaingun",
     "automation": [
       {
-        "type": "roll",
-        "dice": "4d4+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -1997,7 +1967,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "4d4+{dexterityMod} [kinetic]",
                 "overheal": false
               },
               {
@@ -2058,11 +2028,6 @@
   {
     "name": "Rapid - Cartridge, Electrifying - Chaingun",
     "automation": [
-      {
-        "type": "roll",
-        "dice": "",
-        "name": "damage"
-      },
       {
         "type": "target",
         "target": "each",
@@ -2130,11 +2095,6 @@
     "name": "Rapid - Cartridge, Gas - Chaingun",
     "automation": [
       {
-        "type": "roll",
-        "dice": "4d4+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -2144,7 +2104,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "4d4+{dexterityMod} [kinetic]",
                 "overheal": false
               },
               {
@@ -2720,11 +2680,6 @@
     "name": "Rapid - Cartridge, Slug - Cycler Rifle",
     "automation": [
       {
-        "type": "roll",
-        "dice": "2d8+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -2734,21 +2689,21 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "2d8+{dexterityMod} [kinetic]",
                 "overheal": false
               }
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Cycler Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
       },
       {
         "type": "text",
@@ -2836,11 +2791,6 @@
     "name": "Rapid - Cartridge, Corrosive - Cycler Rifle",
     "automation": [
       {
-        "type": "roll",
-        "dice": "2d8+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -2850,7 +2800,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "2d8+{dexterityMod} [kinetic]",
                 "overheal": false
               },
               {
@@ -2891,15 +2841,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Cycler Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
       },
       {
         "type": "text",
@@ -2978,11 +2928,6 @@
     "name": "Rapid - Cartridge, Electrifying - Cycler Rifle",
     "automation": [
       {
-        "type": "roll",
-        "dice": "2d8+{dexterityMod} [kinetic]",
-        "name": "damage"
-      },
-      {
         "type": "target",
         "target": "each",
         "effects": [
@@ -2992,7 +2937,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}",
+                "damage": "2d8+{dexterityMod} [kinetic]",
                 "overheal": false
               },
               {
@@ -3028,15 +2973,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Cycler Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
       },
       {
         "type": "text",
@@ -3166,19 +3111,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Rapid 2, Reload 8, Slug cartridge (range 90/360), Strength 11, Two-handed"
-      },
-      {
+          },
+          {
         "type": "counter",
         "counter": "Cycler Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
+      }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Rapid 2, Reload 8, Slug cartridge (range 90/360), Strength 11, Two-handed"
       }
     ],
     "_v": 2

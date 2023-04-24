@@ -575,6 +575,11 @@
     "name": "Burst - Heavy Repeater",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -584,7 +589,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -626,19 +631,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Repeater",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Burst 4, Power cell (range 80/320), Rapid 4, Reload 8, Strength 13, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Repeater",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -682,6 +687,11 @@
     "name": "Burst - Cartridge, Slug - Heavy Shotgun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -691,7 +701,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -737,6 +747,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -776,6 +798,11 @@
     "name": "Burst - Cartridge, Corrosive - Heavy Shotgun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -785,7 +812,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -868,7 +895,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -908,6 +935,11 @@
     "name": "Burst - Cartridge, Electrifying - Heavy Shotgun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -917,7 +949,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -932,6 +964,14 @@
                         "type": "damage",
                         "damage": "1d4 [lightning]",
                         "overheal": false
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Shocked",
+                        "duration": "1",
+                        "effects": "",
+                        "end": true,
+                        "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                       }
                     ],
                     "onFalse": [
@@ -994,12 +1034,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -1039,6 +1084,11 @@
     "name": "Burst - Cartridge, Gas - Heavy Shotgun",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -1048,46 +1098,44 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
-                "type": "condition",
-                "condition": "targetIndex==0",
-                "onTrue": [
+                "type": "save",
+                "stat": "con",
+                "fail": [
                   {
-                    "type": "save",
-                    "stat": "con",
-                    "fail": [
-                      {
-                        "type": "damage",
-                        "damage": "1d6 [poison]",
-                        "overheal": false
-                      },
-                      {
-                        "type": "ieffect",
-                        "name": "Poisoned",
-                        "duration": "1",
-                        "effects": "",
-                        "end": false,
-                        "desc": ""
-                      }
-                    ],
-                    "success": [
-                      {
-                        "type": "damage",
-                        "damage": "1d6 / 2 [poison]",
-                        "overheal": false
-                      }
-                    ],
-                    "dc": 14
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
                   },
                   {
-                    "type": "text",
-                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": false,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
-                "onFalse": []
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
               }
             ],
             "success": [],
@@ -1163,15 +1211,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1203,6 +1251,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -1262,6 +1322,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -1280,15 +1352,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1327,7 +1399,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -1394,7 +1466,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "onFalse": [
@@ -1412,15 +1484,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1454,12 +1526,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -1521,12 +1598,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -1545,15 +1627,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1710,6 +1792,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -1775,7 +1869,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -1836,12 +1930,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -1891,6 +1990,18 @@
                 "type": "damage",
                 "damage": "1d6+{dexterityMod} [fire]",
                 "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "miss": [],
@@ -1926,6 +2037,18 @@
                 "type": "damage",
                 "damage": "1d4+{dexterityMod} [fire]",
                 "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "miss": [],
@@ -1961,6 +2084,18 @@
                 "type": "damage",
                 "damage": "1d8+{dexterityMod} [fire]",
                 "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "miss": [],
@@ -1996,6 +2131,18 @@
                 "type": "damage",
                 "damage": "1d10+{dexterityMod} [fire]",
                 "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "miss": [],
@@ -2021,6 +2168,11 @@
     "name": "Burst - Ion Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d10+{dexterityMod} [ion]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -2030,7 +2182,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+{dexterityMod} [ion]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -2340,15 +2492,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "5",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Repeating Blaster",
-        "amount": "5",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -2415,6 +2567,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -2480,7 +2644,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -2541,12 +2705,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -3511,19 +3680,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Needler",
+            "amount": "12",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      },
-      {
-        "type": "counter",
-        "counter": "Needler",
-        "amount": "12",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -3551,6 +3720,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -3610,6 +3791,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -3628,19 +3821,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Needler",
+            "amount": "12",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      },
-      {
-        "type": "counter",
-        "counter": "Needler",
-        "amount": "12",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -3675,7 +3868,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -3742,7 +3935,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "onFalse": [
@@ -3760,19 +3953,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Needler",
+            "amount": "12",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      },
-      {
-        "type": "counter",
-        "counter": "Needler",
-        "amount": "12",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -3802,12 +3995,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -3869,12 +4067,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -3893,19 +4096,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Needler",
+            "amount": "12",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Slug cartridge (range 30/160), Piercing 1, Reload 12, Silent, Special\n\nThe needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon."
-      },
-      {
-        "type": "counter",
-        "counter": "Needler",
-        "amount": "12",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2

@@ -1,90 +1,10 @@
 {
-  "label": "Battle Meditation - 1d12",
-  "verb": "ups the Meditation die to 1d12!",
-  "automation": [
-    {
-      "type": "target",
-      "target": "children",
-      "effects": [
-        {
-          "type": "condition",
-          "condition": "target.creature_type is None",
-          "onTrue": [
-            {
-              "type": "ieffect2",
-              "name": "Meditating",
-              "effects": {
-                "to_hit_bonus": "1d12",
-                "save_bonus": "1d12"
-              },
-              "parent": "ieffect"
-            }
-          ],
-          "onFalse": [
-            {
-              "type": "ieffect2",
-              "name": "Meditating",
-              "effects": {
-                "to_hit_bonus": "-1d12",
-                "save_bonus": "-1d12"
-              },
-              "buttons": [
-                {
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "self",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "cha",
-                          "fail": [],
-                          "success": [
-                            {
-                              "type": "remove_ieffect"
-                            },
-                            {
-                              "type": "ieffect2",
-                              "name": "Immune to Battle Meditation",
-                              "desc": "Immune to this power for 1 day"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ],
-                  "label": "Battle Meditation - Start of Turn",
-                  "verb": "Starts their turn in Battle Meditation",
-                  "style": "4",
-                  "defaultDC": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
-                },
-                {
-                  "automation": [
-                    {
-                      "type": "remove_ieffect"
-                    },
-                    {
-                      "type": "target",
-                      "target": "self",
-                      "effects": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Immune to Battle Meditation",
-                          "desc": "Immune to this power for 1 day"
-                        }
-                      ]
-                    }
-                  ],
-                  "label": "Leave Battle Meditation",
-                  "verb": "Leaves Battle Meditation",
-                  "style": "3"
-                }
-              ],
-              "parent": "ieffect"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave Battle Meditation",
+                                  "verb": "Leaves Battle Meditation",
+                                  "style": "3"
+                                }
