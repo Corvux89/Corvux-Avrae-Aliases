@@ -131,6 +131,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -197,7 +209,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -259,12 +271,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -355,19 +372,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Blaster Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Power cell (range 100/400), Rapid 2, Reload 8, Strength 13, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Blaster Rifle",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -411,6 +428,11 @@
     "name": "Burst - Heavy Bowcaster",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d12+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -420,7 +442,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d12+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -497,19 +519,19 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Heavy Carbine",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Power cell (range 60/240), Rapid 4, Reload 16, Strength 11, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Heavy Carbine",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
