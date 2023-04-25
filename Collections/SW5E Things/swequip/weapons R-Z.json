@@ -3943,12 +3943,12 @@
             "dc": "12"
           },
           {
-        "type": "counter",
-        "counter": "Shoulder Cannon",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
-      }
+            "type": "counter",
+            "counter": "Shoulder Cannon",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
         ]
       },
       {
@@ -4098,19 +4098,19 @@
             ],
             "success": [],
             "dc": "proficiencyBonus+dexterityMod+8"
+          },
+          {
+            "type": "counter",
+            "counter": "Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Rapid 8, Reload 16, Slug cartridge (range 40/160), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4138,6 +4138,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -4197,6 +4209,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -4215,19 +4239,19 @@
             ],
             "success": [],
             "dc": "proficiencyBonus+dexterityMod+8"
+          },
+          {
+            "type": "counter",
+            "counter": "Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Rapid 8, Reload 16, Slug cartridge (range 40/160), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4262,7 +4286,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -4329,7 +4353,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "onFalse": [
@@ -4347,19 +4371,19 @@
             ],
             "success": [],
             "dc": "proficiencyBonus+dexterityMod+8"
+          },
+          {
+            "type": "counter",
+            "counter": "Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Rapid 8, Reload 16, Slug cartridge (range 40/160), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4389,12 +4413,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -4456,12 +4485,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -4480,19 +4514,19 @@
             ],
             "success": [],
             "dc": "proficiencyBonus+dexterityMod+8"
+          },
+          {
+            "type": "counter",
+            "counter": "Slugpistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Rapid 8, Reload 16, Slug cartridge (range 40/160), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Slugpistol",
-        "amount": "8",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4555,6 +4589,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -4620,7 +4666,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -4681,12 +4727,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [

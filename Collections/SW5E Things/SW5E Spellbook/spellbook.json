@@ -588,24 +588,6 @@
     "concentration": false
   },
   {
-    "name": "Burst of Speed",
-    "level": 1,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 hour",
-    "ritual": false,
-    "description": "You touch a creature. The target's speed increases by 10 feet until the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Cage",
     "level": 7,
     "school": "Tech",
@@ -1683,24 +1665,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "Lightning springs from you to deliver a shock to a creature you try to touch. Make a melee tech attack against the target. You have advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit, the target takes 1d8 lightning damage and becomes shocked until the start of its next turn.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "concentration": false
-  },
-  {
-    "name": "Element of Surprise",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -11967,5 +11931,142 @@
     "ritual": false,
     "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
+  },
+  {
+    "name": "Burst of Speed",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Burst of Speed",
+            "duration": "600",
+            "desc": "Speed increased by 10 feet"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch a creature. The target's speed increases by 10 feet until the power ends.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "You touch a creature. The target's speed increases by 10 feet until the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Growing Momentum - Burst of Speed",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Burst of Speed",
+            "duration": "600",
+            "desc": "Speed increased by {'10' if level < 10 else '20' if level < 18 else '30'} feet"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch a creature. The target's speed increases by 10 feet until the power ends.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+      },
+      {
+        "type": "text",
+        "text": "You can cast the burst of speed force power targeting yourself at 1st-level without expending force points. At 10th level, when you do so, your speed increases by an additional 10 feet. At 18th level, when you do so, your speed increases by an additional 10 feet.\n\nYou can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain any expended uses when you finish a long rest."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "You touch a creature. The target's speed increases by 10 feet until the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Element of Surprise",
+    "level": 1,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d10 [fire]",
+        "higher": {
+          "2": "1d10 [fire]",
+          "3": "2d10 [fire]",
+          "4": "3d10 [fire]",
+          "5": "4d10 [fire]",
+          "6": "5d10 [fire]",
+          "7": "6d10 [fire]",
+          "8": "7d10 [fire]",
+          "9": "8d10 [fire]"
+        },
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage} / 2)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
+      }
+    ]
   }
 ]
