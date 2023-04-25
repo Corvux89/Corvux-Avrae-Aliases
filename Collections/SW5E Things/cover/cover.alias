@@ -11,25 +11,25 @@ if not cover:
 
 base = f'''embed -thumb {image} -color {color}'''
 
-if cover.lower() in ['quart', '1/4']:
+if cover.lower() in ['quart', 'quarter', '1/4', 'q']:
     effect="One-Quarter Cover"
     desc="A target with one-quarter cover has a +2 bonus to AC and Dexterity saving throws. A target has one-quarter cover if an obstacle blocks at least one-fourth of its body, such as a thin pillar or a creature of one size category smaller."
     peffect={
         "ac_bonus": 2
     }
-elif cover.lower() in ['half', '1/2']:
+elif cover.lower() in ['half', '1/2', 'h']:
     effect="Half Cover"
     desc="A target with half cover has a +3 bonus to AC and Dexterity saving throws. A target has half cover if an obstacle blocks at least half of its body, such as a low wall or a creature of the same size category."
     peffect={
         "ac_bonus": 3
     }
-elif cover.lower() in ['three', '3', '3/4']:
+elif cover.lower() in ['three', '3', '3/4', 't']:
     effect="Three-Quarter Cover"
     desc="A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger."
     peffect={
         "ac_bonus": 5
     }
-elif cover.lower() in ['total', 'complete', 'full']:
+elif cover.lower() in ['total', 'complete', 'full', 'f']:
     effect="Full Cover"
     desc="A target with total cover can’t be targeted directly by an attack or a power, although some powers can reach such a target by including it in an area of effect. A target has total cover if it is completely concealed by an obstacle."
     peffect={}

@@ -2196,40 +2196,47 @@
                 "overheal": false
               },
               {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
                   {
-                    "type": "damage",
-                    "damage": "1d6 [poison]",
-                    "overheal": false
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Poisoned",
-                    "duration": "1",
-                    "effects": {
-                      "attack_advantage": "-1",
-                      "check_dis": [
-                        "all"
-                      ]
-                    },
-                    "end": false,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "type": "text",
+                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d6 / 2 [poison]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                "onFalse": []
               }
             ],
             "success": [],
@@ -2351,40 +2358,47 @@
                 "overheal": false
               },
               {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
                   {
-                    "type": "damage",
-                    "damage": "1d6 [poison]",
-                    "overheal": false
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Poisoned",
-                    "duration": "1",
-                    "effects": {
-                      "attack_advantage": "-1",
-                      "check_dis": [
-                        "all"
-                      ]
-                    },
-                    "end": false,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "type": "text",
+                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d6 / 2 [poison]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                "onFalse": []
               }
             ],
             "success": [],
@@ -3733,40 +3747,47 @@
                 "overheal": false
               },
               {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
                   {
-                    "type": "damage",
-                    "damage": "1d6 [poison]",
-                    "overheal": false
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Poisoned",
-                    "duration": "1",
-                    "effects": {
-                      "attack_advantage": "-1",
-                      "check_dis": [
-                        "all"
-                      ]
-                    },
-                    "end": false,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "type": "text",
+                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d6 / 2 [poison]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                "onFalse": []
               }
             ],
             "success": [],
@@ -4777,6 +4798,11 @@
     "name": "Burst - Cartridge, Slug - Smart Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d10+2 [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -4786,7 +4812,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+2 [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -4828,19 +4854,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Burst 2, Rapid 2, Reload 4, Slug cartridge (range 75/300), Smart (15/+2), Strength 15, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Cannon",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4848,6 +4874,11 @@
   {
     "name": "Burst - Cartridge, Corrosive - Smart Cannon",
     "automation": [
+      {
+        "type": "roll",
+        "dice": "1d10+2 [kinetic]",
+        "name": "damage"
+      },
       {
         "type": "target",
         "target": "all",
@@ -4858,7 +4889,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+2 [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -4935,6 +4966,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -4953,19 +4996,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Burst 2, Rapid 2, Reload 4, Slug cartridge (range 75/300), Smart (15/+2), Strength 15, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Cannon",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -4973,6 +5016,11 @@
   {
     "name": "Burst - Cartridge, Electrifying - Smart Cannon",
     "automation": [
+      {
+        "type": "roll",
+        "dice": "1d10+2 [kinetic]",
+        "name": "damage"
+      },
       {
         "type": "target",
         "target": "all",
@@ -4983,7 +5031,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+2 [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -4998,6 +5046,14 @@
                         "type": "damage",
                         "damage": "1d4 [lightning]",
                         "overheal": false
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Shocked",
+                        "duration": "1",
+                        "effects": "",
+                        "end": true,
+                        "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                       }
                     ],
                     "onFalse": [
@@ -5066,7 +5122,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "onFalse": [
@@ -5084,19 +5140,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Burst 2, Rapid 2, Reload 4, Slug cartridge (range 75/300), Smart (15/+2), Strength 15, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Cannon",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5104,6 +5160,11 @@
   {
     "name": "Burst - Cartridge, Gas - Smart Cannon",
     "automation": [
+      {
+        "type": "roll",
+        "dice": "1d10+2 [kinetic]",
+        "name": "damage"
+      },
       {
         "type": "target",
         "target": "all",
@@ -5114,7 +5175,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+2 [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               },
               {
@@ -5131,12 +5192,17 @@
                         "overheal": false
                       },
                       {
-                        "type": "ieffect",
+                        "type": "ieffect2",
                         "name": "Poisoned",
                         "duration": "1",
-                        "effects": "",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
                         "end": false,
-                        "desc": ""
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                       }
                     ],
                     "success": [
@@ -5201,12 +5267,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -5225,19 +5296,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Auto, Burst 2, Rapid 2, Reload 4, Slug cartridge (range 75/300), Smart (15/+2), Strength 15, Two-handed"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Cannon",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5296,19 +5367,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Pistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Piercing 1, Rapid 2, Reload 16, Slug cartridge (range 40/160), Smart (15/+2), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Pistol",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5336,6 +5407,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -5395,6 +5478,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -5413,19 +5508,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Pistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Piercing 1, Rapid 2, Reload 16, Slug cartridge (range 40/160), Smart (15/+2), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Pistol",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5460,7 +5555,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -5527,7 +5622,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "onFalse": [
@@ -5545,19 +5640,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Pistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Piercing 1, Rapid 2, Reload 16, Slug cartridge (range 40/160), Smart (15/+2), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Pistol",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5587,12 +5682,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -5654,12 +5754,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -5678,19 +5783,19 @@
             ],
             "success": [],
             "dc": "12"
+          },
+          {
+            "type": "counter",
+            "counter": "Smart Pistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
       },
       {
         "type": "text",
         "text": "Piercing 1, Rapid 2, Reload 16, Slug cartridge (range 40/160), Smart (15/+2), Strength 11"
-      },
-      {
-        "type": "counter",
-        "counter": "Smart Pistol",
-        "amount": "2",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       }
     ],
     "_v": 2
@@ -5734,6 +5839,11 @@
     "name": "Burst - Sonic Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d10+{dexterityMod} [kinetic]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -5743,7 +5853,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+{dexterityMod} [kinetic]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6057,15 +6167,15 @@
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Subrepeater",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Subrepeater",
-        "amount": "4",
-        "allowOverflow": false,
-        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -6169,6 +6279,11 @@
     "name": "Burst - Switch Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d10+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -6178,7 +6293,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "1d10+{dexterityMod} [energy]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6240,6 +6355,11 @@
     "name": "Acid, Burst - Switch Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [acid]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -6249,7 +6369,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [acid]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6311,6 +6431,11 @@
     "name": "Cold, Burst - Switch Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [cold]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -6320,7 +6445,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [cold]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6382,6 +6507,11 @@
     "name": "Fire, Burst - Switch Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [fire]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -6391,7 +6521,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [fire]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6453,6 +6583,11 @@
     "name": "Lightning, Burst - Switch Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [lightning]",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "all",
         "effects": [
@@ -6462,7 +6597,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "2d4+{dexterityMod} [lightning]",
+                "damage": "{damage}",
                 "overheal": false
               }
             ],
@@ -6907,6 +7042,18 @@
                     "type": "damage",
                     "damage": "1d8 [acid]",
                     "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
                   }
                 ],
                 "success": [
@@ -6972,7 +7119,7 @@
                     "duration": "1",
                     "effects": "",
                     "end": true,
-                    "desc": ""
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                   }
                 ],
                 "success": [
@@ -7033,12 +7180,17 @@
                     "overheal": false
                   },
                   {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Poisoned",
                     "duration": "1",
-                    "effects": "",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
                     "end": false,
-                    "desc": ""
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
                   }
                 ],
                 "success": [
@@ -7093,12 +7245,36 @@
               {
                 "type": "damage",
                 "damage": "{{damage}} [acid]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "success": [
               {
                 "type": "damage",
                 "damage": "({{damage}})/2 [acid]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
               }
             ],
             "dc": "14"
@@ -7109,6 +7285,10 @@
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
+          },
+          {
+            "type": "text",
+            "text": "When triggered, this vapor projector ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes 2d6 acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn’t disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust."
           }
         ]
       },
@@ -7122,6 +7302,19 @@
   {
     "name": "Projector Tank, Cryo - Vapor Projector",
     "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Vapor Projector - Cryo",
+            "duration": 2,
+            "end": true,
+            "save_as": "peff"
+          }
+        ]
+      },
       {
         "type": "target",
         "target": "all",
@@ -7138,6 +7331,12 @@
               {
                 "type": "damage",
                 "damage": "{{damage}} [cold]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "desc": "Gains 1 slowed level until the end of your next turn",
+                "parent": "peff"
               }
             ],
             "success": [
@@ -8308,15 +8507,15 @@
             ],
             "miss": [],
             "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wrist Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Wrist Launcher",
-        "amount": "1",
-        "allowOverflow": false,
-        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -8343,44 +8542,65 @@
               },
               {
                 "type": "save",
-                "meta": [],
                 "stat": "con",
                 "fail": [
                   {
                     "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[sonic]",
+                    "damage": "1d4 [sonic]",
                     "overheal": false
                   },
                   {
-                    "type": "text",
-                    "meta": [],
-                    "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 1d4 sonic damage on a failed save.\n\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success"
-                  },
-                  {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Deafened",
-                    "duration": "1",
-                    "effects": "",
-                    "end": true,
-                    "desc": ""
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
                 "success": [],
-                "dc": "13"
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 1d4 sonic damage on a failed save.\n\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
               }
             ],
             "miss": [],
             "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wrist Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Wrist Launcher",
-        "amount": "1",
-        "allowOverflow": false,
-        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -8407,44 +8627,65 @@
               },
               {
                 "type": "save",
-                "meta": [],
-                "stat": "con",
+                "stat": "dex",
                 "fail": [
                   {
                     "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[lightning]",
+                    "damage": "1d4 [lightning]",
                     "overheal": false
                   },
                   {
-                    "type": "text",
-                    "meta": [],
-                    "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking 1d4 lightning damage on a failed save.\n\nAdditionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
-                  },
-                  {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Shocked",
-                    "duration": "1",
-                    "effects": "",
-                    "end": true,
-                    "desc": ""
+                    "duration": 10,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                    "buttons": [
+                      {
+                        "label": "Resist Shock",
+                        "style": 3,
+                        "verb": "attempts to resist shock",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
                 "success": [],
-                "dc": "14"
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking 1d4 lightning damage on a failed save.\n\nAdditionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
               }
             ],
             "miss": [],
             "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wrist Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Wrist Launcher",
-        "amount": "1",
-        "allowOverflow": false,
-        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -8471,44 +8712,71 @@
               },
               {
                 "type": "save",
-                "meta": [],
-                "stat": "con",
+                "stat": "wis",
                 "fail": [
                   {
                     "type": "damage",
-                    "meta": [],
-                    "damage": "1d4[psychic]",
+                    "damage": "1d4 [psychic]",
                     "overheal": false
                   },
                   {
-                    "type": "text",
-                    "meta": [],
-                    "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Wisdom saving throw, taking 1d4 psychic damage on a failed save.\n\nAdditionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature’s turn, it can repeat this save, ending the effect on a success."
-                  },
-                  {
-                    "type": "ieffect",
+                    "type": "ieffect2",
                     "name": "Frightened",
-                    "duration": "1",
-                    "effects": "",
-                    "end": true,
-                    "desc": ""
+                    "duration": 10,
+                    "effects": {
+                      "attack_advantage": -1,
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
+                    "buttons": [
+                      {
+                        "label": "Resist Fright",
+                        "style": 3,
+                        "verb": "attempts to resist fright",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "wis",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ],
                 "success": [],
-                "dc": "14"
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "This bolt-thrower ammunition deals 2d6 kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking 2d4 sonic damage on a failed save.\nAdditionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
               }
             ],
             "miss": [],
             "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wrist Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
           }
         ]
-      },
-      {
-        "type": "counter",
-        "counter": "Wrist Launcher",
-        "amount": "1",
-        "allowOverflow": false,
-        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -8567,6 +8835,10 @@
           }
         ]
       },
+      {
+            "type": "text",
+            "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d10 kinetic damage on a failed save or half as much on a successful one."
+          },
       {
         "type": "text",
         "text": "Fixed, Reload 1, Special (range 30/120)"
@@ -8634,7 +8906,7 @@
     "verb": null
   },
   {
-    "name": "Missile, Incendiary - Wrist Launcher",
+    "name": "Missile, Ion - Wrist Launcher",
     "automation": [
       {
         "type": "target",

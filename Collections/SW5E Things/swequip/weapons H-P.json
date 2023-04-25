@@ -1102,40 +1102,47 @@
                 "overheal": false
               },
               {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "condition",
+                "condition": "targetIndex==0",
+                "onTrue": [
                   {
-                    "type": "damage",
-                    "damage": "1d6 [poison]",
-                    "overheal": false
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Poisoned",
-                    "duration": "1",
-                    "effects": {
-                      "attack_advantage": "-1",
-                      "check_dis": [
-                        "all"
-                      ]
-                    },
-                    "end": false,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "type": "text",
+                    "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d6 / 2 [poison]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                "onFalse": []
               }
             ],
             "success": [],
@@ -1629,11 +1636,40 @@
             "dc": "8+proficiencyBonus+dexterityMod"
           },
           {
-            "type": "counter",
-            "counter": "Heavy Slugpistol",
-            "amount": "8",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6 [poison]",
+                "overheal": false
+              },
+              {
+                "type": "ieffect2",
+                "name": "Poisoned",
+                "duration": "1",
+                "effects": {
+                  "attack_advantage": "-1",
+                  "check_dis": [
+                    "all"
+                  ]
+                },
+                "end": false,
+                "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "1d6 / 2 [poison]",
+                "overheal": false
+              }
+            ],
+            "dc": 14
+          },
+          {
+            "type": "text",
+            "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
           }
         ]
       },

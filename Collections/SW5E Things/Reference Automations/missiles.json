@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Fragmentation",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d10",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [kinetic]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+            "type": "text",
+            "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d10 kinetic damage on a failed save or half as much on a successful one."
+          }
+    ]
+  },
+  {
+    "name": "Incendiary",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze",
+            "description": "When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ion",
+    "automation": []
+  }
+]

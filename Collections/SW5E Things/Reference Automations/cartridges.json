@@ -216,7 +216,7 @@
         "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
       }
     ],
-    "rapid": [
+    "burst": [
       {
         "type": "condition",
         "condition": "targetIndex==0",
