@@ -6,10 +6,6 @@ def processAttacks(attacks, args):
         counter = ""
         prop = getProperties(attack)
 
-        if args.get('dev'):
-            a = buildBase(attack, args)
-            return err(f"{a}")
-
         if args.get('title'):
             attack = attack.replace(f'{processName(a.name)}', f'{args.last("title")}')
 
@@ -65,7 +61,6 @@ def processAttacks(attacks, args):
 
         if args.get('enhanced'):
             attack = attack.replace('} [', '} [enhanced ')
-            attack = attack.replace('[lightning]', '[enhanced lightning]')
 
         if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
             attack = attack.replace('"success": []',
@@ -80,6 +75,10 @@ def processAttacks(attacks, args):
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}','+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
+
+        if args.get('dev'):
+            a = wp_biting(attack, args)
+            return err(f"{a}")
 
         if "counter" in attack:
             index = attack.find('"counter": "') + 12
@@ -127,8 +126,25 @@ def get_damage_str(attack):
     damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
     return damage_str
 
+def get_damage_type(attack_str):
+    return str(attack_str[attack_str.find('[')+1:attack_str.find(']')])
+
+def wp_biting(attack, args):
+    dmg = get_damage_str(attack)
+    props = getProperties(attack)
+    dc = 13 if args.last('biting') == '' else int(args.last('biting'))
+    attack = attack.replace(f'{get_damage_type(dmg)}', 'acid')
+
+
+
+
+
+    return get_damage_type(dmg)
+
+
 def buildBase(attack, args):
     a = load_json(attack)
+    props = getProperties(attack)
     weapon = {"name": f"{a.name}", "_v": 2, "automation": []}
     damage_str = get_damage_str(attack)
 
@@ -140,17 +156,20 @@ def buildBase(attack, args):
     attack_auto["hit"].append(base_damage)
 
     if args.get('dev'):
-        devnum = 13 if args.last('dev') != '' else int(args.last('dev'))
+        devnum = 13 if args.last('dev') == '' else int(args.last('dev'))
 
         disEffect = {"type": "ieffect2", "name": "Disintegrated", "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."}
-        condition = {"type": "condition", "condition": f"target.hp <= 0", "onTrue": [disEffect], "onFalse": []}
-        save = {"type": "save", "stat": "con", "fail": [condition], "success": [], "dc": devnum}
-        attack_auto["hit"].append(save)
+        save = {"type": "save", "stat": "con", "fail": [disEffect], "success": [], "dc": devnum}
+        condition = {"type": "condition", "condition": f"target.hp <= 0", "onTrue": [save], "onFalse": []}
+        attack_auto["hit"].append(condition)
 
 
     target['effects'].append(attack_auto)
 
+    text = {"type": "text", "text": f"{props}, test gun"}
+
     weapon["automation"].append(target)
+    weapon["automation"].append(text)
 
     return dump_json(weapon)
 

@@ -4368,5 +4368,1418 @@
       }
     ],
     "_v": 2
+  },
+  {
+    "name": "Burst - Radiation Cannon",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d4+{dexterityMod} [necrotic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Radiation Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 75/300), Auto, Burst 2, Disruptive, Piercing 1, Reload 4, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Radrifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [necrotic]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0",
+                "onTrue": [
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "dc": 15,
+                    "fail": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "success": []
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Radrifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disintegrate 15, Power cell (range 120/480), Reload 8, Specialized (disintegrate), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Slug - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Corrosive - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Railgun",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": false,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Railgun",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Reload 2, Slug cartridge (range 150/600), Strength 17, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Repeating Blaster",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Burst 4, Power cell (range 75/300), Rapid 4, Reload 8, Strength 11, Two-handed"
+      },
+      {
+        "type": "counter",
+        "counter": "Repeating Blaster",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Repeating Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d8+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Burst 4, Power cell (range 75/300), Rapid 4, Reload 8, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Retrosaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Retrosaber",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Reckless 1, Versatile (1d10)\n\nThe retrosaber is an ancient type of lightweapon that requires a power cell to function. Once four attacks have been made with a retrosaber, a character must replace the power cell using an action or bonus action. You must have one free hand to replace the power cell."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Retrosaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Retrosaber",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 13, Dire 1, Reckless 1, Versatile (1d10)\n\nThe retrosaber is an ancient type of lightweapon that requires a power cell to function. Once four attacks have been made with a retrosaber, a character must replace the power cell using an action or bonus action. You must have one free hand to replace the power cell."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Slug - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Corrosive - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "lastSaveRollTotal<14",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": false,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Revolver",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "4d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": false,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Revolver",
+            "amount": "4",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 60/240), Rapid 4, Reload 8, Strength 11"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Fragmentation - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d10",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [kinetic]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Incendiary - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d8",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [fire]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rocket, Ion - Rocket Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "2d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [ion]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 1, Special (range 150/600), Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Missile, Fragmentation - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d10",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [kinetic]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
+    "name": "Missile, Incendiary - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d8",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [fire]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
+    "name": "Missile, Ion - Rocket Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [ion]"
+              }
+            ],
+            "dc": "14"
+          },
+          {
+            "type": "counter",
+            "counter": "Rocket Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Reload 6, Special (range 60/240), Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
+    "name": "Burst - Rotary Cannon",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d10+{dexterityMod} [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 75/300), Rapid 2, Reload 8, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Rotary Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d10+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 75/300), Rapid 2, Reload 8, Strength 13, Two-handed"
+      }
+    ],
+    "_v": 2
   }
 ]

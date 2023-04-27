@@ -48,9 +48,9 @@
         ]
       },
       {
-            "type": "text",
-            "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d10 kinetic damage on a failed save or half as much on a successful one."
-          }
+        "type": "text",
+        "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d10 kinetic damage on a failed save or half as much on a successful one."
+      }
     ]
   },
   {
@@ -63,7 +63,92 @@
           {
             "type": "ieffect2",
             "name": "Ablaze - Parent",
-
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
           }
         ]
       },
@@ -85,20 +170,116 @@
         ]
       },
       {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Ablaze",
-            "description": "When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
-          }
-        ]
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+      {
+        "type": "text",
+        "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
       }
     ]
   },
   {
     "name": "Ion",
-    "automation": []
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{{damage}} [ion]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({{damage}})/2 [ion]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d6 ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren’t being worn or carried are disabled until rebooted."
+      }
+    ]
   }
 ]

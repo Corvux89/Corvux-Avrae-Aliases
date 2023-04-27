@@ -1,0 +1,179 @@
+[
+  {
+    "name": "Corrosive",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [acid]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2 [acid]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Disintegrated",
+                    "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When triggered, this wrist launcher ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes 1d6 acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn’t disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it"
+      }
+    ]
+  },
+  {
+    "name": "Cryo",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Cryo - Parent",
+            "save_as": "peff",
+            "duration": 2,
+            "end": true
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [cold]"
+              },
+              {
+                "type": "ieffect",
+                "name": "Slowed",
+                "effects": "",
+                "end": true,
+                "parent": "peff"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Frozen in Carbonite"
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2 [cold]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Frozen in Carbonite"
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When triggered, this wrist launcher ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes 1d4 cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total."
+      }
+    ]
+  },
+  {
+    "name": "Incendiary",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2 [fire]"
+              }
+            ],
+            "dc": "14"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When triggered, this wrist launcher ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking 1d8 fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total."
+      }
+    ]
+  }
+]

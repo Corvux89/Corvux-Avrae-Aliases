@@ -6246,24 +6246,6 @@
     "concentration": false
   },
   {
-    "name": "Spectrum Ray",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You shoot a beam of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or sonic for the type of beam you create, and then make a ranged tech attack against the target. If the attack hits, the creature takes 1d8 damage of the type you chose.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8) and 17th level (4d8).",
-    "concentration": false
-  },
-  {
     "name": "Spirit Blade",
     "level": 0,
     "school": "Force",
@@ -6424,24 +6406,6 @@
     "ritual": false,
     "description": "You grant up to four willing creatures the ability to understand any registered language they read or hear. Additionally, they gain the ability to speak that language, if they are physically capable of speaking it normally. \r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 7th level or higher, you can affect one additional creature for each slot level above 6th.",
     "concentration": false
-  },
-  {
-    "name": "Sustained Lightning",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You lash out against a creature within range with continual jolts of Force lightning. Make a ranged force attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The power ends if you use your action to do anything else. The power also ends if the target is ever outside the power's range or if it has total cover from you.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.",
-    "concentration": true
   },
   {
     "name": "Synchronicity",
@@ -12012,23 +11976,11 @@
     "name": "Element of Surprise",
     "level": 1,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
-    "concentration": false,
     "automation": [
       {
         "type": "roll",
         "dice": "2d10 [fire]",
+        "name": "damage",
         "higher": {
           "2": "1d10 [fire]",
           "3": "2d10 [fire]",
@@ -12038,8 +11990,7 @@
           "7": "6d10 [fire]",
           "8": "7d10 [fire]",
           "9": "8d10 [fire]"
-        },
-        "name": "damage"
+        }
       },
       {
         "type": "target",
@@ -12067,6 +12018,161 @@
         "type": "text",
         "text": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
       }
-    ]
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Sustained Lightning",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Sustained Lightning - Parent",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "children",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12 [lightning]"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Sustained Lightning - Shock"
+              }
+            ],
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d12 [lightning]",
+                "higher": {
+                  "2": "1d12 [lightning]",
+                  "3": "2d12 [lightning]",
+                  "4": "3d12 [lightning]",
+                  "5": "4d12 [lightning]",
+                  "6": "5d12 [lightning]",
+                  "7": "6d12 [lightning]",
+                  "8": "7d12 [lightning]",
+                  "9": "8d12 [lightning]"
+                }
+              },
+              {
+                "type": "ieffect2",
+                "name": "Sustained Shocking",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Leave Sustained Lightning",
+                    "verb": "leaves Sustained Lightning",
+                    "style": "3"
+                  }
+                ],
+                "parent": "peff"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You lash out against a creature within range with continual jolts of Force lightning. Make a ranged force attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The power ends if you use your action to do anything else. The power also ends if the target is ever outside the power's range or if it has total cover from you.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You lash out against a creature within range with continual jolts of Force lightning. Make a ranged force attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The power ends if you use your action to do anything else. The power also ends if the target is ever outside the power's range or if it has total cover from you.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.",
+    "concentration": true
+  },
+  {
+    "name": "Spectrum Ray",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [chromatic]",
+                "cantripScale": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You shoot a beam of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or sonic for the type of beam you create, and then make a ranged tech attack against the target. If the attack hits, the creature takes 1d8 damage of the type you chose.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8) and 17th level (4d8)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You shoot a beam of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or sonic for the type of beam you create, and then make a ranged tech attack against the target. If the attack hits, the creature takes 1d8 damage of the type you chose.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8) and 17th level (4d8).",
+    "concentration": false
   }
 ]

@@ -1,13 +1,46 @@
 {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Vapor Projector - Cryo",
-                    "duration": 1,
-                    "end": true,
-                    "save_as": "peff"
-                  }
-                ]
-              }
+  "name": "testing rifle",
+  "_v": 2,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "1d8+{dexterityMod} [energy]"
+            },
+            {
+              "type": "condition",
+              "condition": "target.hp <= 0",
+              "onTrue": [
+                {
+                  "type": "save",
+                  "stat": "con",
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Disintegrated",
+                      "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                    }
+                  ],
+                  "success": [],
+                  "dc": 14
+                }
+              ],
+              "onFalse": []
+            }
+          ],
+          "miss": []
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "power cell (range 60/240), fixed, reload 12, test gun"
+    }
+  ]
+}
