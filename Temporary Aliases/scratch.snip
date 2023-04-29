@@ -1,11 +1,1 @@
-<drac2>
-c = character()
-cc = "Goggles of the Tinkerer"
-base = ""
-if c.cc_exists("Goggles of the Tinkerer"):
-    c.mod_cc(cc, -1)
-    base += "-b 1d6"
-    base += f''' -f "{cc}|Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together." '''
-    base += f''' -f "{cc}|{c.cc_str(cc)}" '''
-return base
-</drac2>
+-f "Bansche Advanced 2ZBc|When you spend tech points and deal damage with a tech power cast through this wristpad, you deal additional damage equal to the number of tech points spent."

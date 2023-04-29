@@ -13,12 +13,21 @@ def processPower(args):
     fp = load_json(get_gvar("6269cf7a-0df9-4789-992c-29dbc20ac053"))
     tp = load_json(get_gvar("e45f68f5-96d4-4f52-96c8-862734dfa7ff"))
 
-    # Find the power, and identify the type
+    # --------------------
+    # Find the power
+    # --------------------
+
     if c.cc_exists('Force Points') and not c.cc_exists("Tech Points") and not ignore:
         if spell := search(keyword, fp):
             cc = "Force Points"
             if not wi:
                 out.append(getWith(spell))
+        elif c.get_cvar('subclass') and ((load_json(c.get_cvar('subclass')).get('SentinellightLevel') == "Synthesis") or (load_json(c.get_cvar('subclass')).get('SentineldarkLevel') == "Synthesis")):
+            if spell:= search(keyword, tp):
+                cc = "Force Points"
+                spell["classes"] = "Universal"
+                if not wi:
+                    out.append(getWith(spell))
         else:
             spell = None
     elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:
@@ -36,7 +45,9 @@ def processPower(args):
         else:
             spell = None
 
+    # --------------------
     # Validation
+    # --------------------
     if spell is None:
         return err("I don't think that's a supported power. Make sure it is spelled correctly or let us know")
     if spell.name not in c.spellbook and spell.name.replace("(SW) ",'').lower() not in c.spellbook and not ignore:
@@ -44,14 +55,18 @@ def processPower(args):
                    f"again with `-i` to ignore requirements. If you didn't intend to use {spell.name.replace('(SW) ', '')}, try "
                    f"using quotes around the power name.")
 
+    # --------------------
     # Figure out the cost
+    # --------------------
     spell_level = max(a.last('l', default=0, type_=int), spell.level)
     points = point_list[spell_level]
 
     if a.get('p'):
         points += int(a.last('p'))
 
-    #Pre Cost Processing
+    # --------------------
+    # Pre Cost Processing
+    # --------------------
 
     # Sentinel - Path of Meditation
     if c.get_cvar('subclass'):
@@ -86,15 +101,21 @@ def processPower(args):
                     out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
                     spell["name"] = "Growing Momentum - Burst of Speed"
 
+    # --------------------
     # Pay the cost
-    if not ignore and c.get_cc(cc) < points:
+    # --------------------
+    if not ignore and not c.cc_exists(cc):
+        return err(f"No counter named {cc} found. Either cast with `-i` or run `!level`")
+    elif not ignore and c.get_cc(cc) < points:
         return err(f"You don't have enough {cc} to cast that power")
     c.mod_cc(cc, -points) if not ignore else ''
     args.remove(args[0])
     out.append(" ".join(args))
     out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('-h') else ''
 
-    # Post Cast Processing
+    # --------------------
+    # Post Cost Processing
+    # --------------------
 
     # Scout - Bulwark
     if cc == "Tech Points" and c.cc_exists("Personal Barrier") and not ignore and not a.get('h'):
@@ -109,7 +130,6 @@ def processPower(args):
     return f'cast "{spell.name}" {" ".join(out)} -i'
 
 def search(keyword, gvar):
-    c = character()
     sover = f"(sw) {keyword}"
     spell = None
 
