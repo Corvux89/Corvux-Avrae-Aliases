@@ -1,4 +1,10 @@
 <drac2>
 c = character()
-return err(f"{','.join([x.name for x in c.actions])}")
+out = []
+if c.get_cvar('subclass'):
+    classes = load_json(c.get_cvar('subclass'))
+    for c in load_json(c.get_cvar('subclass')):
+        out.append(classes.get(c))
+
+return err(f"{classes} | {out}")
 </drac2>

@@ -6,6 +6,7 @@ def processPower(args):
     out = []
     point_list = [0,2,3,4,5,6,7,8,9,10]
     keyword = None if not args else args[0].lower()
+    subclasses = get_subclasses()
 
     if not keyword:
         return "help power"
@@ -22,8 +23,10 @@ def processPower(args):
             cc = "Force Points"
             if not wi:
                 out.append(getWith(spell))
-        elif c.get_cvar('subclass') and ((load_json(c.get_cvar('subclass')).get('SentinellightLevel') == "Synthesis") or (load_json(c.get_cvar('subclass')).get('SentineldarkLevel') == "Synthesis")):
-            if spell:= search(keyword, tp):
+
+        # Subclasses that allow Tech powers as Force Powers
+        elif bool(set(subclasses) & set(["Synthesis", "Technology", "Aqinos"])):
+            if spell := search(keyword, tp):
                 cc = "Force Points"
                 spell["classes"] = "Universal"
                 if not wi:
@@ -33,6 +36,11 @@ def processPower(args):
     elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:
         if spell := search(keyword, tp):
             cc = "Tech Points"
+
+        # Subclasses that allow Force powers as Tech Powers
+        elif bool(set(subclasses) & set(["Artificer", "Inquisitor"])):
+            if spell := search(keyword, fp):
+                cc = "Tech Points"
         else:
             spell = None
     else:
@@ -69,37 +77,36 @@ def processPower(args):
     # --------------------
 
     # Sentinel - Path of Meditation
-    if c.get_cvar('subclass'):
-        if (load_json(c.get_cvar('subclass')).get('SentinellightLevel') == "Meditation" and c.levels.get("Sentinellight", 0) > 3) or (load_json(c.get_cvar('subclass')).get('SentineldarkLevel') == "Meditation" and c.levels.get("Sentineldark", 0) > 3):
-            if spell.name == "(SW) Guidance":
-                spell["name"] = "(SW) Sage Counsel - Guidance"
-            if spell.name == "Battle Meditation" and c.cc_exists("Unbreakable Focus"):
-                if c.get_cc("Unbreakable Focus") and not a.get('p') and not ignore:
-                    points = 0
-                    c.mod_cc("Unbreakable Focus", -1)
-                    out.append(f''' -f "Unbreakable Focus (-1)|{c.cc_str("Unbreakable Focus")}" ''')
-                spell["name"] = "Unbreakable Focus - Battle Meditation"
-            elif spell.name == "Improved Battle Meditation" and c.cc_exists("Turbulent Presence"):
-                if c.get_cc("Turbulent Presence") and not a.get('p') and not ignore:
-                    points = 0
-                    c.mod_cc("Turbulent Presence", -1)
-                    out.append(f''' -f "Turbulent Presence (-1)|{c.cc_str("Turbulent Presence")}" ''')
-                spell["name"] = "Turbulent Presence - Improved Battle Meditation"
-            elif spell.name == "Mater Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
-                if c.get_cc("Legendary Battle Meditation") and not a.get('p') and not ignore:
-                    points = 0
-                    c.mod_cc("Legendary Battle Meditation", -1)
-                    out.append(f''' -f "Legendary Battle Meditation (-1)|{c.cc_str("Legendary Battle Meditation")}" ''')
-                spell["name"] = "Legendary Battle Meditation - Master Battle Meditation"
+    if "Meditation" in subclasses:
+        if spell.name == "(SW) Guidance":
+            spell["name"] = "(SW) Sage Counsel - Guidance"
+        if spell.name == "Battle Meditation" and c.cc_exists("Unbreakable Focus"):
+            if c.get_cc("Unbreakable Focus") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Unbreakable Focus", -1)
+                out.append(f''' -f "Unbreakable Focus (-1)|{c.cc_str("Unbreakable Focus")}" ''')
+            spell["name"] = "Unbreakable Focus - Battle Meditation"
+        elif spell.name == "Improved Battle Meditation" and c.cc_exists("Turbulent Presence"):
+            if c.get_cc("Turbulent Presence") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Turbulent Presence", -1)
+                out.append(f''' -f "Turbulent Presence (-1)|{c.cc_str("Turbulent Presence")}" ''')
+            spell["name"] = "Turbulent Presence - Improved Battle Meditation"
+        elif spell.name == "Mater Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
+            if c.get_cc("Legendary Battle Meditation") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Legendary Battle Meditation", -1)
+                out.append(f''' -f "Legendary Battle Meditation (-1)|{c.cc_str("Legendary Battle Meditation")}" ''')
+            spell["name"] = "Legendary Battle Meditation - Master Battle Meditation"
 
-        # Fighter - Adept Specialist
-        if load_json(c.get_cvar('subclass')).get('FighterLevel') in ["Adept Light", "Adept Dark"]:
-           if spell.name == "Burst of Speed" and c.cc_exists("Growing Momentum"):
-               if c.get_cc("Growing Momentum") and not a.get('p') and not ignore:
-                    points = 0
-                    c.mod_cc("Growing Momentum", -1)
-                    out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
-                    spell["name"] = "Growing Momentum - Burst of Speed"
+    # Fighter - Adept Specialist
+    elif bool(set(subclasses) & set(["Adept Light", "Adept Dark"])):
+       if spell.name == "Burst of Speed" and c.cc_exists("Growing Momentum"):
+           if c.get_cc("Growing Momentum") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Growing Momentum", -1)
+                out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
+                spell["name"] = "Growing Momentum - Burst of Speed"
 
     # --------------------
     # Pay the cost
@@ -162,3 +169,13 @@ def getWith(spell):
         return '-with wis'
     else:
         return '-with cha'
+
+def get_subclasses():
+    c = character()
+    out = []
+    if c.get_cvar('subclass'):
+        classes = load_json(c.get_cvar('subclass'))
+        for c in classes:
+            out.append(classes.get(c))
+
+    return out
