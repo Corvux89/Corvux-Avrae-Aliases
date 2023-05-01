@@ -1,0 +1,109 @@
+def biting(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    biting = None
+    dmg = sup.get_damage_str(attack)
+    dc = 13 if args.last('biting') == 'True' else int(args.last('biting'))
+    attack = attack.replace(f'{sup.get_damage_type(dmg)}', 'acid')
+    a = load_json(attack)
+    prop = sup.getProperties(attack)
+    effect = {"type": "ieffect2", "name": "Disintegrated",
+              "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything "
+                      "unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature "
+                      "destroyed in this way can not be revitalized."}
+
+    if 'range' and 'reload' not in prop:
+        auto = sup.get_on_hit_effects(attack)
+        condition = {"type": "condition",
+                     "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                     "onTrue": [effect],
+                     "onFalse": []}
+        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the biting property, you can instead force the target to make a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon, or the biting number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the first attack it makes before the end of its next turn has disadvantage."}
+        auto.append(condition)
+        auto.append(text)
+        save = {"type": "save", "stat": "con", "dc": f"{dc}", "fail": auto, "success": []}
+        target = {"type": "target", "target": "each", "effects": [save]}
+        biting = {"name": f"Biting - {a.name}", "_v": 2, "automation": [target]}
+        biting = dump_json(biting)
+
+    save = {"type": "save", "stat": "con", "dc": f"{dc}", "fail": [effect], "success": []}
+    condition = {"type": "condition", "onFalse": []}
+
+    if '"stat": "con"' in attack:
+        condition["condition"] = "target.hp <= 0 and lastSaveRollTotal < 13"
+        condition["onTrue"] = [effect]
+    else:
+        condition["condition"] = "target.hp <= 0"
+        condition["onTrue"] = [save]
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(condition)
+                elif e.type == "attack":
+                    e.hit.append(condition)
+                    break
+
+    return dump_json(a), biting
+
+def bright(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    bright = None
+    dmg = sup.get_damage_str(attack)
+    dc = 13 if args.last('bright') == 'True' else int(args.last('bright'))
+    attack = attack.replace(f'{sup.get_damage_type(dmg)}', 'fire')
+    a = load_json(attack)
+    prop = sup.getProperties(attack)
+
+    if 'range' and 'reload' not in prop:
+        auto = sup.get_on_hit_effects(attack)
+        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier."}
+        auto.append(text)
+        save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": auto, "success": []}
+        target = {"type": "target", "target": "each", "effects": [save]}
+        bright = {"name": f"Bright - {a.name}", "_v": 2, "automation": [target]}
+        bright = dump_json(bright)
+
+    return dump_json(a), bright
+
+def corruption(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    corrupt = None
+    dmg = sup.get_damage_str(attack)
+    dc = 13 if args.last('corruption') == 'True' else int(args.last('corruption'))
+    attack = attack.replace(f'{sup.get_damage_type(dmg)}', 'necrotic')
+    a = load_json(attack)
+    prop = sup.getProperties(attack)
+
+    if 'range' and 'reload' not in prop:
+        auto = sup.get_on_hit_effects(attack)
+        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the corruption property, you can instead force the target to make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon, or the corruption number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature cannot regain hit points until the start of your next turn."}
+        auto.append(text)
+        save = {"type": "save", "stat": "wis", "dc": f"{dc}", "fail": auto, "success": []}
+        target = {"type": "target", "target": "each", "effects": [save]}
+        corrupt = {"name": f"Corrupt - {a.name}", "_v": 2, "automation": [target]}
+        corrupt = dump_json(corrupt)
+
+    return dump_json(a), corrupt
+
+def burst(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    a = load_json(attack)
+    dmg = sup.get_damage_str(attack)
+    bNum = 2 if args.last('burst') == 'True' else int(args.last('burst'))
+    dc = f"8+{sup.get_attack_bonus(attack)}"
+    on_hit = sup.get_on_hit_effects(attack)
+
+    for e in on_hit:
+        if e.type=="damage":
+            e["damage"] = "{damage}"
+            break
+    save = {"type": "save", "stat": "dex", "fail": on_hit, "success": [], "dc": f"{dc}"}
+    target = {"type": "target", "target": "all", "effects": [save]}
+    counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{bNum}", "allowOverflow": False, "errorBehavior": "raise"}
+    damage = {"type": "roll", "dice": f"{dmg}", "name": "damage"}
+    text = {"type": "text", "text": f"{sup.getProperties(attack)}, burst {bNum}"}
+
+    burst = {"name": f"Burst - {a.name}", "_v": 2, "automation": [damage, target, counter, text]}
+
+    return dump_json(burst)

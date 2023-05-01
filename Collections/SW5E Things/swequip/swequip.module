@@ -1,13 +1,14 @@
 def processAttacks(attacks, args):
     out = []
     c = character()
+    using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
-        prop = getProperties(attack)
+        prop = sup.getProperties(attack)
 
         if args.get('title'):
-            attack = attack.replace(f'{processName(a.name)}', f'{args.last("title")}')
+            attack = attack.replace(f'{sup.processName(a.name)}', f'{args.last("title")}')
 
         if args.get('b'):
             attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
@@ -32,7 +33,7 @@ def processAttacks(attacks, args):
             attack=attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
 
         if args.get('offhand'):
-            attack = updateName(attack, "Offhand")
+            attack = sup.updateName(attack, "Offhand")
             if "finesse" in prop:
                 attack = attack.replace('+{max(strengthMod,dexterityMod)}', '')
             elif "heavy" in prop:
@@ -41,7 +42,7 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{strengthMod}', '')
 
         if args.get('double'):
-            attack = updateName(attack, "Double", False)
+            attack = sup.updateName(attack, "Double", False)
             if "finesse" in prop:
                 attack = attack.replace('+max(strengthMod,dexterityMod)','')
             elif "heavy" in prop:
@@ -50,12 +51,12 @@ def processAttacks(attacks, args):
             attack = attack.replace('+strengthMod', '')
 
         if args.get('gwm'):
-            attack = updateName(attack, "Great", False)
+            attack = sup.updateName(attack, "Great", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus*2} [')
 
         if args.get('sharp'):
-            attack = updateName(attack, "Sharpshooter", False)
+            attack = sup.updateName(attack, "Sharpshooter", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus * 2} [')
 
@@ -66,7 +67,7 @@ def processAttacks(attacks, args):
             attack = attack.replace('"success": []',
                                     '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
             out.append(load_json(attack))
-            attack = updateName(attack, "Gunning", False)
+            attack = sup.updateName(attack, "Gunning", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
             attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus} [')
 
@@ -76,9 +77,28 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
+        if args.get('biting'):
+            attack, biting = weap.biting(attack, args)
+            if biting:
+                out.append(load_json(biting))
+
+        if args.get('bright'):
+            attack, bright = weap.bright(attack, args)
+            if bright:
+                out.append(load_json(bright))
+
+        if args.get('corruption'):
+            attack, corrupt = weap.corruption(attack, args)
+            if corrupt:
+                out.append(load_json(corrupt))
+
+        if args.get('burst'):
+            burst = weap.burst(attack, args)
+            if burst:
+                out.append(load_json(burst))
+
         if args.get('dev'):
-            a = wp_biting(attack, args)
-            return err(f"{a}")
+            attack = wp_biting(attack, args)
 
         if "counter" in attack:
             index = attack.find('"counter": "') + 12
@@ -90,86 +110,3 @@ def processAttacks(attacks, args):
         out.append(load_json(attack))
 
     return out, counter
-
-def processName(name):
-    out = name
-    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'')
-    out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace("Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
-    out = out.replace("Rocket, Fragmentation - ",'').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
-    out = out.replace("Missile, Fragmentation - ", '').replace("Missile, Incendiary - ", '').replace("Missile, Ion - ", '')
-    out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace("Arrow, Noisemaker - ", '')
-    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace("Dart, Panic - ", '')
-    out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace("Projector Canister, Incendiary - ", '')
-    out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
-    out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
-    out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace("Bolt, Panic - ", '')
-
-    return out
-
-def updateName(attack, prefix, cupdate=True):
-    a = load_json(attack)
-    test = attack
-    test = test.replace(f'"name": "{a.name}"', f'"name": "{prefix} - {a.name}"')
-    if cupdate and "counter" in test:
-        index = test.find('"counter": "') + 12
-        counter = str(test[index:test[index:].find('"') + index])
-        test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} {counter}"')
-    return test
-
-def getProperties(attack):
-        a = load_json(attack)
-        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
-            "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
-
-def get_damage_str(attack):
-    dindex = attack.find('"damage": "') + 11
-    damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
-    return damage_str
-
-def get_damage_type(attack_str):
-    return str(attack_str[attack_str.find('[')+1:attack_str.find(']')])
-
-def wp_biting(attack, args):
-    dmg = get_damage_str(attack)
-    props = getProperties(attack)
-    dc = 13 if args.last('biting') == '' else int(args.last('biting'))
-    attack = attack.replace(f'{get_damage_type(dmg)}', 'acid')
-
-
-
-
-
-    return get_damage_type(dmg)
-
-
-def buildBase(attack, args):
-    a = load_json(attack)
-    props = getProperties(attack)
-    weapon = {"name": f"{a.name}", "_v": 2, "automation": []}
-    damage_str = get_damage_str(attack)
-
-    attack_auto = {"type": "attack", "hit": [], "miss": [], }
-
-    target = {"type": "target", "target": "each", "effects": []}
-
-    base_damage = {"type": "damage", "damage": damage_str}
-    attack_auto["hit"].append(base_damage)
-
-    if args.get('dev'):
-        devnum = 13 if args.last('dev') == '' else int(args.last('dev'))
-
-        disEffect = {"type": "ieffect2", "name": "Disintegrated", "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."}
-        save = {"type": "save", "stat": "con", "fail": [disEffect], "success": [], "dc": devnum}
-        condition = {"type": "condition", "condition": f"target.hp <= 0", "onTrue": [save], "onFalse": []}
-        attack_auto["hit"].append(condition)
-
-
-    target['effects'].append(attack_auto)
-
-    text = {"type": "text", "text": f"{props}, test gun"}
-
-    weapon["automation"].append(target)
-    weapon["automation"].append(text)
-
-    return dump_json(weapon)
-

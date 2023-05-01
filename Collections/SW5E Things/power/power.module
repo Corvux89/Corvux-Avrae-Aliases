@@ -25,7 +25,7 @@ def processPower(args):
                 out.append(getWith(spell))
 
         # Subclasses that allow Tech powers as Force Powers
-        elif bool(set(subclasses) & set(["Synthesis", "Technology", "Aqinos"])):
+        elif bool(set(subclasses) & {"Synthesis", "Technology", "Aqinos"}):
             if spell := search(keyword, tp):
                 cc = "Force Points"
                 spell["classes"] = "Universal"
@@ -38,7 +38,7 @@ def processPower(args):
             cc = "Tech Points"
 
         # Subclasses that allow Force powers as Tech Powers
-        elif bool(set(subclasses) & set(["Artificer", "Inquisitor"])):
+        elif bool(set(subclasses) & {"Artificer", "Inquisitor"}):
             if spell := search(keyword, fp):
                 cc = "Tech Points"
         else:
@@ -66,7 +66,7 @@ def processPower(args):
     # --------------------
     # Figure out the cost
     # --------------------
-    spell_level = max(a.last('l', default=0, type_=int), spell.level)
+    spell_level = max(a.last('l', default=0, type=int), spell.level)
     points = point_list[spell_level]
 
     if a.get('p'):
@@ -100,7 +100,7 @@ def processPower(args):
             spell["name"] = "Legendary Battle Meditation - Master Battle Meditation"
 
     # Fighter - Adept Specialist
-    elif bool(set(subclasses) & set(["Adept Light", "Adept Dark"])):
+    elif bool(set(subclasses) & {"Adept Light", "Adept Dark"}):
        if spell.name == "Burst of Speed" and c.cc_exists("Growing Momentum"):
            if c.get_cc("Growing Momentum") and not a.get('p') and not ignore:
                 points = 0

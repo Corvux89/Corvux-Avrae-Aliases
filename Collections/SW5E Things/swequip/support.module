@@ -1,0 +1,59 @@
+def processName(name):
+    out = name
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'')
+    out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace("Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
+    out = out.replace("Rocket, Fragmentation - ",'').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
+    out = out.replace("Missile, Fragmentation - ", '').replace("Missile, Incendiary - ", '').replace("Missile, Ion - ", '')
+    out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace("Arrow, Noisemaker - ", '')
+    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace("Dart, Panic - ", '')
+    out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace("Projector Canister, Incendiary - ", '')
+    out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
+    out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
+    out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace("Bolt, Panic - ", '')
+
+    return out
+
+def updateName(attack, prefix, cupdate=True):
+    a = load_json(attack)
+    test = attack
+    test = test.replace(f'"name": "{a.name}"', f'"name": "{prefix} - {a.name}"')
+    if cupdate and "counter" in test:
+        index = test.find('"counter": "') + 12
+        counter = str(test[index:test[index:].find('"') + index])
+        test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} {counter}"')
+    return test
+
+def getProperties(attack):
+        a = load_json(attack)
+        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
+            "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
+
+def get_damage_str(attack):
+    a = load_json(attack)
+    if 'burst' in a.name.lower():
+        dindex = attack.find('"dice": "') + 9
+    else:
+        dindex = attack.find('"damage": "') + 11
+
+    damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
+    return damage_str
+
+def get_damage_type(attack_str):
+    return str(attack_str[attack_str.find('[')+1:attack_str.find(']')])
+
+def get_on_hit_effects(attack):
+    a = load_json(attack)
+    auto = None
+
+    for e in a.automation:
+        if e.type == "target":
+            for i in e.effects:
+                if i.type == "attack":
+                    auto = i.hit
+                    break
+
+    return auto
+
+def get_attack_bonus(attack):
+    index = attack.find('"attackBonus": "') + 16
+    return str(attack[index:attack[index:].find('"') + index])
