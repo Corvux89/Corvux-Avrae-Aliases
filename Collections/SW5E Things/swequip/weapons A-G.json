@@ -71,7 +71,7 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Anti-Material Blaster",
+    "name": "Penetrating - Anti-Materiel Blaster",
     "automation": [
       {
         "type": "target",
@@ -91,7 +91,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Blaster",
+            "counter": "Anti-Materiel Blaster",
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -106,7 +106,7 @@
     "_v": 2
   },
   {
-    "name": "Cartridge, Slug - Anti-Material Rifle",
+    "name": "Cartridge, Slug - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -126,7 +126,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "1",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -141,7 +141,7 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Cartridge, Slug - Anti-Material Rifle",
+    "name": "Penetrating - Cartridge, Slug - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -161,7 +161,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "name": "Cartridge, Corrosive - Anti-Material Rifle",
+    "name": "Cartridge, Corrosive - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -230,7 +230,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "1",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -245,7 +245,7 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Cartridge, Corrosive - Anti-Material Rifle",
+    "name": "Penetrating - Cartridge, Corrosive - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -300,7 +300,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -314,7 +314,7 @@
     ]
   },
   {
-    "name": "Cartridge, Electrifying - Anti-Material Rifle",
+    "name": "Cartridge, Electrifying - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -365,7 +365,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "1",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -380,7 +380,7 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Cartridge, Electrifying - Anti-Material Rifle",
+    "name": "Penetrating - Cartridge, Electrifying - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -431,7 +431,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -445,7 +445,7 @@
     ]
   },
   {
-    "name": "Cartridge, Gas - Anti-Material Rifle",
+    "name": "Cartridge, Gas - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -501,7 +501,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "1",
             "allowOverflow": false,
             "errorBehavior": "raise"
@@ -516,7 +516,7 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Cartridge, Gas - Anti-Material Rifle",
+    "name": "Penetrating - Cartridge, Gas - Anti-Materiel Rifle",
     "automation": [
       {
         "type": "target",
@@ -572,7 +572,7 @@
           },
           {
             "type": "counter",
-            "counter": "Anti-Material Rifle",
+            "counter": "Anti-Materiel Rifle",
             "amount": "2",
             "allowOverflow": false,
             "errorBehavior": "raise"
