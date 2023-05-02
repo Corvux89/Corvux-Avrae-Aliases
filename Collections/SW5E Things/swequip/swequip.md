@@ -20,12 +20,25 @@ __Available Arguments__
 `-d` add a bonus to your damage
 `-c` adds extra damage when a critical hit is scored. Accepts XdY dice strings or a flat number
 `-criton` allows you to set a different natural dice roll that scores a critical hit
+`-keen` Set a different natural dice roll scoring a critical hit (20 - keen)
 `-enhanced` Upgrade the damage to enhanced damage
 
 **Properties**
 `-offhand` removes the ability mod from your damage roll and adds an attack called "Offhand ..." for Two-Weapon Fighting
 `-double` removes the ability mod from your damage roll and adds an attack called "Double ..." for Double-Weapon Fighting
 `-heavy` Sets up the weapon as if it had the heavy property
+`-finesse` or `-mighty` replaces the stat used for rolls with either strength or dexterity (whichever is highter)
+`-biting` 
+`-bright`
+`-corruption`
+`-disarming`
+`-disintegrate`
+`-neuralizing`
+`-shocking`
+`-sonorous`
+`-burst`
+`-rapid`
+
 
 **Feats**
 `-gwm` Adds an attack called "Great..." for Great-Weapon Master. Removes the proficiency mod from the attack roll and adds double proficiency mod to the damage roll

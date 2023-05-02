@@ -136,6 +136,89 @@ def disintegrate(attack, args):
 
     return dump_json(a)
 
+def neuralizing(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = 13 if args.last('neuralizing') == 'True' else int(args.last('neuralizing'))
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Neuralizing",
+            "text": "When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional 1d4 psychic damage and becomes frightened of you until the start of its next turn."}
+    effect = {"type": "ieffect2", "name": "Frightened",
+              "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
+              "duration": 1}
+    damage = {"type": "damage", "damage": "1d4 [psychic]"}
+
+    save = {"type": "save", "stat": "wis", "dc": f"{dc}", "fail": [damage, effect], "success": []}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(save)
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(save)
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
+
+def shocking(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = 13 if args.last('shocking') == 'True' else int(args.last('shocking'))
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Shocking",
+            "text": "When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn."}
+    effect = {"type": "ieffect2", "name": "Shocked",
+              "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+              "duration": 1,
+              "end": True}
+    damage = {"type": "damage", "damage": "1d4 [lightning]"}
+
+    save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": [damage, effect], "success": []}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(save)
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(save)
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
+
+def sonorous(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = 13 if args.last('sonorous') == 'True' else int(args.last('sonorous'))
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Sonorous",
+            "text": "When you hit a creature with a weapon with the sonorous property, you can force it to make a Constitution saving throw, DC equal to the sonorous number. On a failed save, the creature takes an additional 1d4 sonic damage and becomes deafened until the end of its next turn."}
+    effect = {"type": "ieffect2", "name": "Deafened",
+              "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+              "duration": 1,
+              "end": True}
+    damage = {"type": "damage", "damage": "1d4 [sonic]"}
+
+    save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": [damage, effect], "success": []}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(save)
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(save)
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
+
 def burst(attack, args):
     using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     a = load_json(attack)
@@ -157,3 +240,29 @@ def burst(attack, args):
     burst = {"name": f"Burst - {a.name}", "_v": 2, "automation": [damage, target, counter, text]}
 
     return dump_json(burst)
+
+def rapid(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    a = load_json(attack)
+    rNum = 2 if args.last('rapid') == 'True' else int(args.last('rapid'))
+    dc = f"8+{sup.get_attack_bonus(attack)}"
+    dtype = sup.get_damage_type(sup.get_damage_str(attack))
+    die = sup.get_damage_die(attack)
+    numDie = die[:die.find('d')]
+    dieType = die[die.find('d')+1:]
+    d_str = f"{int(numDie)*2}d{dieType} [{dtype}]"
+    on_hit = sup.get_on_hit_effects(attack)
+    for e in on_hit:
+        if e.type=="damage":
+            e["damage"] = d_str
+            break
+    counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{rNum}", "allowOverflow": False,
+               "errorBehavior": "raise"}
+    on_hit.append(counter)
+    save = {"type": "save", "stat": "dex", "fail": on_hit, "success": [], "dc": f"{dc}"}
+    target = {"type": "target", "target": "all", "effects": [save]}
+    text = {"type": "text", "text": f"{sup.getProperties(attack)}, rapid {rNum}"}
+
+    rapid = {"name": f"Rapid - {a.name}", "_v": 2, "automation": [target, text]}
+
+    return dump_json(rapid)

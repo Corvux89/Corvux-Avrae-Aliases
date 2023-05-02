@@ -21,6 +21,9 @@ def processAttacks(attacks, args):
         if args.get('criton'):
             attack=attack.replace('_v": 2', f'_v": 2,"criton":{args.last("criton")}')
 
+        if args.get('keen'):
+            attack = attack.replace('_v": 2', f'_v": 2,"criton":{20 - int(args.last("keen"))}')
+
         if args.get('c'):
             if "extra_crit_damage" in attack:
                 index = attack.find('"extra_crit_damage": "') + 22
@@ -77,6 +80,13 @@ def processAttacks(attacks, args):
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
+        if args.get('finesse') or args.get('mighty'):
+            bonus = sup.get_attack_bonus(attack)
+            if "dexterityMod" in bonus:
+                attack = attack.replace('dexterityMod', 'max(strengthMod,dexterityMod)')
+            elif "strengthMod" in bonus:
+                attack = attack.replace('strengthMod', 'max(strengthMod,dexterityMod)')
+
         if args.get('biting'):
             attack, biting = weap.biting(attack, args)
             if biting:
@@ -99,10 +109,24 @@ def processAttacks(attacks, args):
         if args.get("disintegrate"):
             attack = weap.disintegrate(attack, args)
 
-        if args.get('burst'):
+        if args.get("neuralizing"):
+            attack = weap.neuralizing(attack, args)
+
+        if args.get("shocking"):
+            attack = weap.shocking(attack, args)
+
+        if args.get("sonorous"):
+            attack = weap.sonorous(attack, args)
+
+        if args.get('burst') and 'rapid' not in a.name.lower():
             burst = weap.burst(attack, args)
             if burst:
                 out.append(load_json(burst))
+
+        if args.get('rapid') and 'rapid' not in a.name.lower():
+            rapid = weap.rapid(attack, args)
+            if rapid:
+                out.append(load_json(rapid))
 
         if args.get('dev'):
             attack = wp_biting(attack, args)

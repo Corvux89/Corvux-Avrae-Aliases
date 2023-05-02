@@ -7,6 +7,7 @@ crit = 'crit' in &ARGS&
 l = 1 if not args.last('l') else args.last('l')
 cc = "Force Points"
 lvl = max(int(get("GuardianlightLevel",0)), int(get("GuardiandarkLevel",0)),0)
+mi = args.last('mi')
 dtype = "Energy" if not args.last('type') else args.last('type')
 i = '-i' in &ARGS&
 
@@ -33,6 +34,9 @@ if v:
 
     if int(l) > 1:
         roll_str += f"+ {str(min(int(l)-1,3))}d8"
+
+    if mi:
+        roll_str += f"mi{mi}"
 
     roll_str +=  f"[{dtype}]"
 

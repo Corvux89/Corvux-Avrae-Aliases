@@ -1,64 +1,71 @@
-{
-  "name": "Vibrodagger",
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "attack",
-          "hit": [
-            {
-              "type": "damage",
-              "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
-              "overheal": null
-            },
-            {
-              "type": "condition",
-              "condition": "target.hp <= 0",
-              "onTrue": [
-                {
-                  "type": "save",
-                  "stat": "con",
-                  "fail": [
-                    {
-                      "type": "ieffect2",
-                      "name": "Disintegrated",
-                      "duration": null,
-                      "effects": null,
-                      "attacks": [],
-                      "buttons": [],
-                      "end": null,
-                      "conc": null,
-                      "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.",
-                      "stacking": null,
-                      "save_as": null,
-                      "parent": null
-                    }
-                  ],
-                  "success": [],
-                  "dc": "10"
-                },
-                {
-                  "type": "text",
-                  "text": "When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.",
-                  "title": "Disintegrate"
-                }
-              ],
-              "onFalse": [],
-              "errorBehaviour": null
-            }
-          ],
-          "miss": [],
-          "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "Finesse, Light, Thrown (range 20/60)",
-      "title": "Effect"
-    }
-  ],
-  "_v": 2
-}
+[
+  {
+    "name": "Rapid - Wristrifle",
+    "_v": 2,
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d8 [energy]"
+              },
+              "type",
+              "counter",
+              "amount",
+              "allowOverflow",
+              "errorBehavior"
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "power cell (range 60/240), fixed, reload 12, rapid 2"
+      }
+    ]
+  },
+  {
+    "name": "Wristrifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{dexterityMod} [energy]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wristrifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "warn"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Fixed, Reload 12"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  }
+]`

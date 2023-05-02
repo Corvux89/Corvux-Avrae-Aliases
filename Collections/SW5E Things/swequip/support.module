@@ -57,3 +57,13 @@ def get_on_hit_effects(attack):
 def get_attack_bonus(attack):
     index = attack.find('"attackBonus": "') + 16
     return str(attack[index:attack[index:].find('"') + index])
+
+def get_damage_die(attack):
+    a = load_json(attack)
+    if 'burst' in a.name.lower():
+        dindex = attack.find('"dice": "') + 9
+    else:
+        dindex = attack.find('"damage": "') + 11
+
+    damage_str = str(attack[dindex:attack[dindex:].find('+') + dindex])
+    return damage_str
