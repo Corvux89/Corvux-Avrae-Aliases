@@ -17,7 +17,7 @@ def biting(attack, args):
                      "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
                      "onTrue": [effect],
                      "onFalse": []}
-        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the biting property, you can instead force the target to make a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon, or the biting number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the first attack it makes before the end of its next turn has disadvantage."}
+        text = {"type": "text", "title": "Biting", "text": "When you would make a melee weapon attack with a weapon with the biting property, you can instead force the target to make a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon, or the biting number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the first attack it makes before the end of its next turn has disadvantage."}
         auto.append(condition)
         auto.append(text)
         save = {"type": "save", "stat": "con", "dc": f"{dc}", "fail": auto, "success": []}
@@ -57,7 +57,7 @@ def bright(attack, args):
 
     if 'range' and 'reload' not in prop:
         auto = sup.get_on_hit_effects(attack)
-        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier."}
+        text = {"type": "text","title": "Bright", "text": "When you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier."}
         auto.append(text)
         save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": auto, "success": []}
         target = {"type": "target", "target": "each", "effects": [save]}
@@ -77,7 +77,7 @@ def corruption(attack, args):
 
     if 'range' and 'reload' not in prop:
         auto = sup.get_on_hit_effects(attack)
-        text = {"type": "text", "text": "When you would make a melee weapon attack with a weapon with the corruption property, you can instead force the target to make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon, or the corruption number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature cannot regain hit points until the start of your next turn."}
+        text = {"type": "text","title": "Corruption", "text": "When you would make a melee weapon attack with a weapon with the corruption property, you can instead force the target to make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon, or the corruption number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature cannot regain hit points until the start of your next turn."}
         auto.append(text)
         save = {"type": "save", "stat": "wis", "dc": f"{dc}", "fail": auto, "success": []}
         target = {"type": "target", "target": "each", "effects": [save]}
@@ -85,6 +85,56 @@ def corruption(attack, args):
         corrupt = dump_json(corrupt)
 
     return dump_json(a), corrupt
+
+def disarming(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = f'8+{sup.get_attack_bonus(attack)}' if args.last('disarming') == 'True' else int(args.last('disarming'))
+    a = load_json(attack)
+
+    text = {"type": "text","title": "Disarming", "text": "When you score a critical hit with a weapon with the disarming property against a creature that is holding an object, you can attempt to disarm the target (no action required). If the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice at its feet."}
+    save = {"type": "save", "stat": "str", "dc": f"{dc}", "fail": [], "success": []}
+    condition = {"type": "condition", "condition": "lastAttackDidCrit == True", "onTrue": [save, text], "onFalse": []}
+
+    for e in a.automation:
+        if e.type == "target":
+            for i in e.effects:
+                if i.type == "attack":
+                    i['hit'].append(condition)
+                    break
+
+    return dump_json(a)
+
+def disintegrate(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = 13 if args.last('disintegrate') == 'True' else int(args.last('disintegrate'))
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Disintegrate", "text": "When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."}
+    effect = {"type": "ieffect2", "name": "Disintegrated",
+              "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything "
+                      "unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature "
+                      "destroyed in this way can not be revitalized."}
+
+    save = {"type": "save", "stat": "con", "dc": f"{dc}", "fail": [effect], "success": []}
+    condition = {"type": "condition", "onFalse": []}
+
+    if '"stat": "con"' in attack:
+        condition["condition"] = "target.hp <= 0 and lastSaveRollTotal < 13"
+        condition["onTrue"] = [effect, text]
+    else:
+        condition["condition"] = "target.hp <= 0"
+        condition["onTrue"] = [save, text]
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(condition)
+                elif e.type == "attack":
+                    e.hit.append(condition)
+                    break
+
+    return dump_json(a)
 
 def burst(attack, args):
     using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")

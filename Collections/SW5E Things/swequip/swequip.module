@@ -92,6 +92,13 @@ def processAttacks(attacks, args):
             if corrupt:
                 out.append(load_json(corrupt))
 
+        if args.get("disarming"):
+            if '"type": "attack"' in attack:
+                attack = weap.disarming(attack, args)
+
+        if args.get("disintegrate"):
+            attack = weap.disintegrate(attack, args)
+
         if args.get('burst'):
             burst = weap.burst(attack, args)
             if burst:
