@@ -1,0 +1,32 @@
+<drac2>
+com = combat()
+c = character()
+a = argparse(&ARGS&)
+t = a.last('t')
+base = f'''embed -thumb {image} -color {color}'''
+base += f''' -f "Effect|For 1 minute after you drink this potion, you have resistance to all damage. The potion's syrupy liquid looks like liquefied iron. " '''
+
+if com:
+    if t:
+        targ = com.get_combatant(t)
+    else:
+        targ = com.me
+
+    base += f''' -title "{targ.name} takes a Potion of Invulnerability!" '''
+    eff = targ.add_effect("Potion of Invulnerability", duration=10,
+        passive_effects={
+            "resistances": ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning', 'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
+        },
+        desc="Resistance to all damage")
+
+    base += f''' -f "{targ.name}|{eff}" '''
+
+else:
+    if t:
+        base += f''' -title "{t} takes a Potion of Invulnerability!" '''
+    else:
+        base += f''' -title "{name} takes a Potion of Invulnerability!" '''
+
+
+return base
+</drac2>

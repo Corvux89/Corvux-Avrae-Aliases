@@ -1,13 +1,3 @@
 <drac2>
-c = character()
-out = []
-if c.get_cvar('subclass'):
-    classes = load_json(c.get_cvar('subclass'))
-    for c in load_json(c.get_cvar('subclass')):
-        out.append(classes.get(c))
-
-if bool(set(out) & {"Synthesis", "Technology", "Aqinos"}):
-    return err("Here")
-else:
-    return err("Nope")
+return err(f"{vroll('1d20 + 4',2)} | {vroll('1d20 + 4',1,2)} ")
 </drac2>

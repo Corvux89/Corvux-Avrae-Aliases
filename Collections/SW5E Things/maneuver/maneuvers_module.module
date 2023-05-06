@@ -47,17 +47,20 @@ def add_effect(m, com, override=None):
 
     return output
 
-def perform(m, coms, **kwargs):
+def perform(m, coms, args, **kwargs):
     output = ""
+    a = argparse(args)
     lvl = kwargs['lvl']
-    override = kwargs['override']
-    mi = kwargs['mi']
+    override = a.last('type')
+    mi = a.last('mi')
+    b = a.last('b')
+
     roll_str = get_roll_str(m, lvl, mi, override)
     bonus = get_bonus(m, override)
-    dc = kwargs['dc'] if kwargs['dc'] else f"{8 + character().stats.prof_bonus + bonus}"
-    fail = kwargs['fail']
-    tdis = kwargs['tdis']
-    tadv = kwargs['tadv']
+    dc = f"{8 + character().stats.prof_bonus + bonus}" if not a.last('dc') else int(a.last('dc)'))
+    fail = 'fail' in args
+    tadv = 'tadv' in args
+    tdis = 'tdis' in args
     m_str=""
 
 

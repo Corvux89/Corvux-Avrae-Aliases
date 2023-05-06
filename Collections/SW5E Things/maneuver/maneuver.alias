@@ -44,7 +44,7 @@ if v:
     if m is None or m == "":
         return err(f"Maneuver not found/supported")
 
-    base += sup.perform(m, coms, lvl=c.get_cc_max(cc), override=override, dc=dc, fail=fail, tdis=tdis, tadv=tadv, mi=mi)
+    base += sup.perform(m, coms, &ARGS&, lvl=c.get_cc_max(cc))
 
     base += f''' -title "{name} uses a {cc} die to {m.name}" '''
     base += f''' -f "{m.name} Effect|{m.description}" '''

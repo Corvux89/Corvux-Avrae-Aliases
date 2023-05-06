@@ -6426,24 +6426,6 @@
     "concentration": true
   },
   {
-    "name": "Tactical Advantage",
-    "level": 3,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose a willing creature that you can see within range. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\r\n\r\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
-    "concentration": true
-  },
-  {
     "name": "Tactical Barrier",
     "level": 1,
     "school": "Tech",
@@ -12173,6 +12155,85 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You shoot a beam of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or sonic for the type of beam you create, and then make a ranged tech attack against the target. If the attack hits, the creature takes 1d8 damage of the type you chose.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8) and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Tactical Advantage",
+    "level": 3,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Tactically Boosted",
+            "effects": {
+              "ac_bonus": "2",
+              "save_adv": [
+                "dexterity"
+              ]
+            },
+            "desc": "Speed is doubled\n - +2 bonus to AC\n - Advtange on Dexterity saving throws\n - Gains an additional action on each of its turns"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a willing creature that you can see within range. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\n\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose a willing creature that you can see within range. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\r\n\r\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+    "concentration": true
+  },
+  {
+    "name": "Instant Translocation",
+    "level": 3,
+    "school": "Tech",
+    "automation": [],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you are hit by an attack",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Your form shimmers in a holographic configuration and collapses as an attack begins to hit you. You have a +5 bonus to AC against the triggering attack. As part of the same reaction, you can then teleport to an unoccupied space within 30 feet of you, and can make one weapon attack with advantage against the attacker.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 4th level or higher, the maximum teleport distance increases by 10 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Jump Jet",
+    "level": 1,
+    "school": "Tech",
+    "automation": [],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You boost yourself through the air with a brief surge of repulsor energy. You can rise a number of feet equal to 20 x your techcasting ability modifier. You can also move a number of feet horizontally during any part of the movement equal to 5 x your techcasting ability modifier. At the end of the turn on which you cast this power, you float gently to the ground if you are still aloft.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can rise an additional 20 feet, and move horizontally by another 5 feet for each slot level above 1st.",
     "concentration": false
   }
 ]
