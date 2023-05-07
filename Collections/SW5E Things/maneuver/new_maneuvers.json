@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Administer Aid",
+    "description": "You can expend a superiority die to tend to a creature you can touch. The creature regains a number of hit points equal to the number rolled + your maneuver ability modifier.",
+    "damage": "-#sup_die# + #mod#",
+    "d_type": "Healing",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Administer Aid!"
+  }
+]

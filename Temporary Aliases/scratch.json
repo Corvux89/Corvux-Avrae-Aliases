@@ -1,19 +1,30 @@
-{
-  "name": "Jump Jet",
-  "level": 1,
-  "school": "Tech",
-  "classes": "None",
-  "subclasses": "",
-  "casttime": "1 bonus action",
-  "range": "Self",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "Instantaneous",
-  "ritual": false,
-  "description": "You boost yourself through the air with a brief surge of repulsor energy. You can rise a number of feet equal to 20 x your techcasting ability modifier. You can also move a number of feet horizontally during any part of the movement equal to 5 x your techcasting ability modifier. At the end of the turn on which you cast this power, you float gently to the ground if you are still aloft.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can rise an additional 20 feet, and move horizontally by another 5 feet for each slot level above 1st.",
-  "concentration": false,
-  "automation": []
-}
+[
+  {
+    "name": "Punch Drunk",
+    "xc": "pb drunk",
+    "L": [
+      level
+    ],
+    "cc": "Resource Name",
+    "save": {
+      "dc": "8+#proficiencyBonus#+#dexterityMod, but strdex is valid too",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Effect, by #name#",
+          "duration": -1,
+          "parent": {
+            "name": "Parent Effect, on #target#",
+            "end": true,
+            "duration": 2
+          }
+        }
+      }
+    },
+    "damage": "XdY, but #superiorityDice# is valid too",
+    "sc": "Puncher Boi",
+    "desc": "-title \"#name# #uses# Punch Drunk!\" #desc# -color #color# -thumb #image# -footer \"#combatantFooter#See !fighter for more info\"",
+    "validUse": "-desc \"When you punch, they get drunk!.\" -f \"Meta|**Additional Damage:** #damageText#\n**DC**: #saveDC#\nSTR Save\" #targetOutput# -f \"#counterChange#\"",
+    "invalidUse": "-desc \"You do not have this feature, or must finish a long rest to regain use of it.\nUse `!level fighter [#] [subclass]` to mark your Fighter level and subclass.\" -f \"#counterChange#\""
+  }
+]
