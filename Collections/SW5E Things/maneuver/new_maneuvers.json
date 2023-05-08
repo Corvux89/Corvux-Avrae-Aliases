@@ -1,25 +1,45 @@
 [
   {
     "name": "Administer Aid",
-    "description": "You can expend a superiority die to tend to a creature you can touch. The creature regains a number of hit points equal to the number rolled + your maneuver ability modifier.",
-    "damage": "-#superiorityDice# + #mod#",
+    "damage": "#superiorityDice# + #maneuverMod#",
     "dmgType": "Healing",
     "sub": "Mental",
-    "desc": "-title \"#name# #uses# Administer Aid!",
-    "validUse": "-desc \"Administering Aid!\" -f \"Meta|**Damage**: #damageText#\" -f \"#counterChange\""
+    "desc": "-title \"#name# #uses# Administer Aid!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can expend a superiority die to tend to a creature you can touch. The creature regains a number of hit points equal to the number rolled + your maneuver ability modifier.\""
   },
   {
     "name": "Adrenaline Hit",
-    "description": "You expend one superiority die to inject a creature with regenerative medication that temporarily enhances their agility. When you do so, a creature you can touch regains hit points equal to the superiority die roll. Additionally, until the start of your next turn, when that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.",
     "thp": "#superiorityDice#",
     "sub": "Mental",
+    "desc": "-title \"#name# #uses# Adrenaline Hit!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You expend one superiority die to inject a creature with regenerative medication that temporarily enhances their agility. When you do so, a creature you can touch regains hit points equal to the superiority die roll. Additionally, until the start of your next turn, when that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\"",
     "effect": {
-      "name": "Adrenaline Hit, by #name#",
-      "desc": "Reduce damage by #mod#",
+      "name": "Adrenaline Hit",
+      "desc": "When that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\n - Maneuver ability modifier: #maneuverMod#",
       "parent": {
-        "name": "Adrenaline Hit, on #target#",
+        "name": "Adrenaline Hit - #target#",
         "duration": 1
       }
     }
+  },
+  {
+    "name": "Assist",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Assist!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nWhen you make an Medicine check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Automatic Startup Sequence",
+    "sub": "Mental",
+    "roll": "#superiorityDice#",
+    "desc": "-title \"#name# #uses# Automatic Startup Sequence!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|Prerequisite: The ability to cast tech powers\n\nWhen a creature makes a saving throw against a tech power you cast, you may expend a superiority die, subtracting the number rolled from their total.\""
+  },
+  {
+    "name": "Body over Bother",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Body over Bother!\" #desc#",
+    "validUse": "-f \"Meta|**Mod**: #maneuverMod#\" -f \"#counterChange#\" -f \"Effect|When you are forced to make an Strength, Dexterity, or Constitution saving throw, you can expend a superiority die to change the saving throw ability to your maneuver ability modifier.\""
   }
 ]
