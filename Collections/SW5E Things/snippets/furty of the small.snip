@@ -1,0 +1,14 @@
+<drac2>
+c = character()
+cc="Fury of the Small"
+
+if c.get_cc(cc):
+    c.mod_cc(cc,-1)
+    out = f'''-d1 {level} -f "Fury of the Small|{c.cc_str(cc)}\n\nWhen you damage a creature with an attack or a power and the creature’s size is larger than yours, you can cause the attack or power to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can’t use it again until you finish a short or long rest." '''
+elif c.cc_exists(cc):
+    out = f''' -f "Fury of the Small|You need a rest before you can use this again" '''
+else:
+    out = f''' -f "Fury of the Small|You must not be small or furious enough to use this" '''
+
+return out
+</drac2>

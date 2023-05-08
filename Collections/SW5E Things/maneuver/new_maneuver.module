@@ -1,4 +1,5 @@
 def maneuver(args):
+    tags = ["name","superiorityDice", "mod", "dice", "diceTotal", "dmgType", "uses", "desc", "thp", "dc", "combatantFooter", "damageText"]
     c = character()
     com = combat()
     a = argparse(args)
@@ -9,64 +10,32 @@ def maneuver(args):
     tdis = 'tdis' in args
     crit = 'crit' in args
     lvl = get_level()
-    sup_die = '1d4' if lvl < 5 else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
-    man = get_maneuver(args)
-    type = a.last('type') if a.last('type') else man.sub
+    superiorityDice = '1d4' if lvl < 5 else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
+    feature = get_maneuver(args)
+    type = a.last('type') if a.last('type') else feature.sub
+    mod = get_mod(type)
+    dc = a.last('dc') if a.last('dc') else f"8 + {c.stats.prof_bonus} + {mod}"
     cc = "Superiority Dice"
-    ccNum = 0 if i else man.ccnum if man and "ccnum" in man else -1
+    ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
     cc_valid = c.get_cc(cc)
-    d_type = a.last("dtype") if a.last("dtype") else man.d_type if "d_type" in man else "none"
+    dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
+    mi = a.last('mi')
 
-    dice = vroll(man.roll.replace('#superiorityDice#',sup_die)+(f'mi{a.last("mi")}' if a.last('mi') else "")+(f'+{a.join("d","+")}' if a.get("d") else "")) if man and "roll" in man and man.dice else ""
-    d_total = dice.total if dice else 0
-
-    v = not hlp and lvl > 0 and cc_valid
+    v = lvl>=0 and cc_valid
     ccNum = ccNum if v else 0
     c.mod_cc(cc,ccNum) if v else ""
 
-    target_cache, targets = a.get('t'), []
-    target_cache = [
-        [com.get_combatant(i.split('|', 1)[0].replace('{name}', c.name)) or com.get_group(i.split('|', 1)[0]),
-         argparse(i.split('|', 1)[1] if '|' in i else '')] for i in target_cache if com]
-    _ = [targets.append(i) if 'c' in i[0].type else [targets.append([e, i[1]]) for e in i[0].combatants] for i in
-         target_cache if i[0]]
+    # Straight Superiority Dice Rolls
+    dice = vroll(feature.roll.replace('#superiorityDice#', superiorityDice)
+                 + (f'mi{mi}' if mi else "")
+                 + (f'+{a.join("d", "+")}' if a.get("d") else "")) if feature and "roll" in feature and feature.dice else ""
 
-    man = dump_json(man)
-    for x in ["dice", "d_total", "d_type", "sup_die"]:
-        man = man.replace(f'#{x}#', str(get(x)).replace('"', '′'))
+    diceTotal = dice.total if dice else 0
 
-    man = load_json(man)
+    targets = []
 
-    damage = vroll(f"""{man.damage+(f'mi{a.last("mi")}' if a.last("mi") else "")+(f'+{a.join("d","+")}' if a.get("d") else "")} [{d_type}] """, 2 if a.get("crit") else 1) if "damage" in man else vroll("0")
 
-    targetHeader = [f'-f "{target[0].name}|' for target in targets if v]
-    targetDamage = [target[0].damage(
-        damage.consolidated() + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage + (
-                        "" if (target[0].set_hp(target[0].max_hp) if target[0].hp > target[0].max_hp else "") or (
-                            combatantFooter := combatantFooter + [
-                                f' {str(target[0])}']) else "") if "damage" in feature else "" for target in targets if
-                    v]
-    targetText = [feature.targetText.replace("#superiorityDice#", superiorityDice) if "targetText" in feature else ""
-                  for target in targets]
-    targetCloser = ['"' for target in targets if v]
-    thp = vroll('1d4')
-    _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp() < thp.total else "") or (
-        combatantFooter := combatantFooter + [
-            f' {name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (
-            c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp > hp else "") or (
-                combatantFooter := combatantFooter + [
-                    f' {name}: {c.hp_str()}']) else "") if "damage" in man else "") if not com and v and "self" in man and man.self else ""
-
-    save_results = ' '.join(["\n".join([get(x)[i] for x in
-                                        ["targetHeader", "targetDamage"] if get(x) and get(x)[i]]) for i in
-                             range(len(targets))])
-
-    r = ["uses" if v else "tries to use",
-         f'{cc}{" (" + ("+" if ccNum > 0 else "") + str(ccNum) + ")" if ccNum else ""}|{c.cc_str(cc)}' if cc and c.cc_exists(
-             cc) else "*None*", c.get_cvar("color",""), c.get_cvar("image", ""), dice, d_total, c.hp_str(), c.name, damage,
-         " ".join(combatantFooter) + " | " if get("combatantFooter") else "", thp, sup_die]
-
-    return err(f"{r}")
+    return err(f"Here")
 
 
 def get_maneuver(args):
@@ -74,6 +43,9 @@ def get_maneuver(args):
     hlp = not args or ('?' in args or 'help' in args)
 
     maneuver = [x for x in gvar if not hlp and args[0] in x.name.lower()+(x.syn.lower() if "syn" in x else "")]
+
+    if len(maneuver) == 0:
+        return err("Maneuver not found.")
 
     return maneuver[0]
 
@@ -90,3 +62,13 @@ def get_level():
     lvl = max(int(c.levels.get("Fighter",0)), int(c.levels.get("Scholar",0)), lvl)
 
     return lvl
+
+def get_mod(type):
+    s = character().stats
+
+    if type == "Mental":
+        return max(s.get_mod("wisdom"), s.get_mod("intelligence"), s.get_mod("charisma"), 0)
+    elif type == "Physical":
+        return max(s.get_mod("strength"), s.get_mod("dexterity"), s.get_mod("constitution"), 0)
+    else:
+        return max(get_mod("Metal"), get_mod("Physical"))
