@@ -1,10 +1,11 @@
 def maneuver(args):
-    tags = ["name", "superiorityDice", "maneuverMod", "dice", "diceTotal", "dmgType", "prof_bonus"]
+    tags = ["name", "superiorityDice", "maneuverMod", "dice", "diceTotal", "dmgType", "prof_bonus", "spell_mod"]
     format = ["#uses#", "#desc#", "#counterChange#", "#color#", "#image#", "#dice#", "#diceTotal#",
               "#targetOutput#", "#hp#", "#name#", "#damageText#", "#combatantFooter#", "#thp#", "#superiorityDice#", "#dc#" ]
     c = character()
     lvl = get_level()
     prof_bonus=c.stats.prof_bonus
+    spell_mod = c.spellbook.spell_mod
     image = c.image
     color = c.csettings.color
     name = c.name
@@ -20,19 +21,20 @@ def maneuver(args):
     crit = 'crit' in args
     superiorityDice = '1d4' if lvl < 5 else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
     superiorityDice+= f"mi{a.last('mi')}" if a.last('mi') else ""
+    superiorityDice = superiorityDice.replace('1d', '2d') + "kh1" if a.last('savage') else superiorityDice
 
 
     type = a.last('type') if a.last('type') else feature.sub
     maneuverMod = get_mod(type)
     cc = "Superiority Dice"
     ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
-    cc_valid = (c.get_cc(cc) or i)
+    cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
     dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
 
     v = bool(lvl>=0 and cc_valid and feature)
     if v:
         ccNum = ccNum if v and not i else 0
-        c.mod_cc(cc,ccNum) if v else ""
+        c.mod_cc(cc,ccNum) if v and not i else ""
 
         # Straight Superiority Dice Rolls
         dice = do_roll(feature,superiorityDice,args) if feature and "roll" in feature and feature.roll else ""
@@ -51,80 +53,85 @@ def maneuver(args):
 
         # Do some rolls
         dc = int(a.last('dc')) if a.last('dc') else roll(feature.save.dc) if "save" in feature and "dc" in feature.save else 8+c.stats.prof_bonus+maneuverMod
-        damage = vroll(f"""{f'-({feature.damage + roll_add(feature, args)})' if dmgType == "Healing" else f'{feature.damage + roll_add(feature, args)}'}""", 2 if crit else 1) if "damage" in feature else vroll("0")
+        damage = vroll(f"""{f'-({feature.damage + roll_add(feature, args)})' if dmgType == "healing" else f'{feature.damage + roll_add(feature, args)}'}""", 2 if crit else 1) if "damage" in feature else vroll("0")
         thp = vroll(feature.thp) if "thp" in feature else vroll("0")
-
-        if a.last('dev'):
-            return err(f"{dc} | {feature.save if 'save' in feature else ''} | {dice}")
 
         # Start processing targets
         targetHeader = [f'-f "{target[0].name}|' for target in targets]
 
+        # Damage
         targetDamage = [target[0].damage(
             damage.consolidated() + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage + (
                             "" if (target[0].set_hp(target[0].max_hp) if target[0].hp > target[0].max_hp else "") or (
                                 combatantFooter := combatantFooter + [
                                     f' {str(target[0])}']) else "") if "damage" in feature else "" for target in targets]
 
+        # Temp HP
         targetTHP = [("" if (target[0].set_temp_hp(thp.total) if target[0].temp_hp < thp.total else "") or (
             combatantFooter := combatantFooter + [
                 f' {str(target[0])}']) else "") + f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "" for
                      target in targets]
 
-        targetEffect = [(("" if com.me.add_effect(feature.effect.parent.name.replace("#target#", target[0].name),
-                                                   desc=feature.effect.parent.desc if "desc" in feature.effect.parent else None,
-                                                   duration=feature.effect.parent.duration if "duration" in feature.effect.parent else -1,
-                                                   concentration=feature.effect.parent.conc if "conc" in feature.effect.parent else False,
-                                                   end=feature.effect.parent.end if "end" in feature.effect.parent else False) or (
-                                    parent := com.me.get_effect(feature.effect.parent.name.replace("#target#", target[
-                                        0].name))) else "") if com and com.me and "parent" in feature.effect else "") + (
-                            "" if target[0].add_effect(feature.effect.name.replace("#target#", target[0].name),
-                                                       desc=feature.effect.desc if "desc" in feature.effect else "",
-                                                       duration=feature.effect.duration if "duration" in feature.effect else -1,
-                                                       concentration=feature.effect.conc if "conc" in feature.effect else False,
-                                                       parent=com.me.get_effect(feature.effect.parent.name.replace("#target#", target[0].name)) if "parent" in feature.effect else "",
-                                                       end=feature.effect.end if "end" in feature.effect else False,
-                                                       passive_effects=feature.effect.passsive_effects if "passive_effects" in feature.effect else None) else "") + f'**Effect:** {target[0].get_effect(feature.effect.name.replace("#target#", target[0].name))}' if "effect" in feature else ""
-                        for target in targets]
+        # Effect
+        targetEffect = []
+        for target in targets:
+            if com and "effect" in feature:
+                if "parent" in feature.effect and not (peff := com.me.get_effect(feature.effect.parent.name.replace("#target#", target[0].name))):
+                    peff = com.me.add_effect(feature.effect.parent.name.replace("#target#", target[0].name),
+                                             desc=feature.effect.parent.desc if "desc" in feature.effect.parent else None,
+                                             duration=feature.effect.parent.duration if "duration" in feature.effect.parent else -1,
+                                             concentration=feature.effect.parent.conc if "conc" in feature.effect.parent else False,
+                                             end=feature.effect.parent.end if "end" in feature.effect.parent else False
+                                             )
+                else:
+                    peff = get("peff")
 
+                eff = target[0].add_effect(feature.effect.name.replace("#target#", target[0].name),
+                                           desc=feature.effect.desc if "desc" in feature.effect else "",
+                                           duration=feature.effect.duration if "duration" in feature.effect else -1,
+                                           concentration=feature.effect.conc if "conc" in feature.effect else False,
+                                           end=feature.effect.end if "end " in feature.effect else False,
+                                           passive_effects=feature.effect.passsive_effects if "passive_effects" in feature.effect else None,
+                                           parent=peff
+                                           )
+            targetEffect.append(f'**Effect**: {eff}' if get("eff") else "")
+
+        # Text
         targetText = [feature.targetText.replace("#superiorityDice#", superiorityDice) if "targetText" in feature else ""
                       for target in targets]
 
+        # Save
         targetSave = []
         if "save" in feature:
             for target in targets:
-                save = target[0].save(feature.save.type,
-                                      target[1].adv(False, True) if "adv" in target[1] or "dis" in target[
-                                          1] else a.adv(False, True))
+                save = target[0].save(feature.save.type,target[1].adv(False, True) if "adv" in target[1] or "dis" in target[1] else a.adv(False, True))
                 option = feature.save.fail if save.total < dc and "fail" in feature.save else feature.save.success if save.total >= dc and "success" in feature.save else {}
-                targetSave.append(
-                    f'**{feature.save.type.upper()} Save:** {save}; {"Failure!" if save.total < dc else "Success!"}'
-                    + ("\n"
-                       + target[0].damage(option.damage
-                                          + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage
-                       + ("" if (target[0].set_hp(target[0].max_hp) if target[0].hp - damage.total > target[0].max_hp else "") or (combatantFooter := combatantFooter + [
-                                f' {str(target[0])}']) else "") if "damage" in option else "") + "\n" + ((
-                                                                                                      subparent := com.me.add_effect(
-                                                                                                          option.effect.parent.name.replace(
-                                                                                                              "#target#",
-                                                                                                              target[0].name),
-                                                                                                          desc=option.effect.parent.desc if "desc" in option.effect.parent else "",
-                                                                                                          duration=option.effect.parent.duration if "duration" in option.effect.parent else -1,
-                                                                                                          concentration=option.effect.parent.conc if "conc" in option.effect.parent else False,
-                                                                                                          end=option.effect.parent.end if "end" in option.effect.parent else False) or com.me.get_effect(
-                                                                                                          option.effect.parent.name.replace(
-                                                                                                              "#target#",
-                                                                                                              target[
-                                                                                                                  0].name)) if com and com.me and "parent" in option.effect else "") or
-                                                                                                  target[0].add_effect(
-                                                                                                      option.effect.name.replace("#target#",target[0].name),
-                                                                                                      desc=option.effect.desc if "desc" in option.effect else "",
-                                                                                                      duration=option.effect.duration if "duration" in option.effect else -1,
-                                                                                                      concentration=option.effect.conc if "conc" in option.effect else False,
-                                                                                                      passive_effects=option.effect.passive_effects if "passive_effects" in option.effect else None,
-                                                                                                      parent=com.me.get_effect(option.effect.parent.name.replace("#target#", target[0].name)) if "parent" in option.effect else "",
-                                                                                                      end=option.effect.end if "end" in option.effect else False) or f'\n**Effect:** {target[0].get_effect(option.effect.name.replace("#target#", target[0].name))}' if "effect" in option else "") + (
-                        f'\n{option.text}' if "text" in option else "") if "save" in feature else "")
+                s_str = f"**{feature.save.type.upper()} Save**: {save}; {'Failure!' if save.total < dc else 'Success!'}\n"
+                if "damage" in option:
+                    dmg = target[0].damage(option.damage + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage
+                    s_str += f"{dmg}\n"
+                    combatantFooter += combatantFooter + [f' {str(target[0])}\n']
+
+                if "effect" in option:
+                    if "parent" in option.effect and not (peff := com.me.get_effect(option.effect.name.replace("#target#", target[0].name))):
+                        peff = com.me.add_effect(option.effect.parent.name.replace("#target#", target[0].name),
+                                                 desc=option.effect.parent.desc if "desc" in option.effect.parent else "",
+                                                 duration=option.effect.parent.duration if "duration" in option.effect.parent else -1,
+                                                 concentration=option.effect.parent.conc if "conc" in option.effect.parent else False,
+                                                 end=option.effect.parent.end if "end" in option.effect.parent else False)
+                    else:
+                        peff = get("peff")
+
+                    eff = target[0].add_effect(option.effect.name.replace("#target#", target[0].name),
+                                               desc=option.effect.desc if "desc" in option.effect else "",
+                                               duration=option.effect.duration if "duration" in option.effect else -1,
+                                               concentration=option.effect.conc if "conc" in option.effect else False,
+                                               passive_effects=option.effect.passive_effects if "passive_effects" in option.effect else None,
+                                               parent=peff)
+                    s_str+=f"{eff}\n"
+
+                targetSave.append(f"{s_str}")
+
 
         # Close off the fields
         targetCloser = ['"' for target in targets]
@@ -218,7 +225,7 @@ def get_targets(feature, args):
 
     targets = []
     target_cache = a.get('t') + (
-        [f'{name}'] if feature and "self" in feature and feature.self and com and com.me else [])
+        [f'{c.name}'] if feature and "self" in feature and feature.self and com and com.me else [])
     target_cache = [
         [com.get_combatant(i.split('|', 1)[0].replace('{name}', c.name)) or com.get_group(i.split('|', 1)[0]),
          argparse(i.split('|', 1)[1] if '|' in i else '')] for i in target_cache if com]

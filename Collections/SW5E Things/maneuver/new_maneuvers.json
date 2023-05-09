@@ -2,7 +2,7 @@
   {
     "name": "Administer Aid",
     "damage": "#superiorityDice# + #maneuverMod#",
-    "dmgType": "Healing",
+    "dmgType": "healing",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Administer Aid!\" #desc# -footer \"#combatantFooter#\"",
     "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can expend a superiority die to tend to a creature you can touch. The creature regains a number of hit points equal to the number rolled + your maneuver ability modifier.\""
@@ -17,7 +17,7 @@
       "name": "Adrenaline Hit",
       "desc": "When that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\n - Maneuver ability modifier: #maneuverMod#",
       "parent": {
-        "name": "Adrenaline Hit - #target#",
+        "name": "Adrenaline Hitter",
         "duration": 1
       }
     }
@@ -83,7 +83,7 @@
     "desc": "-title \"#name# #uses# Charging Attack!\" #desc# -footer \"#combatantFooter#\"",
     "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|If you move at least 10 feet towards your target before successfully hitting them with a melee attack, you may expend a superiority die, causing the target to take additional damage equal to the result, and forcing it to make a Strength saving throw. On a failed save the creature is knocked prone.\"",
     "damage": "#superiorityDice#",
-    "dmgType": "Kinetic",
+    "dmgType": "kinetic",
     "save": {
       "dc": "8+#prof_bonus#+#maneuverMod#",
       "type": "str",
@@ -112,6 +112,257 @@
             "duration": 1
           }
         }
+      }
+    }
+  },
+  {
+    "name": "Commander's Strike",
+    "sub": "Physical",
+    "desc": "-title \"#name# is directing an attack with Commander's Strike!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|You direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack’s damage roll.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Conceal",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Conceal!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Stealh*\n\nWhen you make an Stealth check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Crippling Blow",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Crippling Blow!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to cripple the creature. You add the superiority die to the attack’s damage roll and the creature’s gains 1 slowed level until the end of their next turn.\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "kinetic",
+    "effect": {
+      "name": "Slowed",
+      "duration": 1
+    }
+  },
+  {
+    "name": "Daring Escape",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Daring Escape!\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|You can expend one superiority die to take the Disengage action as a bonus action on your turn. Until the end of this turn, you have advantage on ability checks and saving throws to break effects that would grapple, restrain or slow you.\"",
+    "self": true,
+    "effect": {
+      "name": "Disengaged",
+      "duration": 1,
+      "desc": "You have advantage on ability checks and saving throws to break effects that would grapple, restrain or slow you."
+    }
+  },
+  {
+    "name": "Dark Transference",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Dark Transference!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with an attack, you can expend a superiority die and roll it to attempt to siphon life from it. The target must make a Constitution saving throw. On a failed save, add the result to the damage roll, and you regain one expended Hit Die.\"",
+    "roll": "#superiorityDice#",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "damage": "#diceTotal#"
+      }
+    }
+  },
+  {
+    "name": "Deathseek",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Deathseek!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When an attack made against a hostile creature that you can see would miss, you can use a reaction and expend a superiority die and roll it to force the creature to instead take the hit. The creature must make a Wisdom saving throw. On a failed save, the target takes the minimum damage the attack could have dealt plus additional damage equal to the result of the superiority die.\"",
+    "roll": "#superiorityDice#",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "damage": "#diceTotal#"
+      }
+    }
+  },
+  {
+    "name": "Deceive",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Deceive!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Deception*\n\nWhen you make an Deception check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Deliberate Movement",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Deliberate Movement\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|You can expend one superiority die to take the Dash action as a bonus action and ignore the effects of unenhanced difficult terrain until the end of your turn.\""
+  },
+  {
+    "name": "Disarming Blow",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Disarming Blow!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the superiority die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. If you have a free hand and are within 5 feet of the creature, you can catch the item. Otherwise, the object lands at the creature’s feet.\"",
+    "damage": "#superiorityDice#",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "str"
+    }
+  },
+  {
+    "name": "Distracting Blow",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Distracting Blow!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn.\"",
+    "damage": "#superiorityDice#",
+    "effect": {
+      "name": "Distracted by #name#",
+      "desc": "The next attack roll against the target by an attacker other than #name# has advantage",
+      "parent": {
+        "name": "Distracting Blow",
+        "duration": 1
+      }
+    }
+  },
+  {
+    "name": "Effective Flanking",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Effective Flanking!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**Mod**: #maneuverMod#\" #targetoutput# -f \"#counterChange#\" -f\"Effect|\"As a bonus action, you choose a target within 30 feet that you can see to make a Wisdom saving throw. On a failed save, roll a superiority die; the result is added to the first attack roll against the creature before the start of your next turn.\\n\\n**Improved**\\nWhen you use the Effective Flanking maneuver, you add the result of the superiority die to both the attack and damage roll for the first attack against the creature before the start of your next turn.\\n\\n**Greater**\\nWhen you use the Effective Flanking maneuver, you add your maneuver ability modifier to both the attack and damage roll for the first attack against the creature before the start of your next turn.\"\"",
+    "roll": "#superiorityDice#",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis"
+    }
+  },
+  {
+    "name": "Empathize",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Empathize!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Insight*\n\nWhen you make an Insight check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Encouraging Pace",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Encouraging Pace!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**Mod**: #maneuverMod#\" -f \"#counterChange#\" -f \"Effect|You can use a bonus action to expend and roll a superiority die. When you do so, a number of friendly creatures equal to your maneuver ability modifier can immediately use their reaction to move a number of feet equal to 5 times the number rolled on the superiority die.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Encouraging Speech",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Encouraging Speech!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuastion*\n\nYou can expend a superiority die to give an encouraging speech, spending the next minute rallying your allies. You grant two allies temporary hit points equal to the amount rolled on the superiority die + your maneuver ability modifier.\n\nThis increases to three allies at 5th level, four allies at 9th level, five allies at 13th level, and six allies at 17th level.\"",
+    "thp": "#superiorityDice#+#maneuverMod#"
+  },
+  {
+    "name": "Enhancement Injection",
+    "sub": "Mental",
+    "desc": "-title \"#name# administers an Enhancement Injection!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**THP**: #thp#\n**Mod**: #maneuverMod#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nAs an action, you can expend one superiority die to inject a creature you can touch with enhancements, granting them temporary hit points equal to the superiority die roll + your maneuver ability modifier, which last for 1 minute. Additionally, when the target makes a Strength or Constitution check or saving throw while it has these temporary hit points, it gains a bonus equal to your maneuver ability modifier.\"",
+    "thp": "#superiorityDice#+#maneuverMod#",
+    "effect": {
+      "name": "Enhancement Injection",
+      "duration": 10,
+      "desc": "Grants temp HP. Additionally, when the target makes a Strength or Constitution check or saving throw while it has these temporary hit points, it gains a bonus equal to your maneuver ability modifier.\n - Modifier: #maneuverMod#"
+    }
+  },
+  {
+    "name": "Evasive Footwork",
+    "sub": "General",
+    "desc": "-title \"#name# displays some Evasive Footwork! #desc#\"",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Exploit Weakness",
+    "sub": "Physical",
+    "desc": "-title \"#name# Exploits a Weakness!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend a superiority die and deal additional true damage equal to the number rolled.\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "true"
+  },
+  {
+    "name": "Fast Access Programs",
+    "desc": "-title \"#name# #uses# Fast Access Programs!\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast tech powers*\n\nWhen you cast a tech power of 1st-level or higher that has a casting time of 1 action, you can expend a superiority die to change the casting time to 1 bonus action for this casting.\"",
+    "sub": "Mental"
+  },
+  {
+    "name": "Feinting Attack",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Feinting Attack!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature this turn. If that attack hits, add the superiority die to the attack’s damage roll.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Firewall",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Firewall!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: the ability to cast tech power*\n\nWhen you or an ally you can see within 60 feet make a saving throw against a tech power, you can use your reaction to expend a superiority die, adding the number rolled to the result of that saving throw.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Flex",
+    "sub": "General",
+    "desc": "-title \"#name# Flexes!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Athletics*\n\nWhen you make an Athletics check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Flourish",
+    "sub": "General",
+    "desc": "-title \"#name# does a little Flourish!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Sleight of Hand*\n\nWhen you make an Sleight of Hand check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
+    "name": "Force Resonance",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Force Resonance!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nImmediately after you deal damage to a target with a force attack, you can expend a superiority die and target a second creature that you can see within 30 feet of the first creature. Roll the die, and the second creature takes force damage equal to the roll + your forcecasting modifier.\"",
+    "damage": "#superiorityDice#+#spell_mod#",
+    "dmgType": "force"
+  },
+  {
+    "name": "Fortune and Glory",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Fortune and Glory!\" #desc#",
+    "roll": "#sleightOfHand#+#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nWhen you would make a weapon attack against a target within 30 feet, you can instead manipulate the Force to expend a superiority die and make a Sleight of Hand check using your universal forcecasting ability to plant something on the target, conceal an object on the target, lift the target’s purse, or take something from its pocket. Roll the superiority die, and add the result to the check\""
+  },
+  {
+    "name": "Goading Attack",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Goading Attack!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.\"",
+    "damage": "#superiorityDice#",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Goaded by #name#",
+          "desc": "Disadvantage on all other targets but #name#",
+          "parent": {
+            "name": "Goading - #target#",
+            "duration": 2,
+            "end": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "Hacked Communications",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Hacked Communications!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Technology*\n\nAs an action, you may expend a superiority die, and choose any number of creatures that you can see within 60 feet of you that have commlinks, headcomms, or other such communications devices. Each creature must succeed on a Constitution saving throw or take sonic damage equal to the number rolled on the dice + your maneuver ability modifier (minimum of one). Additionally, on a failed save, their communication devices are disabled until rebooted.\"",
+    "damage": "#superiorityDice#+#maneuverMod#",
+    "dmgType": "sonic",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "con",
+      "fail": {
+        "name": "Hacked Communications",
+        "desc": "Communication devices are disabled until rebooted"
       }
     }
   }

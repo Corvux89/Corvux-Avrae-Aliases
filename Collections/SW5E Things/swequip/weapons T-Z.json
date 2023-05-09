@@ -664,7 +664,7 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "1d12+{strengthMod} [kinetic]"
+                "damage": "1d12+{ceil(strengthMod*1.5)} [kinetic]"
               }
             ],
             "miss": [],
