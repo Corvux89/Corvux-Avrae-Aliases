@@ -1,3 +1,6 @@
 <drac2>
-return err(f"{vroll('1d20 + 4',2)} | {vroll('1d20 + 4',1,2)} ")
+c = character()
+for n, sk in c.skills:
+    if n == "medicine":
+        return err(f"{sk.value}")
 </drac2>

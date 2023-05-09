@@ -41,5 +41,78 @@
     "sub": "Physical",
     "desc": "-title \"#name# #uses# Body over Bother!\" #desc#",
     "validUse": "-f \"Meta|**Mod**: #maneuverMod#\" -f \"#counterChange#\" -f \"Effect|When you are forced to make an Strength, Dexterity, or Constitution saving throw, you can expend a superiority die to change the saving throw ability to your maneuver ability modifier.\""
+  },
+  {
+    "name": "Call to Arms",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Call to Arms!\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nIf you are surprised at the start of combat and aren’t incapacitated, you can expend one superiority die to act normally.\n\n**Improved**\nWhen you use your Call to Arms maneuver, you can roll the superiority die and extend the benefits of the maneuver to a number of allies up to the result of the roll, provided those allies can see or hear you.\""
+  },
+  {
+    "name": "Calling Card",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Calling Card!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can expend a superiority die to throw a sonic charge at a target you can see within 30 feet. When you do so, the target and each creature of your choice within 5 feet of it must make Dexterity saving throws, taking sonic damage on a failure. The sonic damage equals the number rolled on the superiority die.\"",
+    "roll": "#superiorityDice# [sonic]",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "dex",
+      "fail": {
+        "damage": "#diceTotal#"
+      }
+    }
+  },
+  {
+    "name": "Charge",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Charge!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nYou can expend one superiority die to spur your allies to move. Until the start of your next turn, creatures you choose within 10 feet of you who can see or hear you can move an additional distance equal to 5 times the superiority die rolled on their turn and ignore unenhanced difficult terrain.\"",
+    "roll": "#superiorityDice#",
+    "effect": {
+      "name": "Charge",
+      "desc": "You can move an additional distance equal to 5 times the superiority die rolled on their turn and ignore unenhanced difficult terrain.\n - Roll: #diceTotal#",
+      "parent": {
+        "name": "Charging",
+        "duration": 1
+      }
+    }
+  },
+  {
+    "name": "Charging Attack",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Charging Attack!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|If you move at least 10 feet towards your target before successfully hitting them with a melee attack, you may expend a superiority die, causing the target to take additional damage equal to the result, and forcing it to make a Strength saving throw. On a failed save the creature is knocked prone.\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "Kinetic",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "str",
+      "fail": {
+        "effect": {
+          "name": "Prone"
+        }
+      }
+    }
+  },
+  {
+    "name": "Charming Presence",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Charming Presence!\" #desc#",
+    "validUse": "-f \"Meta|**DC**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Charisma*\n\nYou can make a Charisma (Persuasion) check and expend one superiority die to attempt to charm a humanoid creature who can see or hear you within 60 feet. Add the superiority die to the roll. The target makes a contested Wisdom (Insight) check. If your check succeeds, the target is charmed by you until the end of your next turn.\"",
+    "roll": "#persuasion#+#superiorityDice#",
+    "save": {
+      "dc": "#diceTotal#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Charmed by #name#",
+          "desc": "Charmed",
+          "parent": {
+            "name": "Charming - #target#",
+            "duration": 1
+          }
+        }
+      }
+    }
   }
 ]
