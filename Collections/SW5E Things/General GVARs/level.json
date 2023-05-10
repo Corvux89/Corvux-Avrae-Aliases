@@ -1294,6 +1294,22 @@
   },
   {
     "Class": "Fighter",
+    "subclass": "Fireteam",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble",
+        "value": "proficiencyBonus",
+        "modifier": "proficiencyBonus",
+        "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
     "subclass": "Heavy Weapons",
     "counters": []
   },
@@ -3207,7 +3223,28 @@
     "counters": [
       {
         "name": "Personal Barrier",
-        "value": [0,0,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40],
+        "value": [
+          0,
+          0,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40
+        ],
         "modifier": "intelligenceMod",
         "level": 3,
         "classLevel": "ScoutLevel",

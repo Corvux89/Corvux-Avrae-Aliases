@@ -91,7 +91,7 @@ def maneuver(args):
                                            duration=feature.effect.duration if "duration" in feature.effect else -1,
                                            concentration=feature.effect.conc if "conc" in feature.effect else False,
                                            end=feature.effect.end if "end " in feature.effect else False,
-                                           passive_effects=feature.effect.passsive_effects if "passive_effects" in feature.effect else None,
+                                           passive_effects=feature.effect.passive_effects if "passive_effects" in feature.effect else None,
                                            parent=peff
                                            )
             targetEffect.append(f'**Effect**: {eff}' if get("eff") else "")
@@ -136,7 +136,10 @@ def maneuver(args):
         # Close off the fields
         targetCloser = ['"' for target in targets]
 
-        _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp()<thp.total else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp>hp else "") or (combatantFooter:=combatantFooter+[f' {name}: {c.hp_str()}']) else "") if "damage" in feature else "") if not com and "self" in feature and feature.self else ""
+        if a.get('dev'):
+            return err(f"{targets}\n\n{thp}\n{c.temp_hp}")
+
+        _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp<thp.total else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp>hp else "") or (combatantFooter:=combatantFooter+[f' {name}: {c.hp_str()}']) else "") if "damage" in feature else "") if not com and "self" in feature and feature.self else ""
 
         save_results = ' '.join(["\n".join([get(x)[i] for x in
                                             ["targetHeader", "targetDamage", "targetTHP", "targetEffect", "targetText",

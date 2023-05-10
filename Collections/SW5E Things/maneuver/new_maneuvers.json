@@ -249,7 +249,7 @@
     "name": "Encouraging Speech",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Encouraging Speech!\" #desc# -footer \"#combatantFooter#\"",
-    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuastion*\n\nYou can expend a superiority die to give an encouraging speech, spending the next minute rallying your allies. You grant two allies temporary hit points equal to the amount rolled on the superiority die + your maneuver ability modifier.\n\nThis increases to three allies at 5th level, four allies at 9th level, five allies at 13th level, and six allies at 17th level.\"",
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuation*\n\nYou can expend a superiority die to give an encouraging speech, spending the next minute rallying your allies. You grant two allies temporary hit points equal to the amount rolled on the superiority die + your maneuver ability modifier.\n\nThis increases to three allies at 5th level, four allies at 9th level, five allies at 13th level, and six allies at 17th level.\"",
     "thp": "#superiorityDice#+#maneuverMod#"
   },
   {
@@ -363,6 +363,432 @@
       "fail": {
         "name": "Hacked Communications",
         "desc": "Communication devices are disabled until rebooted"
+      }
+    }
+  },
+  {
+    "name": "Handle Animal",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Handle Animal!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Animal Handling*\n\nWhen you make an Animal Handling check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Heads Up",
+    "sub": "Mental",
+    "desc": "-title \"#name# gives a Heads Up!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When a friendly creature who can see or hear you makes a saving throw, you can use your reaction and expend a superiority die, adding the number rolled to the result of the saving throw.\""
+  },
+  {
+    "name": "Incite",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Incite!\" #desc#",
+    "validUse": "-f \"Meta|**Mod**: #maneuverMod#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nOn your turn, you can use an action and expend one superiority die to bolster the resolve of one of an ally within 30 feet who can see or hear you. The ally can add your maneuver ability modifier to every damage roll they make until the start of your next turn.\"",
+    "effect": {
+      "name": "Incited",
+      "desc": "Can add your maneuver ability modifier to every damage roll they make until the start of your next turn.\n - Mod: #maneuverMod#",
+      "passive_effects": {
+        "damage_bonus": "#maneuverMod#"
+      },
+      "parent": {
+        "name": "Incite",
+        "duration": 1
+      }
+    }
+  },
+  {
+    "name": "Inner Strength",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Inner Strength!\" #desc# -footer \"#combatantFooter#\"",
+    "thp": "#superiorityDice#+#maneuverMod#",
+    "self": true,
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|As an action, you can expend and roll one superiority die, gaining temporary hit points equal to the result of the roll + your maneuver ability modifier.\""
+  },
+  {
+    "name": "Intimidating Presence",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Intimidating Presence!\" #desc#",
+    "roll": "#intimidation#+#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Intimidation*\n\nAs an action, you can make a Charisma (Intimidation) check and expend one superiority die to attempt to frighten a humanoid creature who can see or hear you within 60 feet. Add the superiority die to the roll. The target makes a contested Wisdom (Insight) check. If your check succeeds, the target is frightened of you until the end of your next turn.\"",
+    "save": {
+      "dc": "#diceTotal#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Frightened of #name#",
+          "parent": {
+            "name": "Intimidating Presence",
+            "duration": 2,
+            "end": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "Investigate",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Investigate!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Investigation*\n\nWhen you make an Investigation check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Lunging Attack",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Lunging Attack!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack’s damage roll.\""
+  },
+  {
+    "name": "Maneuvering Attack",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# a Maneuvering Attack\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack’s damage roll, and you choose a friendly creature who can see or hear you.\n\nThat creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack.\""
+  },
+  {
+    "name": "Menacing Attack",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Menacing Attack!\" #desc# -f \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Frightened of #name#",
+          "parents": {
+            "name": "Menacing Attack",
+            "duration": 2,
+            "end": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "Mind over Matter",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Mind over Matter!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you are forced to make an Intelligence, Wisdom, or Charisma saving throw, you can expend a superiority die to change the saving throw ability to your maneuver ability modifier.\""
+  },
+  {
+    "name": "Neutralize",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Neutralize!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"*Prerequisite: Proficiency in Nature*\n\nWhen you make an Nature check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Neuroblock",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Neuroblock!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nWhen you make an attack roll, you can expend a superiority die and add it to the attack roll. On a hit, the creature’s next attack has disadvantage and it cannot regain hit points until the start of your next turn.\""
+  },
+  {
+    "name": "No Escape",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# No Escape!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|Whenever you or an ally you can see makes an opportunity attack, you can expend a superiority die. If the attack hits, roll the superiority die and add the result to the damage roll. Additionally, the affected creature gains 4 slowed levels until the start of its next turn.\""
+  },
+  {
+    "name": "One Step Ahead",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# One Step Ahead!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you roll initiative and you are not surprised, you can expend a superiority die and add the number rolled to your Initiative check.\""
+  },
+  {
+    "name": "One With Shadows",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# One With Shadows\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Stealth*\n\nWhen you are in an area of dim light or darkness, you can use your action and expend one superiority die to become invisible until you move or take a hostile action.\"",
+    "self": true,
+    "effect": {
+      "name": "Invisible",
+      "desc": "Invisible until you move or take a hostile action."
+    }
+  },
+  {
+    "name": "One with the Force",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# One with the Force\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nOnce per turn, when you make a Constitution saving throw to maintain concentration on a force power, you can expend a superiority die and add the number rolled to the saving throw.\""
+  },
+  {
+    "name": "Overcapacity Powers",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Overcapacity Powers\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast tech powers*\n\nWhen you cast a tech power of 1st-level or higher, you may expend a superiority die to cast the power at a higher level, provided it does not exceed your Maximum Power Level. Roll the superiority die, and add it to the level at which you are casting the power. You can choose to cast it at this new power level or lower.\""
+  },
+  {
+    "name": "Overwhelming Wit",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Overwhelming Wit!\" #desc#",
+    "roll": "1d20+#spell_mod#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nOnce per round, when a creature succeeds on a force power you cast or your class feature that requires a Wisdom or Charisma saving throw, you can expend a superiority die to make a universal forcecasting ability check with proficiency, substituting the result of the roll for the save DC for that power.\""
+  },
+  {
+    "name": "Parry",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Parry!\" #desc#",
+    "roll": "#superiorityDice#+#maneuverMod#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your maneuver ability modifier.\""
+  },
+  {
+    "name": "Parry (Improved)",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Parry (Improved)!\" #desc#",
+    "roll": "#superiorityDice#+#maneuverMod#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your maneuver ability modifier.\""
+  },
+  {
+    "name": "Penetrating Shot",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Penetrating Shot!!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you hit a creature with a ranged weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose up to two creatures within 15 feet of and directly behind your initial target. If the original attack roll would hit the second creature(s), it takes damage equal to the number you roll on your superiority die.\n\nThe damage is of the same type dealt by the original attack.\""
+  },
+  {
+    "name": "Perceive",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Perceive!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Perception*\n\nWhen you make an Perception check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Perform",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Perform!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Performance*\n\nWhen you make an Performance check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Persuade",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Persuade!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nWhen you make an Persuasion check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Pilot",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Pilot!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Piloting*\n\nWhen you make an Piloting check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fail\""
+  },
+  {
+    "name": "Pin Down",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Pin Down!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nWhen your companion attempts to grapple or knock a creature prone, you can expend a superiority die to give it direction as long as it can see or hear you. Roll a superiority die and add it to your companion’s Strength (Athletics) check.\""
+  },
+  {
+    "name": "Precise Movements",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Precise Movements!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you or a friendly creature you can see that can see or hear you moves, you can expend a superiority die to give them verbal guidance and encouragement.\n\nRoll a superiority die. The creature’s speed increases by 5 times the number rolled, and they can move through the space of hostile creatures as if it were difficult terrain.\""
+  },
+  {
+    "name": "Precision Attack",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Precision Attack!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied.\""
+  },
+  {
+    "name": "Primal Endurance",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Primal Endurance!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nAs an action, you can expend a superiority die to improve your companion’s defense. Roll the die and add it to your companion’s AC until the beginning of your next turn.\"",
+    "effect": {
+      "name": "Enduring",
+      "passive_effects": {
+        "ac_bonus": "#diceTotal#"
+      },
+      "parent": {
+        "name": "Primal Endurance",
+        "duration": 1
+      }
+    }
+  },
+  {
+    "name": "Program",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Program!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Technology*\n\nWhen you make an Technology check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Pure Sabacc",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Pure Sabacc!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you score a critical hit with a weapon attack, you can expend a superiority die and roll it. On a roll of 4 or higher, you deal maximum damage on the weapon’s damage roll, including the superiority die. On a roll of 3 or lower, you instead deal the minimum.\""
+  },
+  {
+    "name": "Pushing Attack",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Pushing Attack!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "str"
+    }
+  },
+  {
+    "name": "Rally",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Rally!\" #desc# -footer \"#combatantFooter#\"",
+    "thp": "#superiorityDice#+#maneuverMod#",
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your maneuver ability modifier.\""
+  },
+  {
+    "name": "Rampage",
+    "sub": "Physical",
+    "desc": "-title \"#name# rampages!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you reduce a creature to 0 hit points, you can use your bonus action to expend a superiority die and move up to half your speed. If you end this movement within 5 feet of a creature, you can make a single melee weapon attack against that creature, adding the result of the superiority die roll to the attack roll.\""
+  },
+  {
+    "name": "Rattle",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Rattle!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Intimidation*\n\nOn your turn, when you hit with a weapon attack, you can use a bonus action and expend and roll one superiority die to menace your target, dealing extra psychic damage equal to the amount rolled and forcing it to succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Frightened of #name#",
+          "parent": {
+            "name": "Rattle",
+            "duration": 2,
+            "end": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "Reassure",
+    "sub": "Mental",
+    "desc": "-title \"#name# reassures!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nAs an action, you can expend a superiority die and call out to a creature within 60 feet that can see or hear you that is charmed, frightened, or stunned. When you do so, that creature immediately makes another saving throw, adding the amount rolled to the save.\""
+  },
+  {
+    "name": "Remove Toxins",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Remove Toxins!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "healing",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nAs an action, you can expend a superiority die to purge the toxins from a creature you can touch. The target regains hit points equal to the number rolled and, if it is poisoned or diseased, you neutralize the poison or disease. If more than one poison or disease afflicts the target, you neutralize one poison or disease that you know is present, or you neutralize one at random.\""
+  },
+  {
+    "name": "Return Fire",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Return Fire!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When a creature misses you with a ranged attack, you can use your reaction and expend one superiority die to make a ranged weapon attack against the creature. If you hit, you add the superiority die to the attack’s damage roll.\""
+  },
+  {
+    "name": "Reverse Curse",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Reverse Curse!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When another creature attempts to charm or frighten you or an ally you can see within 15 feet of you, you can use your reaction and expend a superiority die and roll it to attempt to turn the effect back on that creature. The creature must succeed on a Wisdom saving throw or be be charmed or frightened by you, dependent on the triggering ability, for a number of rounds equal to the die roll or until the creature takes any damage.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Frightened of #name#",
+          "desc": "Frightened of #name# for a number of rounds equal to the die roll or until they take any damage",
+          "duration": "#diceTotal#"
+        }
+      }
+    }
+  },
+  {
+    "name": "Runtime Extension",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Runtime Extension!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast tech powers*\n\nWhen a tech power you cast with a duration of 1 minute or longer reaches the end of its duration, you may expend a superiority die to extend the duration of the power by a number of rounds equal to the number rolled on your superiority die.\""
+  },
+  {
+    "name": "Self Preservation",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Self Preservation!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|As a reaction when you make a saving throw against an effect you can see, you can expend a superiority die and add it to the result. You can use this maneuver before or after making the saving throw, but before any effects of the saving throw are determined.\""
+  },
+  {
+    "name": "Shadow Puppetry",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Shadow Puppetry!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When a creature you can see within 30 feet of you is reduced to 0 hit points, you can use your reaction and expend a superiority die to give that creature a final act of aggression. That creature can immediately move a number of feet equal to 5 times the result of the die and make a single weapon attack against a target of your choice within its attack range, adding the die to the attack roll.\""
+  },
+  {
+    "name": "Short Round",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Short Round!\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nWhen you cast a force power of 1st-level or higher that has a casting time of 1 action, you can expend a superiority die to change the casting time to 1 bonus action for this casting.\""
+  },
+  {
+    "name": "Sic 'Em",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Sic 'em!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nAs an action, you can expend a superiority die and command your companion to savage a nearby enemy. Your companion can use its reaction to immediately move up to 10 feet and make one attack, adding the superiority dice to the damage roll on a hit.\""
+  },
+  {
+    "name": "Spine-Chilling Howls",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Spine-Chilling Howls!\" #desc#",
+    "validUse": "-f \"Meta|**DC**: #dc#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nAs an action, you can expend one superiority die to command your companion to frighten another creature. The target must then succeed on a Wisdom saving throw against your Maneuver save DC or become frightened of both you and your companion for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Frightened of #name# and their companion",
+          "desc": "Frightened of both #name# and #name#'s companion for 1 minute. The frightened target can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.\n - DC: #dc#",
+          "duration": 10
+        }
+      }
+    }
+  },
+  {
+    "name": "Steady the Nerves",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Steady the Nerves!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nAs an action, you can expend one superiority die to strengthen your allies’ defenses. Roll a superiority die. Until the end of your next turn, you and all allies within 5 feet of you when you use this action has a bonus to any saving throws they make equal to the amount rolled.\"",
+    "self": true,
+    "effect": {
+      "name": "Steadied",
+      "desc": "Until the end of #name#'s next turn, you and all allies within 5 feet of you when you use this action has a bonus to any saving throws they make equal to the amount rolled.",
+      "passive_effects": {"save_bonus": "#diceTotal#"},
+      "parent": {
+        "name": "Steady the Nerves",
+        "duration": 2,
+        "end": true
       }
     }
   }

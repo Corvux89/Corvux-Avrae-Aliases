@@ -1,0 +1,10 @@
+<drac2>
+c = character()
+com = combat()
+
+if com:
+    eff = com.me.get_effect("Rage")
+
+    if eff:
+        return f"-d -{eff.effect.damage_bonus}"
+</drac2>
