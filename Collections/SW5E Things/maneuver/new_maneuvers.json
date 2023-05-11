@@ -791,5 +791,77 @@
         "end": true
       }
     }
+  },
+  {
+    "name": "Strikeforce",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Strikeforce!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nWhen you make a melee weapon attack against a creature, you can expend one superiority die and add the number rolled to the attack roll. On a hit, the target takes additional force damage equal to the number rolled.\""
+  },
+  {
+    "name": "Study",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Study!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Lore*\n\nWhen you make an Lore check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Subtle Execution",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Subtle Execution!\" #desc#",
+    "validUse": "-f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast tech powers*\n\nWhen you cast a tech power, you may expend a superiority die to cast the power without any visual or auditory cues. Creatures have disadvantage on any Intelligence (Investigation) or Wisdom (Perception) checks made to determine if you were the caster.\""
+  },
+  {
+    "name": "Survive",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Survive!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Survival*\n\nWhen you make an Survival check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails\""
+  },
+  {
+    "name": "Sweeping Attack",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Sweeping Attack!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**Mod**: #maneuverMod#\" -f \"#counterChange#\" -f \"Effect|When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack.\n\n**Improved**\nWhen you use the Sweeping Attack maneuver, you add your maneuver ability modifier to the damage roll of the second creature.\""
+  },
+  {
+    "name": "Targeted Strike",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Targeted Strike!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When an ally who can see or hear you makes an attack against a creature, you can use your reaction to expend a superiority die. You add the superiority die to the attack roll, and the damage roll if it hits. You can use this maneuver before or after the attack roll, but before the GM determines whether or not the attack hits.\""
+  },
+  {
+    "name": "Tenacity",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Tenacity!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Stealth*\n\nAs a bonus action, you can expend and roll a superiority die and move to an unoccupied space you can see up to a distance equal to 5 x the result of the roll. If you begin this movement hidden from a creature, and you end this movement in a space that could be hidden from the creature, this movement does not reveal your presence to that creature.\""
+  },
+  {
+    "name": "Threaten",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Threaten!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Intimidation*\n\nWhen you make an Intimidation check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Trip Attack",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Trip Attack!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "str",
+      "fail": {
+        "effect": {
+          "name": "Prone",
+          "passive_effects": {"attack_advantage":  -1}
+        }
+      }
+    }
   }
 ]
