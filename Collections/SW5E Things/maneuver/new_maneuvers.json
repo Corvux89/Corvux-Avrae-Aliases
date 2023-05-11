@@ -863,5 +863,115 @@
         }
       }
     }
+  },
+  {
+    "name": "Tumble",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Tumble!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Acrobatics*\n\nWhen you make an Acrobatics check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
+  },
+  {
+    "name": "Tyrannical Strike",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Tyrannical Strike!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency with Intimidation*\n\nWhen you hit a creature with a weapon attack, you can expend one superiority die and use your reaction to issue a one-word command to a creature who can see or hear you. You add the superiority die to the attack’s damage roll, and the target must succeed on a Wisdom saving throw. On a failed save, the target must follow the command on its next turn.\n\nThe target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "name": "Tyrannical Strike - Charmed",
+        "duration": 1,
+        "desc": "The target must follow the command on its next turn. The target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it."
+      }
+    }
+  },
+  {
+    "name": "Unrelenting Grasp",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Unrelenting Grasp!\" #desc# -footer \"#combatantFooter\"",
+    "damage": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Athletics*\n\nWhen you hit a creature within 5 feet of you with an opportunity attack, you may expend a superiority die. The creature takes additional damage equal to your superiority die, and you may attempt to grapple the target as part of the same reaction.\""
+  },
+  {
+    "name": "Vanity",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Vanity!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#+#maneuverMod#",
+    "dmgType": "healing",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you reduce a hostile creature to 0 hit points, you can expend and roll a superiority die (no action required), regaining a number of hit points equal to the result of the roll + your maneuver ability modifier.\""
+  },
+  {
+    "name": "Water of Life",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Water of Life!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#+#maneuverMod#",
+    "dmgType": "healing",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When an allied creature within 30 feet that you can see takes damage, you can use a reaction to expend a superiority die and roll it. The ally regains a number of hit points equal to the roll + your maneuver modifier.\""
+  },
+  {
+    "name": "Weak Point Strike",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Weak Point Strike!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nWhen you hit a creature with a weapon attack, you can expend a superiority die to temporarily daze the creature. Add the number rolled to the damage of the weapon attack and the creature must succeed on a Constitution saving throw or be stunned until the end of its next turn.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "con",
+      "fail": {
+        "effect": {
+          "name": "Stunned",
+          "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.",
+          "duration": 1,
+          "end": true
+        }
+      }
+    }
+  },
+  {
+    "name": "Wild Senses",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Wild Senses!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nWhenever you make a Wisdom (Perception) or a Wisdom (Survival) check, you can request the aid of your companion by expending a superiority die, adding the number rolled to the check. You can use this maneuver before or after making the ability check, but before the results of the ability check are determined.\""
+  },
+  {
+    "name": "World on Fire",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# World on Fire!\" #desc# -footer \"#combatantFooter\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "fire",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|On your turn, when you hit with a weapon attack, you can use a bonus action to expend and roll one superiority die to ignite phosphorescent powder on your target, dealing extra fire damage equal to the result of the roll. Additionally, the target sheds dim light in a 5-foot radius and can’t become invisible until the end of your next turn, and becomes visible if it was already invisible.\"",
+    "effect": {
+      "name": "On fire!!",
+      "desc": "Shedding dim light in a 5-foot radius and can’t become invisible until the end of #name#'s next turn, and becomes visible if it was already invisible.",
+      "parent": {
+        "name": "World on Fire",
+        "duration": 2,
+        "end": true
+      }
+    }
+  },
+  {
+    "name": "Wracking Torment",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Wracking Torment!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When a hostile creature you can see within 30 feet would take damage from an effect you or a friendly creature controls, you can use your reaction and expend a superiority die to temporarily weaken their resilience against it. Until the end of the turn, the target loses resistance to the damage types of the triggering attack or power.\""
+  },
+  {
+    "name": "Wrestle and Drag",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Wrestle and Drag!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Athletics*\n\nWhen you make a Strength (Athletics) check to grapple or shove a creature, you can expend a superiority die. Until the end of your turn, you can drag the grappled creature with you without your speed being halved. Additionally, if the creature is moved at least 5 feet, you can roll the superiority die, dealing kinetic damage to the creature equal to the result of the roll.\""
+  },
+  {
+    "name": "You call this Archaeology?",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# You call this Archaeology?!\" #desc# -footer \"#combatantFooter#\"",
+    "thp": "#superiorityDice#+#spell_mod#",
+    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: The ability to cast force powers*\n\nWhen you or a friendly creature that you can see reduces a hostile creature to 0 hit points, you can use your reaction and expend a superiority die to give yourself or that friendly creature temporary hit points equal to the number rolled + your universal forcecasting modifier.\""
   }
 ]

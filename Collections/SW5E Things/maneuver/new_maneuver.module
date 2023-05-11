@@ -5,7 +5,7 @@ def maneuver(args):
     c = character()
     lvl = get_level()
     prof_bonus=c.stats.prof_bonus
-    spell_mod = c.spellbook.spell_mod
+    spell_mod = c.spellbook.spell_mod if c.spellbook.spell_mod else 0
     image = c.image
     color = c.csettings.color
     name = c.name
@@ -50,6 +50,9 @@ def maneuver(args):
         for x in tags:
             feature = feature.replace(f"#{x}#", str(get(x)).replace('"', '′'))
         feature = load_json(feature)
+
+        if a.last('dev'):
+            return err(f"{feature}")
 
         # Do some rolls
         dc = int(a.last('dc')) if a.last('dc') else roll(feature.save.dc) if "save" in feature and "dc" in feature.save else 8+c.stats.prof_bonus+maneuverMod
@@ -135,9 +138,6 @@ def maneuver(args):
 
         # Close off the fields
         targetCloser = ['"' for target in targets]
-
-        if a.get('dev'):
-            return err(f"{targets}\n\n{thp}\n{c.temp_hp}")
 
         _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp<thp.total else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp>hp else "") or (combatantFooter:=combatantFooter+[f' {name}: {c.hp_str()}']) else "") if "damage" in feature else "") if not com and "self" in feature and feature.self else ""
 
