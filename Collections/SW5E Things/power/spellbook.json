@@ -6624,24 +6624,6 @@
     "concentration": false
   },
   {
-    "name": "Temporary Boost",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
-    "concentration": true
-  },
-  {
     "name": "Tonal Translocate",
     "level": 3,
     "school": "Tech",
@@ -12234,6 +12216,126 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You boost yourself through the air with a brief surge of repulsor energy. You can rise a number of feet equal to 20 x your techcasting ability modifier. You can also move a number of feet horizontally during any part of the movement equal to 5 x your techcasting ability modifier. At the end of the turn on which you cast this power, you float gently to the ground if you are still aloft.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can rise an additional 20 feet, and move horizontally by another 5 feet for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Wall Run",
+    "level": 0,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 turn",
+    "ritual": false,
+    "description": "Until the end of the turn, you have a climbing speed equal to your walking speed and you have advantage on Dexterity (Acrobatics) and Strength (Athletics) checks that involve movement. For the same duration, you can move up, down, and across vertical surfaces while leaving your hands free. This does not allow you to move upside down along ceilings. If you are on a vertical surface when you no longer have a climbing speed, you immediately fall unless you have some other means of remaining there.",
+    "concentration": false
+  },
+  {
+    "name": "Heighten Senses",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you would roll initiative",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "Through the Force, you sense a sudden shift in your environment, and can seize on it with great speed. You gain advantage on your initiative check, and until the end of your first turn in combat, your walking speed increases by 30 feet.",
+    "concentration": true
+  },
+  {
+    "name": "Temporary Boost",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Temporarily Boosting",
+            "desc": "Once before the power ends, the target can roll a {'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.",
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Temporarily Boosted",
+            "desc": "Once before the power ends, the target can roll a {'d4' if level < 5 else 'd6' if level < 11 else 'd8' if level < 17 else 'd10'} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.",
+            "parent": "peff"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+    "concentration": true
+  },
+  {
+    "name": "Phaseshift",
+    "level": 0,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Too quickly for untrained eyes to perceive, you shift in position. You can move up to 5 feet, and this movement does not provoke opportunity attacks",
+    "concentration": false
+  },
+  {
+    "name": "Dismantle",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "Special",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
     "concentration": false
   }
 ]

@@ -1,30 +1,18 @@
-[
-  {
-    "name": "Punch Drunk",
-    "xc": "pb drunk",
-    "L": [
-      level
-    ],
-    "cc": "Resource Name",
-    "save": {
-      "dc": "8+#proficiencyBonus#+#dexterityMod, but strdex is valid too",
-      "type": "wis",
-      "fail": {
-        "effect": {
-          "name": "Effect, by #name#",
-          "duration": -1,
-          "parent": {
-            "name": "Parent Effect, on #target#",
-            "end": true,
-            "duration": 2
-          }
-        }
-      }
-    },
-    "damage": "XdY, but #superiorityDice# is valid too",
-    "sc": "Puncher Boi",
-    "desc": "-title \"#name# #uses# Punch Drunk!\" #desc# -color #color# -thumb #image# -footer \"#combatantFooter#See !fighter for more info\"",
-    "validUse": "-desc \"When you punch, they get drunk!.\" -f \"Meta|**Additional Damage:** #damageText#\n**DC**: #saveDC#\nSTR Save\" #targetOutput# -f \"#counterChange#\"",
-    "invalidUse": "-desc \"You do not have this feature, or must finish a long rest to regain use of it.\nUse `!level fighter [#] [subclass]` to mark your Fighter level and subclass.\" -f \"#counterChange#\""
-  }
-]
+{
+  "name": "Dismantle",
+  "level": 0,
+  "school": "Tech",
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "Special",
+  "range": "Touch",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Instantaneous",
+  "ritual": false,
+  "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+  "concentration": false
+}
