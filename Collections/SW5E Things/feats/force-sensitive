@@ -1,0 +1,34 @@
+<drac2>
+c = character()
+fl = &ARGS&[0] if &ARGS& else ""
+tdd = "You know two at-will force powers. When you reach 3rd level, you learn one 1st-level force power, which you can cast once per long rest. When you reach 5th level, you learn one 2nd-level force power, which you can once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment). Additionally, you lose the Force-Insensitive special trait if you have it."
+itd = "You know one at-will force power. Additionally, you know one 3rd-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+gtd = "You know one at-will force power. Additionally, you know one 4th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+mtd = "You know one at-will force power. Additionally, you know one 5th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+
+base = f'''embed -thumb {image} -color {color} -title "Force-Sensitive Feature!" '''
+
+
+c.set_cvar_nx("ForceSensitive",True)
+
+if fl == "":
+    if level >= 3:
+      base += f''' -f "Force-Sensitive - 1|{c.create_cc_nx("Force-Sensitive - 1",0,1,"long","square",None,None,None,tdd)}" '''
+
+    if level >= 5:
+        base += f''' -f "Force-Sensitive - 2|{c.create_cc_nx("Force-Sensitive - 2",0,1,"long","square",None,None,None,tdd)}" '''
+
+elif fl.lower() in "improved":
+    base += f''' -f "Force-Sensitive -3|{c.create_cc_nx("Force-Sensitive - 3",0,1,"long","square",None,None,None,itd)}" '''
+
+elif fl.lower() in "greater":
+    base += f''' -f "Force-Sensitive - 4|{c.create_cc_nx("Force-Sensitive - 4",0,1,"long","square",None,None,None,gtd)}" '''
+
+elif fl.lower() in "master":
+    base += f''' -f "Force-Sensitive - 5|{c.create_cc_nx("Force-Sensitive - 5",0,1,"long","square",None,None,None,mtd)}" '''
+
+else:
+    base += f"-desc No counters created"
+
+return base
+</drac2>

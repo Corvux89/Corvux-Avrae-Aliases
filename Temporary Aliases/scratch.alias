@@ -1,6 +1,6 @@
-<drac2>
-c = character()
-for n, sk in c.skills:
-    if n == "medicine":
-        return err(f"{sk.value}")
-</drac2>
+!alias harp {{set_cvar_nx("harp",get_gvar("25a487a0-e6b1-4c7f-a85b-612f1b94e6d3"))}}{{a,spells=&ARGS&,load_json(harp)}}{{match=[spell for spell in spells if not spells[spell].used and a and a[0].lower() in spell.lower()]}}{{match=match[0] if match else ""}}{{f'{("i cast" if combat() and combat().me else "cast")} "{match}" -i {" ".join(a[1:]) if a else ""}'+(f' -l {spells[match].level}' if "level" in spells[match] else "") if match else f'embed -title "Anstruth Harp, Instrument of the Bards'+(', Regains its Spells!' if "reset" in "".join(a) else '')+f'" -color {color} -thumb {image} {get_gvar("cdea5a70-18f5-4f9a-8ec9-6ad65a2a34b4")}'}}
+{{spells.update({f'{match}':load_json(dump_json(spells[match]).replace("false","true"))}) if match else ""}}
+{{set_cvar("harp",dump_json(spells) if not ("reset" in "".join(a)) else harp.replace("true","false"))}}
+{{spells=load_json(harp)}}
+{{UUSD,USD=[spell+(f' ({spells[spell].level}{"nd" if spells[spell].level==2 else "rd" if spells[spell].level==3 else "th"} level)' if "level" in spells[spell] else "") for spell in spells if not spells[spell].used],[spell+(f' ({spells[spell].level}{"nd" if spells[spell].level==2 else "rd" if spells[spell].level==3 else "th"} level)' if "level" in spells[spell] else "") for spell in spells if spells[spell].used]}}
+{{(f' -f "Available Spells|{", ".join(UUSD)}"' if len(UUSD) else '')+(f' -f "Used Spells|{", ".join(USD)}"' if len(USD) else '')}}

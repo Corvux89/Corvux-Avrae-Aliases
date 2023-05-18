@@ -1,0 +1,27 @@
+<drac2>
+c = character()
+a = argparse(&ARGS&)
+fail = 'fail' in &ARGS&
+adv = 'adv' in &ARGS&
+dis = 'dis' in &ARGS&
+dc = 10 if not a.last('dc') else int(a.last('dc'))
+
+
+base = f'''embed -thumb {image} -color {color}'''
+
+base += f''' -title "{name} rolls to dodge a hug!" '''
+base += f''' -f "Meta|**DC**: {dc}" '''
+
+out = vroll(f"1d20 + {dexterityMod} + {proficiencyBonus}")
+
+if out.total < dc or fail:
+    f_str = f"Hug?: {out}; Failure!\n"
+    base += f'-image https://i.imgur.com/FCXa6Gx.gif'
+else:
+    f_str = f"Hug?: {out}; **Success! Hug denied!\n**"
+    base += f'-image https://i.imgur.com/02vfFHl.gif'
+
+base += f''' -f "Hug|{f_str}" '''
+
+return base
+</drac2>

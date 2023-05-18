@@ -9,7 +9,9 @@ base += f''' -title "How to use your {cl} skills" '''
 
 base += f''' -desc "Here are the subcommands to `{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `{ctx.prefix}help {ctx.alias} [command]`" '''
 
-base += f''' -f "Analysis|To use Critical Analysis: `{cm} analysis [-t target] [-mod mod]`\nUse -t to target all targets, and -mod to override the default modifier" '''
+base += f''' -f "analysis|To use Critical Analysis: `{cm} analysis [-t target] [-mod mod]`\nUse -t to target all targets, and -mod to override the default modifier" '''
+
+base += f''' -f "phy|Physician archetype commands" '''
 
 return base
 </drac2>

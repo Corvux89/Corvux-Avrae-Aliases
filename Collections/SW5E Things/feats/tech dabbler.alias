@@ -1,0 +1,34 @@
+<drac2>
+c = character()
+fl = &ARGS&[0] if &ARGS& else ""
+tdd = "You know two at-will tech powers. When you reach 3rd level, you learn and can cast one 1st-level tech power once per long rest. When you reach 5th level, you learn and can cast one 2nd-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. Additionally, you lose the Tech-Impaired special trait if you have it."
+itd = "You know one at-will tech power. Additionally, you know one 3rd-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+gtd = "You know one at-will tech power. Additionally, you know one 4th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+mtd = "You know one at-will tech power. Additionally, you know one 5th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+
+base = f'''embed -thumb {image} -color {color} -title "Tech Dabbler Feature!" '''
+
+
+c.set_cvar_nx("TechDabbler",True)
+
+if fl == "":
+    if level >= 3:
+      base += f''' -f "Tech Dabbler - 1|{c.create_cc_nx("Tech Dabbler - 1",0,1,"long","square",None,None,None,tdd)}" '''
+
+    if level >= 5:
+        base += f''' -f "Tech Dabbler - 2|{c.create_cc_nx("Tech Dabbler - 2",0,1,"long","square",None,None,None,tdd)}" '''
+
+elif fl.lower() in "improved":
+    base += f''' -f "Tech Dabbler -3|{c.create_cc_nx("Tech Dabbler - 3",0,1,"long","square",None,None,None,itd)}" '''
+
+elif fl.lower() in "greater":
+    base += f''' -f "Tech Dabbler - 4|{c.create_cc_nx("Tech Dabbler - 4",0,1,"long","square",None,None,None,gtd)}" '''
+
+elif fl.lower() in "master":
+    base += f''' -f "Tech Dabbler - 5|{c.create_cc_nx("Tech Dabbler - 5",0,1,"long","square",None,None,None,mtd)}" '''
+
+else:
+    base += f"-desc No counters created"
+
+return base
+</drac2>

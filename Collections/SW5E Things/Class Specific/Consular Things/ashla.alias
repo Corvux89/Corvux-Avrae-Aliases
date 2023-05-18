@@ -1,0 +1,32 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+self = 'self' in &ARGS&
+t = a.last('t')
+amt = None if not &ARGS& else &ARGS&[0].lower()
+
+base = f'''embed -thumb {image} -color {color}'''
+
+desc = "When you successfully cast a light side power, either your or the target’s (your choice) hit point maximum and current hit points increase by an amount equal to the power’s level. This effect lasts for 1 minute. You can only have one instance of this effect active at a time."
+
+if amt:
+    base += f''' -f "Meta|**HP Amount**: {amt}" '''
+    if com and (t or self):
+        target = com.me if self else com.get_combatant(t)
+
+
+        peff = com.me.add_effect("Ashla - Parent", duration=10, desc=desc)
+
+        eff = target.add_effect("Ashla", parent=peff, desc=f"HP Increase = {amt}", passive_effects={"max_hp_bonus": int(amt)})
+
+
+        base += f''' -f "{target.name}|{eff}\n{target.damage(f'-{amt} [healing]').damage}" -footer "{target.name}: {target.hp_str()}"'''
+
+    base += f''' -f "Effect|{desc}" -title "{name} uses Ashla" '''
+
+else:
+    base += f''' -title "{name} tries to use Ashla" -desc "Specify an amount using `!con ashla [amt] -t [target]` or `!con ashla [amt] self`" '''
+
+return base
+</drac2>

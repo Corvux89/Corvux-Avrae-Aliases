@@ -1,6 +1,6 @@
 <drac2>
 
-cm = "guar"
+cm = "gua"
 cl = "Guardian"
 
 base = f'''embed -thumb {image} -color {color}'''
@@ -9,7 +9,11 @@ base += f''' -title "How to use your {cl} skills" '''
 
 base += f''' -desc "Here are the subcommands to `!{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `!help {cm} [command]" '''
 
-base += f''' -f "fep|To use Force Empowere Strikes: `!{cm} fep -t [target] [*args]`" '''
+base += f''' -f "fes|To use Force Empowered Strikes: `!{cm} fes -t [target] [*args]`" '''
+
+base += f''' -f "aid|To use Lend Aid: `!{cm} aid -t [target] [*args]`" '''
+
+base += f''' -f "mak|To use Makashi commands: `!{cm} mak [cmd]`" '''
 
 return base
 </drac2>

@@ -66,7 +66,7 @@ def processPower(args):
     # --------------------
     # Figure out the cost
     # --------------------
-    spell_level = max(a.last('l', default=0, type=int), spell.level)
+    spell_level = max(a.last('l', default=0, type_=int), spell.level)
     points = point_list[spell_level]
 
     if a.get('p'):
@@ -107,6 +107,24 @@ def processPower(args):
                 c.mod_cc("Growing Momentum", -1)
                 out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
                 spell["name"] = "Growing Momentum - Burst of Speed"
+
+    # Tech Dabbler
+    elif c.get_cvar("TechDabbler") and cc == "Tech Points":
+        if spell_level == 0:
+            ignore = True
+            out.append('-with int')
+        elif c.cc_exists(f"Tech Dabbler - {spell_level}"):
+            out.append('-with int')
+            points = 1
+            cc = f"Tech Dabbler - {spell_level}"
+
+    # Force-Sensitive
+    elif c.get_cvar("ForceSensitive") and cc == "Force Points":
+        if spell_level == 0:
+            ignore = True
+        elif c.cc_exists(f"Force-Sensitive - {spell_level}"):
+            points = 1
+            cc = f"Force-Sensitive - {spell_level}"
 
     # --------------------
     # Pay the cost
