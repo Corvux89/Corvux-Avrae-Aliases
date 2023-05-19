@@ -1,57 +1,175 @@
 {
-  "name": "Force Barrier",
-  "level": 2,
-  "school": "Force",
-  "classes": "Light",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "30 feet",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "8 hours",
-  "ritual": false,
-  "description": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
-  "concentration": false,
+  "name": "Sabotage Charges",
+  "level": 3,
+  "school": "Tech",
   "automation": [
     {
       "type": "variable",
-      "name": "hp",
-      "value": 5,
+      "name": "numCharges",
+      "value": "6",
       "higher": {
-        "3": 10,
-        "4": 15,
-        "5": 20,
-        "6": 25,
-        "7": 30,
-        "8": 35,
-        "9": 40
+        "4": "8",
+        "5": "10",
+        "6": "12",
+        "7": "14",
+        "8": "16",
+        "9": "18"
       }
+    },
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Sabotage Parent",
+          "attacks": [
+            {
+              "attack": {
+                "_v": 2,
+                "name": "Sabotage - Explosion",
+                "automation": [
+                  {
+                    "type": "variable",
+                    "name": "chargesUsed",
+                    "value": "1 if not choice else int(choice)"
+                  },
+                  {
+                    "type": "roll",
+                    "dice": "2d6",
+                    "name": "damage"
+                  },
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Sabotage - Charges Used",
+                        "stacking": true
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "chargesUsed >= 2",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Sabotage - Charges Used",
+                            "stacking": true
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "target",
+                    "target": "each",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{damage} [fire]"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({damage}/2} [fire]"
+                          }
+                        ],
+                        "dc": "spell_dc"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\n\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd."
+                  }
+                ]
+              }
+            }
+          ],
+          "desc": "Total Available Charges - {numCharges}"
+        },
+        {
+          "type": "variable",
+          "name": "chargesUsed",
+          "value": "0 if len(targets) == 0 else 1 if not choice else int(choice)"
+        },
+        {
+          "type": "condition",
+          "condition": "chargesUsed > 0",
+          "onTrue": [
+            {
+              "type": "ieffect2",
+              "name": "Sabotage - Charges Used",
+              "stacking": true
+            },
+            {
+              "type": "condition",
+              "condition": "chargesUsed >= 2",
+              "onTrue": [
+                {
+                  "type": "ieffect2",
+                  "name": "Sabotage - Charges Used",
+                  "stacking": true
+                }
+              ],
+              "onFalse": []
+            }
+          ],
+          "onFalse": []
+        }
+      ]
+    },
+    {
+      "type": "roll",
+      "dice": "2d6",
+      "name": "damage"
     },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "ieffect2",
-          "name": "Force Barrier",
-          "duration": 4800,
-          "effects": {
-            "max_hp_bonus": "{hp}"
-          }
-        },
-        {
-          "type": "damage",
-          "damage": "-{hp} [healing]",
-          "overheal": false
+          "type": "save",
+          "stat": "dex",
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "{damage} [fire]"
+            }
+          ],
+          "success": [
+            {
+              "type": "damage",
+              "damage": "({damage}/2} [fire]"
+            }
+          ],
+          "dc": "spell_dc"
         }
       ]
     },
     {
       "type": "text",
-      "text": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
+      "text": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\n\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd."
     }
-  ]
+  ],
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "up to 10 minutes",
+  "ritual": false,
+  "description": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\r\n\r\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd.",
+  "concentration": true
 }

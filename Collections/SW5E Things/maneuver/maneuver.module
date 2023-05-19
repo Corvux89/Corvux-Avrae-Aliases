@@ -183,7 +183,7 @@ def get_maneuver(args):
     gvar = load_json(get_gvar("9b5b0cde-2e3c-4a8a-a662-eb843f6e85a8"))
     hlp = not args or ('?' in args or 'help' in args)
 
-    maneuver = [x for x in gvar if not hlp and args[0] in x.name.lower()+(x.syn.lower() if "syn" in x else "")]
+    maneuver = [x for x in gvar if not hlp and args[0].lower() in x.name.lower()+(x.syn.lower() if "syn" in x else "")]
 
     if len(maneuver) == 0:
         return err("Maneuver not found.")
