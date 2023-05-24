@@ -3104,24 +3104,6 @@
     "concentration": false
   },
   {
-    "name": "Greater Feedback",
-    "level": 5,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\r\n\r\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
-    "concentration": false
-  },
-  {
     "name": "Greater Heal",
     "level": 6,
     "school": "Force",
@@ -3552,24 +3534,6 @@
     "ritual": false,
     "description": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it.",
     "concentration": true
-  },
-  {
-    "name": "Improved Feedback",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false
   },
   {
     "name": "Improved Force Barrier",
@@ -4271,24 +4235,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
-    "concentration": false
-  },
-  {
-    "name": "Master Feedback",
-    "level": 9,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "90 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\r\n\r\nEach target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. \r\n\r\nA stunned target can make a Wisdom saving throw at the end of each of its turns. On a successful save, the stunning effect ends.",
     "concentration": false
   },
   {
@@ -5136,24 +5082,6 @@
     "ritual": false,
     "description": "Choose an area of unenhanced flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks or smoke when you do so.\r\n\r\n***Fireworks.*** The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become blinded until the end of your next turn.\r\n\r\n***Smoke.*** Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it.",
     "concentration": false
-  },
-  {
-    "name": "Radiation",
-    "level": 4,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 10 minutes",
-    "ritual": false,
-    "description": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
-    "concentration": true
   },
   {
     "name": "Rage",
@@ -12303,120 +12231,6 @@
     "concentration": false
   },
   {
-    "name": "Sabotage Charges",
-    "level": 3,
-    "school": "Tech",
-    "automation": [
-      {
-        "type": "variable",
-        "name": "numCharges",
-        "value": "6",
-        "higher": {
-          "4": "8",
-          "5": "10",
-          "6": "12",
-          "7": "14",
-          "8": "16",
-          "9": "18"
-        }
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Sabotage Parent",
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Sabotage - Explosion",
-                  "automation": [
-                    {
-                      "type": "variable",
-                      "name": "chargesUsed",
-                      "value": "1 if not choice else int(choice)"
-                    },
-                    {
-                      "type": "text",
-                      "text": "Choice: {chargesUsed}"
-                    },
-                    {
-                      "type": "roll",
-                      "dice": "2d6",
-                      "name": "damage"
-                    },
-                    {
-                      "type": "target",
-                      "target": "self",
-                      "effects": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Sabotage - Charges Used",
-                          "stacking": true
-                        },
-                        {
-                          "type": "condition",
-                          "condition": "chargesUsed >= 2",
-                          "onTrue": [
-                            {
-                              "type": "ieffect2",
-                              "name": "Sabotage - Charges Used",
-                              "stacking": true
-                            }
-                          ],
-                          "onFalse": []
-                        }
-                      ]
-                    },
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "dex",
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{damage} [fire]"
-                            }
-                          ],
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({damage}/2} [fire]"
-                            }
-                          ],
-                          "dc": "spell_dc"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            ],
-            "desc": "Total Available Charges - {numCharges}"
-          }
-        ]
-      }
-    ],
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 10 minutes",
-    "ritual": false,
-    "description": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\r\n\r\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Force Barrier",
     "level": 2,
     "school": "Force",
@@ -12472,5 +12286,516 @@
     "ritual": false,
     "description": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
     "concentration": false
+  },
+  {
+    "name": "Sabotage Charges",
+    "level": 3,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numCharges",
+        "value": "6",
+        "higher": {
+          "4": "8",
+          "5": "10",
+          "6": "12",
+          "7": "14",
+          "8": "16",
+          "9": "18"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Sabotage Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Sabotage - Explosion",
+                  "automation": [
+                    {
+                      "type": "variable",
+                      "name": "chargesUsed",
+                      "value": "1 if not choice else int(choice)"
+                    },
+                    {
+                      "type": "roll",
+                      "dice": "2d6",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Sabotage - Charges Used",
+                          "stacking": true
+                        },
+                        {
+                          "type": "condition",
+                          "condition": "chargesUsed >= 2",
+                          "onTrue": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Sabotage - Charges Used",
+                              "stacking": true
+                            }
+                          ],
+                          "onFalse": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage} [fire]"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage}/2} [fire]"
+                            }
+                          ],
+                          "dc": "spell_dc"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\n\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd."
+                    }
+                  ]
+                }
+              }
+            ],
+            "desc": "Total Available Charges - {numCharges}"
+          },
+          {
+            "type": "variable",
+            "name": "chargesUsed",
+            "value": "0 if len(targets) == 0 else 1 if not choice else int(choice)"
+          },
+          {
+            "type": "condition",
+            "condition": "chargesUsed > 0",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Sabotage - Charges Used",
+                "stacking": true
+              },
+              {
+                "type": "condition",
+                "condition": "chargesUsed >= 2",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Sabotage - Charges Used",
+                    "stacking": true
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "onFalse": []
+          }
+        ]
+      },
+      {
+        "type": "roll",
+        "dice": "2d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [fire]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2} [fire]"
+              }
+            ],
+            "dc": "spell_dc"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\n\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 10 minutes",
+    "ritual": false,
+    "description": "You create six tiny sabotage charges that last for the power's duration. When you cast the power, and as a bonus action on subsequent turns, you can hurl up to two of the charges to points you choose within 120 feet. Each charge explodes if it reaches the point or hits a solid surface. Each creature within 5 feet of the explosion must make a Dexterity save. The explosion deals 2d6 fire damage on a failure, or half damage on a success.\r\n\r\n***Overcharge Tech.*** The number of charges created increases by two for each slot level above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Radiation",
+    "level": 4,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 10 minutes",
+    "ritual": false,
+    "description": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d10 [necrotic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Radiation - Parent",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Spread Radiation",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "4d10 [necrotic]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Radiated",
+                              "desc": "Suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Radiated",
+                "desc": "Suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
+                "parent": "ieffect"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends."
+      }
+    ]
+  },
+  {
+    "name": "Greater Feedback",
+    "level": 5,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\r\n\r\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "8d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "fail": [
+              {
+                "type": "roll",
+                "dice": "1d6",
+                "name": "eff"
+              },
+              {
+                "type": "damage",
+                "damage": "{damage} [psychic]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Greater Feedback",
+                "passive_effects": {
+                  "to_hit_bonus": "-{eff}",
+                  "check_bonus": "-{eff}"
+                },
+                "buttons": [
+                  {
+                    "label": "Resist Feedback",
+                    "verb": "attempts to resist Feedback",
+                    "style": 1,
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "removeParent": "if_no_children"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2) [psychic]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\n\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ]
+  },
+  {
+    "name": "Improved Feedback",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d6",
+        "name": "damage",
+        "higher": {
+          "2": "1d6",
+          "3": "2d6",
+          "4": "3d6",
+          "5": "4d6",
+          "6": "5d6",
+          "7": "6d6",
+          "8": "7d6",
+          "9": "8d6"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [psychic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2) [psychic]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+      }
+    ]
+  },
+  {
+    "name": "Master Feedback",
+    "level": 9,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "90 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\r\n\r\nEach target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. \r\n\r\nA stunned target can make a Wisdom saving throw at the end of each of its turns. On a successful save, the stunning effect ends.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "14d6",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [psychic]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Stunned",
+                "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.",
+                "buttons": [
+                  {
+                    "label": "Resist Feedback",
+                    "verb": "attempts to resist Feedback",
+                    "style": 1,
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "removeParent": "if_no_children"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2) [psychic]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\n\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ]
   }
 ]
