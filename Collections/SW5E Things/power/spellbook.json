@@ -6138,24 +6138,6 @@
     "concentration": false
   },
   {
-    "name": "Spirit Blade",
-    "level": 0,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.",
-    "concentration": false
-  },
-  {
     "name": "Spot the Weakness",
     "level": 1,
     "school": "Tech",
@@ -12367,7 +12349,7 @@
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage}/2} [fire]"
+                              "damage": "({damage}/2) [fire]"
                             }
                           ],
                           "dc": "spell_dc"
@@ -12436,7 +12418,7 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage}/2} [fire]"
+                "damage": "({damage}/2) [fire]"
               }
             ],
             "dc": "spell_dc"
@@ -12466,19 +12448,6 @@
     "name": "Radiation",
     "level": 4,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 10 minutes",
-    "ritual": false,
-    "description": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
-    "concentration": true,
     "automation": [
       {
         "type": "roll",
@@ -12492,10 +12461,10 @@
           {
             "type": "ieffect2",
             "name": "Radiation - Parent",
-            "save_as": "peff",
             "attacks": [
               {
                 "attack": {
+                  "_v": 2,
                   "name": "Spread Radiation",
                   "automation": [
                     {
@@ -12526,11 +12495,11 @@
                         }
                       ]
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               }
-            ]
+            ],
+            "save_as": "peff"
           }
         ]
       },
@@ -12561,13 +12530,8 @@
         "type": "text",
         "text": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends."
       }
-    ]
-  },
-  {
-    "name": "Greater Feedback",
-    "level": 5,
-    "school": "Force",
-    "classes": "Dark",
+    ],
+    "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
     "range": "120 feet",
@@ -12576,10 +12540,15 @@
       "somatic": false,
       "material": ""
     },
-    "duration": "Instantaneous",
+    "duration": "up to 10 minutes",
     "ritual": false,
-    "description": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\r\n\r\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
-    "concentration": false,
+    "description": "Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the power ends.\r\n\r\nWhen a creature moves into the power's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take 4d10 necrotic damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this power go away when the power ends.",
+    "concentration": true
+  },
+  {
+    "name": "Greater Feedback",
+    "level": 5,
+    "school": "Force",
     "automation": [
       {
         "type": "roll",
@@ -12606,16 +12575,8 @@
               {
                 "type": "ieffect2",
                 "name": "Greater Feedback",
-                "passive_effects": {
-                  "to_hit_bonus": "-{eff}",
-                  "check_bonus": "-{eff}"
-                },
                 "buttons": [
                   {
-                    "label": "Resist Feedback",
-                    "verb": "attempts to resist Feedback",
-                    "style": 1,
-                    "defaultDC": "lastSaveDC",
                     "automation": [
                       {
                         "type": "target",
@@ -12634,7 +12595,11 @@
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Resist Feedback",
+                    "verb": "attempts to resist Feedback",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
                   }
                 ]
               }
@@ -12652,16 +12617,11 @@
         "type": "text",
         "text": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\n\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success."
       }
-    ]
-  },
-  {
-    "name": "Improved Feedback",
-    "level": 1,
-    "school": "Force",
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "60 feet",
+    "range": "120 feet",
     "components": {
       "verbal": false,
       "somatic": false,
@@ -12669,8 +12629,13 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false,
+    "description": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\r\n\r\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Feedback",
+    "level": 1,
+    "school": "Force",
     "automation": [
       {
         "type": "roll",
@@ -12713,16 +12678,11 @@
         "type": "text",
         "text": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
       }
-    ]
-  },
-  {
-    "name": "Master Feedback",
-    "level": 9,
-    "school": "Force",
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "90 feet",
+    "range": "60 feet",
     "components": {
       "verbal": false,
       "somatic": false,
@@ -12730,8 +12690,13 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\r\n\r\nEach target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. \r\n\r\nA stunned target can make a Wisdom saving throw at the end of each of its turns. On a successful save, the stunning effect ends.",
-    "concentration": false,
+    "description": "You unleash a blast of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Master Feedback",
+    "level": 9,
+    "school": "Force",
     "automation": [
       {
         "type": "roll",
@@ -12753,13 +12718,8 @@
               {
                 "type": "ieffect2",
                 "name": "Stunned",
-                "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.",
                 "buttons": [
                   {
-                    "label": "Resist Feedback",
-                    "verb": "attempts to resist Feedback",
-                    "style": 1,
-                    "defaultDC": "lastSaveDC",
                     "automation": [
                       {
                         "type": "target",
@@ -12778,9 +12738,14 @@
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Resist Feedback",
+                    "verb": "attempts to resist Feedback",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
                   }
-                ]
+                ],
+                "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
               }
             ],
             "success": [
@@ -12795,6 +12760,64 @@
       {
         "type": "text",
         "text": "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this power. A target takes 8d6 psychic damage on a failed save, or half as much damage on a successful one.\n\nAfter a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make a Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "90 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\r\n\r\nEach target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. \r\n\r\nA stunned target can make a Wisdom saving throw at the end of each of its turns. On a successful save, the stunning effect ends.",
+    "concentration": false
+  },
+  {
+    "name": "Spirit Blade",
+    "level": 0,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d10 [necrotic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.\n\n**# of Attacks**: {'1' if level < 5 else '2' if level < 11 else '3' if level < 17 else '4'}"
       }
     ]
   }

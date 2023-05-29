@@ -1,0 +1,18 @@
+{
+    "name": "Defensive Technique",
+    "level": 0,
+    "school": "Force",
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "\"As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you ward yourself from it through the Force.\\n\\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the numbe",
+    "concentration": true
+  }
