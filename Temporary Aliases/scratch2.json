@@ -1,64 +1,10 @@
 {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "variable",
-          "name": "chargesUsed",
-          "value": "choice if choice != '' else 1"
-        },
-        {
-          "type": "roll",
-          "dice": "2d6",
-          "name": "damage"
-        },
-        {
-          "type": "target",
-          "target": "self",
-          "effects": [
-            {
-              "type": "ieffect2",
-              "name": "Sabotage - Charges Used",
-              "stacking": true
-            },
-            {
-              "type": "condition",
-              "condition": "{chargesUsed} >= 2",
-              "onTrue": [
-                {
-                  "type": "ieffect2",
-                  "name": "Sabotage - Charges Used",
-                  "stacking": true
-                }
-              ],
-              "onFalse": []
-            }
-          ]
-        },
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "save",
-              "stat": "dex",
-              "fail": [
-                {
-                  "type": "damage",
-                  "damage": "{damage} [fire]"
-                }
-              ],
-              "success": [
-                {
-                  "type": "damage",
-                  "damage": "({damage}/2} [fire]"
-                }
-              ],
-              "dc": "spell_dc"
-            }
-          ]
-        }
-      ]
-    }
-
-
+                      "type": "save",
+                      "stat": "con",
+                      "fail": [],
+                      "success": [
+                        {
+                          "type": "remove_ieffect"
+                        }
+                      ]
+                    }

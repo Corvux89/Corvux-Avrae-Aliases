@@ -1,0 +1,32 @@
+<drac2>
+c = character()
+com =combat()
+a = argparse(&ARGS&)
+i = '-i' in &ARGS&
+cc = "Krayt Dragon"
+mod = strengthMod
+
+v = c.cc_exists(cc) or i
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if c.get_cc(cc) < 1 and not i:
+        base += f''' -title "{name} doesn't have enough {cc} remaining to enter The Way of the Ysalamiri!" '''
+        return base
+
+    base += f''' -f "Meta|**Modifier**: {mod}" '''
+    base += f''' -f "Effect|As a bonus action, you can take a threatening stance for one minute. While in this stance, the first time you hit with a melee weapon attack using Strength each turn, you can choose to deal additional damage equal to your Strength modifier. If there is another creature within 5 feet of the original target and within your reach, you can attempt to deal the additional damage to that creature instead. If the original attack roll would hit the second creature, it takes damage equal to your Strength modifier. The damage is of the same type dealt by the original attack.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest." '''
+    base += f''' -title "{name} assume the stance of The Way of the Krayt Dragon!" '''
+
+    if com:
+        com.me.add_effect("The Way of Krayt Dragon", desc=f"The first time you hit with a melee weapon attack using Strength each turn, you can choose to deal additional damage equal to your Strength modifier. If there is another creature within 5 feet of the original target and within your reach, you can attempt to deal the additional damage to that creature instead. If the original attack roll would hit the second creature, it takes damage equal to your Strength modifier. The damage is of the same type dealt by the original attack.")
+
+    if not i:
+        c.mod_cc(cc, -1)
+        base += f''' -f "{cc}|{c.cc_str(cc)} (-1)" '''
+
+else:
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+return base
+</drac2>
