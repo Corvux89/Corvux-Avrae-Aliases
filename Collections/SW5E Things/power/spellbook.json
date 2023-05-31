@@ -948,24 +948,6 @@
     "concentration": false
   },
   {
-    "name": "Cryogenic Blast",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Cryogenic Burst",
     "level": 0,
     "school": "Tech",
@@ -12861,19 +12843,6 @@
     "name": "Drain Vitality",
     "level": 2,
     "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You draw the willpower from a creature you can see within range. Make a ranged force attack against the target. On a hit, the target takes 2d6 necrotic damage and it deals only half damage with weapon attacks that use Strength until the power ends.\r\n\r\nAt the end of each of the target's turns, it can make a Constitution saving throw against the power. On a success, the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
-    "concentration": true,
     "automation": [
       {
         "type": "variable",
@@ -12903,13 +12872,8 @@
               {
                 "type": "ieffect2",
                 "name": "Vitality Drained",
-                "desc": "Deals only half damage with weapon attacks that use Strength until the power ends.\n - At the end of each of the target's turns, it can make a Constitution saving throw against the power. On a success, the power ends.",
                 "buttons": [
                   {
-                    "label": "Drain Vitality - End of Turn",
-                    "style": 1,
-                    "verb": "Attempts to escape Drain Vitality",
-                    "defaultDC": "spell_dc",
                     "automation": [
                       {
                         "type": "target",
@@ -12927,6 +12891,276 @@
                           }
                         ]
                       }
+                    ],
+                    "label": "Drain Vitality - End of Turn",
+                    "verb": "Attempts to escape Drain Vitality",
+                    "style": "1",
+                    "defaultDC": "spell_dc"
+                  }
+                ],
+                "desc": "Deals only half damage with weapon attacks that use Strength until the power ends.\n - At the end of each of the target's turns, it can make a Constitution saving throw against the power. On a success, the power ends."
+              }
+            ],
+            "miss": []
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You draw the willpower from a creature you can see within range. Make a ranged force attack against the target. On a hit, the target takes 2d6 necrotic damage and it deals only half damage with weapon attacks that use Strength until the power ends.\r\n\r\nAt the end of each of the target's turns, it can make a Constitution saving throw against the power. On a success, the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+    "concentration": true
+  },
+  {
+    "name": "Defensive Technique",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "'1' if level < 5 else '2' if level < 11 else '3' if level < 17 else '4'"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Defending",
+            "duration": "1",
+            "desc": "{numDie}",
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Defended against",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "{ieffect.desc.split()[-1]} [psychic]"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Forcing a save",
+                "verb": "forces a save",
+                "style": "4"
+              }
+            ],
+            "desc": "{numDie}d6",
+            "parent": "peff"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
+    "name": "Time Bomb",
+    "level": 1,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Holding the detonator",
+            "desc": "You can detonate the charge as a bonus action. Increasing power by 1d8 for each round",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Charge the bomb",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Bomb charge",
+                          "parent": "ieffect",
+                          "stacking": true
+                        }
+                      ]
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          },
+          {
+            "type": "ieffect2",
+            "name": "Bomb charge",
+            "parent": "peff",
+            "stacking": true,
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Detonate the bomb",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "roll",
+                          "dice": "{len(ieffect.children)+1}d8 [fire]",
+                          "name": "damage"
+                        },
+                        {
+                          "type": "remove_ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{damage}"
+                        }
+                      ]
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6 [kinetic]",
+                "higher": {
+                  "2": "1d6 [kinetic]",
+                  "3": "2d6 [kinetic]",
+                  "4": "3d6 [kinetic]",
+                  "5": "4d6 [kinetic]",
+                  "6": "5d6 [kinetic]",
+                  "7": "6d6 [kinetic]",
+                  "8": "7d6 [kinetic]",
+                  "9": "8d6 [kinetic]"
+                }
+              },
+              {
+                "type": "ieffect2",
+                "parent": "peff",
+                "name": "Charge Placed",
+                "buttons": [
+                  {
+                    "label": "Remove Charge - Dex",
+                    "verb": "attempts to remove the charge",
+                    "style": 4,
+                    "defaultDC": "spell_dc",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "dex",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "remove_parent": "always"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Remove Charge - Str",
+                    "verb": "attempts to remove the charge",
+                    "style": 4,
+                    "defaultDC": "spell_dc",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "str",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "remove_parent": "always"
+                              }
+                            ]
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -12935,6 +13169,83 @@
             "miss": []
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st."
+      }
+    ]
+  },
+  {
+    "name": "Cryogenic Blast",
+    "level": 1,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6 [cold]",
+        "name": "damage",
+        "higher": {
+          "2": "1d6 [cold]",
+          "3": "2d6 [cold]",
+          "4": "3d6 [cold]",
+          "5": "4d6 [cold]",
+          "6": "5d6 [cold]",
+          "7": "6d6 [cold]",
+          "8": "7d6 [cold]",
+          "9": "8d6 [cold]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetIndex == 0",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d10 [kinetic]"
+                  }
+                ],
+                "miss": []
+              }
+            ],
+            "onFalse": []
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st."
       }
     ]
   }
