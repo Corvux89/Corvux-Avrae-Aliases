@@ -35,8 +35,8 @@ elif surge.type == 'health':
   character().modify_hp(Roll.total, overflow=False)
   out.append(f'-f "HP Gained|{Roll.total}\n{character().hp_str}"')
 elif surge.type == 'ccint':
-  character().mod_cc(TP, max(intelligenceMod//2, 1))
-  out.append(f'-f "{TP} ({max(intelligenceMod//2, 1)})|{character().cc_str(TP)}"')
+  character().mod_cc(TP, max(intelligenceMod, 1))
+  out.append(f'-f "{TP} ({max(intelligenceMod, 1)})|{character().cc_str(TP)}"')
 elif surge.type == "cc":
   character().mod_cc(TP, max((get_cc_max(TP)-character().get_cc(TP))//2, 0))
   out.append(f'-f "{TP} ({max((get_cc_max(TP)-character().get_cc(TP))//2, 0)})|{character().cc_str(TP)}"')
