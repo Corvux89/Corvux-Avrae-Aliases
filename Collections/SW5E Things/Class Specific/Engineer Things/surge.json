@@ -14,12 +14,12 @@
   {
     "type": "cast",
     "desc": "You cast explosion as a 3rd-level spell centered on yourself without expending tech points.",
-    "cast": ["explosion", "3", "self"]
+    "cast": ["explosion", 3, "self"]
   },
   {
     "type": "cast",
     "desc": "You cast homing rockets as a 5th-level spell (7 darts) without expending tech points.",
-    "cast": ["homing rockets", "5", ""]
+    "cast": ["homing rockets", 5, ""]
   },
   {
     "type": "roll",
@@ -43,7 +43,7 @@
   {
     "type": "cast",
     "desc": "You cast oil slick centered on yourself without expending tech points.",
-    "cast": ["oil slick", "1", "self"]
+    "cast": ["oil slick", 1, "self"]
   },
   {
     "type": "text",
@@ -193,7 +193,7 @@
   {
     "type": "cast",
     "desc": "You cast mirror image without expending tech points.",
-    "cast": ["mirror image", "2", "self"]
+    "cast": ["mirror image", 2, "self"]
   },
   {
     "type": "effect",
