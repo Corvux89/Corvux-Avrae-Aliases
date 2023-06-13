@@ -6,9 +6,11 @@ num = int("&1&") if "&1&" in &ARGS& and "&1&".isdecimal() else 1
 b = a.last('b') if a.last('b') else None
 mi = a.last('mi')
 i = '-i' in &ARGS&
+t = a.last('t')
+con = '-con' in &ARGS&
 
 try:
-    d_size = str([c.name for c in character().consumables if  'Hit Dice' in c.name][0]).replace('Hit Dice (','').replace(')','')
+    d_size = str([c.name for c in ch.consumables if  'Hit Dice' in c.name][0]).replace('Hit Dice (','').replace(')','')
 except:
     return err(f"Hit die doesn't look to be setup. Please run `!level` first or set up the die")
 
@@ -21,7 +23,7 @@ if ch.cc_exists(cc):
         base += f''' -f "Hit Die Remaining|{ch.get_cc(cc)}" '''
         return base
 
-    roll_str = f"-{num}{d_size}{f'mi{mi}' if mi else ''} {f'-{b}' if b else ''} [healing]"
+    roll_str = f"-{num}{d_size}{f'mi{mi}' if mi else ''} {f'-{b}' if b else ''} {f'-{constitutionMod}' if con else ''} [healing]"
     base += f''' -title "{name} uses {num} hit die!" '''
 
     if com:

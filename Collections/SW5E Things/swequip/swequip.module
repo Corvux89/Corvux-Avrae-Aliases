@@ -19,10 +19,23 @@ def processAttacks(attacks, args):
             attack=attack.replace('} [', '}' + f'+{args.last("d")} [')
 
         if args.get('criton'):
-            attack=attack.replace('_v": 2', f'_v": 2,"criton":{args.last("criton")}')
+            if "criton" in attack:
+                index = attack.find('"criton": ') + 10
+                crit = str(attack[index:attack[index:].find('}') + index])
+                attack = attack.replace(f'"criton": {crit}', f'"criton": {args.last("criton")}')
+            else:
+                attack=attack.replace('_v": 2', f'_v": 2, "criton":{args.last("criton")}')
 
         if args.get('keen'):
-            attack = attack.replace('_v": 2', f'_v": 2,"criton":{20 - int(args.last("keen"))}')
+            if "criton" in attack:
+                index = attack.find('"criton": ') + 10
+                crit = str(attack[index:attack[index:].find('}') + index])
+                attack = attack.replace(f'"criton": {crit}', f'"criton": {20-int(args.last("keen"))}')
+            else:
+                attack = attack.replace('_v": 2', f'_v": 2, "criton": {20 - int(args.last("keen"))}')
+
+        if args.get('dev'):
+            return err(f"{attack}")
 
         if args.get('c'):
             if "extra_crit_damage" in attack:
@@ -127,9 +140,6 @@ def processAttacks(attacks, args):
             rapid = weap.rapid(attack, args)
             if rapid:
                 out.append(load_json(rapid))
-
-        if args.get('dev'):
-            attack = wp_biting(attack, args)
 
         if "counter" in attack:
             index = attack.find('"counter": "') + 12

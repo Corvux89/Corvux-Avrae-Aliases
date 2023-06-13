@@ -31,6 +31,9 @@ def processPower(args):
                 spell["classes"] = "Universal"
                 if not wi:
                     out.append(getWith(spell))
+        elif c.get_cvar("TechDabbler"):
+            if spell := search(keyword, tp):
+                cc = "Tech Points"
         else:
             spell = None
     elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:

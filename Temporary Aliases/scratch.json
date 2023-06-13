@@ -1,11 +1,11 @@
 {
-  "name": "Cryogenic Blast",
+  "name": "Sap Vitality",
   "level": 1,
-  "school": "Tech",
-  "classes": "None",
+  "school": "Force",
+  "classes": "Dark",
   "subclasses": "",
   "casttime": "1 action",
-  "range": "60 feet",
+  "range": "Touch",
   "components": {
     "verbal": false,
     "somatic": false,
@@ -13,61 +13,34 @@
   },
   "duration": "Instantaneous",
   "ritual": false,
-  "description": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
+  "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
   "concentration": false,
   "automation": [
-    {
-      "type": "roll",
-      "dice": "2d6 [cold]",
-      "name": "damage",
-      "higher": {
-        "2": "1d6 [cold]",
-        "3": "2d6 [cold]",
-        "4": "3d6 [cold]",
-        "5": "4d6 [cold]",
-        "6": "5d6 [cold]",
-        "7": "6d6 [cold]",
-        "8": "7d6 [cold]",
-        "9": "8d6 [cold]"
-      }
-    },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "condition",
-          "condition": "targetIndex == 0",
-          "onTrue": [
-            {
           "type": "attack",
           "hit": [
             {
               "type": "damage",
-              "damage": "1d10 [kinetic]"
+              "damage": "3d10 [necrotic]",
+              "higher": {
+                "2": "1d10 [necrotic]",
+                "3": "2d10 [necrotic]",
+                "4": "3d10 [necrotic]",
+                "5": "4d10 [necrotic]",
+                "6": "5d10 [necrotic]",
+                "7": "6d10 [necrotic]",
+                "8": "7d10 [necrotic]",
+                "9": "8d10 [necrotic]"
+              }
             }
           ],
           "miss": []
         }
-          ],
-          "onFalse": []
-        },
-        {
-          "type": "save",
-          "stat": "dex",
-          "fail": [
-            {
-              "type": "damage",
-              "damage": "{damage}"
-            }
-          ],
-          "success": []
-        }
       ]
-    },
-    {
-      "type": "text",
-      "text": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st."
     }
   ]
 }

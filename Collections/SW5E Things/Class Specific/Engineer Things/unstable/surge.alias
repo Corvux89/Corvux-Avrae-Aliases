@@ -42,7 +42,7 @@ elif surge.type == "cc":
   out.append(f'-f "{TP} ({max((get_cc_max(TP)-character().get_cc(TP))//2, 0)})|{character().cc_str(TP)}"')
 elif surge.type == "effect":
   if Combat:
-    Combat.me.add_effect(surge.effect[0], duration=surge.effect[2], desc=surge.effect[1])
+    Combat.me.add_effect(surge.effect[0], duration=surge.effect[1], desc=surge.effect[2])
   out.append(f'-f "Gained Effect|Name: {surge.effect[0]}\nDuration: {surge.effect[1]} rounds"')
 
 return " ".join(out)

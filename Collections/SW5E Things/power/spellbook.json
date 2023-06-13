@@ -3266,24 +3266,6 @@
     "concentration": true
   },
   {
-    "name": "(SW) Hex",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "90 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 hour",
-    "ritual": false,
-    "description": "You curse an opponent within range. Until the power ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the power. The target has disadvantage on ability checks made with the chosen ability.\r\n\r\nIf the target drops to 0 hit points before this power ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd or 4th level, you can maintain your concentration on the power for up to 8 hours. When you use a force slot of 5th level or higher, you can maintain your concentration on the power for up to 24 hours.",
-    "concentration": true
-  },
-  {
     "name": "Hold Droid",
     "level": 2,
     "school": "Tech",
@@ -5435,24 +5417,6 @@
     "concentration": false
   },
   {
-    "name": "Sap Vitality",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Scan Area",
     "level": 4,
     "school": "Tech",
@@ -6243,24 +6207,6 @@
     "duration": "up to 1 hour",
     "ritual": false,
     "description": "A creature you touch isn't inconvenienced by mundane delays. Traffic lights are always green, there's always a waiting elevator, and a taxi is always around the corner. The target can run at full speed through dense crowds and attacks of opportunity provoked by the target's movement are made with disadvantage.\r\n\r\nThe power also grants advantage to stealth checks, since cover is always available. Additionally, the target has advantage on all ability checks made to drive a vehicle.\r\n\r\nIf two or more creatures under the effect of the power are attempting to avoid being inconvenienced by each other, the creatures make Charisma checks each time the effects would oppose each other. The higher check of the two's power takes effect.",
-    "concentration": true
-  },
-  {
-    "name": "Tactical Barrier",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 10 minutes",
-    "ritual": false,
-    "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
     "concentration": true
   },
   {
@@ -12998,20 +12944,6 @@
     "name": "Time Bomb",
     "level": 1,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Up to 1 minute",
-    "ritual": false,
-    "description": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st.",
-    "higherlevels": "",
-    "concentration": true,
     "automation": [
       {
         "type": "target",
@@ -13020,11 +12952,10 @@
           {
             "type": "ieffect2",
             "name": "Holding the detonator",
-            "desc": "You can detonate the charge as a bonus action. Increasing power by 1d8 for each round",
-            "save_as": "peff",
             "attacks": [
               {
                 "attack": {
+                  "_v": 2,
                   "name": "Charge the bomb",
                   "automation": [
                     {
@@ -13034,25 +12965,25 @@
                         {
                           "type": "ieffect2",
                           "name": "Bomb charge",
-                          "parent": "ieffect",
-                          "stacking": true
+                          "stacking": true,
+                          "parent": "ieffect"
                         }
                       ]
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               }
-            ]
+            ],
+            "desc": "You can detonate the charge as a bonus action. Increasing power by 1d8 for each round",
+            "save_as": "peff"
           },
           {
             "type": "ieffect2",
             "name": "Bomb charge",
-            "parent": "peff",
-            "stacking": true,
             "attacks": [
               {
                 "attack": {
+                  "_v": 2,
                   "name": "Detonate the bomb",
                   "automation": [
                     {
@@ -13079,11 +13010,12 @@
                         }
                       ]
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               }
-            ]
+            ],
+            "stacking": true,
+            "parent": "peff"
           }
         ]
       },
@@ -13110,14 +13042,9 @@
               },
               {
                 "type": "ieffect2",
-                "parent": "peff",
                 "name": "Charge Placed",
                 "buttons": [
                   {
-                    "label": "Remove Charge - Dex",
-                    "verb": "attempts to remove the charge",
-                    "style": 4,
-                    "defaultDC": "spell_dc",
                     "automation": [
                       {
                         "type": "target",
@@ -13129,20 +13056,19 @@
                             "fail": [],
                             "success": [
                               {
-                                "type": "remove_ieffect",
-                                "remove_parent": "always"
+                                "type": "remove_ieffect"
                               }
                             ]
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Remove Charge - Dex",
+                    "verb": "attempts to remove the charge",
+                    "style": "4",
+                    "defaultDC": "spell_dc"
                   },
                   {
-                    "label": "Remove Charge - Str",
-                    "verb": "attempts to remove the charge",
-                    "style": 4,
-                    "defaultDC": "spell_dc",
                     "automation": [
                       {
                         "type": "target",
@@ -13154,16 +13080,20 @@
                             "fail": [],
                             "success": [
                               {
-                                "type": "remove_ieffect",
-                                "remove_parent": "always"
+                                "type": "remove_ieffect"
                               }
                             ]
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Remove Charge - Str",
+                    "verb": "attempts to remove the charge",
+                    "style": "4",
+                    "defaultDC": "spell_dc"
                   }
-                ]
+                ],
+                "parent": "peff"
               }
             ],
             "miss": []
@@ -13174,25 +13104,26 @@
         "type": "text",
         "text": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st."
       }
-    ]
-  },
-  {
-    "name": "Cryogenic Blast",
-    "level": 1,
-    "school": "Tech",
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "60 feet",
+    "range": "Touch",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "Instantaneous",
+    "duration": "Up to 1 minute",
     "ritual": false,
-    "description": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false,
+    "description": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
+    "name": "Cryogenic Blast",
+    "level": 1,
+    "school": "Tech",
     "automation": [
       {
         "type": "roll",
@@ -13246,6 +13177,231 @@
       {
         "type": "text",
         "text": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d10 kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 2d6 cold damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "(SW) Hex",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Hexing target",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Shift Hex",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "condition",
+                          "condition": "choice == ''",
+                          "onTrue": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Hexed",
+                              "desc": "Until the spell ends, {caster.name} deals an extra 1d6 necrotic damage to the target whenever they hit it with an attack.",
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "onFalse": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Hexed",
+                              "effects": {
+                                "check_dis": [
+                                  "{choice}"
+                                ]
+                              },
+                              "desc": "Until the spell ends, {caster.name} deals an extra 1d6 necrotic damage to the target whenever they hit it with an attack.\n - The target also has disadvantage on {choice} ability checks",
+                              "parent": "ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 3
+                }
+              }
+            ],
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "choice == ''",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Hexed",
+                "desc": "Until the spell ends, {caster.name} deals an extra 1d6 necrotic damage to the target whenever they hit it with an attack.",
+                "parent": "peff"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "ieffect2",
+                "name": "Hexed",
+                "effects": {
+                  "check_dis": [
+                    "{choice}"
+                  ]
+                },
+                "desc": "Until the spell ends, {caster.name} deals an extra 1d6 necrotic damage to the target whenever they hit it with an attack.\n - The target also has disadvantage on {choice} ability checks",
+                "parent": "peff"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You curse an opponent within range. Until the power ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the power. The target has disadvantage on ability checks made with the chosen ability.\n\nIf the target drops to 0 hit points before this power ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd or 4th level, you can maintain your concentration on the power for up to 8 hours. When you use a force slot of 5th level or higher, you can maintain your concentration on the power for up to 24 hours."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "90 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 hour",
+    "ritual": false,
+    "description": "You curse an opponent within range. Until the power ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the power. The target has disadvantage on ability checks made with the chosen ability.\r\n\r\nIf the target drops to 0 hit points before this power ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd or 4th level, you can maintain your concentration on the power for up to 8 hours. When you use a force slot of 5th level or higher, you can maintain your concentration on the power for up to 24 hours.",
+    "concentration": true
+  },
+  {
+    "name": "Tactical Barrier",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "len(targets) == 0",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Shielded",
+                "effects": {
+                  "ac_bonus": "2"
+                },
+                "parent": "ieffect"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Shielded",
+                "effects": {
+                  "ac_bonus": "2"
+                },
+                "parent": "ieffect"
+              }
+            ]
+          }
+        ],
+        "errorBehaviour": "raise"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 10 minutes",
+    "ritual": false,
+    "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+    "concentration": true
+  },
+  {
+    "name": "Sap Vitality",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d10 [necrotic]",
+                "higher": {
+                  "2": "1d10 [necrotic]",
+                  "3": "2d10 [necrotic]",
+                  "4": "3d10 [necrotic]",
+                  "5": "4d10 [necrotic]",
+                  "6": "5d10 [necrotic]",
+                  "7": "6d10 [necrotic]",
+                  "8": "7d10 [necrotic]",
+                  "9": "8d10 [necrotic]"
+                }
+              }
+            ],
+            "miss": []
+          }
+        ]
       }
     ]
   }
