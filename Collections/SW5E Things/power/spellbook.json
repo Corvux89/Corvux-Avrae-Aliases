@@ -342,7 +342,7 @@
     "ritual": false,
     "description": "Envigorating energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) deals an extra 1d4 damage with weapon attacks.",
     "concentration": true
-  },
+  },`
   {
     "name": "Autonomous Servant",
     "level": 3,
@@ -360,7 +360,7 @@
     "ritual": false,
     "description": "You touch one Tiny, unenhanced object that isn't attached to another object or a surface and isn't being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics. \r\n\r\n___\r\n> ## Servant\r\n>*Tiny construct, unaligned*\r\n> ___\r\n> - **Armor Class** 15 (natural armor)\r\n> - **Hit Points** 10 (4d4)\r\n> - **Speed** 30 feet, climb 30 feet\r\n>___\r\n>|STR|DEX|CON|INT|WIS|CHA|\r\n>|:---:|:---:|:---:|:---:|:---:|:---:|\r\n>|4 (-3)|16 (+3)|10 (+0)|2 (-4)|10 (+0)|1 (-5)|\r\n>___\r\n> - **Damage Vulnerabilities** ion\r\n> - **Damage Resistances** necrotic, poison, psychic\r\n> - **Condition Immunities** charmed, deafened, exhaustion, poisoned\r\n> - **Senses** blindsight 60 feet (blind beyond this radius), passive Perception 10\r\n> - **Languages** �\r\n> ___\r\n> **Circuitry.** The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.\r\n> ### Actions\r\n> ***Slam.*** *Melee Weapon Attack:* +4 to hit, reach 5 feet, one target. *Hit* 5 (1d4 + 3) kinetic damage.\r\n\r\nAs a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\r\n\r\nWhen the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\r\n\r\nThe creature is considered a valid target for the *tracker droid interface* power.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd.",
     "concentration": false
-  },
+  },`
   {
     "name": "Bacta Pack",
     "level": 1,
