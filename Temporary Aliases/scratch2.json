@@ -1,10 +1,29 @@
 {
-                      "type": "save",
-                      "stat": "con",
-                      "fail": [],
-                      "success": [
-                        {
-                          "type": "remove_ieffect"
-                        }
-                      ]
-                    }
+  "name": "Oblivion",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "1d8+5 [magical piercing]",
+              "overheal": false
+            }
+          ],
+          "miss": [],
+          "attackBonus": "9"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+      "title": "Effect"
+    }
+  ],
+  "_v": 2
+}

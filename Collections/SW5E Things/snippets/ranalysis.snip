@@ -1,6 +1,8 @@
 <drac2>
-mod = intelligenceMod - dexterityMod
+c = character()
+schMod = c.get_cvar("RancorsDiscipline") if c.get_cvar("RancorsDiscipline") else "intelligence"
+mod = c.stats.get_mod(schMod) - dexterityMod
 base = f''' -b {mod} -d {mod} '''
-base += f''' -f "Critical Analysis|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is Intelligence, instead of Strength or Dexterity. You must use the same modifier for both rolls.\n\n**Intelligence Mod:** {intelligenceMod}" '''
+base += f''' -f "Critical Analysis|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is {schMod.capitalize()}, instead of Strength or Dexterity. You must use the same modifier for both rolls.\n\n**{schMod.capitalize()} Mod:** {c.stats.get_mod(schMod)}" '''
 return base
 </drac2>

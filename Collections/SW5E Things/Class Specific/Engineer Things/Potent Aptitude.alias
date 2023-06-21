@@ -17,6 +17,8 @@ if v:
 
     lvl = c.get_cc_max(cc)
     pad = "1d12" if lvl > 5 else "1d10" if lvl > 4 else "1d8" if lvl > 3 else "1d6" if lvl > 2 else "1d4"
+    pad += f"+{a.last('b')}" if a.get('b') else ''
+    base += f''' -f "Meta|**Bonus**: {pad}" '''
 
     if com and targ:
         try:
@@ -24,7 +26,7 @@ if v:
         except:
             err(f"Invalid Target")
 
-        t.add_effect(cc, duration=100, desc=f"The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost. Current die size: {pad}",
+        eff = t.add_effect(cc, duration=100, desc=f"The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost. Current die size: {pad}",
             buttons=[{
                 "label": f"Use {cc}",
                 "verb": "is using assistance",
@@ -40,7 +42,7 @@ if v:
                     }]
                 }])
 
-        base += f''' -f "Meta|**Effect:** [{cc}] added to {t.name}" '''
+        base += f''' -f "{t.name}|{eff}" '''
     else:
         base += f''' -f "Meta|**Die to add:** {pad}" '''
 

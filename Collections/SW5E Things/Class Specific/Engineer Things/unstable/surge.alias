@@ -2,6 +2,7 @@ embed <drac2>
 gvar = load_json(get_gvar("e9fa4672-b75f-42a6-a32e-29e205ccb387"))
 surgeRoll = vroll("1d100")
 Combat = combat()
+c = character()
 chanceRoll = vroll("1d20")
 args = &ARGS&
 out = []
@@ -32,14 +33,14 @@ if surge.type == 'roll':
   out.append(f'-f "Roll|{Roll}"')
 elif surge.type == 'health':
   Roll = vroll(surge.roll)
-  character().modify_hp(Roll.total, overflow=False)
-  out.append(f'-f "HP Gained|{Roll.total}\n{character().hp_str}"')
+  c.modify_hp(Roll.total, overflow=False)
+  out.append(f'-f "HP Gained|{Roll.total}\n{c.hp_str}"')
 elif surge.type == 'ccint':
-  character().mod_cc(TP, max(intelligenceMod, 1))
-  out.append(f'-f "{TP} ({max(intelligenceMod, 1)})|{character().cc_str(TP)}"')
+  c.mod_cc(TP, max(intelligenceMod, 1))
+  out.append(f'-f "{TP} ({max(intelligenceMod, 1)})|{c.cc_str(TP)}"')
 elif surge.type == "cc":
-  character().mod_cc(TP, max((get_cc_max(TP)-character().get_cc(TP))//2, 0))
-  out.append(f'-f "{TP} ({max((get_cc_max(TP)-character().get_cc(TP))//2, 0)})|{character().cc_str(TP)}"')
+  cmod_cc(TP, max((c.get_cc_max(TP)-c.get_cc(TP))//2, 0))
+  out.append(f'-f "{TP} ({max((c.get_cc_max(TP)-c.get_cc(TP))//2, 0)})|{c.cc_str(TP)}"')
 elif surge.type == "effect":
   if Combat:
     Combat.me.add_effect(surge.effect[0], duration=surge.effect[1], desc=surge.effect[2])

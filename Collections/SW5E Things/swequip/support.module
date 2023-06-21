@@ -10,6 +10,7 @@ def processName(name):
     out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
     out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
     out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace("Bolt, Panic - ", '')
+    out = out.replace("Cell, Power - ", "").replace("Cell, Cryo - ", '').replace("Cell, Deafening - ", '').replace("Cell, Incendiary - ", '')
 
     return out
 

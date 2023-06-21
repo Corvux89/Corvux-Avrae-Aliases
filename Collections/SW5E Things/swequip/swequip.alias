@@ -1,6 +1,6 @@
 <drac2>
 args = &ARGS&
-variable = ['799c0a03-762d-4fe4-b270-b640bcc3bb30', 'dee962fb-f71d-4e17-9b6f-c86cf1a58c33', 'ef21fed4-8472-4b0b-a375-54ae476ef38a', '1a531fe9-4517-42d0-b4c5-a6664ed492b9']
+variable = ['799c0a03-762d-4fe4-b270-b640bcc3bb30', 'dee962fb-f71d-4e17-9b6f-c86cf1a58c33', 'c906190c-4968-4fec-81fd-9cbbc1f2e92e', 'ef21fed4-8472-4b0b-a375-54ae476ef38a', '1a531fe9-4517-42d0-b4c5-a6664ed492b9']
 using(sup='df07d6ae-140d-45b1-b026-de831064acab', help='8b78365a-5c05-4c8f-8364-fbde2e3de862')
 output = "output" in args
 counter = ""

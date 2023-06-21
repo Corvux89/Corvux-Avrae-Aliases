@@ -39,7 +39,7 @@ def maneuver(args):
         c.mod_cc(cc,ccNum) if v and not i else ""
 
         # Straight Superiority Dice Rolls
-        dice = do_roll(feature,superiorityDice,args) if feature and "roll" in feature and feature.roll else ""
+        dice = do_roll(feature,superiorityDice, maneuverMod, args) if feature and "roll" in feature and feature.roll else ""
 
         diceTotal = dice.total if dice else 0
 
@@ -190,11 +190,11 @@ def get_maneuver(args):
 
     return maneuver[0]
 
-def do_roll(feature, superiorityDice, args):
+def do_roll(feature, superiorityDice, maneuverMod, args):
     c = character()
     a = argparse(args)
     roll_str = feature.roll
-    roll_str = roll_str.replace('#superiorityDice#', superiorityDice)
+    roll_str = roll_str.replace('#superiorityDice#', superiorityDice).replace('#maneuverMod#', str(maneuverMod))
     for n, sk in c.skills:
         roll_str = roll_str.replace(f'#{n}#', f'1d20+{sk.value}')
     return vroll(roll_str)

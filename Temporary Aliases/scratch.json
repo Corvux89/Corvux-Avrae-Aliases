@@ -1,11 +1,11 @@
 {
-  "name": "Sap Vitality",
-  "level": 1,
+  "name": "Seethe",
+  "level": 0,
   "school": "Force",
   "classes": "Dark",
   "subclasses": "",
   "casttime": "1 action",
-  "range": "Touch",
+  "range": "Self",
   "components": {
     "verbal": false,
     "somatic": false,
@@ -13,34 +13,6 @@
   },
   "duration": "Instantaneous",
   "ritual": false,
-  "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
-  "concentration": false,
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "attack",
-          "hit": [
-            {
-              "type": "damage",
-              "damage": "3d10 [necrotic]",
-              "higher": {
-                "2": "1d10 [necrotic]",
-                "3": "2d10 [necrotic]",
-                "4": "3d10 [necrotic]",
-                "5": "4d10 [necrotic]",
-                "6": "5d10 [necrotic]",
-                "7": "6d10 [necrotic]",
-                "8": "7d10 [necrotic]",
-                "9": "8d10 [necrotic]"
-              }
-            }
-          ],
-          "miss": []
-        }
-      ]
-    }
-  ]
-}
+  "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
+  "concentration": false
+},

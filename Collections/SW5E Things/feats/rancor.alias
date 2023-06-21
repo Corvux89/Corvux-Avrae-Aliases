@@ -1,0 +1,21 @@
+<drac2>
+c = character()
+stat = &ARGS&[0] if &ARGS& else ""
+v = "cha" in stat.lower() or "wis" in stat.lower() or "del" in stat.lower()
+
+
+base = f'''embed -thumb {image} -color {color} -title "Rancor's Discipline Feature!" '''
+
+if v:
+    if "del" in stat.lower():
+        c.delete_cvar("RancorsDiscipline")
+        base += f''' -desc "Feature deleted!" '''
+    else:
+        stat = "charisma" if "cha" in stat.lower() else "wisdom"
+        c.set_cvar("RancorsDiscipline", stat)
+        base += f''' -desc "Rancor's Discipline stat set to {stat}" '''
+else:
+    base +=  f''' -desc "Invalid/missing stat choice. Please choose `charisma` or `wisdom`" '''
+
+return base
+</drac2>
