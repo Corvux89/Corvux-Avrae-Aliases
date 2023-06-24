@@ -38,5 +38,6 @@ if v:
     base += f''' -f "When you analyze a hostile creature|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is {schMod.capitalize()}, instead of Strength or Dexterity. You must use the same modifier for both rolls." '''
     base += f''' -f "When you analyze a friendly creature|The target can end your Critical Analysis on them (no action required) to add your Critical Analysis ability modifier, which is {schMod.capitalize()}, to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest." '''
 
+
     return base
 </drac2>

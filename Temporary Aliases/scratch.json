@@ -1,18 +1,65 @@
 {
-  "name": "Seethe",
-  "level": 0,
+  "name": "Stun",
+  "level": 2,
   "school": "Force",
-  "classes": "Dark",
+  "classes": "Light",
   "subclasses": "",
   "casttime": "1 action",
-  "range": "Self",
+  "range": "60 feet",
   "components": {
     "verbal": false,
     "somatic": false,
     "material": ""
   },
-  "duration": "Instantaneous",
+  "duration": "up to 1 minute",
   "ritual": false,
-  "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
-  "concentration": false
-},
+  "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the power ends on the target.",
+  "concentration": true,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "wis",
+          "fail": [
+            {
+              "type": "ieffect2",
+              "name": "Paralyzed",
+              "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+              "parent": "ieffect",
+              "buttons": [
+                {
+                  "label": "Resist Paralysis - End of Turn",
+                  "style": "1",
+                  "verb": "attempts to resist paralysis",
+                  "defaultDC": "lastSaveDC",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "wis",
+                          "fail": [],
+                          "success": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "success": []
+        }
+      ]
+    }
+  ]
+}
