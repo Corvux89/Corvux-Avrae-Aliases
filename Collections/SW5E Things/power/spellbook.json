@@ -342,7 +342,7 @@
     "ritual": false,
     "description": "Envigorating energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) deals an extra 1d4 damage with weapon attacks.",
     "concentration": true
-  },`
+  },
   {
     "name": "Autonomous Servant",
     "level": 3,
@@ -360,7 +360,7 @@
     "ritual": false,
     "description": "You touch one Tiny, unenhanced object that isn't attached to another object or a surface and isn't being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics. \r\n\r\n___\r\n> ## Servant\r\n>*Tiny construct, unaligned*\r\n> ___\r\n> - **Armor Class** 15 (natural armor)\r\n> - **Hit Points** 10 (4d4)\r\n> - **Speed** 30 feet, climb 30 feet\r\n>___\r\n>|STR|DEX|CON|INT|WIS|CHA|\r\n>|:---:|:---:|:---:|:---:|:---:|:---:|\r\n>|4 (-3)|16 (+3)|10 (+0)|2 (-4)|10 (+0)|1 (-5)|\r\n>___\r\n> - **Damage Vulnerabilities** ion\r\n> - **Damage Resistances** necrotic, poison, psychic\r\n> - **Condition Immunities** charmed, deafened, exhaustion, poisoned\r\n> - **Senses** blindsight 60 feet (blind beyond this radius), passive Perception 10\r\n> - **Languages** �\r\n> ___\r\n> **Circuitry.** The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.\r\n> ### Actions\r\n> ***Slam.*** *Melee Weapon Attack:* +4 to hit, reach 5 feet, one target. *Hit* 5 (1d4 + 3) kinetic damage.\r\n\r\nAs a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\r\n\r\nWhen the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\r\n\r\nThe creature is considered a valid target for the *tracker droid interface* power.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd.",
     "concentration": false
-  },`
+  },
   {
     "name": "Bacta Pack",
     "level": 1,
@@ -1504,24 +1504,6 @@
     "ritual": false,
     "description": "You attempt to beguile a creature that you can see within range. It must succeed on a Wisdom saving throw or be charmed by you for the duration. If you or creatures that are friendly to you are fighting it, it has advantage on the saving throw.\r\n\r\nWhile the creature is charmed, you have a telepathic link with it as long as you are within 1 mile of it. You can use this telepathic link to issue commands to the creature while you are conscious (no action required), which it does its best to obey. You can specify a simple and general course of action, such as \"Attack that creature,\" \"Run over there,\" or \"Fetch that object.\" If the creature completes the order and doesn't receive further direction from you, it defends and preserves itself to the best of its ability.\r\n\r\nYou can use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn't do anything that you don't allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well.\r\n\r\nEach time the target takes damage, it makes a new Wisdom saving throw against the power. If the saving throw succeeds, the power ends. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power with a 9th-level force slot, the duration is concentration, up to 8 hours.",
     "concentration": true
-  },
-  {
-    "name": "Drain Life",
-    "level": 4,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You draw the life force from a creature you can see within range. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. If you reduce a hostile creature to 0, you gain temporary hit points equal to half the damage dealt. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.",
-    "concentration": false
   },
   {
     "name": "Dun Moch",
@@ -3824,24 +3806,6 @@
     "concentration": false
   },
   {
-    "name": "Knight Speed",
-    "level": 3,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose a willing creature that you can see within range. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\r\n\r\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
-    "concentration": true
-  },
-  {
     "name": "Kolto Cloud",
     "level": 3,
     "school": "Tech",
@@ -6120,24 +6084,6 @@
     "concentration": false
   },
   {
-    "name": "Stun",
-    "level": 2,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the power ends on the target.",
-    "concentration": true
-  },
-  {
     "name": "Stun Dart",
     "level": 8,
     "school": "Tech",
@@ -6336,24 +6282,6 @@
     "concentration": true
   },
   {
-    "name": "Telekinetic Storm",
-    "level": 3,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\r\n\r\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.\r\n\r\n***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Telekinetic Wave",
     "level": 8,
     "school": "Force",
@@ -6532,24 +6460,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "Your form shimmers in a holographic configuration, and then collapses. You teleport up to 30 feet to an unoccupied space that you can see.",
-    "concentration": false
-  },
-  {
-    "name": "Tremor",
-    "level": 1,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "10 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You cause a tremor in the ground within range. Each creature other than you in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. On a failed save, a creature takes 1d8 kinetic damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -9051,7 +8961,7 @@
         "effects": [
           {
             "type": "ieffect2",
-            "name": "Blessed",
+            "name": "Valorized",
             "duration": "11",
             "effects": {
               "to_hit_bonus": "1d{die} [valor]",
@@ -13363,19 +13273,6 @@
     "name": "Sap Vitality",
     "level": 1,
     "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
-    "concentration": false,
     "automation": [
       {
         "type": "target",
@@ -13403,6 +13300,905 @@
           }
         ]
       }
-    ]
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Make a melee force attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Tremor",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d8",
+            "name": "damage",
+            "higher": {
+              "2": "1d8",
+              "3": "2d8",
+              "4": "3d8",
+              "5": "4d8",
+              "6": "5d8",
+              "7": "6d8",
+              "8": "7d8",
+              "9": "8d8"
+            }
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [kinetic]"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up"
+                  }
+                ],
+                "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2}) [kinetic]"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "10 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You cause a tremor in the ground within range. Each creature other than you in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. On a failed save, a creature takes 1d8 kinetic damage and is knocked prone. On a successful save, the creature takes half as much damage and isn't knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Stun",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Paralyzed",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Paralysis - End of Turn",
+                    "verb": "attempts to resist paralysis",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                "parent": "ieffect"
+              }
+            ],
+            "success": []
+          }
+        ]
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the power ends on the target.",
+    "concentration": true
+  },
+  {
+    "name": "Drain Life",
+    "level": 4,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "8d8",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [necrotic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2) [necrotic]"
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "condition": "target.hp <= 0",
+            "onTrue": [
+              {
+                "type": "variable",
+                "name": "thp",
+                "value": "damage / 2"
+              }
+            ],
+            "onFalse": []
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "thp is not None",
+            "onTrue": [
+              {
+                "type": "temphp",
+                "amount": "{thp}"
+              }
+            ],
+            "onFalse": []
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You draw the life force from a creature you can see within range. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. If you reduce a hostile creature to 0, you gain temporary hit points equal to half the damage dealt. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.",
+    "concentration": false
+  },
+  {
+    "name": "Knight Speed",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "any(targets)",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Knight Speeded",
+                "duration": "11",
+                "effects": {
+                  "ac_bonus": "2",
+                  "save_adv": [
+                    "dex"
+                  ]
+                },
+                "desc": "The target's speed is doubled\n - They gain an additional action on each of its turns\n - When the spell ends, the target can't move or take actions until after its next turn"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Knight Speeded",
+                "duration": "11",
+                "effects": {
+                  "ac_bonus": "2",
+                  "save_adv": [
+                    "dex"
+                  ]
+                },
+                "desc": "The target's speed is doubled\n - They gain an additional action on each of its turns\n - When the spell ends, the target can't move or take actions until after its next turn"
+              }
+            ]
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "Choose a willing creature that you can see within range. Until the spell ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\n\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "Choose a willing creature that you can see within range. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\n\nWhen the power ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Pyrokinesis",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d8 [energy]",
+        "name": "damage",
+        "higher": {
+          "3": "1d8 [energy]",
+          "4": "2d8 [energy]",
+          "5": "3d8 [energy]",
+          "6": "4d8 [energy]",
+          "7": "5d8 [energy]",
+          "8": "6d8 [energy]",
+          "9": "7d8 [energy]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A line of roaring Force-enhanced flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 energy damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (30 ft. line)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A line of roaring Force-enhanced flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 energy damage on a failed save, or half as much damage on a successful one.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+    "concentration": false
+  },
+  {
+    "name": "Greater Pyrokinesis",
+    "level": 4,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Greater Pyrokinesis",
+            "duration": "11",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Greater Pyrokinesis",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "5d8 [energy]",
+                      "name": "damage",
+                      "higher": {
+                        "5": "1d8 [energy]",
+                        "6": "2d8 [energy]",
+                        "7": "3d8 [energy]",
+                        "8": "4d8 [energy]",
+                        "9": "5d8 [energy]"
+                      }
+                    },
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{damage}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You create a wall of Force-enhanced fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\nWhen the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 energy damage, or half as much damage on a successful save.\n\nOne side of the wall, selected by you when you cast this power, deals 5d8 energy damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th."
+                    }
+                  ],
+                  "verb": "burns you with"
+                }
+              }
+            ],
+            "desc": "One side of the wall, selected by you when you cast this spell, deals 5d8 fire damage to each creature that ends its turn within 10 feet of that side or inside the wall\n - A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage"
+          }
+        ]
+      },
+      {
+        "type": "roll",
+        "dice": "5d8 [energy]",
+        "name": "damage",
+        "higher": {
+          "5": "1d8 [energy]",
+          "6": "2d8 [energy]",
+          "7": "3d8 [energy]",
+          "8": "4d8 [energy]",
+          "9": "5d8 [energy]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a wall of Force-enhanced fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\nWhen the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 energy damage, or half as much damage on a successful save.\n\nOne side of the wall, selected by you when you cast this power, deals 5d8 energy damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You create a wall of Force-enhanced fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\nWhen the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 energy damage, or half as much damage on a successful save.\n\nOne side of the wall, selected by you when you cast this power, deals 5d8 energy damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.",
+    "concentration": true
+  },
+  {
+    "name": "Master Pyrokinesis",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "7d10 [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren’t being worn or carried."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren’t being worn or carried.",
+    "concentration": false
+  },
+  {
+    "name": "Telekinetic Storm",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Telekinetic Storm",
+            "duration": "100",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread the Telekinetic Storm",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "3d8 [force]",
+                      "name": "damage",
+                      "higher": {
+                        "4": "1d8 [force]",
+                        "5": "2d8 [force]",
+                        "6": "3d8 [force]",
+                        "7": "4d8 [force]",
+                        "8": "5d8 [force]",
+                        "9": "6d8 [force]"
+                      }
+                    },
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage})/2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ieffect2",
+                          "name": "Surrounded by Telekinetic Storm",
+                          "duration": "ieffect.remaining",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "roll",
+                                  "dice": "3d8 [force]",
+                                  "name": "damage",
+                                  "higher": {
+                                    "4": "1d8 [force]",
+                                    "5": "2d8 [force]",
+                                    "6": "3d8 [force]",
+                                    "7": "4d8 [force]",
+                                    "8": "5d8 [force]",
+                                    "9": "6d8 [force]"
+                                  }
+                                },
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "save",
+                                      "stat": "con",
+                                      "fail": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "{damage}"
+                                        }
+                                      ],
+                                      "success": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "({damage})/2"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                                }
+                              ],
+                              "label": "Telekinetic Storm (Start of Turn)",
+                              "verb": "starts their turn in the Telekinetic Storm",
+                              "style": "4",
+                              "defaultDC": "spell_dc or 10"
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Leave Telekinetic Storm",
+                              "verb": "leaves the range of Telekinetic Storm",
+                              "style": "3",
+                              "defaultDC": "spell_dc or 10"
+                            }
+                          ],
+                          "desc": "Speed is halved\n - Lasts while within 15 ft. of {{caster.name}}",
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                    }
+                  ],
+                  "verb": "begins to",
+                  "proper": true
+                },
+                "defaultDC": "spell_dc or 10"
+              }
+            ],
+            "end": false,
+            "conc": false,
+            "stacking": false,
+            "save_as": "storm"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Within the Telekinetic Storm",
+            "duration": "100",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "3d8 [force]",
+                    "name": "damage",
+                    "higher": {
+                      "4": "1d8 [force]",
+                      "5": "2d8 [force]",
+                      "6": "3d8 [force]",
+                      "7": "4d8 [force]",
+                      "8": "5d8 [force]",
+                      "9": "6d8 [force]"
+                    }
+                  },
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{damage}"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({damage})/2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                  }
+                ],
+                "label": "Telekinetic Storm (Start of Turn)",
+                "verb": "starts their turn in the Telekinetic Storm",
+                "style": "4",
+                "defaultDC": "spell_dc or 10"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Leave Telekinetic Storm",
+                "verb": "leaves the range of Telekinetic Storm",
+                "style": "3",
+                "defaultDC": "spell_dc or 10"
+              }
+            ],
+            "desc": "Speed is halved\n - Lasts while within 15 ft. of {{caster.name}}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15 ft. sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "ritual": false,
+    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Pyrokinesis",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8[energy]",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "cantripScale": false
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "ieffect2",
+            "name": "Within Pyrokinesis",
+            "duration": "11",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Leave Pyrokinesis",
+                "verb": "leaves Pyrokinesis",
+                "style": "3"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{ieffect.desc.split()[-1]} [energy]"
+                          }
+                        ],
+                        "success": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+                  }
+                ],
+                "label": "Within Pyrokinesis (End of Turn)",
+                "verb": "ends their turn within Pyrokinesis",
+                "style": "4",
+                "defaultDC": "spell_dc or 10"
+              }
+            ],
+            "desc": "{{\"1d8\"}}{{'' if level < 5 else \"+1d8\" if level < 11 else \"+2d8\" if level < 17 else \"+3d8\"}}"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Maintaining Pyrokinesis",
+            "duration": "11",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread Pyrokinesis",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "1d8[energy]",
+                      "name": "damage",
+                      "cantripScale": true
+                    },
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}",
+                              "cantripScale": false
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+                    }
+                  ],
+                  "verb": "burns you with"
+                }
+              }
+            ],
+            "end": false,
+            "conc": false,
+            "stacking": false
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet (5 ft. cube)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": true
   }
 ]

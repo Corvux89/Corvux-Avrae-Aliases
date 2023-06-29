@@ -1,0 +1,34 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+cc = "Slipstream Kickers"
+i = '-i' in &ARGS&
+
+c.create_cc_nx(cc, 0, 1, 'long', 'star')
+
+v = c.cc_exists(cc) or i
+description = "Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action\n\nWhen the power ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it."
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    base += f''' -title "{name} uses their Slipstream Kickers" '''
+    if com:
+        eff = com.me.add_effect("Slipstream Kickers - Tactical Advantage", desc=description, duration=10,passive_effects={"ac_bonus": 2, "save_adv":["dexterity"]})
+        f_str = f"{com.me}|{eff}"
+    else:
+        f_str = f"{name}|Slipstream kickers - Tactical Advantage [10 rounds]\n\n{description}"
+
+    base += f''' -f "{f_str}" '''
+
+    if c.get_cc(cc):
+        c.mod_cc(cc, -1)
+        base += f''' -f "Slipstream Kickers|{c.cc_str(cc)} (-1)\n\nWhile you wear these boots, you can use a bonus action to activate or deactivate their overdrive mode. If you do, you gain the effect of the tactical advantage tech power for 1 minute. Once you’ve used this feature, you must complete a long rest before you can use it again." '''
+    else:
+        return err(f"Not enough charges of {cc} remaining!")
+else:
+    base += f''' -desc "Something went wrong" -title "Uh-oh" '''
+
+return base
+</drac2>

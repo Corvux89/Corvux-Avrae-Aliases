@@ -2,6 +2,7 @@ import json
 from fractions import Fraction
 
 f = open('CritterDB.json', encoding='utf-8')
+count = 0
 critdb = json.load(f)
 
 source = {}
@@ -34,9 +35,10 @@ for critter in critdb["creatures"]:
     monster["sources"] = f"Resolute: {len(kfcdb['monsters'])+1}"
 
     kfcdb["monsters"].append(monster)
+    count += 1
 
 with open("KFC.json", "w") as outfile:
     json.dump(kfcdb, outfile)
 
-print ('Done!')
+print (f'Complete! {count} monsters processed.')
 

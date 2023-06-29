@@ -1,0 +1,33 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+type = &ARGS&[0] if &ARGS& else ""
+dur = a.last('dur') if a.get('dur') else 1
+stat = a.last('stat') if a.get('stat') else ""
+desc="When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1"
+f_str = ""
+
+base = f'''embed -thumb {image} -color {color} -title "{name} uses their Bansche Purifier MENAD Pro MK I" '''
+
+if "ac" in type.lower():
+    if com:
+        eff = com.me.add_effect("Bansche Purifier MENAD Pro MK I", desc=desc, duration=dur, passive_effects={"ac_bonus": 1})
+        f_str = f"{com.me.name}|{eff}"
+    else:
+        f_str = f"{name}|**AC Bonus**: 1"
+elif "save" in type.lower():
+    if com:
+        description = desc + f"\n{stat} save bonus: 1" if stat != "" else desc
+        eff = com.me.add_effect("Bansche Purifier MENAD Pro MK I", desc=description, duration=dur)
+        f_str = f"{com.me.name}|{eff}"
+    else:
+        f_str = f"{name}|**{stat} save bonus**: 1"
+else:
+    f_str = f"Error|We don't know if this is a save bonus or ac bonus. Please run `{ctx.prefix}{ctx.alias} bpmpm save -stat dex` or `{ctx.prefix}{ctx.alias} bpmpm ac`. Also the default duration is until your next turn, so use the `-dur` parameter if you need to change it"
+
+base += f''' -f "{f_str}" '''
+base += f''' -f "Effect|{desc}" '''
+
+return base
+</drac2>

@@ -1,65 +1,134 @@
 {
-  "name": "Stun",
-  "level": 2,
-  "school": "Force",
-  "classes": "Light",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "60 feet",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "up to 1 minute",
-  "ritual": false,
-  "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the power ends on the target.",
-  "concentration": true,
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "save",
-          "stat": "wis",
-          "fail": [
-            {
-              "type": "ieffect2",
-              "name": "Paralyzed",
-              "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
-              "parent": "ieffect",
-              "buttons": [
-                {
-                  "label": "Resist Paralysis - End of Turn",
-                  "style": "1",
-                  "verb": "attempts to resist paralysis",
-                  "defaultDC": "lastSaveDC",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "self",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "wis",
-                          "fail": [],
-                          "success": [
-                            {
-                              "type": "remove_ieffect"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "success": []
-        }
-      ]
+      "flavor": {
+        "faction": "",
+        "environment": "",
+        "description": "",
+        "nameIsProper": false,
+        "imageUrl": "https://static.wikia.nocookie.net/starwars/images/4/4b/DSD1_dwarf_spider_droid.jpg",
+        "descriptionHtml": ""
+      },
+      "stats": {
+        "size": "Large",
+        "race": "Droid",
+        "alignment": "Unaligned",
+        "armorType": "Armor Plating",
+        "armorClass": 16,
+        "numHitDie": 10,
+        "speed": "40 ft., climb 40 ft.",
+        "abilityScores": {
+          "strength": 15,
+          "dexterity": 16,
+          "constitution": 12,
+          "intelligence": 10,
+          "wisdom": 10,
+          "charisma": 9
+        },
+        "proficiencyBonus": 4,
+        "damageVulnerabilities": [
+          "Ion"
+        ],
+        "damageResistances": [
+          "Necrotic",
+          "Poison",
+          "Psychic"
+        ],
+        "damageImmunities": [],
+        "conditionImmunities": [
+          "Poisoned",
+          "Disease"
+        ],
+        "senses": [
+          "Truesight 120 ft."
+        ],
+        "languages": [
+          "Binary",
+          "Galactic Basic"
+        ],
+        "challengeRating": 2,
+        "experiencePoints": 450,
+        "legendaryActionsPerRound": 3,
+        "legendaryActionsDescription": "",
+        "savingThrows": [],
+        "skills": [
+          {
+            "name": "Perception",
+            "proficient": true,
+            "modifier": 4,
+            "modifierStr": "Perception +4",
+            "$$hashKey": "object:10849"
+          }
+        ],
+        "additionalAbilities": [
+          {
+            "name": "Circuitry",
+            "description": "The spider droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10803"
+          },
+          {
+            "name": "Spider Climb",
+            "description": "the dsd1 dwarf spider droid can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10804"
+          }
+        ],
+        "actions": [
+          {
+            "name": "Blaster Cannon",
+            "description": "<i>Ranged Weapon Attack:</i> +7 to hit, range 100/400 ft., one target. <i>Hit:</i> 9 (1d12 + 3) energy damage.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10811"
+          },
+          {
+            "name": "Burst",
+            "description": "The spider droid sprays a 10-foot-cube area within normal range with shots. Each creature in the area must make a DC 13 Dexterity saving throw, taking 9 (1d12+3) energy damage on a failed save, or half as much on a successful one.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10812"
+          },
+          {
+            "name": "Claw",
+            "description": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 5 (1d6 + 2) kinetic damage.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10813"
+          },
+          {
+            "name": "Self-Destruct",
+            "description": "When the spider droid is reduced to half of its hit point maximum and is within 20 feet of a hostile creature, it attempts to self-destruct. Each creature within 20 feet of it must make a DC 13 Dexterity saving throw, taking 6d6 fire damage on a failed save, or half as much on a successful one.",
+            "descriptionHtml": {},
+            "$$hashKey": "object:10814"
+          }
+        ],
+        "reactions": [],
+        "legendaryActions": [],
+        "hitDieSize": 12,
+        "armorTypeStr": "(Armor Plating)",
+        "abilityScoreModifiers": {
+          "strength": 2,
+          "dexterity": 3,
+          "constitution": 1,
+          "intelligence": 0,
+          "wisdom": 0,
+          "charisma": -1
+        },
+        "abilityScoreStrs": {
+          "strength": "15 (+2)",
+          "dexterity": "16 (+3)",
+          "constitution": "12 (+1)",
+          "intelligence": "10 (+0)",
+          "wisdom": "10 (+0)",
+          "charisma": "9 (–1)"
+        },
+        "extraHealthFromConstitution": 10,
+        "hitPoints": 75,
+        "hitPointsStr": "75 (10d12 + 10)",
+        "passivePerception": 14,
+        "challengeRatingStr": "2"
+      },
+      "sharing": {
+        "linkSharingEnabled": false
+      },
+      "_id": "6429a58bb5e797974948fdd8",
+      "name": "DSD1 Dwarf Spider Droid",
+      "__v": 0,
+      "bestiaryId": "6429a58ab5e797974948fd97"
     }
-  ]
-}

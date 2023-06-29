@@ -57,6 +57,63 @@
         "type": "text",
         "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
       }
+    ],
+    "burst": [
+      {
+        "type": "roll",
+        "dice": "1d4",
+        "name": "cdamage"
+      },
+      {
+        "type": "save",
+        "stat": "con",
+        "fail": [
+          {
+            "type": "damage",
+            "damage": "{cdamage} [cold]"
+          },
+          {
+            "type": "ieffect",
+            "name": "Slowed",
+            "effects": "",
+            "end": true,
+            "duration": 1
+          },
+          {
+            "type": "condition",
+            "condition": "target.hp <= 0",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Frozen in Carbonite"
+              }
+            ],
+            "onFalse": []
+          }
+        ],
+        "success": [
+          {
+            "type": "damage",
+            "damage": "({cdamage})/2 [cold]"
+          },
+          {
+            "type": "condition",
+            "condition": "target.hp <= 0",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Frozen in Carbonite"
+              }
+            ],
+            "onFalse": []
+          }
+        ],
+        "dc": "14"
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      }
     ]
   },
   {
@@ -213,10 +270,6 @@
         ]
       },
       {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
             "type": "save",
             "stat": "dex",
             "fail": [
@@ -279,15 +332,13 @@
               }
             ],
             "dc": "14"
-          }
-        ]
-      },
+          },
       {
         "type": "text",
         "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
       }
     ],
-    "rapid": [
+    "rapid and burst": [
       {
         "type": "target",
         "target": "self",

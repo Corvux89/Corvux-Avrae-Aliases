@@ -34,12 +34,12 @@ if surge.type == 'roll':
 elif surge.type == 'health':
   Roll = vroll(surge.roll)
   c.modify_hp(Roll.total, overflow=False)
-  out.append(f'-f "HP Gained|{Roll.total}\n{c.hp_str}"')
+  out.append(f'-f "HP Gained|{Roll.total}\n{c.hp_str()}"')
 elif surge.type == 'ccint':
   c.mod_cc(TP, max(intelligenceMod, 1))
   out.append(f'-f "{TP} ({max(intelligenceMod, 1)})|{c.cc_str(TP)}"')
 elif surge.type == "cc":
-  cmod_cc(TP, max((c.get_cc_max(TP)-c.get_cc(TP))//2, 0))
+  c.mod_cc(TP, max((c.get_cc_max(TP)-c.get_cc(TP))//2, 0))
   out.append(f'-f "{TP} ({max((c.get_cc_max(TP)-c.get_cc(TP))//2, 0)})|{c.cc_str(TP)}"')
 elif surge.type == "effect":
   if Combat:
@@ -51,4 +51,4 @@ return " ".join(out)
 -color <color>
 -thumb <image>
 
--footer "{{ctx.prefix}}{{ctx.alias}} surge - Roll for chance | {{ctx.prefix}}{{ctx.alias}} surge [override|roll] - Force a roll | {{ctx.prefix}}{{ctx.alias}} surge [#] - Lookup a roll"
+-footer "{{ctx.prefix}}{{ctx.alias}} unstable surge - Roll for chance | {{ctx.prefix}}{{ctx.alias}} unstable surge [override|roll] - Force a roll | {{ctx.prefix}}{{ctx.alias}} unstable surge [#] - Lookup a roll"

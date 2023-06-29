@@ -11,12 +11,12 @@ def processAttacks(attacks, args):
             attack = attack.replace(f'{sup.processName(a.name)}', f'{args.last("title")}')
 
         if args.get('b'):
-            attack=attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
+            attack = attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
             if "burst" in a.name.lower() or "rapid" in a.name.lower():
-                attack=attack.replace('"8+proficiencyBonus', f'"8+proficiencyBonus+{args.last("b")}')
+                attack = attack.replace('"8+proficiencyBonus', f'"8+proficiencyBonus+{args.last("b")}')
 
         if args.get('d'):
-            attack=attack.replace('} [', '}' + f'+{args.last("d")} [')
+            attack = attack.replace('} [', '}' + f'+{args.last("d")} [')
 
         if args.get('criton'):
             if "criton" in attack:
@@ -24,13 +24,13 @@ def processAttacks(attacks, args):
                 crit = str(attack[index:attack[index:].find('}') + index])
                 attack = attack.replace(f'"criton": {crit}', f'"criton": {args.last("criton")}')
             else:
-                attack=attack.replace('_v": 2', f'_v": 2, "criton":{args.last("criton")}')
+                attack = attack.replace('_v": 2', f'_v": 2, "criton":{args.last("criton")}')
 
         if args.get('keen'):
             if "criton" in attack:
                 index = attack.find('"criton": ') + 10
                 crit = str(attack[index:attack[index:].find('}') + index])
-                attack = attack.replace(f'"criton": {crit}', f'"criton": {20-int(args.last("keen"))}')
+                attack = attack.replace(f'"criton": {crit}', f'"criton": {20 - int(args.last("keen"))}')
             else:
                 attack = attack.replace('_v": 2', f'_v": 2, "criton": {20 - int(args.last("keen"))}')
 
@@ -41,12 +41,13 @@ def processAttacks(attacks, args):
             if "extra_crit_damage" in attack:
                 index = attack.find('"extra_crit_damage": "') + 22
                 crit = str(attack[index:attack[index:].find('"') + index])
-                attack = attack.replace(f'"extra_crit_damage": "{crit}"', f'"extra_crit_damage": "{crit}+{args.last("c")}"')
+                attack = attack.replace(f'"extra_crit_damage": "{crit}"',
+                                        f'"extra_crit_damage": "{crit}+{args.last("c")}"')
             else:
-                attack=attack.replace('_v": 2', f'_v": 2,"extra_crit_damage": "{args.last("c")}"')
+                attack = attack.replace('_v": 2', f'_v": 2,"extra_crit_damage": "{args.last("c")}"')
 
         if args.get('noprof'):
-            attack=attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
+            attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
 
         if args.get('offhand'):
             attack = sup.updateName(attack, "Offhand")
@@ -60,16 +61,16 @@ def processAttacks(attacks, args):
         if args.get('double'):
             attack = sup.updateName(attack, "Double", False)
             if "finesse" in prop:
-                attack = attack.replace('+max(strengthMod,dexterityMod)','')
+                attack = attack.replace('+max(strengthMod,dexterityMod)', '')
             elif "heavy" in prop:
-                attack = attack.replace('+{ceil(strengthMod*1.5)}','')
+                attack = attack.replace('+{ceil(strengthMod*1.5)}', '')
             attack = attack.replace('+dexterityMod', '')
             attack = attack.replace('+strengthMod', '')
 
         if args.get('gwm'):
             attack = sup.updateName(attack, "Great", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus*2} [')
+            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus * 2} [')
 
         if args.get('sharp'):
             attack = sup.updateName(attack, "Sharpshooter", False)
@@ -85,11 +86,14 @@ def processAttacks(attacks, args):
             out.append(load_json(attack))
             attack = sup.updateName(attack, "Gunning", False)
             attack = attack.replace('proficiencyBonus+', '').replace('+proficiencyBonus', '')
-            attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus} [')
+            if "rapid - " in a.name.lower():
+                attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus * 2} [')
+            else:
+                attack = attack.replace('} [', '}' + f'+{c.stats.prof_bonus} [')
 
         if args.get('heavy'):
             if "finesse" in prop:
-                attack = attack.replace('+{max(strengthMod,dexterityMod)}','+{ceil(strengthMod*1.5)}')
+                attack = attack.replace('+{max(strengthMod,dexterityMod)}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{dexterityMod}', '+{ceil(strengthMod*1.5)}')
             attack = attack.replace('+{strengthMod}', '+{ceil(strengthMod*1.5)}')
 
@@ -143,7 +147,7 @@ def processAttacks(attacks, args):
 
         if "counter" in attack:
             index = attack.find('"counter": "') + 12
-            counter = str(attack[index:attack[index:].find('"')+index])
+            counter = str(attack[index:attack[index:].find('"') + index])
             if not c.cc_exists(counter):
                 reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
                 c.create_cc(counter, 0, reload, None, 'bubble', reload)
