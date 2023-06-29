@@ -4,6 +4,7 @@ from fractions import Fraction
 f = open('CritterDB.json', encoding='utf-8')
 count = 0
 critdb = json.load(f)
+saveAuto = []
 
 source = {}
 source["name"] = "Resolute"
@@ -37,8 +38,19 @@ for critter in critdb["creatures"]:
     kfcdb["monsters"].append(monster)
     count += 1
 
+    actions = critter["stats"].get("actions")
+
+    for a in actions:
+        if "saving throw" in a.get("description").lower():
+            saveAuto.append(f"{critter.get('name')}|{a.get('name')}")
+
 with open("KFC.json", "w") as outfile:
     json.dump(kfcdb, outfile)
 
-print (f'Complete! {count} monsters processed.')
+s_str = "\n".join(x for x in saveAuto)
+with open("automation.txt", "w") as outfile:
+    outfile.write(s_str)
+
+s_str = "\n".join(x for x in saveAuto)
+print (f'Complete! {count} monsters processed.\nMonster actions to automate: {len(saveAuto)}')
 
