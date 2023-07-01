@@ -7,6 +7,11 @@ def processAttacks(attacks, args):
         counter = ""
         prop = sup.getProperties(attack)
 
+        if not(sup.processName(a.name) == sup.baseName(a.name) or args.get('ammo')):
+            break
+        elif not args.get('ammo'):
+            attack = attack.replace(f'{a.name}', f'{sup.stripAmmo(a.name)}')
+
         if args.get('title'):
             attack = attack.replace(f'{sup.processName(a.name)}', f'{args.last("title")}')
 
@@ -33,9 +38,6 @@ def processAttacks(attacks, args):
                 attack = attack.replace(f'"criton": {crit}', f'"criton": {20 - int(args.last("keen"))}')
             else:
                 attack = attack.replace('_v": 2', f'_v": 2, "criton": {20 - int(args.last("keen"))}')
-
-        if args.get('dev'):
-            return err(f"{attack}")
 
         if args.get('c'):
             if "extra_crit_damage" in attack:

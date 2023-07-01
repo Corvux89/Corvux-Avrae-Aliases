@@ -1,0 +1,76 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+empower = None if not &ARGS& else &ARGS&[0].lower()
+die = f"1d{proficiencyBonus*2}"
+cc = "Force Points"
+i = '-i' in &ARGS&
+targets = a.get('t')
+targs = None
+dtype = "Energy" if not a.last('type') else a.last('type')
+cost = 1 if not targets else len(targets)
+footer = None
+
+v = c.cc_exists(cc) or i
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if c.get_cc(cc) < cost and not i:
+        base += f''' -title "{name} doesn't have enough {cc} remaining!" '''
+        return base
+
+    roll_str = vroll(die)
+
+    base += f''' -f "Meta|**Kinetic Combat Roll**: {roll_str}"'''
+
+    if empower.lower() == "deflection":
+        type=1
+        title = "Deflection"
+        f_str = f"{title}|When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits."
+    elif "double" in empower.lower() or "strike" in empower.lower():
+        type=2
+        title = "Double Strike"
+        f_str = f"{title}|When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled."
+    elif "slow" in empower.lower() or "time" in empower.lower():
+        type=3
+        title = "Slow Time"
+        f_str = f"{title}|When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn."
+    else:
+        return err("Help me help you...tell me how you want to help....")
+
+
+    if type == 1:
+        base += f''' -f "{name}|**AC Bonus**: {roll_str.total}" '''
+    elif type == 2:
+        if com and targets:
+            try:
+                targs = [com.get_combatant(x) for x in targets] if com else []
+            except:
+                return err("Invalid targets")
+
+            for t in targs:
+                dmg = t.damage(f'{roll_str.total} [{dtype}]')
+                base += f''' -f "{t.name}|{dmg.damage}" '''
+        else:
+            for t in targets:
+                base += f''' -f "{t}|**Damage**: {roll_str.total} [{dtype}]" '''
+    elif type == 3:
+        base += f''' -f "{name}|**Speed Increase**: {roll_str.total * 5}" '''
+
+
+    base += f''' -f "{f_str}" '''
+    base += f''' -title "{name} uses Force-Empowered Self!" '''
+
+    if com and targs and type==2:
+        foot_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in targs])
+        base += f''' -footer "{foot_str}" '''
+
+    if not i:
+        c.mod_cc(cc,-cost)
+        base += f''' -f "{cc} (-{cost})|{c.cc_str(cc)}" '''
+else:
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+return base
+</drac2>

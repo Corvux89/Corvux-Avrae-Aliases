@@ -2,11 +2,11 @@
 args = &ARGS&
 using(sup='df07d6ae-140d-45b1-b026-de831064acab', help='8b78365a-5c05-4c8f-8364-fbde2e3de862')
 output = "output" in args
-variable = load_json(get_gvar('00dd0732-865d-4004-a4c5-a66592b929f7'))
+variable = load_json(get_gvar('d098c09f-9cc8-444a-8b8d-d15c728fa134'))
 counter = ""
 
 if output:
-    args.remove("output")1
+    args.remove("output")
 
 if len(args)>1 and "-" not in args[1] and args[1] not in "offhandnoprofdouble":
     weapon = " ".join([args[0], args[1]])
@@ -16,8 +16,10 @@ else:
 args = argparse(args)
 attacks = []
 
-for gvar_str in variable:
+gvar_list = variable[0].get(weapon[0].lower())
+for gvar_str in gvar_list:
     gvar = load_json(get_gvar(gvar_str))
+
     for x in gvar:
         if help.processName(x.name).lower() == weapon.lower():
             attacks.append(x)

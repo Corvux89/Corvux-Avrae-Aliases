@@ -1,23 +1,10 @@
 import json
+import os
 
 total_count = 0
 
-f=open('weapons A.json', encoding='utf-8')
-total_count += len(json.load(f))
+for filename in os.listdir('weapons'):
+    f=open(os.path.join('weapons', filename), encoding='utf-8')
+    total_count += len(json.load(f))
 
-f = open('weapons C.json', encoding='utf-8')
-total_count += len(json.load(f))
-
-f = open('weapons D-G.json', encoding='utf-8')
-total_count += len(json.load(f))
-
-f = open('weapons H-Q.json', encoding='utf-8')
-total_count += len(json.load(f))
-
-f = open('weapons S.json', encoding='utf-8')
-total_count += len(json.load(f))
-
-f = open('weapons T-Z.json', encoding='utf-8')
-total_count += len(json.load(f))
-
-print(total_count)
+print(f"Total Weapons: {total_count}")

@@ -1,0 +1,4803 @@
+[
+  {
+    "name": "Cell, Power - Light Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Light, Power cell (range 40/160), Reload 8"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Cryo - Light Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Light, Power cell (range 40/160), Reload 8"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Deafening - Light Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [energy]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Light, Power cell (range 40/160), Reload 8"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Incendiary - Light Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Light, Power cell (range 40/160), Reload 8"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cell, Power - Light Repeater",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "5",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Light Repeater",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "5",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Light Repeater",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "5",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Light Repeater",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [energy]",
+                "overheal": false
+              },
+              {
+                "type": "condition",
+                "condition": "lastSaveRollTotal<14",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ]
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Repeating Blaster",
+            "amount": "5",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Auto, Power cell (range 50/200), Rapid 5, Reload 20, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Slug - Light Slugpistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Slugpistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Light, Reload 8, Slug cartridge (range 35/140)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Corrosive - Light Slugpistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [acid]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Disintegrated",
+                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 / 2 [acid]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Slugpistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Light, Reload 8, Slug cartridge (range 35/140)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Electrifying - Light Slugpistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 [lightning]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Shocked",
+                    "duration": "1",
+                    "effects": "",
+                    "end": true,
+                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4 / 2 [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Slugpistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Light, Reload 8, Slug cartridge (range 35/140)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cartridge, Gas - Light Slugpistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [kinetic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [poison]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "1",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": false,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 / 2 [poison]",
+                    "overheal": false
+                  }
+                ],
+                "dc": 14
+              },
+              {
+                "type": "text",
+                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Light Slugpistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Light, Reload 8, Slug cartridge (range 35/140)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightaxe",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d12+{ceil(strengthMod*1.5)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Heavy, Luminous, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightbaton",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Light, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightblade",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Hidden, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Power - Lightbow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightbow",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Power cell (range 60/240), Reload 2, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Cryo - Lightbow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightbow",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Power cell (range 60/240), Reload 2, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Deafening - Lightbow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightbow",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Power cell (range 60/240), Reload 2, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Incendiary - Lightbow",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6+{dexterityMod} [energy]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightbow",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Piercing 1, Power cell (range 60/240), Reload 2, Strength 15, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightclub",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{ceil(strengthMod*1.5)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Heavy, Luminous, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightcutlass",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Hidden, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightdagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Hidden, Light, Luminous, Thrown (range 20/60)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightfist",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Disguised, Disruptive, Fixed, Light, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightfoil",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Hidden, Luminous"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightglaive",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Dexterity 13, Luminous, Reach, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightkatana",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Hidden, Luminous, Piercing 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Lightkatana",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Hidden, Luminous, Piercing 1, Versatile (1d10)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Power - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Cryo - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Deafening - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "6",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "6",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "6",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Carbine",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Carbine",
+            "amount": "6",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 6, Reload 12, Strength 11, Two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Power - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Cryo - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Deafening - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [lightning]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Pistol",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Pistol",
+            "amount": "8",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 30/120), Penetrating 8, Reload 16"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Power - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Cryo - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Deafening - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [sonic]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [fire]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [cold]",
+                "overheal": false
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "damage"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [cold]"
+                  },
+                  {
+                    "type": "ieffect",
+                    "name": "Slowed",
+                    "effects": "",
+                    "end": true,
+                    "duration": 1
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [cold]"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "target.hp <= 0",
+                    "onTrue": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Frozen in Carbonite"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d4 cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn’t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Deafened",
+                    "duration": 10,
+                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                    "buttons": [
+                      {
+                        "label": "Resist Deafened",
+                        "style": 3,
+                        "verb": "attempts to resist deafened",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "dc": 14
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": [],
+                "dc": 14
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn’t deafened."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ablaze - Parent",
+            "duration": "10",
+            "save_as": "peff",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Incendiary Blaze",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8 [fire]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Ablaze",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave the blaze",
+                                  "verb": "Leaves the fire",
+                                  "style": "3"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "dc": 14,
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "1d8 [fire]"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "(1d8 / 2) [fire]"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Ablaze - Start of Turn",
+                                  "verb": "Starts their turn in the fire!",
+                                  "style": "4"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "(1d8 / 2) [fire]"
+                            }
+                          ],
+                          "dc": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{dexterityMod} [lightning]",
+                "overheal": false
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [fire]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ablaze",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave the blaze",
+                        "verb": "Leaves the fire",
+                        "style": "3"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "dc": 14,
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8 [fire]"
+                                  }
+                                ],
+                                "success": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "(1d8 / 2) [fire]"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ablaze - Start of Turn",
+                        "verb": "Starts their turn in the fire!",
+                        "style": "4"
+                      }
+                    ],
+                    "parent": "ieffect"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "(1d8 / 2) [fire]"
+                  }
+                ],
+                "dc": "14"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Lightning Rifle",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d8 fire damage or half as much on a successful one. A construct makes this save with disadvantage."
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightnodachi",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 17, Luminous, Piercing 1, Two-handed, Vicious 1"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightring",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Hidden, Luminous, Returning, Thrown (range 25/75)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Luminous, Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Lightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Luminous, Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightsaber Pike",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Double (1d8 energy), Luminous, Reach"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Lightstaff",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Dexterity 11, Luminous, Reach, Two-handed"
+      }
+    ],
+    "_v": 2
+  }
+]
