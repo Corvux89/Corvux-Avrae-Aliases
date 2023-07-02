@@ -1,9 +1,9 @@
 {
-  "name": "Self-Destruct",
+  "name": "Repeating Blaster Burst",
   "automation": [
     {
       "type": "roll",
-      "dice": "6d6 [fire]",
+      "dice": "1d12+3 [energy]",
       "name": "damage"
     },
     {
@@ -13,17 +13,17 @@
         {
           "type": "save",
           "stat": "dex",
-          "dc": 11,
-          "success": [
-            {
-              "type": "damage",
-              "damage": "{damage}/2"
-            }
-          ],
+          "dc": 14,
           "fail": [
             {
               "type": "damage",
               "damage": "{damage}"
+            }
+          ],
+          "success": [
+            {
+              "type": "damage",
+              "damage": "{damage}/2"
             }
           ]
         }
@@ -31,7 +31,7 @@
     },
     {
       "type": "text",
-      "text": "\"When the spider droid is reduced to half of its hit point maximum and is within 20 feet of a hostile creature, it attempts to self-destruct. Each creature within 20 feet of it must make a DC 13 Dexterity saving throw, taking 6d6 fire damage on a failed save, or half as much on a successful one."
+      "text": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 7 (2d4 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until the poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the poison on itself on a success."
     }
   ],
   "_v": 2

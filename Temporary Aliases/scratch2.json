@@ -1,28 +1,54 @@
 {
-  "name": "Oblivion",
+  "name": "Frightful Roar",
   "automation": [
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "attack",
-          "hit": [
+          "type": "save",
+          "stat": "wis",
+          "dc": 17,
+          "success": [],
+          "fail": [
             {
-              "type": "damage",
-              "damage": "1d8+5 [magical piercing]",
-              "overheal": false
+              "type": "ieffect2",
+              "desc": "Frightened of {caster.name}",
+              "duration": 10,
+              "buttons": [
+                {
+                  "label": "Resist Frightful Presence",
+                  "verb": "Attempts to resist frightful presence",
+                  "defaultDC": "lastSaveDC",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "wis",
+                          "dc": 16,
+                          "success": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "fail": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
-          ],
-          "miss": [],
-          "attackBonus": "9"
+          ]
         }
       ]
     },
     {
       "type": "text",
-      "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
-      "title": "Effect"
+      "text": "Each creature of the rancor's choice within 90 feet of it must succeed a DC 17  Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the Rancor is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the rancor's Frightful Roar for the next 24 hours."
     }
   ],
   "_v": 2

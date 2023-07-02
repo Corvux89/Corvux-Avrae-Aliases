@@ -9,12 +9,12 @@ base = f'''embed -thumb {image} -color {color}'''
 output = None
 m = None
 for g in gvar:
-    if &ARGS&[0].lower() == g.name.lower():
+    if &ARGS&[0].lower() == g.name.lower() or &ARGS&[0].lower() in g.name.lower():
         m=g
         break
 
 if m is None or m == "":
-    return err("m is not found/supported")
+    return err(f"{m} is not found/supported")
 
 if com:
     com.me.add_effect(m.name, duration=1)
