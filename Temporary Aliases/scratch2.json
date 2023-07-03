@@ -1,55 +1,18 @@
-{
-  "name": "Frightful Roar",
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "save",
-          "stat": "wis",
-          "dc": 17,
-          "success": [],
-          "fail": [
-            {
-              "type": "ieffect2",
-              "desc": "Frightened of {caster.name}",
-              "duration": 10,
-              "buttons": [
-                {
-                  "label": "Resist Frightful Presence",
-                  "verb": "Attempts to resist frightful presence",
-                  "defaultDC": "lastSaveDC",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "self",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "wis",
-                          "dc": 16,
-                          "success": [
-                            {
-                              "type": "remove_ieffect"
-                            }
-                          ],
-                          "fail": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "Each creature of the rancor's choice within 90 feet of it must succeed a DC 17  Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the Rancor is within line of sight, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the rancor's Frightful Roar for the next 24 hours."
-    }
-  ],
-  "_v": 2
-}
+[
+  {
+    "type": "target",
+    "target": "children",
+    "effects": [
+      {
+        "type": "condition",
+        "condition": "reg == 1",
+        "onTrue": [
+          {
+            "type": "remove_ieffect"
+          }
+        ],
+        "onFalse": []
+      }
+    ]
+  }
+]

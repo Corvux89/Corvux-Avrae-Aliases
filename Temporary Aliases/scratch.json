@@ -1,37 +1,42 @@
 {
-  "name": "Repeating Blaster Burst",
+  "name": "Bite",
   "automation": [
-    {
-      "type": "roll",
-      "dice": "1d12+3 [energy]",
-      "name": "damage"
-    },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "save",
-          "stat": "dex",
-          "dc": 14,
-          "fail": [
+          "type": "attack",
+          "attackBonus": 7,
+          "hit": [
             {
               "type": "damage",
-              "damage": "{damage}"
+              "damage": "1d4+4 [kinetic]"
+            },
+            {
+              "type": "ieffect2",
+              "name": "Grappled"
+            },
+            {
+              "type": "save",
+              "stat": "con",
+              "dc": 14,
+              "success": [],
+              "fail": [
+                {
+                  "type": "ieffect2",
+                  "name": "Stunned"
+                }
+              ]
             }
           ],
-          "success": [
-            {
-              "type": "damage",
-              "damage": "{damage}/2"
-            }
-          ]
+          "miss": []
         }
       ]
     },
     {
       "type": "text",
-      "text": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 7 (2d4 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until the poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the poison on itself on a success."
+      "text": "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 61 (1d4 + 4) kinetic damage. If the target is Medium or smaller, it is grappled (escape DC 14) and must succeed on a DC 14 Constitution saving throw or be stunned until this grapple ends."
     }
   ],
   "_v": 2

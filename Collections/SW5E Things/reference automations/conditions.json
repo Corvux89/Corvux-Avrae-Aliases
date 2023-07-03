@@ -1,0 +1,22 @@
+[
+  {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up"
+                  }
+                ],
+                "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition"
+              }
+]
