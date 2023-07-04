@@ -1,0 +1,68 @@
+def level(args):
+    ch = character()
+    dagger = '†'
+    newline = '\n'
+    args = [x.lower() for x in args]
+    remover = [args.remove(x) if x in args else None for x in
+               ["practice", "engineering", "specialist", "technique", "pursuit", "order", "approach", "path", "form",
+                "way", "of", "-cc"]]
+    inLevel = ([args.pop(args.index(x)) for x in args if x.isdigit()] + [''])[0]
+    help = args and not args[0] in "help?"
+    gvars = load_json(get_svar("swLevelDefaults"))
+    classSearch = args[0] if args else None
+    remover = args.remove(args[0]) if args else None
+    archetypeSearch = args[0] if args else None
+
+    # Find information
+    playerClass = getClass(gvars, classSearch)
+    playerArchetype = getArchetype(playerClass, archetypeSearch)
+
+    # Update Subclass CVAR
+    updateCVARS(playerClass, playerArchetype)
+
+
+    return err(f"Here")
+
+
+def getClass(gvars, str):
+    classList = []
+    ch = character()
+
+    if str:
+        for g in gvars:
+            classes = load_json(get_gvar(g))
+
+            for c in classes:
+                if str and c.Class.lower() == str.lower():
+                    classList.append(c)
+
+    if str and len(classList) == 0:
+        return err("**No class found matching that input.**\n Use `!swlevel options` to see your available classes.")
+
+    for g in gvars:
+        classes = load_json(get_gvar(g))
+        for c in classes:
+            for (pc, lvl) in ch.levels:
+                if c.Class.lower() == pc.lower():
+                    classList.append(c)
+
+    if len(classList) == 0:
+        return err("**No class found.**\n Use `!swlevel options` to see your available classes.")
+
+    return classList
+
+def getArchetype(playerClass, str):
+
+    if str:
+        for c in playerClass:
+            if c.get("subclass") and  c.get("subclass").lower() == str.lower():
+                return c
+    return None
+
+def updateCVARS(playerClass, playerArchetype):
+    subclass = load_json(character().get_cvar("subclass", "{}"))
+    subclass.update({f"{x.Class}Level":"" for x in playerClass if not subclass.get(f"{x.Class}Level")})
+    if playerArchetype:
+        subclass[f"{playerArchetype.Class}Level"]=playerArchetype.subclass
+
+    character().set_cvar("subclass", dump_json(subclass))

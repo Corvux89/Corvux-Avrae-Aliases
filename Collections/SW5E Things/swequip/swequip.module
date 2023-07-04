@@ -15,6 +15,15 @@ def processAttacks(attacks, args):
         if args.get('title'):
             attack = attack.replace(f'{sup.processName(a.name)}', f'{args.last("title")}')
 
+        if args.get('dmg'):
+            if "rapid" in a.name.lower():
+                die_str = args.last("dev")
+                numDie = int(die_str[:die_str.find("d")])*2
+                die_str = f"{numDie}{die_str[die_str.find('d'):]}"
+                attack = attack.replace(sup.get_damage_die(attack), die_str)
+            else:
+                attack = attack.replace(sup.get_damage_die(attack), args.last("dev"))
+
         if args.get('b'):
             attack = attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
             if "burst" in a.name.lower() or "rapid" in a.name.lower():

@@ -17,6 +17,7 @@ __Available Arguments__
 `-b` add a bonus to your to-hit
 
 **Damage**
+`-dmg` change the damage die on the attack
 `-d` add a bonus to your damage
 `-c` adds extra damage when a critical hit is scored. Accepts XdY dice strings or a flat number
 `-criton` allows you to set a different natural dice roll that scores a critical hit
