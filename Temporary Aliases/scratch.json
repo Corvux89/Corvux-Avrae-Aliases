@@ -1,52 +1,32 @@
-{
-  "name": "Mass Malacia",
-  "level": 3,
-  "school": "Force",
-  "classes": "Universal",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "120 feet (30-foot cube)",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "up to 1 minute",
-  "ritual": false,
-  "description": "Each creature in a 30-foot cube within range must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this power, the creature is incapacitated and has a speed of 0.\r\n\r\nThe power ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor. This power has no effect on droids or constructs.",
-  "concentration": true,
-  "automation": [
-    {
-      "type": "target",
-      "target": "self",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Mass Malacia - Parent",
-          "duration": 10,
-          "save_as": "peff"
-        }
-      ]
-    },
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "save",
-          "stat": "wis",
-          "fail": [
-            {
-              "type": "ieffect2",
-              "parent": "ieffect",
-              "name": "Mass Malacia",
-              "parent": "peff",
-              "desc": "Incapaciated and speed is 0"
-            }
-          ],
-          "success": []
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "Cerar'kal",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d12kh1+{ceil(strengthMod*1.5)} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "2+proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Brutal 1, Dexterity 15, Heavy, Keen 2, Luminous, Reach, Two-handed, Thrown (30/90)"
+      }
+    ],
+    "_v": 2,
+    "extra_crit_damage": "2d12kh1+1",
+    "criton": 18
+  }
+]
