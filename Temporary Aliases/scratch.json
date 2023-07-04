@@ -18,8 +18,35 @@
   "automation": [
     {
       "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Mass Malacia - Parent",
+          "duration": 10,
+          "save_as": "peff"
+        }
+      ]
+    },
+    {
+      "type": "target",
       "target": "each",
-      "effects": []
+      "effects": [
+        {
+          "type": "save",
+          "stat": "wis",
+          "fail": [
+            {
+              "type": "ieffect2",
+              "parent": "ieffect",
+              "name": "Mass Malacia",
+              "parent": "peff",
+              "desc": "Incapaciated and speed is 0"
+            }
+          ],
+          "success": []
+        }
+      ]
     }
   ]
 }

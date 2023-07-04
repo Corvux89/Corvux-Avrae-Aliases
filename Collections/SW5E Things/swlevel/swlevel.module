@@ -15,17 +15,19 @@ def level(args):
 
     # Find information
     playerClass = getClass(gvars, classSearch)
-    playerArchetype = getArchetype(playerClass, archetypeSearch)
+    playerArchetype = getArchetype(gvars, playerClass, archetypeSearch)
 
     # Update Subclass CVAR
     updateCVARS(playerClass, playerArchetype)
 
+    updateCounters(playerClass, playerArchetype)
 
     return err(f"Here")
 
 
 def getClass(gvars, str):
     classList = []
+    baseClass = []
     ch = character()
 
     if str:
@@ -41,22 +43,27 @@ def getClass(gvars, str):
 
     for g in gvars:
         classes = load_json(get_gvar(g))
+
         for c in classes:
-            for (pc, lvl) in ch.levels:
-                if c.Class.lower() == pc.lower():
-                    classList.append(c)
+            if not c.get("subclass"):
+                for (pc, lvl) in ch.levels:
+                    if c.Class.lower() == pc.lower() and not c.get("subclass"):
+                        classList.append(c)
 
     if len(classList) == 0:
         return err("**No class found.**\n Use `!swlevel options` to see your available classes.")
 
     return classList
 
-def getArchetype(playerClass, str):
-
+def getArchetype(gvars, playerClass, str):
+    class_list = [y for y in {x.Class for x in playerClass}]
     if str:
-        for c in playerClass:
-            if c.get("subclass") and  c.get("subclass").lower() == str.lower():
-                return c
+        for g in gvars:
+            classes = load_json(get_gvar(g))
+
+            for c in classes:
+                if c.get("subclass") and c.Class in class_list and c.get("subclass").lower() == str.lower():
+                    return c
     return None
 
 def updateCVARS(playerClass, playerArchetype):
@@ -66,3 +73,18 @@ def updateCVARS(playerClass, playerArchetype):
         subclass[f"{playerArchetype.Class}Level"]=playerArchetype.subclass
 
     character().set_cvar("subclass", dump_json(subclass))
+
+def updateCounters(playerClass, playerArchetype):
+    counters = []
+    ch = character()
+
+    for cl in playerClass:
+        for counter in cl.counters:
+            counters.append(counter.name)
+
+    return err(counters)
+
+
+
+
+

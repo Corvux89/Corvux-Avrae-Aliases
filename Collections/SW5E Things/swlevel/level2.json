@@ -1,0 +1,92 @@
+[
+  {
+    "Class": "Consularlight",
+    "subclass": "Lore",
+    "counters": [
+      {
+        "name": "Malleable Powers",
+        "level": 6,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You are so familiar with your force powers that you can modify them as you cast them. When you cast a force power using force points, you can replace its damage type with a type that appears in another force power you know.\n\nAdditionally, as an action, you can replace a force power you know with another force power that's available for you to learn, or you can replace a Force-Empowered Casting option you know with another option. Once you use this feature, you can't use it again until you finish a long rest."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast one of the powers you know from your Forcecasting Lore feature, you can do so as if the power was cast with a force slot two levels higher than the one you used.\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Lore",
+    "counters": [
+      {
+        "name": "Malleable Powers",
+        "level": 6,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You are so familiar with your force powers that you can modify them as you cast them. When you cast a force power using force points, you can replace its damage type with a type that appears in another force power you know.\n\nAdditionally, as an action, you can replace a force power you know with another force power that's available for you to learn, or you can replace a Force-Empowered Casting option you know with another option. Once you use this feature, you can't use it again until you finish a long rest."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast one of the powers you know from your Forcecasting Lore feature, you can do so as if the power was cast with a force slot two levels higher than the one you used.\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+      }
+    ]
+  }
+]
