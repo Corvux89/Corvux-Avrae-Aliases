@@ -714,24 +714,6 @@
     "concentration": false
   },
   {
-    "name": "Choke",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\r\n\r\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": false
-  },
-  {
     "name": "Cloaking Screen",
     "level": 4,
     "school": "Tech",
@@ -927,24 +909,6 @@
     "duration": "10 minutes",
     "ritual": false,
     "description": "For the duration, you gain the following benefits:\r\n- You are immune to the *homing rockets* tech power. \r\n- You and objects you are wearing or carrying cannot be detected by tech powers that reveal your location, such as *scan area* or *frequency scan*, unless the caster makes a successful Intelligence saving throw. \r\n- Creatures have disadvantage on Wisdom (Survival) checks to track you.",
-    "concentration": false
-  },
-  {
-    "name": "Crush",
-    "level": 6,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\r\n\r\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th.",
     "concentration": false
   },
   {
@@ -4094,24 +4058,6 @@
     "concentration": true
   },
   {
-    "name": "Mass Malacia",
-    "level": 3,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet (30-foot cube)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Each creature in a 30-foot cube within range must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this power, the creature is incapacitated and has a speed of 0.\r\n\r\nThe power ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor. This power has no effect on droids or constructs.",
-    "concentration": true
-  },
-  {
     "name": "Mass Repair Droid",
     "level": 5,
     "school": "Tech",
@@ -6681,7 +6627,7 @@
   {
     "name": "Force Current",
     "level": 1,
-    "school": "V",
+    "school": "Force",
     "automation": [
       {
         "type": "text",
@@ -14029,7 +13975,7 @@
                 "defaultDC": "spell_dc or 10"
               }
             ],
-            "desc": "Speed is halved\n - Lasts while within 15 ft. of {{caster.name}}"
+            "desc": "The target gains one level of slowed\n - Lasts while within 15 ft. of {{caster.name}}"
           }
         ]
       },
@@ -14200,5 +14146,185 @@
     "ritual": false,
     "description": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
     "concentration": true
+  },
+  {
+    "name": "Mass Malacia",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Mass Malacia - Parent",
+            "duration": "10",
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Mass Malacia",
+                "desc": "Incapaciated and speed is 0",
+                "parent": "peff"
+              }
+            ],
+            "success": []
+          }
+        ]
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet (30-foot cube)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Each creature in a 30-foot cube within range must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this power, the creature is incapacitated and has a speed of 0.\r\n\r\nThe power ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor. This power has no effect on droids or constructs.",
+    "concentration": true
+  },
+  {
+    "name": "Choke",
+    "level": 3,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\r\n\r\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "5d8 [force]",
+        "name": "damage",
+        "onHigher": {
+          "4": "1d8 [force]",
+          "5": "2d8 [force]",
+          "6": "3d8 [force]",
+          "7": "4d8 [force]",
+          "8": "5d8 [force]",
+          "9": "6d8 [force]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Restrained",
+                "desc": "4 Slowed levels\n - Attack rolls against the creature have advantage, and the creature’s attack rolls have disadvantage.\n - The creature has disadvantage on Dexterity saving throws.",
+                "effects": {
+                  "attack_advantage": -1,
+                  "save_dis": [
+                    "dex"
+                  ]
+                },
+                "duration": 2,
+                "end": true,
+                "tick_on_caster": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Crush",
+    "level": 6,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\r\n\r\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "10d8 [force]",
+        "name": "damage",
+        "onHigher": {
+          "7": "1d8 [force]",
+          "8": "2d8 [force]",
+          "9": "3d8 [force]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Paralyzed",
+                "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                "duration": 2,
+                "end": true,
+                "tick_on_caster": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

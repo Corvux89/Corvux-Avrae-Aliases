@@ -1,32 +1,56 @@
 [
   {
-    "name": "Cerar'kal",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d12kh1+{ceil(strengthMod*1.5)} [energy]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "2+proficiencyBonus+strengthMod"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Brutal 1, Dexterity 15, Heavy, Keen 2, Luminous, Reach, Two-handed, Thrown (30/90)"
-      }
-    ],
-    "_v": 2,
-    "extra_crit_damage": "2d12kh1+1",
-    "criton": 18
-  }
+  "Class": "Guardiandark",
+  "subclass": "Drallig",
+  "counters": [
+    {
+      "name": "Way of the Wyyyschook",
+      "level": 3,
+      "value": 1,
+      "reset": "long",
+      "display": "bubble",
+      "classLevel": "GuardiandarkLevel",
+      "desc": "As a bonus action, you can enter a focused stance for one minute. While in this stance, when you cast a power that calls for a melee weapon attack, you can instead make a ranged attack with a thrown weapon. If the attack hits, you add your Wisdom or Charisma modifier (your choice, minimum of +1) to the damage roll. Additionally, when you throw a weapon in this way, it automatically returns to your hand after the attack is complete, whether you hit or miss.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest."
+    },
+    {
+      "name": "Returning Strike",
+      "level": 15,
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "reset": "long",
+      "display": "bubble",
+      "classLevel": "GuardiandarkLevel",
+      "desc": "When you miss with a ranged attack with a thrown weapon, you can use your bonus action to repeat the attack against a creature within 15 feet and behind your initial target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.\n\nYou can use this feature a twice per long rest. You gain an additional use of this feature at 18th level."
+    },
+    {
+      "name": "Master of the Arc",
+      "level": 20,
+      "value": 1,
+      "reset": "long",
+      "display": "bubble",
+      "classLevel": "GuardiandarkLevel",
+      "desc": "Your throwing game is on point. Your Strength or Dexterity scores increase by 2. Your Strength or Dexterity and Wisdom or Charisma scores (your choice) increase by 2. Your maximum for these scores increases by 2. Additionally, you can use your action to gain the following benefits for 1 minute:\n\nYou have resistance to kinetic, energy, and ion damage from weapons.\nOnce per turn, when you hit a creature with a ranged weapon attack with a thrown weapon, you can make a second ranged weapon attack with that weapon against that creature.\nCreatures provoke an opportunity attack from you when they enter the range of your thrown weapons, and you can make ranged weapon attacks with your thrown weapons when making attacks of opportunity.\nThis effect ends early if you are incapacitated or die. Once you use this feature, you can’t use it again until you finish a long rest."
+    }
+  ]
+}
 ]

@@ -1,38 +1,42 @@
+gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
+ch = character()
+dagger = '†'
+image = ch.image
+color = ch.csettings.color
+footer = f"\"{ctx.prefix}swlevel v1.0 | @Corvux\""
+
 def level(args):
-    ch = character()
-    dagger = '†'
-    newline = '\n'
     args = [x.lower() for x in args]
     remover = [args.remove(x) if x in args else None for x in
                ["practice", "engineering", "specialist", "technique", "pursuit", "order", "approach", "path", "form",
                 "way", "of", "-cc"]]
     inLevel = ([args.pop(args.index(x)) for x in args if x.isdigit()] + [''])[0]
-    image = ch.image
-    color = ch.csettings.color
     help = args and args[0] in ["help","?"]
-    base = f'''embed -thumb {image} -color {color} -title "Level Summary for {ch.name}" -f "Total Level|{ch.levels.total_level}"'''
-    # gvars = load_json(get_svar("swLevelDefaults"))
-    gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4"]  # Here for testing
+    base = f'''embed -thumb {image} -color {color} -footer {footer} 
+    -f "Total Level|{ch.levels.total_level}" '''
     classSearch = args[0] if args else None
     remover = args.remove(args[0]) if args else None
     archetypeSearch = args[0] if args else None
     err_str = []
 
     if not help:
+        base += f''' -title "Level Summary for {ch.name}" '''
         # Initial Validation
         if inLevel and classSearch:
             for (cl, lvl) in ch.levels:
                 if classSearch.lower() in cl.lower():
                     inLevel = None
                     err_str.append(
-                        f"Cannot override class level|Your {cl} level is being set by your sheet. `{ctx.prefix}swlevel` can't alter this. You need to change your level on your sheet and `{ctx.prefix}update`")
+                        f"Cannot override class level|Your {cl} level is being set by your sheet. "
+                        f"`{ctx.prefix}swlevel` can't alter this. You need to change your level on your sheet "
+                        f"and `{ctx.prefix}update`")
 
         # Find information
-        playerClass = getClass(gvars, classSearch)
-        playerArchetype = getArchetype(gvars, playerClass, archetypeSearch)
+        playerClass = getClass(classSearch)
+        playerArchetype = getArchetype(playerClass, archetypeSearch)
 
-        # Update Subclass CVAR
-        updateCVARS(playerClass, playerArchetype)
+        # Update CVARs
+        updateCVARS(playerClass, playerArchetype, inLevel)
 
         # Hit Die
         hdStr = setupHD(playerClass, inLevel)
@@ -41,35 +45,75 @@ def level(args):
         base += f''' -f "Hit Die|{hdStr}|inline" '''
 
         # Total Levels
-        c_str, total_levels = get_levels(gvars)
+        c_str, total_levels = get_levels()
         base += f''' -f "Class Levels|{c_str}|inline" '''
 
         if total_levels > ch.levels.total_level:
-            err_str.append(f"Invalid Total Level|Your total class levels exceep your charcter level. Remember to `{ctx.prefix}update` your sheet with your new level.")
+            err_str.append(f"Invalid Total Level|Your total class levels exceed your character level. "
+                           f"Remember to `{ctx.prefix}update` your sheet with your new level.")
+
+        if dagger in c_str:
+            err_str.append(f"Unrecognized Class|One or more classes imported from your sheet are marked with "
+                           f"a dagger({dagger}). This means `{ctx.prefix}swlevel` does not recognize it and "
+                           f"therefore cannot make counters or hit dice for it. You will have to set those up manually.")
 
         # Setup Counters
         counters = getCounters(playerClass, playerArchetype, inLevel)
         updateCounters(counters, inLevel)
         c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
-        base += f''' -f  "Newly Created Counter{'s' if len(counters)>1 else ''}|{c_str}"'''
+        base += f''' -f  "Counter{'s' if len(counters)>1 else ''}|{c_str}"'''
+
+        for cl in playerClass:
+            level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
+            if level >= cl.get("subclassLevel") and cl.Class not in [x.Class for x in playerArchetype]:
+                err_str.append(f"Don't forget your subclass!|One or more of your classes is high enough level "
+                                f"to select a subclass, do so with `{ctx.prefix}swlevel <class> <archetype>`.")
 
         # Error Strings
-        test = "-f " + " -f".join(err_str)
-        return err(test)
+        if len(err_str) > 0:
+            base += " -f " + " -f ".join([f"\"{x}\"" for x in err_str])
+
+    else:
+        base += f''' -title "{ctx.prefix}swlevel help!" -desc "Coming soon" '''
+
+    if argparse(args).get('dev'):
+        return err(base)
 
     return base
 
+def options(args):
+    args = [x.lower() for x in args]
+    classSearch = args[0] if args else None
+    base = f'''embed -thumb {image} -color {color} -footer {footer} -title "Available {'Archetypes' if classSearch else 'Classes'}" '''
+    out_list = []
 
-def getClass(gvars, str):
+    for g in gvars:
+        classes = load_json(get_gvar(g))
+
+        if classSearch:
+            out_list = list({x.get("subclass") for x in classes if classSearch.lower() in x.Class.lower() and x.get("subclass")})
+            cl = list({x.get("Class") for x in classes if classSearch.lower() in x.Class.lower() and x.get("Class")})[0]
+        else:
+            out_list = list({x.Class for x in classes})
+
+    if len(out_list) == 0:
+        return err(f"**No class found matching that input.**\n"
+                   f"Use `{ctx.prefix}swlevel options to see your available classes.")
+    else:
+        base += f''' -f "{f'{cl} Subclasses:' if classSearch else 'Classes'}|{', '.join(out_list)}" '''
+
+    return base
+
+def getClass(str):
     classList = []
-    ch = character()
 
+    # Manually Entered
     if str:
         for g in gvars:
             classes = load_json(get_gvar(g))
 
             for c in classes:
-                if str and c.Class.lower() == str.lower() and not c.get("subclass"):
+                if str and c.Class.lower() == str.lower() and not c.get("subclass") and c not in classList:
                     classList.append(c)
 
     if str and len(classList) == 0:
@@ -80,9 +124,15 @@ def getClass(gvars, str):
 
         for c in classes:
             if not c.get("subclass"):
+
+                # From Character sheet
                 for (pc, lvl) in ch.levels:
-                    if c.Class.lower() == pc.lower() and not c.get("subclass"):
+                    if c.Class.lower() == pc.lower() and not c.get("subclass") and c not in classList:
                         classList.append(c)
+
+                # Overrides
+                if ch.get_cvar(f"{c.Class}Level") and c not in classList:
+                    classList.append(c)
 
     if len(classList) == 0:
         return err("**No class found.**\n Use `!swlevel options` to see your available classes.")
@@ -90,16 +140,16 @@ def getClass(gvars, str):
     return classList
 
 
-def get_levels(gvars):
+def get_levels():
     out_list = []
     total_level = 0
-    ch = character()
+    ref_list = []
 
     for g in gvars:
         classes = load_json(get_gvar(g))
-        ref_set = {x.Class for x in classes if x.Class != "ExampleClass"}
+        ref_list += list({x.Class for x in classes if x.Class != "ExampleClass"})
 
-    ref_set = {x: 0 for x in ref_set}
+    ref_set = {x: 0 for x in ref_list}
 
     for cl in ref_set:
         cl_str = None
@@ -117,35 +167,48 @@ def get_levels(gvars):
 
         out_list.append(f"{cl_str}: {ref_set[cl]}") if cl_str else ""
 
+    for (cl, lvl) in ch.levels:
+        if cl not in ref_set:
+            out_list.append(f"{cl}{dagger}: {lvl}")
+
     cl_str = "\n".join(out_list)
 
     return cl_str, total_level
 
 
-def getArchetype(gvars, playerClass, str):
+def getArchetype(playerClass, str):
     class_list = [y for y in {x.Class for x in playerClass}]
-    if str:
-        for g in gvars:
-            classes = load_json(get_gvar(g))
+    archetype = []
+    subclass = load_json(ch.get_cvar("subclass")) if ch.get_cvar("subclass") else {}
+    for g in gvars:
+        classes = load_json(get_gvar(g))
 
-            for c in classes:
-                if c.get("subclass") and c.Class in class_list and c.get("subclass").lower() == str.lower():
-                    return c
-    return None
+        for c in classes:
+            if c.get("subclass") and c.Class in class_list and str and c.get("subclass").lower() == str.lower():
+                archetype.append(c)
+            elif c.get("subclass") and subclass.get(f"{c.Class}Level") == c.get("subclass"):
+                archetype.append(c)
+
+    return archetype
 
 
-def updateCVARS(playerClass, playerArchetype):
-    subclass = load_json(character().get_cvar("subclass", "{}"))
+def updateCVARS(playerClass, playerArchetype, inLevel):
+    subclass = load_json(ch.get_cvar("subclass", "{}"))
     subclass.update({f"{x.Class}Level": "" for x in playerClass if not subclass.get(f"{x.Class}Level")})
-    if playerArchetype:
-        subclass[f"{playerArchetype.Class}Level"] = playerArchetype.subclass
+
+    if len(playerArchetype) > 0:
+        for arch in playerArchetype:
+            subclass[f"{arch.Class}Level"] = arch.subclass
 
     character().set_cvar("subclass", dump_json(subclass))
+
+    for c in playerClass:
+        if not ch.levels.get(c.Class) and inLevel:
+            ch.set_cvar(f"{c.Class}Level", inLevel)
 
 
 def getCounters(playerClass, playerArchetype, inLevel):
     counters = []
-    ch = character()
 
     for cl in playerClass:
         level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
@@ -153,48 +216,37 @@ def getCounters(playerClass, playerArchetype, inLevel):
             if level >= counter.level:
                 counters.append(counter)
 
-    if playerArchetype:
-        level = ch.levels.get(playerArchetype.Class) if not inLevel else int(inLevel)
-        for counter in playerArchetype.counters:
-            if level >= counter.level:
-                counters.append(counter)
-
+    if len(playerArchetype)>0:
+        for arch in playerArchetype:
+            level = ch.levels.get(arch.Class) if not inLevel else int(inLevel)
+            for counter in arch.counters:
+                if level >= counter.level:
+                    counters.append(counter)
     return counters
 
 
 def updateCounters(counters, inLevel):
-    ch = character()
     for counter in counters:
-        # Existing value?
-        if ch.cc_exists(counter.name):
-            existing_value = int(ch.get_cc_max(counter.name))
-        else:
-            existing_value = 1
-
         # Class level
         level = int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel)
 
         # Max Value
-        max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value
+        max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
 
         # Max value modifier
         modifier = counter.modifier if 'modifier' in counter else 0
-        modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier
+        modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
 
         # Reset on
         reset = counter.reset.split('$')
         reset = reset[0] if not '$' in counter.reset or level < int(reset[1]) else reset[2]
 
-        # Determine max value:
-        max_value = f"{max(existing_value, max_value) if typeof(max_value) == 'int' else max_value} + {modifier}"
-
         # Create the counters
-        ch.create_cc(counter.name, 0, max_value, reset, counter.display,
+        ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display,
                      counter.get('reset_to'), None, None, counter.get('desc'))
 
 
 def setupHD(playerClass, inLevel):
-    ch = character()
     hitDict = {"d6": 0, "d8": 0, "d10": 0, "d12": 0}
     out = []
     for cl in playerClass:

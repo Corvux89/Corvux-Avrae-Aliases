@@ -146,6 +146,9 @@ def processAttacks(attacks, args):
         if args.get("sonorous"):
             attack = weap.sonorous(attack, args)
 
+        if args.get("staggering"):
+            attack = weap.staggering(attack, args)
+
         if args.get('burst') and 'rapid' not in a.name.lower():
             burst = weap.burst(attack, args)
             if burst:

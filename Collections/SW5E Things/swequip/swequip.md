@@ -37,6 +37,7 @@ __Available Arguments__
 `-neuralizing`
 `-shocking`
 `-sonorous`
+`-staggering`
 `-burst`
 `-rapid`
 

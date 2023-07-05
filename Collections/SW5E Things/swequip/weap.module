@@ -266,3 +266,29 @@ def rapid(attack, args):
     rapid = {"name": f"Rapid - {a.name}", "_v": 2, "automation": [target, text]}
 
     return dump_json(rapid)
+
+def staggering(attack, args):
+    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    dc = 13 if args.last('staggering') == 'True' else int(args.last('staggering'))
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Staggering Oscillator",
+            "text": "When you hit with the weapon, you can force the target to make a DC 13 Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."}
+    effect = {"type": "ieffect2", "name": "Prone",
+              "buttons": [{"label": "Stand Up", "verb": "stands up", "automation": [{"type": "remove_ieffect"}]}],
+              "duration": 1}
+
+    save = {"type": "save", "stat": "str", "dc": f"{dc}", "fail": [effect], "success": []}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(save)
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(save)
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
