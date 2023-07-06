@@ -242,6 +242,40 @@
     ]
   },
   {
+    "Class": "Berserker",
+    "subclass": "Nightbrother",
+    "counters": [
+      {
+        "name": "Commune with the Dead",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "You have learned a limited version of the Nightsister’s Ritual Witchcraft that allows you to consult with the spirits of the past. When you do so, you may cast the Danger Sense, Locate Object, or Locate Creature Force Powers, without using Force Points. When cast the spirit of one of your ancestors materializes in a greenish aura. This spirit is visible only to you and those with the ability to detect invisible creatures or True Sight. Wisdom is your Forcecasting ability for these powers. After you cast any power in this way, you can’t use this feature again until you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Projection",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Bonesetter",
+    "counters": [
+      {
+        "name": "Don't You Die On Me",
+        "level": 10,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "desc": "As an action, you can touch a creature that has 0 hit points and expend one use of your Rage to aggressively administer medical care. The creature regains a number of hit points equal to 4d10 + your rage damage bonus. If the creature was subject to any of the following conditions, they are removed: blinded, deafened, paralyzed, poisoned, and stunned.\n\nWhen you reach 14th level in this class, you can expend two uses of your Rage to use this feature on the corpse of a creature that died within the past minute. The creature returns to life and receives the benefits listed above.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
     "Class": "Consularlight",
     "hitDie": "d6",
     "subclassLevel": 3,
@@ -617,6 +651,92 @@
         "reset": "short",
         "classLevel": "ConsularlightLevel",
         "desc": "You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a force power. Once you’ve used this feature, you can’t use it again until you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Tutelage (Companionless)",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Strength Flows From the Force",
+        "level":6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "When you cast a force power that targets only your Force Bonded Creature, you can choose to treat the power as if you cast it at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown on the consular table. You regain all expenses uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Wildfire",
+    "counters": [
+      {
+        "name": "Roaring Force",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "The duration of any ignited condition you apply to a creature that is also under the effect of your Incinerate feature increases to the remaining duration of your Incinerate feature. A creature (or another creature within 5 feet of it) can use its action to end both effects.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher, you can apply the effect of your Incinerate feature on any number of creatures suffering from the ignited condition that you hit with a force attack or fails its saving throw to resist the power's effects. This use of your Incinerate feature does not count against your maximum number of uses. You can use this feature once, and regain the use of it at the end of a short or long rest."
+      },
+      {
+        "name": "Heart of the Phoenix",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "When you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead and immediately become petrified until the start of your next turn. If you do, you do not become unconscious, but remain in a state of suspended animation. You are aware, but unable to speak or interact with your surroundings. At the start of your next turn, you erupt in a fiery burst of force energy to creatures within 10 feet of you. The damage you deal equals 1d10 fire damage for each creature suffering from the ignited condition or your Incinerate feature within 60 feet of you, up to a maxium of 10d10 fire damage.\n\nOnce you use this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Firestorm",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Harmonics",
+    "counters": [
+      {
+        "name": "From the Core",
+        "level": 3,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a force power that deals sonic damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal sonic damage. If the power would call for a saving throw other than Constitution, it instead calls for a Constitution saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become deafened until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Words of Power",
+        "level": 6,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel"
+      },
+      {
+        "name": "Universal Harmony",
+        "level": 18,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel"
       }
     ]
   },
@@ -1001,6 +1121,92 @@
     ]
   },
   {
+    "Class": "Consulardark",
+    "subclass": "Tutelage (Companionless)",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Strength Flows From the Force",
+        "level":6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "When you cast a force power that targets only your Force Bonded Creature, you can choose to treat the power as if you cast it at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown on the consular table. You regain all expenses uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Wildfire",
+    "counters": [
+      {
+        "name": "Roaring Force",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "The duration of any ignited condition you apply to a creature that is also under the effect of your Incinerate feature increases to the remaining duration of your Incinerate feature. A creature (or another creature within 5 feet of it) can use its action to end both effects.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher, you can apply the effect of your Incinerate feature on any number of creatures suffering from the ignited condition that you hit with a force attack or fails its saving throw to resist the power's effects. This use of your Incinerate feature does not count against your maximum number of uses. You can use this feature once, and regain the use of it at the end of a short or long rest."
+      },
+      {
+        "name": "Heart of the Phoenix",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "When you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead and immediately become petrified until the start of your next turn. If you do, you do not become unconscious, but remain in a state of suspended animation. You are aware, but unable to speak or interact with your surroundings. At the start of your next turn, you erupt in a fiery burst of force energy to creatures within 10 feet of you. The damage you deal equals 1d10 fire damage for each creature suffering from the ignited condition or your Incinerate feature within 60 feet of you, up to a maxium of 10d10 fire damage.\n\nOnce you use this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Firestorm",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Harmonics",
+    "counters": [
+      {
+        "name": "From the Core",
+        "level": 3,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a force power that deals sonic damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal sonic damage. If the power would call for a saving throw other than Constitution, it instead calls for a Constitution saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become deafened until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Words of Power",
+        "level": 6,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel"
+      },
+      {
+        "name": "Universal Harmony",
+        "level": 18,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel"
+      }
+    ]
+  },
+  {
     "Class": "Engineer",
     "subclassLevel": 3,
     "hitDie": "d8",
@@ -1288,6 +1494,88 @@
         "reset": "short",
         "classLevel": "EngineerLevel",
         "desc": "When you cast a tech power, you can choose to deal maximum damage or provide maximum healing with that power.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Munitions",
+    "counters": [
+      {
+        "name": "Collateral Damage",
+        "level": 18,
+        "value": "max(intelligenceMod,1)",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "When an ammunition you control affects an area, you can choose to maximize its explosive potential. A radius or cone area doubles in size, or a line area doubles in either length or width (your choice).\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Strategic",
+    "counters": [
+      {
+        "name": "Aura of Command",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel"
+      },
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "EngineerLevel"
+      },
+      {
+        "name": "High Command",
+        "level": 18,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Any battle is yours to control.\n\nWhen you roll a critical hit with an attack, you can expend a superiority die to immediately take an additional turn. Once you use this ability you cannot use it again until you finish a long rest.\n\nIn addition, you can expend four tech points to regain an expended superiority die, or expend a superiority die to regain four expended tech points, both up to their maximums."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Prismatic",
+    "counters": [
+      {
+        "name": "Material Refraction",
+        "level": 14,
+        "value": 2,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Weapon attacks using your modified beam cannon's penetrating property now target all creatures in a line up to its normal range, originating from you.\n\nAdditionally, when you attack your initial target with your modified beam cannon or a tech power that requires an attack roll or Dexterity saving throw to resist damage, you can choose to expend a number of tech points up to your proficiency bonus to cause the effect to split on impact into an equal number of projectiles. The original attack or effect is resolved, and you can then target a number of creatures equal to the number of projectiles within 30 feet of the original target, making subsequent attack rolls with equal bonus to hit or imposing the saving throw DC equal to that of the original target. On a hit or failed saving throw, the secondary target takes half the damage of the original effect. You cannot target the original target creature again with the secondary attack or saving throw.\n\nYou can use this ability twice per long rest."
       }
     ]
   },
@@ -1647,6 +1935,74 @@
         "reset": "long",
         "display": "bubble",
         "classLevel": "FighterLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Journeyman",
+    "counters": [
+      {
+        "name": "Foe Sense",
+        "level": 3,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "bubble",
+        "value": [
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "Bad Feeling",
+        "level": 3,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "bubble",
+        "value": 1,
+        "desc": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Covert",
+    "counters": [
+      {
+        "name": "A Knife in the Dark",
+        "level": 7,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "short",
+        "value": [0,0,0,0,0,0,2,2,3,3,3,3,4,4,4,4,5,5,5,5],
+        "desc": "When you would roll a critical hit against a creature or would reduce a creature to 0 hit points while hidden, you can choose to turn invisible until the start of your next, or if you attack, cast a power, or otherwise take a hostile action.\n\nYou can use this feature twice per short or long rest. You gain an additional use at 9th, 13th, and 17th level."
+      },
+      {
+        "name": "Vital Strike",
+        "level": 18,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "short",
+        "value": 2,
+        "desc": "When you would roll a critical hit from a creature you are hidden from, you can choose to roll the weapons dice three times instead of twice.\n\nYou can use this feature twice per short or long rest."
       }
     ]
   },
@@ -2112,6 +2468,66 @@
   ]
 },
   {
+    "Class": "Guardianlight",
+    "subclass": "Bakuuni",
+    "counters": [
+      {
+        "name": "The Way of the Gundark",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardianlightLevel"
+      },
+      {
+        "name": "Tempered By The Force",
+        "level": 15,
+        "value": "max(wisdomMod, charismaMod, 1)",
+        "reset": "long",
+        "classLevel": "GuardianlightLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Master of Pulverizing",
+        "level": 20,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "GuardianlightLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Guardianlight",
+    "subclass": "Mastery",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "GuardianlightLevel"
+      },
+      {
+        "name": "Way of the Katarn",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardianlightLevel"
+      },
+      {
+        "name": "Master of the Forms",
+        "level": 20,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardianlightLevel"
+      }
+    ]
+  },
+  {
     "Class": "Guardiandark",
     "hitDie": "d10",
     "subclassLevel": 3,
@@ -2566,5 +2982,65 @@
       "desc": "Your throwing game is on point. Your Strength or Dexterity scores increase by 2. Your Strength or Dexterity and Wisdom or Charisma scores (your choice) increase by 2. Your maximum for these scores increases by 2. Additionally, you can use your action to gain the following benefits for 1 minute:\n\nYou have resistance to kinetic, energy, and ion damage from weapons.\nOnce per turn, when you hit a creature with a ranged weapon attack with a thrown weapon, you can make a second ranged weapon attack with that weapon against that creature.\nCreatures provoke an opportunity attack from you when they enter the range of your thrown weapons, and you can make ranged weapon attacks with your thrown weapons when making attacks of opportunity.\nThis effect ends early if you are incapacitated or die. Once you use this feature, you can’t use it again until you finish a long rest."
     }
   ]
-}
+},
+  {
+    "Class": "Guardiandark",
+    "subclass": "Bakuuni",
+    "counters": [
+      {
+        "name": "The Way of the Gundark",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardiandarkLevel"
+      },
+      {
+        "name": "Tempered By The Force",
+        "level": 15,
+        "value": "max(wisdomMod, charismaMod, 1)",
+        "reset": "long",
+        "classLevel": "GuardiandarkLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Master of Pulverizing",
+        "level": 20,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "GuardiandarkLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Guardiandark",
+    "subclass": "Mastery",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "GuardiandarkLevel"
+      },
+      {
+        "name": "Way of the Katarn",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardiandarkLevel"
+      },
+      {
+        "name": "Master of the Forms",
+        "level": 20,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "GuardiandarkLevel"
+      }
+    ]
+  }
 ]

@@ -91,15 +91,17 @@ def options(args):
         classes = load_json(get_gvar(g))
 
         if classSearch:
-            out_list = list({x.get("subclass") for x in classes if classSearch.lower() in x.Class.lower() and x.get("subclass")})
-            cl = list({x.get("Class") for x in classes if classSearch.lower() in x.Class.lower() and x.get("Class")})[0]
+            out_list += list({x.get("subclass") for x in classes if classSearch.lower() in x.Class.lower() and x.get("subclass")})
+            cl = list({x.get("Class") for x in classes if classSearch.lower() in x.Class.lower() and x.get("Class")})
+            cl = cl[0] if len(cl) > 0 else ""
         else:
-            out_list = list({x.Class for x in classes})
+            out_list += list({x.Class for x in classes})
 
     if len(out_list) == 0:
         return err(f"**No class found matching that input.**\n"
                    f"Use `{ctx.prefix}swlevel options to see your available classes.")
     else:
+        out_list.sort()
         base += f''' -f "{f'{cl} Subclasses:' if classSearch else 'Classes'}|{', '.join(out_list)}" '''
 
     return base

@@ -2087,24 +2087,6 @@
     "concentration": true
   },
   {
-    "name": "Force Chain Lightning",
-    "level": 6,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "150 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\r\n\r\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.",
-    "concentration": false
-  },
-  {
     "name": "Force Concealment",
     "level": 2,
     "school": "Force",
@@ -2264,42 +2246,6 @@
     "duration": "1 round",
     "ritual": false,
     "description": "Until the end of your next turn, you can use your forcecasting ability score instead of your Strength score when you jump, and always count as having made a running start before jumping.",
-    "concentration": false
-  },
-  {
-    "name": "Force Lightning",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (100-foot line)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \r\n\r\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
-    "concentration": false
-  },
-  {
-    "name": "Force Lightning Cone",
-    "level": 7,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (60-foot cone)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th.",
     "concentration": false
   },
   {
@@ -2605,24 +2551,6 @@
     "duration": "up to 10 minutes",
     "ritual": false,
     "description": "You shift your vision to see through use of the Force; colors fade and inanimate objects appear as shades of gray. For the duration, you gain the following benefits.\r\n- Living things glow with the power of the Force. Those with an affinity for the light side glow blue, those with an affinity for the dark side glow red, and those with no attunement to either side of the Force glow yellow. How bright they glow is determined by how strong their connection to the Force is.\r\n- You gain blindsight to 30 feet.\r\n- You have advantage on Wisdom (Perception) checks that rely on sight against living targets within 30 feet.",
-    "concentration": true
-  },
-  {
-    "name": "Force Storm",
-    "level": 9,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "150 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\r\n\r\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried.",
     "concentration": true
   },
   {
@@ -14264,6 +14192,10 @@
             ]
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\n\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
       }
     ]
   },
@@ -14324,6 +14256,383 @@
             ]
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\n\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th."
+      }
+    ]
+  },
+  {
+    "name": "Force Chain Lightning",
+    "level": 6,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\r\n\r\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "10d8 [lightning]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\n\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th."
+      }
+    ]
+  },
+  {
+    "name": "Force Lightning",
+    "level": 3,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (100-foot line)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \r\n\r\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "8d6 [lightning]",
+        "name": "damage",
+        "onHigher": {
+          "4": "1d8 [lightning]",
+          "5": "2d8 [lightning]",
+          "6": "3d8 [lightning]",
+          "7": "4d8 [lightning]",
+          "8": "5d8 [lightning]",
+          "9": "6d8 [lightning]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \n\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+      }
+    ]
+  },
+  {
+    "name": "Force Lightning Cone",
+    "level": 7,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (60-foot cone)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "12d6 [lightning]",
+        "name": "damage",
+        "onHigher": {
+          "8": "2d6 [lightning]",
+          "9": "4d6 [lightning]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\n\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th."
+      }
+    ]
+  },
+  {
+    "name": "Force Storm",
+    "level": 9,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\r\n\r\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "30d6 [lightning]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Storm - Parent",
+            "save_as": "peff",
+            "parent": "ieffect",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Spread - Force Storm",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "30d6 [lightning]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Force Storm",
+                              "parent": "ieffect",
+                              "buttons": [
+                                {
+                                  "label": "Force Storm - Start of Turn",
+                                  "verb": "starts their turn in the storm!",
+                                  "style": 4,
+                                  "defaultDC": "lastSaveDC",
+                                  "automation": [
+                                    {
+                                      "type": "roll",
+                                      "dice": "30d6 [lightning]",
+                                      "name": "damage"
+                                    },
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "{damage}"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "{damage}/2"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "label": "Leave Force Storm",
+                                  "verb": "leaves the storm",
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "remove_ieffect"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Force Storm",
+                "parent": "peff",
+                "buttons": [
+                  {
+                    "label": "Force Storm - Start of Turn",
+                    "verb": "starts their turn in the storm!",
+                    "style": 4,
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "roll",
+                        "dice": "30d6 [lightning]",
+                        "name": "damage"
+                      },
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "dex",
+                            "fail": [
+                              {
+                                "type": "damage",
+                                "damage": "{damage}"
+                              }
+                            ],
+                            "success": [
+                              {
+                                "type": "damage",
+                                "damage": "{damage}/2"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Leave Force Storm",
+                    "verb": "leaves the storm",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
       }
     ]
   }

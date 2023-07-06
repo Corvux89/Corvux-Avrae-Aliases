@@ -193,6 +193,42 @@
     ]
   },
   {
+    "Class": "Monk",
+    "subclass": "Verdanaian",
+    "counters": [
+      {
+        "name": "Sticky Body",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "MonkLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Monk",
+    "subclass": "Kov'nyn",
+    "counters": [
+      {
+        "name": "Customized Gauntlet",
+        "level": 6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "MonkLevel"
+      },
+      {
+        "name": "Flames of Mandalore - Merciless Fire",
+        "level": 17,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "MonkLevel"
+      }
+    ]
+  },
+  {
     "Class": "Operative",
     "hitDie": "d8",
     "subclassLevel": 3,
