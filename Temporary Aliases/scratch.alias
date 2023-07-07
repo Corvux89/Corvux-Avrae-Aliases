@@ -1,8 +1,8 @@
-!alias passive embed {{args,raw=&ARGS&,get_raw()}}
-{{skill,help=([x for x in raw.skills if args and args[0].lower().replace(" ","") in x.lower()]+["perception"])[0],args and args[0] in "help?"}}
-{{eff=raw.skill_effects.get(skill,"")}}
-{{obs,adv,dis,b="+5 [observant]" if "observant" in get("feats","").lower() and skill in ["perception","investigation"] else "","+5 [advantage]" if not ("dis" in args or eff=="dis") and ("adv" in args or eff=="adv") else "","-5 [disadvantage]" if not ("adv" in args or eff=="adv") and ("dis" in args or eff=="dis") else "",'+'+argparse(args).join('b','+') if argparse(args).last('b') else ''}}
--title "<name> {{'needs help using' if help else 'uses'}} their Passive {{'Skills' if help else skill.replace('H',' H').replace('O',' O').title()}}!"
--desc "{{"`!passive` with no skill passed into it will return your Passive Perception. Passing a different skill will call that passive skill.\n\nUse `-b #` or `-b XdY` to add conditional bonuses.\n\n`!passive` accepts the `adv` and `dis` args to modify your passive skills on the fly, and also checks your `get_raw().skill_effects` set by your sheet for constant adv/dis.\n\nIf you have the Observant feat added via `!manage` or in a cvar named `feats`, `!passive` will properly apply the +5 bonus to your passive Perception and Investigation scores." if help else vroll(f"10+{raw.skills[skill]}{obs}{adv}{dis}{b}")}}"
--color <color> -thumb <image>
--footer "!passive [skill name] [adv/dis] [-b #] | !passive ?"
+<drac2>
+c = character()
+for attack in c.attacks:
+    return err(f"{attack.str}")
+
+return err("nope")
+
+</drac2>

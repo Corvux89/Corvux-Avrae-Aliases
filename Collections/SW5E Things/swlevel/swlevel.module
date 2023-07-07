@@ -1,4 +1,4 @@
-gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
+gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339", "0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b"]
 ch = character()
 dagger = '†'
 image = ch.image
@@ -7,9 +7,11 @@ footer = f"\"{ctx.prefix}swlevel v1.0 | @Corvux\""
 
 def level(args):
     args = [x.lower() for x in args]
+    dev = True if argparse(args).get('dev') else False
+
     remover = [args.remove(x) if x in args else None for x in
                ["practice", "engineering", "specialist", "technique", "pursuit", "order", "approach", "path", "form",
-                "way", "of", "-cc"]]
+                "way", "of", "-cc", "-dev"]]
     inLevel = ([args.pop(args.index(x)) for x in args if x.isdigit()] + [''])[0]
     help = args and args[0] in ["help","?"]
     base = f'''embed -thumb {image} -color {color} -footer {footer} 
@@ -68,6 +70,10 @@ def level(args):
             if level >= cl.get("subclassLevel") and cl.Class not in [x.Class for x in playerArchetype]:
                 err_str.append(f"Don't forget your subclass!|One or more of your classes is high enough level "
                                 f"to select a subclass, do so with `{ctx.prefix}swlevel <class> <archetype>`.")
+        if ctx.author.id == 225752877316964352 and dev:
+            actions = getActions(playerClass, playerArchetype, inLevel)
+            updateActions(actions)
+            return err({a.action.name for a in actions})
 
         # Error Strings
         if len(err_str) > 0:
@@ -226,11 +232,30 @@ def getCounters(playerClass, playerArchetype, inLevel):
                     counters.append(counter)
     return counters
 
+def getActions(playerClass, playerArchetype, inLevel):
+    actions = []
+
+    for cl in playerClass:
+        level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
+        if cl.get('actions'):
+            for action in cl.actions:
+                if level >= action.level:
+                    actions.append(action)
+
+    if len(playerArchetype)>0:
+        for arch in playerArchetype:
+            level = ch.levels.get(arch.Class) if not inLevel else int(inLevel)
+            if arch.get('actions'):
+                for action in arch.actions:
+                    if level >= action.level:
+                        actions.append(action)
+    return actions
+
 
 def updateCounters(counters, inLevel):
     for counter in counters:
         # Class level
-        level = int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel)
+        level = min(int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel),20)
 
         # Max Value
         max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value

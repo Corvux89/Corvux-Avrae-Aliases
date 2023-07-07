@@ -506,6 +506,41 @@
     "counters": []
   },
   {
+    "Class": "Operative",
+    "subclass": "Surveillance",
+    "counters": [
+      {
+        "name": "Hijack Senses",
+        "level": 3,
+        "value": [0,0,2,2,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5],
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "OperativeLevel"
+      },
+      {
+        "name": "Hitchikers Guide",
+        "level": 6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "OperativeLevel"
+      },
+      {
+        "name": "Hostile Take Over",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "OperativeLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Operative",
+    "subclass": "Grenadier",
+    "counters": []
+  },
+  {
     "Class": "Scholar",
     "hitDie": "d8",
     "subclassLevel": 3,
@@ -1146,6 +1181,42 @@
     ]
   },
   {
+    "Class": "Scout",
+    "subclass": "Swarm",
+    "counters": [
+      {
+        "name": "Writhing Tide",
+        "level": 7,
+        "value": "proficiencyBonus-1",
+        "display": "bubble",
+        "classLevel": "ScoutLevel",
+        "reset": "long"
+      },
+      {
+        "name": "Swarming Dispersal",
+        "level": 15,
+        "value": "proficiencyBonus-1",
+        "display": "bubble",
+        "classLevel": "ScoutLevel",
+        "reset": "long"
+      }
+    ]
+  },
+  {
+    "Class": "Scout",
+    "subclass": "Retraction",
+    "counters": [
+      {
+        "name": "Double Wire",
+        "level": 11,
+        "value": "intelligenceMod+proficiencyBonus",
+        "display": "bubble",
+        "classLevel": "ScoutLevel",
+        "reset": "long"
+      }
+    ]
+  },
+  {
     "Class": "Sentinellight",
     "hitDie": "d8",
     "subclassLevel": 3,
@@ -1404,6 +1475,72 @@
     ]
   },
   {
+    "Class": "Sentinellight",
+    "subclass": "Sightless",
+    "counters": [
+      {
+        "name": "Blinding Assault",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      },
+      {
+        "name": "Farsight",
+        "level": 13,
+        "value": [0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,3,3,3,3],
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentinellight",
+    "subclass": "Archivist",
+    "counters": [
+      {
+        "name": "Carefully Curated",
+        "level": 13,
+        "value": 1,
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      },
+      {
+        "name": "Carefully Curated",
+        "level": 18,
+        "value": 3,
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentinellight",
+    "subclass": "Lifeweaver",
+    "counters": [
+      {
+        "name": "Touch of Life",
+        "level": 3,
+        "value": "(SentinellightLevel*3)+max(wisdomMod,charismaMod)",
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "default"
+      },
+      {
+        "name": "Font of Life",
+        "level": 18,
+        "value": 2,
+        "classLevel": "SentinellightLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
     "Class": "Sentineldark",
     "hitDie": "d8",
     "subclassLevel": 3,
@@ -1655,6 +1792,72 @@
         "name": "Kinetic Mastery",
         "level": 18,
         "value": "6",
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentineldark",
+    "subclass": "Sightless",
+    "counters": [
+      {
+        "name": "Blinding Assault",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "bubble"
+      },
+      {
+        "name": "Farsight",
+        "level": 13,
+        "value": [0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,3,3,3,3],
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentineldark",
+    "subclass": "Archivist",
+    "counters": [
+      {
+        "name": "Carefully Curated",
+        "level": 13,
+        "value": 1,
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "bubble"
+      },
+      {
+        "name": "Carefully Curated",
+        "level": 18,
+        "value": 3,
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Sentineldark",
+    "subclass": "Lifeweaver",
+    "counters": [
+      {
+        "name": "Touch of Life",
+        "level": 3,
+        "value": "(SentineldarkLevel*3)+max(wisdomMod,charismaMod)",
+        "classLevel": "SentineldarkLevel",
+        "reset": "long",
+        "display": "default"
+      },
+      {
+        "name": "Font of Life",
+        "level": 18,
+        "value": 2,
         "classLevel": "SentineldarkLevel",
         "reset": "long",
         "display": "bubble"

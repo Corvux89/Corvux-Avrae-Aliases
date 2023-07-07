@@ -1,0 +1,102 @@
+[
+  {
+    "Class": "Test",
+    "hitDie": "d8",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Focus Points",
+        "level": 2,
+        "classLevel": "MonkLevel",
+        "value": "MonkLevel",
+        "reset": "short",
+        "display": "default",
+        "desc": "Uou can spend these points to fuel various focus features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more focus features as you gain levels in this class.\n\nWhen you spend a focus point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended focus back into yourself. You must spend at least 30 minutes of the rest meditating to regain your focus points."
+      }
+    ]
+  },
+  {
+    "Class": "Test",
+    "subclass": "Subtest",
+    "counters": [
+      {
+        "name": "Sovereign Protector",
+        "level": 17,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "MonkLevel"
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Test Action",
+          "automation": [
+            {
+              "type": "text",
+              "text": "When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.",
+              "title": "Effect"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Dodging",
+                  "duration": "1",
+                  "effects": {
+                    "save_adv": [
+                      "dex"
+                    ]
+                  },
+                  "desc": "Until the start of your next turn:\n - Any attack roll made against you has disadvantage if you can see the attacker.\n - You make Dexterity saving throws with advantage.\nYou lose this benefit if you are incapacitated or if your speed drops to 0."
+                }
+              ]
+            }
+          ],
+          "_v": 2,
+          "proper": true,
+          "verb": "decides to",
+          "activation_type": 3
+        },
+        "level": 3
+      },
+      {
+        "action": {
+          "name": "Test Action 2",
+          "automation": [
+            {
+              "type": "text",
+              "text": "When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.",
+              "title": "Effect"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Dodging",
+                  "duration": "1",
+                  "effects": {
+                    "save_adv": [
+                      "dex"
+                    ]
+                  },
+                  "desc": "Until the start of your next turn:\n - Any attack roll made against you has disadvantage if you can see the attacker.\n - You make Dexterity saving throws with advantage.\nYou lose this benefit if you are incapacitated or if your speed drops to 0."
+                }
+              ]
+            }
+          ],
+          "_v": 2,
+          "proper": true,
+          "verb": "decides to",
+          "activation_type": 3
+        },
+        "level": 17
+      }
+    ]
+  }
+]
