@@ -6,7 +6,7 @@ targ = a.last('t')
 lvl = int(get("ScholarLevel",0))
 eff = "Critical Analysis"
 dur = 10
-schMod = c.get_cvar("RancorsDiscipline") if c.get_cvar("RancorsDiscipline") else "intelligence"
+schMod = load_json(c.get_cvar("SWFeats")).get("RancorsDiscipline") if c.get_cvar("SWFeats") and load_json(c.get_cvar("SWFeats")).get("RancorsDiscipline") else "intelligence"
 mod = str(c.stats.get_mod(schMod)) if not a.last('mod') else int(a.last('mod'))
 
 v = lvl >= 1

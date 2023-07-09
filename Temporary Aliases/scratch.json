@@ -1,31 +1,231 @@
 {
-  "name": "Test Action",
+  "name": "Telekinetic Storm",
+  "level": 3,
+  "school": "Force",
+  "classes": "Light",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Self (15 ft. sphere)",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Concentration, up to 10 minutes",
+  "ritual": false,
+  "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
+  "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+  "concentration": true,
   "automation": [
-    {
-      "type": "text",
-      "text": "When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0.",
-      "title": "Effect"
-    },
     {
       "type": "target",
       "target": "self",
       "effects": [
         {
           "type": "ieffect2",
-          "name": "Dodging",
-          "duration": "1",
-          "effects": {
-            "save_adv": [
-              "dex"
-            ]
-          },
-          "desc": "Until the start of your next turn:\n - Any attack roll made against you has disadvantage if you can see the attacker.\n - You make Dexterity saving throws with advantage.\nYou lose this benefit if you are incapacitated or if your speed drops to 0."
+          "name": "Telekinetic Storm",
+          "duration": "100",
+          "attacks": [
+            {
+              "attack": {
+                "_v": 2,
+                "name": "Spread the Telekinetic Storm",
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "3d8 [force]",
+                    "name": "damage",
+                    "higher": {
+                      "4": "1d8 [force]",
+                      "5": "2d8 [force]",
+                      "6": "3d8 [force]",
+                      "7": "4d8 [force]",
+                      "8": "5d8 [force]",
+                      "9": "6d8 [force]"
+                    }
+                  },
+                  {
+                    "type": "target",
+                    "target": "all",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{damage}"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({damage})/2"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Surrounded by Telekinetic Storm",
+                        "duration": "ieffect.remaining",
+                        "buttons": [
+                          {
+                            "automation": [
+                              {
+                                "type": "roll",
+                                "dice": "3d8 [force]",
+                                "name": "damage",
+                                "higher": {
+                                  "4": "1d8 [force]",
+                                  "5": "2d8 [force]",
+                                  "6": "3d8 [force]",
+                                  "7": "4d8 [force]",
+                                  "8": "5d8 [force]",
+                                  "9": "6d8 [force]"
+                                }
+                              },
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "fail": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "{damage}"
+                                      }
+                                    ],
+                                    "success": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "({damage})/2"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "text",
+                                "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                              }
+                            ],
+                            "label": "Telekinetic Storm (Start of Turn)",
+                            "verb": "starts their turn in the Telekinetic Storm",
+                            "style": "4",
+                            "defaultDC": "spell_dc or 10"
+                          },
+                          {
+                            "automation": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "label": "Leave Telekinetic Storm",
+                            "verb": "leaves the range of Telekinetic Storm",
+                            "style": "3",
+                            "defaultDC": "spell_dc or 10"
+                          }
+                        ],
+                        "desc": "Speed is halved\n - Lasts while within 15 ft. of {{caster.name}}",
+                        "parent": "ieffect"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                  }
+                ],
+                "verb": "begins to",
+                "proper": true
+              },
+              "defaultDC": "spell_dc or 10"
+            }
+          ],
+          "end": false,
+          "conc": false,
+          "stacking": false,
+          "save_as": "storm"
         }
       ]
+    },
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Within the Telekinetic Storm",
+          "duration": "100",
+          "buttons": [
+            {
+              "automation": [
+                {
+                  "type": "roll",
+                  "dice": "3d8 [force]",
+                  "name": "damage",
+                  "higher": {
+                    "4": "1d8 [force]",
+                    "5": "2d8 [force]",
+                    "6": "3d8 [force]",
+                    "7": "4d8 [force]",
+                    "8": "5d8 [force]",
+                    "9": "6d8 [force]"
+                  }
+                },
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "save",
+                      "stat": "con",
+                      "fail": [
+                        {
+                          "type": "damage",
+                          "damage": "{damage}"
+                        }
+                      ],
+                      "success": [
+                        {
+                          "type": "damage",
+                          "damage": "({damage})/2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                }
+              ],
+              "label": "Telekinetic Storm (Start of Turn)",
+              "verb": "starts their turn in the Telekinetic Storm",
+              "style": "4",
+              "defaultDC": "spell_dc or 10"
+            },
+            {
+              "automation": [
+                {
+                  "type": "remove_ieffect"
+                }
+              ],
+              "label": "Leave Telekinetic Storm",
+              "verb": "leaves the range of Telekinetic Storm",
+              "style": "3",
+              "defaultDC": "spell_dc or 10"
+            }
+          ],
+          "desc": "The target gains one level of slowed\n - Lasts while within 15 ft. of {{caster.name}}"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
     }
-  ],
-  "_v": 2,
-  "proper": true,
-  "verb": "decides to",
-  "activation_type": 3
+  ]
 }

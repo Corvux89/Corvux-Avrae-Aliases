@@ -9,7 +9,10 @@ mtd = "You know one at-will tech power. Additionally, you know one 5th-level tec
 base = f'''embed -thumb {image} -color {color} -title "Tech Dabbler Feature!" '''
 
 
-c.set_cvar_nx("TechDabbler",True)
+feat_dict = load_json(c.get_cvar("SWFeats", "{}"))
+feat_dict["TechDabbler"] = True
+
+c.set_cvar("SWFeats",dump_json(feat_dict))
 
 if fl == "":
     if level >= 3:

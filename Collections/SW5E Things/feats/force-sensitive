@@ -8,8 +8,10 @@ mtd = "You know one at-will force power. Additionally, you know one 5th-level fo
 
 base = f'''embed -thumb {image} -color {color} -title "Force-Sensitive Feature!" '''
 
+feat_dict = load_json(c.get_cvar("SWFeats", "{}"))
+feat_dict["ForceSensitive"] = True
 
-c.set_cvar_nx("ForceSensitive",True)
+c.set_cvar("SWFeats",dump_json(feat_dict))
 
 if fl == "":
     if level >= 3:

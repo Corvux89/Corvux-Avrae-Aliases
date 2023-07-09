@@ -7,6 +7,7 @@ def processPower(args):
     point_list = [0,2,3,4,5,6,7,8,9,10]
     keyword = None if not args else args[0].lower()
     subclasses = get_subclasses()
+    feats = load_json(c.get_cvar("SWFeats", "{}"))
 
     if not keyword:
         return "help power"
@@ -31,7 +32,7 @@ def processPower(args):
                 spell["classes"] = "Universal"
                 if not wi:
                     out.append(getWith(spell))
-        elif c.get_cvar("TechDabbler"):
+        elif feats.get("TechDabbler"):
             if spell := search(keyword, tp):
                 cc = "Tech Points"
         else:
@@ -112,7 +113,7 @@ def processPower(args):
                 spell["name"] = "Growing Momentum - Burst of Speed"
 
     # Tech Dabbler
-    elif c.get_cvar("TechDabbler") and cc == "Tech Points":
+    elif feats.get("TechDabbler") and cc == "Tech Points":
         if spell_level == 0:
             ignore = True
             out.append('-with int')
@@ -122,7 +123,7 @@ def processPower(args):
             cc = f"Tech Dabbler - {spell_level}"
 
     # Force-Sensitive
-    elif c.get_cvar("ForceSensitive") and cc == "Force Points":
+    elif feats.get("ForceSensitive") and cc == "Force Points":
         if spell_level == 0:
             ignore = True
         elif c.cc_exists(f"Force-Sensitive - {spell_level}"):

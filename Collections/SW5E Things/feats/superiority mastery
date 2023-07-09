@@ -1,0 +1,15 @@
+<drac2>
+c = character()
+
+base = f'''embed -thumb {image} -color {color} -title "Superiority Mastery Feature!" '''
+
+
+feat_dict = load_json(c.get_cvar("SWFeats", "{}"))
+feat_dict["SupMastery"] = True
+
+c.set_cvar("SWFeats",dump_json(feat_dict))
+
+base += f''' -f "Superiority Mastery|{c.create_cc_nx("Superiority Mastery",0,c.stats.prof_bonus,"long","square")}" '''
+
+return base
+</drac2>
