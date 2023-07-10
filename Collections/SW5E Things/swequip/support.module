@@ -8,6 +8,7 @@ def processName(name):
                                                                                                      '')
     out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
         "Projector Canister, Incendiary - ", '')
+    out = out.replace("Grapple - ", "")
 
     out = stripAmmo(out)
 
@@ -28,6 +29,7 @@ def baseName(name):
                                                                                                      '')
     out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
         "Projector Canister, Incendiary - ", '')
+    out = out.replace("Grapple - ","")
 
     return out
 

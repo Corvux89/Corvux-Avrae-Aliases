@@ -1,60 +1,80 @@
-[{
-        "name": "Mordenkainen Presents: Monsters of the Multiverse Races",
-        "featureResources": "4df6c4b7-efd2-4903-8766-4dfcebcdd695",
-        "counters": [],
-        "cvars": {
-            "race": "",
-            "speed": "30 ft.",
-            "languages": "Common| one extra language of your choice",
-            "size": "Medium",
-            "creatureType": "Humanoid",
-            "resist": "",
-            "immune": "",
-            "cimmune": "",
-            "vuln": "",
-            "senses": ""
+{
+  "name": "Shove (Prone)",
+  "automation": [
+    {
+      "type": "target",
+      "target": 1,
+      "effects": [
+        {
+          "type": "check",
+          "ability": [
+            "acrobatics",
+            "athletics"
+          ],
+          "contestAbility": [
+            "athletics"
+          ],
+          "fail": [
+            {
+              "type": "ieffect2",
+              "name": "Prone",
+              "duration": null,
+              "effects": {
+                "attack_advantage": "-1",
+                "to_hit_bonus": null,
+                "damage_bonus": null,
+                "magical_damage": null,
+                "silvered_damage": null,
+                "resistances": null,
+                "immunities": null,
+                "vulnerabilities": null,
+                "ignored_resistances": null,
+                "ac_value": null,
+                "ac_bonus": null,
+                "max_hp_value": null,
+                "max_hp_bonus": null,
+                "save_bonus": null,
+                "save_adv": null,
+                "save_dis": null,
+                "check_bonus": null,
+                "check_adv": null,
+                "check_dis": null
+              },
+              "attacks": [],
+              "buttons": [
+                {
+                  "label": "Stand Up",
+                  "automation": [
+                    {
+                      "type": "remove_ieffect"
+                    }
+                  ],
+                  "verb": "stands up",
+                  "style": "3",
+                  "defaultDC": null,
+                  "defaultAttackBonus": null,
+                  "defaultCastingMod": null
+                }
+              ],
+              "end": false,
+              "conc": false,
+              "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition.",
+              "stacking": false,
+              "save_as": null,
+              "parent": null,
+              "target_self": false,
+              "tick_on_caster": false
+            }
+          ],
+          "contestTie": "neither"
         }
+      ]
     },
     {
-        "name": "aasimar",
-        "counters": {
-            "Healing Hands": {
-                "min": 0,
-                "max": "proficiencyBonus",
-                "reset": "long",
-                "level": 1,
-                "use": "use aasimarHealingHands"
-            },
-            "Celestial Revelation": {
-                "min": 0,
-                "max": 1,
-                "reset": "long",
-                "level": 3,
-                "use": "use celestialRevelation"
-            }
-        },
-        "cvars": {
-            "race": "Aasimar",
-            "size": "Medium or Small",
-            "resistances": "Necrotic| Radiant",
-            "senses": "Darkvision 60 ft.",
-            "abilities": {
-                "Healing Hands": {
-                    "maxUses": "{{proficiencyBonus}}",
-                    "currentUses": "{{proficiencyBonus}}",
-                    "use": "Decrease currentUses by 1. Heal a creature for an amount equal to the roll of {{proficiencyBonus}} d4s."
-                },
-                "Celestial Revelation": {
-                    "maxUses": 1,
-                    "currentUses": 1,
-                    "use": "Decrease currentUses by 1. Unleash celestial energy, gaining the benefits of a chosen revelation."
-                }
-            },
-            "cantrips": {
-                "Light": {
-                    "spellcastingAbility": "Charisma"
-                }
-            }
-        }
+      "type": "text",
+      "text": "Using the Attack action, you can make a special melee attack to shove a creature, either to knock it prone or push it away from you. If you\u2019re able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target must be no more than one size larger than you and must be within your reach. Instead of making an attack roll, you make a Strength (Athletics) check contested by the target\u2019s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). You succeed automatically if the target is incapacitated. If you succeed, you either knock the target prone or push it 5 feet away from you.",
+      "title": "Effect"
     }
-]
+  ],
+  "_v": 2
+}

@@ -2404,6 +2404,57 @@
     "_v": 2
   },
   {
+    "name": "Shock Gloves",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4 [lightning]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Grapple - Shock Gloves",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "check",
+            "ability": [
+              "acrobatics",
+              "athletics"
+            ],
+            "contestAbility": [
+              "athletics"
+            ],
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d4 [lightning]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Shockwhip",
     "automation": [
       {

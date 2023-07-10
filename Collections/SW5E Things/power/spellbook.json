@@ -5120,24 +5120,6 @@
     "concentration": false
   },
   {
-    "name": "Ring of Fire",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A wall of flames erupts out of the ground in a ring around you with a radius of 15 feet and a height of 10 feet. Creatures who start their turn in the ring of fire or pass through it on their turn take 1d6 fire damage. Creatures within the ring of fire who willingly try to move through the fire to escape must succeed on a Wisdom saving throw to do so. Creatures who are immune to fear or fire automatically succeed on this saving throw. \r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage of the ring of fire increases by 1d6 for each slot level above 1st.",
-    "concentration": true
-  },
-  {
     "name": "Ruin",
     "level": 7,
     "school": "Force",
@@ -13697,237 +13679,6 @@
     "concentration": false
   },
   {
-    "name": "Telekinetic Storm",
-    "level": 3,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Telekinetic Storm",
-            "duration": "100",
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Spread the Telekinetic Storm",
-                  "automation": [
-                    {
-                      "type": "roll",
-                      "dice": "3d8 [force]",
-                      "name": "damage",
-                      "higher": {
-                        "4": "1d8 [force]",
-                        "5": "2d8 [force]",
-                        "6": "3d8 [force]",
-                        "7": "4d8 [force]",
-                        "8": "5d8 [force]",
-                        "9": "6d8 [force]"
-                      }
-                    },
-                    {
-                      "type": "target",
-                      "target": "all",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "con",
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{damage}"
-                            }
-                          ],
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({damage})/2"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "ieffect2",
-                          "name": "Surrounded by Telekinetic Storm",
-                          "duration": "ieffect.remaining",
-                          "buttons": [
-                            {
-                              "automation": [
-                                {
-                                  "type": "roll",
-                                  "dice": "3d8 [force]",
-                                  "name": "damage",
-                                  "higher": {
-                                    "4": "1d8 [force]",
-                                    "5": "2d8 [force]",
-                                    "6": "3d8 [force]",
-                                    "7": "4d8 [force]",
-                                    "8": "5d8 [force]",
-                                    "9": "6d8 [force]"
-                                  }
-                                },
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "con",
-                                      "fail": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "{damage}"
-                                        }
-                                      ],
-                                      "success": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "({damage})/2"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "text",
-                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                                }
-                              ],
-                              "label": "Telekinetic Storm (Start of Turn)",
-                              "verb": "starts their turn in the Telekinetic Storm",
-                              "style": "4",
-                              "defaultDC": "spell_dc or 10"
-                            },
-                            {
-                              "automation": [
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ],
-                              "label": "Leave Telekinetic Storm",
-                              "verb": "leaves the range of Telekinetic Storm",
-                              "style": "3",
-                              "defaultDC": "spell_dc or 10"
-                            }
-                          ],
-                          "desc": "Speed is halved\n - Lasts while within 15 ft. of {{caster.name}}",
-                          "parent": "ieffect"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                    }
-                  ],
-                  "verb": "begins to",
-                  "proper": true
-                },
-                "defaultDC": "spell_dc or 10"
-              }
-            ],
-            "end": false,
-            "conc": false,
-            "stacking": false,
-            "save_as": "storm"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Within the Telekinetic Storm",
-            "duration": "100",
-            "buttons": [
-              {
-                "automation": [
-                  {
-                    "type": "roll",
-                    "dice": "3d8 [force]",
-                    "name": "damage",
-                    "higher": {
-                      "4": "1d8 [force]",
-                      "5": "2d8 [force]",
-                      "6": "3d8 [force]",
-                      "7": "4d8 [force]",
-                      "8": "5d8 [force]",
-                      "9": "6d8 [force]"
-                    }
-                  },
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "save",
-                        "stat": "con",
-                        "fail": [
-                          {
-                            "type": "damage",
-                            "damage": "{damage}"
-                          }
-                        ],
-                        "success": [
-                          {
-                            "type": "damage",
-                            "damage": "({damage})/2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "text",
-                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                  }
-                ],
-                "label": "Telekinetic Storm (Start of Turn)",
-                "verb": "starts their turn in the Telekinetic Storm",
-                "style": "4",
-                "defaultDC": "spell_dc or 10"
-              },
-              {
-                "automation": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ],
-                "label": "Leave Telekinetic Storm",
-                "verb": "leaves the range of Telekinetic Storm",
-                "style": "3",
-                "defaultDC": "spell_dc or 10"
-              }
-            ],
-            "desc": "The target gains one level of slowed\n - Lasts while within 15 ft. of {{caster.name}}"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15 ft. sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Concentration, up to 10 minutes",
-    "ritual": false,
-    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
-    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Pyrokinesis",
     "level": 0,
     "school": "Force",
@@ -14127,159 +13878,9 @@
     "concentration": true
   },
   {
-    "name": "Choke",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\r\n\r\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "5d8 [force]",
-        "name": "damage",
-        "onHigher": {
-          "4": "1d8 [force]",
-          "5": "2d8 [force]",
-          "6": "3d8 [force]",
-          "7": "4d8 [force]",
-          "8": "5d8 [force]",
-          "9": "6d8 [force]"
-        }
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "con",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              },
-              {
-                "type": "ieffect2",
-                "name": "Restrained",
-                "desc": "4 Slowed levels\n - Attack rolls against the creature have advantage, and the creature’s attack rolls have disadvantage.\n - The creature has disadvantage on Dexterity saving throws.",
-                "effects": {
-                  "attack_advantage": -1,
-                  "save_dis": [
-                    "dex"
-                  ]
-                },
-                "duration": 2,
-                "end": true,
-                "tick_on_caster": true
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "{damage}/2"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\n\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
-      }
-    ]
-  },
-  {
-    "name": "Crush",
-    "level": 6,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\r\n\r\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "10d8 [force]",
-        "name": "damage",
-        "onHigher": {
-          "7": "1d8 [force]",
-          "8": "2d8 [force]",
-          "9": "3d8 [force]"
-        }
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "con",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              },
-              {
-                "type": "ieffect2",
-                "name": "Paralyzed",
-                "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
-                "duration": 2,
-                "end": true,
-                "tick_on_caster": true
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "{damage}/2"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\n\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th."
-      }
-    ]
-  },
-  {
     "name": "Force Chain Lightning",
     "level": 6,
     "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "150 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\r\n\r\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.",
-    "concentration": false,
     "automation": [
       {
         "type": "roll",
@@ -14312,16 +13913,11 @@
         "type": "text",
         "text": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\n\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th."
       }
-    ]
-  },
-  {
-    "name": "Force Lightning",
-    "level": 3,
-    "school": "Force",
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "Self (100-foot line)",
+    "range": "150 feet",
     "components": {
       "verbal": false,
       "somatic": false,
@@ -14329,21 +13925,363 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \r\n\r\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
-    "concentration": false,
+    "description": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\r\n\r\nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.",
+    "concentration": false
+  },
+  {
+    "name": "Force Storm",
+    "level": 9,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "30d6 [lightning]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Storm - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Force Storm",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "30d6 [lightning]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Force Storm",
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "roll",
+                                      "dice": "30d6 [lightning]",
+                                      "name": "damage"
+                                    },
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "dex",
+                                          "fail": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "{damage}"
+                                            }
+                                          ],
+                                          "success": [
+                                            {
+                                              "type": "damage",
+                                              "damage": "{damage}/2"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Force Storm - Start of Turn",
+                                  "verb": "starts their turn in the storm!",
+                                  "style": "4",
+                                  "defaultDC": "lastSaveDC"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "remove_ieffect"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Leave Force Storm",
+                                  "verb": "leaves the storm"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
+                    }
+                  ]
+                }
+              }
+            ],
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Force Storm",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "roll",
+                        "dice": "30d6 [lightning]",
+                        "name": "damage"
+                      },
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "dex",
+                            "fail": [
+                              {
+                                "type": "damage",
+                                "damage": "{damage}"
+                              }
+                            ],
+                            "success": [
+                              {
+                                "type": "damage",
+                                "damage": "{damage}/2"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Force Storm - Start of Turn",
+                    "verb": "starts their turn in the storm!",
+                    "style": "4",
+                    "defaultDC": "lastSaveDC"
+                  },
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Leave Force Storm",
+                    "verb": "leaves the storm"
+                  }
+                ],
+                "parent": "peff"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\r\n\r\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried.",
+    "concentration": true
+  },
+  {
+    "name": "Choke",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "5d8 [force]",
+        "name": "damage",
+        "higher": {
+          "4": "1d8 [force]",
+          "5": "2d8 [force]",
+          "6": "3d8 [force]",
+          "7": "4d8 [force]",
+          "8": "5d8 [force]",
+          "9": "6d8 [force]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Restrained",
+                "duration": "2",
+                "effects": {
+                  "attack_advantage": "-1",
+                  "save_dis": [
+                    "dex"
+                  ]
+                },
+                "end": true,
+                "desc": "4 Slowed levels\n - Attack rolls against the creature have advantage, and the creature’s attack rolls have disadvantage.\n - The creature has disadvantage on Dexterity saving throws.",
+                "tick_on_caster": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\n\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\r\n\r\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Crush",
+    "level": 6,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "10d8 [force]",
+        "name": "damage",
+        "higher": {
+          "7": "1d8 [force]",
+          "8": "2d8 [force]",
+          "9": "3d8 [force]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Paralyzed",
+                "duration": "2",
+                "end": true,
+                "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                "tick_on_caster": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\n\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a crushing gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 10d8 force damage and is paralyzed until the end of your next turn. On a successful save, the target takes half as much damage and is not paralyzed.\r\n\r\nYou can use a bonus action while the target is paralyzed to move the target up to 10 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th.",
+    "concentration": false
+  },
+  {
+    "name": "Force Lightning",
+    "level": 3,
+    "school": "Force",
     "automation": [
       {
         "type": "roll",
         "dice": "8d6 [lightning]",
-        "name": "damage",
-        "onHigher": {
-          "4": "1d8 [lightning]",
-          "5": "2d8 [lightning]",
-          "6": "3d8 [lightning]",
-          "7": "4d8 [lightning]",
-          "8": "5d8 [lightning]",
-          "9": "6d8 [lightning]"
-        }
+        "name": "damage"
       },
       {
         "type": "target",
@@ -14371,16 +14309,11 @@
         "type": "text",
         "text": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \n\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
       }
-    ]
-  },
-  {
-    "name": "Force Lightning Cone",
-    "level": 7,
-    "school": "Force",
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "Self (60-foot cone)",
+    "range": "Self (100-foot line)",
     "components": {
       "verbal": false,
       "somatic": false,
@@ -14388,14 +14321,19 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th.",
-    "concentration": false,
+    "description": "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one. \r\n\r\nThe lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Force Lightning Cone",
+    "level": 7,
+    "school": "Force",
     "automation": [
       {
         "type": "roll",
         "dice": "12d6 [lightning]",
         "name": "damage",
-        "onHigher": {
+        "higher": {
           "8": "2d6 [lightning]",
           "9": "4d6 [lightning]"
         }
@@ -14426,30 +14364,55 @@
         "type": "text",
         "text": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\n\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th."
       }
-    ]
-  },
-  {
-    "name": "Force Storm",
-    "level": 9,
-    "school": "Force",
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "150 feet",
+    "range": "Self (60-foot cone)",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "up to 1 minute",
+    "duration": "Instantaneous",
     "ritual": false,
-    "description": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\r\n\r\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried.",
-    "concentration": true,
+    "description": "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creatures takes 12d6 lightning damage on a failed save, or half as much on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th.",
+    "concentration": false
+  },
+  {
+    "name": "Ring of Fire",
+    "level": 1,
+    "school": "Tech",
     "automation": [
       {
         "type": "roll",
-        "dice": "30d6 [lightning]",
-        "name": "damage"
+        "dice": "1d6 [fire]",
+        "name": "damage",
+        "higher": {
+          "2": "1d6 [fire]",
+          "3": "2d6 [fire]",
+          "4": "3d6 [fire]",
+          "5": "4d6 [fire]",
+          "6": "5d6 [fire]",
+          "7": "6d6 [fire]",
+          "8": "7d6 [fire]",
+          "9": "8d6 [fire]"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
       },
       {
         "type": "target",
@@ -14457,102 +14420,93 @@
         "effects": [
           {
             "type": "ieffect2",
-            "name": "Force Storm - Parent",
-            "save_as": "peff",
-            "parent": "ieffect",
+            "name": "Ring of Fire - Parent",
             "attacks": [
               {
                 "attack": {
-                  "name": "Spread - Force Storm",
+                  "_v": 2,
+                  "name": "Spread - Ring of Fire",
                   "automation": [
-                    {
-                      "type": "roll",
-                      "dice": "30d6 [lightning]",
-                      "name": "damage"
-                    },
                     {
                       "type": "target",
                       "target": "each",
                       "effects": [
                         {
-                          "type": "save",
-                          "stat": "dex",
-                          "fail": [
+                          "type": "condition",
+                          "condition": "target.resistances.is_immune('fire') or target.resistances.is_immune('fear')",
+                          "onTrue": [
                             {
-                              "type": "damage",
-                              "damage": "{damage}"
-                            },
+                              "type": "text",
+                              "text": "{target.name} is immune!",
+                              "title": "Immune!"
+                            }
+                          ],
+                          "onFalse": [
                             {
-                              "type": "ieffect2",
-                              "name": "Force Storm",
-                              "parent": "ieffect",
-                              "buttons": [
+                              "type": "save",
+                              "stat": "wis",
+                              "fail": [
                                 {
-                                  "label": "Force Storm - Start of Turn",
-                                  "verb": "starts their turn in the storm!",
-                                  "style": 4,
-                                  "defaultDC": "lastSaveDC",
-                                  "automation": [
+                                  "type": "damage",
+                                  "damage": "{ieffect.desc.split()[-1]} [fire]"
+                                },
+                                {
+                                  "type": "ieffect2",
+                                  "name": "Ring of Fire",
+                                  "buttons": [
                                     {
-                                      "type": "roll",
-                                      "dice": "30d6 [lightning]",
-                                      "name": "damage"
-                                    },
-                                    {
-                                      "type": "target",
-                                      "target": "self",
-                                      "effects": [
+                                      "automation": [
                                         {
-                                          "type": "save",
-                                          "stat": "dex",
-                                          "fail": [
+                                          "type": "target",
+                                          "target": "self",
+                                          "effects": [
                                             {
-                                              "type": "damage",
-                                              "damage": "{damage}"
-                                            }
-                                          ],
-                                          "success": [
-                                            {
-                                              "type": "damage",
-                                              "damage": "{damage}/2"
+                                              "type": "save",
+                                              "stat": "wis",
+                                              "fail": [
+                                                {
+                                                  "type": "damage",
+                                                  "damage": "{ieffect.desc.split()[-1]} [fire]"
+                                                }
+                                              ],
+                                              "success": []
                                             }
                                           ]
                                         }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "label": "Leave Force Storm",
-                                  "verb": "leaves the storm",
-                                  "automation": [
+                                      ],
+                                      "label": "Ring of Fire - Start of Turn",
+                                      "verb": "is burning!",
+                                      "style": "4",
+                                      "defaultDC": "lastSaveDC"
+                                    },
                                     {
-                                      "type": "target",
-                                      "target": "self",
-                                      "effects": [
+                                      "automation": [
                                         {
                                           "type": "remove_ieffect"
                                         }
-                                      ]
+                                      ],
+                                      "label": "Leave Ring of Fire",
+                                      "verb": "leaves the Ring of Fire"
                                     }
-                                  ]
+                                  ],
+                                  "desc": "{ieffect.desc.split()[-1]}",
+                                  "parent": "ieffect"
                                 }
-                              ]
+                              ],
+                              "success": []
                             }
                           ],
-                          "success": []
+                          "errorBehaviour": "raise"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
                     }
-                  ],
-                  "_v": 2
+                  ]
                 }
               }
-            ]
+            ],
+            "desc": "{numDie}d6",
+            "save_as": "peff",
+            "parent": "ieffect"
           }
         ]
       },
@@ -14561,79 +14515,318 @@
         "target": "each",
         "effects": [
           {
+            "type": "condition",
+            "condition": "target.resistances.is_immune('fire') or target.resistances.is_immune('fear')",
+            "onTrue": [
+              {
+                "type": "text",
+                "text": "{target.name} is immune!",
+                "title": "Immune!"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "save",
+                "stat": "wis",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Ring of Fire",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "wis",
+                                "fail": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "{ieffect.desc.split()[-1]} [fire]"
+                                  }
+                                ],
+                                "success": []
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Ring of Fire - Start of Turn",
+                        "verb": "is burning!",
+                        "style": "4",
+                        "defaultDC": "lastSaveDC"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave Ring of Fire",
+                        "verb": "leaves the Ring of Fire"
+                      }
+                    ],
+                    "desc": "{numDie}d6",
+                    "parent": "peff"
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A wall of flames erupts out of the ground in a ring around you with a radius of 15 feet and a height of 10 feet. Creatures who start their turn in the ring of fire or pass through it on their turn take 1d6 fire damage. Creatures within the ring of fire who willingly try to move through the fire to escape must succeed on a Wisdom saving throw to do so. Creatures who are immune to fear or fire automatically succeed on this saving throw. \n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage of the ring of fire increases by 1d6 for each slot level above 1st"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A wall of flames erupts out of the ground in a ring around you with a radius of 15 feet and a height of 10 feet. Creatures who start their turn in the ring of fire or pass through it on their turn take 1d6 fire damage. Creatures within the ring of fire who willingly try to move through the fire to escape must succeed on a Wisdom saving throw to do so. Creatures who are immune to fear or fire automatically succeed on this saving throw. \r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage of the ring of fire increases by 1d6 for each slot level above 1st.",
+    "concentration": true
+  },
+  {
+    "name": "Telekinetic Storm",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d8 [force]",
+        "name": "damage",
+        "higher": {
+          "4": "1d8 [force]",
+          "5": "2d8 [force]",
+          "6": "3d8 [force]",
+          "7": "4d8 [force]",
+          "8": "5d8 [force]",
+          "9": "6d8 [force]"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "3",
+        "higher": {
+          "4": "4",
+          "5": "5",
+          "6": "5",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Telekinetic Storm - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread the Telekinetic Storm",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{ieffect.desc.split()[-1]} [force]"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ieffect2",
+                          "name": "Surrounded by Telekinetic Storm",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "save",
+                                      "stat": "con",
+                                      "fail": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "{ieffect.desc.split()[-1]} [force]"
+                                        }
+                                      ],
+                                      "success": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                                }
+                              ],
+                              "label": "Telekinetic Storm (Start of Turn)",
+                              "verb": "starts their turn in the Telekinetic Storm",
+                              "style": "4",
+                              "defaultDC": "lastSaveDC"
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Leave Telekinetic Storm",
+                              "verb": "leaves the range of Telekinetic Storm",
+                              "style": "3"
+                            }
+                          ],
+                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                    }
+                  ],
+                  "verb": "begins to",
+                  "activation_type": 2
+                }
+              }
+            ],
+            "desc": "{numDie}d8",
+            "save_as": "storm"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
             "type": "save",
-            "stat": "dex",
+            "stat": "con",
             "fail": [
               {
                 "type": "damage",
                 "damage": "{damage}"
-              },
+              }
+            ],
+            "success": [
               {
-                "type": "ieffect2",
-                "name": "Force Storm",
-                "parent": "peff",
-                "buttons": [
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          },
+          {
+            "type": "ieffect2",
+            "name": "Surrounded by Telekinetic Storm",
+            "buttons": [
+              {
+                "automation": [
                   {
-                    "label": "Force Storm - Start of Turn",
-                    "verb": "starts their turn in the storm!",
-                    "style": 4,
-                    "defaultDC": "lastSaveDC",
-                    "automation": [
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
                       {
-                        "type": "roll",
-                        "dice": "30d6 [lightning]",
-                        "name": "damage"
-                      },
-                      {
-                        "type": "target",
-                        "target": "self",
-                        "effects": [
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
                           {
-                            "type": "save",
-                            "stat": "dex",
-                            "fail": [
-                              {
-                                "type": "damage",
-                                "damage": "{damage}"
-                              }
-                            ],
-                            "success": [
-                              {
-                                "type": "damage",
-                                "damage": "{damage}/2"
-                              }
-                            ]
+                            "type": "damage",
+                            "damage": "{ieffect.desc.split()[-1]} [force]"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
                           }
                         ]
                       }
                     ]
                   },
                   {
-                    "label": "Leave Force Storm",
-                    "verb": "leaves the storm",
-                    "automation": [
-                      {
-                        "type": "target",
-                        "target": "self",
-                        "effects": [
-                          {
-                            "type": "remove_ieffect"
-                          }
-                        ]
-                      }
-                    ]
+                    "type": "text",
+                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
                   }
-                ]
+                ],
+                "label": "Telekinetic Storm (Start of Turn)",
+                "verb": "starts their turn in the Telekinetic Storm",
+                "style": "4",
+                "defaultDC": "lastSaveDC"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Leave Telekinetic Storm",
+                "verb": "leaves the range of Telekinetic Storm",
+                "style": "3"
               }
             ],
-            "success": []
+            "desc": "Gains 1 slow level\n{numDie}d8",
+            "parent": "storm"
           }
         ]
       },
       {
         "type": "text",
-        "text": "A crackling storm of lightning with a diameter of 60 feet and a height of 120 feet appears in a location you choose within range. Whenever a creature enters the storm or starts its turn there, it must make a Dexterity saving throw. On a failed save, it takes 30d6 lightning damage or half as much as a successful one.\n\nThe power damages objects in the area and ignites flammable objects that aren't being worn or carried."
+        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
       }
-    ]
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15 ft. sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "ritual": false,
+    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": true
   }
 ]

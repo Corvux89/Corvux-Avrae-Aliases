@@ -1,0 +1,24 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+targets = []
+if not com:
+    return err("This will really only work in combat")
+
+target_cache = a.get('t') if a.get('t') else [f"{com.me.name}|{&ARGS&[0] if &ARGS& else ''}"]
+target_cache = [[com.get_combatant(i.split('|',1)[0].replace('{name}', c.name)) or com.get_group(i.split('|',1)[0]), i.split('|',1)[1] if '|' in i else ''] for i in target_cache if com]
+_ = [targets.append(i) if 'c' in i[0].type else [targets.append([e, i[1]]) for e in i[0].combatants] for i in
+         target_cache if i[0]]
+
+base = f'''embed -thumb {image} -color {color} -title "Setting up shields"'''
+
+for target in targets:
+    thp = int(target[1]) if target[1] != '' else 0
+    if thp > 0:
+        target[0].set_temp_hp(thp)
+        base += f''' -f "{target[0].name}|{target[0].hp_str()}" '''
+
+
+return base
+</drac2>
