@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Assault Laser Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d6 [energy]"
+              },
+              {
+                "type": "counter",
+                "counter": "Assault Laser Cannon",
+                "amount": 1,
+                "errorBehavior": "raise"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "wisdomMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power (range 1200/4800), constitution 15, overheat 2",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cooldown - Assault Laser Cannon",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Assault Laser Cannon",
+        "amount": -1,
+        "errorBehavior": "raise"
+      }
+    ],
+    "_v": 2
+  }
+]
