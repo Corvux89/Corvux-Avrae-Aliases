@@ -16,20 +16,33 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "{damage}"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "24 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
             "dc": "8+wisdomMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Assault Cluster Pod Launcher",
-            "amount": 6,
-            "errorBehaviour": "raise"
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Cluster Pod Launcher",
+        "amount": 6,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -51,8 +64,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "12d4 [kinetic]"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "48 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "12d4 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -84,6 +110,55 @@
         "errorBehavior": "raise"
       }
     ],
+    "verb": "reloads",
+    "_v": 2
+  },
+  {
+    "name": "Nano - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "8 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "2d4 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 800/3200), explosive, homing",
+        "title": "Effect"
+      }
+    ],
     "_v": 2
   },
   {
@@ -109,14 +184,14 @@
             ],
             "success": [],
             "dc": "8+wisdomMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Assault Cluster Pod Launcher",
-            "amount": 6,
-            "errorBehaviour": "raise"
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Cluster Pod Launcher",
+        "amount": 6,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -184,14 +259,14 @@
             ],
             "success": [],
             "dc": "8+wisdomMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Assault Cluster Pod Launcher",
-            "amount": 6,
-            "errorBehaviour": "raise"
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Cluster Pod Launcher",
+        "amount": 6,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -259,14 +334,14 @@
             ],
             "success": [],
             "dc": "8+wisdomMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Assault Cluster Pod Launcher",
-            "amount": 6,
-            "errorBehaviour": "raise"
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Cluster Pod Launcher",
+        "amount": 6,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -306,40 +381,6 @@
       {
         "type": "text",
         "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, homing rapid 6",
-        "title": "Effect"
-      }
-    ],
-    "_v": 2
-  },
-  {
-    "name": "Nano - Assault Cluster Pod Launcher",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d4 [kinetic]"
-              }
-            ],
-            "miss": [],
-            "attackBonus": "8+wisdomMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Assault Cluster Pod Launcher",
-            "amount": 1,
-            "errorBehaviour": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Ammunition, reload 24, (Range 800/3200), explosive, homing",
         "title": "Effect"
       }
     ],
@@ -389,6 +430,7 @@
         "errorBehavior": "raise"
       }
     ],
+    "verb": "cools down",
     "_v": 2
   }
 ]
