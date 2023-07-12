@@ -1,5 +1,351 @@
 [
   {
+    "name": "Burst - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "6d4 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "12d4 [kinetic]"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Reload - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Assault Cluster Pod Launcher",
+        "amount": -1,
+        "errorBehavior": "raise"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Adv. - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "6d6 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Adv. - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "12d6 [kinetic]"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Adv. Homing - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "6d6 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, homing, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Adv. Homing - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "12d6 [kinetic]"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, homing rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Homing - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "6d4 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, homing, rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Homing - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "12d4 [kinetic]"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 6,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 600/2400), auto, burst 6, explosive, homing rapid 6",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Nano - Assault Cluster Pod Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d4 [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Cluster Pod Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 24, (Range 800/3200), explosive, homing",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Assault Laser Cannon",
     "automation": [
       {
@@ -39,7 +385,7 @@
       {
         "type": "counter",
         "counter": "Assault Laser Cannon",
-        "amount": -1,
+        "amount": -2,
         "errorBehavior": "raise"
       }
     ],

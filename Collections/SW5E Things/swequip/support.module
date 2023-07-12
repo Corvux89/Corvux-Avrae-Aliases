@@ -11,6 +11,7 @@ def processName(name):
     out = out.replace("Grapple - ", "")
 
     out = out.replace("Cooldown - ","").replace("Reload - ", "")
+    out = out.replace("Nano - ", "")
 
     out = stripAmmo(out)
 
@@ -34,6 +35,7 @@ def baseName(name):
     out = out.replace("Grapple - ","")
 
     out = out.replace("Cooldown - ", "").replace("Reload - ", "")
+    out = out.replace("Nano - ", "")
 
     return out
 
@@ -46,6 +48,8 @@ def stripAmmo(name):
         "Bolt, Panic - ", '')
     out = out.replace("Cell, Power - ", "").replace("Cell, Cryo - ", '').replace("Cell, Deafening - ", '').replace(
         "Cell, Incendiary - ", '')
+
+    out = out.replace("Adv. - ", "").replace("Adv. Homing - ", "").replace("Homing - ", "")
 
     return out
 
