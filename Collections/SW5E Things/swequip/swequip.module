@@ -90,7 +90,7 @@ def processAttacks(attacks, args):
 
         if args.get('enhanced'):
             dmg = sup.get_damage_str(attack)
-            dmg = dmg.replace('[', '[enhanced')
+            dmg = dmg.replace('[', '[enhanced ')
             attack = attack.replace(sup.get_damage_str(attack), dmg)
 
         if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):

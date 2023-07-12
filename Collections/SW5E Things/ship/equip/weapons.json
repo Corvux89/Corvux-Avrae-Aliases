@@ -178,8 +178,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "{damage}"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "36 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -213,8 +226,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "12d6 [kinetic]"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "72 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "12d6 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -253,8 +279,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "{damage}"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "36 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -288,8 +327,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "12d6 [kinetic]"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "72 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "12d6 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -328,8 +380,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "{damage}"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "24 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -363,8 +428,21 @@
             "stat": "dex",
             "fail": [
               {
-                "type": "damage",
-                "damage": "12d4 [kinetic]"
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "48 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "12d4 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
               }
             ],
             "success": [],
@@ -431,6 +509,904 @@
       }
     ],
     "verb": "cools down",
+    "_v": 2
+  },
+  {
+    "name": "Ion Pulse - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40 [ion]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d10 [ion]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 13,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Ionized",
+                    "desc": "An ionized starship has disadvantage on attack rolls and ability checks",
+                    "effects": {
+                      "attack_advantage": -1,
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "duration": 10,
+                    "buttons": [
+                      {
+                        "label": "Resist Ionized",
+                        "verb": "attempts to",
+                        "defaultDC": "lastSaveDC",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "fail": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "title": "Ionizing",
+                            "text": "On a hit, the target must succeed on a DC 13 Constitution saving throw or it is ionized for 1 minute. As an action by a crewmember on their turn, the ship can repeat the saving throw, ending the effect early on a success. Ships larger than you have advantage on the saving throw. "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ionizing",
+        "text": "On a hit, the target must succeed on a DC 13 Constitution saving throw or it is ionized for 1 minute. As an action by a crewmember on their turn, the ship can repeat the saving throw, ending the effect early on a success. Ships larger than you have advantage on the saving throw. "
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 1000/4000), ionizing",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Reload - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Assault Missile Launcher",
+        "amount": -1,
+        "errorBehavior": "raise"
+      }
+    ],
+    "verb": "reloads",
+    "_v": 2
+  },
+  {
+    "name": "Burst - Adv. Concussion - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d10 [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Adv. Concussion - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "80 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "8d10 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Concussion - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d8 [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "32 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Concussion - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "64 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "8d8 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Assault Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Conner Net - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 15,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Stunned",
+                    "desc": "A stunned ship has 4 Slowed Levels.\n - The ship automatically fails Strength and Dexterity saving throws.\n - Attack rolls against the ship have advantage.",
+                    "duration": 10,
+                    "buttons": [
+                      {
+                        "label": "Resist Stunned",
+                        "verb": "attempts to",
+                        "defaultDC": "lastSaveDC",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "fail": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "title": "Connor Net",
+                            "text": "On a failed saving throw for a missile or upon detonation for a mine, a conner net deploys on the target, which must make a Constitution saving throw (DC 15). On a failed save, the ship is stunned for 1 minute. As an action on each of their turns, a crewmember can have the ship repeat the saving throw, ending the effect on a success."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Connor Net",
+        "text": "On a failed saving throw for a missile or upon detonation for a mine, a conner net deploys on the target, which must make a Constitution saving throw (DC 15). On a failed save, the ship is stunned for 1 minute. As an action on each of their turns, a crewmember can have the ship repeat the saving throw, ending the effect on a success."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Discord - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Discord Missiles",
+                "buttons": [
+                  {
+                    "label": "Discord Missile - End of Turn",
+                    "verb": "takes a level of system damage",
+                    "style": 4,
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "ieffect2",
+                            "name": "System Damage",
+                            "stacking": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "text": "At the end of each of the target ship - s turns, the target ship gains one level of system damage if the target is medium or smaller [large or smaller]."
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Discord Missile - Resist",
+                    "verb": "attempts to resist the missiles!",
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "condition",
+                            "condition": "target.saves.get('dex') >= target.saves.get('con')",
+                            "onTrue": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "fail": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "success": []
+                              }
+                            ],
+                            "onFalse": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "success": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "text": "As an action on each of their turns, a crewmember can have the ship attempt their choice of a dexterity or constitution saving throw (DC 15), ending the effect on a success.\n\nEMP BOMB"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Discord Missile",
+        "text": "On a failed saving throw, the missile deploys pistoeka sabotage or - buzz - droids on the target. At the end of each of the target ship - s turns, the target ship gains one level of system damage if the target is medium or smaller [large or smaller]. As an action on each of their turns, a crewmember can have the ship attempt their choice of a dexterity or constitution saving throw (DC 15), ending the effect on a success."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Proton - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "80+1 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "20d4 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 200/800), explosive, vicious 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Silent Thunder - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "80 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "8d10 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 1200/4800), explosive",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "S-Thread - Assault Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 15,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "S-Thread Tracer Attached",
+                    "desc": "When making an Intelligence (Probe) check to detect the S-threaded ship’s hyperspace travel, its angle of departure can be detected on a roll of 15 instead of 25"
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "S-Thread Tracer",
+        "text": "On a failed saving throw, the missile latches an S-thread tracer onto the target. When making an Intelligence (Probe) check to detect the S-threaded ship’s hyperspace travel, its angle of departure can be detected on a roll of 15 instead of 25."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Homing - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "24 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "2d12 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Torpedo Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 1200/4800), explosive, homing",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Adv. Proton - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "48 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d12 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Torpedo Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), explosive, keen 1",
+        "title": "Effect"
+      }
+    ],
+    "criton": "19",
+    "_v": 2
+  },
+  {
+    "name": "Flechette - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": 15,
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "ieffect2",
+            "name": "Flechette Terrain",
+            "buttons": [
+              {
+                "label": "Flechette - Start of Turn",
+                "style": 4,
+                "verb": "is affected by the flechettes!",
+                "defaultDC": "lastSaveDC",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "success": [],
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "2d8 [kinetic]"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Flechette Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Spread - Flechette Parent",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "2d8 [kinetic]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "dc": "15",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": []
+                        },
+                        {
+                      "type": "ieffect2",
+                      "name": "Flechette Terrain",
+                      "buttons": [
+                        {
+                          "label": "Flechette - Start of Turn",
+                          "style": 4,
+                          "verb": "is affected by the flechettes!",
+                          "defaultDC": "lastSaveDC",
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "self",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "dex",
+                                  "success": [],
+                                  "fail": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d8 [kinetic]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "A Flechette torpedo detonates at a point within range, creating a 200 (400) foot cube of difficult terrain. Any ship entering or starting their turn in this area must succeed at a Dexterity saving throw (DC 15) or take 1d8 [2d8] kinetic damage.",
+                      "title": "Flechette Torpedo"
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Flechette Torpedo",
+        "text": "A Flechette torpedo detonates at a point within range, creating a 200 (400) foot cube of difficult terrain. Any ship entering or starting their turn in this area must succeed at a Dexterity saving throw (DC 15) or take 1d8 [2d8] kinetic damage."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
     "_v": 2
   }
 ]

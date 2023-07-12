@@ -1,5 +1,359 @@
 [
   {
-
+    "name": "Tertiary Weapon Condition",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "lastSaveNaturalRoll == 1",
+        "onTrue": [
+          {
+            "type": "damage",
+            "damage": "36 [kinetic]"
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "damage",
+            "damage": "{damage}"
+          }
+        ],
+        "errorBehaviour": "raise"
+      }
+    ]
+  },
+  {
+    "name": "ionizing",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "con",
+        "dc": 13,
+        "fail": [
+          {
+            "type": "ieffect2",
+            "name": "Ionized",
+            "desc": "An ionized starship has disadvantage on attack rolls and ability checks",
+            "effects": {
+              "attack_advantage": -1,
+              "check_dis": [
+                "all"
+              ]
+            },
+            "duration": 10,
+            "buttons": [
+              {
+                "label": "Resist Ionized",
+                "verb": "attempts to",
+                "defaultDC": "lastSaveDC",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "success": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "fail": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "title": "Ionizing",
+                    "text": "On a hit, the target must succeed on a DC 13 Constitution saving throw or it is ionized for 1 minute. As an action by a crewmember on their turn, the ship can repeat the saving throw, ending the effect early on a success. Ships larger than you have advantage on the saving throw. "
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "success": []
+      }
+    ]
+  },
+  {
+    "name": "connor net",
+    "automation": [
+      {
+        "type": "save",
+        "stat": "con",
+        "dc": 15,
+        "fail": [
+          {
+            "type": "ieffect2",
+            "name": "Stunned",
+            "desc": "A stunned ship has 4 Slowed Levels.\n - The ship automatically fails Strength and Dexterity saving throws.\n - Attack rolls against the ship have advantage.",
+            "duration": 10,
+            "buttons": [
+              {
+                "label": "Resist Stunned",
+                "verb": "attempts to",
+                "defaultDC": "lastSaveDC",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "success": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "fail": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "title": "Connor Net",
+                    "text": "On a failed saving throw for a missile or upon detonation for a mine, a conner net deploys on the target, which must make a Constitution saving throw (DC 15). On a failed save, the ship is stunned for 1 minute. As an action on each of their turns, a crewmember can have the ship repeat the saving throw, ending the effect on a success."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "success": []
+      }
+    ]
+  },
+  {
+    "name": "discord missile",
+    "automation": [
+      {
+        "type": "ieffect2",
+        "name": "Discord Missiles",
+        "buttons": [
+          {
+            "label": "Discord Missile - End of Turn",
+            "verb": "takes a level of system damage",
+            "style": 4,
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "ieffect2",
+                    "name": "System Damage",
+                    "stacking": true
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": "At the end of each of the target ship - s turns, the target ship gains one level of system damage if the target is medium or smaller [large or smaller]."
+              }
+            ]
+          },
+          {
+            "label": "Discord Missile - Resist",
+            "verb": "attempts to resist the missiles!",
+            "defaultDC": "lastSaveDC",
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "condition",
+                    "condition": "target.saves.get('dex') >= target.saves.get('con')",
+                    "onTrue": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "success": []
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "success": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": "As an action on each of their turns, a crewmember can have the ship attempt their choice of a dexterity or constitution saving throw (DC 15), ending the effect on a success.\n\nEMP BOMB"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "s-thread tracer",
+    "automation": [
+      {
+        "type": "ieffect2",
+        "name": "S-Thread Tracer Attached",
+        "desc": "When making an Intelligence (Probe) check to detect the S-threaded ship’s hyperspace travel, its angle of departure can be detected on a roll of 15 instead of 25"
+      }
+    ]
+  },
+  {
+    "name": "flechette",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8 [kinetic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": 15,
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "ieffect2",
+            "name": "Flechette Terrain",
+            "buttons": [
+              {
+                "label": "Flechette - Start of Turn",
+                "style": 4,
+                "verb": "is affected by the flechettes!",
+                "defaultDC": "lastSaveDC",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "success": [],
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "2d8 [kinetic]"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Flechette Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Spread - Flechette Parent",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "2d8 [kinetic]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "dc": "15",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": []
+                        },
+                        {
+                      "type": "ieffect2",
+                      "name": "Flechette Terrain",
+                      "buttons": [
+                        {
+                          "label": "Flechette - Start of Turn",
+                          "style": 4,
+                          "verb": "is affected by the flechettes!",
+                          "defaultDC": "lastSaveDC",
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "self",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "dex",
+                                  "success": [],
+                                  "fail": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d8 [kinetic]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "A Flechette torpedo detonates at a point within range, creating a 200 (400) foot cube of difficult terrain. Any ship entering or starting their turn in this area must succeed at a Dexterity saving throw (DC 15) or take 1d8 [2d8] kinetic damage.",
+                      "title": "Flechette Torpedo"
+                    }
+                  ],
+                  "_v": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Flechette Torpedo",
+        "text": "A Flechette torpedo detonates at a point within range, creating a 200 (400) foot cube of difficult terrain. Any ship entering or starting their turn in this area must succeed at a Dexterity saving throw (DC 15) or take 1d8 [2d8] kinetic damage."
+      }
+    ]
   }
 ]
