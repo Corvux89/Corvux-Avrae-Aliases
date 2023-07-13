@@ -1212,6 +1212,19 @@
     "_v": 2
   },
   {
+    "name": "Reload - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Assault Torpedo Launcher",
+        "amount": -1,
+        "errorBehavior": "raise"
+      }
+    ],
+    "verb": "reloads",
+    "_v": 2
+  },
+  {
     "name": "Adv. Proton - Assault Torpedo Launcher",
     "automation": [
       {
@@ -1351,27 +1364,29 @@
                           "success": []
                         },
                         {
-                      "type": "ieffect2",
-                      "name": "Flechette Terrain",
-                      "buttons": [
-                        {
-                          "label": "Flechette - Start of Turn",
-                          "style": 4,
-                          "verb": "is affected by the flechettes!",
-                          "defaultDC": "lastSaveDC",
-                          "automation": [
+                          "type": "ieffect2",
+                          "name": "Flechette Terrain",
+                          "buttons": [
                             {
-                              "type": "target",
-                              "target": "self",
-                              "effects": [
+                              "label": "Flechette - Start of Turn",
+                              "style": 4,
+                              "verb": "is affected by the flechettes!",
+                              "defaultDC": "lastSaveDC",
+                              "automation": [
                                 {
-                                  "type": "save",
-                                  "stat": "dex",
-                                  "success": [],
-                                  "fail": [
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
                                     {
-                                      "type": "damage",
-                                      "damage": "2d8 [kinetic]"
+                                      "type": "save",
+                                      "stat": "dex",
+                                      "success": [],
+                                      "fail": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "2d8 [kinetic]"
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -1379,8 +1394,6 @@
                             }
                           ]
                         }
-                      ]
-                    }
                       ]
                     },
                     {
@@ -1405,6 +1418,308 @@
         "type": "text",
         "text": "Ammunition, reload 8, (Range 600/2400), special",
         "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Plasma - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "49 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d12 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Torpedo Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 1200/4800), vicious 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Proton - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d10 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Torpedo Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 800/3200), explosive, keen 1",
+        "title": "Effect"
+      }
+    ],
+    "criton": "19",
+    "_v": 2
+  },
+  {
+    "name": "Thermite - Assault Torpedo Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40 [fire]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d10 [fire]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "save": []
+          },
+          {
+            "type": "counter",
+            "counter": "Assault Torpedo Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 8, (Range 1200/4800), melt, keen 1",
+        "title": "Effect"
+      }
+    ],
+    "criton": "19",
+    "_v": 2
+  },
+  {
+    "name": "Assault Turbolaser Battery",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "6d6 [energy]"
+              },
+              {
+                "type": "counter",
+                "counter": "Assault Turbolaser Battery",
+                "amount": 1,
+                "errorBehavior": "raise"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "wisdomMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power (range 1200/4800), constitution 15, overheat 2",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cooldown - Assault Laser Cannon",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Assault Laser Cannon",
+        "amount": -2,
+        "errorBehavior": "raise"
+      }
+    ],
+    "verb": "cools down",
+    "_v": 2
+  },
+  {
+    "name": "Blaster Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [energy]"
+              },
+              {
+                "type": "counter",
+                "counter": "Blaster Cannon",
+                "amount": 1,
+                "errorBehavior": "raise"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "wisdomMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power (range 600/2400), hidden, overheat 18, rapid 9",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Blaster Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d8 [energy]"
+              }
+            ],
+            "success": [],
+            "dc": "8+wisdomMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Blaster Cannon",
+            "amount": 9,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power (range 600/2400), hidden, overheat 18, rapid 9",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Cooldown - Blaster Cannon",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Blaster Cannon",
+        "amount": -18,
+        "errorBehavior": "raise"
+      }
+    ],
+    "verb": "cools down",
+    "_v": 2
+  },
+  {
+    "name": "Blaster Point-Defense",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "attackBonus": "max(wisdomMod,strengthMod)",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d4 [energy]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power (range 200/800), saturate, zone"
       }
     ],
     "_v": 2

@@ -50,7 +50,7 @@ def stripAmmo(name):
         "Cell, Incendiary - ", '')
 
     out = out.replace("Adv. - ", "").replace("Adv. Homing - ", "").replace("Homing - ", "")
-    out = out.replace("Adv. Proton - ","").replace("Flechette - ","")
+    out = out.replace("Adv. Proton - ","").replace("Flechette - ","").replace("Plasma - ","").replace("Thermite - ","")
     out = out.replace("Adv. Concussion - ", "").replace("Concussion - ", "").replace("Discord - ","").replace("Proton - ","").replace("Silent Thunder - ","").replace("S-Thread - ", "")
 
     return out
