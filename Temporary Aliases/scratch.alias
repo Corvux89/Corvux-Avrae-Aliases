@@ -1,7 +1,12 @@
 <drac2>
-com = combat()
+ch = character()
+shipStats = load_json(ch.get_cvar("shipStats","{}"))
+a = argparse(&args&)
+shield = a.last('shield') if a.get('shield') else shipStats.get("shield")
+dr = a.last('dr')
 
-if com:
-    for p in com.combatants:
-        if p.controller = ctx.author.id
+# Rough formula
+hd = tier * {2 if ch.race in ["Huge", "Gargantuan"]} + {"Small": 3, "Medium": 5, "Large": 7, "Huge": 9, "Gargantuan": 11, "Tiny": 1)}
+
+
 </drac2>

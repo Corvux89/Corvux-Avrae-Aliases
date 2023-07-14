@@ -784,7 +784,9 @@
     "effect": {
       "name": "Steadied",
       "desc": "Until the end of #name#'s next turn, you and all allies within 5 feet of you when you use this action has a bonus to any saving throws they make equal to the amount rolled.",
-      "passive_effects": {"save_bonus": "#diceTotal#"},
+      "passive_effects": {
+        "save_bonus": "#diceTotal#"
+      },
       "parent": {
         "name": "Steady the Nerves",
         "duration": 2,
@@ -859,7 +861,9 @@
       "fail": {
         "effect": {
           "name": "Prone",
-          "passive_effects": {"attack_advantage":  -1}
+          "passive_effects": {
+            "attack_advantage": -1
+          }
         }
       }
     }
@@ -874,16 +878,19 @@
   {
     "name": "Tyrannical Strike",
     "sub": "Mental",
-    "desc": "-title \"#name# #uses# Tyrannical Strike!\" #desc#",
+    "desc": "-title \"#name# #uses# Tyrannical Strike!\" #desc# -footer \"#combatantFooter#\"",
     "roll": "#superiorityDice#",
     "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency with Intimidation*\n\nWhen you hit a creature with a weapon attack, you can expend one superiority die and use your reaction to issue a one-word command to a creature who can see or hear you. You add the superiority die to the attack’s damage roll, and the target must succeed on a Wisdom saving throw. On a failed save, the target must follow the command on its next turn.\n\nThe target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it.\"",
     "save": {
       "dc": "8+#prof_bonus#+#maneuverMod#",
       "type": "wis",
       "fail": {
-        "name": "Tyrannical Strike - Charmed",
-        "duration": 1,
-        "desc": "The target must follow the command on its next turn. The target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it."
+        "damage": "#diceTotal# [#dmgType#]",
+        "effect": {
+          "name": "Tyrannical Strike - Charmed",
+          "duration": 1,
+          "desc": "The target must follow the command on its next turn. The target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it."
+        }
       }
     }
   },

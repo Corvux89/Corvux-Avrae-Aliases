@@ -45,6 +45,9 @@ def processPower(args):
         elif bool(set(subclasses) & {"Artificer", "Inquisitor"}):
             if spell := search(keyword, fp):
                 cc = "Tech Points"
+        elif feats.get("ForceSensitive"):
+            if spell := search(keyword, fp):
+                cc = "Force Points"
         else:
             spell = None
     else:
