@@ -1,3 +1,7 @@
 <drac2>
-return f''' -f "Testing Variables|[attack] - [attack.name] - [aname]" '''
+com = combat()
+
+if com:
+    for p in com.combatants:
+        if p.controller = ctx.author.id
 </drac2>

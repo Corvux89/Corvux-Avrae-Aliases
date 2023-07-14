@@ -1,43 +1,15 @@
 {
-  "name": "Sanctuary",
-  "size": "Large",
-  "role": "Picket Ship",
-  "tier": 0,
-  "stats": {
-    "str": 15,
-    "dex": 12,
-    "con": 17,
-    "int": 10,
-    "wis": 15,
-    "cha": 8
-  },
-  "hp": 67,
-  "ac": 11,
-  "sp": 40,
-  "saves": {
-    "str": 1,
-    "dex": 0,
-    "con": 0,
-    "int": 0,
-    "wis": 1,
-    "cha": 0
-  },
-  "skills": {
-    "maneuvering": 0,
-    "scan": 0,
-    "astrogation": 1,
-    "boost": 0,
-    "swindle": 0,
-    "data": 0,
-    "ram": 0,
-    "menace": 0,
-    "probe": 0,
-    "patch": 0,
-    "regulation": 0,
-    "impress": 0,
-    "interfere": 0,
-    "hide": 0
-  },
-  "hd": "d10",
-  "hdm": 7
+  "maneuvering": "acrobatics",
+  "scan": "animal handling",
+  "boost": "arcana",
+  "swindle": "deception",
+  "data": "history",
+  "ram": "insight",
+  "menace": "intimidation",
+  "probe": "investigation",
+  "patch": "medicine",
+  "regulation": "nature",
+  "impress": "performance",
+  "interfere": "slieght of hand",
+  "hide": "stealth"
 }
