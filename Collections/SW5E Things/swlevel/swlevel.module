@@ -70,6 +70,7 @@ def level(args):
             if level >= cl.get("subclassLevel") and cl.Class not in [x.Class for x in playerArchetype]:
                 err_str.append(f"Don't forget your subclass!|One or more of your classes is high enough level "
                                 f"to select a subclass, do so with `{ctx.prefix}swlevel <class> <archetype>`.")
+
         if ctx.author.id == 225752877316964352 and dev:
             actions = getActions(playerClass, playerArchetype, inLevel)
             updateActions(actions)
