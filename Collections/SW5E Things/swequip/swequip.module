@@ -8,7 +8,7 @@ def processAttacks(attacks, args):
         prop = sup.getProperties(attack)
 
         if not(sup.processName(a.name) == sup.baseName(a.name) or args.get('ammo')):
-            break
+            continue
         elif not args.get('ammo'):
             attack = attack.replace(f'{a.name}', f'{sup.stripAmmo(a.name)}')
 

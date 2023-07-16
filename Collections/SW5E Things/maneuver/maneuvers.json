@@ -879,13 +879,13 @@
     "name": "Tyrannical Strike",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Tyrannical Strike!\" #desc# -footer \"#combatantFooter#\"",
-    "roll": "#superiorityDice#",
-    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency with Intimidation*\n\nWhen you hit a creature with a weapon attack, you can expend one superiority die and use your reaction to issue a one-word command to a creature who can see or hear you. You add the superiority die to the attack’s damage roll, and the target must succeed on a Wisdom saving throw. On a failed save, the target must follow the command on its next turn.\n\nThe target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it.\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "kinetic",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency with Intimidation*\n\nWhen you hit a creature with a weapon attack, you can expend one superiority die and use your reaction to issue a one-word command to a creature who can see or hear you. You add the superiority die to the attack’s damage roll, and the target must succeed on a Wisdom saving throw. On a failed save, the target must follow the command on its next turn.\n\nThe target automatically succeeds if it is immune to charm, it doesn’t understand your language, or if your command is directly harmful to it.\"",
     "save": {
       "dc": "8+#prof_bonus#+#maneuverMod#",
       "type": "wis",
       "fail": {
-        "damage": "#diceTotal# [#dmgType#]",
         "effect": {
           "name": "Tyrannical Strike - Charmed",
           "duration": 1,
