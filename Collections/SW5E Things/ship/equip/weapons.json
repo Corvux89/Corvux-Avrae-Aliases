@@ -3749,7 +3749,7 @@
     "verb": "cools down",
     "_v": 2
   },
-  {
+    {
     "name": "Ion Pulse - Missile Launcher",
     "automation": [
       {
@@ -3829,7 +3829,7 @@
                 "success": []
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -3846,7 +3846,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 1000/4000), ionizing",
+        "text": "Ammunition, reload 4, (Range 1000/4000), ionizing",
         "title": "Effect"
       }
     ],
@@ -3900,7 +3900,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           }
         ]
       },
@@ -3912,7 +3912,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
         "title": "Effect"
       }
     ],
@@ -3948,7 +3948,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           }
         ]
       },
@@ -3960,7 +3960,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
         "title": "Effect"
       }
     ],
@@ -4001,7 +4001,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           }
         ]
       },
@@ -4013,7 +4013,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
         "title": "Effect"
       }
     ],
@@ -4049,7 +4049,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           }
         ]
       },
@@ -4061,7 +4061,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
         "title": "Effect"
       }
     ],
@@ -4124,7 +4124,7 @@
                 "success": []
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -4141,7 +4141,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 600/2400), special",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
         "title": "Effect"
       }
     ],
@@ -4233,7 +4233,7 @@
                 ]
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -4250,7 +4250,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 600/2400), special",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
         "title": "Effect"
       }
     ],
@@ -4286,7 +4286,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -4298,7 +4298,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 200/800), explosive, vicious 1",
+        "text": "Ammunition, reload 4, (Range 200/800), explosive, vicious 1",
         "title": "Effect"
       }
     ],
@@ -4334,7 +4334,7 @@
                 "errorBehaviour": "raise"
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -4346,7 +4346,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 1200/4800), explosive",
+        "text": "Ammunition, reload 4, (Range 1200/4800), explosive",
         "title": "Effect"
       }
     ],
@@ -4378,7 +4378,7 @@
                 "success": []
               }
             ],
-            "save": []
+            "success": []
           },
           {
             "type": "counter",
@@ -4395,7 +4395,7 @@
       },
       {
         "type": "text",
-        "text": "Ammunition, reload4, (Range 600/2400), special",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
         "title": "Effect"
       }
     ],

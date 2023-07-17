@@ -1,91 +1,654 @@
 [
   {
-    "name": "Saber Reflect",
-    "level": 0,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take in response to being dealt damage by a ranged attack",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \r\n\r\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false,
+    "name": "Ion Pulse - Missile Launcher",
     "automation": [
       {
-        "type": "roll",
-        "dice": "1d6",
-        "cantripScale": true,
-        "name": "reflect"
-      },
-      {
         "type": "target",
-        "target": "self",
+        "target": "each",
         "effects": [
           {
-            "type": "condition",
-            "condition": "choice and int(reflect) >= int(choice)",
-            "onTrue": [
-              {
-                "type": "damage",
-                "damage": "-{choice} [healing]"
-              }
-            ],
-            "onFalse": [
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
               {
                 "type": "condition",
-                "condition": "choice",
+                "condition": "lastSaveNaturalRoll == 1",
                 "onTrue": [
                   {
                     "type": "damage",
-                    "damage": "-{reflect} [healing]"
+                    "damage": "20 [ion]"
                   }
                 ],
                 "onFalse": [
                   {
-                    "type": "text",
-                    "text": "Use `-choice` to set how much damage you are reflecting. Ex: `-choice 4`"
+                    "type": "damage",
+                    "damage": "2d10 [ion]"
                   }
-                ]
+                ],
+                "errorBehaviour": "raise"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 13,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Ionized",
+                    "desc": "An ionized starship has disadvantage on attack rolls and ability checks",
+                    "effects": {
+                      "attack_advantage": -1,
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "duration": 10,
+                    "buttons": [
+                      {
+                        "label": "Resist Ionized",
+                        "verb": "attempts to",
+                        "defaultDC": "lastSaveDC",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "fail": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "title": "Ionizing",
+                            "text": "On a hit, the target must succeed on a DC 13 Constitution saving throw or it is ionized for 1 minute. As an action by a crewmember on their turn, the ship can repeat the saving throw, ending the effect early on a success. Ships larger than you have advantage on the saving throw. "
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": []
               }
-            ]
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
           }
-
         ]
       },
       {
-    "type": "target",
-    "target": "each",
-    "effects": [
-      {
-        "type": "condition",
-        "condition": "choice and int(reflect) >= int(choice)",
-        "onTrue": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "{choice}"
-              }
-            ],
-            "miss": []
-          }
-        ],
-        "onFalse": [],
-        "errorBehaviour": "raise"
-      }
-    ]
-  },
+        "type": "text",
+        "title": "Ionizing",
+        "text": "On a hit, the target must succeed on a DC 13 Constitution saving throw or it is ionized for 1 minute. As an action by a crewmember on their turn, the ship can repeat the saving throw, ending the effect early on a success. Ships larger than you have advantage on the saving throw. "
+      },
       {
         "type": "text",
-        "text": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+        "text": "Ammunition, reload 4, (Range 1000/4000), ionizing",
+        "title": "Effect"
       }
-    ]
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Reload - Missile Launcher",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Missile Launcher",
+        "amount": -1,
+        "errorBehavior": "raise"
+      }
+    ],
+    "verb": "reloads",
+    "_v": 2
+  },
+  {
+    "name": "Burst - Adv. Concussion - Missile Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d10 [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "20 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Adv. Concussion - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "20 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "2d10 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Burst - Concussion - Missile Launcher",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8 [energy]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "16 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Concussion - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "32 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d8 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Missile Launcher",
+        "amount": 1,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 800/3200), auto, burst 1, explosive, rapid 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Conner Net - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 15,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Stunned",
+                    "desc": "A stunned ship has 4 Slowed Levels.\n - The ship automatically fails Strength and Dexterity saving throws.\n - Attack rolls against the ship have advantage.",
+                    "duration": 10,
+                    "buttons": [
+                      {
+                        "label": "Resist Stunned",
+                        "verb": "attempts to",
+                        "defaultDC": "lastSaveDC",
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "fail": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "title": "Connor Net",
+                            "text": "On a failed saving throw for a missile or upon detonation for a mine, a conner net deploys on the target, which must make a Constitution saving throw (DC 15). On a failed save, the ship is stunned for 1 minute. As an action on each of their turns, a crewmember can have the ship repeat the saving throw, ending the effect on a success."
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Connor Net",
+        "text": "On a failed saving throw for a missile or upon detonation for a mine, a conner net deploys on the target, which must make a Constitution saving throw (DC 15). On a failed save, the ship is stunned for 1 minute. As an action on each of their turns, a crewmember can have the ship repeat the saving throw, ending the effect on a success."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Discord - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Discord Missiles",
+                "buttons": [
+                  {
+                    "label": "Discord Missile - End of Turn",
+                    "verb": "takes a level of system damage",
+                    "style": 4,
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "ieffect2",
+                            "name": "System Damage",
+                            "stacking": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "text": "At the end of each of the target ship - s turns, the target ship gains one level of system damage if the target is medium or smaller [large or smaller]."
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Discord Missile - Resist",
+                    "verb": "attempts to resist the missiles!",
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "condition",
+                            "condition": "target.saves.get('dex') >= target.saves.get('con')",
+                            "onTrue": [
+                              {
+                                "type": "save",
+                                "stat": "dex",
+                                "fail": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "success": []
+                              }
+                            ],
+                            "onFalse": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  }
+                                ],
+                                "success": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "text": "As an action on each of their turns, a crewmember can have the ship attempt their choice of a dexterity or constitution saving throw (DC 15), ending the effect on a success.\n\nEMP BOMB"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Discord Missile",
+        "text": "On a failed saving throw, the missile deploys pistoeka sabotage or - buzz - droids on the target. At the end of each of the target ship - s turns, the target ship gains one level of system damage if the target is medium or smaller [large or smaller]. As an action on each of their turns, a crewmember can have the ship attempt their choice of a dexterity or constitution saving throw (DC 15), ending the effect on a success."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Proton - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40+10 [kinetic]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "10d4 [kinetic]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 200/800), explosive, vicious 1",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Silent Thunder - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "lastSaveNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "40 [energy]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "4d10 [energy]"
+                  }
+                ],
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 1200/4800), explosive",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "S-Thread - Missile Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "dc": "8+wisdomMod",
+            "fail": [
+              {
+                "type": "save",
+                "stat": "con",
+                "dc": 15,
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "S-Thread Tracer Attached",
+                    "desc": "When making an Intelligence (Probe) check to detect the S-threaded ship’s hyperspace travel, its angle of departure can be detected on a roll of 15 instead of 25"
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "counter",
+            "counter": "Missile Launcher",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "title": "S-Thread Tracer",
+        "text": "On a failed saving throw, the missile latches an S-thread tracer onto the target. When making an Intelligence (Probe) check to detect the S-threaded ship’s hyperspace travel, its angle of departure can be detected on a roll of 15 instead of 25."
+      },
+      {
+        "type": "text",
+        "text": "Ammunition, reload 4, (Range 600/2400), special",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
   }
 ]
