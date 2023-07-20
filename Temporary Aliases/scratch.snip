@@ -1,6 +1,16 @@
 <drac2>
-com = combat()
+ch = character()
+cc="Potent Aptitude"
 
-com.me.add_effect("Wristband", passive_effects={"ac_bonus": 2})
+pad = f"1d{proficiencyBonus*2}"
+
+if ch.cc_exists(cc) and ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+
+    return f'''-b pad -f "{cc} (-1)|{ch.cc_str(cc)}\n\nWhen you cast a power that boosts a creature's armor class, you can expend and roll a potent aptitude die to increase their armor class the by rolled amount for the duration of the power." '''
+elif ch.cc_exists(cc) and not ch.get_cc(cc):
+    return err("Not enough charges remaining")
+else:
+    return err(f"{cc} counter doesn't exist")
 
 </drac2>

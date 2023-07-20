@@ -1,80 +1,176 @@
-{
-  "name": "Shove (Prone)",
-  "automation": [
-    {
-      "type": "target",
-      "target": 1,
-      "effects": [
-        {
-          "type": "check",
-          "ability": [
-            "acrobatics",
-            "athletics"
-          ],
-          "contestAbility": [
-            "athletics"
-          ],
-          "fail": [
-            {
-              "type": "ieffect2",
-              "name": "Prone",
-              "duration": null,
-              "effects": {
-                "attack_advantage": "-1",
-                "to_hit_bonus": null,
-                "damage_bonus": null,
-                "magical_damage": null,
-                "silvered_damage": null,
-                "resistances": null,
-                "immunities": null,
-                "vulnerabilities": null,
-                "ignored_resistances": null,
-                "ac_value": null,
-                "ac_bonus": null,
-                "max_hp_value": null,
-                "max_hp_bonus": null,
-                "save_bonus": null,
-                "save_adv": null,
-                "save_dis": null,
-                "check_bonus": null,
-                "check_adv": null,
-                "check_dis": null
-              },
-              "attacks": [],
-              "buttons": [
-                {
-                  "label": "Stand Up",
-                  "automation": [
-                    {
-                      "type": "remove_ieffect"
-                    }
-                  ],
-                  "verb": "stands up",
-                  "style": "3",
-                  "defaultDC": null,
-                  "defaultAttackBonus": null,
-                  "defaultCastingMod": null
-                }
-              ],
-              "end": false,
-              "conc": false,
-              "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition.",
-              "stacking": false,
-              "save_as": null,
-              "parent": null,
-              "target_self": false,
-              "tick_on_caster": false
-            }
-          ],
-          "contestTie": "neither"
-        }
-      ]
+[
+  {
+    "name": "Sanctuary",
+    "size": "Large",
+    "role": "Picket Ship",
+    "tier": 0,
+    "stats": {
+      "str": 15,
+      "dex": 12,
+      "con": 17,
+      "int": 10,
+      "wis": 15,
+      "cha": 8
     },
-    {
-      "type": "text",
-      "text": "Using the Attack action, you can make a special melee attack to shove a creature, either to knock it prone or push it away from you. If you\u2019re able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target must be no more than one size larger than you and must be within your reach. Instead of making an attack roll, you make a Strength (Athletics) check contested by the target\u2019s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). You succeed automatically if the target is incapacitated. If you succeed, you either knock the target prone or push it 5 feet away from you.",
-      "title": "Effect"
-    }
-  ],
-  "_v": 2
-}
+    "hp": 67,
+    "ac": 11,
+    "sp": 40,
+    "saves": {
+      "str": 1,
+      "dex": 0,
+      "con": 0,
+      "int": 0,
+      "wis": 1,
+      "cha": 0
+    },
+    "skills": {
+      "maneuvering": 0,
+      "scan": 0,
+      "astrogation": 1,
+      "boost": 0,
+      "swindle": 0,
+      "data": 0,
+      "ram": 0,
+      "menace": 0,
+      "probe": 0,
+      "patch": 0,
+      "regulation": 0,
+      "impress": 0,
+      "interfere": 0,
+      "hide": 0
+    },
+    "hd": "d10",
+    "hdm": 7,
+    "shield_points": 40,
+    "shield_regen": 15,
+    "dmg_red": 3,
+    "power_die_round": "1d2",
+    "central_cap": 2,
+    "system_cap": 1
+  },
+  {
+    "name": "Recharge Shields",
+    "_v": 2,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "6",
+        "name": "rate",
+        "displayName": "Regeneration Rate"
+      },
+      {
+        "type": "variable",
+        "name": "shields",
+        "value": "min(40,caster.temp_hp+rate)"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "temphp",
+            "amount": "{shields}"
+          },
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehavior": "raise"
+          }
+        ]
+      }
+    ],
+    "verb": "uses"
+  },
+  {
+    "name": "Patch",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "check",
+            "ability": "medicine",
+            "dc": "max(10,floor((caster.max_hp-caster.hp)/2))",
+            "success": [
+              {
+                "type": "damage",
+                "damage": "-1d10 [healing]"
+              }
+            ],
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "-2d10kl1 [healing]"
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehavior": "raise"
+          }
+        ]
+      }
+    ],
+    "_v": 2,
+    "verb": "uses"
+  },
+  {
+    "name": "Hull - Damage Reduction",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "nevershouldexist",
+        "amount": 3,
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects":[
+          {
+            "type": "damage",
+            "damage": "-{min(3,lastCounterRequestedAmount)} [damage reduction]",
+            "overheal": false
+          }
+        ]
+      }
+    ],
+    "_v": 2,
+    "verb": "reduces incoming damage"
+  },
+  {
+    "name": "Shields - Damage Reduction",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "nevershouldexist",
+        "amount": 3,
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "variable",
+        "name": "shields",
+        "value": "min(40,caster.temp_hp+min(3,lastCounterRequestedAmount))"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects":[
+          {
+            "type": "temphp",
+            "amount": "{shields}"
+          }
+        ]
+      }
+    ],
+    "_v": 2,
+    "verb": "reduces incoming damage using"
+  },
+  {
+
+  }
+]

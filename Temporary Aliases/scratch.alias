@@ -1,55 +1,7 @@
 <drac2>
 ch = character()
-shipStats = load_json(ch.get_cvar("shipStats","{}"))
-a = argparse(&ARGS&)
-dagger = '†'
-footer = f"\"{ctx.prefix}ship setup v1.0 | @Corvux\""
+for cl, lvl in ch.levels:
+    type = cl
 
-tier = ch.levels.total_level - 1
-
-base = f'''embed -thumb {image} -color {color} -footer {footer} -title "Level Summary for {ch.name}" '''
-base += f''' -f "Info|Tier {tier} - {ch.race} {ch.background}|inline" '''
-
-# Hull/Shield Dice
-hdMult = 2 if ch.race.lower() in ["huge", "gargantuan"] else 1
-hdNum = {"small": 3, "medium": 5, "large": 7, "huge": 9, "gargantuan": 11, "tiny": 1}
-hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "d12", "gargantuan": "d20"}
-numDie = (tier * hdMult) + hdNum.get(ch.race.lower(),0)
-hd = f"d{hdSize.get(ch.race.lower(),0)}"
-
-hdName = f"Hit Dice ({hd})"
-if ch.cc_exists(hdName):
-    ch.delete_cc(hdName)
-ch.create_cc_nx(name, 0, numDie)
-
-base += f''' -f "Hit Die|{numDie}{hd}|inline" '''
-
-# Power Dice
-pds = 'd1' if tier == 0 else 'd4' if tier == 1 else 'd6' if tier == 2 else 'd8' if tier == 3 else 'd10' if tier == 4 else 'd12'
-
-
-
-# Variables
-shipStats["shield"] = int(a.last('shield')) if a.get('shield') else shipStats.get("shield",0)
-s_str = f"Max Shield (`-shield`): {shipStats['shield']}"
-
-shipStats["dr"] = int(a.last('dr')) if a.get('dr') else shipStats.get("dr",0)
-s_str += f"\nDamage Reduction (`-dr`): {shipStats['dr']}"
-
-shipStats["sr"] = int(a.last('sr')) if a.get('sr') else shipStats.get("sr",0)
-s_str += f"\nShield Regeneration (`-sr`): {shipStats['sr']}"
-
-shipStats["cpdc"] = int(a.last('cpdc')) if a.get('cpdc') else shipStats.get("cpdc",0)
-s_str += f"\nCentral Power Die Capacity (`-cpdc`): {shipStats['cpdc']}"
-
-shipStats["pds"] =
-s_str += f"\nPower Die Size (`-pds`{dagger}): {shipStats['pds']}"
-
-
-s_str += f"\n\n*{dagger} - Optional parameter*"
-base += f''' -f "Stored Stats|{s_str}" '''
-
-ch.set_cvar("shipStats", dump_json(shipStats))
-
-return base
+return err(type)
 </drac2>

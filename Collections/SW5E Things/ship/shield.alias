@@ -1,5 +1,6 @@
 <drac2>
 c = character()
+shipStats = load_json(c.get_cvar("shipStats"))
 com = combat()
 a = argparse(&ARGS&)
 targets = []
@@ -15,9 +16,20 @@ base = f'''embed -thumb {image} -color {color} -title "Setting up shields"'''
 
 for target in targets:
     thp = int(target[1]) if target[1] != '' else 0
+
+    if target[0].name == com.me.name and thp == 0:
+        thp = int(shipStats.get("shield",0))
+
     if thp > 0:
         target[0].set_temp_hp(thp)
         base += f''' -f "{target[0].name}|{target[0].hp_str()}" '''
+
+
+# Effect Plan:
+    # Buttons
+        # - Regenerate Hull
+        # - Regenerate Shield
+        # - Switch Resistances
 
 
 return base

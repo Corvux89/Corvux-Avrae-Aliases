@@ -1,0 +1,137 @@
+ch = character()
+com = combat()
+shipStats = load_json(ch.get_cvar("shipStats", {}))
+hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "d12", "gargantuan": "d20"}
+
+
+def startCombat(args):
+    if not shipStats.get("shield"):
+        return err(f"Please use `{ctx.prefix}ship level` to setup your ship stats first.")
+    elif not com:
+        return err(f"This alias is used to setup combat....you're not in combat.....see the problem?")
+
+    # Shields
+    if ch.temp_hp == 0:
+        ch.set_temp_hp(shipStats.get('shield', 0))
+
+    immune = ["poison", "psychic"]
+
+    # Setup Effects
+    peff = {"immunities": immune}
+    desc = f"Max Shields: {shipStats.get('shield', 0)}\n - Damage Reduction: {shipStats.get('dmg_red', 0)}"
+    attacks = [get_recharge_shields_attack(), get_patch_attack(), get_hull_reduction_attack(),
+               get_shield_reduction_attack()]
+    buttons = [get_recharge_button(), get_patch_button(), get_boost_engine_button(), get_boost_shields_button()]
+
+    # Add Effect
+    parent = com.me.add_effect(f"{ch.name} Effects", None, None, None, None, False, desc, peff, attacks, buttons)
+
+    return f'''embed -title "testing" -f "{ch.name}|{parent}" '''
+
+
+def get_boost_engine_button():
+    effect = {"type": "ieffect2", "name": "Boost Engines!", "duration": 1, "desc": "Speed increased by 50"}
+
+    check = {"type": "check", "ability": "athletics", "dc": 10,
+             "success": [effect], "fail": []}
+    target = {"type": "target", "target": "self", "effects": [check]}
+
+    return {"label": "Boost Engines","verb": "uses Boost Engines!", "style": 1, "automation": [target, get_attribution_text()]}
+
+def get_boost_shields_button():
+    hds = hdSize.get(ch.race.lower())
+    passRoll = {"type": "roll", "dice": f"1{hds}", "name": "ac_bonus", "displayName": "AC Bonus"}
+
+    effect = {"type": "ieffect2", "name": "Boost Shields!", "duration": 1, "effects": {"ac_bonus": "{ac_bonus}"}, "desc": "Speed increased by 50"}
+
+    check = {"type": "check", "ability": "athletics", "dc": 10,
+             "success": [passRoll, effect], "fail": []}
+    target = {"type": "target", "target": "self", "effects": [check]}
+
+    return {"label": "Boost Shields", "verb": "uses Boost Shields!", "style": 1,
+            "automation": [target, get_attribution_text()]}
+
+
+def get_recharge_shields_attack():
+    attack = {"name": "Recharge Shields", "_v": 2, "verb": "uses", "activation_type": 2,
+              "automation": _get_recharge_automation()}
+
+    return {"attack": attack}
+
+
+def get_recharge_button():
+    return {"label": "Recharge Shields", "verb": "recharges their shields!", "style": 3,
+            "automation": _get_recharge_automation()}
+
+
+def _get_recharge_automation():
+    rate = {"type": "roll", "dice": shipStats.get('regen', 0), "name": "rate", "displayName": "Regeneration Rate"}
+    shields = {"type": "variable", "name": "shields", "value": f"min({shipStats.get('shield', 0)},caster.temp_hp+rate)"}
+    thp = {"type": "temphp", "amount": "{shields}"}
+    target = {"type": "target", "target": "self", "effects": [thp, get_hd_counter()]}
+
+    return [rate, shields, target, get_attribution_text()]
+
+
+def get_patch_attack():
+    attack = {"name": "Patch", "_v": 2, "verb": "uses", "activation_type": 2, "automation": _get_patch_automation()}
+
+    return {"attack": attack}
+
+
+def get_patch_button():
+    return {"label": "Patch", "verb": "patches their hull!", "style": 3, "automation": _get_patch_automation()}
+
+
+def _get_patch_automation():
+    hds = hdSize.get(ch.race.lower())
+    failRoll = {"type": "damage", "damage": f"-2{hds}kl1 [healing]"}
+    passRoll = {"type": "damage", "damage": f"-1{hds} [healing]"}
+
+    check = {"type": "check", "ability": "medicine", "dc": "max(10,floor((caster.max_hp-caster.hp)/2))",
+             "success": [passRoll], "fail": [failRoll]}
+
+    target = {"type": "target", "target": "self", "effects": [check, get_hd_counter(), get_attribution_text()]}
+
+    return [target]
+
+
+def get_hull_reduction_attack():
+    dr = shipStats.get('dmg_red', 0)
+    damage = {"type": "damage", "damage": f"-{{min({dr},lastCounterRequestedAmount)}} [damage reduction]",
+              "overheal": False}
+    target = {"type": "target", "target": "self", "effects": [damage]}
+
+    attack = {"name": "Hull - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
+              "automation": [get_dummy_counter(dr), target, get_attribution_text()]}
+
+    return {"attack": attack}
+
+
+def get_shield_reduction_attack():
+    dr = shipStats.get('dmg_red', 0)
+    shields = {"type": "variable", "name": "shields",
+               "value": f"min({shipStats.get('shield', 0)},caster.temp_hp+min({dr},lastCounterRequestedAmount))"}
+
+    target = {"type": "target", "target": "self", "effects": [shields]}
+
+    attack = {"name": "Shields - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
+              "automation": [get_dummy_counter(dr), target, get_attribution_text()]}
+
+    return {"attack": attack}
+
+
+def get_hd_counter(amt=1):
+    return {"type": "counter", "counter": shipStats.get('hdName'), "amount": amt, "errorBehaviour": "raise"}
+
+
+def get_dummy_counter(amt=1):
+    return {"type": "counter", "counter": "inevershouldexist", "amount": amt, "errorBehaviour": "ignore"}
+
+
+def get_attribution_text():
+    return {"type": "text", "text": f"{ctx.author.display_name}", "title": "Crewmember"}
+
+
+def get_remove_effect():
+    return {"type": "remove_ieffect"}

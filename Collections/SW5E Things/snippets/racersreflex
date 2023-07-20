@@ -1,0 +1,13 @@
+<drac2>
+ch = character()
+cc = "Racer's Reflexes"
+
+if ch.cc_exists(cc) and ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+    return f'''-b 1d4 -f "{cc} (-1)|{ch.cc_str(cc)}\n\nWhenever you make a Dexterity ability check, attack roll, or saving throw, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest." '''
+elif ch.cc_exists(cc) and not ch.get_cc(cc):
+    return err("Not enough charges remaining")
+else:
+    return err("Counter doesn't exist. Please use `!setrace`")
+
+</drac2>

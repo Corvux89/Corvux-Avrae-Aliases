@@ -488,7 +488,15 @@
   },
   {
     "name": "aleena",
-    "counters": [],
+    "counters": [
+      {
+        "name": "Racer's Reflexes",
+        "reset": "short",
+        "use": "snippet `racersreflex`",
+        "level": 1,
+        "value": 1
+      }
+    ],
     "cvars": {
       "race": "Aleena",
       "speed": "25 ft.",
