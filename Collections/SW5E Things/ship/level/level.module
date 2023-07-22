@@ -1,0 +1,77 @@
+# Ship level module
+
+ch = character()
+shipStats = load_json(ch.get_cvar("shipStats","{}"))
+dagger = '†'
+footer = f"\"{ctx.prefix}ship setup v1.0 | @Corvux\""
+tier = ch.levels.total_level - 1
+bg = ch.background.split("|")
+hdNum = {"small": 3, "medium": 5, "large": 7, "huge": 9, "gargantuan": 11, "tiny": 1}
+hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "d12", "gargantuan": "d20"}
+pdSize = ["d1","d4","d6","d8","d10","d12"]
+
+def ship_level(args):
+    a = argparse(args)
+
+    for cl, lvl in ch.levels:
+        type = cl
+
+    base = f'''embed -thumb {ch.image} -color {ch.csettings.color} -footer {footer} -title "Level Summary for {ch.name}" '''
+    base += f''' -f "Info|Tier {tier} - {ch.race} {type}" '''
+
+    # Hull/Shield Dice
+    hdMult = 2 if ch.race.lower() in ["huge", "gargantuan"] else 1
+    numDie = (tier * hdMult) + hdNum.get(ch.race.lower(),0)
+    hd = f"{hdSize.get(ch.race.lower(),0)}"
+    hdName = f"Shield/Hull Dice ({hd})"
+
+    shipStats['hdName'] = hdName
+    if ch.cc_exists(hdName):
+        ch.delete_cc(hdName)
+
+    ch.create_cc_nx(hdName, 0, numDie)
+
+    base += f''' -f "Hit Die|{numDie}{hd}|inline" '''
+
+    # Power dice
+    pdNum = int(bg[4]) + int(bg[5])
+    pdName = f"Power Dice ({pdSize[tier]})"
+    shipStats['pdName'] = pdName
+
+    if ch.cc_exists(pdName):
+        ch.delete_cc(pdName)
+
+    ch.create_cc_nx(pdName, 0, numDie)
+
+    base += f''' -f "Power Die|{pdNum}{pdSize[tier]}|inline" '''
+
+    # Shield Points
+    shipStats['shield'] = bg[0]
+    s_str = f"**Max Shield**: {bg[0]}"
+
+    # Shield Regen
+    shipStats['regen'] = bg[1]
+    s_str += f"\n**Shield Regen**: {bg[1]}"
+
+    # Damage Reduction
+    shipStats['dmg_red'] = bg[2]
+    s_str += f"\n**Damage Reduction**: {bg[2]}"
+
+    # Power Die / Round
+    shipStats['power_die_round'] = bg[3]
+    s_str += f"\n**Power Die / Round**: {bg[3]}"
+
+    # Central Capacity
+    shipStats['central_cap'] = bg[4]
+    s_str += f"\n**Central Capacity**: {bg[4]}"
+
+    # System Capacity
+    shipStats['system_cap'] = bg[5]
+    s_str += f"\n**System Capacity**: {bg[5]}"
+
+    base += f''' -f "Stored Stats|{s_str}" '''
+
+    ch.set_cvar("shipStats", dump_json(shipStats))
+
+    return base
+

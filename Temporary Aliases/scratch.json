@@ -1,18 +1,49 @@
-[
-  {
-    "HU-Arena 1": [
-      {
-        "pot": 2,
-        "info1": "something or other"
-      }
-    ]
+{
+  "name": "Sanctuary",
+  "size": "Large",
+  "role": "Picket Ship",
+  "tier": 1,
+  "stats": {
+    "str": 16,
+    "dex": 12,
+    "con": 18,
+    "int": 10,
+    "wis": 15,
+    "cha": 8
   },
-  {
-    "HU-Arena 234": [
-      {
-        "pot": 1,
-        "info1": "something"
-      }
-    ]
-  }
-]
+  "hp": 84,
+  "ac": 11,
+  "sp": 50,
+  "saves": {
+    "str": 1,
+    "dex": 0,
+    "con": 0,
+    "int": 0,
+    "wis": 1,
+    "cha": 0
+  },
+  "skills": {
+    "maneuvering": 0,
+    "scan": 1,
+    "astrogation": 1,
+    "boost": 0,
+    "swindle": 0,
+    "data": 1,
+    "ram": 0,
+    "menace": 0,
+    "probe": 1,
+    "patch": 0,
+    "regulation": 0,
+    "impress": 0,
+    "interfere": 0,
+    "hide": 0
+  },
+  "hd": "d10",
+  "hdm": 8,
+  "shield_points": 50,
+  "shield_regen": 15,
+  "dmg_red": 3,
+  "power_die_round": "1d2",
+  "central_cap": 2,
+  "system_cap": 1
+}
