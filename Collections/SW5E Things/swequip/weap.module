@@ -1,5 +1,6 @@
+using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+
 def biting(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     biting = None
     dmg = sup.get_damage_str(attack)
     dc = 13 if args.last('biting') == 'True' else int(args.last('biting'))
@@ -47,7 +48,6 @@ def biting(attack, args):
     return dump_json(a), biting
 
 def bright(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     bright = None
     dmg = sup.get_damage_str(attack)
     dc = 13 if args.last('bright') == 'True' else int(args.last('bright'))
@@ -67,7 +67,6 @@ def bright(attack, args):
     return dump_json(a), bright
 
 def corruption(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     corrupt = None
     dmg = sup.get_damage_str(attack)
     dc = 13 if args.last('corruption') == 'True' else int(args.last('corruption'))
@@ -87,7 +86,6 @@ def corruption(attack, args):
     return dump_json(a), corrupt
 
 def disarming(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = f'8+{sup.get_attack_bonus(attack)}' if args.last('disarming') == 'True' else int(args.last('disarming'))
     a = load_json(attack)
 
@@ -105,7 +103,6 @@ def disarming(attack, args):
     return dump_json(a)
 
 def disintegrate(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = 13 if args.last('disintegrate') == 'True' else int(args.last('disintegrate'))
     a = load_json(attack)
 
@@ -137,7 +134,6 @@ def disintegrate(attack, args):
     return dump_json(a)
 
 def neuralizing(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = 13 if args.last('neuralizing') == 'True' else int(args.last('neuralizing'))
     a = load_json(attack)
 
@@ -164,7 +160,6 @@ def neuralizing(attack, args):
     return dump_json(a)
 
 def shocking(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = 13 if args.last('shocking') == 'True' else int(args.last('shocking'))
     a = load_json(attack)
 
@@ -192,7 +187,6 @@ def shocking(attack, args):
     return dump_json(a)
 
 def sonorous(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = 13 if args.last('sonorous') == 'True' else int(args.last('sonorous'))
     a = load_json(attack)
 
@@ -220,7 +214,6 @@ def sonorous(attack, args):
     return dump_json(a)
 
 def burst(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     a = load_json(attack)
     dmg = sup.get_damage_str(attack)
     bNum = 2 if args.last('burst') == 'True' else int(args.last('burst'))
@@ -242,7 +235,6 @@ def burst(attack, args):
     return dump_json(burst)
 
 def rapid(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     a = load_json(attack)
     rNum = 2 if args.last('rapid') == 'True' else int(args.last('rapid'))
     dc = f"8+{sup.get_attack_bonus(attack)}"
@@ -268,7 +260,6 @@ def rapid(attack, args):
     return dump_json(rapid)
 
 def staggering(attack, args):
-    using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     dc = 13 if args.last('staggering') == 'True' else int(args.last('staggering'))
     a = load_json(attack)
 
@@ -288,6 +279,32 @@ def staggering(attack, args):
                     e.fail.append(text)
                 elif e.type == "attack":
                     e.hit.append(save)
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
+
+def igniting(attack, args):
+    a = load_json(attack)
+    ignite = "1d4" if args.last('igniting') == 'True' else args.last('igniting')
+    damage = {"type": "damage", "damage": f"{ignite} [fire]"}
+    tdamage = {"type": "target", "target": "self", "effects": [damage]}
+    eot = {"label": "Ignited - End of Turn", "verb": "burns!", "style": 4, "automation": [tdamage]}
+
+    tdrop = {"type": "remove_ieffect"}
+    drop = {"label": "Put out the fire", "verb": "is not longer ignited!", "style": 1, "automation": [tdrop]}
+
+    effect = {"type": "ieffect2", "name": "ignited", "buttons": [eot, drop], "desc": "A creature that is ignited suffers fire damage at the end of each of its turns. A damage value in parentheses appears with this condition—the fire damage the creature takes at the end of its turn.\n - If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."}
+    text = {"type": "text", "text": f"A creature that is ignited suffers {damage} fire damage at the end of each of its turns. A damage value in parentheses appears with this condition—the fire damage the creature takes at the end of its turn.\n\nIf the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(effect)
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(effect)
                     e.hit.append(text)
                     break
 

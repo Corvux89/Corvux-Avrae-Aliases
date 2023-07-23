@@ -492,6 +492,40 @@
     "_v": 2
   },
   {
+    "name": "Penetrating - Modified Beam Cannon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "attackBonus": "dexterityMod+proficiencyBonus",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [energy]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+            "type": "counter",
+            "counter": "Modified Beam Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+      {
+        "type": "text",
+        "text": "Auto, penetrating 2, power cell (50/200), reload 10, two-handed"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Cartridge, Slug - Needler",
     "automation": [
       {

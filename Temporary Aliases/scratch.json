@@ -1,49 +1,153 @@
 {
-  "name": "Sanctuary",
-  "size": "Large",
-  "role": "Picket Ship",
-  "tier": 1,
-  "stats": {
-    "str": 16,
-    "dex": 12,
-    "con": 18,
-    "int": 10,
-    "wis": 15,
-    "cha": 8
+  "name": "Improved Dark Side Tendrils",
+  "level": 3,
+  "school": "Force",
+  "classes": "Dark",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "150 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
   },
-  "hp": 84,
-  "ac": 11,
-  "sp": 50,
-  "saves": {
-    "str": 1,
-    "dex": 0,
-    "con": 0,
-    "int": 0,
-    "wis": 1,
-    "cha": 0
-  },
-  "skills": {
-    "maneuvering": 0,
-    "scan": 1,
-    "astrogation": 1,
-    "boost": 0,
-    "swindle": 0,
-    "data": 1,
-    "ram": 0,
-    "menace": 0,
-    "probe": 1,
-    "patch": 0,
-    "regulation": 0,
-    "impress": 0,
-    "interfere": 0,
-    "hide": 0
-  },
-  "hd": "d10",
-  "hdm": 8,
-  "shield_points": 50,
-  "shield_regen": 15,
-  "dmg_red": 3,
-  "power_die_round": "1d2",
-  "central_cap": 2,
-  "system_cap": 1
+  "duration": "up to 1 minute",
+  "ritual": false,
+  "description": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it.",
+  "concentration": true,
+  "automation": [
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Improved Dark Side Tendrils - Parent",
+          "parent": "ieffect",
+          "attacks": [
+            {
+              "attack": {
+                "name": "Spread - Improved Dark Side Tendrils",
+                "_v": 2,
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "each",
+                    "effects": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Improved Dark Side Tendrils",
+                        "parent": "ieffect",
+                        "buttons": [
+                          {
+                            "label": "Tendrils - Start of Turn",
+                            "verb": "feels the tendrils creeping.",
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "2d6 [necrotic]"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Tendrils - End of Turn",
+                            "verb": "is hurt by the tendrils",
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "2d6 [poison]"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Tendrils - Leave",
+                            "verb": "escapes!",
+                            "automation": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Improved Dark Side Tendrils",
+          "parent": "ieffect",
+          "buttons": [
+            {
+              "label": "Tendrils - Start of Turn",
+              "verb": "feels the tendrils creeping.",
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "2d6 [necrotic]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Tendrils - End of Turn",
+              "verb": "is hurt by the tendrils",
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "2d6 [poison]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Tendrils - Leave",
+              "verb": "escapes!",
+              "automation": [
+                {
+                  "type": "remove_ieffect"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it."
+    }
+  ]
 }

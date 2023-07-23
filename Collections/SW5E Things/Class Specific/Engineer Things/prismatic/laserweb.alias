@@ -1,0 +1,45 @@
+<drac2>
+ch = character()
+com = combat()
+a = argparse(&ARGS&)
+targs = a.get('t')
+cc = "Potent Aptitude"
+i = '-i' in &ARGS&
+v = ch.cc_exists(cc) or i
+dur = int(a.last('dur')) if a.get('dur') else 1
+end = 'end' in &ARGS&
+pad = f"1d{proficiencyBonus*2}"
+pad += f"+{a.last('b')}" if a.get('b') else ''
+desc = "When you cast a power that boosts a creature's armor class, you can expend and roll a potent aptitude die to increase their armor class the by rolled amount for the duration of the power."
+
+base = f'''embed -thumb {image} -color {color}'''
+
+if v:
+    if not i and not ch.get_cc(cc):
+        base += f''' -title "{name} needs to take a rest to replenish their {cc}!" '''
+        return base
+
+    roll_out = vroll(pad)
+    base += f''' -f "Meta|**AC Bonus**: {roll_out}" '''
+
+    if com and targs:
+        try:
+            targets = [com.get_combatant(t) for t in targs]
+        except:
+            return err(f"Invalid Target")
+
+        for t in targets:
+            eff = t.add_effect("Laser Defensive Protocol",duration=dur,passive_effects={"ac_bonus": roll_out.total}, end=end)
+            base += f''' -f "{t.name}|{eff}" '''
+
+    base += f''' -f "Effect|{desc}" -title "{name} uses Laser Defensive Protocol" '''
+
+if not ch.cc_exists(cc):
+    base += f''' -title "{name} has no custom counter {cc}!" '''
+
+if not i:
+    ch.mod_cc(cc, -1)
+    base += f''' -f "{cc}|{ch.cc_str(cc)} (-1)" '''
+
+return base
+</drac2>

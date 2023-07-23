@@ -1074,24 +1074,6 @@
     "concentration": true
   },
   {
-    "name": "Dark Side Tendrils",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (10-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect.\r\n\r\n***Force Potency.*** When you cast this power using a power slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "(SW) Darkness",
     "level": 2,
     "school": "Force",
@@ -2121,24 +2103,6 @@
     "ritual": false,
     "description": "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose.\r\n\r\nThe target can act normally on its turn if you choose no creature or if none are within its reach.\r\n\r\nOn your subsequent turns, you must use your action to maintain control over the target, or the power ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the power ends.",
     "concentration": true
-  },
-  {
-    "name": "Force Disarm",
-    "level": 0,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You select a weapon or object being worn or carried by a Large or smaller creature within range. The creature must make a Strength or Dexterity saving throw (the creature chooses the ability to use). If the item is being carried, this save is made with advantage. On a failed save, the item is pulled directly to you. If you have a free hand, you catch the weapon. Otherwise, it lands at your feet.",
-    "concentration": false
   },
   {
     "name": "Force Enlightenment",
@@ -3318,24 +3282,6 @@
     "ritual": false,
     "description": "You implant a message within an object in range, a message that is uttered when a trigger condition is met. Choose an object that you can see and that isn't being worn or carried by another creature. Then speak the message, which must be 25 words or less, though it can be delivered over as long as 10 minutes. Finally, determine the circumstance that will trigger the power to deliver your message.\r\n\r\nWhen that circumstance occurs, the message is recited in your voice and at the same volume you spoke. When you cast this power, you can have the power end after it delivers its message, or it can remain and repeat its message whenever the trigger occurs.\r\n\r\nThe triggering circumstance can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 30 feet of the object. For example, you could instruct the message to play when any creature moves within 30 feet of the object or when a bell rings within 30 feet of it.",
     "concentration": false
-  },
-  {
-    "name": "Improved Dark Side Tendrils",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "150 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it.",
-    "concentration": true
   },
   {
     "name": "Improved Force Barrier",
@@ -5138,24 +5084,6 @@
     "concentration": false
   },
   {
-    "name": "Saber Reflect",
-    "level": 0,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take in response to being dealt damage by a ranged attack",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \r\n\r\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false
-  },
-  {
     "name": "Saber Throw",
     "level": 0,
     "school": "Force",
@@ -5920,24 +5848,6 @@
     "ritual": false,
     "description": "Choose a point that you can see within range. Each creature within range of that point must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of a target's turns, it can make another Wisdom saving throw. On a success, the power ends on the target. This power has no effect on droids or constructs. \r\n\r\n***Force Potency.*** When you cast this power using a force slot of 9th level, the size of the cube increases to 40 feet.",
     "concentration": true
-  },
-  {
-    "name": "Storming Shot",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\r\n\r\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level.",
-    "concentration": false
   },
   {
     "name": "Stun Dart",
@@ -14828,5 +14738,420 @@
     "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
     "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
     "concentration": true
+  },
+  {
+    "name": "Force Disarm",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.saves.get('str') >= target.saves.get('dex')",
+            "onTrue": [
+              {
+                "type": "save",
+                "stat": "str",
+                "fail": [],
+                "success": []
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [],
+                "success": []
+              }
+            ],
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You select a weapon or object being worn or carried by a Large or smaller creature within range. The creature must make a Strength or Dexterity saving throw (the creature chooses the ability to use). If the item is being carried, this save is made with advantage. On a failed save, the item is pulled directly to you. If you have a free hand, you catch the weapon. Otherwise, it lands at your feet."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You select a weapon or object being worn or carried by a Large or smaller creature within range. The creature must make a Strength or Dexterity saving throw (the creature chooses the ability to use). If the item is being carried, this save is made with advantage. On a failed save, the item is pulled directly to you. If you have a free hand, you catch the weapon. Otherwise, it lands at your feet.",
+    "concentration": false
+  },
+  {
+    "name": "Storming Shot",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d6 [lightning]",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Shocked",
+                "duration": "2",
+                "end": true,
+                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                "tick_on_caster": true
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\n\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\r\n\r\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Saber Reflect",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d6",
+        "name": "reflect",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "choice and int(reflect) >= int(choice)",
+            "onTrue": [
+              {
+                "type": "damage",
+                "damage": "-{choice} [healing]"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "choice",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "-{reflect} [healing]"
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "text",
+                    "text": "Use `-choice` to set how much damage you are reflecting. Ex: `-choice 4`"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "choice and int(reflect) >= int(choice)",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "{choice}"
+                  }
+                ],
+                "miss": []
+              }
+            ],
+            "onFalse": [],
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to being dealt damage by a ranged attack",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \r\n\r\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  },
+  {
+    "name": "Dark Side Tendrils",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6 [necrotic]",
+        "name": "damage",
+        "higher": {
+          "2": "1d6 [necrotic]",
+          "3": "2d6 [necrotic]",
+          "4": "3d6 [necrotic]",
+          "5": "4d6 [necrotic]",
+          "6": "5d6 [necrotic]",
+          "7": "6d6 [necrotic]",
+          "8": "7d6 [necrotic]",
+          "9": "8d6 [necrotic]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Dark Side Tendrils",
+                "desc": "Can't take reactions"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect.\n\n***Force Potency.*** When you cast this power using a power slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (10-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect.\r\n\r\n***Force Potency.*** When you cast this power using a power slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Dark Side Tendrils",
+    "level": 3,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Dark Side Tendrils - Parent",
+            "parent": "ieffect",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Spread - Improved Dark Side Tendrils",
+                  "_v": 2,
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Improved Dark Side Tendrils",
+                          "parent": "ieffect",
+                          "buttons": [
+                            {
+                              "label": "Tendrils - Start of Turn",
+                              "verb": "feels the tendrils creeping.",
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d6 [necrotic]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "label": "Tendrils - End of Turn",
+                              "verb": "is hurt by the tendrils",
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d6 [poison]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "label": "Tendrils - Leave",
+                              "verb": "escapes!",
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Dark Side Tendrils",
+            "parent": "ieffect",
+            "buttons": [
+              {
+                "label": "Tendrils - Start of Turn",
+                "verb": "feels the tendrils creeping.",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "2d6 [necrotic]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Tendrils - End of Turn",
+                "verb": "is hurt by the tendrils",
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "2d6 [poison]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Tendrils - Leave",
+                "verb": "escapes!",
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it."
+      }
+    ]
   }
 ]
