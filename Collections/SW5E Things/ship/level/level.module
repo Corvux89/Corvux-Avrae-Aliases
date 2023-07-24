@@ -45,32 +45,6 @@ def ship_level(args):
 
     base += f''' -f "Power Die|{pdNum}{pdSize[tier]}|inline" '''
 
-    # Shield Points
-    shipStats['shield'] = bg[0]
-    s_str = f"**Max Shield**: {bg[0]}"
-
-    # Shield Regen
-    shipStats['regen'] = bg[1]
-    s_str += f"\n**Shield Regen**: {bg[1]}"
-
-    # Damage Reduction
-    shipStats['dmg_red'] = bg[2]
-    s_str += f"\n**Damage Reduction**: {bg[2]}"
-
-    # Power Die / Round
-    shipStats['power_die_round'] = bg[3]
-    s_str += f"\n**Power Die / Round**: {bg[3]}"
-
-    # Central Capacity
-    shipStats['central_cap'] = bg[4]
-    s_str += f"\n**Central Capacity**: {bg[4]}"
-
-    # System Capacity
-    shipStats['system_cap'] = bg[5]
-    s_str += f"\n**System Capacity**: {bg[5]}"
-
-    base += f''' -f "Stored Stats|{s_str}" '''
-
     ch.set_cvar("shipStats", dump_json(shipStats))
 
     return base

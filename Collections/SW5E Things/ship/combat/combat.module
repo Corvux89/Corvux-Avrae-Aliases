@@ -1,30 +1,33 @@
 ch = character()
 com = combat()
+bg = ch.background.split("|")
 shipStats = load_json(ch.get_cvar("shipStats", {}))
 hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "d12", "gargantuan": "d20"}
 
 
 def startCombat(args):
-    if not shipStats.get("shield"):
-        return err(f"Please use `{ctx.prefix}ship level` to setup your ship stats first.")
+    if not bg[0]:
+        return err(f"Something isn't write with your character sheet")
+    elif not shipStats.get('hdName'):
+        return err(f"Please use `{ctx.prefix}ship level` first to setup your counters.")
     elif not com:
         return err(f"This alias is used to setup combat....you're not in combat.....see the problem?")
 
     # Shields
     if ch.temp_hp == 0:
-        ch.set_temp_hp(shipStats.get('shield', 0))
+        ch.set_temp_hp(bg[0])
 
     immune = ["poison", "psychic"]
 
     # Setup Effects
     peff = {"immunities": immune}
-    desc = f"Max Shields: {shipStats.get('shield', 0)}\n - Damage Reduction: {shipStats.get('dmg_red', 0)}"
+    desc = f"Max Shields: {bg[0]}\n - Damage Reduction: {bg[2]}"
     attacks = [get_recharge_shields_attack(), get_patch_attack(), get_hull_reduction_attack(),
                get_shield_reduction_attack()]
     buttons = [get_recharge_button(), get_patch_button(), get_boost_engine_button(), get_boost_shields_button()]
 
     # Add Effect
-    parent = com.me.add_effect(f"{ch.name} Effects", None, None, None, None, False, desc, peff, attacks, buttons)
+    parent = com.me.add_effect(f"{ch.name} Effects", desc=desc, parent=peff, attacks=attacks, buttons=buttons)
 
     return f'''embed -title "testing" -f "{ch.name}|{parent}" '''
 
@@ -65,8 +68,8 @@ def get_recharge_button():
 
 
 def _get_recharge_automation():
-    rate = {"type": "roll", "dice": shipStats.get('regen', 0), "name": "rate", "displayName": "Regeneration Rate"}
-    shields = {"type": "variable", "name": "shields", "value": f"min({shipStats.get('shield', 0)},caster.temp_hp+rate)"}
+    rate = {"type": "roll", "dice": bg[1], "name": "rate", "displayName": "Regeneration Rate"}
+    shields = {"type": "variable", "name": "shields", "value": f"min({bg[0]},caster.temp_hp+rate)"}
     thp = {"type": "temphp", "amount": "{shields}"}
     target = {"type": "target", "target": "self", "effects": [thp, get_hd_counter()]}
 
@@ -97,7 +100,7 @@ def _get_patch_automation():
 
 
 def get_hull_reduction_attack():
-    dr = shipStats.get('dmg_red', 0)
+    dr = bg[2]
     damage = {"type": "damage", "damage": f"-{{min({dr},lastCounterRequestedAmount)}} [damage reduction]",
               "overheal": False}
     target = {"type": "target", "target": "self", "effects": [damage]}
@@ -109,9 +112,9 @@ def get_hull_reduction_attack():
 
 
 def get_shield_reduction_attack():
-    dr = shipStats.get('dmg_red', 0)
+    dr = bg[2]
     shields = {"type": "variable", "name": "shields",
-               "value": f"min({shipStats.get('shield', 0)},caster.temp_hp+min({dr},lastCounterRequestedAmount))"}
+               "value": f"min({bg[0]},caster.temp_hp+min({dr},lastCounterRequestedAmount))"}
 
     target = {"type": "target", "target": "self", "effects": [shields]}
 

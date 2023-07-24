@@ -23,6 +23,7 @@ def baseName(name):
     out = out.replace("Cartridge, Slug - ", "")
     out = out.replace("Arrow - ", "")
     out = out.replace("Dart - ", "")
+    out = out.replace("Snare - ", "")
     out = out.replace("Bolt - ", "")
     out = out.replace("Cell, Power - ", "")
     out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')

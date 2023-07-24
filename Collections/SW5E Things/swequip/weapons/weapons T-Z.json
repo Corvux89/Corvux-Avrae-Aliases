@@ -1626,6 +1626,92 @@
     "verb": null
   },
   {
+    "name": "Snare - Wrist Launcher",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "ieffect2",
+                "name": "Snared",
+                "buttons": [
+                  {
+                    "label": "Resist Snare",
+                    "verb": "attempts to resist the snare!",
+                    "defaultDC": 13,
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "variable",
+                            "name": "checkMod",
+                            "value": "max(target.stats.get_mod('str'), target.stats.get_mod('dex'))"
+                          },
+                          {
+                            "type": "roll",
+                            "dice": "1d20+{checkMod}",
+                            "name": "checkRoll",
+                            "displayName": "Check Roll"
+                          },
+                          {
+                            "type": "text",
+                            "text": "When hit by this wrist launcher ammunition, a Medium or smaller creature is restrained until it is freed. A snare has no effect on formless or Large or larger creatures. A creature can use its action to make a DC 13 Strength or Dexterity check (the target chooses the ability to use), freeing itself or another creature within its reach on a success. The snare has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the snare frees the creature without harming it and immediately ends the snare’s effects.\n\n**Check done**: {'Strength' if target.stats.get_mod('str') > target.stats.get_mod('dex') else 'Dexterity'}"
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "checkRoll >= spell_dc",
+                            "onTrue": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "onFalse": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Remove Snare",
+                    "verb": "removes the snare",
+                    "style": 4,
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+dexterityMod"
+          },
+          {
+            "type": "counter",
+            "counter": "Wrist Launcher",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehavior": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Fixed, Reload 1, Special (range 30/120)\n\nRather than traditional power cells, the wrist launcher fires specialized projectiles in the form of darts, small missiles, or specialized canisters."
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  },
+  {
     "name": "Dart, Deafening - Wrist Launcher",
     "automation": [
       {

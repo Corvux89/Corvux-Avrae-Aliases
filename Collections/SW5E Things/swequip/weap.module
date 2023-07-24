@@ -240,6 +240,11 @@ def rapid(attack, args):
     dc = f"8+{sup.get_attack_bonus(attack)}"
     dtype = sup.get_damage_type(sup.get_damage_str(attack))
     die = sup.get_damage_die(attack)
+
+    if args.get('dev'):
+        dindex = attack.find('"damage": "') + 11
+        return err(dindex)
+
     numDie = die[:die.find('d')]
     dieType = die[die.find('d')+1:]
     d_str = f"{int(numDie)*2}d{dieType} [{dtype}]"
