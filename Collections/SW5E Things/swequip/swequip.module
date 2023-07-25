@@ -1,3 +1,5 @@
+# SWEQUIP Primary Module
+
 def processAttacks(attacks, args):
     out = []
     c = character()
@@ -11,6 +13,10 @@ def processAttacks(attacks, args):
             continue
         elif not args.get('ammo'):
             attack = attack.replace(f'{a.name}', f'{sup.stripAmmo(a.name)}')
+
+        if args.get('ammo'):
+            if args.last('ammo') != 'True' and args.last('ammo').lower() not in a.name.lower() and args.last('ammo').lower() not in sup.processName(a.name).lower():
+                continue
 
         if args.get('title'):
             attack = attack.replace(f'{sup.processName(a.name)}', f'{args.last("title")}')
@@ -168,6 +174,11 @@ def processAttacks(attacks, args):
             if rapid:
                 out.append(load_json(rapid))
 
+        if "overheat" in prop:
+            cd = weap.cooldown(attack, args)
+            if cd:
+                out.append(load_json(cd))
+
         if "counter" in attack:
             index = attack.find('"counter": "') + 12
             counter = str(attack[index:attack[index:].find('"') + index])
@@ -177,6 +188,7 @@ def processAttacks(attacks, args):
                     reload = int(prop[prop.index("reload "):].lstrip("reload ")[:2].rstrip(", "))
                 elif "overheat" in prop:
                     reload = int(prop[prop.index("overheat "):].lstrip("overheat ")[:2].rstrip(", "))
+
 
                 if reload > 0:
                     c.create_cc(counter, 0, reload, None, 'bubble', reload)

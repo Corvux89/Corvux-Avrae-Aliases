@@ -1,3 +1,5 @@
+# SWEQUIP Additional Weapons Module
+
 using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 
 def biting(attack, args):
@@ -314,3 +316,14 @@ def igniting(attack, args):
                     break
 
     return dump_json(a)
+
+def cooldown(attack, args):
+    a = load_json(attack)
+    prop = sup.getProperties(attack)
+    reload = int(prop[prop.index("overheat "):].lstrip("overheat ")[:2].rstrip(", "))
+
+    counter = {"type": "counter", "counter": sup.processName(a.name), "amount": f"-{reload}", "errorBehaviour": "ignore", "allowOverflow": True}
+
+    attack = {"name": f"Cooldown - {sup.processName(a.name)}", "automation": [counter], "verb": "cools down", "_v": 2}
+
+    return dump_json(attack)

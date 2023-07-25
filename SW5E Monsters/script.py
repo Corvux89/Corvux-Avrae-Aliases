@@ -2,7 +2,7 @@ import json
 from fractions import Fraction
 
 
-def processJSON(f, name, fileName):
+def processJSON(f, name, fileName, autoMode):
     count = 0
     critdb = json.load(f)
     saveAuto = []
@@ -43,23 +43,22 @@ def processJSON(f, name, fileName):
         actions = critter["stats"].get("actions")
 
         for a in actions:
-            if "saving throw" in a.get("description").lower():
-                saveAuto.append(f"{critter.get('name')}|{a.get('name')}")
+            if "saving throw" in a.get("description").lower() and "<avrae hidden>" not in a.get("description").lower():
+                s = {"name": critter.get('name'), 'ability': a.get('name')}
+                saveAuto.append(s)
 
     with open(fileName, "w") as outfile:
         json.dump(kfcdb, outfile)
 
-    s_str = "\n".join(x for x in saveAuto)
-    with open("automation.txt", "w") as outfile:
-        outfile.write(s_str)
+    with open("automation.json", autoMode) as outfile:
+        json.dump(saveAuto, outfile)
 
-    s_str = "\n".join(x for x in saveAuto)
-    print(f'Complete! {count} monsters processed.\nMonster actions to automate: {len(saveAuto)}')
+    print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {len(saveAuto)}\n')
 
 
 
 f = open('CritterDB - Ground.json', encoding='utf-8')
-processJSON(f, "Resolute - Ground", "KFC Ground.json")
+processJSON(f, "Resolute - Ground", "KFC Ground.json", "w")
 
 f = open('Critter DB - Space.json', encoding='utf-8')
-processJSON(f, "Resolute - Space", "KFC Space.json")
+processJSON(f, "Resolute - Space", "KFC Space.json", "a")
