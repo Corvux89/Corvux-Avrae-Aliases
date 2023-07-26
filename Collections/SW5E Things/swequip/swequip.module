@@ -7,6 +7,9 @@ def processAttacks(attacks, args):
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
+        if args.get('prop') and args.last('prop') != "True":
+            attack = sup.replaceProperties(attack, args.last('prop'))
+
         prop = sup.getProperties(attack)
 
         if not(sup.processName(a.name) == sup.baseName(a.name) or args.get('ammo')):

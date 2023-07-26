@@ -2,73 +2,556 @@
   {
     "name": "Mira No",
     "attacks": [
-  {
-    "name": "Chained BlightDagger",
-    "automation": [
       {
-        "type": "target",
-        "target": "each",
-        "effects": [
+        "name": "Chained BlightDagger",
+        "automation": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "target",
+            "target": "each",
+            "effects": [
               {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [necrotic]",
-                "overheal": false
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4+{strengthMod} [necrotic]",
+                    "overheal": false
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+strengthMod"
               }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+strengthMod"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
           }
-        ]
+        ],
+        "_v": 2,
+        "criton": 19
       },
       {
-        "type": "text",
-        "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
+        "name": "Corruption - Chained BlightDagger",
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "save",
+                "stat": "wis",
+                "dc": "min(13,8+proficiencyBonus+strengthMod)",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "1d4+{strengthMod} [necrotic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Corruption",
+                    "tick_on_caster": true,
+                    "duration": 1,
+                    "desc": "Cannot regain hit points"
+                  }
+                ],
+                "success": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
+          }
+        ],
+        "_v": 2,
+        "criton": 19
       }
-    ],
-    "_v": 2,
-    "criton": 19
+    ]
   },
   {
-    "name": "Corruption - Chained BlightDagger",
-    "automation": [
+    "name": "Humphrey",
+    "attacks": [
       {
-        "type": "target",
-        "target": "each",
-        "effects": [
+        "name": "Penetrating - Cartridge, Slug - Anti-Material Railpistol",
+        "automation": [
           {
-            "type": "save",
-            "stat": "wis",
-            "dc": "min(13,8+proficiencyBonus+strengthMod)",
-            "fail": [
+            "type": "target",
+            "target": "each",
+            "effects": [
               {
-                "type": "damage",
-                "damage": "1d4+{strengthMod} [necrotic]",
-                "overheal": false
-              },
-              {
-                "type": "ieffect2",
-                "name": "Corruption",
-                "tick_on_caster": true,
-                "duration": 1,
-                "desc": "Cannot regain hit points"
-
+                "type": "condition",
+                "condition": "targetNumber == 1",
+                "onTrue": [
+                  {
+                    "type": "attack",
+                    "attackBonus": "proficiencyBonus+dexterityMod",
+                    "hit": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      }
+                    ],
+                    "miss": []
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ]
               }
-            ],
-            "success": []
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Railpistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "Auto, Brutal 1, Disruptive, Fixed, Hidden, Keen 1, Penetrating 2, Slug cartridge (range 60/240), Reload 4, Switch (1d10 acid)"
           }
-        ]
+        ],
+        "_v": 2,
+        "criton": 19,
+        "extra_crit_damage": "1d12"
       },
       {
-        "type": "text",
-        "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
+        "name": "Penetrating - Cartridge, Corrosive - Anti-Material Railpistol",
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "targetNumber == 1",
+                "onTrue": [
+                  {
+                    "type": "attack",
+                    "attackBonus": "proficiencyBonus+dexterityMod",
+                    "hit": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d8 [acid]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                            "onTrue": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Disintegrated",
+                                "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                              }
+                            ],
+                            "onFalse": []
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d8 / 2 [acid]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "miss": []
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d8 [acid]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                            "onTrue": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Disintegrated",
+                                "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                              }
+                            ],
+                            "onFalse": []
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d8 / 2 [acid]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Railpistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "Auto, Brutal 1, Disruptive, Fixed, Hidden, Keen 1, Penetrating 2, Slug cartridge (range 60/240), Reload 4, Switch (1d10 acid)"
+          }
+        ],
+        "_v": 2,
+        "criton": 19,
+        "extra_crit_damage": "1d12"
+      },
+      {
+        "name": "Penetrating - Cartridge, Electrifying - Anti-Material Railpistol",
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "targetNumber == 1",
+                "onTrue": [
+                  {
+                    "type": "attack",
+                    "attackBonus": "proficiencyBonus+dexterityMod",
+                    "hit": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d4 [lightning]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "ieffect",
+                            "name": "Shocked",
+                            "duration": "1",
+                            "effects": "",
+                            "end": true,
+                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d4 / 2 [lightning]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+                      }
+                    ],
+                    "miss": []
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d4 [lightning]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "ieffect",
+                            "name": "Shocked",
+                            "duration": "1",
+                            "effects": "",
+                            "end": true,
+                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d4 / 2 [lightning]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Railpistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "Auto, Brutal 1, Disruptive, Fixed, Hidden, Keen 1, Penetrating 2, Slug cartridge (range 60/240), Reload 4, Switch (1d10 acid)"
+          }
+        ],
+        "_v": 2,
+        "criton": 19,
+        "extra_crit_damage": "1d12"
+      },
+      {
+        "name": "Penetrating - Cartridge, Gas - Anti-Material Railpistol",
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "targetNumber == 1",
+                "onTrue": [
+                  {
+                    "type": "attack",
+                    "attackBonus": "proficiencyBonus+dexterityMod",
+                    "hit": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d6 [poison]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "ieffect2",
+                            "name": "Poisoned",
+                            "duration": "1",
+                            "effects": {
+                              "attack_advantage": "-1",
+                              "check_dis": [
+                                "all"
+                              ]
+                            },
+                            "end": false,
+                            "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d6 / 2 [poison]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                      }
+                    ],
+                    "miss": []
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [kinetic]"
+                      },
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "1d6 [poison]",
+                            "overheal": false
+                          },
+                          {
+                            "type": "ieffect2",
+                            "name": "Poisoned",
+                            "duration": "1",
+                            "effects": {
+                              "attack_advantage": "-1",
+                              "check_dis": [
+                                "all"
+                              ]
+                            },
+                            "end": false,
+                            "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "1d6 / 2 [poison]",
+                            "overheal": false
+                          }
+                        ],
+                        "dc": 14
+                      },
+                      {
+                        "type": "text",
+                        "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Railpistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "Auto, Brutal 1, Disruptive, Fixed, Hidden, Keen 1, Penetrating 2, Slug cartridge (range 60/240), Reload 4, Switch (1d10 acid)"
+          }
+        ],
+        "_v": 2,
+        "criton": 19,
+        "extra_crit_damage": "1d12"
+      },
+      {
+        "name": "Penetrating - Acid - Anti-Material Railpistol",
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "targetNumber == 1",
+                "onTrue": [
+                  {
+                    "type": "attack",
+                    "attackBonus": "proficiencyBonus+dexterityMod",
+                    "hit": [
+                      {
+                        "type": "damage",
+                        "damage": "1d10+{dexterityMod} [acid]"
+                      }
+                    ],
+                    "miss": []
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "1d12+{dexterityMod} [acid]"
+                      }
+                    ],
+                    "onFalse": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Anti-Material Railpistol",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "Auto, Brutal 1, Disruptive, Fixed, Hidden, Keen 1, Penetrating 2, Slug cartridge (range 60/240), Reload 4, Switch (1d10 acid)"
+          }
+        ],
+        "_v": 2,
+        "criton": 19,
+        "extra_crit_damage": "1d12"
       }
-    ],
-    "_v": 2,
-    "criton": 19
-  }
-]
+    ]
   }
 ]

@@ -3212,5 +3212,32 @@
       }
     ],
     "_v": 2
+  },
+  {
+    "name": "Custom Vibroweapon",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Use the `-prop` parameter on swequip to set this to your properpties"
+      }
+    ],
+    "_v": 2
   }
 ]

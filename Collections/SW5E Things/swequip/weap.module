@@ -1,6 +1,7 @@
 # SWEQUIP Additional Weapons Module
 
 using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+ch = character()
 
 def biting(attack, args):
     biting = None
@@ -71,14 +72,18 @@ def bright(attack, args):
 def corruption(attack, args):
     corrupt = None
     dmg = sup.get_damage_str(attack)
-    dc = 13 if args.last('corruption') == 'True' else int(args.last('corruption'))
+
+    dc = min(13,8+int(sup.replace_mod(sup.get_attack_bonus(attack)))) if args.last('corruption') == 'True' else int(args.last('corruption'))
     attack = attack.replace(f'{sup.get_damage_type(dmg)}', 'necrotic')
     a = load_json(attack)
+
     prop = sup.getProperties(attack)
 
     if 'range' and 'reload' not in prop:
         auto = sup.get_on_hit_effects(attack)
+        effect = {"type": "ieffect2", "name": "Corruption", "tick_on_caster": True, "duration": 1, "desc": "Cannot regain hit points"}
         text = {"type": "text","title": "Corruption", "text": "When you would make a melee weapon attack with a weapon with the corruption property, you can instead force the target to make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon, or the corruption number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature cannot regain hit points until the start of your next turn."}
+        auto.append(effect)
         auto.append(text)
         save = {"type": "save", "stat": "wis", "dc": f"{dc}", "fail": auto, "success": []}
         target = {"type": "target", "target": "each", "effects": [save]}

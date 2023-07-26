@@ -1,9 +1,15 @@
 # SWEQUIP Main Help Function
 
+ch = character()
+
+
 def processName(name):
     # What is the base weapon?
     out = name
-    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').replace("Corruption - ","")
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle",
+                                                                                                 '').replace(" - Staff",
+                                                                                                             '').replace(
+        "Penetrating - ", '').replace("Corruption - ", "")
     out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
     out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
     out = out.replace("Rocket, Fragmentation - ", '').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
@@ -13,17 +19,21 @@ def processName(name):
         "Projector Canister, Incendiary - ", '')
     out = out.replace("Grapple - ", "")
 
-    out = out.replace("Cooldown - ","").replace("Reload - ", "")
-    out = out.replace("Nano - ", "").replace("Ion Pulse - ", "").replace("Homing - ","")
+    out = out.replace("Cooldown - ", "").replace("Reload - ", "")
+    out = out.replace("Nano - ", "").replace("Ion Pulse - ", "").replace("Homing - ", "")
 
     out = stripAmmo(out)
 
     return out
 
+
 def baseName(name):
     # What weapon is considered to be the default?
     out = name
-    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').replace("Corruption - ","")
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle",
+                                                                                                 '').replace(" - Staff",
+                                                                                                             '').replace(
+        "Penetrating - ", '').replace("Corruption - ", "")
     out = out.replace("Cartridge, Slug - ", "")
     out = out.replace("Arrow - ", "")
     out = out.replace("Dart - ", "")
@@ -37,18 +47,22 @@ def baseName(name):
                                                                                                      '')
     # out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
     #     "Projector Canister, Incendiary - ", '')
-    out = out.replace("Grapple - ","")
+    out = out.replace("Grapple - ", "")
 
     out = out.replace("Cooldown - ", "").replace("Reload - ", "")
-    out = out.replace("Nano - ", "").replace("Ion Pulse - ", "").replace("Homing - ","")
+    out = out.replace("Nano - ", "").replace("Ion Pulse - ", "").replace("Homing - ", "")
 
     return out
 
+
 def stripAmmo(name):
     out = name
-    out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace("Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
-    out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace("Arrow, Noisemaker - ", '')
-    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace("Dart, Panic - ", '')
+    out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace(
+        "Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
+    out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace(
+        "Arrow, Noisemaker - ", '')
+    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace(
+        "Dart, Panic - ", '')
     out = out.replace("Snare - ", "")
     out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace(
         "Bolt, Panic - ", '')
@@ -56,10 +70,13 @@ def stripAmmo(name):
         "Cell, Incendiary - ", '')
 
     out = out.replace("Adv. - ", "").replace("Adv. Homing - ", "").replace("Homing - ", "")
-    out = out.replace("Adv. Proton - ","").replace("Flechette - ","").replace("Plasma - ","").replace("Thermite - ","")
-    out = out.replace("Adv. Concussion - ", "").replace("Concussion - ", "").replace("Discord - ","").replace("Proton - ","").replace("Silent Thunder - ","").replace("S-Thread - ", "")
+    out = out.replace("Adv. Proton - ", "").replace("Flechette - ", "").replace("Plasma - ", "").replace("Thermite - ",
+                                                                                                         "")
+    out = out.replace("Adv. Concussion - ", "").replace("Concussion - ", "").replace("Discord - ", "").replace(
+        "Proton - ", "").replace("Silent Thunder - ", "").replace("S-Thread - ", "")
 
     return out
+
 
 def updateName(attack, prefix, cupdate=True):
     a = load_json(attack)
@@ -71,10 +88,20 @@ def updateName(attack, prefix, cupdate=True):
         test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} {counter}"')
     return test
 
-def getProperties(attack):
-        a = load_json(attack)
-        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get(
-            "text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
+
+def getProperties(attack, lower: int|None =1):
+    a = load_json(attack)
+    if lower:
+        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
+    else:
+        return str(a.automation[len(a.automation) - 2].get("text")) if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text"))
+
+
+def replaceProperties(attack, str):
+    prop = getProperties(attack, None)
+    attack = attack.replace(f"{prop}", f"{str}")
+    return attack
+
 
 def get_damage_str(attack):
     a = load_json(attack)
@@ -86,8 +113,10 @@ def get_damage_str(attack):
     damage_str = str(attack[dindex:attack[dindex:].find('"') + dindex])
     return damage_str
 
+
 def get_damage_type(attack_str):
-    return str(attack_str[attack_str.find('[')+1:attack_str.find(']')])
+    return str(attack_str[attack_str.find('[') + 1:attack_str.find(']')])
+
 
 def get_on_hit_effects(attack):
     a = load_json(attack)
@@ -102,9 +131,11 @@ def get_on_hit_effects(attack):
 
     return auto
 
+
 def get_attack_bonus(attack):
     index = attack.find('"attackBonus": "') + 16
     return str(attack[index:attack[index:].find('"') + index])
+
 
 def get_damage_die(attack):
     a = load_json(attack)
@@ -115,3 +146,20 @@ def get_damage_die(attack):
 
     damage_str = str(attack[dindex:attack[dindex:].find('+') + dindex])
     return damage_str
+
+
+def replace_mod(text):
+    stats = ch.stats
+    if 'dexterityMod' in text:
+        text = text.replace('dexterityMod', f"{stats.get_mod('dex')}")
+
+    if 'strengthMod' in text:
+        text = text.replace('strengthMod', f"{stats.get_mod('str')}")
+
+    if 'proficiencyBonus' in text:
+        text = text.replace('proficiencyBonus', f"{stats.prof_bonus}")
+
+    if 'max' in text or 'min' in text or '+' in text or '-' in text:
+        text = vroll(text).total
+
+    return int(text)

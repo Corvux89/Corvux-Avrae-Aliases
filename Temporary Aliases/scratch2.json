@@ -1,176 +1,30 @@
-[
-  {
-    "name": "Sanctuary",
-    "size": "Large",
-    "role": "Picket Ship",
-    "tier": 0,
-    "stats": {
-      "str": 15,
-      "dex": 12,
-      "con": 17,
-      "int": 10,
-      "wis": 15,
-      "cha": 8
-    },
-    "hp": 67,
-    "ac": 11,
-    "sp": 40,
-    "saves": {
-      "str": 1,
-      "dex": 0,
-      "con": 0,
-      "int": 0,
-      "wis": 1,
-      "cha": 0
-    },
-    "skills": {
-      "maneuvering": 0,
-      "scan": 0,
-      "astrogation": 1,
-      "boost": 0,
-      "swindle": 0,
-      "data": 0,
-      "ram": 0,
-      "menace": 0,
-      "probe": 0,
-      "patch": 0,
-      "regulation": 0,
-      "impress": 0,
-      "interfere": 0,
-      "hide": 0
-    },
-    "hd": "d10",
-    "hdm": 7,
-    "shield_points": 40,
-    "shield_regen": 15,
-    "dmg_red": 3,
-    "power_die_round": "1d2",
-    "central_cap": 2,
-    "system_cap": 1
-  },
-  {
-    "name": "Recharge Shields",
-    "_v": 2,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "6",
-        "name": "rate",
-        "displayName": "Regeneration Rate"
-      },
-      {
-        "type": "variable",
-        "name": "shields",
-        "value": "min(40,caster.temp_hp+rate)"
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "temphp",
-            "amount": "{shields}"
-          },
-          {
-            "type": "counter",
-            "counter": "Hit Dice (d10)",
-            "amount": "1",
-            "errorBehavior": "raise"
-          }
-        ]
-      }
-    ],
-    "verb": "uses"
-  },
-  {
-    "name": "Patch",
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "check",
-            "ability": "medicine",
-            "dc": "max(10,floor((caster.max_hp-caster.hp)/2))",
-            "success": [
-              {
-                "type": "damage",
-                "damage": "-1d10 [healing]"
-              }
-            ],
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "-2d10kl1 [healing]"
-              }
-            ]
-          },
-          {
-            "type": "counter",
-            "counter": "Hit Dice (d10)",
-            "amount": "1",
-            "errorBehavior": "raise"
-          }
-        ]
-      }
-    ],
-    "_v": 2,
-    "verb": "uses"
-  },
-  {
-    "name": "Hull - Damage Reduction",
-    "automation": [
-      {
-        "type": "counter",
-        "counter": "nevershouldexist",
-        "amount": 3,
-        "errorBehaviour": "ignore"
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects":[
-          {
-            "type": "damage",
-            "damage": "-{min(3,lastCounterRequestedAmount)} [damage reduction]",
-            "overheal": false
-          }
-        ]
-      }
-    ],
-    "_v": 2,
-    "verb": "reduces incoming damage"
-  },
-  {
-    "name": "Shields - Damage Reduction",
-    "automation": [
-      {
-        "type": "counter",
-        "counter": "nevershouldexist",
-        "amount": 3,
-        "errorBehaviour": "ignore"
-      },
-      {
-        "type": "variable",
-        "name": "shields",
-        "value": "min(40,caster.temp_hp+min(3,lastCounterRequestedAmount))"
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects":[
-          {
-            "type": "temphp",
-            "amount": "{shields}"
-          }
-        ]
-      }
-    ],
-    "_v": 2,
-    "verb": "reduces incoming damage using"
-  },
-  {
-
-  }
-]
+{
+  "type": "condition",
+  "condition": "targetNumber == 1",
+  "onTrue": [
+    {
+      "type": "attack",
+      "attackBonus": "proficiencyBonus+dexterityMod",
+      "hit": [
+        {
+          "type": "damage",
+          "damage": "1d10+{dexterityMod} [acid]"
+        }
+      ],
+      "miss": []
+    }
+  ],
+  "onFalse": [
+    {
+      "type": "condition",
+      "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+      "onTrue": [
+        {
+          "type": "damage",
+          "damage": "1d12+{dexterityMod} [acid]"
+        }
+      ],
+      "onFalse": []
+    }
+  ]
+}

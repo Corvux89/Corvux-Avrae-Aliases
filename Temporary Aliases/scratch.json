@@ -1,13 +1,28 @@
-[
-  {
-    "name": "Anti-Material Railpistol",
-    "automation": [
-      {
-        "type": "text",
-        "text": "Auto, brutal 1, disruptive, fixed, hidden, keen 1, penetrating 2, <insert ammo> (range 60/240), reload 6, switch (1d10 acid)"
-      }
-    ],
-    "_v": 2,
-    "criton": 19
-  }
-]
+{
+  'name': 'Rawr',
+  'automation': [
+    {
+      'type': 'target',
+      'target': 'each',
+      'effects': [
+        {
+          'type': 'attack',
+          'hit': [
+            {
+              'type': 'damage',
+              'damage': '1d6+{strengthMod} [necrotic]'
+            }
+          ],
+          'miss': [],
+          'attackBonus': 'proficiencyBonus+strengthMod'
+        },
+        {
+          'type': 'text',
+          'text': 'Use the -prop parameter on swequip to set this to your properpties'
+        }
+      ]
+    }
+  ],
+  '_v': 2,
+  'criton': 19
+}
