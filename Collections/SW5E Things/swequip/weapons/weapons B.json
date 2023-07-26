@@ -2618,6 +2618,43 @@
     "_v": 2
   },
   {
+    "name": "Corruption - Blightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "dc": "min(13,8+proficiencyBonus+strengthMod)",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6+{strengthMod} [necrotic]",
+                "overheal": false
+              },
+              {
+                "type": "ieffect2",
+                "name": "Corruption",
+                "tick_on_caster": true,
+                "duration": 1,
+                "desc": "Cannot regain hit points"
+
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Corruption 13, Hidden, Versatile (2d4)"
+      }
+    ],
+    "_v": 2
+  },
+  {
     "name": "Two-Handed Blightsaber",
     "automation": [
       {

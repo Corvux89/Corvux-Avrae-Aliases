@@ -3,7 +3,7 @@
 def processName(name):
     # What is the base weapon?
     out = name
-    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'')
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').replace("Corruption - ","")
     out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
     out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
     out = out.replace("Rocket, Fragmentation - ", '').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
@@ -23,7 +23,7 @@ def processName(name):
 def baseName(name):
     # What weapon is considered to be the default?
     out = name
-    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'')
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle", '').replace(" - Staff", '').replace("Penetrating - ",'').replace("Corruption - ","")
     out = out.replace("Cartridge, Slug - ", "")
     out = out.replace("Arrow - ", "")
     out = out.replace("Dart - ", "")

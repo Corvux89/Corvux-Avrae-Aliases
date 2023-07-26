@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Mira No",
+    "attacks": [
+  {
+    "name": "Chained BlightDagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [necrotic]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
+      }
+    ],
+    "_v": 2,
+    "criton": 19
+  },
+  {
+    "name": "Corruption - Chained BlightDagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "dc": "min(13,8+proficiencyBonus+strengthMod)",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d4+{strengthMod} [necrotic]",
+                "overheal": false
+              },
+              {
+                "type": "ieffect2",
+                "name": "Corruption",
+                "tick_on_caster": true,
+                "duration": 1,
+                "desc": "Cannot regain hit points"
+
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Corruption 13, Defensive 1 dexterity 17, disruptive, fixed, keen 1"
+      }
+    ],
+    "_v": 2,
+    "criton": 19
+  }
+]
+  }
+]

@@ -16,13 +16,21 @@ else:
 args = argparse(args)
 attacks = []
 
-gvar_list = variable[0].get(weapon[0].lower())
-for gvar_str in gvar_list:
-    gvar = load_json(get_gvar(gvar_str))
+if args.get('custom'):
+    custom = load_json(get_uvar("swequipCustom",[]))
 
-    for x in gvar:
-        if help.processName(x.name).lower() == weapon.lower():
+    for x in custom:
+        if help.processName(x.name).lower() == args.last('custom').lower():
             attacks.append(x)
+
+else:
+    gvar_list = variable[0].get(weapon[0].lower())
+    for gvar_str in gvar_list:
+        gvar = load_json(get_gvar(gvar_str))
+
+        for x in gvar:
+            if help.processName(x.name).lower() == weapon.lower():
+                attacks.append(x)
 
 if not attacks:
     err(f"I can't find a weapon named {weapon}.")

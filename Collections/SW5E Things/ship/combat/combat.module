@@ -1,3 +1,5 @@
+# Ship Combat Start
+
 ch = character()
 com = combat()
 bg = ch.background.split("|")
@@ -24,12 +26,14 @@ def startCombat(args):
     desc = f"Max Shields: {bg[0]}\n - Damage Reduction: {bg[2]}"
     attacks = [get_recharge_shields_attack(), get_patch_attack(), get_hull_reduction_attack(),
                get_shield_reduction_attack()]
-    buttons = [get_recharge_button(), get_patch_button(), get_boost_engine_button(), get_boost_shields_button()]
+    buttons = [get_recharge_button(), get_patch_button(), get_boost_engine_button(), get_boost_shields_button(),
+               get_boost_weapons_button()]
 
     # Add Effect
-    parent = com.me.add_effect(f"{ch.name} Effects", desc=desc, parent=peff, attacks=attacks, buttons=buttons)
+    parent = com.me.add_effect(f"{ch.name} Effects", desc=desc, passive_effects=peff, attacks=attacks, buttons=buttons)
 
     return f'''embed -title "testing" -f "{ch.name}|{parent}" '''
+
 
 
 def get_boost_engine_button():
@@ -39,20 +43,45 @@ def get_boost_engine_button():
              "success": [effect], "fail": []}
     target = {"type": "target", "target": "self", "effects": [check]}
 
-    return {"label": "Boost Engines","verb": "uses Boost Engines!", "style": 1, "automation": [target, get_attribution_text()]}
+    text = {"type": "text", "text": "You can attempt to boost your speed. When you take the Boost Engines action, "
+                                    "you make a DC 10 Strength (Boost) check. On a success you increase your speed by "
+                                    "50 until the end of your ship’s next turn."}
+
+    return {"label": "Boost Engines","verb": "uses Boost Engines!", "style": 1,
+            "automation": [target, text, get_attribution_text()]}
 
 def get_boost_shields_button():
     hds = hdSize.get(ch.race.lower())
-    passRoll = {"type": "roll", "dice": f"1{hds}", "name": "ac_bonus", "displayName": "AC Bonus"}
+    passRoll = {"type": "roll", "dice": f"1{hds}", "name": "shield_bonus", "displayName": "Shield Bonus"}
 
-    effect = {"type": "ieffect2", "name": "Boost Shields!", "duration": 1, "effects": {"ac_bonus": "{ac_bonus}"}, "desc": "Speed increased by 50"}
+    thp = {"type": "temphp", "amount": "caster.temp_hp + shield_bonus"}
+
 
     check = {"type": "check", "ability": "athletics", "dc": 10,
-             "success": [passRoll, effect], "fail": []}
+             "success": [passRoll, thp], "fail": []}
     target = {"type": "target", "target": "self", "effects": [check]}
 
+    text = {"type": "text", "text": "You can attempt to boost your shields. When you take the Boost Shields action, "
+                                    "you make a DC 10 Strength (Boost) check. On a success, you roll a shield die, "
+                                    "without expending it, and gain temporary shield points equal to the result that "
+                                    "last until the start of your ship’s next turn."}
+
     return {"label": "Boost Shields", "verb": "uses Boost Shields!", "style": 1,
-            "automation": [target, get_attribution_text()]}
+            "automation": [target, text, get_attribution_text()]}
+
+def get_boost_weapons_button():
+    check = {"type": "check", "ability": "athletics", "dc": 10,
+             "success": [], "fail": []}
+    target = {"type": "target", "target": "self", "effects": [check]}
+
+    text = {"type": "text", "text": "You can attempt to boost your weapon output. When you take the Boost Weapons "
+                                    "action, the next time this turn your ship would deal damage, "
+                                    "you make a DC 10 Strength (Boost) check. On a success, "
+                                    "you have advantage on the damage roll."}
+
+    return {"label": "Boost Weapons", "verb": "uses Boost Weapons!", "style": 1,
+            "automation": [target, text, get_attribution_text()]}
+
 
 
 def get_recharge_shields_attack():
@@ -72,8 +101,13 @@ def _get_recharge_automation():
     shields = {"type": "variable", "name": "shields", "value": f"min({bg[0]},caster.temp_hp+rate)"}
     thp = {"type": "temphp", "amount": "{shields}"}
     target = {"type": "target", "target": "self", "effects": [thp, get_hd_counter()]}
+    text = {"type": "text", "text": "Your ship may regenerate shields (no action required) once per round on the "
+                                    "ship’s turn by that value by expending a shield die without rolling it, up to "
+                                    "the Shield Capacity. The shield regeneration rate is calculated by multiplying "
+                                    "the maximum value of the ship’s Shield Die by the shield regeneration rate "
+                                    "coefficient."}
 
-    return [rate, shields, target, get_attribution_text()]
+    return [rate, shields, target, text, get_attribution_text()]
 
 
 def get_patch_attack():
@@ -94,9 +128,16 @@ def _get_patch_automation():
     check = {"type": "check", "ability": "medicine", "dc": "max(10,floor((caster.max_hp-caster.hp)/2))",
              "success": [passRoll], "fail": [failRoll]}
 
-    target = {"type": "target", "target": "self", "effects": [check, get_hd_counter(), get_attribution_text()]}
+    target = {"type": "target", "target": "self", "effects": [check, get_hd_counter()]}
 
-    return [target]
+    text = {"type": "text", "text": "You can attempt to patch up damage a ship has taken, using one of its Hull Dice. "
+                                    "When you take the Patch action, you make a Constitution (Patch) check (DC = 10 or "
+                                    "half the ship’s missing hull points, whichever number is higher). On a failure, "
+                                    "you roll the Hull Die twice and take the lesser amount. On a success you roll "
+                                    "the Hull Die normally. The Patch action can be taken multiple times on a "
+                                    "ship’s turn."}
+
+    return [target, get_attribution_text(), text]
 
 
 def get_hull_reduction_attack():
@@ -106,7 +147,7 @@ def get_hull_reduction_attack():
     target = {"type": "target", "target": "self", "effects": [damage]}
 
     attack = {"name": "Hull - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
-              "automation": [get_dummy_counter(dr), target, get_attribution_text()]}
+              "automation": [get_dummy_counter(dr), target, get_attribution_text()], "activation_type": 4}
 
     return {"attack": attack}
 
@@ -119,7 +160,7 @@ def get_shield_reduction_attack():
     target = {"type": "target", "target": "self", "effects": [shields]}
 
     attack = {"name": "Shields - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
-              "automation": [get_dummy_counter(dr), target, get_attribution_text()]}
+              "automation": [get_dummy_counter(dr), target, get_attribution_text()], "activation_type": 4}
 
     return {"attack": attack}
 

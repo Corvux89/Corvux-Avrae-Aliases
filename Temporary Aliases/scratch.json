@@ -1,40 +1,13 @@
-{
-  "name": "Spirit Blade",
-  "level": 0,
-  "school": "Force",
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "attack",
-          "hit": [
-            {
-              "type": "damage",
-              "damage": "1d10 [necrotic]"
-            }
-          ],
-          "miss": []
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.\n\n**# of Attacks**: {'1' if level < 5 else '2' if level < 11 else '3' if level < 17 else '4'}"
-    }
-  ],
-  "classes": "Universal",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "Touch",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "Instantaneous",
-  "ritual": false,
-  "description": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.",
-  "concentration": false
-}
+[
+  {
+    "name": "Anti-Material Railpistol",
+    "automation": [
+      {
+        "type": "text",
+        "text": "Auto, brutal 1, disruptive, fixed, hidden, keen 1, penetrating 2, <insert ammo> (range 60/240), reload 6, switch (1d10 acid)"
+      }
+    ],
+    "_v": 2,
+    "criton": 19
+  }
+]
