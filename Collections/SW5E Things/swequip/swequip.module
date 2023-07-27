@@ -177,6 +177,11 @@ def processAttacks(attacks, args):
             if rapid:
                 out.append(load_json(rapid))
 
+        if args.get('penetrating') and 'rapid' not in a.name.lower():
+            penetrating = weap.penetrating(attack, args)
+            if penetrating:
+                out.append(load_json(penetrating))
+
         if "overheat" in prop:
             cd = weap.cooldown(attack, args)
             if cd:

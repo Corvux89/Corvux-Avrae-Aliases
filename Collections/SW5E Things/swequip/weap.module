@@ -248,10 +248,6 @@ def rapid(attack, args):
     dtype = sup.get_damage_type(sup.get_damage_str(attack))
     die = sup.get_damage_die(attack)
 
-    if args.get('dev'):
-        dindex = attack.find('"damage": "') + 11
-        return err(dindex)
-
     numDie = die[:die.find('d')]
     dieType = die[die.find('d')+1:]
     d_str = f"{int(numDie)*2}d{dieType} [{dtype}]"
@@ -261,7 +257,7 @@ def rapid(attack, args):
             e["damage"] = d_str
             break
     counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{rNum}", "allowOverflow": False,
-               "errorBehavior": "raise"}
+               "errorBehaviour": "raise"}
     on_hit.append(counter)
     save = {"type": "save", "stat": "dex", "fail": on_hit, "success": [], "dc": f"{dc}"}
     target = {"type": "target", "target": "all", "effects": [save]}
@@ -332,3 +328,20 @@ def cooldown(attack, args):
     attack = {"name": f"Cooldown - {sup.processName(a.name)}", "automation": [counter], "verb": "cools down", "_v": 2}
 
     return dump_json(attack)
+
+def penetrating(attack, args):
+    a = load_json(attack)
+    pNum = 2 if args.last('penetrating') == 'True' else int(args.last('rapid'))
+    on_hit = sup.get_on_hit_effects(attack)
+
+    counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{pNum}", "allowOverflow": False,
+               "errorBehaviour": "raise"}
+    atk = {"type": "attack", "attackBonus": f"{sup.get_attack_bonus(attack)}", "hit": on_hit, "miss": []}
+    condition2 = {"type": "condition", "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac", "onTrue": on_hit, "onFalse": []}
+
+    condition1 = {"type": "condition", "condition": "targetNumber == 1", "onTrue": [atk], "onFalse": [condition2]}
+    text = {"type": "text", "text": f"{sup.getProperties(attack)}, penetrating {pNum}"}
+
+    penetrating = {"name": f"Penetrating - {a.name}", "_v": 2, "automation": [condition1, counter, text]}
+
+    return dump_json(penetrating)

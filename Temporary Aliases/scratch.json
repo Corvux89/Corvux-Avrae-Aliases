@@ -1,28 +1,47 @@
 {
-  'name': 'Rawr',
-  'automation': [
+  "name": "Penetrating - Wristrifle",
+  "_v": 2,
+  "automation": [
     {
-      'type': 'target',
-      'target': 'each',
-      'effects': [
+      "type": "condition",
+      "condition": "targetNumber == 1",
+      "onTrue": [
         {
-          'type': 'attack',
-          'hit': [
+          "type": "attack",
+          "attackBonus": "proficiencyBonus+dexterityMod",
+          "hit": [
             {
-              'type': 'damage',
-              'damage': '1d6+{strengthMod} [necrotic]'
+              "type": "damage",
+              "damage": "1d8+{dexterityMod} [energy]"
             }
           ],
-          'miss': [],
-          'attackBonus': 'proficiencyBonus+strengthMod'
-        },
+          "miss": []
+        }
+      ],
+      "onFalse": [
         {
-          'type': 'text',
-          'text': 'Use the -prop parameter on swequip to set this to your properpties'
+          "type": "condition",
+          "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+          "onTrue": [
+            {
+              "type": "damage",
+              "damage": "1d8+{dexterityMod} [energy]"
+            }
+          ],
+          "onFalse": []
         }
       ]
+    },
+    {
+      "type": "counter",
+      "counter": "Wristrifle",
+      "amount": "2",
+      "allowOverflow": false,
+      "errorBehaviour": "raise"
+    },
+    {
+      "type": "text",
+      "text": "power cell (range 60/240), fixed, reload 12, penetrating 2"
     }
-  ],
-  '_v': 2,
-  'criton': 19
+  ]
 }
