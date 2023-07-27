@@ -3,11 +3,14 @@ c = character()
 com = combat()
 a = argparse(&ARGS&)
 targ = a.last('t')
-lvl = int(get("ScholarLevel",0))
+lvl = int(get("ScholarLevel", 0))
 eff = "Critical Analysis"
 dur = 10
-schMod = load_json(c.get_cvar("SWFeats")).get("RancorsDiscipline") if c.get_cvar("SWFeats") and load_json(c.get_cvar("SWFeats")).get("RancorsDiscipline") else "intelligence"
-mod = str(c.stats.get_mod(schMod)) if not a.last('mod') else int(a.last('mod'))
+feats = load_json(c.get_cvar("SWFeats", "{}"))
+discoveries = feats.get("Discoveries", [])
+subclass = load_json(c.get_cvar("subclass", "{}")).get("ScholarLevel")
+schMod = feats.get("RancorsDiscipline", "intelligence")
+mod = int(c.stats.get_mod(schMod)) if not a.last('mod') else int(a.last('mod'))
 
 v = lvl >= 1
 
@@ -23,14 +26,48 @@ if v:
     base += f''' -f "Meta|**Mod**: {mod}" '''
     if com and tar:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
-        peff = com.me.add_effect(f"{eff} - {tar.name}",duration=dur, buttons=[{"label": f"Stop Analyzing {tar.name}", "verb": f"Stops analyzing {tar.name}", "style": 4, "automation": [{"type": "remove_ieffect"}]}])
+        peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, buttons=[{"label": f"Stop Analyzing {tar.name}",
+                                                                                "verb": f"Stops analyzing {tar.name}",
+                                                                                "style": 4, "automation": [
+                {"type": "remove_ieffect"}]}])
 
         if not tar.monster_name:
-            buttons=[{"label": "Use Critical Analysis", "verb": f"Uses {name}'s Critical Analysis","style": 1, "automation": [{"type": "text", "text": f"**Mod**: {mod}", "title": "Meta"}, {"type": "text", "text": f"The target can end your Critical Analysis on them (no action required) to add your Critical Analysis ability modifier, which is {schMod.capitalize()}, to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest."}, {"type": "remove_ieffect", "removeParent": "always"}, {"type": "target", "target": "self", "effects": [{"type": "ieffect2", "name": f"Critically Analyzed by {name}", "desc": f"{name} has used Critical Analysis on you. Cannot benefit again until you complete a short/long rest"}]}]}]
+            buttons = [{"label": "Use Critical Analysis", "verb": f"Uses {name}'s Critical Analysis", "style": 1,
+                        "automation": [{"type": "text", "text": f"**Mod**: {mod}", "title": "Meta"},
+                                       {"type": "text", "text": f"The target can end your Critical Analysis on them "
+                                                                f"(no action required) to add your Critical Analysis "
+                                                                f"ability modifier, which is {schMod.capitalize()}, to "
+                                                                f"one attack roll, ability check, or saving throw. Once "
+                                                                f"a friendly creature has benefited from this ability, "
+                                                                f"they can not do so again until they complete a short "
+                                                                f"or long rest."},
+                                       {"type": "remove_ieffect", "removeParent": "always"},
+                                       {"type": "target", "target": "self", "effects": [
+                                           {"type": "ieffect2", "name": f"Critically Analyzed by {name}",
+                                            "desc": f"{name} has used Critical Analysis on you. Cannot benefit again "
+                                                    f"until you complete a short/long rest"}]}]}]
+            if tar.name == com.me.name:
+                if subclass == "Geneticist" and lvl >= 6:
+                    ac_mod = mod if "AdaptedHide" in discoveries else round(mod/2)
+                    buttons.append({"label": "Use Mutagenic Transformation", "verb": "begins to transform", "style": 3,
+                                    "automation": [{"type": "text", "text": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier."},
+                                                   {"type": "target", "target": "self", "effects": [{
+                                        "type": "ieffect2", "name": "Mutagenic Transformation", "duration": 600,
+                                        "desc": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier.",
+                                        "effects": {"ac_bonus": f"{max(1, ac_mod)}"},
+                                        "buttons": [{
+                                            "label": "End Mutagenic Transformation",
+                                            "verb": "transforms back",
+                                            "automation": [{"type": "remove_ieffect"}]}]},
+                                        {"type": "counter",
+                                         "counter": "Mutagenic Transformation",
+                                         "amount": 1, "errorBehaviour": "raise"}]}]})
+
         else:
             buttons = []
 
-        childEff = tar.add_effect(eff,parent=peff,duration=dur,desc=f"Critical Analysis modifier is {mod}", buttons=buttons)
+        childEff = tar.add_effect(eff, parent=peff, duration=dur, desc=f"Critical Analysis modifier is {mod}",
+                                  buttons=buttons)
 
         base += f''' -f "{tar.name}|**Effect**: {childEff}" '''
 
@@ -38,6 +75,7 @@ if v:
     base += f''' -f "When you analyze a hostile creature|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is {schMod.capitalize()}, instead of Strength or Dexterity. You must use the same modifier for both rolls." '''
     base += f''' -f "When you analyze a friendly creature|The target can end your Critical Analysis on them (no action required) to add your Critical Analysis ability modifier, which is {schMod.capitalize()}, to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest." '''
 
-
     return base
+else:
+    return err(f"You don't seem to be a practitioner of the scholarly arts. Either you need to run `swlevel` or you're trying something you're not supposed to")
 </drac2>

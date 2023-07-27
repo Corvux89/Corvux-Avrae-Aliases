@@ -331,7 +331,7 @@ def cooldown(attack, args):
 
 def penetrating(attack, args):
     a = load_json(attack)
-    pNum = 2 if args.last('penetrating') == 'True' else int(args.last('rapid'))
+    pNum = 2 if args.last('penetrating') == 'True' else int(args.last('penetrating'))
     on_hit = sup.get_on_hit_effects(attack)
 
     counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{pNum}", "allowOverflow": False,
@@ -342,6 +342,8 @@ def penetrating(attack, args):
     condition1 = {"type": "condition", "condition": "targetNumber == 1", "onTrue": [atk], "onFalse": [condition2]}
     text = {"type": "text", "text": f"{sup.getProperties(attack)}, penetrating {pNum}"}
 
-    penetrating = {"name": f"Penetrating - {a.name}", "_v": 2, "automation": [condition1, counter, text]}
+    target = {"type": "target", "target": "each", "effects": [condition1]}
+
+    penetrating = {"name": f"Penetrating - {a.name}", "_v": 2, "automation": [target, counter, text]}
 
     return dump_json(penetrating)

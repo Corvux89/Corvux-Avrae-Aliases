@@ -1,47 +1,41 @@
-{
-  "name": "Penetrating - Wristrifle",
-  "_v": 2,
-  "automation": [
-    {
-      "type": "condition",
-      "condition": "targetNumber == 1",
-      "onTrue": [
-        {
-          "type": "attack",
-          "attackBonus": "proficiencyBonus+dexterityMod",
-          "hit": [
-            {
-              "type": "damage",
-              "damage": "1d8+{dexterityMod} [energy]"
-            }
-          ],
-          "miss": []
-        }
-      ],
-      "onFalse": [
-        {
-          "type": "condition",
-          "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
-          "onTrue": [
-            {
-              "type": "damage",
-              "damage": "1d8+{dexterityMod} [energy]"
-            }
-          ],
-          "onFalse": []
-        }
-      ]
-    },
-    {
-      "type": "counter",
-      "counter": "Wristrifle",
-      "amount": "2",
-      "allowOverflow": false,
-      "errorBehaviour": "raise"
-    },
-    {
-      "type": "text",
-      "text": "power cell (range 60/240), fixed, reload 12, penetrating 2"
-    }
-  ]
-}
+[
+  {
+    "label": "Use Mutagenic Transformation",
+    "verb": "begins to transform",
+    "style": 1,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Mutagenic Transformation",
+            "duration": 600,
+            "desc": "You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - You gain a bonus to your AC equal to half your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier.",
+            "effects": {
+              "ac_bonus": 4
+            },
+            "buttons": [
+              {
+                "label": "End Effect",
+                "verb": "transforms back",
+                "effects": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Mutagenic Transformation",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          }
+        ]
+      }
+    ]
+  },
+]

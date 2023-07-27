@@ -826,25 +826,45 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "3d4+{dexterityMod} [energy]",
-                "overheal": false
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "3d4+{dexterityMod} [energy]",
+                    "overheal": false
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Blaster",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "3d4+{dexterityMod} [energy]",
+                    "overheal": false
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Blaster",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
       },
       {
         "type": "text",

@@ -1925,24 +1925,6 @@
     "concentration": false
   },
   {
-    "name": "Flaming Shots",
-    "level": 3,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 hour",
-    "ritual": false,
-    "description": "You channel tech power through a blaster weapon you are wielding. When a target takes damage from the chosen weapon, the target takes an extra 1d6 fire damage. The power ends when twelve shots have been fired.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the number of shots you can take with this power increases by two for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Flash",
     "level": 1,
     "school": "Tech",
@@ -6496,26 +6478,6 @@
     "duration": "",
     "ritual": false,
     "description": "You fire a stinging dart at a creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d8 poison damage, and if the target is a humanoid or beast, it can’t regain hit points until the start of your next turn.\n\nThis power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "higherlevels": "",
-    "concentration": false
-  },
-  {
-    "name": "Tri-Shot",
-    "level": 0,
-    "school": "Tech",
-    "automation": [],
-    "classes": "",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power’s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice).",
     "higherlevels": "",
     "concentration": false
   },
@@ -12345,51 +12307,6 @@
     "concentration": false
   },
   {
-    "name": "Spirit Blade",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d10 [necrotic]",
-        "name": "damage"
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              }
-            ],
-            "miss": []
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.\n\n**# of Attacks**: {'1' if level < 5 else '2' if level < 11 else '3' if level < 17 else '4'}"
-      }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.",
-    "concentration": false
-  },
-  {
     "name": "(SW) Alter Self",
     "level": 2,
     "school": "Tech",
@@ -14513,233 +14430,6 @@
     "concentration": true
   },
   {
-    "name": "Telekinetic Storm",
-    "level": 3,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "3d8 [force]",
-        "name": "damage",
-        "higher": {
-          "4": "1d8 [force]",
-          "5": "2d8 [force]",
-          "6": "3d8 [force]",
-          "7": "4d8 [force]",
-          "8": "5d8 [force]",
-          "9": "6d8 [force]"
-        }
-      },
-      {
-        "type": "variable",
-        "name": "numDie",
-        "value": "3",
-        "higher": {
-          "4": "4",
-          "5": "5",
-          "6": "5",
-          "7": "7",
-          "8": "8",
-          "9": "9"
-        }
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Telekinetic Storm - Parent",
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Spread the Telekinetic Storm",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "all",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "con",
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{ieffect.desc.split()[-1]} [force]"
-                            }
-                          ],
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "ieffect2",
-                          "name": "Surrounded by Telekinetic Storm",
-                          "buttons": [
-                            {
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "con",
-                                      "fail": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "{ieffect.desc.split()[-1]} [force]"
-                                        }
-                                      ],
-                                      "success": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "text",
-                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                                }
-                              ],
-                              "label": "Telekinetic Storm (Start of Turn)",
-                              "verb": "starts their turn in the Telekinetic Storm",
-                              "style": "4",
-                              "defaultDC": "lastSaveDC"
-                            },
-                            {
-                              "automation": [
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ],
-                              "label": "Leave Telekinetic Storm",
-                              "verb": "leaves the range of Telekinetic Storm",
-                              "style": "3"
-                            }
-                          ],
-                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
-                          "parent": "ieffect"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                    }
-                  ],
-                  "verb": "begins to",
-                  "activation_type": 2
-                }
-              }
-            ],
-            "desc": "{numDie}d8",
-            "save_as": "storm"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "con",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "({damage})/2"
-              }
-            ]
-          },
-          {
-            "type": "ieffect2",
-            "name": "Surrounded by Telekinetic Storm",
-            "buttons": [
-              {
-                "automation": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "save",
-                        "stat": "con",
-                        "fail": [
-                          {
-                            "type": "damage",
-                            "damage": "{ieffect.desc.split()[-1]} [force]"
-                          }
-                        ],
-                        "success": [
-                          {
-                            "type": "damage",
-                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "text",
-                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                  }
-                ],
-                "label": "Telekinetic Storm (Start of Turn)",
-                "verb": "starts their turn in the Telekinetic Storm",
-                "style": "4",
-                "defaultDC": "lastSaveDC"
-              },
-              {
-                "automation": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ],
-                "label": "Leave Telekinetic Storm",
-                "verb": "leaves the range of Telekinetic Storm",
-                "style": "3"
-              }
-            ],
-            "desc": "Gains 1 slow level\n{numDie}d8",
-            "parent": "storm"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15 ft. sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Concentration, up to 10 minutes",
-    "ritual": false,
-    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
-    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Force Disarm",
     "level": 0,
     "school": "Force",
@@ -15005,6 +14695,141 @@
     "name": "Improved Dark Side Tendrils",
     "level": 3,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Dark Side Tendrils - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread - Improved Dark Side Tendrils",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Improved Dark Side Tendrils",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d6 [necrotic]"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "label": "Tendrils - Start of Turn",
+                              "verb": "feels the tendrils creeping."
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "2d6 [poison]"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "label": "Tendrils - End of Turn",
+                              "verb": "is hurt by the tendrils"
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Tendrils - Leave",
+                              "verb": "escapes!"
+                            }
+                          ],
+                          "parent": "ieffect"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Dark Side Tendrils",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "2d6 [necrotic]"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Tendrils - Start of Turn",
+                "verb": "feels the tendrils creeping."
+              },
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "2d6 [poison]"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Tendrils - End of Turn",
+                "verb": "is hurt by the tendrils"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Tendrils - Leave",
+                "verb": "escapes!"
+              }
+            ],
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it."
+      }
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
@@ -15017,141 +14842,314 @@
     "duration": "up to 1 minute",
     "ritual": false,
     "description": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it.",
-    "concentration": true,
+    "concentration": true
+  },
+  {
+    "name": "Tri-Shot",
+    "level": 0,
+    "school": "Tech",
     "automation": [
       {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Improved Dark Side Tendrils - Parent",
-            "parent": "ieffect",
-            "attacks": [
-              {
-                "attack": {
-                  "name": "Spread - Improved Dark Side Tendrils",
-                  "_v": 2,
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Improved Dark Side Tendrils",
-                          "parent": "ieffect",
-                          "buttons": [
-                            {
-                              "label": "Tendrils - Start of Turn",
-                              "verb": "feels the tendrils creeping.",
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "damage",
-                                      "damage": "2d6 [necrotic]"
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "label": "Tendrils - End of Turn",
-                              "verb": "is hurt by the tendrils",
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "damage",
-                                      "damage": "2d6 [poison]"
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "label": "Tendrils - Leave",
-                              "verb": "escapes!",
-                              "automation": [
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
+        "type": "variable",
+        "name": "dieSize",
+        "value": "8 if len(targets) == 1 else 6 if len(targets) == 2 else 4"
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4"
       },
       {
         "type": "target",
         "target": "each",
         "effects": [
           {
-            "type": "ieffect2",
-            "name": "Improved Dark Side Tendrils",
-            "parent": "ieffect",
-            "buttons": [
+            "type": "save",
+            "stat": "dex",
+            "fail": [
               {
-                "label": "Tendrils - Start of Turn",
-                "verb": "feels the tendrils creeping.",
-                "automation": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "damage",
-                        "damage": "2d6 [necrotic]"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "label": "Tendrils - End of Turn",
-                "verb": "is hurt by the tendrils",
-                "automation": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "damage",
-                        "damage": "2d6 [poison]"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "label": "Tendrils - Leave",
-                "verb": "escapes!",
-                "automation": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ]
+                "type": "damage",
+                "damage": "{numDie}d{dieSize} [energy]"
               }
-            ]
+            ],
+            "success": []
           }
         ]
       },
       {
         "type": "text",
-        "text": "You summon a 20-foot-radius sphere of inky blackness at a point within range. No light, enhanced or otherwise, can illuminate the area, creatures fully within the area are blinded, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 necrotic damage. Any creature that ends its turn in the area must succeed on a Strength saving throw or take 2d6 poison damage as tendrils of dark energy caress it."
+        "text": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power’s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice)."
       }
-    ]
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power’s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice).",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
+    "name": "Spirit Blade",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10 [necrotic]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.\n\n**# of Attacks**: {'1' if level < 5 else '2' if level < 11 else '3' if level < 17 else '4'}"
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You conjure a blade of spirit energy and attempt to strike one creature. Make a melee force attack against the target. If the attack hits, the creature takes 1d10 necrotic damage.\r\n\r\nThis power can make multiple attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level. Each attack can target the same creature or different ones. Make a separate attack roll for each target.",
+    "concentration": false
+  },
+  {
+    "name": "Telekinetic Storm",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "3",
+        "higher": {
+          "4": "4",
+          "5": "5",
+          "6": "5",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Telekinetic Storm - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread the Telekinetic Storm",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{ieffect.desc.split()[-1]} [force]"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "ieffect2",
+                          "name": "Surrounded by Telekinetic Storm",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "save",
+                                      "stat": "con",
+                                      "fail": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "{ieffect.desc.split()[-1]} [force]"
+                                        }
+                                      ],
+                                      "success": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                                }
+                              ],
+                              "label": "Telekinetic Storm (Start of Turn)",
+                              "verb": "starts their turn in the Telekinetic Storm",
+                              "style": "4",
+                              "defaultDC": "lastSaveDC"
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Leave Telekinetic Storm",
+                              "verb": "leaves the range of Telekinetic Storm",
+                              "style": "3"
+                            }
+                          ],
+                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                    }
+                  ],
+                  "verb": "begins to",
+                  "activation_type": 2
+                }
+              }
+            ],
+            "desc": "{numDie}d8",
+            "save_as": "storm"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Surrounded by Telekinetic Storm",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{ieffect.desc.split()[-1]} [force]"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                  }
+                ],
+                "label": "Telekinetic Storm (Start of Turn)",
+                "verb": "starts their turn in the Telekinetic Storm",
+                "style": "4",
+                "defaultDC": "lastSaveDC"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Leave Telekinetic Storm",
+                "verb": "leaves the range of Telekinetic Storm",
+                "style": "3"
+              }
+            ],
+            "desc": "Gains 1 slow level\n{numDie}d8",
+            "parent": "storm"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15 ft. sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "ritual": false,
+    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Flaming Shots",
+    "level": 2,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 hour",
+    "ritual": false,
+    "description": "You channel tech power through a blaster weapon you are wielding. When a target takes damage from the chosen weapon, the target takes an extra 1d6 fire damage. The power ends when twelve shots have been fired.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the number of shots you can take with this power increases by two for each slot level above 3rd.",
+    "concentration": true
   }
 ]

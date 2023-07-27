@@ -40,6 +40,7 @@ __Available Arguments__
 `-staggering`
 `-burst`
 `-rapid`
+`-penetrating`
 
 
 **Feats**

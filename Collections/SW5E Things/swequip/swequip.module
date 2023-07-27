@@ -7,8 +7,18 @@ def processAttacks(attacks, args):
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
+
         if args.get('prop') and args.last('prop') != "True":
             attack = sup.replaceProperties(attack, args.last('prop'))
+
+        if args.get('reload') and args.last('reload') != 'True':
+            new_reload = args.last('reload')
+            prop = sup.getProperties(attack,None)
+            if "reload" in prop.lower():
+                index = attack.find('reload') if 'reload' in attack else attack.find('Reload')
+                reload = int(prop[prop.lower().index("reload "):].lstrip("reload ").lstrip("Reload ")[:2].rstrip(", "))
+                old_reload = str(attack[index:attack[index:].find(str(reload))+index+len(str(reload))])
+                attack = attack.replace(f"{old_reload}", f"reload {new_reload}")
 
         prop = sup.getProperties(attack)
 
@@ -102,6 +112,11 @@ def processAttacks(attacks, args):
             dmg = dmg.replace('[', '[enhanced ')
             attack = attack.replace(sup.get_damage_str(attack), dmg)
 
+        if args.get('dtype') and args.last('dtype') != "True":
+            dmg = sup.get_damage_str(attack)
+            dmg_type = sup.get_damage_type(dmg)
+            attack = attack.replace(dmg_type, args.last('dtype'))
+
         if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
             attack = attack.replace('"success": []',
                                     '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
@@ -167,17 +182,17 @@ def processAttacks(attacks, args):
         if args.get("igniting"):
             attack = weap.igniting(attack, args)
 
-        if args.get('burst') and 'rapid' not in a.name.lower():
+        if args.get('burst') and 'rapid' not in a.name.lower() and 'penetrating' not in a.name.lower():
             burst = weap.burst(attack, args)
             if burst:
                 out.append(load_json(burst))
 
-        if args.get('rapid') and 'rapid' not in a.name.lower():
+        if args.get('rapid') and 'rapid' not in a.name.lower() and 'burst' not in a.name.lower() and 'penetrating' not in a.name.lower():
             rapid = weap.rapid(attack, args)
             if rapid:
                 out.append(load_json(rapid))
 
-        if args.get('penetrating') and 'rapid' not in a.name.lower():
+        if args.get('penetrating') and 'rapid' not in a.name.lower() and 'burst' not in a.name.lower() and 'rapid' not in a.name.lower():
             penetrating = weap.penetrating(attack, args)
             if penetrating:
                 out.append(load_json(penetrating))
@@ -202,5 +217,8 @@ def processAttacks(attacks, args):
                     c.create_cc(counter, 0, reload, None, 'bubble', reload)
 
         out.append(load_json(attack))
+
+    if args.get('auto'):
+        out = [x for x in out if "burst" in x.name.lower() or "rapid" in x.name.lower() or "penetrating" in x.name.lower()]
 
     return out, counter

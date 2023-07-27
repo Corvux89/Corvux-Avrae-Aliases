@@ -1,15 +1,17 @@
+# Maneuver Module
+c = character()
+com = combat()
+
 def maneuver(args):
     tags = ["name", "superiorityDice", "maneuverMod", "dice", "diceTotal", "dmgType", "prof_bonus", "spell_mod"]
     format = ["#uses#", "#desc#", "#counterChange#", "#color#", "#image#", "#dice#", "#diceTotal#",
               "#targetOutput#", "#hp#", "#name#", "#damageText#", "#combatantFooter#", "#thp#", "#superiorityDice#", "#dc#" ]
-    c = character()
     lvl = get_level()
     prof_bonus=c.stats.prof_bonus
     spell_mod = c.spellbook.spell_mod if c.spellbook.spell_mod else 0
     image = c.image
     color = c.csettings.color
     name = c.name
-    com = combat()
     a = argparse(args)
     out = f"embed -thumb {image} -color {color}"
     feats = load_json(c.get_cvar("SWFeats", "{}"))
@@ -24,7 +26,7 @@ def maneuver(args):
     fail = 'fail' in args
     pss = 'pass' in args
     superiorityDice = '1d4' if lvl < 5 or sm else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
-    superiorityDice+= f"mi{a.last('mi')}" if a.last('mi') else ""
+    superiorityDice+= f"mi{a.last('mi')}" if a.last('mi') else f"mi{2 if 'd4' in superiorityDice or 'd6' in superiorityDice else 3 if 'd8' in superiorityDice else 4 if 'd10' in superiorityDice else 5}" if "PerfectManeuver" in feats.get("Discoveries",[]) else ""
     superiorityDice = superiorityDice.replace('1d', '2d') + "kh1" if a.last('savage') else superiorityDice
 
 
@@ -196,7 +198,6 @@ def get_maneuver(args):
     return maneuver[0]
 
 def do_roll(feature, superiorityDice, maneuverMod, args):
-    c = character()
     a = argparse(args)
     roll_str = feature.roll
     roll_str = roll_str.replace('#superiorityDice#', superiorityDice).replace('#maneuverMod#', str(maneuverMod))
@@ -205,7 +206,6 @@ def do_roll(feature, superiorityDice, maneuverMod, args):
     return vroll(roll_str)
 
 def get_level():
-    c = character()
     lvl = 0
 
     if load_json(c.get_cvar("subclass","{}")).get("BerserkerLevel","") == "Champion":
@@ -229,8 +229,6 @@ def get_mod(type):
         return max(get_mod("Mental"), get_mod("Physical"))
 
 def get_targets(feature, args):
-    com = combat()
-    c = character()
     a = argparse(args)
 
     targets = []
