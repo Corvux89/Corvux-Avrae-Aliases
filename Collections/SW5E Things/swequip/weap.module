@@ -346,4 +346,10 @@ def penetrating(attack, args):
 
     penetrating = {"name": f"Penetrating - {a.name}", "_v": 2, "automation": [target, counter, text]}
 
+    if a.get("extra_crit_damage"):
+        penetrating["extra_crit_damage"] = a.get("extra_crit_damage")
+
+    if a.get("criton"):
+        penetrating["criton"] = a.get("criton")
+
     return dump_json(penetrating)

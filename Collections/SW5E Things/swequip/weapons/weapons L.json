@@ -1784,25 +1784,45 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "1d6+{dexterityMod} [lightning]",
-                "overheal": false
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6+{dexterityMod} [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Lightning Cannon",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6+{dexterityMod} [lightning]",
+                    "overheal": false
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Lightning Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1815,80 +1835,146 @@
     "name": "Penetrating - Cell, Cryo - Lightning Cannon",
     "automation": [
       {
+        "type": "roll",
+        "dice": "1d4",
+        "name": "damage"
+      },
+      {
         "type": "target",
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "1d6+{dexterityMod} [cold]",
-                "overheal": false
-              },
-              {
-                "type": "roll",
-                "dice": "1d4",
-                "name": "damage"
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "{damage} [cold]"
+                    "damage": "1d6+{dexterityMod} [cold]",
+                    "overheal": false
                   },
                   {
-                    "type": "ieffect",
-                    "name": "Slowed",
-                    "effects": "",
-                    "end": true,
-                    "duration": 1
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "target.hp <= 0",
-                    "onTrue": [
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
                       {
-                        "type": "ieffect2",
-                        "name": "Frozen in Carbonite"
+                        "type": "damage",
+                        "damage": "{damage} [cold]"
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Slowed",
+                        "effects": "",
+                        "end": true,
+                        "duration": 1
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
                       }
                     ],
-                    "onFalse": []
-                  }
-                ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "({damage})/2 [cold]"
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "target.hp <= 0",
-                    "onTrue": [
+                    "success": [
                       {
-                        "type": "ieffect2",
-                        "name": "Frozen in Carbonite"
+                        "type": "damage",
+                        "damage": "({damage})/2 [cold]"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
                       }
                     ],
-                    "onFalse": []
+                    "dc": "14"
                   }
                 ],
-                "dc": "14"
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Lightning Cannon",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6+{dexterityMod} [cold]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "{damage} [cold]"
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Slowed",
+                        "effects": "",
+                        "end": true,
+                        "duration": 1
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "({damage})/2 [cold]"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "dc": "14"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Lightning Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -1909,70 +1995,135 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "1d6+{dexterityMod} [sonic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d6 [sonic]",
+                    "damage": "1d6+{dexterityMod} [sonic]",
                     "overheal": false
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Deafened",
-                    "duration": 10,
-                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
-                    "buttons": [
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
                       {
-                        "label": "Resist Deafened",
-                        "style": 3,
-                        "verb": "attempts to resist deafened",
-                        "automation": [
+                        "type": "damage",
+                        "damage": "1d6 [sonic]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Deafened",
+                        "duration": 10,
+                        "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                        "buttons": [
                           {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
+                            "label": "Resist Deafened",
+                            "style": 3,
+                            "verb": "attempts to resist deafened",
+                            "automation": [
                               {
-                                "type": "save",
-                                "stat": "con",
-                                "fail": [],
-                                "success": [
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
                                   {
-                                    "type": "remove_ieffect"
+                                    "type": "save",
+                                    "stat": "con",
+                                    "fail": [],
+                                    "success": [
+                                      {
+                                        "type": "remove_ieffect"
+                                      }
+                                    ],
+                                    "dc": 14
                                   }
-                                ],
-                                "dc": 14
+                                ]
                               }
                             ]
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "success": [],
+                    "dc": 14
                   }
                 ],
-                "success": [],
-                "dc": 14
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Lightning Cannon",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6+{dexterityMod} [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [sonic]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Deafened",
+                        "duration": 10,
+                        "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                        "buttons": [
+                          {
+                            "label": "Resist Deafened",
+                            "style": 3,
+                            "verb": "attempts to resist deafened",
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "fail": [],
+                                    "success": [
+                                      {
+                                        "type": "remove_ieffect"
+                                      }
+                                    ],
+                                    "dc": 14
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "success": [],
+                    "dc": 14
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Lightning Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -2089,89 +2240,173 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "1d6+{dexterityMod} [fire]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "dex",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d8 [fire]"
+                    "damage": "1d6+{dexterityMod} [fire]",
+                    "overheal": false
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Ablaze",
-                    "buttons": [
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
                       {
-                        "automation": [
-                          {
-                            "type": "remove_ieffect"
-                          }
-                        ],
-                        "label": "Leave the blaze",
-                        "verb": "Leaves the fire",
-                        "style": "3"
+                        "type": "damage",
+                        "damage": "1d8 [fire]"
                       },
                       {
-                        "automation": [
+                        "type": "ieffect2",
+                        "name": "Ablaze",
+                        "buttons": [
                           {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
+                            "automation": [
                               {
-                                "type": "save",
-                                "stat": "dex",
-                                "dc": 14,
-                                "fail": [
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "label": "Leave the blaze",
+                            "verb": "Leaves the fire",
+                            "style": "3"
+                          },
+                          {
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
                                   {
-                                    "type": "damage",
-                                    "damage": "1d8 [fire]"
-                                  }
-                                ],
-                                "success": [
-                                  {
-                                    "type": "damage",
-                                    "damage": "(1d8 / 2) [fire]"
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": 14,
+                                    "fail": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "1d8 [fire]"
+                                      }
+                                    ],
+                                    "success": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "(1d8 / 2) [fire]"
+                                      }
+                                    ]
                                   }
                                 ]
                               }
-                            ]
+                            ],
+                            "label": "Ablaze - Start of Turn",
+                            "verb": "Starts their turn in the fire!",
+                            "style": "4"
                           }
                         ],
-                        "label": "Ablaze - Start of Turn",
-                        "verb": "Starts their turn in the fire!",
-                        "style": "4"
+                        "parent": "ieffect"
                       }
                     ],
-                    "parent": "ieffect"
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "(1d8 / 2) [fire]"
+                      }
+                    ],
+                    "dc": "14"
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "(1d8 / 2) [fire]"
-                  }
-                ],
-                "dc": "14"
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Lightning Cannon",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehaviour": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6+{dexterityMod} [fire]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 [fire]"
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Ablaze",
+                        "buttons": [
+                          {
+                            "automation": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "label": "Leave the blaze",
+                            "verb": "Leaves the fire",
+                            "style": "3"
+                          },
+                          {
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": 14,
+                                    "fail": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "1d8 [fire]"
+                                      }
+                                    ],
+                                    "success": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "(1d8 / 2) [fire]"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "label": "Ablaze - Start of Turn",
+                            "verb": "Starts their turn in the fire!",
+                            "style": "4"
+                          }
+                        ],
+                        "parent": "ieffect"
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "(1d8 / 2) [fire]"
+                      }
+                    ],
+                    "dc": "14"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Lightning Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",

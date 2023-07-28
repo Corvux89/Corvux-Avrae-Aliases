@@ -886,71 +886,137 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "3d4+{dexterityMod} [cold]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "{damage} [cold]"
+                    "damage": "3d4+{dexterityMod} [cold]",
+                    "overheal": false
                   },
                   {
-                    "type": "ieffect",
-                    "name": "Slowed",
-                    "effects": "",
-                    "end": true,
-                    "duration": 1
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "target.hp <= 0",
-                    "onTrue": [
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
                       {
-                        "type": "ieffect2",
-                        "name": "Frozen in Carbonite"
+                        "type": "damage",
+                        "damage": "{damage} [cold]"
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Slowed",
+                        "effects": "",
+                        "end": true,
+                        "duration": 1
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
                       }
                     ],
-                    "onFalse": []
-                  }
-                ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "({damage})/2 [cold]"
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "target.hp <= 0",
-                    "onTrue": [
+                    "success": [
                       {
-                        "type": "ieffect2",
-                        "name": "Frozen in Carbonite"
+                        "type": "damage",
+                        "damage": "({damage})/2 [cold]"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
                       }
                     ],
-                    "onFalse": []
+                    "dc": "14"
                   }
                 ],
-                "dc": "14"
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Blaster",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "3d4+{dexterityMod} [cold]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "{damage} [cold]"
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Slowed",
+                        "effects": "",
+                        "end": true,
+                        "duration": 1
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "({damage})/2 [cold]"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Frozen in Carbonite"
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "dc": "14"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Blaster",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -971,70 +1037,135 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "3d4+{dexterityMod} [sonic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d6 [sonic]",
+                    "damage": "3d4+{dexterityMod} [sonic]",
                     "overheal": false
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Deafened",
-                    "duration": 10,
-                    "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
-                    "buttons": [
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
                       {
-                        "label": "Resist Deafened",
-                        "style": 3,
-                        "verb": "attempts to resist deafened",
-                        "automation": [
+                        "type": "damage",
+                        "damage": "1d6 [sonic]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Deafened",
+                        "duration": 10,
+                        "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                        "buttons": [
                           {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
+                            "label": "Resist Deafened",
+                            "style": 3,
+                            "verb": "attempts to resist deafened",
+                            "automation": [
                               {
-                                "type": "save",
-                                "stat": "con",
-                                "fail": [],
-                                "success": [
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
                                   {
-                                    "type": "remove_ieffect"
+                                    "type": "save",
+                                    "stat": "con",
+                                    "fail": [],
+                                    "success": [
+                                      {
+                                        "type": "remove_ieffect"
+                                      }
+                                    ],
+                                    "dc": 14
                                   }
-                                ],
-                                "dc": 14
+                                ]
                               }
                             ]
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "success": [],
+                    "dc": 14
                   }
                 ],
-                "success": [],
-                "dc": 14
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Blaster",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "3d4+{dexterityMod} [sonic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [sonic]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Deafened",
+                        "duration": 10,
+                        "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                        "buttons": [
+                          {
+                            "label": "Resist Deafened",
+                            "style": 3,
+                            "verb": "attempts to resist deafened",
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "fail": [],
+                                    "success": [
+                                      {
+                                        "type": "remove_ieffect"
+                                      }
+                                    ],
+                                    "dc": 14
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "success": [],
+                    "dc": 14
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Blaster",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -1151,89 +1282,173 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "3d4+{dexterityMod} [fire]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "dex",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d8 [fire]"
+                    "damage": "3d4+{dexterityMod} [fire]",
+                    "overheal": false
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Ablaze",
-                    "buttons": [
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
                       {
-                        "automation": [
-                          {
-                            "type": "remove_ieffect"
-                          }
-                        ],
-                        "label": "Leave the blaze",
-                        "verb": "Leaves the fire",
-                        "style": "3"
+                        "type": "damage",
+                        "damage": "1d8 [fire]"
                       },
                       {
-                        "automation": [
+                        "type": "ieffect2",
+                        "name": "Ablaze",
+                        "buttons": [
                           {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
+                            "automation": [
                               {
-                                "type": "save",
-                                "stat": "dex",
-                                "dc": 14,
-                                "fail": [
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "label": "Leave the blaze",
+                            "verb": "Leaves the fire",
+                            "style": "3"
+                          },
+                          {
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
                                   {
-                                    "type": "damage",
-                                    "damage": "1d8 [fire]"
-                                  }
-                                ],
-                                "success": [
-                                  {
-                                    "type": "damage",
-                                    "damage": "(1d8 / 2) [fire]"
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": 14,
+                                    "fail": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "1d8 [fire]"
+                                      }
+                                    ],
+                                    "success": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "(1d8 / 2) [fire]"
+                                      }
+                                    ]
                                   }
                                 ]
                               }
-                            ]
+                            ],
+                            "label": "Ablaze - Start of Turn",
+                            "verb": "Starts their turn in the fire!",
+                            "style": "4"
                           }
                         ],
-                        "label": "Ablaze - Start of Turn",
-                        "verb": "Starts their turn in the fire!",
-                        "style": "4"
+                        "parent": "ieffect"
                       }
                     ],
-                    "parent": "ieffect"
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "(1d8 / 2) [fire]"
+                      }
+                    ],
+                    "dc": "14"
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "(1d8 / 2) [fire]"
-                  }
-                ],
-                "dc": "14"
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Blaster",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "3d4+{dexterityMod} [fire]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 [fire]"
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Ablaze",
+                        "buttons": [
+                          {
+                            "automation": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "label": "Leave the blaze",
+                            "verb": "Leaves the fire",
+                            "style": "3"
+                          },
+                          {
+                            "automation": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": 14,
+                                    "fail": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "1d8 [fire]"
+                                      }
+                                    ],
+                                    "success": [
+                                      {
+                                        "type": "damage",
+                                        "damage": "(1d8 / 2) [fire]"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "label": "Ablaze - Start of Turn",
+                            "verb": "Starts their turn in the fire!",
+                            "style": "4"
+                          }
+                        ],
+                        "parent": "ieffect"
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "(1d8 / 2) [fire]"
+                      }
+                    ],
+                    "dc": "14"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Blaster",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
       },
       {
         "type": "text",
@@ -1280,40 +1495,6 @@
       }
     ],
     "_v": 2
-  },
-  {
-    "name": "Penetrating - Cartridge, Slug - Anti-Materiel Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]",
-                "overheal": false
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Rifle",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
-      }
-    ]
   },
   {
     "name": "Cartridge, Corrosive - Anti-Materiel Rifle",
@@ -1386,75 +1567,6 @@
     "_v": 2
   },
   {
-    "name": "Penetrating - Cartridge, Corrosive - Anti-Materiel Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "damage": "1d8 [acid]",
-                    "overheal": false
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
-                    "onTrue": [
-                      {
-                        "type": "ieffect2",
-                        "name": "Disintegrated",
-                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
-                      }
-                    ],
-                    "onFalse": []
-                  }
-                ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d8 / 2 [acid]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Rifle",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
-      }
-    ]
-  },
-  {
     "name": "Cartridge, Electrifying - Anti-Materiel Rifle",
     "automation": [
       {
@@ -1519,71 +1631,6 @@
       }
     ],
     "_v": 2
-  },
-  {
-    "name": "Penetrating - Cartridge, Electrifying - Anti-Materiel Rifle",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "dex",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "damage": "1d4 [lightning]",
-                    "overheal": false
-                  },
-                  {
-                    "type": "ieffect",
-                    "name": "Shocked",
-                    "duration": "1",
-                    "effects": "",
-                    "end": true,
-                    "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
-                  }
-                ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d4 / 2 [lightning]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
-              }
-            ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Rifle",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
-      }
-    ]
   },
   {
     "name": "Cartridge, Gas - Anti-Materiel Rifle",
@@ -1657,6 +1704,292 @@
     "_v": 2
   },
   {
+    "name": "Penetrating - Cartridge, Slug - Anti-Materiel Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Rifle",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
+      }
+    ]
+  },
+  {
+    "name": "Penetrating - Cartridge, Corrosive - Anti-Materiel Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 [acid]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Disintegrated",
+                            "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 / 2 [acid]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 [acid]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                        "onTrue": [
+                          {
+                            "type": "ieffect2",
+                            "name": "Disintegrated",
+                            "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d8 / 2 [acid]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Rifle",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
+      },
+      {
+        "type": "text",
+        "text": "A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking 1d8 acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
+      }
+    ]
+  },
+  {
+    "name": "Penetrating - Cartridge, Electrifying - Anti-Materiel Rifle",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 [lightning]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Shocked",
+                        "duration": "1",
+                        "effects": "",
+                        "end": true,
+                        "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 / 2 [lightning]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 [lightning]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect",
+                        "name": "Shocked",
+                        "duration": "1",
+                        "effects": "",
+                        "end": true,
+                        "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d4 / 2 [lightning]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Rifle",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
+      },
+      {
+        "type": "text",
+        "text": "An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes 1d4 lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn’t shocked."
+      },
+      {
+        "type": "text",
+        "text": "Slug cartridge (range 180/720), Reload 2, Penetrating 2, Strength 19, Two-handed"
+      }
+    ]
+  },
+  {
     "name": "Penetrating - Cartridge, Gas - Anti-Materiel Rifle",
     "automation": [
       {
@@ -1664,61 +1997,113 @@
         "target": "each",
         "effects": [
           {
-            "type": "attack",
-            "hit": [
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
               {
-                "type": "damage",
-                "damage": "2d6+{dexterityMod} [kinetic]",
-                "overheal": false
-              },
-              {
-                "type": "save",
-                "stat": "con",
-                "fail": [
+                "type": "attack",
+                "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d6 [poison]",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
                     "overheal": false
                   },
                   {
-                    "type": "ieffect2",
-                    "name": "Poisoned",
-                    "duration": "1",
-                    "effects": {
-                      "attack_advantage": "-1",
-                      "check_dis": [
-                        "all"
-                      ]
-                    },
-                    "end": false,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
                   }
                 ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "1d6 / 2 [poison]",
-                    "overheal": false
-                  }
-                ],
-                "dc": 14
-              },
-              {
-                "type": "text",
-                "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
+                "miss": [],
+                "attackBonus": "proficiencyBonus+dexterityMod"
               }
             ],
-            "miss": [],
-            "attackBonus": "proficiencyBonus+dexterityMod"
-          },
-          {
-            "type": "counter",
-            "counter": "Anti-Materiel Rifle",
-            "amount": "2",
-            "allowOverflow": false,
-            "errorBehavior": "raise"
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{dexterityMod} [kinetic]",
+                    "overheal": false
+                  },
+                  {
+                    "type": "save",
+                    "stat": "con",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 [poison]",
+                        "overheal": false
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Poisoned",
+                        "duration": "1",
+                        "effects": {
+                          "attack_advantage": "-1",
+                          "check_dis": [
+                            "all"
+                          ]
+                        },
+                        "end": false,
+                        "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                      }
+                    ],
+                    "success": [
+                      {
+                        "type": "damage",
+                        "damage": "1d6 / 2 [poison]",
+                        "overheal": false
+                      }
+                    ],
+                    "dc": 14
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Anti-Materiel Rifle",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehavior": "raise"
+      },
+      {
+        "type": "text",
+        "text": "A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes 1d6 poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn’t poisoned."
       },
       {
         "type": "text",
