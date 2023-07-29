@@ -1,6 +1,6 @@
 [
   {
-    "name": "Penetrating - Cell, Power - Lightning Cannon",
+    "name": "Penetrating - Cell, Power - Lightning Rifle",
     "automation": [
       {
         "type": "target",
@@ -42,20 +42,20 @@
       },
       {
         "type": "counter",
-        "counter": "Lightning Cannon",
+        "counter": "Lightning Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
       },
       {
         "type": "text",
-        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
   },
   {
-    "name": "Penetrating - Cell, Cryo - Lightning Cannon",
+    "name": "Penetrating - Cell, Cryo - Lightning Rifle",
     "automation": [
       {
         "type": "roll",
@@ -194,7 +194,7 @@
       },
       {
         "type": "counter",
-        "counter": "Lightning Cannon",
+        "counter": "Lightning Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
@@ -205,13 +205,13 @@
       },
       {
         "type": "text",
-        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
   },
   {
-    "name": "Penetrating - Cell, Deafening - Lightning Cannon",
+    "name": "Penetrating - Cell, Deafening - Lightning Rifle",
     "automation": [
       {
         "type": "target",
@@ -226,7 +226,7 @@
                 "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d6+{dexterityMod} [sonic]",
+                    "damage": "1d6+{dexterityMod} [lightning]",
                     "overheal": false
                   },
                   {
@@ -286,7 +286,7 @@
                 "onTrue": [
                   {
                     "type": "damage",
-                    "damage": "1d6+{dexterityMod} [sonic]",
+                    "damage": "1d6+{dexterityMod} [lightning]",
                     "overheal": false
                   },
                   {
@@ -343,7 +343,7 @@
       },
       {
         "type": "counter",
-        "counter": "Lightning Cannon",
+        "counter": "Lightning Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
@@ -354,13 +354,13 @@
       },
       {
         "type": "text",
-        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
   },
   {
-    "name": "Penetrating - Cell, Incendiary - Lightning Cannon",
+    "name": "Penetrating - Cell, Power - Lightning Rifle",
     "automation": [
       {
         "type": "target",
@@ -471,7 +471,7 @@
                 "hit": [
                   {
                     "type": "damage",
-                    "damage": "1d6+{dexterityMod} [fire]",
+                    "damage": "1d6+{dexterityMod} [lightning]",
                     "overheal": false
                   },
                   {
@@ -550,7 +550,7 @@
                 "onTrue": [
                   {
                     "type": "damage",
-                    "damage": "1d6+{dexterityMod} [fire]",
+                    "damage": "1d6+{dexterityMod} [lightning]",
                     "overheal": false
                   },
                   {
@@ -626,7 +626,7 @@
       },
       {
         "type": "counter",
-        "counter": "Lightning Cannon",
+        "counter": "Lightning Rifle",
         "amount": "2",
         "allowOverflow": false,
         "errorBehaviour": "raise"
@@ -637,7 +637,7 @@
       },
       {
         "type": "text",
-        "text": "Power cell (range 90/360), Auto, Penetrating 2, Reload 4, Strength 15, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
+        "text": "Power cell (range 60/240), Penetrating 2, Reload 8, Strength 11, Two-handed\n\nWhenever you deal damage with this weapon and roll the maximum on the weapon damage die, the creature hit becomes shocked until the end of its next turn."
       }
     ],
     "_v": 2
