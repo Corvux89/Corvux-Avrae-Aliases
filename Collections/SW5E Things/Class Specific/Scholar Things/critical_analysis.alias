@@ -11,6 +11,7 @@ discoveries = feats.get("Discoveries", [])
 subclass = load_json(c.get_cvar("subclass", "{}")).get("ScholarLevel")
 schMod = feats.get("RancorsDiscipline", "intelligence")
 mod = int(c.stats.get_mod(schMod)) if not a.last('mod') else int(a.last('mod'))
+f_str = []
 
 v = lvl >= 1
 
@@ -26,6 +27,7 @@ if v:
     base += f''' -f "Meta|**Mod**: {mod}" '''
     if com and tar:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
+        attacks, effects = [], {}
         peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, buttons=[{"label": f"Stop Analyzing {tar.name}",
                                                                                 "verb": f"Stops analyzing {tar.name}",
                                                                                 "style": 4, "automation": [
@@ -62,18 +64,34 @@ if v:
                                         {"type": "counter",
                                          "counter": "Mutagenic Transformation",
                                          "amount": 1, "errorBehaviour": "raise"}]}]})
+                elif subclass == "Politician":
+                    amt = round(mod/2)
+                    effects["ac_bonus"] = amt
+                    if "CharmingFeint" in discoveries:
+                        effects["damage_bonus"] = amt
+
+                    f_str.append("Motivating Diplomat|When you are the target of your Critical Analysis feature, you and all allies within 10 feet of you gain a bonus to their AC equal to half your Critical Analysis ability modifier.")
+                    attacks.append({"attack": {"name": "Spread - Motivating Diplomat","_v": 2, "automation": [
+                        {"type": "target", "target": "each", "effects": [
+                            {"type": "ieffect2", "name": "Motivating Diplomat", "desc": f"While in range you gain a {amt} bonus to AC{f' ,and a {amt} bonus to damage' if 'CharmingFeint' in discoveries else '.'}",
+                             "parent": "ieffect", "effects": effects}
+                        ]}
+                    ]}})
+
 
         else:
             buttons = []
 
         childEff = tar.add_effect(eff, parent=peff, duration=dur, desc=f"Critical Analysis modifier is {mod}",
-                                  buttons=buttons)
+                                  buttons=buttons, attacks=attacks, passive_effects=effects)
 
         base += f''' -f "{tar.name}|**Effect**: {childEff}" '''
 
     base += f''' -f "Effect|You are able to analyze a creature, develop a plan on how to best overcome any potential obstacle, and execute that plan with ruthless efficiency. As a bonus action on your turn, you can analyze a creature you can see within 60 feet of you. For the next minute, or until you analyze another target, you gain the following benefits:" '''
     base += f''' -f "When you analyze a hostile creature|Your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Critical Analysis ability modifier, which is {schMod.capitalize()}, instead of Strength or Dexterity. You must use the same modifier for both rolls." '''
     base += f''' -f "When you analyze a friendly creature|The target can end your Critical Analysis on them (no action required) to add your Critical Analysis ability modifier, which is {schMod.capitalize()}, to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest." '''
+    if len(f_str) > 0:
+        base += f''' {" ".join(f'-f "{x}"' for x in f_str)} '''
 
     return base
 else:

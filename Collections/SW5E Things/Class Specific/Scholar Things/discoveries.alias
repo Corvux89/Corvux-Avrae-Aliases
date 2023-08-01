@@ -1,7 +1,8 @@
 <drac2>
 ch = character()
 args = &ARGS&
-disc = ["Perfect Maneuver", "Surgical Precision", "Health Advisor", "Adapted Hide", "Mutagenic Hardiness", "Rancor's Discipline"]
+disc = ["Perfect Maneuver", "Surgical Precision", "Health Advisor", "Adapted Hide", "Mutagenic Hardiness",
+        "Rancor's Discipline", "Charming Feint"]
 discovery = None
 
 

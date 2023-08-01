@@ -11,18 +11,18 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "1d8+5 [magical piercing]",
+                "damage": "1d8+{max(strengthMod,dexterityMod)+1} [magical piercing]",
                 "overheal": false
               }
             ],
             "miss": [],
-            "attackBonus": "9"
+            "attackBonus": "max(strengthMod,dexterityMod)+proficiencyBonus+1"
           }
         ]
       },
       {
         "type": "text",
-        "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.\n\nKeen Rune (Crits on 19+) by Plackart",
+        "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.\n\n**Runes**\nEnchant I (+1 Hit/Damage)\nSpeed 1 (BA Attack)\nKeen Rune (Crits on 19+)",
         "title": "Effect"
       }
     ],
@@ -41,18 +41,18 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "1d8+5 [magical piercing]",
+                "damage": "1d8+{max(strengthMod,dexterityMod)+1} [magical piercing]",
                 "overheal": false
               }
             ],
             "miss": [],
-            "attackBonus": "9"
+            "attackBonus": "max(strengthMod,dexterityMod)+proficiencyBonus+1"
           }
         ]
       },
       {
         "type": "text",
-        "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.\n\nKeen Rune (Crits on 19+) by Plackart",
+        "text": "Proficiency with a rapier allows you to add your proficiency bonus to the attack roll for any attack you make with it.\n\n**Runes**\nEnchant I (+1 Hit/Damage)\nSpeed 1 (BA Attack)\nKeen Rune (Crits on 19+)",
         "title": "Effect"
       }
     ],

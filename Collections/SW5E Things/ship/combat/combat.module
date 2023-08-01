@@ -5,6 +5,7 @@ com = combat()
 bg = ch.background.split("|")
 shipStats = load_json(ch.get_cvar("shipStats", {}))
 hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "d12", "gargantuan": "d20"}
+using(ship="85c74b16-b249-499b-b3f7-3f364fefdfb9")
 
 
 def startCombat(args):
@@ -24,8 +25,7 @@ def startCombat(args):
     # Setup Effects
     peff = {"immunities": immune}
     desc = f"Max Shields: {bg[0]}\n - Damage Reduction: {bg[2]}"
-    attacks = [get_recharge_shields_attack(), get_patch_attack(), get_hull_reduction_attack(),
-               get_shield_reduction_attack()]
+    attacks = []
     buttons = [get_recharge_button(), get_patch_button(), get_boost_engine_button(), get_boost_shields_button(),
                get_boost_weapons_button()]
 
@@ -35,147 +35,25 @@ def startCombat(args):
     return f'''embed -title "testing" -f "{ch.name}|{parent}" '''
 
 
-
 def get_boost_engine_button():
-    effect = {"type": "ieffect2", "name": "Boost Engines!", "duration": 1, "desc": "Speed increased by 50"}
+    return {"label": "Boost Engines", "verb": "uses Boost Engines!", "style": 1,
+            "automation": ship.get_boost_engine_automation()}
 
-    check = {"type": "check", "ability": "athletics", "dc": 10,
-             "success": [effect], "fail": []}
-    target = {"type": "target", "target": "self", "effects": [check]}
-
-    text = {"type": "text", "text": "You can attempt to boost your speed. When you take the Boost Engines action, "
-                                    "you make a DC 10 Strength (Boost) check. On a success you increase your speed by "
-                                    "50 until the end of your ship’s next turn."}
-
-    return {"label": "Boost Engines","verb": "uses Boost Engines!", "style": 1,
-            "automation": [target, text, get_attribution_text()]}
 
 def get_boost_shields_button():
-    hds = hdSize.get(ch.race.lower())
-    passRoll = {"type": "roll", "dice": f"1{hds}", "name": "shield_bonus", "displayName": "Shield Bonus"}
-
-    thp = {"type": "temphp", "amount": "caster.temp_hp + shield_bonus"}
-
-
-    check = {"type": "check", "ability": "athletics", "dc": 10,
-             "success": [passRoll, thp], "fail": []}
-    target = {"type": "target", "target": "self", "effects": [check]}
-
-    text = {"type": "text", "text": "You can attempt to boost your shields. When you take the Boost Shields action, "
-                                    "you make a DC 10 Strength (Boost) check. On a success, you roll a shield die, "
-                                    "without expending it, and gain temporary shield points equal to the result that "
-                                    "last until the start of your ship’s next turn."}
-
     return {"label": "Boost Shields", "verb": "uses Boost Shields!", "style": 1,
-            "automation": [target, text, get_attribution_text()]}
+            "automation": ship.get_boost_shield_automation()}
+
 
 def get_boost_weapons_button():
-    check = {"type": "check", "ability": "athletics", "dc": 10,
-             "success": [], "fail": []}
-    target = {"type": "target", "target": "self", "effects": [check]}
-
-    text = {"type": "text", "text": "You can attempt to boost your weapon output. When you take the Boost Weapons "
-                                    "action, the next time this turn your ship would deal damage, "
-                                    "you make a DC 10 Strength (Boost) check. On a success, "
-                                    "you have advantage on the damage roll."}
-
     return {"label": "Boost Weapons", "verb": "uses Boost Weapons!", "style": 1,
-            "automation": [target, text, get_attribution_text()]}
-
-
-
-def get_recharge_shields_attack():
-    attack = {"name": "Recharge Shields", "_v": 2, "verb": "uses", "activation_type": 2,
-              "automation": _get_recharge_automation()}
-
-    return {"attack": attack}
+            "automation": ship.get_boost_weapons_automation()}
 
 
 def get_recharge_button():
     return {"label": "Recharge Shields", "verb": "recharges their shields!", "style": 3,
-            "automation": _get_recharge_automation()}
-
-
-def _get_recharge_automation():
-    rate = {"type": "roll", "dice": bg[1], "name": "rate", "displayName": "Regeneration Rate"}
-    shields = {"type": "variable", "name": "shields", "value": f"min({bg[0]},caster.temp_hp+rate)"}
-    thp = {"type": "temphp", "amount": "{shields}"}
-    target = {"type": "target", "target": "self", "effects": [thp, get_hd_counter()]}
-    text = {"type": "text", "text": "Your ship may regenerate shields (no action required) once per round on the "
-                                    "ship’s turn by that value by expending a shield die without rolling it, up to "
-                                    "the Shield Capacity. The shield regeneration rate is calculated by multiplying "
-                                    "the maximum value of the ship’s Shield Die by the shield regeneration rate "
-                                    "coefficient."}
-
-    return [rate, shields, target, text, get_attribution_text()]
-
-
-def get_patch_attack():
-    attack = {"name": "Patch", "_v": 2, "verb": "uses", "activation_type": 2, "automation": _get_patch_automation()}
-
-    return {"attack": attack}
-
+            "automation": ship.get_recharge_automation()}
 
 def get_patch_button():
-    return {"label": "Patch", "verb": "patches their hull!", "style": 3, "automation": _get_patch_automation()}
+    return {"label": "Patch", "verb": "patches their hull!", "style": 3, "automation": ship.get_patch_automation()}
 
-
-def _get_patch_automation():
-    hds = hdSize.get(ch.race.lower())
-    failRoll = {"type": "damage", "damage": f"-2{hds}kl1 [healing]"}
-    passRoll = {"type": "damage", "damage": f"-1{hds} [healing]"}
-
-    check = {"type": "check", "ability": "medicine", "dc": "max(10,floor((caster.max_hp-caster.hp)/2))",
-             "success": [passRoll], "fail": [failRoll]}
-
-    target = {"type": "target", "target": "self", "effects": [check, get_hd_counter()]}
-
-    text = {"type": "text", "text": "You can attempt to patch up damage a ship has taken, using one of its Hull Dice. "
-                                    "When you take the Patch action, you make a Constitution (Patch) check (DC = 10 or "
-                                    "half the ship’s missing hull points, whichever number is higher). On a failure, "
-                                    "you roll the Hull Die twice and take the lesser amount. On a success you roll "
-                                    "the Hull Die normally. The Patch action can be taken multiple times on a "
-                                    "ship’s turn."}
-
-    return [target, get_attribution_text(), text]
-
-
-def get_hull_reduction_attack():
-    dr = bg[2]
-    damage = {"type": "damage", "damage": f"-{{min({dr},lastCounterRequestedAmount)}} [damage reduction]",
-              "overheal": False}
-    target = {"type": "target", "target": "self", "effects": [damage]}
-
-    attack = {"name": "Hull - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
-              "automation": [get_dummy_counter(dr), target, get_attribution_text()], "activation_type": 4}
-
-    return {"attack": attack}
-
-
-def get_shield_reduction_attack():
-    dr = bg[2]
-    shields = {"type": "variable", "name": "shields",
-               "value": f"min({bg[0]},caster.temp_hp+min({dr},lastCounterRequestedAmount))"}
-
-    target = {"type": "target", "target": "self", "effects": [shields]}
-
-    attack = {"name": "Shields - Damage Reduction", "_v": 2, "verb": "reduces incoming damage using",
-              "automation": [get_dummy_counter(dr), target, get_attribution_text()], "activation_type": 4}
-
-    return {"attack": attack}
-
-
-def get_hd_counter(amt=1):
-    return {"type": "counter", "counter": shipStats.get('hdName'), "amount": amt, "errorBehaviour": "raise"}
-
-
-def get_dummy_counter(amt=1):
-    return {"type": "counter", "counter": "inevershouldexist", "amount": amt, "errorBehaviour": "ignore"}
-
-
-def get_attribution_text():
-    return {"type": "text", "text": f"{ctx.author.display_name}", "title": "Crewmember"}
-
-
-def get_remove_effect():
-    return {"type": "remove_ieffect"}

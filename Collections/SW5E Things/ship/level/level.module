@@ -11,6 +11,8 @@ hdSize = {"tiny": "d4", "small": "d6", "medium": "d8", "large": "d10", "huge": "
 pdSize = ["d1","d4","d6","d8","d10","d12"]
 
 def ship_level(args):
+    if len(ch.background.split("|")) < 3:
+        return err("You're not a ship.....")
     a = argparse(args)
 
     for cl, lvl in ch.levels:
@@ -18,6 +20,10 @@ def ship_level(args):
 
     base = f'''embed -thumb {ch.image} -color {ch.csettings.color} -footer {footer} -title "Level Summary for {ch.name}" '''
     base += f''' -f "Info|Tier {tier} - {ch.race} {type}" '''
+
+    # Setup Shields
+    ch.set_temp_hp(bg[0])
+    base += f''' -f "Max Shields|{bg[0]}|inline"'''
 
     # Hull/Shield Dice
     hdMult = 2 if ch.race.lower() in ["huge", "gargantuan"] else 1

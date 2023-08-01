@@ -164,6 +164,10 @@
             ]
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a target within range that isn't hostile toward you. The target must make a Wisdom saving throw. On a failed save, you have advantage on all Charisma checks directed at that target. \n\nOn a successful save, the creature does not realize that you tried to use the Force to influence its mood, but it becomes immune to this power for one day. This power has no effect on droids or constructs."
       }
     ],
     "classes": "Universal",
@@ -414,6 +418,10 @@
             "desc": "{name} has advantage on the first {{'attack' if level < 5 else 'two attacks' if level < 11 else 'three attacks' if level < 17 else 'four attacks'}}"
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\n\nThis power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level."
       }
     ],
     "classes": "Universal",
@@ -912,24 +920,6 @@
     "concentration": false
   },
   {
-    "name": "Cryogenic Burst",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\r\n\r\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "concentration": false
-  },
-  {
     "name": "Cryogenic Spray",
     "level": 5,
     "school": "Tech",
@@ -1197,24 +1187,6 @@
     "duration": "up to 1 minute",
     "ritual": false,
     "description": "You create a delayed explosion at a point within range. When the power ends, either because your concentration is broken or because you decide to end it, the explosion occurs. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.\r\n\r\nThe power's base damage is 12d6. If at the end of your turn the explosion has not yet occurred, the damage increases by 1d6.\r\n\r\nIf the explosion is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the power ends immediately, causing the explosion. \r\n\r\nThe fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 8th level or higher, the base damage increases by 1d6 for each slot level above 7th.",
-    "concentration": true
-  },
-  {
-    "name": "Denounce",
-    "level": 0,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
     "concentration": true
   },
   {
@@ -5252,24 +5224,6 @@
     "duration": "24 hours",
     "ritual": false,
     "description": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The secured area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the power.\r\n\r\nWhen you cast this power, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.\r\n\r\nWhen commanded (no action required), *security protocols* creates the following effects within the secured area.\r\n\r\n***Corridors.*** Fog fills all the secured corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses.\r\n\r\n***Doors.*** All doors in the secured area are locked, as if sealed by the *lock* power. In addition, you can cover up to ten doors with an image (equivalent to the illusory object function of the *minor hologram* power) to make them appear as plain sections of wall.\r\n\r\n***Stairs.*** Electromesh fills all stairs in the secured area from top to bottom, as the *electromesh* power. This mesh regrows in 10 minutes if it is burned or torn away while *security protocols* lasts.\r\n\r\n***Other power effect.*** You can place your choice of one of the following enhanced effects within the secured area of the stronghold.\r\n- Place *mobile lights* in four corridors. You can designate a simple program that the lights repeat as long as *security protocols* lasts.\r\n- Place *implant message* in two locations.\r\n- Place *debilitating gas* in two locations. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while *security protocols* lasts.\r\n\r\nThe whole secured area radiates power. A *dimish tech* cast on a specific effect, if successful, removes only that effect.\r\n\r\nYou can create a permanently guarded and secured structure by casting this power there every day for one year.",
-    "concentration": false
-  },
-  {
-    "name": "Seethe",
-    "level": 0,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
     "concentration": false
   },
   {
@@ -15150,6 +15104,282 @@
     "duration": "up to 1 hour",
     "ritual": false,
     "description": "You channel tech power through a blaster weapon you are wielding. When a target takes damage from the chosen weapon, the target takes an extra 1d6 fire damage. The power ends when twelve shots have been fired.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the number of shots you can take with this power increases by two for each slot level above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Greater Energy Shield",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Greater Energy Shield",
+            "duration": "1",
+            "effects": {
+              "ac_bonus": "5"
+            }
+          },
+          {
+            "type": "text",
+            "text": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from homing rockets.",
+            "title": "Description"
+          }
+        ]
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when a creature you can see within range is hit by an attack or targeted by the *homing rockets* power",
+    "range": "15 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from *homing rockets*.",
+    "concentration": false
+  },
+  {
+    "name": "Seethe",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Hit Dice (d12)",
+        "amount": "1",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "condition",
+        "condition": "lastCounterUsedAmount",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "-1d12 [healing]"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "-1d10 [healing]"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d8)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-1d8 [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d6)",
+                    "amount": "1",
+                    "errorBehaviour": "raise"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "lastCounterUsedAmount",
+                    "onTrue": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "damage",
+                            "damage": "-1d6 [healing]"
+                          }
+                        ]
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "text",
+                        "text": "Hit Die counter not found"
+                      }
+                    ],
+                    "errorBehaviour": "false"
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ],
+        "errorBehaviour": "false"
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
+    "concentration": false
+  },
+  {
+    "name": "Break",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d4",
+            "name": "damage",
+            "cantripScale": true
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{name} [kinetic]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels.",
+    "concentration": false
+  },
+  {
+    "name": "Cryogenic Burst",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [cold]",
+                "cantripScale": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "duration": "1",
+                "desc": "Gains 1 level of slowed",
+                "tick_on_caster": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\n\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\r\n\r\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Denounce",
+    "level": 0,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
     "concentration": true
   }
 ]
