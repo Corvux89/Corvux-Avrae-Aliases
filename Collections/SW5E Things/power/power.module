@@ -1,3 +1,5 @@
+# Power Module
+
 def processPower(args):
     a = argparse(args)
     ignore = a.get('i')
@@ -159,7 +161,7 @@ def processPower(args):
         return err(f'cast "{spell.name}" {" ".join(out)} -i \n\n ARGS = {args}')
 
     # Send it!
-    return f'cast "{spell.name}" {" ".join(out)} -i'
+    return f'cast "{spell.name}" {" ".join(out)} {"-i" if spell_level>0 else ""}'
 
 def search(keyword, gvar):
     sover = f"(sw) {keyword}"

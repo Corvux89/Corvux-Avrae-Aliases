@@ -1,8 +1,8 @@
 {
-  "name": "Denounce",
+  "name": "Echo Blast",
   "level": 0,
-  "school": "Force",
-  "classes": "Dark",
+  "school": "Tech",
+  "classes": "None",
   "subclasses": "",
   "casttime": "1 action",
   "range": "30 feet",
@@ -11,8 +11,31 @@
     "somatic": false,
     "material": ""
   },
-  "duration": "up to 1 minute",
+  "duration": "Instantaneous",
   "ritual": false,
-  "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
-  "concentration": true
+  "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
+  "concentration": false,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "wis",
+          "success": [],
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "1d8 [sonic]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\n\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession."
+    }
+  ]
 }

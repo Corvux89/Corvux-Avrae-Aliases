@@ -1460,24 +1460,6 @@
     "concentration": true
   },
   {
-    "name": "Echo Blast",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
-    "concentration": false
-  },
-  {
     "name": "Electrical Burst",
     "level": 0,
     "school": "Tech",
@@ -11679,24 +11661,6 @@
     "concentration": false
   },
   {
-    "name": "Dismantle",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "Special",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false
-  },
-  {
     "name": "Force Barrier",
     "level": 2,
     "school": "Force",
@@ -15146,130 +15110,6 @@
     "concentration": false
   },
   {
-    "name": "Seethe",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "counter",
-        "counter": "Hit Dice (d12)",
-        "amount": "1",
-        "errorBehaviour": "ignore"
-      },
-      {
-        "type": "condition",
-        "condition": "lastCounterUsedAmount",
-        "onTrue": [
-          {
-            "type": "target",
-            "target": "self",
-            "effects": [
-              {
-                "type": "damage",
-                "damage": "-1d12 [healing]"
-              }
-            ]
-          }
-        ],
-        "onFalse": [
-          {
-            "type": "counter",
-            "counter": "Hit Dice (d10)",
-            "amount": "1",
-            "errorBehaviour": "ignore"
-          },
-          {
-            "type": "condition",
-            "condition": "lastCounterUsedAmount",
-            "onTrue": [
-              {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                  {
-                    "type": "damage",
-                    "damage": "-1d10 [healing]"
-                  }
-                ]
-              }
-            ],
-            "onFalse": [
-              {
-                "type": "counter",
-                "counter": "Hit Dice (d8)",
-                "amount": "1",
-                "errorBehaviour": "ignore"
-              },
-              {
-                "type": "condition",
-                "condition": "lastCounterUsedAmount",
-                "onTrue": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "damage",
-                        "damage": "-1d8 [healing]"
-                      }
-                    ]
-                  }
-                ],
-                "onFalse": [
-                  {
-                    "type": "counter",
-                    "counter": "Hit Dice (d6)",
-                    "amount": "1",
-                    "errorBehaviour": "raise"
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "lastCounterUsedAmount",
-                    "onTrue": [
-                      {
-                        "type": "target",
-                        "target": "self",
-                        "effects": [
-                          {
-                            "type": "damage",
-                            "damage": "-1d6 [healing]"
-                          }
-                        ]
-                      }
-                    ],
-                    "onFalse": [
-                      {
-                        "type": "text",
-                        "text": "Hit Die counter not found"
-                      }
-                    ],
-                    "errorBehaviour": "false"
-                  }
-                ],
-                "errorBehaviour": "false"
-              }
-            ],
-            "errorBehaviour": "false"
-          }
-        ],
-        "errorBehaviour": "false"
-      }
-    ],
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
-    "concentration": false
-  },
-  {
     "name": "Break",
     "level": 0,
     "school": "Force",
@@ -15365,9 +15205,163 @@
     "concentration": false
   },
   {
+    "name": "Seethe",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Hit Dice (d12)",
+        "amount": "1",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "condition",
+        "condition": "lastCounterUsedAmount",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "-1d12 [healing]"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "-1d10 [healing]"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d8)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-1d8 [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d6)",
+                    "amount": "1",
+                    "errorBehaviour": "raise"
+                  },
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-1d6 [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
+    "concentration": false
+  },
+  {
     "name": "Denounce",
     "level": 0,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "cha",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Denounced",
+                "effects": {
+                  "to_hit_bonus": "-1d{{4 if level < 5 else 6 if level < 11 else 8 if level < 17 else 10}} [denounce]",
+                  "save_bonus": "-1d{{4 if level < 5 else 6 if level < 11 else 8 if level < 17 else 10}} [denounce]"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "End Denounce",
+                    "style": "3"
+                  }
+                ],
+                "parent": "ieffect"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "text",
+            "text": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level."
+          }
+        ]
+      }
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
@@ -15381,5 +15375,160 @@
     "ritual": false,
     "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
     "concentration": true
+  },
+  {
+    "name": "Detonator",
+    "level": 0,
+    "school": "Tech",
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4).",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4 [fire]",
+        "cantripScale": true,
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [fire]",
+                    "cantripScale": true
+                  }
+                ],
+                "miss": []
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit",
+                "onTrue": [
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "success": [],
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "{damage}"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dismantle",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "Special",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6 [energy]",
+                "cantripScale": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ]
+  },
+  {
+    "name": "Echo Blast",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "success": [],
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d8 [sonic]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\n\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession."
+      }
+    ]
   }
 ]
