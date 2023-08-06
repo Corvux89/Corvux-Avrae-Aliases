@@ -1,0 +1,4 @@
+<drac2>
+pb = 0 if "-noprof" in &ARGS& else proficiencyBonus*2 if "-e" in &ARGS& else  proficiencyBonus
+return f'''i a {&ARGS&[0]} &*& -b "{pb}" -f "Crewmember|{ctx.author.display_name}" '''
+</drac2>

@@ -920,9 +920,10 @@
   {
     "name": "Weak Point Strike",
     "sub": "Physical",
-    "desc": "-title \"#name# #uses# Weak Point Strike!\" #desc#",
-    "roll": "#superiorityDice#",
-    "validUse": "-f \"Meta|**Roll**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nWhen you hit a creature with a weapon attack, you can expend a superiority die to temporarily daze the creature. Add the number rolled to the damage of the weapon attack and the creature must succeed on a Constitution saving throw or be stunned until the end of its next turn.\"",
+    "desc": "-title \"#name# #uses# Weak Point Strike!\" #desc# -footer \"#combatantFooter#\"",
+    "damage": "#superiorityDice#",
+    "dmgType": "kinetic",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Medicine*\n\nWhen you hit a creature with a weapon attack, you can expend a superiority die to temporarily daze the creature. Add the number rolled to the damage of the weapon attack and the creature must succeed on a Constitution saving throw or be stunned until the end of its next turn.\"",
     "save": {
       "dc": "8+#prof_bonus#+#maneuverMod#",
       "type": "con",

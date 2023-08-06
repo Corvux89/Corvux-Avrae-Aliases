@@ -1,7 +1,8 @@
 <drac2>
 ch = character()
-for cl, lvl in ch.levels:
-    type = cl
+for cc in ch.consumables:
+    if "hit dice" in cc.name.lower():
+        type = cc.name
 
-return err(type)
+return err(f"'{type}'")
 </drac2>

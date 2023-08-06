@@ -63,7 +63,7 @@ def maneuver(args):
 
         # Do some rolls
         dc = int(a.last('dc')) if a.last('dc') else roll(feature.save.dc) if "save" in feature and "dc" in feature.save else 8+c.stats.prof_bonus+maneuverMod
-        damage = vroll(f"""{f'-({feature.damage + roll_add(feature,dmgType,args)})' if dmgType == "healing" else f'{feature.damage + roll_add(feature, args)}'}""", 2 if crit else 1) if "damage" in feature else vroll("0")
+        damage = vroll(f"""{f'-({feature.damage + roll_add(feature,dmgType,args)})' if dmgType == "healing" else f'{feature.damage + roll_add(feature,dmgType, args)}'}""", 2 if crit else 1) if "damage" in feature else vroll("0")
         thp = vroll(feature.thp) if "thp" in feature else vroll("0")
 
         # Start processing targets
@@ -100,7 +100,7 @@ def maneuver(args):
                                            desc=feature.effect.desc if "desc" in feature.effect else "",
                                            duration=feature.effect.duration if "duration" in feature.effect else -1,
                                            concentration=feature.effect.conc if "conc" in feature.effect else False,
-                                           end=feature.effect.end if "end " in feature.effect else False,
+                                           end=True if "end " in feature.effect else False,
                                            passive_effects=feature.effect.passive_effects if "passive_effects" in feature.effect else None,
                                            parent=peff
                                            )

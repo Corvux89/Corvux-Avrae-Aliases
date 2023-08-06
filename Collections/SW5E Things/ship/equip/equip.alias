@@ -4,7 +4,6 @@ using(sup='df07d6ae-140d-45b1-b026-de831064acab', help='8b78365a-5c05-4c8f-8364-
 output = "output" in args
 variable = load_json(get_gvar('56a0b569-973f-41e3-98fb-cee7a2618386'))
 counter = ""
-ch = character()
 
 if output:
     args.remove("output")
@@ -25,7 +24,7 @@ for x in variable:
 if not attacks:
     err(f"I can't find a weapon named {weapon}.")
 
-attacks, counter = sup.processAttacks(attacks, args)
+attacks, counter = sup.processAttacks(attacks, args, True)
 
 if output:
     n = '\n'

@@ -164,6 +164,10 @@
             ]
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a target within range that isn't hostile toward you. The target must make a Wisdom saving throw. On a failed save, you have advantage on all Charisma checks directed at that target. \n\nOn a successful save, the creature does not realize that you tried to use the Force to influence its mood, but it becomes immune to this power for one day. This power has no effect on droids or constructs."
       }
     ],
     "classes": "Universal",
@@ -233,24 +237,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\r\n\r\nIf you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it.",
-    "concentration": false
-  },
-  {
-    "name": "Animate Weapon",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\r\n\r\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\r\n\r\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd.",
     "concentration": false
   },
   {
@@ -414,6 +400,10 @@
             "desc": "{name} has advantage on the first {{'attack' if level < 5 else 'two attacks' if level < 11 else 'three attacks' if level < 17 else 'four attacks'}}"
           }
         ]
+      },
+      {
+        "type": "text",
+        "text": "You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\n\nThis power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level."
       }
     ],
     "classes": "Universal",
@@ -912,24 +902,6 @@
     "concentration": false
   },
   {
-    "name": "Cryogenic Burst",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\r\n\r\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "concentration": false
-  },
-  {
     "name": "Cryogenic Spray",
     "level": 5,
     "school": "Tech",
@@ -1197,24 +1169,6 @@
     "duration": "up to 1 minute",
     "ritual": false,
     "description": "You create a delayed explosion at a point within range. When the power ends, either because your concentration is broken or because you decide to end it, the explosion occurs. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.\r\n\r\nThe power's base damage is 12d6. If at the end of your turn the explosion has not yet occurred, the damage increases by 1d6.\r\n\r\nIf the explosion is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the power ends immediately, causing the explosion. \r\n\r\nThe fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 8th level or higher, the base damage increases by 1d6 for each slot level above 7th.",
-    "concentration": true
-  },
-  {
-    "name": "Denounce",
-    "level": 0,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
     "concentration": true
   },
   {
@@ -1488,60 +1442,6 @@
     "concentration": true
   },
   {
-    "name": "Echo Blast",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
-    "concentration": false
-  },
-  {
-    "name": "Electrical Burst",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (5-foot sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a burst of electricity. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 lightning damage.\r\n\r\nThis power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false
-  },
-  {
-    "name": "Electroshock",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Lightning springs from you to deliver a shock to a creature you try to touch. Make a melee tech attack against the target. You have advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit, the target takes 1d8 lightning damage and becomes shocked until the start of its next turn.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "concentration": false
-  },
-  {
     "name": "Elemental Accelerant",
     "level": 4,
     "school": "Tech",
@@ -1653,62 +1553,6 @@
     "concentration": false
   },
   {
-    "name": "Enfeeble",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "wis",
-            "fail": [
-              {
-                "type": "condition",
-                "condition": "target.hp < target.max_hp",
-                "onTrue": [
-                  {
-                    "type": "damage",
-                    "damage": "1d12 [necrotic]",
-                    "cantripScale": true
-                  }
-                ],
-                "onFalse": [
-                  {
-                    "type": "damage",
-                    "damage": "1d8 [necrotic]",
-                    "cantripScale": true
-                  }
-                ],
-                "errorBehaviour": "both"
-              }
-            ],
-            "success": []
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Dark energy courses from your hand at a creature within range. The target must succeed on a Wisdom saving throw. If it is missing any hit points, it takes 1d12 necrotic damage. Otherwise, it takes 1d8.\n\nThe power’s damage increases by one die when you reach 5th, 11th, and 17th level."
-      }
-    ],
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Dark energy courses from your hand at a creature within range. The target must succeed on a Wisdom saving throw. If it is missing any hit points, it takes 1d12 necrotic damage. Otherwise, it takes 1d8.\r\n\r\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level.",
-    "concentration": false
-  },
-  {
     "name": "Enhance Droid",
     "level": 2,
     "school": "Tech",
@@ -1797,24 +1641,6 @@
     "ritual": false,
     "description": "This power gives you a burst of adrenaline that allows you to move at an incredible pace. When you cast this power, and then as a bonus action on each of your turns until the power ends, you can take the Dash action.",
     "concentration": true
-  },
-  {
-    "name": "Extinguish",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet (5-foot cube)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You spray carbon foam in a 5-foot cube originating from a point within range. Flames within the affected area are instantly quenched, and objects within the affected area cannot be ignited for at least one minute. Any creature in the affected area must make a Constitution saving throw or take 1d4 cold damage.\r\n\r\nWhen you reach 5th level, this power can instead target a 10-foot cube within range. You gain additional options of increasing size when you reach 11th level (15-foot cube), and 17th level (20-foot cube).",
-    "concentration": false
   },
   {
     "name": "Fabricate Trap",
@@ -2121,24 +1947,6 @@
     "ritual": false,
     "description": "You let the Force guide you, empowering your strikes. Until the power ends, your weapon attacks deal an extra 1d4 force damage on a hit.",
     "concentration": true
-  },
-  {
-    "name": "Force Imbuement",
-    "level": 0,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes enhanced, if it isn't already, and you become proficient with it, if you aren't already. The power ends if you cast it again or if you let go of the weapon.",
-    "concentration": false
   },
   {
     "name": "Force Immunity",
@@ -2518,30 +2326,6 @@
     "concentration": false
   },
   {
-    "name": "Force Technique",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "text",
-        "text": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\n\nThis power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
-    "concentration": false
-  },
-  {
     "name": "Force Trance",
     "level": 3,
     "school": "Force",
@@ -2667,117 +2451,6 @@
     "ritual": false,
     "description": "You scramble the targeting protocols of nearby machines. Each droid or construct in a 30-foot-radius sphere centered on a point you choose within range must make an Intelligence saving throw. If a construct has the 'Piloted' trait, and has a pilot controlling it that is not incapacitated, it gains a bonus to the saving throw equal to the pilot's Intelligence modifier. On a failed save, the target loses the ability to distinguish friend from foe, regarding all creatures it can see as enemies until the power ends. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success.\r\n\r\nWhenever the affected creature chooses another creature as a target, it must choose the target at random from among the creatures it can see within range of the attack, power, or other ability it�s using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to.",
     "concentration": true
-  },
-  {
-    "name": "Give Life",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "counter",
-        "counter": "Hit Dice (d12)",
-        "amount": "1",
-        "errorBehaviour": "ignore"
-      },
-      {
-        "type": "condition",
-        "condition": "lastCounterUsedAmount",
-        "onTrue": [
-          {
-            "type": "target",
-            "target": "all",
-            "effects": [
-              {
-                "type": "damage",
-                "damage": "-1d12 [healing]"
-              }
-            ]
-          }
-        ],
-        "onFalse": [
-          {
-            "type": "counter",
-            "counter": "Hit Dice (d10)",
-            "amount": "1",
-            "errorBehaviour": "ignore"
-          },
-          {
-            "type": "condition",
-            "condition": "lastCounterUsedAmount",
-            "onTrue": [
-              {
-                "type": "target",
-                "target": "all",
-                "effects": [
-                  {
-                    "type": "damage",
-                    "damage": "-1d10 [healing]"
-                  }
-                ]
-              }
-            ],
-            "onFalse": [
-              {
-                "type": "counter",
-                "counter": "Hit Dice (d8)",
-                "amount": "1",
-                "errorBehaviour": "ignore"
-              },
-              {
-                "type": "condition",
-                "condition": "lastCounterUsedAmount",
-                "onTrue": [
-                  {
-                    "type": "target",
-                    "target": "all",
-                    "effects": [
-                      {
-                        "type": "damage",
-                        "damage": "-1d8 [healing]"
-                      }
-                    ]
-                  }
-                ],
-                "onFalse": [
-                  {
-                    "type": "counter",
-                    "counter": "Hit Dice (d6)",
-                    "amount": "1",
-                    "errorBehaviour": "raise"
-                  },
-                  {
-                    "type": "target",
-                    "target": "all",
-                    "effects": [
-                      {
-                        "type": "damage",
-                        "damage": "-1d6 [healing]"
-                      }
-                    ]
-                  }
-                ],
-                "errorBehaviour": "false"
-              }
-            ],
-            "errorBehaviour": "false"
-          }
-        ],
-        "errorBehaviour": "false"
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Placing your hand on another creature you can transfer your own life force to them. You spend and roll one of your hit dice and the creature regains that many hit points. This power has no effect on droids or constructs.",
-    "concentration": false
   },
   {
     "name": "Gleaming Outline",
@@ -3050,24 +2723,6 @@
     "concentration": true
   },
   {
-    "name": "Haywire",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\r\n\r\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false
-  },
-  {
     "name": "(SW) Heroism",
     "level": 1,
     "school": "Force",
@@ -3192,24 +2847,6 @@
     "ritual": false,
     "description": "You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must succeed on a Wisdom saving throw or become frightened for the duration. At the end of each of the target's turns before the power ends, the target must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the power ends. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force power slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.",
     "concentration": true
-  },
-  {
-    "name": "Illusory Strike",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\r\n\r\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level.",
-    "concentration": false
   },
   {
     "name": "(SW) Illusory Terrain",
@@ -3536,24 +3173,6 @@
     "concentration": true
   },
   {
-    "name": "Ion Blast",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \r\n\r\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
-    "concentration": false
-  },
-  {
     "name": "Ionic Bond",
     "level": 1,
     "school": "Tech",
@@ -3570,24 +3189,6 @@
     "ritual": false,
     "description": "A beam of ion energy lances out toward a creature within range, forming a sustained line between you and the target. Make a ranged tech attack against that creature. On a hit, the target takes 1d8 ion damage, and on each of your turns for the duration, you can use a bonus action to deal 1d8 ion damage to the target automatically. The power ends if you use your bonus action to do anything else. The power also ends if the target is ever outside the power's range or if it has total cover from you.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the initial damage increases by 1d8 for each slot level above 1st.",
     "concentration": true
-  },
-  {
-    "name": "Ionic Strike",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in an ionic discharge. If the target willingly takes a reaction before the start of your next turn, it immediately takes 1d6 ion damage, and the power ends. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 ion damage to the target, and the damage the target takes for taking reactions increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
-    "concentration": false
   },
   {
     "name": "Jet of Flame",
@@ -5255,24 +4856,6 @@
     "concentration": false
   },
   {
-    "name": "Seethe",
-    "level": 0,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
-    "concentration": false
-  },
-  {
     "name": "(SW) Sending",
     "level": 3,
     "school": "Tech",
@@ -6388,24 +5971,6 @@
     "duration": "1 minute",
     "ritual": false,
     "description": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \r\n\r\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\r\n\r\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\r\n\r\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends.",
-    "concentration": false
-  },
-  {
-    "name": "Wound",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -11725,24 +11290,6 @@
     "concentration": false
   },
   {
-    "name": "Dismantle",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "Special",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false
-  },
-  {
     "name": "Force Barrier",
     "level": 2,
     "school": "Force",
@@ -15151,5 +14698,1218 @@
     "ritual": false,
     "description": "You channel tech power through a blaster weapon you are wielding. When a target takes damage from the chosen weapon, the target takes an extra 1d6 fire damage. The power ends when twelve shots have been fired.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the number of shots you can take with this power increases by two for each slot level above 3rd.",
     "concentration": true
+  },
+  {
+    "name": "Greater Energy Shield",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Greater Energy Shield",
+            "duration": "1",
+            "effects": {
+              "ac_bonus": "5"
+            }
+          },
+          {
+            "type": "text",
+            "text": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from homing rockets.",
+            "title": "Description"
+          }
+        ]
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when a creature you can see within range is hit by an attack or targeted by the *homing rockets* power",
+    "range": "15 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from *homing rockets*.",
+    "concentration": false
+  },
+  {
+    "name": "Break",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "1d4",
+            "name": "damage",
+            "cantripScale": true
+          },
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{name} [kinetic]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels.",
+    "concentration": false
+  },
+  {
+    "name": "Cryogenic Burst",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [cold]",
+                "cantripScale": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "duration": "1",
+                "desc": "Gains 1 level of slowed",
+                "tick_on_caster": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\n\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a burst of cold energy at a creature within range. Make a ranged tech attack against the target. On a hit, it takes 1d8 cold damage, and gains 1 slowed level until the start of your next turn.\r\n\r\nThe power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Denounce",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "cha",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Denounced",
+                "effects": {
+                  "to_hit_bonus": "-1d{{4 if level < 5 else 6 if level < 11 else 8 if level < 17 else 10}} [denounce]",
+                  "save_bonus": "-1d{{4 if level < 5 else 6 if level < 11 else 8 if level < 17 else 10}} [denounce]"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "End Denounce",
+                    "style": "3"
+                  }
+                ],
+                "parent": "ieffect"
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "text",
+            "text": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\n\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level."
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A target of your choice within range must make a Charisma saving throw. On a failed save, when the target makes their next attack roll or saving throw they must roll a d4 and subtract the number from it. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level.",
+    "concentration": true
+  },
+  {
+    "name": "Detonator",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4 [fire]",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d6 [fire]",
+                    "cantripScale": true
+                  }
+                ],
+                "miss": []
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit",
+                "onTrue": [
+                  {
+                    "type": "save",
+                    "stat": "dex",
+                    "fail": [
+                      {
+                        "type": "damage",
+                        "damage": "{damage}"
+                      }
+                    ],
+                    "success": []
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4)."
+          }
+        ]
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4).",
+    "concentration": false
+  },
+  {
+    "name": "Dismantle",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6 [energy]",
+                "cantripScale": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "Special",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  },
+  {
+    "name": "Echo Blast",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d8 [sonic]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\n\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
+    "concentration": false
+  },
+  {
+    "name": "Force Imbuement",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Imbuement",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Imbued Weapon",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "1d8+{spell}"
+                            }
+                          ],
+                          "miss": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "defaultAttackBonus": "proficiencyBonus+spell",
+                "defaultCastingMod": "spell"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a d8. The weapon also becomes enhanced, if it isn’t already, and you become proficient with it, if you aren’t already. The power ends if you cast it again or if you let go of the weapon."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes enhanced, if it isn't already, and you become proficient with it, if you aren't already. The power ends if you cast it again or if you let go of the weapon.",
+    "concentration": false
+  },
+  {
+    "name": "Electrical Burst",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6 [lightning]",
+                "cantripScale": true
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a burst of electricity. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 lightning damage.\n\nThis power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (5-foot sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a burst of electricity. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 lightning damage.\r\n\r\nThis power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  },
+  {
+    "name": "Electroshock",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [lightning]",
+                "cantripScale": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Shocked",
+                "duration": "1",
+                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Lightning springs from you to deliver a shock to a creature you try to touch. Make a melee tech attack against the target. You have advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit, the target takes 1d8 lightning damage and becomes shocked until the start of its next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Lightning springs from you to deliver a shock to a creature you try to touch. Make a melee tech attack against the target. You have advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit, the target takes 1d8 lightning damage and becomes shocked until the start of its next turn.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Enfeeble",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "condition",
+                "condition": "target.hp < target.max_hp",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d12 [necrotic]",
+                    "cantripScale": true
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8 [necrotic]",
+                    "cantripScale": true
+                  }
+                ]
+              }
+            ],
+            "success": []
+          },
+          {
+            "type": "text",
+            "text": "Dark energy courses from your hand at a creature within range. The target must succeed on a Wisdom saving throw. If it is missing any hit points, it takes 1d12 necrotic damage. Otherwise, it takes 1d8.\n\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level."
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Dark energy courses from your hand at a creature within range. The target must succeed on a Wisdom saving throw. If it is missing any hit points, it takes 1d12 necrotic damage. Otherwise, it takes 1d8.\r\n\r\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Seethe",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Hit Dice (d12)",
+        "amount": "1",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "condition",
+        "condition": "lastCounterUsedAmount",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "-(1d12+{constitutionMod}) [healing]"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "-(1d10+{constitutionMod}) [healing]"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d8)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-(1d8+{constitutionMod}) [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d6)",
+                    "amount": "1",
+                    "errorBehaviour": "raise"
+                  },
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-(1d6+{constitutionMod}) [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You seethe with anger, letting the dark side of the Force flow through and empower you. As part of the action to cast this power, you spend one of your Hit Dice to recover hit points.",
+    "concentration": false
+  },
+  {
+    "name": "Give Life",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Hit Dice (d12)",
+        "amount": "1",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "condition",
+        "condition": "lastCounterUsedAmount",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "all",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "-(1d12+{constitutionMod}) [healing]"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "-(1d10+{constitutionMod}) [healing]"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d8)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+                    "type": "target",
+                    "target": "all",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-(1d8+{constitutionMod}) [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d6)",
+                    "amount": "1",
+                    "errorBehaviour": "raise"
+                  },
+                  {
+                    "type": "target",
+                    "target": "all",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-(1d6+{constitutionMod}) [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ],
+        "errorBehaviour": "false"
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Placing your hand on another creature you can transfer your own life force to them. You spend and roll one of your hit dice and the creature regains that many hit points. This power has no effect on droids or constructs.",
+    "concentration": false
+  },
+  {
+    "name": "Extinguish",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d4 [cold]"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You spray carbon foam in a 5-foot cube originating from a point within range. Flames within the affected area are instantly quenched, and objects within the affected area cannot be ignited for at least one minute. Any creature in the affected area must make a Constitution saving throw or take 1d4 cold damage.\n\nWhen you reach 5th level, this power can instead target a 10-foot cube within range. You gain additional options of increasing size when you reach 11th level (15-foot cube), and 17th level (20-foot cube)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet (5-foot cube)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You spray carbon foam in a 5-foot cube originating from a point within range. Flames within the affected area are instantly quenched, and objects within the affected area cannot be ignited for at least one minute. Any creature in the affected area must make a Constitution saving throw or take 1d4 cold damage.\r\n\r\nWhen you reach 5th level, this power can instead target a 10-foot cube within range. You gain additional options of increasing size when you reach 11th level (15-foot cube), and 17th level (20-foot cube).",
+    "concentration": false
+  },
+  {
+    "name": "Force Technique",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Technique",
+            "duration": "1",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "{ieffect.desc.split()[-1]} [force]"
+                      },
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Move - Force Technique",
+                "verb": "breaks through the force technique"
+              }
+            ],
+            "desc": "Wreathed in a glowing barrier of force energy until the start of the casters next turn. If the target willingly moves before then, it immediately takes force damage, and the power ends\n{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d8",
+            "tick_on_caster": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\n\nThis power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Haywire",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\r\n\r\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "success": [],
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6 [lightning]",
+                "cantripScale": true
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "Direction"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\n\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ]
+  },
+  {
+    "name": "Animate Weapon",
+    "level": 2,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\r\n\r\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\r\n\r\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Animate Weapon - Parent",
+            "desc": "{numDie}d8",
+            "duration": 10,
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Animated Weapon",
+                  "_v": 2,
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "{ieffect.desc.split()[-1]}+{spell} [kinetic]"
+                            }
+                          ],
+                          "miss": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "defaultAttackBonus": "spell_attack_bonus"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\n\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\n\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd."
+      }
+    ]
+  },
+  {
+    "name": "Illusory Strike",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\r\n\r\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Illusory Strike",
+            "duration": 1,
+            "tick_on_caster": true,
+            "desc": "Has disadvantage on the next {1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4} attacks against {name}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\n\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level."
+      }
+    ]
+  },
+  {
+    "name": "Ion Blast",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \r\n\r\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4 [ion]",
+        "cantripScale": true,
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "success": [],
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \n\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
+      }
+    ]
+  },
+  {
+    "name": "Ionic Strike",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in an ionic discharge. If the target willingly takes a reaction before the start of your next turn, it immediately takes 1d6 ion damage, and the power ends. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 ion damage to the target, and the damage the target takes for taking reactions increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "level > 5",
+            "onTrue": [
+              {
+                "type": "damage",
+                "damage": "{1 if level < 11 else 2 if level < 17 else 3}d6 [ion]"
+              }
+            ],
+            "onFalse": []
+          },
+          {
+            "type": "ieffect2",
+            "name": "Ionic Strike",
+            "duration": 1,
+            "tick_on_caster": true,
+            "desc": "If the target willingly takes a reaction before the start of your next turn, it immediately takes ion damage, and the power ends.\n{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d6",
+            "buttons": [
+              {
+                "label": "Reaction - Ionic Strike",
+                "verb": "reacts painfully!",
+                "automation": [
+                  {
+                    "type": "damage",
+                    "damage": "[ieffect.desc.split()[-1]} [ion]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wound",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d8 [necrotic]",
+                "higher": {
+                  "2": "1d8 [necrotic]",
+                  "3": "2d8 [necrotic]",
+                  "4": "3d8 [necrotic]",
+                  "5": "4d8 [necrotic]",
+                  "6": "5d8 [necrotic]",
+                  "7": "6d8 [necrotic]",
+                  "8": "7d8 [necrotic]",
+                  "9": "8d8 [necrotic]"
+                }
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "success": [],
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "2",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": true,
+                    "tick_on_caster": true,
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                  }
+                ]
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
+      }
+    ]
   }
 ]

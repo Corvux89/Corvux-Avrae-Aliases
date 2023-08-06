@@ -23,7 +23,7 @@ if v:
     base += f''' -f "{f_str}" '''
 
     if c.get_cc(cc):
-        c.mod_cc(cc, -1)
+        c.mod_cc(cc, -1) if not i else ''
         base += f''' -f "Slipstream Kickers|{c.cc_str(cc)} (-1)\n\nWhile you wear these boots, you can use a bonus action to activate or deactivate their overdrive mode. If you do, you gain the effect of the tactical advantage tech power for 1 minute. Once you’ve used this feature, you must complete a long rest before you can use it again." '''
     else:
         return err(f"Not enough charges of {cc} remaining!")

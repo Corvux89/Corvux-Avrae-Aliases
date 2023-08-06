@@ -1,9 +1,10 @@
 # SWEQUIP Primary Module
 
-def processAttacks(attacks, args):
+def processAttacks(attacks, args, shipEquip=None):
     out = []
     c = character()
-    using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+    using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862",
+          ship="85c74b16-b249-499b-b3f7-3f364fefdfb9")
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
@@ -220,5 +221,41 @@ def processAttacks(attacks, args):
 
     if args.get('auto'):
         out = [x for x in out if "burst" in x.name.lower() or "rapid" in x.name.lower() or "penetrating" in x.name.lower()]
+
+    if shipEquip:
+        if len(c.background.split("|")) < 3:
+            return err("You're not a ship.....")
+
+        exist_attacks = [a.name for a in c.attacks]
+
+        if "Recharge Shields" not in exist_attacks:
+            out.append({"name": "Recharge Shields", "_v": 2, "verb": "uses", "activation_type": 2,
+                                 "automation": ship.get_recharge_automation()})
+
+        if "Patch" not in exist_attacks:
+            out.append({"name": "Patch", "_v": 2, "verb": "uses", "activation_type": 2,
+                                  "automation": ship.get_patch_automation()})
+
+        if "Hull - Damage Reduction" not in exist_attacks:
+            out.append({"name": "Hull - Damage Reduction", "_v": 2,
+                                  "verb": "reduces incoming damage using", "activation_type": 4,
+                                  "automation": ship.get_hull_reduction_automation()})
+
+        if "Shields - Damage Reduction" not in exist_attacks:
+            out.append({"name": "Shields - Damage Reduction", "_v": 2,
+                                  "verb": "reduces incoming damage using", "activation_type": 4,
+                                  "automation": ship.get_shield_reduction_automation()})
+
+        if "Boost - Weapons" not in exist_attacks:
+            out.append({"name": "Boost - Weapon", "_v": 2, "verb": "uses", "activation_type": 2,
+                        "automation": ship.get_boost_weapons_automation()})
+
+        if "Boost - Shields" not in exist_attacks:
+            out.append({"name": "Boost - Shields", "_v": 2, "verb": "uses", "activation_type": 2,
+                        "automation": ship.get_boost_shield_automation()})
+
+        if "Boost - Engines" not in exist_attacks:
+            out.append({"name": "Boost - Engines", "_v": 2, "verb": "uses", "activation_type": 2,
+                        "automation": ship.get_boost_engine_automation()})
 
     return out, counter
