@@ -1,0 +1,141 @@
+[
+  {
+    "name": "Shoulder Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d6+3 [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+3+2"
+          },
+          {
+            "type": "counter",
+            "counter": "Shoulder Blaster",
+            "amount": "1",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 40/160), Rapid 4, Reload 16, Smart (17/+3), Special\n\nMounted by the shoulder slot, a shoulder blaster does not require a free hand to use. Additionally, you have advantage on Strength ability checks and saving throws to avoid being disarmed of this weapon."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Shoulder Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d6+3 [energy]",
+                "overheal": false
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+3+2"
+          },
+          {
+            "type": "counter",
+            "counter": "Shoulder Blaster",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Power cell (range 40/160), Rapid 4, Reload 16, Smart (17/+3), Special\n\nMounted by the shoulder slot, a shoulder blaster does not require a free hand to use. Additionally, you have advantage on Strength ability checks and saving throws to avoid being disarmed of this weapon."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Martial Lightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod+2"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Luminous, Versatile (1d10)",
+        "title": "Effect"
+      },
+      {
+        "type": "text",
+        "title": "Modifications",
+        "text": "**Ossus Dueling Lens**: You gain a +2 bonus to attack rolls made with this weapon.\n**Burning Cell**: When you score a critical hit with this weapon, you have advantage on the next attack roll you make against that creature before the end of your next turn."
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Two-Handed Martial Lightsaber",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10+{strengthMod} [energy]",
+                "overheal": false
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+strengthMod+2"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Hidden, Luminous, Versatile (1d10)",
+        "title": "Effect"
+      },
+      {
+        "type": "text",
+        "title": "Modifications",
+        "text": "**Ossus Dueling Lens**: You gain a +2 bonus to attack rolls made with this weapon.\n**Burning Cell**: When you score a critical hit with this weapon, you have advantage on the next attack roll you make against that creature before the end of your next turn."
+      }
+    ],
+    "_v": 2
+  }
+]
