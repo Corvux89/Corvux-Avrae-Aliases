@@ -1,54 +1,18 @@
 {
-  "name": "test",
-  "_v": 2,
-  "automation": [
-    {
-      "type": "variable",
-      "name": "numDie",
-      "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4"
+    "name": "Electrical Burst",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (5-foot sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
     },
-    {
-      "type": "target",
-      "target": "all",
-      "effects": [
-        {
-          "type": "condition",
-          "condition": "level>=5",
-          "onTrue": [
-            {
-              "type": "damage",
-              "damage": "{3 if level >=17 else 2 if level >= 11 else 1}d8 [acid]"
-            }
-          ],
-          "onFalse": []
-        },
-        {
-          "type": "ieffect2",
-          "name": "Acidic Strike",
-          "duration": 1,
-          "desc": "If the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take {numDie}d8 acid damage\n{numDie}d8",
-          "tick_on_caster": true,
-          "buttons": [
-            {
-              "label": "Acidic Strike - Grapple Damage",
-              "verb": "gets burned by acid",
-              "style": 3,
-              "automation": [
-                {
-                  "type": "target",
-                  "target": "self",
-                  "effects": [
-                    {
-                      "type": "damage",
-                      "damage": "{ieffect.desc.split()[-1]} [acid]"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a burst of electricity. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 lightning damage.\r\n\r\nThis power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  }

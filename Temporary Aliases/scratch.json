@@ -1,11 +1,11 @@
 {
-  "name": "Echo Blast",
-  "level": 0,
-  "school": "Tech",
-  "classes": "None",
+  "name": "Wound",
+  "level": 1,
+  "school": "Force",
+  "classes": "Dark",
   "subclasses": "",
   "casttime": "1 action",
-  "range": "30 feet",
+  "range": "60 feet",
   "components": {
     "verbal": false,
     "somatic": false,
@@ -13,7 +13,7 @@
   },
   "duration": "Instantaneous",
   "ritual": false,
-  "description": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\r\n\r\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.",
+  "description": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
   "concentration": false,
   "automation": [
     {
@@ -21,21 +21,51 @@
       "target": "each",
       "effects": [
         {
-          "type": "save",
-          "stat": "wis",
-          "success": [],
-          "fail": [
+          "type": "attack",
+          "hit": [
             {
               "type": "damage",
-              "damage": "1d8 [sonic]"
+              "damage": "2d8 [necrotic]",
+              "higher": {
+                "2": "1d8 [necrotic]",
+                "3": "2d8 [necrotic]",
+                "4": "3d8 [necrotic]",
+                "5": "4d8 [necrotic]",
+                "6": "5d8 [necrotic]",
+                "7": "6d8 [necrotic]",
+                "8": "7d8 [necrotic]",
+                "9": "8d8 [necrotic]"
+              }
+            },
+            {
+              "type": "save",
+              "stat": "con",
+              "success": [],
+              "fail": [
+                {
+                  "type": "ieffect2",
+                  "name": "Poisoned",
+                  "duration": "2",
+                  "effects": {
+                    "attack_advantage": "-1",
+                    "check_dis": [
+                      "all"
+                    ]
+                  },
+                  "end": true,
+                  "tick_on_caster": true,
+                  "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                }
+              ]
             }
-          ]
+          ],
+          "miss": []
         }
       ]
     },
     {
       "type": "text",
-      "text": "You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take 1d8 sonic damage.\n\nThis power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession."
+      "text": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
     }
   ]
 }

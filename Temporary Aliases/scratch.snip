@@ -4,7 +4,9 @@ com = combat()
 for c in com.combatants:
     if c.controller == ctx.author.id and not c.creature_type and c.group.lower() not in c.name.lower():
         bonus = c.stats.prof_bonus if not '-e' in &ARGS& else c.stats.prof_bonus*2
+        bonus = bonus if not '-noprof' in &ARGS& else 0
         return f''' -b  {bonus} -f "Crewmember|{c.name}" '''
 
 return err("No combatant found")
 </drac2>
+
