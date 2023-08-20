@@ -4145,24 +4145,6 @@
     "concentration": false
   },
   {
-    "name": "Plague",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Constitution saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends for it.",
-    "concentration": true
-  },
-  {
     "name": "Plant Surge",
     "level": 3,
     "school": "Force",
@@ -5899,24 +5881,6 @@
     "duration": "1 round",
     "ritual": false,
     "description": "You emit a powerful force field that deflects incoming attacks. Until the end of your next turn, you have resistance against kinetic, energy, and ion damage dealt by weapon attacks.",
-    "concentration": false
-  },
-  {
-    "name": "Warding Shot",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and a dim barrier surrounds it. The first time it would deal damage before the start of your next turn, that damage is reduced by 1d6. \r\n\r\nThis power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
     "concentration": false
   },
   {
@@ -14484,204 +14448,6 @@
     "concentration": false
   },
   {
-    "name": "Telekinetic Storm",
-    "level": 3,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "variable",
-        "name": "numDie",
-        "value": "3",
-        "higher": {
-          "4": "4",
-          "5": "5",
-          "6": "5",
-          "7": "7",
-          "8": "8",
-          "9": "9"
-        }
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Telekinetic Storm - Parent",
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Spread the Telekinetic Storm",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "all",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "con",
-                          "fail": [
-                            {
-                              "type": "damage",
-                              "damage": "{ieffect.desc.split()[-1]} [force]"
-                            }
-                          ],
-                          "success": [
-                            {
-                              "type": "damage",
-                              "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "ieffect2",
-                          "name": "Surrounded by Telekinetic Storm",
-                          "buttons": [
-                            {
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "con",
-                                      "fail": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "{ieffect.desc.split()[-1]} [force]"
-                                        }
-                                      ],
-                                      "success": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "text",
-                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                                }
-                              ],
-                              "label": "Telekinetic Storm (Start of Turn)",
-                              "verb": "starts their turn in the Telekinetic Storm",
-                              "style": "4",
-                              "defaultDC": "lastSaveDC"
-                            },
-                            {
-                              "automation": [
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ],
-                              "label": "Leave Telekinetic Storm",
-                              "verb": "leaves the range of Telekinetic Storm",
-                              "style": "3"
-                            }
-                          ],
-                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
-                          "parent": "ieffect"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                    }
-                  ],
-                  "verb": "begins to",
-                  "activation_type": 2
-                }
-              }
-            ],
-            "desc": "{numDie}d8",
-            "save_as": "storm"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Surrounded by Telekinetic Storm",
-            "buttons": [
-              {
-                "automation": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "save",
-                        "stat": "con",
-                        "fail": [
-                          {
-                            "type": "damage",
-                            "damage": "{ieffect.desc.split()[-1]} [force]"
-                          }
-                        ],
-                        "success": [
-                          {
-                            "type": "damage",
-                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "text",
-                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                  }
-                ],
-                "label": "Telekinetic Storm (Start of Turn)",
-                "verb": "starts their turn in the Telekinetic Storm",
-                "style": "4",
-                "defaultDC": "lastSaveDC"
-              },
-              {
-                "automation": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ],
-                "label": "Leave Telekinetic Storm",
-                "verb": "leaves the range of Telekinetic Storm",
-                "style": "3"
-              }
-            ],
-            "desc": "Gains 1 slow level\n{numDie}d8",
-            "parent": "storm"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15 ft. sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Concentration, up to 10 minutes",
-    "ritual": false,
-    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
-    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "Flaming Shots",
     "level": 2,
     "school": "Tech",
@@ -15581,6 +15347,35 @@
     "name": "Haywire",
     "level": 0,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6 [lightning]",
+                "cantripScale": true
+              },
+              {
+                "type": "roll",
+                "dice": "1d4",
+                "name": "Direction"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\n\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
@@ -15593,54 +15388,12 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\r\n\r\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "int",
-            "success": [],
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "1d6 [lightning]",
-                "cantripScale": true
-              },
-              {
-                "type": "roll",
-                "dice": "1d4",
-                "name": "Direction"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes 1d6 lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.\n\nThe power's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
-      }
-    ]
+    "concentration": false
   },
   {
     "name": "Animate Weapon",
     "level": 2,
     "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\r\n\r\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\r\n\r\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd.",
-    "concentration": false,
     "automation": [
       {
         "type": "variable",
@@ -15663,13 +15416,12 @@
           {
             "type": "ieffect2",
             "name": "Animate Weapon - Parent",
-            "desc": "{numDie}d8",
-            "duration": 10,
+            "duration": "10",
             "attacks": [
               {
                 "attack": {
-                  "name": "Animated Weapon",
                   "_v": 2,
+                  "name": "Animated Weapon",
                   "automation": [
                     {
                       "type": "target",
@@ -15691,7 +15443,8 @@
                 },
                 "defaultAttackBonus": "spell_attack_bonus"
               }
-            ]
+            ],
+            "desc": "{numDie}d8"
           }
         ]
       },
@@ -15699,12 +15452,44 @@
         "type": "text",
         "text": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\n\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\n\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd."
       }
-    ]
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You select a light- or vibro-weapon within this power's range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\r\n\r\nWhile the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand.\r\n\r\nAn enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the weapon's damage increases by 1d8 for every two slot levels above 2nd.",
+    "concentration": false
   },
   {
     "name": "Illusory Strike",
     "level": 0,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Illusory Strike",
+            "duration": "1",
+            "desc": "Has disadvantage on the next {1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4} attacks against {name}",
+            "tick_on_caster": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\n\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
@@ -15717,31 +15502,41 @@
     "duration": "1 round",
     "ritual": false,
     "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\r\n\r\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Illusory Strike",
-            "duration": 1,
-            "tick_on_caster": true,
-            "desc": "Has disadvantage on the next {1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4} attacks against {name}"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you create an illusory duplicate of yourself in your space that only the target can see. The target has disadvantage on the next attack roll it makes against you before the start of your next turn.\n\nThis power creates multiple duplicates when you reach higher levels. At 5th level, you create a second illusory duplicate, and the target has disadvantage on the next two attacks it makes against you before the start of your next turn. The number of duplicates and attacks with disadvantage increases to three at 11th level and four at 17th level."
-      }
-    ]
+    "concentration": false
   },
   {
     "name": "Ion Blast",
     "level": 0,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d4 [ion]",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \n\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
@@ -15754,54 +15549,12 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \r\n\r\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d4 [ion]",
-        "cantripScale": true,
-        "name": "damage"
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "success": [],
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You create a blast of ion energy. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d4 ion damage. \n\nThis power's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
-      }
-    ]
+    "concentration": false
   },
   {
     "name": "Ionic Strike",
     "level": 0,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in an ionic discharge. If the target willingly takes a reaction before the start of your next turn, it immediately takes 1d6 ion damage, and the power ends. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 ion damage to the target, and the damage the target takes for taking reactions increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
-    "concentration": false,
     "automation": [
       {
         "type": "target",
@@ -15821,43 +15574,43 @@
           {
             "type": "ieffect2",
             "name": "Ionic Strike",
-            "duration": 1,
-            "tick_on_caster": true,
-            "desc": "If the target willingly takes a reaction before the start of your next turn, it immediately takes ion damage, and the power ends.\n{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d6",
+            "duration": "1",
             "buttons": [
               {
-                "label": "Reaction - Ionic Strike",
-                "verb": "reacts painfully!",
                 "automation": [
                   {
                     "type": "damage",
                     "damage": "[ieffect.desc.split()[-1]} [ion]"
                   }
-                ]
+                ],
+                "label": "Reaction - Ionic Strike",
+                "verb": "reacts painfully!"
               }
-            ]
+            ],
+            "desc": "If the target willingly takes a reaction before the start of your next turn, it immediately takes ion damage, and the power ends.\n{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d6",
+            "tick_on_caster": true
           }
         ]
       }
-    ]
-  },
-  {
-    "name": "Wound",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
+    ],
+    "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "60 feet",
+    "range": "Varies",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "Instantaneous",
+    "duration": "1 round",
     "ritual": false,
-    "description": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
-    "concentration": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in an ionic discharge. If the target willingly takes a reaction before the start of your next turn, it immediately takes 1d6 ion damage, and the power ends. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 ion damage to the target, and the damage the target takes for taking reactions increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Wound",
+    "level": 1,
+    "school": "Force",
     "automation": [
       {
         "type": "target",
@@ -15883,7 +15636,6 @@
               {
                 "type": "save",
                 "stat": "con",
-                "success": [],
                 "fail": [
                   {
                     "type": "ieffect2",
@@ -15896,10 +15648,11 @@
                       ]
                     },
                     "end": true,
-                    "tick_on_caster": true,
-                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks."
+                    "desc": "A poisoned creature has disadvantage on attack rolls and ability checks.",
+                    "tick_on_caster": true
                   }
-                ]
+                ],
+                "success": []
               }
             ],
             "miss": []
@@ -15910,6 +15663,356 @@
         "type": "text",
         "text": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
       }
-    ]
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You make a piercing gesture at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 2d8 necrotic damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Warding Shot",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Warding Shot",
+            "duration": "1",
+            "effects": {
+              "damage_bonus": "-{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d6 [warding shot]"
+            },
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Remove Warding Shot",
+                "verb": "drop warding shot"
+              }
+            ],
+            "tick_on_caster": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and a dim barrier surrounds it. The first time it would deal damage before the start of your next turn, that damage is reduced by 1d6. \n\nThis power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and a dim barrier surrounds it. The first time it would deal damage before the start of your next turn, that damage is reduced by 1d6. \r\n\r\nThis power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  },
+  {
+    "name": "Plague",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Plagued",
+                "effects": {
+                  "ac_bonus": "-2"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "roll",
+                            "dice": "1d20",
+                            "name": "attempt"
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "attempt >= 11",
+                            "onTrue": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Plagued - Cast a spell",
+                                "duration": "1",
+                                "desc": "Must cast a spell as its action next turn, or the power is wasted"
+                              }
+                            ],
+                            "onFalse": []
+                          },
+                          {
+                            "type": "text",
+                            "text": "If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted."
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Attempt to cast a spell",
+                    "verb": "attempts to cast a spell."
+                  },
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Plague",
+                    "verb": "attempts to resist plague",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "Gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions.\n - Can use either an action or a bonus action, not both.\n - If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
+                "parent": "ieffect"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "\"Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Constitution saving throw or be affected by this power for the duration.\\r\\n\\r\\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\\r\\n\\r\\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\\t\\r\\n\\r\\nA creature affected by this power makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends for it."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Constitution saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends for it.",
+    "concentration": true
+  },
+  {
+    "name": "Telekinetic Storm",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "3",
+        "higher": {
+          "4": "4",
+          "5": "5",
+          "6": "5",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Telekinetic Storm - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread the Telekinetic Storm",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Surrounded by Telekinetic Storm",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "target",
+                                  "target": "self",
+                                  "effects": [
+                                    {
+                                      "type": "save",
+                                      "stat": "con",
+                                      "fail": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "{ieffect.desc.split()[-1]} [force]"
+                                        }
+                                      ],
+                                      "success": [
+                                        {
+                                          "type": "damage",
+                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                                }
+                              ],
+                              "label": "Telekinetic Storm (Start of Turn)",
+                              "verb": "starts their turn in the Telekinetic Storm",
+                              "style": "4",
+                              "defaultDC": "lastSaveDC"
+                            },
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Leave Telekinetic Storm",
+                              "verb": "leaves the range of Telekinetic Storm",
+                              "style": "3"
+                            }
+                          ],
+                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                    }
+                  ],
+                  "verb": "begins to",
+                  "activation_type": 2
+                }
+              }
+            ],
+            "desc": "{numDie}d8",
+            "save_as": "storm"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Surrounded by Telekinetic Storm",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{ieffect.desc.split()[-1]} [force]"
+                          }
+                        ],
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+                  }
+                ],
+                "label": "Telekinetic Storm (Start of Turn)",
+                "verb": "starts their turn in the Telekinetic Storm",
+                "style": "4",
+                "defaultDC": "lastSaveDC"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ],
+                "label": "Leave Telekinetic Storm",
+                "verb": "leaves the range of Telekinetic Storm",
+                "style": "3"
+              }
+            ],
+            "desc": "Gains 1 slow level\n{numDie}d8",
+            "parent": "storm"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15 ft. sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "ritual": false,
+    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": true
   }
 ]

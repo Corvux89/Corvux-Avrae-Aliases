@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Penetrating - Scorpion Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8+2 [energy]",
+                    "overheal": false
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "proficiencyBonus+2"
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "condition",
+                "condition": "lastAttackDidHit and lastAttackRollTotal > target.ac",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "1d8+2 [energy]",
+                    "overheal": false
+                  }
+                ],
+                "onFalse": [],
+                "errorBehaviour": null
+              }
+            ],
+            "errorBehaviour": null
+          }
+        ]
+      },
+      {
+        "type": "counter",
+        "counter": "Scorpion Blaster",
+        "amount": "4",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
+      },
+      {
+        "type": "text",
+        "text": "power cell (range 40/160), rapid 4, reload 16, smart (15/+2), special\n\nmounted by the shoulder slot, a shoulder blaster does not require a free hand to use. additionally, you have advantage on strength ability checks and saving throws to avoid being disarmed of this weapon., penetrating 4",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  },
+  {
+    "name": "Rapid - Scorpion Blaster",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "2d8 [energy]",
+                "overheal": false
+              },
+              {
+                "type": "counter",
+                "counter": "Scorpion Blaster",
+                "amount": "4",
+                "allowOverflow": false,
+                "errorBehaviour": "raise"
+              }
+            ],
+            "success": [],
+            "dc": "8+proficiencyBonus+2"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "power cell (range 40/160), rapid 4, penetrating 4, reload 8, smart (15/+2), special\n\nmounted by the shoulder slot, a shoulder blaster does not require a free hand to use. additionally, you have advantage on strength ability checks and saving throws to avoid being disarmed of this weapon.",
+        "title": "Effect"
+      }
+    ],
+    "_v": 2
+  }
+]

@@ -1,9 +1,0 @@
-<drac2>
-c = character()
-feats = load_json(c.get_cvar("SWFeats", "{}"))
-schMod = feats.get("RancorsDiscipline", "intelligence")
-mod = max(round(c.stats.get_mod(schMod)/2),1)
-base = f''' -b {mod}  '''
-base += f''' -f "Mutagenic Analysis|While you are the target of your Critical Analysis feature, you can add half your Critical Analysis ability modifer (minimum of one) to any saving throw you make that doesn’t already include that modifier.\n\n**{schMod.capitalize()} Mod:** {c.stats.get_mod(schMod)}" '''
-return base
-</drac2>

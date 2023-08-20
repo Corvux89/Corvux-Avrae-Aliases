@@ -10,7 +10,7 @@ def processJSON(f, name, fileName, autoMode):
     source = {}
     source["name"] = name
     source["type"] = "Custom"
-    source["shortname"] = "CS"
+    source["shortname"] = "".join([s[0] for s in name.split()])
     source["link"] = ""
 
     kfcdb = {}
@@ -35,7 +35,7 @@ def processJSON(f, name, fileName, autoMode):
         monster["lair"] = ""
         monster["legendary"] = ""
         monster["unique"] = ""
-        monster["sources"] = f"Resolute: {len(kfcdb['monsters']) + 1}"
+        monster["sources"] = f"{name}: {len(kfcdb['monsters']) + 1}"
 
         kfcdb["monsters"].append(monster)
         count += 1

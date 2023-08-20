@@ -724,6 +724,13 @@
     }
   },
   {
+    "name": "Riposte",
+    "sub": "Physical",
+    "desc": "-title \"#name# #uses# Riposte!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|Use your reaction (Or your allies if Improved) and expend one superiority die to make a melee weapon attack against the creature. If the attack hits, add the superiority die to the attack’s damage roll.\""
+  },
+  {
     "name": "Runtime Extension",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Runtime Extension!\" #desc#",

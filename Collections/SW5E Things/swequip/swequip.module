@@ -146,6 +146,9 @@ def processAttacks(attacks, args, shipEquip=None):
             elif "strengthMod" in bonus:
                 attack = attack.replace('strengthMod', 'max(strengthMod,dexterityMod)')
 
+        if args.get('snap'):
+
+
         if args.get('biting'):
             attack, biting = weap.biting(attack, args)
             if biting:

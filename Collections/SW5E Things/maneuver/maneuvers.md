@@ -18,3 +18,4 @@ You have you have a counter named "Superiority Dice" for this to work
 `-type [Maneuver Type]` - Used to override the maneuver type
 `-dc` - Override the default maneuver DC
 `-dtype` - Set the damage type if applicable
+`sm` - Superiority Mastery indicator (forces the dice to be 1d4 and switches the counter)
