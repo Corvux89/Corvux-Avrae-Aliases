@@ -1,182 +1,92 @@
 {
-    "name": "Telekinetic Storm",
-    "level": 3,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "variable",
-        "name": "numDie",
-        "value": "3",
-        "higher": {
-          "4": "4",
-          "5": "5",
-          "6": "5",
-          "7": "7",
-          "8": "8",
-          "9": "9"
-        }
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Telekinetic Storm - Parent",
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Spread the Telekinetic Storm",
+  "name": "Wire Bind",
+  "level": 4,
+  "school": "Tech",
+  "classes": "None",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "30 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 minute",
+  "ritual": false,
+  "description": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \r\n\r\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\r\n\r\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\r\n\r\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends.",
+  "concentration": false,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "dex",
+          "success": [],
+          "fail": [
+            {
+              "type": "ieffect2",
+              "name": "Restrained and Prone - Wire {targetNumber}",
+              "effects": {
+                "attack_advantage": -1,
+                "save_dis": [
+                  "dex"
+                ]
+              },
+              "desc": "4 slowed levels\n - Attack rolls against the creature have advantage",
+              "buttons": [
+                {
+                  "label": "Resist Wire {targetNumber}",
+                  "defaultDC": "lastSaveDC",
+                  "verb": "attempts to resist the wire",
                   "automation": [
                     {
                       "type": "target",
-                      "target": "all",
+                      "target": "self",
                       "effects": [
                         {
-                          "type": "ieffect2",
-                          "name": "Surrounded by Telekinetic Storm",
-                          "buttons": [
+                          "type": "condition",
+                          "condition": "target.saves.get('str') >= target.saves.get('dex')",
+                          "onTrue": [
                             {
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "con",
-                                      "fail": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "{ieffect.desc.split()[-1]} [force]"
-                                        }
-                                      ],
-                                      "success": [
-                                        {
-                                          "type": "damage",
-                                          "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "text",
-                                  "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                                }
-                              ],
-                              "label": "Telekinetic Storm (Start of Turn)",
-                              "verb": "starts their turn in the Telekinetic Storm",
-                              "style": "4",
-                              "defaultDC": "spell_dc"
-                            },
-                            {
-                              "automation": [
+                              "type": "save",
+                              "stat": "str",
+                              "fail": [],
+                              "success": [
                                 {
                                   "type": "remove_ieffect"
                                 }
-                              ],
-                              "label": "Leave Telekinetic Storm",
-                              "verb": "leaves the range of Telekinetic Storm",
-                              "style": "3"
+                              ]
                             }
                           ],
-                          "desc": "Gains 1 slow level\n{ieffect.desc.split()[-1]}",
-                          "parent": "ieffect"
+                          "onFalse": [
+                            {
+                              "type": "save",
+                              "stat": "dex",
+                              "fail": [],
+                              "success": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ]
+                            }
+                          ],
+                          "errorBehaviour": "raise"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
                     }
-                  ],
-                  "verb": "begins to",
-                  "activation_type": 2
+                  ]
                 }
-              }
-            ],
-            "desc": "{numDie}d8",
-            "save_as": "storm"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Surrounded by Telekinetic Storm",
-            "buttons": [
-              {
-                "automation": [
-                  {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
-                      {
-                        "type": "save",
-                        "stat": "con",
-                        "fail": [
-                          {
-                            "type": "damage",
-                            "damage": "{ieffect.desc.split()[-1]} [force]"
-                          }
-                        ],
-                        "success": [
-                          {
-                            "type": "damage",
-                            "damage": "({ieffect.desc.split()[-1]})/2 [force]"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "text",
-                    "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-                  }
-                ],
-                "label": "Telekinetic Storm (Start of Turn)",
-                "verb": "starts their turn in the Telekinetic Storm",
-                "style": "4",
-                "defaultDC": "spell_dc"
-              },
-              {
-                "automation": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ],
-                "label": "Leave Telekinetic Storm",
-                "verb": "leaves the range of Telekinetic Storm",
-                "style": "3"
-              }
-            ],
-            "desc": "Gains 1 slow level\n{numDie}d8",
-            "parent": "storm"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15 ft. sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+              ]
+            }
+          ]
+        }
+      ]
     },
-    "duration": "Concentration, up to 10 minutes",
-    "ritual": false,
-    "description": "You stir the Force around you, creating a turbulent field of telekinetic energy that buffets enemies around you. The field extends out to a distance of 15 feet around you for the duration.\n\nWhen you cast this power, you can designate any number of creatures you can see to be unaffected by it. An affected creature gains 1 slowed level while in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 3d8 force damage. On a successful save, the creature takes half as much damage.",
-    "higherlevels": "***Force Potency.*** When you cast this power using a force power slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
-  }
+    {
+      "type": "text",
+      "text": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \n\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\n\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\n\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends."
+    }
+  ]
+}

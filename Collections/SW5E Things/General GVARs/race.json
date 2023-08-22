@@ -1,7 +1,7 @@
 [
   {
     "name": "Star Wars 5e Player's Handbook Species",
-    "featureResources": "99440ba2-33d5-42f1-a857-59aa44000114",
+    "featureResources": "fbecf9dd-0d1c-4704-bd1a-53f2daa451c2",
     "counters": [],
     "cvars": {
       "race": "",
@@ -226,7 +226,7 @@
         "name": "Sonic Scream",
         "reset": "long",
         "level": 1,
-        "use": "racecast 'SonicScream' -t [targets]",
+        "use": "use 'SonicScream' -t [targets]",
         "value": "proficiencyBonus"
       }
     ],
@@ -234,7 +234,6 @@
       "race": "Ithorian",
       "speed": "30 ft.",
       "size": "Medium",
-      "resist": "sonic",
       "creatureType": "Humanoid",
       "languages": "Galactic Basic, Ithorese"
     }

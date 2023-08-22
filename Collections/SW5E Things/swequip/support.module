@@ -85,7 +85,7 @@ def updateName(attack, prefix, cupdate=True):
     if cupdate and "counter" in test:
         index = test.find('"counter": "') + 12
         counter = str(test[index:test[index:].find('"') + index])
-        test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} {counter}"')
+        test = test.replace(f'"counter": "{counter}"', f'"counter": "{prefix} - {counter}"')
     return test
 
 
