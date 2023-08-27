@@ -1,0 +1,7 @@
+<drac2>
+c = character()
+mod = max(charismaMod, wisdomMod) - strengthMod
+base = f''' -b {mod} -d {mod} '''
+base += f''' -f "Niman Form|As a part of the bonus action to adopt this form, if you took the Attack action, you can engage in Double- or Two-Weapon Fighting. Until the end of your next turn, you can use Wisdom or Charisma instead of Strength or Dexterity for the attack and damage rolls of your melee weapon attacks. You must use the same modifier for both rolls.\n\n**Mod:** {max(charismaMod, wisdomMod)}" '''
+return base
+</drac2>

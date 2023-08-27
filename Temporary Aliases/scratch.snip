@@ -1,3 +1,10 @@
 <drac2>
-return err(points)
+ch = character()
+cc = "Mysitc Arcanum (6th Level)"
+ch.create_cc_nx(cc, 0, 1, 'long', 'hex')
+if ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+    return f''' -i -f "{cc}|You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.\n{ch.cc_str(cc)}" '''
+
+return err("You need to rest before you can use `{cc}` again. ")
 </drac2>
