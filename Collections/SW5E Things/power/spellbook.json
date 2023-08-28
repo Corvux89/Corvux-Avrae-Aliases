@@ -2075,24 +2075,6 @@
     "concentration": true
   },
   {
-    "name": "Force Propel",
-    "level": 1,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes 3d8 kinetic damage, or half as much on a successful one.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Force Push/Pull",
     "level": 0,
     "school": "Force",
@@ -4676,24 +4658,6 @@
     "concentration": false
   },
   {
-    "name": "(SW) Sanctuary",
-    "level": 1,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "Until the power ends, any creature who targets the warded creature with an attack, a harmful power, or a hostile action must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or power. This power doesn't protect the warded creature from area effects.\r\n\r\nIf the warded creature makes an attack, casts a power that affects an enemy creature, or takes a hostile action this power ends.",
-    "concentration": false
-  },
-  {
     "name": "Scan Area",
     "level": 4,
     "school": "Tech",
@@ -4925,24 +4889,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You sacrifice some of your health to mend another creature's injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": false
-  },
-  {
-    "name": "Shared Shielding",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 hour",
-    "ritual": false,
-    "description": "This power wards a willing creature you touch and creates an energy link between you and the target until the power ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.\r\n\r\nThe power ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the power is cast again on either of the connected creatures. You can also dismiss the power as an action.",
     "concentration": false
   },
   {
@@ -16118,19 +16064,6 @@
     "name": "Wire Bind",
     "level": 4,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \r\n\r\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\r\n\r\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\r\n\r\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends.",
-    "concentration": false,
     "automation": [
       {
         "type": "target",
@@ -16139,23 +16072,18 @@
           {
             "type": "save",
             "stat": "dex",
-            "success": [],
             "fail": [
               {
                 "type": "ieffect2",
                 "name": "Restrained and Prone - Wire {targetNumber}",
                 "effects": {
-                  "attack_advantage": -1,
+                  "attack_advantage": "-1",
                   "save_dis": [
                     "dex"
                   ]
                 },
-                "desc": "4 slowed levels\n - Attack rolls against the creature have advantage",
                 "buttons": [
                   {
-                    "label": "Resist Wire {targetNumber}",
-                    "defaultDC": "lastSaveDC",
-                    "verb": "attempts to resist the wire",
                     "automation": [
                       {
                         "type": "target",
@@ -16192,11 +16120,16 @@
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Resist Wire {targetNumber}",
+                    "verb": "attempts to resist the wire",
+                    "defaultDC": "lastSaveDC"
                   }
-                ]
+                ],
+                "desc": "4 slowed levels\n - Attack rolls against the creature have advantage"
               }
-            ]
+            ],
+            "success": []
           }
         ]
       },
@@ -16204,6 +16137,278 @@
         "type": "text",
         "text": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \n\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\n\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\n\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends."
       }
-    ]
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. \r\n\r\nEach target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.\r\n\r\nA creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.\r\n\r\nA wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends.",
+    "concentration": false
+  },
+  {
+    "name": "(SW) Sanctuary",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "any(targets)",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "all",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Sanctuary",
+                "duration": "10",
+                "attacks": [
+                  {
+                    "attack": {
+                      "_v": 2,
+                      "name": "Sanctuary",
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "each",
+                          "effects": [
+                            {
+                              "type": "save",
+                              "stat": "wis",
+                              "fail": [],
+                              "success": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "text": "Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball."
+                        }
+                      ],
+                      "verb": "is protected by",
+                      "proper": true
+                    },
+                    "defaultDC": "spell_dc or 10"
+                  }
+                ],
+                "desc": "Any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw\n - On a failed save, they must choose a new target or lose the attack or spell\n - This spell doesn't protect from area effects, such as the explosion of a fireball\n - If the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "target",
+            "target": "all",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Sanctuary",
+                "duration": "10",
+                "attacks": [
+                  {
+                    "attack": {
+                      "_v": 2,
+                      "name": "Sanctuary",
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "each",
+                          "effects": [
+                            {
+                              "type": "save",
+                              "stat": "wis",
+                              "fail": [],
+                              "success": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "text": "Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball."
+                        }
+                      ],
+                      "verb": "is protected by",
+                      "proper": true
+                    },
+                    "defaultDC": "spell_dc or 10"
+                  }
+                ],
+                "desc": "Any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw\n - On a failed save, they must choose a new target or lose the attack or spell\n - This spell doesn't protect from area effects, such as the explosion of a fireball\n - If the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends"
+              }
+            ]
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball.\n\nIf the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "Until the power ends, any creature who targets the warded creature with an attack, a harmful power, or a hostile action must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or power. This power doesn’t protect the warded creature from area effects.\n\nIf the warded creature makes an attack, casts a power that affects an enemy creature, or takes a hostile action this power ends.",
+    "concentration": false
+  },
+  {
+    "name": "Shared Shielding",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Warded Bond",
+            "duration": "600",
+            "desc": "Each time your bonded target takes damage, you take the same damage\n - The spell ends if you drop to 0 hit points or you become separated from your bonded target by more than 60 feet\n - You can also dismiss the spell as an action",
+            "save_as": "bonded"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Warding Bond",
+            "duration": "600",
+            "effects": {
+              "resistances": [
+                "kinetic",
+                "energy",
+                "ion",
+                "sonic",
+                "necrotic",
+                "fire",
+                "force",
+                "lightning",
+                "cold",
+                "poison",
+                "ion",
+                "acid",
+                "psychic"
+              ],
+              "ac_bonus": "1",
+              "save_bonus": "1"
+            },
+            "desc": "Each time they take damage, {{caster.name}} takes the same amount of damage\n - The spell ends if {{caster.name}} drops to 0 hit points or if {{caster.name}} and the target become separated by more than 60 feet\n - It also ends if the spell is cast again on either of the connected creatures",
+            "parent": "bonded"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "This spell wards a willing creature you touch and creates a mystic connection between you and the target until the spell ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.\n\nThe spell ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the spell is cast again on either of the connected creatures. You can also dismiss the spell as an action."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "This power wards a willing creature you touch and creates an energy link between you and the target until the power ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.\n\nThe power ends if you drop to 0 hit points or if you and the target become separated by more than 60 feet. It also ends if the power is cast again on either of the connected creatures. You can also dismiss the power as an action.",
+    "concentration": false
+  },
+  {
+    "name": "Force Propel",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d8 [kinetic]",
+        "name": "damage",
+        "higher": {
+          "2": "1d8 [bludgeoning]",
+          "3": "2d8 [bludgeoning]",
+          "4": "3d8 [bludgeoning]",
+          "5": "4d8 [bludgeoning]",
+          "6": "5d8 [bludgeoning]",
+          "7": "6d8 [bludgeoning]",
+          "8": "7d8 [bludgeoning]",
+          "9": "8d8 [bludgeoning]"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "lastSaveDidPass",
+        "value": "1"
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "lastSaveDidPass",
+            "onTrue": [
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}/2"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
+    "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false
   }
 ]

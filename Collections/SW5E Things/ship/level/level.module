@@ -29,13 +29,20 @@ def ship_level(args):
     hdMult = 2 if ch.race.lower() in ["huge", "gargantuan"] else 1
     numDie = (tier * hdMult) + hdNum.get(ch.race.lower(),0)
     hd = f"{hdSize.get(ch.race.lower(),0)}"
-    hdName = f"Shield/Hull Dice ({hd})"
+    hdName = f"Hull Dice ({hd})"
 
     shipStats['hdName'] = hdName
     if ch.cc_exists(hdName):
         ch.delete_cc(hdName)
 
     ch.create_cc_nx(hdName, 0, numDie)
+
+    sdName = f"Shield Dice ({hd})"
+    shipStats["sdName"] = sdName
+    if ch.cc_exists(sdName):
+        ch.delete_cc(sdName)
+
+    ch.create_cc_nx(sdName, 0, numDie)
 
     base += f''' -f "Hit Die|{numDie}{hd}|inline" '''
 
