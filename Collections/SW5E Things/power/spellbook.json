@@ -3857,24 +3857,6 @@
     "concentration": false
   },
   {
-    "name": "Motivator Boost",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target's speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws. \r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional droid or construct for each slot level above 2nd.",
-    "concentration": true
-  },
-  {
     "name": "Necrotic Charge",
     "level": 0,
     "school": "Force",
@@ -16357,37 +16339,24 @@
         }
       },
       {
-        "type": "variable",
-        "name": "lastSaveDidPass",
-        "value": "1"
-      },
-      {
         "type": "target",
         "target": "all",
         "effects": [
           {
-            "type": "condition",
-            "condition": "lastSaveDidPass",
-            "onTrue": [
+            "type": "save",
+            "stat": "dex",
+            "fail": [
               {
-                "type": "save",
-                "stat": "dex",
-                "fail": [
-                  {
-                    "type": "damage",
-                    "damage": "{damage}"
-                  }
-                ],
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "{damage}/2"
-                  }
-                ]
+                "type": "damage",
+                "damage": "{damage}"
               }
             ],
-            "onFalse": [],
-            "errorBehaviour": "false"
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
           }
         ]
       },
@@ -16410,5 +16379,137 @@
     "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
     "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
+  },
+  {
+    "name": "Motivator Boost",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "any(targets)",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Motivator Boosted",
+                "duration": "11",
+                "effects": {
+                  "ac_bonus": "2",
+                  "save_adv": [
+                    "dex"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Hasted",
+                "duration": "11",
+                "effects": {
+                  "ac_bonus": "2",
+                  "save_adv": [
+                    "dex"
+                  ]
+                },
+                "desc": "The target's speed is doubled\n - They gain an additional action on each of its turns\n - When the spell ends, the target can't move or take actions until after its next turn"
+              }
+            ]
+          }
+        ],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws.",
+    "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional droid for each slot level above 2nd.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Force Intuition",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Intuition: Kickstart",
+            "duration": "1",
+            "effects": {
+              "to_hit_bonus": "1d4"
+            },
+            "end": true,
+            "conc": true,
+            "desc": "Until the end of your first turn in the combat, your speed increases by 10 feet and you add 1d4 to your attack rolls."
+          },
+          {
+            "type": "ieffect2",
+            "name": "Force Intuition",
+            "duration": "10",
+            "effects": {
+              "ac_bonus": "2"
+            },
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "remove_ieffect",
+                    "removeParent": "always"
+                  }
+                ],
+                "label": "Interrupt Improved Force Intuition",
+                "verb": "has their Improved Force Intuition interrupted",
+                "style": "4"
+              }
+            ],
+            "end": false
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You make your initiative check at advantage, and gain a +2 bonus to AC until the power ends. In addition, until the end of your first turn in the combat, your speed increases by 10 feet and you add 1d4 to your attack rolls. This power ends early if you fail a saving throw or are hit by an attack."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you would roll initiative",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You make your initiative check at advantage, and gain a +2 bonus to AC until the power ends. In addition, until the end of your first turn in the combat, your speed increases by 10 feet and you add 1d4 to your attack rolls. This power ends early if you fail a saving throw or are hit by an attack.",
+    "concentration": true
   }
 ]

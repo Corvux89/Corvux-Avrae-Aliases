@@ -44,7 +44,7 @@ def ship_level(args):
 
     ch.create_cc_nx(sdName, 0, numDie)
 
-    base += f''' -f "Hit Die|{numDie}{hd}|inline" '''
+    base += f''' -f "Hull Die|{numDie}{hd}|inline" -f "Shield Die|{numDie}{hd}|inline" '''
 
     # Power dice
     pdNum = int(bg[4]) + int(bg[5])
@@ -55,6 +55,9 @@ def ship_level(args):
         ch.delete_cc(pdName)
 
     ch.create_cc_nx(pdName, 0, numDie)
+
+    # Ship Equip Indicator
+    shipStats['equip'] = 1
 
     base += f''' -f "Power Die|{pdNum}{pdSize[tier]}|inline" '''
 

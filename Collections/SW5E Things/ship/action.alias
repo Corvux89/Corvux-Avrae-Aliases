@@ -1,4 +1,19 @@
 <drac2>
-pb = 0 if "-noprof" in &ARGS& else proficiencyBonus*2 if "-e" in &ARGS& else  proficiencyBonus
-return f'''i a {&ARGS&[0]} &*& -b "{pb}" -f "Crewmember|{ctx.author.display_name}" '''
+using(ship="85c74b16-b249-499b-b3f7-3f364fefdfb9")
+ch = character()
+com = combat()
+args = &ARGS&
+player_ship = ship.get_ship() if ship.get_ship() and ship.get_ship().name != ch.name else None
+
+pb = 0 if "-noprof" in args else proficiencyBonus*2 if "-e" in args else  proficiencyBonus
+
+args.append(f''' -b {pb} -f "Crewmember|{ch.name}" ''')
+
+action = args[0]
+args.remove(args[0])
+
+if player_ship is not None:
+    return f'''i aoo "{player_ship.name}" "{action}" {" ".join(args)} '''
+
+return f'''i a "{action}" {" ".join(args)}'''
 </drac2>

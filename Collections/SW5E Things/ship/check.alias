@@ -1,7 +1,12 @@
 <drac2>
 args = &ARGS&
+ch = character()
+com = combat()
+using(ship="85c74b16-b249-499b-b3f7-3f364fefdfb9")
 if not args:
     return f'''embed -title "Need help rolling a check?" -desc "This command takes all the same arguments as `{ctx.prefix}check`. For the Star Wars 5e system, Acrobatics is replaced by Maneuvering, Animal Handling is replaced by Scan, Arcana is replaced by Astrogation, Athletics is replaced by Boost Deception is replaced by Swindle, History is replaced by Data, Insight is replaced by Ram, Intimidation is replaced by Menace, Investigation is replaced by Probe, Medicine is replaced by Patch, Nature is replaced by Regulation, Performance is replaced by Impress, Sleight of Hand is replaced by Interfere, and Stealth is replaced by Hide" -footer "Alias by @corvux" '''
+
+player_ship = ship.get_ship() if ship.get_ship() and ship.get_ship().name != ch.name else None
 
 skillMap = {"Maneuvering":"acrobatics",
             "Scan":"animal handling",
@@ -15,7 +20,7 @@ skillMap = {"Maneuvering":"acrobatics",
             "Patch":"medicine",
             "Regulation":"nature",
             "Impress":"performance",
-            "Interfere":"slieght of hand",
+            "Interfere":"sleight of hand",
             "Hide":"stealth"}
 
 for s in skillMap:
@@ -36,9 +41,22 @@ for s in skillMap:
                 ability = "Charisma"
             elif args[1].lower() in "constitution":
                 ability = "Constitution"
-            args.append(f'-title "[name] makes a {ability} ({s}) check!"')
+            args.append(f''' -title "{ch.name if player_ship else '[name]'} makes a {ability} ({s}) check!" ''')
         else:
-            args.append(f'-title "[name] makes a {s} check!"')
+            args.append(f''' -title "{ch.name if player_ship else '[name]'} makes a {s} check!" ''')
+
+            if player_ship:
+                skill = [x.prof for n,x in player_ship.skills if n.lower() == skillMap[s].replace(" ", "").lower()][0]
+                pb = 0 if "-noprof" in args else proficiencyBonus * 2 if "-e" in args else proficiencyBonus * skill
+                args.append(f''' {f'-b "{-skill} [ship proficiency offset]"' if skill>0 else ''} ''')
+                args.append(f''' {f'-b "{pb} [crew]"' if pb > 0 else ''} ''')
+
+
+if argparse(args).get('dev'):
+    return err(" ".join(args))
+
+if player_ship:
+    return f'i oc "{player_ship.name}" {" ".join(args)}'
 
 return f'check {" ".join(args)}'
 </drac2>

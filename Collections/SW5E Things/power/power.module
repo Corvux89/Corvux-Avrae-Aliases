@@ -139,7 +139,7 @@ def processPower(args):
     # Pay the cost
     # --------------------
     if not ignore and not c.cc_exists(cc):
-        return err(f"No counter named {cc} found. Either cast with `-i` or run `!level`")
+        return err(f"No counter named {cc} found. Either cast with `-i` or run `!swlevel`")
     elif not ignore and c.get_cc(cc) < points:
         return err(f"You don't have enough {cc} to cast that power")
     c.mod_cc(cc, -points) if not ignore else ''
