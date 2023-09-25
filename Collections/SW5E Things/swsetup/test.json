@@ -1,34 +1,27 @@
 [
   {
-    "Class": "Test",
-    "hitDie": "d8",
+    "Class": "Scholar",
     "subclassLevel": 3,
-    "counters": [
+    "attacks": [
       {
-        "name": "Focus Points",
-        "level": 2,
-        "classLevel": "MonkLevel",
-        "value": "MonkLevel",
-        "reset": "short",
-        "display": "default",
-        "desc": "Uou can spend these points to fuel various focus features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more focus features as you gain levels in this class.\n\nWhen you spend a focus point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended focus back into yourself. You must spend at least 30 minutes of the rest meditating to regain your focus points."
+        "level": 3,
+        "action": {
+          "name": "Testing adding attack",
+          "automation": [
+            {
+              "type": "text",
+              "text": "I Work!"
+            }
+          ],
+          "_v": 2
+        }
       }
     ]
   },
   {
-    "Class": "Test",
-    "subclass": "Subtest",
-    "counters": [
-      {
-        "name": "Sovereign Protector",
-        "level": 17,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "MonkLevel"
-      }
-    ],
-    "actions": [
+    "Class": "Scholar",
+    "subclass": "Physician",
+    "attacks": [
       {
         "action": {
           "name": "Test Action",
@@ -96,6 +89,25 @@
           "activation_type": 3
         },
         "level": 17
+      }
+    ]
+  },
+    {
+    "Class": "Operative",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 4,
+        "action": {
+          "name": "Testing adding another attack",
+          "automation": [
+            {
+              "type": "text",
+              "text": "I Work!"
+            }
+          ],
+          "_v": 2
+        }
       }
     ]
   }

@@ -1,0 +1,43 @@
+# SWSetup
+
+ch = character()
+image = ch.image
+color = ch.csettings.color
+gvars = ['0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b']
+char_classes = load_json(ch.get_cvar("subclass", "{}"))
+
+def setup(args):
+    args = [x.lower() for x in args]
+    dev = True if argparse(args).get('dev') else False
+    out = ""
+
+    class_ref = getClass()
+    out = getAttacks(class_ref)
+
+    return f"a import {out}"
+
+def getClass():
+    class_list = []
+
+    for g in gvars:
+        classes = load_json(get_gvar(g))
+        for c in classes:
+            if not c.get("subclass"):
+                if c.Class.lower() in [x.replace("Level","").lower() for x in char_classes]:
+                    class_list.append(c)
+            elif c.get("subclass") and char_classes.get(f"{c.Class}Level") == c.get("subclass"):
+                class_list.append(c)
+
+    return class_list
+
+def getAttacks(class_list):
+    attacks = []
+
+    for cl in class_list:
+        level = ch.levels.get(cl.Class) or ch.get_cvar(f"{cl.Class}Level",0)
+
+        for a in cl.attacks:
+            if int(level) >= a.level:
+                attacks.append(a.action)
+
+    return attacks

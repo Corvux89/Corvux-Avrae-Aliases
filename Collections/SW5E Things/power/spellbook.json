@@ -938,24 +938,6 @@
     "concentration": false
   },
   {
-    "name": "Cryogenic Suspension",
-    "level": 3,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it.",
-    "concentration": true
-  },
-  {
     "name": "Cryogenic Volley",
     "level": 2,
     "school": "Tech",
@@ -16511,5 +16493,108 @@
     "ritual": false,
     "description": "You make your initiative check at advantage, and gain a +2 bonus to AC until the power ends. In addition, until the end of your first turn in the combat, your speed increases by 10 feet and you add 1d4 to your attack rolls. This power ends early if you fail a saving throw or are hit by an attack.",
     "concentration": true
+  },
+  {
+    "name": "Cryogenic Suspension",
+    "level": 3,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Cryogenically Suspended",
+                "parent": "ieffect",
+                "desc": "Gains 1 slowed level.\n - (-2) Penalty to AC and Dexterity saving throws, and it can't use reactions\n - On its turn it can either use an action, or bonus action. Not both. Regardless of abilities or items, it cannot make more than one melee or ranged attack during its turn.\n - If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
+                "effects": {
+                  "ac_bonus": -2
+                },
+                "buttons": [
+                  {
+                    "label": "Attempt to cast a spell",
+                    "verb": "attempts to cast a spell",
+                    "style": 3,
+                    "automation": [
+                      {
+                        "type": "roll",
+                        "dice": "1d20",
+                        "name": "spellAttempt"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "spellAttempt >= 11",
+                        "onTrue": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Holding a spell",
+                                "desc": "he creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
+                                "duration": 2,
+                                "end": true
+                              }
+                            ]
+                          }
+                        ],
+                        "onFalse": []
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Resist Crygenic Suspension",
+                    "verb": "attempts to resist the cryogenic suspension",
+                    "defaultDC": "lastSaveDC",
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "dex",
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "fail": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it."
+      }
+    ]
   }
 ]

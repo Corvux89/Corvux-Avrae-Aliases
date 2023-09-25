@@ -30,7 +30,7 @@ def get_boost_shield_automation():
     hds = hdSize.get(ch.race.lower())
     passRoll = {"type": "roll", "dice": f"1{hds}", "name": "shield_bonus", "displayName": "Shield Bonus"}
 
-    thp = {"type": "temphp", "amount": "caster.temp_hp + shield_bonus"}
+    thp = {"type": "temphp", "amount": "{caster.temp_hp + shield_bonus}"}
 
     check = {"type": "check", "ability": "athletics", "dc": 10,
              "success": [passRoll, thp], "fail": []}

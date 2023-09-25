@@ -1,4 +1,6 @@
-gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339", "0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b"]
+# SWLevel Module
+
+gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
 ch = character()
 dagger = '†'
 image = ch.image
