@@ -1,12 +1,37 @@
-[
-  {
-    "name": "Master Saber Throw",
-    "level": 7,
-    "school": "Force",
-    "classes": "Universal",
+{
+    "name": "Kolto Pack",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-(1d4+{spell}) [heal]",
+            "higher": {
+              "2": "-(1d4) [heal]",
+              "3": "-(2d4) [heal]",
+              "4": "-(3d4) [heal]",
+              "5": "-(4d4) [heal]",
+              "6": "-(5d4) [heal]",
+              "7": "-(6d4) [heal]",
+              "8": "-(7d4) [heal]",
+              "9": "-(8d4) [heal]"
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st."
+      }
+    ],
+    "classes": "",
     "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (90-foot line)",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
     "components": {
       "verbal": false,
       "somatic": false,
@@ -14,54 +39,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "variable",
-        "name": "numDie",
-        "value": 5,
-        "higher": {
-          "8": 6,
-          "9": 7
-        }
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "{numDie}d8 [energy]"
-              },
-              {
-                "type": "save",
-                "stat": "dex",
-                "success": [
-                  {
-                    "type": "damage",
-                    "damage": "{numDie}d8 [force]"
-                  }
-                ],
-                "fail": [
-                  {
-                    "type": "damage",
-                    "damage": "{numDie}d8/2 [force]"
-                  }
-                ]
-              }
-            ],
-            "miss": []
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\n\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th."
-      }
-    ]
+    "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": false
   }
-]

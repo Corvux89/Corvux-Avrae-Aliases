@@ -3,7 +3,7 @@ ch = character()
 args = &ARGS&
 disc = ["Perfect Maneuver", "Surgical Precision", "Health Advisor", "Adapted Hide", "Mutagenic Hardiness",
         "Rancor's Discipline", "Charming Feint"]
-discovery = None
+discovery, key = None, None
 
 
 base = f'''embed -thumb {image} -color {color} '''
@@ -24,11 +24,13 @@ else:
     for d in disc:
         if search_str.lower() in d.lower():
             discovery = d
+            key = d.replace(" ","")
             break
 
     if discovery:
         if feat_dict.get('Discoveries'):
-            feat_dict['Discoveries'].append(discovery.replace(" ", ""))
+            feat_dict['Discoveries'].remove(key)
+            feat_dict['Discoveries'].append(key)
         else:
             feat_dict['Discoveries'] = [discovery.replace(" ", "")]
 

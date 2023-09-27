@@ -11,17 +11,27 @@
   "grovelCowerBeg": {
     "effect": "Distracted|-desc 'Attacks against this opponent have advantage'|1",
     "cc": "Grovel, Cower, Beg",
+    "nosave": true,
     "title": "[name] uses Grovel, Cower, and Beg"
   },
   "secondHeart": {
     "d": "-1 [healing]",
     "cc": "Second Heart",
+    "nosave": true,
     "title": "[name] uses their Second Heart ability!",
     "desc": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can\u2019t use this feature again until you finish a long rest."
   },
   "savingFace": {
     "cc": "Saving Face",
+    "nosave": true,
     "title": "[name] uses their Saving Face ability!",
     "desc": "Trandoshans are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can\u2019t use it again until you finish a short or long rest."
+  },
+  "arkanianBrilliance": {
+    "cc": "Arkanian Brilliance",
+    "nosave": true,
+    "title": "[name] uses Arkanian Brilliance!",
+    "desc": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest.",
+    "roll": "1d4"
   }
 }

@@ -1,4 +1,4 @@
-# SWSetup
+# SWSetup Module
 
 ch = character()
 image = ch.image
@@ -37,7 +37,8 @@ def getAttacks(class_list):
         level = ch.levels.get(cl.Class) or ch.get_cvar(f"{cl.Class}Level",0)
 
         for a in cl.attacks:
-            if int(level) >= a.level:
+            if int(level) >= int(a.level):
+                attacks = [x for x in attacks if x.get('name') != a.action.get('name')]  # Allow for subclass overrides
                 attacks.append(a.action)
 
     return attacks

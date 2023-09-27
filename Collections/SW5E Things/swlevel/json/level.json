@@ -1817,6 +1817,15 @@
     "subclass": "Blademaster",
     "counters": [
       {
+        "name": "Adaptive Fighting",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You’ve learned to make adaptations to your fighting style on the fly. You have three such effects: Change Up, Draw, and Stow. When you use your Adaptive Fighting, you choose which effect to create.\n\nYou can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest."
+      },
+      {
         "name": "Bladestorm",
         "level": 18,
         "value": 1,

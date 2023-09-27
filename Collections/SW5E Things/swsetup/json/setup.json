@@ -1,6 +1,6 @@
 [
   {
-    "Class": "ConsularLight",
+    "Class": "Consularlight",
     "subclassLevel": 3,
     "attacks": [
       {
@@ -51,7 +51,9 @@
                   {
                     "type": "ieffect2",
                     "name": "Force Shield",
-                    "effects": {"ac_bonus": "{max(charismaMod,wisdomMod,1)}"},
+                    "effects": {
+                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                    },
                     "duration": 1
                   }
                 ]
@@ -73,7 +75,7 @@
     ]
   },
   {
-    "Class": "ConsularLight",
+    "Class": "Consularlight",
     "subclass": "Manipulation",
     "attacks": [
       {
@@ -87,17 +89,130 @@
             "automation": [
               {
                 "type": "variable",
-                "variable": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
                 "name": "level"
               },
               {
                 "type": "variable",
-                "variable": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+                "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
                 "name": "num_weap"
               },
               {
                 "type": "variable",
-                "variable": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40"
+                "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                "name": "distance"
+              },
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Saber Storm",
+                    "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                    "duration": "10",
+                    "effects": {
+                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                    },
+                    "attacks": [
+                      {
+                        "attack": {
+                          "name": "Attack - Saber Storm (Kinetic)",
+                          "_v": 2,
+                          "activation_type": 3,
+                          "automation": [
+                            {
+                              "type": "variable",
+                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                              "name": "level"
+                            },
+                            {
+                              "type": "variable",
+                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                              "name": "distance"
+                            },
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "attack",
+                                  "attackBonus": "spell+proficiencyBonus",
+                                  "hit": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "1d8+{spell} [kinetic]"
+                                    }
+                                  ],
+                                  "miss": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "attack": {
+                          "name": "Attack - Saber Storm (Energy)",
+                          "_v": 2,
+                          "activation_type": 3,
+                          "automation": [
+                            {
+                              "type": "variable",
+                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                              "name": "level"
+                            },
+                            {
+                              "type": "variable",
+                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                              "name": "distance"
+                            },
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "attack",
+                                  "attackBonus": "spell+proficiencyBonus",
+                                  "hit": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "1d8+{spell} [energy]"
+                                    }
+                                  ],
+                                  "miss": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "counter",
+                "counter": "Saber Storm",
+                "amount": 1,
+                "errorBehaviour": "raise"
+              },
+              {
+                "type": "text",
+                "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+                "title": "Meta"
+              },
+              {
+                "type": "text",
+                "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
               }
             ]
           }
@@ -106,7 +221,7 @@
     ]
   },
   {
-    "Class": "ConsularDark",
+    "Class": "Consulardark",
     "subclassLevel": 3,
     "attacks": [
       {
@@ -157,7 +272,9 @@
                   {
                     "type": "ieffect2",
                     "name": "Force Shield",
-                    "effects": {"ac_bonus": "{max(charismaMod,wisdomMod,1)}"},
+                    "effects": {
+                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                    },
                     "duration": 1
                   }
                 ]
@@ -175,6 +292,763 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Manipulation",
+    "attacks": [
+      {
+        "level": 3,
+        "action": [
+          {
+            "name": "Saber Storm",
+            "_v": 2,
+            "verb": "activates",
+            "activation_type": 1,
+            "automation": [
+              {
+                "type": "variable",
+                "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                "name": "level"
+              },
+              {
+                "type": "variable",
+                "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+                "name": "num_weap"
+              },
+              {
+                "type": "variable",
+                "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                "name": "distance"
+              },
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Saber Storm",
+                    "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                    "duration": "10",
+                    "effects": {
+                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                    },
+                    "attacks": [
+                      {
+                        "attack": {
+                          "name": "Attack - Saber Storm (Kinetic)",
+                          "_v": 2,
+                          "activation_type": 3,
+                          "automation": [
+                            {
+                              "type": "variable",
+                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                              "name": "level"
+                            },
+                            {
+                              "type": "variable",
+                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                              "name": "distance"
+                            },
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "attack",
+                                  "attackBonus": "spell+proficiencyBonus",
+                                  "hit": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "1d8+{spell} [kinetic]"
+                                    }
+                                  ],
+                                  "miss": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "attack": {
+                          "name": "Attack - Saber Storm (Energy)",
+                          "_v": 2,
+                          "activation_type": 3,
+                          "automation": [
+                            {
+                              "type": "variable",
+                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                              "name": "level"
+                            },
+                            {
+                              "type": "variable",
+                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                              "name": "distance"
+                            },
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "attack",
+                                  "attackBonus": "spell+proficiencyBonus",
+                                  "hit": [
+                                    {
+                                      "type": "damage",
+                                      "damage": "1d8+{spell} [energy]"
+                                    }
+                                  ],
+                                  "miss": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "counter",
+                "counter": "Saber Storm",
+                "amount": 1,
+                "errorBehaviour": "raise"
+              },
+              {
+                "type": "text",
+                "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+                "title": "Meta"
+              },
+              {
+                "type": "text",
+                "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Potent Aptitude",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Potent Aptitude",
+                  "duration": 100,
+                  "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n1d{die}",
+                  "buttons": [
+                    {
+                      "label": "Use Potent Aptitude",
+                      "verb": "is using assistance",
+                      "style": 3,
+                      "automation": [
+                        {
+                          "type": "remove_ieffect"
+                        },
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[-1]}",
+                          "name": "Potent Aptitude"
+                        },
+                        {
+                          "type": "text",
+                          "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Meta",
+              "text": "**Die to add:** 1d{die}"
+            },
+            {
+              "type": "text",
+              "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Unstable",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Unstable Volley",
+          "_v": 2,
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "roll",
+              "dice": "1d6",
+              "name": "damage",
+              "cantripScale": true
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "dex",
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage} [lightning]"
+                    }
+                  ],
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage}/2 [lightning]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "While wielding your tinkercannon, as a bonus action you can expend one use of your Potent Aptitude to launch a volley of unstable energy at a surface located within 30 feet of you that you can see. This energy adheres to the surface for 1 minute, after which it erupts. As a part of this bonus action, or as a bonus action on a following turn, you can cause the energy to erupt early. Each creature within 5 feet of it must make a Dexterity saving throw against your tech save DC. A creature takes 1d6 lightning damage on a failed save, or half as much on a successful one.\\n\\nThe range at which you can launch your volley increases to 60 feet at 9th level, and 120 feet at 17th level.\\n\\nThis damage increases when you reach certain levels in this class, increasing to 2d6 at 5th level, 3d6 at 11th level, and 4d6 at 17th level"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Guardianlight",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Cause Harm - Channel the Force",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "name": "level"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "con",
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "({level}+{charismaMod})/2 [necrotic]"
+                    }
+                  ],
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{level}+{charismaMod} [necrotic]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can expend a use of your Channel the Force to sap the life from a hostile creature you can see within 60 feet. That creature must make a Constitution saving throw. On a failed save, the creature takes necrotic damage equal to your guardian level + your Charisma modifier (minimum of +1), or half as much on a successful one."
+            }
+          ]
+        }
+      },
+      {
+        "level": 1,
+        "action": {
+          "name": "Lend Aid - Channel the Force",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "name": "level"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "-({level}+{wisdomMod}) [healing]"
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As a bonus action, you can expend a use of your Channel the Force and touch a beast or humanoid within 5 feet of you. That creature regains hit points equal to your guardian level + your Wisdom modifier (minimum of +1). Alternatively, if the beast or humanoid is poisoned or diseased, you neutralize the poison or disease. If more than one poison or disease afflicts the target, you neutralize one poison or disease that you know is present, or you neutralize one at random."
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "action": {
+          "name": "Force-Empowered Strikes",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "{lastCounterUsedAmount}d8 [energy]"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more additional damage than the amount shown in the Focused Strikes column of the guardian table."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Guardiandark",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Cause Harm - Channel the Force",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "name": "level"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "save": "con",
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "({level}+{charismaMod})/2 [necrotic]"
+                    }
+                  ],
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{level}+{charismaMod} [necrotic]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can expend a use of your Channel the Force to sap the life from a hostile creature you can see within 60 feet. That creature must make a Constitution saving throw. On a failed save, the creature takes necrotic damage equal to your guardian level + your Charisma modifier (minimum of +1), or half as much on a successful one."
+            }
+          ]
+        }
+      },
+      {
+        "level": 1,
+        "action": {
+          "name": "Lend Aid - Channel the Force",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "name": "level"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "-({level}+{wisdomMod}) [healing]"
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As a bonus action, you can expend a use of your Channel the Force and touch a beast or humanoid within 5 feet of you. That creature regains hit points equal to your guardian level + your Wisdom modifier (minimum of +1). Alternatively, if the beast or humanoid is poisoned or diseased, you neutralize the poison or disease. If more than one poison or disease afflicts the target, you neutralize one poison or disease that you know is present, or you neutralize one at random."
+            }
+          ]
+        }
+      },
+      {
+        "level": "2",
+        "action": {
+          "name": "Force-Empowered Strikes",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "{lastCounterUsedAmount}d8 [energy]"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more additional damage than the amount shown in the Focused Strikes column of the guardian table."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Sentinellight",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 2,
+        "action": {
+          "name": "Deflection - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "roll",
+              "dice": "1d{dieSize}",
+              "name": "bonus",
+              "displayName": "AC Bonus"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits."
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "action": {
+          "name": "Double Strike - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "1d{dieSize} [kinetic]"
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled."
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "action": {
+          "name": "Slow Time - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "roll",
+              "dice": "1d{dieSize}*5",
+              "name": "bonus",
+              "displayName": "Move Speed Increase"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Sentineldark",
+    "subclassLevel": 3,
+    "attacks": [
+      {
+        "level": 2,
+        "action": {
+          "name": "Deflection - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "roll",
+              "dice": "1d{dieSize}",
+              "name": "bonus",
+              "displayName": "AC Bonus"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits."
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "action": {
+          "name": "Double Strike - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "1d{dieSize} [kinetic]"
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled."
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "action": {
+          "name": "Slow Time - Force-Empowered Self",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "name": "slevel"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "roll",
+              "dice": "1d{dieSize}*5",
+              "name": "bonus",
+              "displayName": "Move Speed Increase"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn."
+            }
+          ]
+        }
       }
     ]
   }
