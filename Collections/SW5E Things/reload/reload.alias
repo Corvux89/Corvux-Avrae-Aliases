@@ -2,6 +2,7 @@
 c = character()
 weap = "&1&" if "&1&" in &ARGS& else None
 count = 0
+using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 
 base = f'''embed -thumb {image} -color {color}'''
 
@@ -11,15 +12,17 @@ for a in c.attacks:
         index = attack.find('"counter": "')+12
         counter = str(attack[index:attack[index:].find('"')+index])
 
-        if (cc := c.cc(counter)) and cc.value != cc.max:
+        if counter != sup.baseName(a.name):
+            pass
+        elif (cc := c.cc(counter)) and cc.value != cc.max:
             count+=1
             cc.reset()
             base += f''' -f "{cc.name}|{cc.full_str()}" '''
 
-        if count==0:
-            base += f''' -title "No weapons needed reloading" '''
-        else:
-            base += f''' -title "{name} reloads their weapons!" '''
+if count==0:
+    base += f''' -title "No weapons needed reloading" '''
+else:
+    base += f''' -title "{name} reloads their weapons!" '''
 
 return base
 </drac2>
