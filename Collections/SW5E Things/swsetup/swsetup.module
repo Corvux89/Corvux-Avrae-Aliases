@@ -14,6 +14,9 @@ def setup(args):
     class_ref = getClass()
     out = getAttacks(class_ref)
 
+    if dev:
+        return err(load_json(out))
+
     return f"a import {out}"
 
 def getClass():
@@ -38,7 +41,7 @@ def getAttacks(class_list):
 
         for a in cl.attacks:
             if int(level) >= int(a.level):
-                attacks = [x for x in attacks if x.get('name') != a.action.get('name')]  # Allow for subclass overrides
+                attacks = [x for x in attacks if x.get('name') != a.action.get("name")]  # Allow for subclass overrides
                 attacks.append(a.action)
 
     return attacks

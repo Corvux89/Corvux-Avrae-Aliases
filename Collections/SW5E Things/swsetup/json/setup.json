@@ -37,40 +37,38 @@
       },
       {
         "level": "2",
-        "action": [
-          {
-            "name": "Force Shield",
-            "_v": 2,
-            "verb": "uses",
-            "activation_type": 4,
-            "automation": [
-              {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Force Shield",
-                    "effects": {
-                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
-                    },
-                    "duration": 1
-                  }
-                ]
-              },
-              {
-                "type": "counter",
-                "counter": "Force Shield",
-                "amount": 1,
-                "errorBehaviour": "raise"
-              },
-              {
-                "type": "text",
-                "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
-              }
-            ]
-          }
-        ]
+        "action": {
+          "name": "Force Shield",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Force Shield",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Shield",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+            }
+          ]
+        }
       }
     ]
   },
@@ -80,143 +78,141 @@
     "attacks": [
       {
         "level": 3,
-        "action": [
-          {
-            "name": "Saber Storm",
-            "_v": 2,
-            "verb": "activates",
-            "activation_type": 1,
-            "automation": [
-              {
-                "type": "variable",
-                "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
-                "name": "level"
-              },
-              {
-                "type": "variable",
-                "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
-                "name": "num_weap"
-              },
-              {
-                "type": "variable",
-                "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
-                "name": "distance"
-              },
-              {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Saber Storm",
-                    "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
-                    "duration": "10",
-                    "effects": {
-                      "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
-                    },
-                    "attacks": [
-                      {
-                        "attack": {
-                          "name": "Attack - Saber Storm (Kinetic)",
-                          "_v": 2,
-                          "activation_type": 3,
-                          "automation": [
-                            {
-                              "type": "variable",
-                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
-                              "name": "level"
-                            },
-                            {
-                              "type": "variable",
-                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
-                              "name": "distance"
-                            },
-                            {
-                              "type": "target",
-                              "target": "each",
-                              "effects": [
-                                {
-                                  "type": "attack",
-                                  "attackBonus": "spell+proficiencyBonus",
-                                  "hit": [
-                                    {
-                                      "type": "damage",
-                                      "damage": "1d8+{spell} [kinetic]"
-                                    }
-                                  ],
-                                  "miss": []
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "attack": {
-                          "name": "Attack - Saber Storm (Energy)",
-                          "_v": 2,
-                          "activation_type": 3,
-                          "automation": [
-                            {
-                              "type": "variable",
-                              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
-                              "name": "level"
-                            },
-                            {
-                              "type": "variable",
-                              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
-                              "name": "distance"
-                            },
-                            {
-                              "type": "target",
-                              "target": "each",
-                              "effects": [
-                                {
-                                  "type": "attack",
-                                  "attackBonus": "spell+proficiencyBonus",
-                                  "hit": [
-                                    {
-                                      "type": "damage",
-                                      "damage": "1d8+{spell} [energy]"
-                                    }
-                                  ],
-                                  "miss": []
-                                }
-                              ]
-                            },
-                            {
-                              "type": "text",
-                              "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
-                            }
-                          ]
-                        }
+        "action": {
+          "name": "Saber Storm",
+          "_v": 2,
+          "verb": "activates",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+              "name": "num_weap"
+            },
+            {
+              "type": "variable",
+              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+              "name": "distance"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Saber Storm",
+                  "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                  "duration": "10",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Kinetic)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell+proficiencyBonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [kinetic]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
                       }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "counter",
-                "counter": "Saber Storm",
-                "amount": 1,
-                "errorBehaviour": "raise"
-              },
-              {
-                "type": "text",
-                "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
-                "title": "Meta"
-              },
-              {
-                "type": "text",
-                "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
-              }
-            ]
-          }
-        ]
+                    },
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Energy)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell+proficiencyBonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [energy]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Saber Storm",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+              "title": "Meta"
+            },
+            {
+              "type": "text",
+              "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+            }
+          ]
+        }
       }
     ]
   },
