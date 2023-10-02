@@ -1,1 +1,2042 @@
-["Dire Vibroblade", "Two-Handed Dire Vibroblade", "Diresword", "Disguised Blade", "Cell, Power - Disruptor Carbine", "Cell, Cryo - Disruptor Carbine", "Cell, Deafening - Disruptor Carbine", "Cell, Incendiary - Disruptor Carbine", "Cell, Power - Disruptor Pistol", "Cell, Cryo - Disruptor Pistol", "Cell, Deafening - Disruptor Pistol", "Cell, Incendiary - Disruptor Pistol", "Cell, Power - Disruptor Rifle", "Cell, Cryo - Disruptor Rifle", "Cell, Deafening - Disruptor Rifle", "Cell, Incendiary - Disruptor Rifle", "Cell, Power - Disruptor Sniper", "Cell, Cryo - Disruptor Sniper", "Cell, Deafening - Disruptor Sniper", "Cell, Incendiary - Disruptor Sniper", "Disruptorshiv", "Doubleblade", "Doublesaber", "Doubleshoto", "Doublesword", "Dual-Phase Saber", "Two-Handed Dual-Phase Saber", "Echostaff", "Electrobaton", "Electrohammer", "Electroprod", "Electrostaff", "Electrovoulge", "Electrowhip", "Cell, Power - Energy Bow", "Cell, Cryo - Energy Bow", "Cell, Deafening - Energy Bow", "Cell, Incendiary - Energy Bow", "Cell, Power - Energy Slingshot", "Cell, Cryo - Energy Slingshot", "Cell, Deafening - Energy Slingshot", "Cell, Incendiary - Energy Slingshot", "Flechette Mag, Fragmentation - Flechette Cannon", "Flechette Mag, Ion - Flechette Cannon", "Flechette Mag, Plasma - Flechette Cannon", "Greatsaber", "Grenade, Corrosive", "Grenade, Cryo", "Grenade, Deafening", "Grenade, Electrifying", "Grenade, Flash", "Grenade, Fragmentation", "Grenade, Gas", "Grenade, Incendiary", "Grenade, Ion", "Grenade, Panic", "Grenade, Plasma", "Grenade, Stun", "Guard Shoto", "Cell, Power - Hand BKG", "Cell, Cryo - Hand BKG", "Cell, Deafening - Hand BKG", "Cell, Incendiary - Hand BKG", "Cell, Power - Hand Blaster", "Cell, Cryo - Hand Blaster", "Cell, Deafening - Hand Blaster", "Cell, Incendiary - Hand Blaster", "Cartridge, Slug - Hand Cannon", "Cartridge, Corrosive - Hand Cannon", "Cartridge, Electrifying - Hand Cannon", "Cartridge, Gas - Hand Cannon", "Cell, Power - Heavy Blaster Rifle", "Cell, Cryo - Heavy Blaster Rifle", "Cell, Deafening - Heavy Blaster Rifle", "Cell, Incendiary - Heavy Blaster Rifle", "Rapid - Cell, Power - Heavy Blaster Rifle", "Cell, Power - Heavy Bowcaster", "Cell, Cryo - Heavy Bowcaster", "Cell, Deafening - Heavy Bowcaster", "Cell, Incendiary - Heavy Bowcaster", "Burst - Cell, Power - Heavy Bowcaster", "Burst - Cell, Cryo - Heavy Bowcaster", "Burst - Cell, Deafening - Heavy Bowcaster", "Burst - Cell, Incendiary - Heavy Bowcaster", "Cell, Power - Heavy Carbine", "Cell, Cryo - Heavy Carbine", "Cell, Deafening - Heavy Carbine", "Cell, Incendiary - Heavy Carbine", "Rapid - Cell, Power - Heavy Carbine", "Rapid - Cell, Cryo - Heavy Carbine", "Rapid - Cell, Deafening - Heavy Carbine", "Rapid - Cell, Incendiary - Heavy Carbine", "Cell, Power - Heavy Pistol", "Cell, Cryo - Heavy Pistol", "Cell, Deafening - Heavy Pistol", "Cell, Incendiary - Heavy Pistol", "Burst - Cell, Power - Heavy Repeater", "Burst - Cell, Cryo - Heavy Repeater", "Burst - Cell, Deafening - Heavy Repeater", "Burst - Cell, Incendiary - Heavy Repeater", "Rapid - Cell, Power - Heavy Repeater", "Rapid - Cell, Cryo - Heavy Repeater", "Rapid - Cell, Deafening - Heavy Repeater", "Rapid - Cell, Incendiary - Heavy Repeater", "Cartridge, Slug - Heavy Shotgun", "Burst - Cartridge, Slug - Heavy Shotgun", "Cartridge, Corrosive - Heavy Shotgun", "Burst - Cartridge, Corrosive - Heavy Shotgun", "Cartridge, Electrifying - Heavy Shotgun", "Burst - Cartridge, Electrifying - Heavy Shotgun", "Cartridge, Gas - Heavy Shotgun", "Burst - Cartridge, Gas - Heavy Shotgun", "Cartridge, Slug - Heavy Slugpistol", "Rapid - Cartridge, Slug - Heavy Slugpistol", "Cartridge, Corrosive - Heavy Slugpistol", "Rapid - Cartridge, Corrosive - Heavy Slugpistol", "Cartridge, Electrifying - Heavy Slugpistol", "Rapid - Cartridge, Electrifying - Heavy Slugpistol", "Cartridge, Gas - Heavy Slugpistol", "Rapid - Cartridge, Gas - Heavy Slugpistol", "Hidden Blade", "Cell, Power - Hold-Out", "Cell, Cryo - Hold-Out", "Cell, Deafening - Hold-Out", "Cell, Incendiary - Hold-Out", "Hooked Vibroblade", "Cartridge, Slug - Hunting Rifle", "Cartridge, Corrosive - Hunting Rifle", "Cartridge, Electrifying - Hunting Rifle", "Cartridge, Gas - Hunting Rifle", "Cell, Power - Incinerator Carbine", "Cell, Cryo - Incinerator Carbine", "Cell, Deafening - Incinerator Carbine", "Cell, Incendiary - Incinerator Carbine", "Cell, Power - Incinerator Pistol", "Cell, Cryo - Incinerator Pistol", "Cell, Deafening - Incinerator Pistol", "Cell, Incendiary - Incinerator Pistol", "Cell, Power - Incinerator Rifle", "Cell, Cryo - Incinerator Rifle", "Cell, Deafening - Incinerator Rifle", "Cell, Incendiary - Incinerator Rifle", "Cell, Power - Incinerator Sniper", "Cell, Cryo - Incinerator Sniper", "Cell, Deafening - Incinerator Sniper", "Cell, Incendiary - Incinerator Sniper", "Burst - Cell, Power - Ion Cannon", "Burst - Cell, Cryo - Ion Cannon", "Burst - Cell, Deafening - Ion Cannon", "Burst - Cell, Incendiary - Ion Cannon", "Cell, Power - Ion Carbine", "Cell, Cryo - Ion Carbine", "Cell, Deafening - Ion Carbine", "Cell, Incendiary - Ion Carbine", "Cell, Power - Ion Pistol", "Cell, Cryo - Ion Pistol", "Cell, Deafening - Ion Pistol", "Cell, Incendiary - Ion Pistol", "Cell, Power - Ion Rifle", "Cell, Cryo - Ion Rifle", "Cell, Deafening - Ion Rifle", "Cell, Incendiary - Ion Rifle", "IWS - Blaster", "IWS - Sniper", "Jagged Vibroblade", "Two-Handed Jagged Vibroblade", "Cartridge, Slug - Slugpistol", "Rapid - Cartridge, Slug - Slugpistol", "Cartridge, Corrosive - Slugpistol", "Rapid - Cartridge, Corrosive - Slugpistol", "Cartridge, Electrifying - Slugpistol", "Rapid - Cartridge, Electrifying - Slugpistol", "Cartridge, Gas - Slugpistol", "Rapid - Cartridge, Gas - Slugpistol", "Cartridge, Slug - Slugthrower", "Cartridge, Corrosive - Slugthrower", "Cartridge, Electrifying - Slugthrower", "Cartridge, Gas - Slugthrower", "Burst - Cartridge, Slug - Smart Cannon", "Rapid - Cartridge, Slug - Smart Cannon", "Burst - Cartridge, Corrosive - Smart Cannon", "Rapid - Cartridge, Corrosive - Smart Cannon", "Burst - Cartridge, Electrifying - Smart Cannon", "Rapid - Cartridge, Electrifying - Smart Cannon", "Burst - Cartridge, Gas - Smart Cannon", "Rapid - Cartridge, Gas - Smart Cannon", "Cartridge, Slug - Smart Pistol", "Rapid - Cartridge, Slug - Smart Pistol", "Cartridge, Corrosive - Smart Pistol", "Rapid - Cartridge, Corrosive - Smart Pistol", "Cartridge, Electrifying - Smart Pistol", "Rapid - Cartridge, Electrifying - Smart Pistol", "Cartridge, Gas - Smart Pistol", "Rapid - Cartridge, Gas - Smart Pistol", "Cell, Power - Sniper Rifle", "Cell, Cryo - Sniper Rifle", "Cell, Deafening - Sniper Rifle", "Cell, Incendiary - Sniper Rifle", "Burst - Cell, Power - Sonic Cannon", "Burst - Cell, Cryo - Sonic Cannon", "Burst - Cell, Deafening - Sonic Cannon", "Burst - Cell, Incendiary - Sonic Cannon", "Cell, Power - Sonic Carbine", "Cell, Cryo - Sonic Carbine", "Cell, Deafening - Sonic Carbine", "Cell, Incendiary - Sonic Carbine", "Cell, Power - Sonic Pistol", "Cell, Cryo - Sonic Pistol", "Cell, Deafening - Sonic Pistol", "Cell, Incendiary - Sonic Pistol", "Cell, Power - Sonic Rifle", "Cell, Cryo - Sonic Rifle", "Cell, Deafening - Sonic Rifle", "Cell, Incendiary - Sonic Rifle", "Splitsaber", "Two-Handed Splitsaber", "Splitshoto", "Cell, Power - Stealth Carbine", "Cell, Cryo - Stealth Carbine", "Cell, Deafening - Stealth Carbine", "Cell, Incendiary - Stealth Carbine", "Stun Gauntlet", "Rapid - Cell, Power - Subrepeater", "Rapid - Cell, Cryo - Subrepeater", "Rapid - Cell, Deafening - Subrepeater", "Rapid - Cell, Incendiary - Subrepeater", "Sunsaber", "Two-Handed Sunsaber", "Cell, Power - Switch Cannon", "Cell, Cryo - Switch Cannon", "Cell, Deafening - Switch Cannon", "Cell, Incendiary - Switch Cannon", "Burst - Cell, Power - Switch Cannon", "Burst - Cell, Cryo - Switch Cannon", "Burst - Cell, Deafening - Switch Cannon", "Burst - Cell, Incendiary - Switch Cannon", "Acid - Switch Cannon", "Acid, Burst - Switch Cannon", "Cold - Switch Cannon", "Cold, Burst - Switch Cannon", "Fire - Switch Cannon", "Fire, Burst - Switch Cannon", "Lightning - Switch Cannon", "Lightning, Burst - Switch Cannon", "Cell, Power - Switch Carbine", "Cell, Cryo - Switch Carbine", "Cell, Deafening - Switch Carbine", "Cell, Incendiary - Switch Carbine", "Acid - Switch Carbine", "Cell, Power - Switch Pistol", "Cell, Cryo - Switch Pistol", "Cell, Deafening - Switch Pistol", "Cell, Incendiary - Switch Pistol", "Fire - Switch Pistol", "Cell, Power - Switch Rifle", "Cell, Cryo - Switch Rifle", "Cell, Deafening - Switch Rifle", "Cell, Incendiary - Switch Rifle", "Lightning - Switch Rifle", "Cell, Power - Switch Sniper", "Cell, Cryo - Switch Sniper", "Cell, Deafening - Switch Sniper", "Cell, Incendiary - Switch Sniper", "Cold - Switch Sniper", "Saberaxe", "Sabergauntlet", "Sabermace", "Two-Handed Sabermace", "Saberspear", "Two-Handed Saberspear", "Saberspear - Doublesaber", "Saberspear - Techstaff", "Saberwhip", "Cell, Power - Scatter Blaster", "Cell, Cryo - Scatter Blaster", "Cell, Deafening - Scatter Blaster", "Cell, Incendiary - Scatter Blaster", "Burst - Cell, Power - Scatter Blaster", "Burst - Cell, Cryo - Scatter Blaster", "Burst - Cell, Deafening - Scatter Blaster", "Burst - Cell, Incendiary - Scatter Blaster", "Cartridge, Slug - Scattergun", "Burst - Cartridge, Slug - Scattergun", "Cartridge, Corrosive - Scattergun", "Burst - Cartridge, Corrosive - Scattergun", "Cartridge, Electrifying - Scattergun", "Burst - Cartridge, Electrifying - Scattergun", "Cartridge, Gas - Scattergun", "Burst - Cartridge, Gas - Scattergun", "Sentry Gun", "Burst - Cartridge, Slug - Shatter Cannon", "Burst - Cartridge, Gas - Shatter Cannon", "Burst - Cartridge, Corrosive - Shatter Cannon", "Burst - Cartridge, Electrifying - Shatter Cannon", "Cartridge, Slug - Shatter Pistol", "Cartridge, Corrosive - Shatter Pistol", "Cartridge, Electrifying - Shatter Pistol", "Cartridge, Gas - Shatter Pistol", "Cartridge, Slug - Shatter Rifle", "Cartridge, Corrosive - Shatter Rifle", "Cartridge, Electrifying - Shatter Rifle", "Cartridge, Gas - Shatter Rifle", "Shock Gloves", "Grapple - Shock Gloves", "Shockwhip", "Arrow - Shortbow", "Arrow, Combustive - Shortbow", "Arrow, Electroshock - Shortbow", "Arrow, Noisemaker - Shortbow", "Cartridge, Slug - Shotgun", "Burst - Cartridge, Slug - Shotgun", "Cartridge, Corrosive - Shotgun", "Burst - Cartridge, Corrosive - Shotgun", "Cartridge, Electrifying - Shotgun", "Burst - Cartridge, Electrifying - Shotgun", "Cartridge, Gas - Shotgun", "Burst - Cartridge, Gas - Shotgun", "Shotosaber", "Cell, Power - Shoulder Blaster", "Cell, Cryo - Shoulder Blaster", "Cell, Deafening - Shoulder Blaster", "Cell, Incendiary - Shoulder Blaster", "Rapid - Cell, Power - Shoulder Blaster", "Rapid - Cell, Cryo - Shoulder Blaster", "Rapid - Cell, Deafening - Shoulder Blaster", "Rapid - Cell, Incendiary - Shoulder Blaster", "Cell, Power - Shoulder Cannon", "Cell, Cryo - Shoulder Cannon", "Cell, Deafening - Shoulder Cannon", "Cell, Incendiary - Shoulder Cannon", "Burst - Cell, Power - Shoulder Cannon", "Burst - Cell, Cryo - Shoulder Cannon", "Burst - Cell, Deafening - Shoulder Cannon", "Burst - Cell, Incendiary - Shoulder Cannon", "Sicklesaber", "Sith Saber", "Two-Handed Sith Saber", "Techaxe", "Techblade", "Techstaff", "Cartridge, Slug - Tranquilizer Rifle", "Cartridge, Corrosive - Tranquilizer Rifle", "Cartridge, Electrifying - Tranquilizer Rifle", "Cartridge, Gas - Tranquilizer Rifle", "Projector Tank, Corrosive - Vapor Projector", "Projector Tank, Cryo - Vapor Projector", "Projector Tank, Incendiary - Vapor Projector", "Vibroaxe", "Vibrobaton", "Vibrobattleaxe", "Vibroblade", "Two-Handed Vibroblade", "Vibrobuster", "Vibroclaw", "Vibroclaymore", "Vibrocutlass", "Vibrocutter", "Vibrodagger", "Vibrodart", "Vibroflail", "Vibroglaive", "Vibrohammer", "Vibrokatana", "Two-Handed Vibrokatana", "Vibroknife", "Vibroknuckler", "Vibrolance", "Vibromace", "Vibronodachi", "Vibropike", "Vibrorapier", "Vibrosabre", "Vibroshield", "Vibrospear", "Two-Handed Vibrospear", "Vibrostaff", "Two-Handed Vibrostaff", "Vibrostiletto", "Vibrosword", "Vibrotonfa", "Vibrowhip", "War hat", "Warsaber", "Warsword", "Dart - Wrist Launcher", "Snare - Wrist Launcher", "Dart, Deafening - Wrist Launcher", "Dart, Electrifying - Wrist Launcher", "Dart, Panic - Wrist Launcher", "Missile, Fragmentation - Wrist Launcher", "Missile, Incendiary - Wrist Launcher", "Missile, Ion - Wrist Launcher", "Projector Canister, Corrosive - Wrist Launcher", "Projector Canister, Cryo - Wrist Launcher", "Projector Canister, Incendiary - Wrist Launcher", "Wristblade", "Cell, Power - Wristblaster", "Cell, Cryo - Wristblaster", "Cell, Deafening - Wristblaster", "Cell, Incendiary - Wristblaster", "Cell, Power - Wristrifle", "Cell, Cryo - Wristrifle", "Cell, Deafening - Wristrifle", "Cell, Incendiary - Wristrifle", "Wristsaber", "Cell, Power - Affixed Rifle", "Cell, Cryo - Affixed Rifle", "Cell, Deafening - Affixed Rifle", "Cell, Incendiary - Affixed Rifle", "Rapid - Cell, Power - Affixed Rifle", "Rapid - Cell, Cryo - Affixed Rifle", "Rapid - Cell, Deafening - Affixed Rifle", "Rapid - Cell, Incendiary - Affixed Rifle", "Penetrating - Cell, Power - Anti-Materiel Blaster", "Penetrating - Cell, Cryo - Anti-Materiel Blaster", "Penetrating - Cell, Deafening - Anti-Materiel Blaster", "Penetrating - Cell, Incendiary - Anti-Materiel Blaster", "Cartridge, Slug - Anti-Materiel Rifle", "Cartridge, Corrosive - Anti-Materiel Rifle", "Cartridge, Electrifying - Anti-Materiel Rifle", "Cartridge, Gas - Anti-Materiel Rifle", "Penetrating - Cartridge, Slug - Anti-Materiel Rifle", "Penetrating - Cartridge, Corrosive - Anti-Materiel Rifle", "Penetrating - Cartridge, Electrifying - Anti-Materiel Rifle", "Penetrating - Cartridge, Gas - Anti-Materiel Rifle", "Cell, Power - ARC Caster", "Cell, Cryo - ARC Caster", "Cell, Deafening - ARC Caster", "Cell, Incendiary - ARC Caster", "Burst - Cell, Power - ARC Caster", "Burst - Cell, Cryo - ARC Caster", "Burst - Cell, Deafening - ARC Caster", "Burst - Cell, Incendiary - ARC Caster", "Rapid - Cell, Power - ARC Caster", "Rapid - Cell, Cryo - ARC Caster", "Rapid - Cell, Deafening - ARC Caster", "Rapid - Cell, Incendiary - ARC Caster", "Cell, Power - Assault Cannon", "Cell, Cryo - Assault Cannon", "Cell, Deafening - Assault Cannon", "Cell, Incendiary - Assault Cannon", "Burst - Assault Cannon", "Atlatl", "Cell, Power - Beam Rifle", "Cell, Cryo - Beam Rifle", "Cell, Deafening - Beam Rifle", "Cell, Incendiary - Beam Rifle", "Penetrating - Cell, Power - Beam Rifle", "Penetrating - Cell, Cryo - Beam Rifle", "Penetrating - Cell, Deafening - Beam Rifle", "Penetrating - Cell, Incendiary - Beam Rifle", "Bitesaber", "Two-Handed Bitesaber", "Burst - Cell, Power - BKG", "Burst - Cell, Cryo - BKG", "Burst - Cell, Deafening - BKG", "Burst - Cell, Incendiary - BKG", "Burst - Blaster Cannon", "Rapid - Blaster Cannon", "Cell, Power - Blaster Carbine", "Cell, Cryo - Blaster Carbine", "Cell, Deafening - Blaster Carbine", "Cell, Incendiary - Blaster Carbine", "Cell, Power - Blaster Pistol", "Cell, Cryo - Blaster Pistol", "Cell, Deafening - Blaster Pistol", "Cell, Incendiary - Blaster Pistol", "Cell, Power - Blaster Rifle", "Cell, Cryo - Blaster Rifle", "Cell, Deafening - Blaster Rifle", "Cell, Incendiary - Blaster Rifle", "Blightsaber", "Corruption - Blightsaber", "Two-Handed Blightsaber", "Bo-Rifle - Rifle", "Bo-Rifle - Staff", "Bolas", "Bolt - Bolt-Thrower", "Bolt, Deafening - Bolt-Thrower", "Bolt, Electrifying - Bolt-Thrower", "Bolt, Panic - Bolt-Thrower", "Cell, Power - Bowcaster", "Cell, Cryo - Bowcaster", "Cell, Deafening - Bowcaster", "Cell, Incendiary - Bowcaster", "Burst - Cell, Power - Bowcaster", "Burst - Cell, Cryo - Bowcaster", "Burst - Cell, Deafening - Bowcaster", "Burst - Cell, Incendiary - Bowcaster", "Brightsaber", "Two-Handed Brightsaber", "Broadsaber", "Two-Handed Broadsaber", "Bustersaber", "Rapid - Cell, Power - Carbine Rifle", "Rapid - Cell, Cryo - Carbine Rifle", "Rapid - Cell, Deafening - Carbine Rifle", "Rapid - Cell, Incendiary - Carbine Rifle", "Cesta", "Chained Dagger", "Chained Lightdagger", "Rapid - Cartridge, Slug - Chaingun", "Rapid - Cartridge, Corrosive - Chaingun", "Rapid - Cartridge, Electrifying - Chaingun", "Rapid - Cartridge, Gas - Chaingun", "Chakram", "Claymoresaber", "Arrow - Compound Bow", "Arrow, Combustive - Compound Bow", "Arrow, Electroshock - Compound Bow", "Arrow, Noisemaker - Compound Bow", "Crossguard Saber", "Two-Handed Crossguard Saber", "Crosssaber", "Burst - Cell, Power - Cryo Cannon", "Burst - Cell, Cryo - Cryo Cannon", "Burst - Cell, Deafening - Cryo Cannon", "Burst - Cell, Incendiary - Cryo Cannon", "Cell, Power - Cryo Carbine", "Cell, Cryo - Cryo Carbine", "Cell, Deafening - Cryo Carbine", "Cell, Incendiary - Cryo Carbine", "Cell, Power - Cryo Pistol", "Cell, Cryo - Cryo Pistol", "Cell, Power - Cryo Pistol", "Cell, Incendiary - Cryo Pistol", "Cell, Power - Cryo Rifle", "Cell, Cryo - Cryo Rifle", "Cell, Deafening - Cryo Rifle", "Cell, Incendiary - Cryo Rifle", "Cartridge, Slug - Cycler Rifle", "Rapid - Cartridge, Slug - Cycler Rifle", "Cartridge, Corrosive - Cycler Rifle", "Rapid - Cartridge, Corrosive - Cycler Rifle", "Cartridge, Electrifying - Cycler Rifle", "Rapid - Cartridge, Electrifying - Cycler Rifle", "Cartridge, Gas - Cycler Rifle", "Rapid - Cartridge, Gas - Cycler Rifle", "Custom Vibroweapon", "Cartridge, Slug - Custom Slug Gun", "Cartridge, Corrosive - Custom Slug Gun", "Cartridge, Electrifying - Custom Slug Gun", "Cartridge, Gas - Custom Slug Gun", "Cell, Power - Custom Blaster", "Cell, Cryo - Custom Blaster", "Cell, Deafening - Custom Blaster", "Cell, Incendiary - Custom Blaster", "Cell, Power - Light Pistol", "Cell, Cryo - Light Pistol", "Cell, Deafening - Light Pistol", "Cell, Incendiary - Light Pistol", "Rapid - Cell, Power - Light Repeater", "Rapid - Cell, Cryo - Light Repeater", "Rapid - Cell, Deafening - Light Repeater", "Rapid - Cell, Incendiary - Light Repeater", "Cartridge, Slug - Light Slugpistol", "Cartridge, Corrosive - Light Slugpistol", "Cartridge, Electrifying - Light Slugpistol", "Cartridge, Gas - Light Slugpistol", "Lightaxe", "Lightbaton", "Lightblade", "Cell, Power - Lightbow", "Cell, Cryo - Lightbow", "Cell, Deafening - Lightbow", "Cell, Incendiary - Lightbow", "Lightclub", "Lightcutlass", "Lightdagger", "Lightfist", "Lightfoil", "Lightglaive", "Lightkatana", "Two-Handed Lightkatana", "Penetrating - Cell, Power - Lightning Cannon", "Penetrating - Cell, Cryo - Lightning Cannon", "Penetrating - Cell, Deafening - Lightning Cannon", "Penetrating - Cell, Incendiary - Lightning Cannon", "Cell, Power - Lightning Carbine", "Cell, Cryo - Lightning Carbine", "Cell, Deafening - Lightning Carbine", "Cell, Incendiary - Lightning Carbine", "Penetrating - Cell, Power - Lightning Carbine", "Penetrating - Cell, Cryo - Lightning Carbine", "Penetrating - Cell, Deafening - Lightning Carbine", "Penetrating - Cell, Incendiary - Lightning Carbine", "Cell, Power - Lightning Pistol", "Cell, Cryo - Lightning Pistol", "Cell, Deafening - Lightning Pistol", "Cell, Incendiary - Lightning Pistol", "Penetrating - Cell, Power - Lightning Pistol", "Penetrating - Cell, Cryo - Lightning Pistol", "Penetrating - Cell, Deafening - Lightning Pistol", "Penetrating - Cell, Incendiary - Lightning Pistol", "Cell, Power - Lightning Rifle", "Cell, Cryo - Lightning Rifle", "Cell, Deafening - Lightning Rifle", "Cell, Incendiary - Lightning Rifle", "Penetrating - Cell, Power - Lightning Rifle", "Penetrating - Cell, Cryo - Lightning Rifle", "Penetrating - Cell, Deafening - Lightning Rifle", "Penetrating - Cell, Power - Lightning Rifle", "Lightnodachi", "Lightring", "Lightsaber", "Two-Handed Lightsaber", "Lightsaber Pike", "Lightstaff", "Mancatcher", "Cell, Power - Marksman Blaster", "Cell, Cryo - Marksman Blaster", "Cell, Deafening - Marksman Blaster", "Cell, Incendiary - Marksman Blaster", "Martial Lightsaber", "Two-Handed Martial Lightsaber", "Cell, Power - Modified Beam Cannon", "Cell, Cryo - Modified Beam Cannon", "Cell, Deafening - Modified Beam Cannon", "Cell, Incendiary - Modified Beam Cannon", "Penetrating - Cell, Power - Modified Beam Cannon", "Penetrating - Cell, Cryo - Modified Beam Cannon", "Penetrating - Cell, Deafening - Modified Beam Cannon", "Penetrating - Cell, Incendiary - Modified Beam Cannon", "Cartridge, Slug - Needler", "Rapid - Cartridge, Slug - Needler", "Cartridge, Corrosive - Needler", "Rapid - Cartridge, Corrosive - Needler", "Cartridge, Electrifying - Needler", "Rapid - Cartridge, Electrifying - Needler", "Cartridge, Gas - Needler", "Rapid - Cartridge, Gas - Needler", "Nervebaton", "Net", "Neuronic whip", "Cell, Power - Nightstinger Rifle", "Cell, Cryo - Nightstinger Rifle", "Cell, Deafening - Nightstinger Rifle", "Cell, Incendiary - Nightstinger Rifle", "Phase knife", "Pikesaber", "Burst - Cell, Power - Radiation Cannon", "Burst - Cell, Cryo - Radiation Cannon", "Burst - Cell, Deafening - Radiation Cannon", "Burst - Cell, Incendiary - Radiation Cannon", "Cell, Power - Radrifle", "Cell, Cryo - Radrifle", "Cell, Deafening - Radrifle", "Cell, Incendiary - Radrifle", "Cartridge, Slug - Railgun", "Cartridge, Corrosive - Railgun", "Cartridge, Electrifying - Railgun", "Cartridge, Gas - Railgun", "Burst - Cell, Power - Repeating Blaster", "Burst - Cell, Cryo - Repeating Blaster", "Burst - Cell, Deafening - Repeating Blaster", "Burst - Cell, Incendiary - Repeating Blaster", "Rapid - Cell, Power - Repeating Blaster", "Rapid - Cell, Cryo - Repeating Blaster", "Rapid - Cell, Deafening - Repeating Blaster", "Rapid - Cell, Incendiary - Repeating Blaster", "Retrosaber", "Two-Handed Retrosaber", "Cartridge, Slug - Revolver", "Rapid - Cartridge, Slug - Revolver", "Cartridge, Corrosive - Revolver", "Rapid - Cartridge, Corrosive - Revolver", "Cartridge, Electrifying - Revolver", "Rapid - Cartridge, Electrifying - Revolver", "Cartridge, Gas - Revolver", "Rapid - Cartridge, Gas - Revolver", "Rocket, Fragmentation - Rocket Launcher", "Rocket, Incendiary - Rocket Launcher", "Rocket, Ion - Rocket Launcher", "Missile, Fragmentation - Rocket Rifle", "Missile, Incendiary - Rocket Rifle", "Missile, Ion - Rocket Rifle", "Rapid - Cell, Power - Rotary Cannon", "Rapid - Cell, Cryo - Rotary Cannon", "Rapid - Cell, Deafening - Rotary Cannon", "Rapid - Cell, Incendiary - Rotary Cannon"]
+[
+  {
+    "name": "Dire Vibroblade"
+  },
+  {
+    "name": "Two-Handed Dire Vibroblade"
+  },
+  {
+    "name": "Diresword"
+  },
+  {
+    "name": "Disguised Blade"
+  },
+  {
+    "name": "Cell, Power - Disruptor Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Disruptor Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Disruptor Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Disruptor Carbine"
+  },
+  {
+    "name": "Cell, Power - Disruptor Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Disruptor Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Disruptor Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Disruptor Pistol"
+  },
+  {
+    "name": "Cell, Power - Disruptor Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Disruptor Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Disruptor Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Disruptor Rifle"
+  },
+  {
+    "name": "Cell, Power - Disruptor Sniper"
+  },
+  {
+    "name": "Cell, Cryo - Disruptor Sniper"
+  },
+  {
+    "name": "Cell, Deafening - Disruptor Sniper"
+  },
+  {
+    "name": "Cell, Incendiary - Disruptor Sniper"
+  },
+  {
+    "name": "Disruptorshiv"
+  },
+  {
+    "name": "Doubleblade"
+  },
+  {
+    "name": "Doublesaber"
+  },
+  {
+    "name": "Doubleshoto"
+  },
+  {
+    "name": "Doublesword"
+  },
+  {
+    "name": "Dual-Phase Saber"
+  },
+  {
+    "name": "Two-Handed Dual-Phase Saber"
+  },
+  {
+    "name": "Echostaff"
+  },
+  {
+    "name": "Electrobaton"
+  },
+  {
+    "name": "Electrohammer"
+  },
+  {
+    "name": "Electroprod"
+  },
+  {
+    "name": "Electrostaff"
+  },
+  {
+    "name": "Electrovoulge"
+  },
+  {
+    "name": "Electrowhip"
+  },
+  {
+    "name": "Cell, Power - Energy Bow"
+  },
+  {
+    "name": "Cell, Cryo - Energy Bow"
+  },
+  {
+    "name": "Cell, Deafening - Energy Bow"
+  },
+  {
+    "name": "Cell, Incendiary - Energy Bow"
+  },
+  {
+    "name": "Cell, Power - Energy Slingshot"
+  },
+  {
+    "name": "Cell, Cryo - Energy Slingshot"
+  },
+  {
+    "name": "Cell, Deafening - Energy Slingshot"
+  },
+  {
+    "name": "Cell, Incendiary - Energy Slingshot"
+  },
+  {
+    "name": "Flechette Mag, Fragmentation - Flechette Cannon"
+  },
+  {
+    "name": "Flechette Mag, Ion - Flechette Cannon"
+  },
+  {
+    "name": "Flechette Mag, Plasma - Flechette Cannon"
+  },
+  {
+    "name": "Greatsaber"
+  },
+  {
+    "name": "Grenade, Corrosive"
+  },
+  {
+    "name": "Grenade, Cryo"
+  },
+  {
+    "name": "Grenade, Deafening"
+  },
+  {
+    "name": "Grenade, Electrifying"
+  },
+  {
+    "name": "Grenade, Flash"
+  },
+  {
+    "name": "Grenade, Fragmentation"
+  },
+  {
+    "name": "Grenade, Gas"
+  },
+  {
+    "name": "Grenade, Incendiary"
+  },
+  {
+    "name": "Grenade, Ion"
+  },
+  {
+    "name": "Grenade, Panic"
+  },
+  {
+    "name": "Grenade, Plasma"
+  },
+  {
+    "name": "Grenade, Stun"
+  },
+  {
+    "name": "Guard Shoto"
+  },
+  {
+    "name": "Cell, Power - Hand BKG"
+  },
+  {
+    "name": "Cell, Cryo - Hand BKG"
+  },
+  {
+    "name": "Cell, Deafening - Hand BKG"
+  },
+  {
+    "name": "Cell, Incendiary - Hand BKG"
+  },
+  {
+    "name": "Cell, Power - Hand Blaster"
+  },
+  {
+    "name": "Cell, Cryo - Hand Blaster"
+  },
+  {
+    "name": "Cell, Deafening - Hand Blaster"
+  },
+  {
+    "name": "Cell, Incendiary - Hand Blaster"
+  },
+  {
+    "name": "Cartridge, Slug - Hand Cannon"
+  },
+  {
+    "name": "Cartridge, Corrosive - Hand Cannon"
+  },
+  {
+    "name": "Cartridge, Electrifying - Hand Cannon"
+  },
+  {
+    "name": "Cartridge, Gas - Hand Cannon"
+  },
+  {
+    "name": "Cell, Power - Heavy Blaster Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Heavy Blaster Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Heavy Blaster Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Heavy Blaster Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Power - Heavy Blaster Rifle"
+  },
+  {
+    "name": "Cell, Power - Heavy Bowcaster"
+  },
+  {
+    "name": "Cell, Cryo - Heavy Bowcaster"
+  },
+  {
+    "name": "Cell, Deafening - Heavy Bowcaster"
+  },
+  {
+    "name": "Cell, Incendiary - Heavy Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Power - Heavy Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Heavy Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Heavy Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Heavy Bowcaster"
+  },
+  {
+    "name": "Cell, Power - Heavy Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Heavy Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Heavy Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Heavy Carbine"
+  },
+  {
+    "name": "Rapid - Cell, Power - Heavy Carbine"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Heavy Carbine"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Heavy Carbine"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Heavy Carbine"
+  },
+  {
+    "name": "Cell, Power - Heavy Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Heavy Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Heavy Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Heavy Pistol"
+  },
+  {
+    "name": "Burst - Cell, Power - Heavy Repeater"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Heavy Repeater"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Heavy Repeater"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Heavy Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Power - Heavy Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Heavy Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Heavy Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Heavy Repeater"
+  },
+  {
+    "name": "Cartridge, Slug - Heavy Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Slug - Heavy Shotgun"
+  },
+  {
+    "name": "Cartridge, Corrosive - Heavy Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Heavy Shotgun"
+  },
+  {
+    "name": "Cartridge, Electrifying - Heavy Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Heavy Shotgun"
+  },
+  {
+    "name": "Cartridge, Gas - Heavy Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Gas - Heavy Shotgun"
+  },
+  {
+    "name": "Cartridge, Slug - Heavy Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Heavy Slugpistol"
+  },
+  {
+    "name": "Cartridge, Corrosive - Heavy Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Heavy Slugpistol"
+  },
+  {
+    "name": "Cartridge, Electrifying - Heavy Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Heavy Slugpistol"
+  },
+  {
+    "name": "Cartridge, Gas - Heavy Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Heavy Slugpistol"
+  },
+  {
+    "name": "Hidden Blade"
+  },
+  {
+    "name": "Cell, Power - Hold-Out"
+  },
+  {
+    "name": "Cell, Cryo - Hold-Out"
+  },
+  {
+    "name": "Cell, Deafening - Hold-Out"
+  },
+  {
+    "name": "Cell, Incendiary - Hold-Out"
+  },
+  {
+    "name": "Hooked Vibroblade"
+  },
+  {
+    "name": "Cartridge, Slug - Hunting Rifle"
+  },
+  {
+    "name": "Cartridge, Corrosive - Hunting Rifle"
+  },
+  {
+    "name": "Cartridge, Electrifying - Hunting Rifle"
+  },
+  {
+    "name": "Cartridge, Gas - Hunting Rifle"
+  },
+  {
+    "name": "Cell, Power - Incinerator Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Incinerator Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Incinerator Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Incinerator Carbine"
+  },
+  {
+    "name": "Cell, Power - Incinerator Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Incinerator Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Incinerator Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Incinerator Pistol"
+  },
+  {
+    "name": "Cell, Power - Incinerator Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Incinerator Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Incinerator Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Incinerator Rifle"
+  },
+  {
+    "name": "Cell, Power - Incinerator Sniper"
+  },
+  {
+    "name": "Cell, Cryo - Incinerator Sniper"
+  },
+  {
+    "name": "Cell, Deafening - Incinerator Sniper"
+  },
+  {
+    "name": "Cell, Incendiary - Incinerator Sniper"
+  },
+  {
+    "name": "Burst - Cell, Power - Ion Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Ion Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Ion Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Ion Cannon"
+  },
+  {
+    "name": "Cell, Power - Ion Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Ion Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Ion Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Ion Carbine"
+  },
+  {
+    "name": "Cell, Power - Ion Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Ion Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Ion Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Ion Pistol"
+  },
+  {
+    "name": "Cell, Power - Ion Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Ion Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Ion Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Ion Rifle"
+  },
+  {
+    "name": "IWS - Blaster"
+  },
+  {
+    "name": "IWS - Sniper"
+  },
+  {
+    "name": "Jagged Vibroblade"
+  },
+  {
+    "name": "Two-Handed Jagged Vibroblade"
+  },
+  {
+    "name": "Cartridge, Slug - Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Slugpistol"
+  },
+  {
+    "name": "Cartridge, Corrosive - Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Slugpistol"
+  },
+  {
+    "name": "Cartridge, Electrifying - Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Slugpistol"
+  },
+  {
+    "name": "Cartridge, Gas - Slugpistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Slugpistol"
+  },
+  {
+    "name": "Cartridge, Slug - Slugthrower"
+  },
+  {
+    "name": "Cartridge, Corrosive - Slugthrower"
+  },
+  {
+    "name": "Cartridge, Electrifying - Slugthrower"
+  },
+  {
+    "name": "Cartridge, Gas - Slugthrower"
+  },
+  {
+    "name": "Burst - Cartridge, Slug - Smart Cannon"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Smart Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Smart Cannon"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Smart Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Smart Cannon"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Smart Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Gas - Smart Cannon"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Smart Cannon"
+  },
+  {
+    "name": "Cartridge, Slug - Smart Pistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Smart Pistol"
+  },
+  {
+    "name": "Cartridge, Corrosive - Smart Pistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Smart Pistol"
+  },
+  {
+    "name": "Cartridge, Electrifying - Smart Pistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Smart Pistol"
+  },
+  {
+    "name": "Cartridge, Gas - Smart Pistol"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Smart Pistol"
+  },
+  {
+    "name": "Cell, Power - Sniper Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Sniper Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Sniper Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Sniper Rifle"
+  },
+  {
+    "name": "Burst - Cell, Power - Sonic Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Sonic Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Sonic Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Sonic Cannon"
+  },
+  {
+    "name": "Cell, Power - Sonic Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Sonic Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Sonic Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Sonic Carbine"
+  },
+  {
+    "name": "Cell, Power - Sonic Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Sonic Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Sonic Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Sonic Pistol"
+  },
+  {
+    "name": "Cell, Power - Sonic Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Sonic Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Sonic Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Sonic Rifle"
+  },
+  {
+    "name": "Splitsaber"
+  },
+  {
+    "name": "Two-Handed Splitsaber"
+  },
+  {
+    "name": "Splitshoto"
+  },
+  {
+    "name": "Cell, Power - Stealth Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Stealth Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Stealth Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Stealth Carbine"
+  },
+  {
+    "name": "Stun Gauntlet"
+  },
+  {
+    "name": "Rapid - Cell, Power - Subrepeater"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Subrepeater"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Subrepeater"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Subrepeater"
+  },
+  {
+    "name": "Sunsaber"
+  },
+  {
+    "name": "Two-Handed Sunsaber"
+  },
+  {
+    "name": "Cell, Power - Switch Cannon"
+  },
+  {
+    "name": "Cell, Cryo - Switch Cannon"
+  },
+  {
+    "name": "Cell, Deafening - Switch Cannon"
+  },
+  {
+    "name": "Cell, Incendiary - Switch Cannon"
+  },
+  {
+    "name": "Burst - Cell, Power - Switch Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Switch Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Switch Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Switch Cannon"
+  },
+  {
+    "name": "Acid - Switch Cannon"
+  },
+  {
+    "name": "Acid, Burst - Switch Cannon"
+  },
+  {
+    "name": "Cold - Switch Cannon"
+  },
+  {
+    "name": "Cold, Burst - Switch Cannon"
+  },
+  {
+    "name": "Fire - Switch Cannon"
+  },
+  {
+    "name": "Fire, Burst - Switch Cannon"
+  },
+  {
+    "name": "Lightning - Switch Cannon"
+  },
+  {
+    "name": "Lightning, Burst - Switch Cannon"
+  },
+  {
+    "name": "Cell, Power - Switch Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Switch Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Switch Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Switch Carbine"
+  },
+  {
+    "name": "Acid - Switch Carbine"
+  },
+  {
+    "name": "Cell, Power - Switch Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Switch Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Switch Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Switch Pistol"
+  },
+  {
+    "name": "Fire - Switch Pistol"
+  },
+  {
+    "name": "Cell, Power - Switch Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Switch Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Switch Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Switch Rifle"
+  },
+  {
+    "name": "Lightning - Switch Rifle"
+  },
+  {
+    "name": "Cell, Power - Switch Sniper"
+  },
+  {
+    "name": "Cell, Cryo - Switch Sniper"
+  },
+  {
+    "name": "Cell, Deafening - Switch Sniper"
+  },
+  {
+    "name": "Cell, Incendiary - Switch Sniper"
+  },
+  {
+    "name": "Cold - Switch Sniper"
+  },
+  {
+    "name": "Saberaxe"
+  },
+  {
+    "name": "Sabergauntlet"
+  },
+  {
+    "name": "Sabermace"
+  },
+  {
+    "name": "Two-Handed Sabermace"
+  },
+  {
+    "name": "Saberspear"
+  },
+  {
+    "name": "Two-Handed Saberspear"
+  },
+  {
+    "name": "Saberspear - Doublesaber"
+  },
+  {
+    "name": "Saberspear - Techstaff"
+  },
+  {
+    "name": "Saberwhip"
+  },
+  {
+    "name": "Cell, Power - Scatter Blaster"
+  },
+  {
+    "name": "Cell, Cryo - Scatter Blaster"
+  },
+  {
+    "name": "Cell, Deafening - Scatter Blaster"
+  },
+  {
+    "name": "Cell, Incendiary - Scatter Blaster"
+  },
+  {
+    "name": "Burst - Cell, Power - Scatter Blaster"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Scatter Blaster"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Scatter Blaster"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Scatter Blaster"
+  },
+  {
+    "name": "Cartridge, Slug - Scattergun"
+  },
+  {
+    "name": "Burst - Cartridge, Slug - Scattergun"
+  },
+  {
+    "name": "Cartridge, Corrosive - Scattergun"
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Scattergun"
+  },
+  {
+    "name": "Cartridge, Electrifying - Scattergun"
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Scattergun"
+  },
+  {
+    "name": "Cartridge, Gas - Scattergun"
+  },
+  {
+    "name": "Burst - Cartridge, Gas - Scattergun"
+  },
+  {
+    "name": "Sentry Gun"
+  },
+  {
+    "name": "Burst - Cartridge, Slug - Shatter Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Gas - Shatter Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Shatter Cannon"
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Shatter Cannon"
+  },
+  {
+    "name": "Cartridge, Slug - Shatter Pistol"
+  },
+  {
+    "name": "Cartridge, Corrosive - Shatter Pistol"
+  },
+  {
+    "name": "Cartridge, Electrifying - Shatter Pistol"
+  },
+  {
+    "name": "Cartridge, Gas - Shatter Pistol"
+  },
+  {
+    "name": "Cartridge, Slug - Shatter Rifle"
+  },
+  {
+    "name": "Cartridge, Corrosive - Shatter Rifle"
+  },
+  {
+    "name": "Cartridge, Electrifying - Shatter Rifle"
+  },
+  {
+    "name": "Cartridge, Gas - Shatter Rifle"
+  },
+  {
+    "name": "Shock Gloves"
+  },
+  {
+    "name": "Grapple - Shock Gloves"
+  },
+  {
+    "name": "Shockwhip"
+  },
+  {
+    "name": "Arrow - Shortbow"
+  },
+  {
+    "name": "Arrow, Combustive - Shortbow"
+  },
+  {
+    "name": "Arrow, Electroshock - Shortbow"
+  },
+  {
+    "name": "Arrow, Noisemaker - Shortbow"
+  },
+  {
+    "name": "Cartridge, Slug - Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Slug - Shotgun"
+  },
+  {
+    "name": "Cartridge, Corrosive - Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Corrosive - Shotgun"
+  },
+  {
+    "name": "Cartridge, Electrifying - Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Electrifying - Shotgun"
+  },
+  {
+    "name": "Cartridge, Gas - Shotgun"
+  },
+  {
+    "name": "Burst - Cartridge, Gas - Shotgun"
+  },
+  {
+    "name": "Shotosaber"
+  },
+  {
+    "name": "Cell, Power - Shoulder Blaster"
+  },
+  {
+    "name": "Cell, Cryo - Shoulder Blaster"
+  },
+  {
+    "name": "Cell, Deafening - Shoulder Blaster"
+  },
+  {
+    "name": "Cell, Incendiary - Shoulder Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Power - Shoulder Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Shoulder Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Shoulder Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Shoulder Blaster"
+  },
+  {
+    "name": "Cell, Power - Shoulder Cannon"
+  },
+  {
+    "name": "Cell, Cryo - Shoulder Cannon"
+  },
+  {
+    "name": "Cell, Deafening - Shoulder Cannon"
+  },
+  {
+    "name": "Cell, Incendiary - Shoulder Cannon"
+  },
+  {
+    "name": "Burst - Cell, Power - Shoulder Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Shoulder Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Shoulder Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Shoulder Cannon"
+  },
+  {
+    "name": "Sicklesaber"
+  },
+  {
+    "name": "Sith Saber"
+  },
+  {
+    "name": "Two-Handed Sith Saber"
+  },
+  {
+    "name": "Techaxe"
+  },
+  {
+    "name": "Techblade"
+  },
+  {
+    "name": "Techstaff"
+  },
+  {
+    "name": "Cartridge, Slug - Tranquilizer Rifle"
+  },
+  {
+    "name": "Cartridge, Corrosive - Tranquilizer Rifle"
+  },
+  {
+    "name": "Cartridge, Electrifying - Tranquilizer Rifle"
+  },
+  {
+    "name": "Cartridge, Gas - Tranquilizer Rifle"
+  },
+  {
+    "name": "Projector Tank, Corrosive - Vapor Projector"
+  },
+  {
+    "name": "Projector Tank, Cryo - Vapor Projector"
+  },
+  {
+    "name": "Projector Tank, Incendiary - Vapor Projector"
+  },
+  {
+    "name": "Vibroaxe"
+  },
+  {
+    "name": "Vibrobaton"
+  },
+  {
+    "name": "Vibrobattleaxe"
+  },
+  {
+    "name": "Vibroblade"
+  },
+  {
+    "name": "Two-Handed Vibroblade"
+  },
+  {
+    "name": "Vibrobuster"
+  },
+  {
+    "name": "Vibroclaw"
+  },
+  {
+    "name": "Vibroclaymore"
+  },
+  {
+    "name": "Vibrocutlass"
+  },
+  {
+    "name": "Vibrocutter"
+  },
+  {
+    "name": "Vibrodagger"
+  },
+  {
+    "name": "Vibrodart"
+  },
+  {
+    "name": "Vibroflail"
+  },
+  {
+    "name": "Vibroglaive"
+  },
+  {
+    "name": "Vibrohammer"
+  },
+  {
+    "name": "Vibrokatana"
+  },
+  {
+    "name": "Two-Handed Vibrokatana"
+  },
+  {
+    "name": "Vibroknife"
+  },
+  {
+    "name": "Vibroknuckler"
+  },
+  {
+    "name": "Vibrolance"
+  },
+  {
+    "name": "Vibromace"
+  },
+  {
+    "name": "Vibronodachi"
+  },
+  {
+    "name": "Vibropike"
+  },
+  {
+    "name": "Vibrorapier"
+  },
+  {
+    "name": "Vibrosabre"
+  },
+  {
+    "name": "Vibroshield"
+  },
+  {
+    "name": "Vibrospear"
+  },
+  {
+    "name": "Two-Handed Vibrospear"
+  },
+  {
+    "name": "Vibrostaff"
+  },
+  {
+    "name": "Two-Handed Vibrostaff"
+  },
+  {
+    "name": "Vibrostiletto"
+  },
+  {
+    "name": "Vibrosword"
+  },
+  {
+    "name": "Vibrotonfa"
+  },
+  {
+    "name": "Vibrowhip"
+  },
+  {
+    "name": "War hat"
+  },
+  {
+    "name": "Warsaber"
+  },
+  {
+    "name": "Warsword"
+  },
+  {
+    "name": "Dart - Wrist Launcher"
+  },
+  {
+    "name": "Snare - Wrist Launcher"
+  },
+  {
+    "name": "Dart, Deafening - Wrist Launcher"
+  },
+  {
+    "name": "Dart, Electrifying - Wrist Launcher"
+  },
+  {
+    "name": "Dart, Panic - Wrist Launcher"
+  },
+  {
+    "name": "Missile, Fragmentation - Wrist Launcher"
+  },
+  {
+    "name": "Missile, Incendiary - Wrist Launcher"
+  },
+  {
+    "name": "Missile, Ion - Wrist Launcher"
+  },
+  {
+    "name": "Projector Canister, Corrosive - Wrist Launcher"
+  },
+  {
+    "name": "Projector Canister, Cryo - Wrist Launcher"
+  },
+  {
+    "name": "Projector Canister, Incendiary - Wrist Launcher"
+  },
+  {
+    "name": "Wristblade"
+  },
+  {
+    "name": "Cell, Power - Wristblaster"
+  },
+  {
+    "name": "Cell, Cryo - Wristblaster"
+  },
+  {
+    "name": "Cell, Deafening - Wristblaster"
+  },
+  {
+    "name": "Cell, Incendiary - Wristblaster"
+  },
+  {
+    "name": "Cell, Power - Wristrifle"
+  },
+  {
+    "name": "Cell, Cryo - Wristrifle"
+  },
+  {
+    "name": "Cell, Deafening - Wristrifle"
+  },
+  {
+    "name": "Cell, Incendiary - Wristrifle"
+  },
+  {
+    "name": "Wristsaber"
+  },
+  {
+    "name": "Cell, Power - Affixed Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Affixed Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Affixed Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Affixed Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Power - Affixed Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Affixed Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Affixed Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Affixed Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Anti-Materiel Blaster"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Anti-Materiel Blaster"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Anti-Materiel Blaster"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Anti-Materiel Blaster"
+  },
+  {
+    "name": "Cartridge, Slug - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Cartridge, Corrosive - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Cartridge, Electrifying - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Cartridge, Gas - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Penetrating - Cartridge, Slug - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Penetrating - Cartridge, Corrosive - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Penetrating - Cartridge, Electrifying - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Penetrating - Cartridge, Gas - Anti-Materiel Rifle"
+  },
+  {
+    "name": "Cell, Power - ARC Caster"
+  },
+  {
+    "name": "Cell, Cryo - ARC Caster"
+  },
+  {
+    "name": "Cell, Deafening - ARC Caster"
+  },
+  {
+    "name": "Cell, Incendiary - ARC Caster"
+  },
+  {
+    "name": "Burst - Cell, Power - ARC Caster"
+  },
+  {
+    "name": "Burst - Cell, Cryo - ARC Caster"
+  },
+  {
+    "name": "Burst - Cell, Deafening - ARC Caster"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - ARC Caster"
+  },
+  {
+    "name": "Rapid - Cell, Power - ARC Caster"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - ARC Caster"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - ARC Caster"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - ARC Caster"
+  },
+  {
+    "name": "Cell, Power - Assault Cannon"
+  },
+  {
+    "name": "Cell, Cryo - Assault Cannon"
+  },
+  {
+    "name": "Cell, Deafening - Assault Cannon"
+  },
+  {
+    "name": "Cell, Incendiary - Assault Cannon"
+  },
+  {
+    "name": "Burst - Assault Cannon"
+  },
+  {
+    "name": "Atlatl"
+  },
+  {
+    "name": "Cell, Power - Beam Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Beam Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Beam Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Beam Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Beam Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Beam Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Beam Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Beam Rifle"
+  },
+  {
+    "name": "Bitesaber"
+  },
+  {
+    "name": "Two-Handed Bitesaber"
+  },
+  {
+    "name": "Burst - Cell, Power - BKG"
+  },
+  {
+    "name": "Burst - Cell, Cryo - BKG"
+  },
+  {
+    "name": "Burst - Cell, Deafening - BKG"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - BKG"
+  },
+  {
+    "name": "Burst - Blaster Cannon"
+  },
+  {
+    "name": "Rapid - Blaster Cannon"
+  },
+  {
+    "name": "Cell, Power - Blaster Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Blaster Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Blaster Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Blaster Carbine"
+  },
+  {
+    "name": "Cell, Power - Blaster Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Blaster Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Blaster Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Blaster Pistol"
+  },
+  {
+    "name": "Cell, Power - Blaster Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Blaster Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Blaster Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Blaster Rifle"
+  },
+  {
+    "name": "Blightsaber"
+  },
+  {
+    "name": "Corruption - Blightsaber"
+  },
+  {
+    "name": "Two-Handed Blightsaber"
+  },
+  {
+    "name": "Bo-Rifle - Rifle"
+  },
+  {
+    "name": "Bo-Rifle - Staff"
+  },
+  {
+    "name": "Bolas"
+  },
+  {
+    "name": "Bolt - Bolt-Thrower"
+  },
+  {
+    "name": "Bolt, Deafening - Bolt-Thrower"
+  },
+  {
+    "name": "Bolt, Electrifying - Bolt-Thrower"
+  },
+  {
+    "name": "Bolt, Panic - Bolt-Thrower"
+  },
+  {
+    "name": "Cell, Power - Bowcaster"
+  },
+  {
+    "name": "Cell, Cryo - Bowcaster"
+  },
+  {
+    "name": "Cell, Deafening - Bowcaster"
+  },
+  {
+    "name": "Cell, Incendiary - Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Power - Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Bowcaster"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Bowcaster"
+  },
+  {
+    "name": "Brightsaber"
+  },
+  {
+    "name": "Two-Handed Brightsaber"
+  },
+  {
+    "name": "Broadsaber"
+  },
+  {
+    "name": "Two-Handed Broadsaber"
+  },
+  {
+    "name": "Bustersaber"
+  },
+  {
+    "name": "Rapid - Cell, Power - Carbine Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Carbine Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Carbine Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Carbine Rifle"
+  },
+  {
+    "name": "Cesta"
+  },
+  {
+    "name": "Chained Dagger"
+  },
+  {
+    "name": "Chained Lightdagger"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Chaingun"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Chaingun"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Chaingun"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Chaingun"
+  },
+  {
+    "name": "Chakram"
+  },
+  {
+    "name": "Claymoresaber"
+  },
+  {
+    "name": "Arrow - Compound Bow"
+  },
+  {
+    "name": "Arrow, Combustive - Compound Bow"
+  },
+  {
+    "name": "Arrow, Electroshock - Compound Bow"
+  },
+  {
+    "name": "Arrow, Noisemaker - Compound Bow"
+  },
+  {
+    "name": "Crossguard Saber"
+  },
+  {
+    "name": "Two-Handed Crossguard Saber"
+  },
+  {
+    "name": "Crosssaber"
+  },
+  {
+    "name": "Burst - Cell, Power - Cryo Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Cryo Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Cryo Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Cryo Cannon"
+  },
+  {
+    "name": "Cell, Power - Cryo Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Cryo Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Cryo Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Cryo Carbine"
+  },
+  {
+    "name": "Cell, Power - Cryo Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Cryo Pistol"
+  },
+  {
+    "name": "Cell, Power - Cryo Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Cryo Pistol"
+  },
+  {
+    "name": "Cell, Power - Cryo Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Cryo Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Cryo Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Cryo Rifle"
+  },
+  {
+    "name": "Cartridge, Slug - Cycler Rifle"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Cycler Rifle"
+  },
+  {
+    "name": "Cartridge, Corrosive - Cycler Rifle"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Cycler Rifle"
+  },
+  {
+    "name": "Cartridge, Electrifying - Cycler Rifle"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Cycler Rifle"
+  },
+  {
+    "name": "Cartridge, Gas - Cycler Rifle"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Cycler Rifle"
+  },
+  {
+    "name": "Custom Vibroweapon"
+  },
+  {
+    "name": "Cartridge, Slug - Custom Slug Gun"
+  },
+  {
+    "name": "Cartridge, Corrosive - Custom Slug Gun"
+  },
+  {
+    "name": "Cartridge, Electrifying - Custom Slug Gun"
+  },
+  {
+    "name": "Cartridge, Gas - Custom Slug Gun"
+  },
+  {
+    "name": "Cell, Power - Custom Blaster"
+  },
+  {
+    "name": "Cell, Cryo - Custom Blaster"
+  },
+  {
+    "name": "Cell, Deafening - Custom Blaster"
+  },
+  {
+    "name": "Cell, Incendiary - Custom Blaster"
+  },
+  {
+    "name": "Cell, Power - Light Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Light Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Light Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Light Pistol"
+  },
+  {
+    "name": "Rapid - Cell, Power - Light Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Light Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Light Repeater"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Light Repeater"
+  },
+  {
+    "name": "Cartridge, Slug - Light Slugpistol"
+  },
+  {
+    "name": "Cartridge, Corrosive - Light Slugpistol"
+  },
+  {
+    "name": "Cartridge, Electrifying - Light Slugpistol"
+  },
+  {
+    "name": "Cartridge, Gas - Light Slugpistol"
+  },
+  {
+    "name": "Lightaxe"
+  },
+  {
+    "name": "Lightbaton"
+  },
+  {
+    "name": "Lightblade"
+  },
+  {
+    "name": "Cell, Power - Lightbow"
+  },
+  {
+    "name": "Cell, Cryo - Lightbow"
+  },
+  {
+    "name": "Cell, Deafening - Lightbow"
+  },
+  {
+    "name": "Cell, Incendiary - Lightbow"
+  },
+  {
+    "name": "Lightclub"
+  },
+  {
+    "name": "Lightcutlass"
+  },
+  {
+    "name": "Lightdagger"
+  },
+  {
+    "name": "Lightfist"
+  },
+  {
+    "name": "Lightfoil"
+  },
+  {
+    "name": "Lightglaive"
+  },
+  {
+    "name": "Lightkatana"
+  },
+  {
+    "name": "Two-Handed Lightkatana"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Cannon"
+  },
+  {
+    "name": "Cell, Power - Lightning Carbine"
+  },
+  {
+    "name": "Cell, Cryo - Lightning Carbine"
+  },
+  {
+    "name": "Cell, Deafening - Lightning Carbine"
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Carbine"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Carbine"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Carbine"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Carbine"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Carbine"
+  },
+  {
+    "name": "Cell, Power - Lightning Pistol"
+  },
+  {
+    "name": "Cell, Cryo - Lightning Pistol"
+  },
+  {
+    "name": "Cell, Deafening - Lightning Pistol"
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Pistol"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Pistol"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Pistol"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Pistol"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Lightning Pistol"
+  },
+  {
+    "name": "Cell, Power - Lightning Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Lightning Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Lightning Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Lightning Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Lightning Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Lightning Rifle"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Lightning Rifle"
+  },
+  {
+    "name": "Lightnodachi"
+  },
+  {
+    "name": "Lightring"
+  },
+  {
+    "name": "Lightsaber"
+  },
+  {
+    "name": "Two-Handed Lightsaber"
+  },
+  {
+    "name": "Lightsaber Pike"
+  },
+  {
+    "name": "Lightstaff"
+  },
+  {
+    "name": "Mancatcher"
+  },
+  {
+    "name": "Cell, Power - Marksman Blaster"
+  },
+  {
+    "name": "Cell, Cryo - Marksman Blaster"
+  },
+  {
+    "name": "Cell, Deafening - Marksman Blaster"
+  },
+  {
+    "name": "Cell, Incendiary - Marksman Blaster"
+  },
+  {
+    "name": "Martial Lightsaber"
+  },
+  {
+    "name": "Two-Handed Martial Lightsaber"
+  },
+  {
+    "name": "Cell, Power - Modified Beam Cannon"
+  },
+  {
+    "name": "Cell, Cryo - Modified Beam Cannon"
+  },
+  {
+    "name": "Cell, Deafening - Modified Beam Cannon"
+  },
+  {
+    "name": "Cell, Incendiary - Modified Beam Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Power - Modified Beam Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Cryo - Modified Beam Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Deafening - Modified Beam Cannon"
+  },
+  {
+    "name": "Penetrating - Cell, Incendiary - Modified Beam Cannon"
+  },
+  {
+    "name": "Cartridge, Slug - Needler"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Needler"
+  },
+  {
+    "name": "Cartridge, Corrosive - Needler"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Needler"
+  },
+  {
+    "name": "Cartridge, Electrifying - Needler"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Needler"
+  },
+  {
+    "name": "Cartridge, Gas - Needler"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Needler"
+  },
+  {
+    "name": "Nervebaton"
+  },
+  {
+    "name": "Net"
+  },
+  {
+    "name": "Neuronic whip"
+  },
+  {
+    "name": "Cell, Power - Nightstinger Rifle"
+  },
+  {
+    "name": "Cell, Cryo - Nightstinger Rifle"
+  },
+  {
+    "name": "Cell, Deafening - Nightstinger Rifle"
+  },
+  {
+    "name": "Cell, Incendiary - Nightstinger Rifle"
+  },
+  {
+    "name": "Phase knife"
+  },
+  {
+    "name": "Pikesaber"
+  },
+  {
+    "name": "Burst - Cell, Power - Radiation Cannon"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Radiation Cannon"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Radiation Cannon"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Radiation Cannon"
+  },
+  {
+    "name": "Cell, Power - Radrifle"
+  },
+  {
+    "name": "Cell, Cryo - Radrifle"
+  },
+  {
+    "name": "Cell, Deafening - Radrifle"
+  },
+  {
+    "name": "Cell, Incendiary - Radrifle"
+  },
+  {
+    "name": "Cartridge, Slug - Railgun"
+  },
+  {
+    "name": "Cartridge, Corrosive - Railgun"
+  },
+  {
+    "name": "Cartridge, Electrifying - Railgun"
+  },
+  {
+    "name": "Cartridge, Gas - Railgun"
+  },
+  {
+    "name": "Burst - Cell, Power - Repeating Blaster"
+  },
+  {
+    "name": "Burst - Cell, Cryo - Repeating Blaster"
+  },
+  {
+    "name": "Burst - Cell, Deafening - Repeating Blaster"
+  },
+  {
+    "name": "Burst - Cell, Incendiary - Repeating Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Power - Repeating Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Repeating Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Repeating Blaster"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Repeating Blaster"
+  },
+  {
+    "name": "Retrosaber"
+  },
+  {
+    "name": "Two-Handed Retrosaber"
+  },
+  {
+    "name": "Cartridge, Slug - Revolver"
+  },
+  {
+    "name": "Rapid - Cartridge, Slug - Revolver"
+  },
+  {
+    "name": "Cartridge, Corrosive - Revolver"
+  },
+  {
+    "name": "Rapid - Cartridge, Corrosive - Revolver"
+  },
+  {
+    "name": "Cartridge, Electrifying - Revolver"
+  },
+  {
+    "name": "Rapid - Cartridge, Electrifying - Revolver"
+  },
+  {
+    "name": "Cartridge, Gas - Revolver"
+  },
+  {
+    "name": "Rapid - Cartridge, Gas - Revolver"
+  },
+  {
+    "name": "Rocket, Fragmentation - Rocket Launcher"
+  },
+  {
+    "name": "Rocket, Incendiary - Rocket Launcher"
+  },
+  {
+    "name": "Rocket, Ion - Rocket Launcher"
+  },
+  {
+    "name": "Missile, Fragmentation - Rocket Rifle"
+  },
+  {
+    "name": "Missile, Incendiary - Rocket Rifle"
+  },
+  {
+    "name": "Missile, Ion - Rocket Rifle"
+  },
+  {
+    "name": "Rapid - Cell, Power - Rotary Cannon"
+  },
+  {
+    "name": "Rapid - Cell, Cryo - Rotary Cannon"
+  },
+  {
+    "name": "Rapid - Cell, Deafening - Rotary Cannon"
+  },
+  {
+    "name": "Rapid - Cell, Incendiary - Rotary Cannon"
+  }
+]
