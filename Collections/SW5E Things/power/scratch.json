@@ -1,45 +1,62 @@
 {
-    "name": "Kolto Pack",
-    "level": 1,
-    "school": "Tech",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "damage",
-            "damage": "-(1d4+{spell}) [heal]",
-            "higher": {
-              "2": "-(1d4) [heal]",
-              "3": "-(2d4) [heal]",
-              "4": "-(3d4) [heal]",
-              "5": "-(4d4) [heal]",
-              "6": "-(5d4) [heal]",
-              "7": "-(6d4) [heal]",
-              "8": "-(7d4) [heal]",
-              "9": "-(8d4) [heal]"
-            }
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st."
+  "name": "Force Propel",
+  "level": 1,
+  "school": "Force",
+  "automation": [
+    {
+      "type": "roll",
+      "dice": "3d8 [kinetic]",
+      "name": "damage",
+      "higher": {
+        "2": "1d8 [kinetic]",
+        "3": "2d8 [kinetic]",
+        "4": "3d8 [kinetic]",
+        "5": "4d8 [kinetic]",
+        "6": "5d8 [kinetic]",
+        "7": "6d8 [kinetic]",
+        "8": "7d8 [kinetic]",
+        "9": "8d8 [kinetic]"
       }
-    ],
-    "classes": "",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
     },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
-    "higherlevels": "",
-    "concentration": false
-  }
+    {
+      "type": "target",
+      "target": "all",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "dex",
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "{damage}"
+            }
+          ],
+          "success": [
+            {
+              "type": "damage",
+              "damage": "{damage}/2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one."
+    }
+  ],
+  "classes": "Universal",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "60 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Instantaneous",
+  "ritual": false,
+  "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
+  "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
+  "concentration": false
+}

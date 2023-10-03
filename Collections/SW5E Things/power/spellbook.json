@@ -2543,24 +2543,6 @@
     "concentration": false
   },
   {
-    "name": "Greater Saber Throw",
-    "level": 5,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. On a hit, the target takes 6d8 damage of the same type as the weapon's damage and must make a Constitution saving throw against an additional effect depending on your choice of casting ability:\r\n\r\n***Wisdom.*** The target takes an additional 4d6 force damage and it gains four levels of slowed until the end of its next turn. On a success, the target takes half as much damage and its speed isn't reduced.\r\n\r\n***Charisma.*** The target takes an additional 4d6 necrotic damage and cannot regain hit points until the end of its next turn. On a success, the target takes half as much damage and its healing capability is unaffected.\r\n\r\nThe weapon then immediately returns to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 6th level or higher, the force or necrotic damage increases by 1d6 for each slot above 5th.",
-    "concentration": false
-  },
-  {
     "name": "Greater Sabotage Charges",
     "level": 7,
     "school": "Tech",
@@ -3008,24 +2990,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 1 hour. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with all its hit points. This power has no effect on droids or constructs.\t\r\n\r\nThis power also neutralizes any poisons and cures diseases that affected the creature at the time it died. \r\n\r\nThis power closes all mortal wounds and restores any missing body parts.\t\r\n\r\nComing back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
-    "concentration": false
-  },
-  {
-    "name": "Improved Saber Throw",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. \r\n\r\nOn a hit, the target takes 2d8 damage of the same type as the weapon's damage and must make a Constitution saving throw. On a failed save, the target gains 1 slowed level until the end of its next turn and the weapon then immediately returns to your hand. The next attack made against the target that hits it before the end of the target's next turn deals an additional 1d10 force damage. On a successful save, the target takes half as much additional force damage on the next attack that hits it, and suffers no additional effect.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the force damage increases by 1d10 for each slot level above 2nd.",
     "concentration": false
   },
   {
@@ -3584,24 +3548,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 1 day. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with all its hit points. This power has no effect on droids or constructs.\r\n\r\nThis power closes all wounds, neutralizes any poison, cures all diseases, and lifts any curses affecting the creature when it died. The power replaces damaged or missing organs and limbs.",
-    "concentration": false
-  },
-  {
-    "name": "Master Saber Throw",
-    "level": 7,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (90-foot line)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th.",
     "concentration": false
   },
   {
@@ -4343,24 +4289,6 @@
     "concentration": false
   },
   {
-    "name": "Rebuke",
-    "level": 0,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You strike a creature with the righteous fury of the Force. Make a melee force attack against the target, if the attack hits, the target takes force damage depending on its alignment: a dark-aligned creature takes 1d12 force damage, a balanced creature takes 1d10 force damage, and a light-aligned creature takes 1d8 force damage.\r\n\r\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level.",
-    "concentration": false
-  },
-  {
     "name": "Release",
     "level": 2,
     "school": "Tech",
@@ -4574,51 +4502,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You channel the dark side of the Force to desecrate a creature you can see within range, causing waves of intense pain to assail it. If the target has 100 hit points or fewer, it is subject to crippling pain. Otherwise, the power has no effect on it. \r\n\r\nWhile the target is affected by crippling pain, any speed it has can be no higher than 10 feet. The target also has disadvantage on attack rolls, ability checks, and saving throws, other than Constitution saving throws. Finally, if the target tries to cast a power, it must first succeed on a Constitution saving throw, or the casting fails and the power is wasted.\r\n\r\nA target suffering this pain can make a Constitution saving throw at the end of each of its turns. On a successful save, the pain ends.",
-    "concentration": false
-  },
-  {
-    "name": "Saber Throw",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "meta": [],
-        "target": "all",
-        "effects": [
-          {
-            "type": "roll",
-            "meta": [],
-            "dice": "1d8",
-            "name": "Damage"
-          },
-          {
-            "type": "attack",
-            "meta": [],
-            "hit": [
-              {
-                "type": "damage",
-                "meta": [],
-                "damage": "{Damage} [energy]"
-              }
-            ],
-            "miss": []
-          }
-        ]
-      }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. On a hit, the target takes 1d8 damage of the same type as the weapon's damage. The weapon then immediately returns to your hand.\r\n\r\nThis power can hit multiple targets when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, you must make a separate attack roll for each target, and the last target must be no further than 30 feet away from you. You can not hit the same target twice in succession.",
     "concentration": false
   },
   {
@@ -5809,41 +5692,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You wrack the body of a creature that you can see with a virulent, disease-like condition. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal immediately.\r\n\r\n***Force Potency.*** If you cast this power using a force slot of 7th level or higher, the power deals an extra 2d6 damage for each slot level above 6th.",
-    "concentration": false
-  },
-  {
-    "name": "Force Current",
-    "level": 1,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "text",
-        "text": "Spell DC: {wisdomMod + proficiencyBonus + 8}\n\nWhen you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet."
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "damage",
-            "damage": "3d6 [Kinetic]"
-          }
-        ]
-      }
-    ],
-    "classes": "",
-    "subclasses": "",
-    "casttime": "1 Action",
-    "range": "Self (15ft Cone)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "When you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet.",
-    "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st. For each slot 2 levels higher than 1st, you can add an additional 5 feet to the push.",
     "concentration": false
   },
   {
@@ -16498,19 +16346,6 @@
     "name": "Cryogenic Suspension",
     "level": 3,
     "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it.",
-    "concentration": true,
     "automation": [
       {
         "type": "target",
@@ -16523,16 +16358,11 @@
               {
                 "type": "ieffect2",
                 "name": "Cryogenically Suspended",
-                "parent": "ieffect",
-                "desc": "Gains 1 slowed level.\n - (-2) Penalty to AC and Dexterity saving throws, and it can't use reactions\n - On its turn it can either use an action, or bonus action. Not both. Regardless of abilities or items, it cannot make more than one melee or ranged attack during its turn.\n - If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
                 "effects": {
-                  "ac_bonus": -2
+                  "ac_bonus": "-2"
                 },
                 "buttons": [
                   {
-                    "label": "Attempt to cast a spell",
-                    "verb": "attempts to cast a spell",
-                    "style": 3,
                     "automation": [
                       {
                         "type": "roll",
@@ -16550,21 +16380,21 @@
                               {
                                 "type": "ieffect2",
                                 "name": "Holding a spell",
-                                "desc": "he creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
-                                "duration": 2,
-                                "end": true
+                                "duration": "2",
+                                "end": true,
+                                "desc": "he creature must use its action on that turn to complete the power. If it can't, the power is wasted."
                               }
                             ]
                           }
                         ],
                         "onFalse": []
                       }
-                    ]
+                    ],
+                    "label": "Attempt to cast a spell",
+                    "verb": "attempts to cast a spell",
+                    "style": "3"
                   },
                   {
-                    "label": "Resist Crygenic Suspension",
-                    "verb": "attempts to resist the cryogenic suspension",
-                    "defaultDC": "lastSaveDC",
                     "automation": [
                       {
                         "type": "target",
@@ -16573,18 +16403,23 @@
                           {
                             "type": "save",
                             "stat": "dex",
+                            "fail": [],
                             "success": [
                               {
                                 "type": "remove_ieffect"
                               }
-                            ],
-                            "fail": []
+                            ]
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "label": "Resist Crygenic Suspension",
+                    "verb": "attempts to resist the cryogenic suspension",
+                    "defaultDC": "lastSaveDC"
                   }
-                ]
+                ],
+                "desc": "Gains 1 slowed level.\n - (-2) Penalty to AC and Dexterity saving throws, and it can't use reactions\n - On its turn it can either use an action, or bonus action. Not both. Regardless of abilities or items, it cannot make more than one melee or ranged attack during its turn.\n - If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.",
+                "parent": "ieffect"
               }
             ],
             "success": []
@@ -16595,6 +16430,395 @@
         "type": "text",
         "text": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it."
       }
-    ]
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Dexterity saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Dexterity saving throw at the end of its turn. On a successful save, the effect ends for it.",
+    "concentration": true
+  },
+  {
+    "name": "Force Current",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "Spell DC: {wisdomMod + proficiencyBonus + 8}\n\nWhen you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet."
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "roll",
+            "dice": "3d6",
+            "name": "damage"
+          },
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [Kinetic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2 [kinetic]"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 Action",
+    "range": "Self (15ft Cone)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "When you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet.",
+    "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st. For each slot 2 levels higher than 1st, you can add an additional 5 feet to the push.",
+    "concentration": false
+  },
+  {
+    "name": "Rebuke",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice.lower() == 'dark'",
+        "onTrue": [
+          {
+            "type": "roll",
+            "dice": "1d12",
+            "name": "damage",
+            "cantripScale": true
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "condition",
+            "condition": "choice.lower() == 'light'",
+            "onTrue": [
+              {
+                "type": "roll",
+                "dice": "1d8",
+                "name": "damage",
+                "cantripScale": true
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "roll",
+                "dice": "1d10",
+                "name": "damage",
+                "cantripScale": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "{damage} [force]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You strike a creature with the righteous fury of the Force. Make a melee force attack against the target, if the attack hits, the target takes force damage depending on its alignment: a dark-aligned creature takes 1d12 force damage, a balanced creature takes 1d10 force damage, and a light-aligned creature takes 1d8 force damage.\n\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level.\n\nUse `-choice dark` for dark side damage or `-choice light` for light side damage."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You strike a creature with the righteous fury of the Force. Make a melee force attack against the target, if the attack hits, the target takes force damage depending on its alignment: a dark-aligned creature takes 1d12 force damage, a balanced creature takes 1d10 force damage, and a light-aligned creature takes 1d8 force damage.\r\n\r\nThe power's damage increases by one die when you reach 5th, 11th, and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Saber Throw",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [energy]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. On a hit, the target takes 1d8 damage of the same type as the weapon's damage. The weapon then immediately returns to your hand.\n\nThis power can hit multiple targets when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, you must make a separate attack roll for each target, and the last target must be no further than 30 feet away from you. You can not hit the same target twice in succession."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. On a hit, the target takes 1d8 damage of the same type as the weapon's damage. The weapon then immediately returns to your hand.\r\n\r\nThis power can hit multiple targets when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, you must make a separate attack roll for each target, and the last target must be no further than 30 feet away from you. You can not hit the same target twice in succession.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Saber Throw",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "3": "2",
+          "4": "3",
+          "5": "4",
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d8 [energy]"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Improved Saber Throw",
+                    "duration": "1",
+                    "desc": "1 Slowed Level\n - The next attack made against the target that hits it before the end of the target's next turn deals an additional {numDie}d10 force damage."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Improved Saber Throw",
+                    "duration": "1",
+                    "desc": "The next attack made against the target that hits it before the end of the target's next turn deals an additional {numDie}d10/2 force damage."
+                  }
+                ]
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. \n\nOn a hit, the target takes 2d8 damage of the same type as the weapon's damage and must make a Constitution saving throw. On a failed save, the target gains 1 slowed level until the end of its next turn and the weapon then immediately returns to your hand. The next attack made against the target that hits it before the end of the target's next turn deals an additional 1d10 force damage. On a successful save, the target takes half as much additional force damage on the next attack that hits it, and suffers no additional effect.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the force damage increases by 1d10 for each slot level above 2nd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. \r\n\r\nOn a hit, the target takes 2d8 damage of the same type as the weapon's damage and must make a Constitution saving throw. On a failed save, the target gains 1 slowed level until the end of its next turn and the weapon then immediately returns to your hand. The next attack made against the target that hits it before the end of the target's next turn deals an additional 1d10 force damage. On a successful save, the target takes half as much additional force damage on the next attack that hits it, and suffers no additional effect.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the force damage increases by 1d10 for each slot level above 2nd.",
+    "concentration": false
+  },
+  {
+    "name": "Greater Saber Throw",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "4",
+        "higher": {
+          "6": "5",
+          "7": "6",
+          "8": "7",
+          "9": "8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "6d8 [energy]"
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Greater Saber Throw",
+                    "duration": "1",
+                    "desc": "***Wisdom.*** The target takes an additional {numDie}d6/2 force damage and it gains four levels of slowed until the end of its next turn. On a success, the target takes half as much damage and its speed isn't reduced.\n - ***Charisma.*** The target takes an additional {numDie}d6/2 necrotic damage and cannot regain hit points until the end of its next turn."
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Greater Saber Throw",
+                    "duration": "1",
+                    "desc": "***Wisdom.*** The target takes an additional {numDie}d6 force damage and it gains four levels of slowed until the end of its next turn. On a success, the target takes half as much damage and its speed isn't reduced.\n - ***Charisma.*** The target takes an additional {numDie}d6 necrotic damage and cannot regain hit points until the end of its next turn."
+                  }
+                ]
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. \n\nOn a hit, the target takes 2d8 damage of the same type as the weapon's damage and must make a Constitution saving throw. On a failed save, the target gains 1 slowed level until the end of its next turn and the weapon then immediately returns to your hand. The next attack made against the target that hits it before the end of the target's next turn deals an additional 1d10 force damage. On a successful save, the target takes half as much additional force damage on the next attack that hits it, and suffers no additional effect.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, the force damage increases by 1d10 for each slot level above 2nd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As a part of the action used to cast this power, you must make a ranged force attack with a lightweapon or vibroweapon against one target within the power's range, otherwise the power fails. On a hit, the target takes 6d8 damage of the same type as the weapon's damage and must make a Constitution saving throw against an additional effect depending on your choice of casting ability:\r\n\r\n***Wisdom.*** The target takes an additional 4d6 force damage and it gains four levels of slowed until the end of its next turn. On a success, the target takes half as much damage and its speed isn't reduced.\r\n\r\n***Charisma.*** The target takes an additional 4d6 necrotic damage and cannot regain hit points until the end of its next turn. On a success, the target takes half as much damage and its healing capability is unaffected.\r\n\r\nThe weapon then immediately returns to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 6th level or higher, the force or necrotic damage increases by 1d6 for each slot above 5th.",
+    "concentration": false
+  },
+  {
+    "name": "Master Saber Throw",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "5",
+        "higher": {
+          "8": "6",
+          "9": "7"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "{numDie}d8 [energy]"
+              },
+              {
+                "type": "save",
+                "stat": "dex",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{numDie}d8/2 [force]"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "{numDie}d8 [force]"
+                  }
+                ]
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\n\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (90-foot line)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th.",
+    "concentration": false
   }
 ]

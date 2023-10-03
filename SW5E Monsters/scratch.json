@@ -1,0 +1,44 @@
+{
+  "name": "Tail",
+  "_v": 2,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "strength",
+          "dc": 16,
+          "success": [],
+          "fail": [
+            {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up"
+                  }
+                ],
+                "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition"
+              }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 13 (2d6 + 6) kinetic damage. If the target is a creature, it must succeed on a DC 16 Strength saving throw or be knocked prone."
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,17 @@
 [
   {
-
+    "Size": "Tiny",
+    "hitDie": "d4",
+    "counters": [
+      {
+        "name": "Swarm Tactics",
+        "tier": 1,
+        "reset": "long",
+        "display": "bubble",
+        "value": "TinyTier",
+        "modifier": "TinyTier",
+        "desc": "our ship makes the most of every opportunity provided by allies. When a crewmember at the helm would make an attack roll against a larger ship, and there is an allied ship within 200 feet of your target, they can roll a Swarm Tactics die, which is a d4, and add it to the attack roll. You can do this after the roll is made, but before the result is known.\n\nYour ship’s Swarm Tactics die changes when it reaches certain tiers. The die becomes a d6 at 2nd tier, a d8 at 3rd tier, a d10 at 4th tier and a d12 at 5th tier.\n\nThis feature can be used a number of times equal to 2 x your ship’s tier. All expended uses are regained when the ship is refitted."
+      }
+    ]
   }
 ]
