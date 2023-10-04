@@ -353,3 +353,16 @@ def penetrating(attack, args):
         penetrating["criton"] = a.get("criton")
 
     return dump_json(penetrating)
+
+def vicious(attack, args):
+    a = load_json(attack)
+    damage = sup.get_damage_str(attack)
+    vNum = 1 if args.last('vicious') == 'True' else int(args.last('vicious'))
+    dtype = sup.get_damage_type(damage)
+
+    dmg = {"type": "damage", "damage": f"{vNum} [{dtype}]"}
+    target = {"type": "target", "target": "each", "effects": [dmg]}
+
+    vicious = {"name": f"Vicious - {a.name}", "_v": 2, "automation": [target]}
+
+    return dump_json(vicious)

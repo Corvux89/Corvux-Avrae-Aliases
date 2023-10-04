@@ -38,6 +38,7 @@ __Available Arguments__
 `-shocking`
 `-sonorous`
 `-staggering`
+`-vicious`
 `-burst`
 `-rapid`
 `-penetrating`
