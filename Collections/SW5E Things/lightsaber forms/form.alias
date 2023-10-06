@@ -17,7 +17,10 @@ if m is None or m == "":
     return err(f"{m} is not found/supported")
 
 if com:
-    com.me.add_effect(m.name, duration=1)
+    if com.me:
+        com.me.add_effect(m.name, duration=1)
+    else:
+        return err("You're not on the right sheet for this combat. Try again.")
 
 
 base += f''' -title "{name} assumes {m.name} lightsaber form" '''

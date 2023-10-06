@@ -2523,7 +2523,8 @@
         "value": 1,
         "reset": "long",
         "display": "bubble",
-        "classLevel": "GuardianlightLevel"
+        "classLevel": "GuardianlightLevel",
+        "desc": "As a bonus action, you can drawn on your knowledge of the various lightsaber forms to assist you in combat. As part of the bonus action to activate this feature you can use a lightsaber form.\n\nFor the next minute while this feature is active, when you use your bonus action to activate a lightsaber form, you can activate another lightsaber form, regardless of whether you know the second form (no action required). You can only use a lightsaber form this way once, unless you already know the form. You cannot activate the same form twice on the same turn using this feature.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest."
       },
       {
         "name": "Master of the Forms",
