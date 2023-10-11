@@ -1,50 +1,45 @@
 {
-  "name": "Tail",
+  "name": "Tentacle Slam",
   "automation": [
+    {
+          "type": "roll",
+          "dice": "2d6+3",
+          "name": "damage"
+        },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "attack",
-          "attackBonus": 6,
-          "hit": [
+          "type": "save",
+          "stat": "con",
+          "dc": 14,
+          "success": [
             {
               "type": "damage",
-              "damage": "2d6+6 [kinetic]"
-            },
-            {
-              "type": "save",
-              "stat": "str",
-              "dc": 16,
-              "success": [],
-              "fail": [
-                {
-                "type": "ieffect2",
-                "name": "Prone",
-                "duration": "-1",
-                "effects": {
-                  "attack_advantage": "-1"
-                },
-                "buttons": [
-                  {
-                    "automation": [
-                      {
-                        "type": "remove_ieffect"
-                      }
-                    ],
-                    "label": "Stand Up",
-                    "verb": "stands up"
-                  }
-                ],
-                "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition"
-              }
-              ]
+              "damage": "{damage}/2 [kinetic]"
             }
           ],
-          "miss": []
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "{damage} [kinetic]"
+            },
+            {
+              "type": "ieffect2",
+              "name": "Stunned",
+              "duration": 2,
+              "end": true,
+              "tick_on_caster": true,
+              "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+            }
+          ]
         }
       ]
+    },
+    {
+      "type": "text",
+      "text": "The dianoga slams creatures grappled by it into each other or a solid surface. Each creature must succeed on a DC 14 Constitution saving throw or take 10 (2d6 + 3) kinetic damage and be stunned until the end of the dianoga's next turn. On a successful save, the target takes half the kinetic damage and isn't stunned."
     }
   ],
   "_v": 2
