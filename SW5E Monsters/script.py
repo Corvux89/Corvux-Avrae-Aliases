@@ -42,10 +42,16 @@ def processJSON(f, name, fileName, autoMode):
 
         actions = critter["stats"].get("actions")
 
+        # for a in actions:
+        #     if "saving throw" in a.get("description").lower() and "<avrae hidden>" not in a.get("description").lower():
+        #         s = {"name": critter.get('name'), 'ability': a.get('name')}
+        #         saveAuto.append(s)
+
         for a in actions:
-            if "saving throw" in a.get("description").lower() and "<avrae hidden>" not in a.get("description").lower():
-                s = {"name": critter.get('name'), 'ability': a.get('name')}
+            if "saving throw" in a.get("description").lower():
+                s = {"name": critter.get('name'), 'ability': a.get('name'), 'completed': f'{True if "<avrae hidden>" in a.get("description").lower() else False}'}
                 saveAuto.append(s)
+
 
     with open(fileName, "w") as outfile:
         json.dump(kfcdb, outfile)
@@ -53,7 +59,7 @@ def processJSON(f, name, fileName, autoMode):
     with open("automation.json", autoMode) as outfile:
         json.dump(saveAuto, outfile)
 
-    print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {len(saveAuto)}\n')
+    print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {len([x for x in saveAuto if x.get("completed") == "False"])}\n')
 
 
 

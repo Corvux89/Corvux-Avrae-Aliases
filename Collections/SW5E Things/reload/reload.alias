@@ -1,6 +1,7 @@
 <drac2>
 c = character()
 weap = "&1&" if "&1&" in &ARGS& else None
+args = argparse(&ARGS&)
 count = 0
 using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 
@@ -15,6 +16,17 @@ for a in c.attacks:
         if counter != sup.baseName(a.name):
             pass
         elif (cc := c.cc(counter)) and cc.value != cc.max:
+            if args.get('belt'):
+                if not weap:
+                    return err("Cannot use a belt without specifing a weapon")
+                belt_name = f"Ammo-feed belt"
+                belt_name += "" if args.last('belt') == "True" else f" - {args.last('belt')}"
+                c.create_cc_nx(belt_name, 0, 60)
+                if (belt := c.cc(belt_name)):
+                    belt_amt = cc.max - cc.value
+                    belt.mod(-belt_amt, True)
+                    base += f''' -f "{belt.name} (-{belt_amt})|{belt.full_str()}" '''
+
             count+=1
             cc.reset()
             base += f''' -f "{cc.name}|{cc.full_str()}" '''

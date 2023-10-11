@@ -580,7 +580,7 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardianlark'),0)}",
               "name": "level"
             },
             {
@@ -628,7 +628,7 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardiandark'),0)}",
               "name": "level"
             },
             {
@@ -700,7 +700,7 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardiandark'),0)}",
               "name": "level"
             },
             {
@@ -748,7 +748,7 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(caster.levels.get('GuardianLight'),caster.levels.get('GuardianDark'),0)}",
+              "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardiandark'),0)}",
               "name": "level"
             },
             {

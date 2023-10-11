@@ -16,7 +16,10 @@ def maneuver(args):
     name = c.name
     a = argparse(args)
     out = f"embed -thumb {image} -color {color}"
-    sm = a.get("sm") and feats.get("SupMastery")
+    sm = a.get("sm")
+
+    if sm:
+        c.create_cc_nx("Superiority Mastery", 0, c.stats.prof_bonus, "long", "square")
 
     # Find the Feature
     feature = get_maneuver(args)
@@ -217,6 +220,9 @@ def get_level():
 
     lvl = max(int(c.levels.get("Fighter",0)), int(c.levels.get("Scholar",0)), lvl)
 
+    if lvl == 0:
+        lvl = c.levels.total_level
+
     return lvl
 
 def get_mod(type):
@@ -255,5 +261,6 @@ def roll_add(feature, dmgType, args):
         bonus = superiorityDice
 
     return f'''{f'+{a.join("d", "+")}' if a.get("d") else ""}{f'+{bonus}' if bonus != "" else ""}{f' [{dmgType}]' if dmgType else ''} '''
+
 
 
