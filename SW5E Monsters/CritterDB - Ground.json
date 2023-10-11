@@ -7,7 +7,7 @@
   "description": "",
   "ownerId": "604af76faf3aa903ed077438",
   "__v": 0,
-  "lastActive": "2023-10-11T14:49:18.921Z",
+  "lastActive": "2023-10-11T15:23:50.743Z",
   "owner": {
     "_id": "604af76faf3aa903ed077438",
     "username": "Epsikon"
@@ -1828,14 +1828,14 @@
             "proficient": true,
             "modifier": 8,
             "modifierStr": "Con +8",
-            "$$hashKey": "object:260736"
+            "$$hashKey": "object:301342"
           },
           {
             "ability": "wisdom",
             "proficient": true,
             "modifier": 4,
             "modifierStr": "Wis +4",
-            "$$hashKey": "object:260737"
+            "$$hashKey": "object:301343"
           }
         ],
         "skills": [],
@@ -1844,31 +1844,31 @@
             "name": "Tunneler",
             "description": "The exogorth can burrow through solid rock at half its burrow speed and leaves a 5-foot-diameter tunnel in its wake.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260684"
+            "$$hashKey": "object:301290"
           },
           {
             "name": "Legendary Resistance (1/Day)",
             "description": "If the adolescent exogorth fails a saving throw, it can choose to succeed instead.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260685"
+            "$$hashKey": "object:301291"
           },
           {
             "name": "Huge Strength",
             "description": "The exogorth’s melee weapon attacks are considered enhanced.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260686"
+            "$$hashKey": "object:301292"
           },
           {
             "name": "Siege Monster",
             "description": "the adolescent exogorth deals double damage to objects and structures.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260687"
+            "$$hashKey": "object:301293"
           },
           {
             "name": "Space-borne",
             "description": "The exogorth can survive in the vacuum of space.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260688"
+            "$$hashKey": "object:301294"
           }
         ],
         "actions": [
@@ -1876,19 +1876,19 @@
             "name": "Multiattack",
             "description": "The exogorth makes two attacks: one with its bite and one with its tail.",
             "descriptionHtml": {},
-            "$$hashKey": "object:260701"
+            "$$hashKey": "object:301307"
           },
           {
             "name": "Bite",
             "description": "<i>Melee Weapon Attack:</i> +6 to hit, reach 10 ft., one target. <i>Hit:</i> 15 (2d8 + 6) kinetic damage. If the target is a Medium or smaller creature, it must succeed on a DC 16 Dexterity saving throw or be swallowed by the exogorth. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the exogorth, and it takes 14 (4d6) acid damage at the start of each of the exogorth's turns. If the exogorth takes 30 damage or more on a single turn from a creature inside it, the exogorth must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the exogorth. If the exogorth dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 15 feet of movement, exiting prone.\n\n<avrae hidden>\n{\"name\":\"Bite\",\"automation\":[{\"type\":\"target\",\"target\":\"self\",\"effects\":[{\"type\":\"ieffect2\",\"name\":\"Swallowing someone\",\"desc\":\"A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the exogorth, and it takes 14 (4d6) acid damage at the start of each of the exogorth's turns. If the exogorth takes 30 damage or more on a single turn from a creature inside it, the exogorth must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the exogorth. If the exogorth dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 15 feet of movement, exiting prone\",\"save_as\":\"peff\",\"buttons\":[{\"label\":\"Swallow - Start of turn\",\"verb\":\"digests\",\"automation\":[{\"type\":\"target\",\"target\":\"children\",\"effects\":[{\"type\":\"damage\",\"damage\":\"4d6 [acid]\"}]}]},{\"label\":\"Regurgitate\",\"style\":4,\"verb\":\"may throw up\",\"automation\":[{\"type\":\"target\",\"target\":\"self\",\"effects\":[{\"type\":\"save\",\"stat\":\"con\",\"dc\":14,\"fail\":[{\"type\":\"remove_ieffect\"}],\"success\":[]}]}]}]}]},{\"type\":\"target\",\"target\":\"each\",\"effects\":[{\"type\":\"attack\",\"attackBonus\":6,\"hit\":[{\"type\":\"damage\",\"damage\":\"2d8+6 [kinetic]\"},{\"type\":\"save\",\"stat\":\"dex\",\"dc\":16,\"success\":[],\"fail\":[{\"type\":\"ieffect2\",\"name\":\"Swallowed\",\"parent\":\"peff\",\"desc\":\"A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the exogorth.\"}]}],\"miss\":[]}]},{\"type\":\"text\",\"text\":\"*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 15 (2d8 + 6) kinetic damage. If the target is a Medium or smaller creature, it must succeed on a DC 16 Dexterity saving throw or be swallowed by the exogorth. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the exogorth, and it takes 14 (4d6) acid damage at the start of each of the exogorth's turns. If the exogorth takes 30 damage or more on a single turn from a creature inside it, the exogorth must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the exogorth. If the exogorth dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 15 feet of movement, exiting prone.\"}],\"_v\":2}\n</avrae>",
             "descriptionHtml": {},
-            "$$hashKey": "object:260702"
+            "$$hashKey": "object:301308"
           },
           {
             "name": "Tail",
             "description": "<i>Melee Weapon Attack:</i> +6 to hit, reach 10 ft., one target. <i>Hit:</i> 13 (2d6 + 6) kinetic damage. If the target is a creature, it must succeed on a DC 16 Strength saving throw or be knocked prone.\n\n<avrae hidden>\n{\"name\":\"Tail\",\"automation\":[{\"type\":\"target\",\"target\":\"each\",\"effects\":[{\"type\":\"attack\",\"attackBonus\":6,\"hit\":[{\"type\":\"damage\",\"damage\":\"2d6+6 [kinetic]\"},{\"type\":\"save\",\"stat\":\"str\",\"dc\":16,\"success\":[],\"fail\":[{\"type\":\"ieffect2\",\"name\":\"Prone\",\"duration\":\"-1\",\"effects\":{\"attack_advantage\":\"-1\"},\"buttons\":[{\"automation\":[{\"type\":\"remove_ieffect\"}],\"label\":\"Stand Up\",\"verb\":\"stands up\"}],\"desc\":\"A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition\"}]}],\"miss\":[]}]}],\"_v\":2}\n</avrae>",
             "descriptionHtml": {},
-            "$$hashKey": "object:260703"
+            "$$hashKey": "object:301309"
           }
         ],
         "reactions": [],
