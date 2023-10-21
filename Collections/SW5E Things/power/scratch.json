@@ -18,8 +18,29 @@
   "automation": [
     {
       "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Sense Shatterpoint - Parent",
+          "duration": 2,
+          "end": true,
+
+        }
+      ]
+    },
+    {
+      "type": "target",
       "target": "each",
-      "effects": []
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Sense Shatterpoint - Targeted",
+          "desc": "{name} has advantage on the next two attack rolls.",
+          "parent": "ieffect",
+
+        }
+      ]
     },
     {
       "type": "text",
