@@ -16149,68 +16149,6 @@
     "concentration": false
   },
   {
-    "name": "Force Propel",
-    "level": 1,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "3d8 [kinetic]",
-        "name": "damage",
-        "higher": {
-          "2": "1d8 [bludgeoning]",
-          "3": "2d8 [bludgeoning]",
-          "4": "3d8 [bludgeoning]",
-          "5": "4d8 [bludgeoning]",
-          "6": "5d8 [bludgeoning]",
-          "7": "6d8 [bludgeoning]",
-          "8": "7d8 [bludgeoning]",
-          "9": "8d8 [bludgeoning]"
-        }
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}"
-              }
-            ],
-            "success": [
-              {
-                "type": "damage",
-                "damage": "{damage}/2"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one."
-      }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
-    "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Motivator Boost",
     "level": 2,
     "school": "Tech",
@@ -16819,6 +16757,68 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "When you cast this power, you must be wielding at least one lightweapon or vibroweapon, otherwise the power fails. When you cast this power, you can throw two weapons, striking creatures in two lines originating from yourself, both 90 feet long and 5 feet wide, or you can throw one weapon in a 90-foot long, 5-foot wide line of your choice originating from yourself and change its direction to move in a second identical line of your choice within range. Each creature in a line must make a Dexterity saving throw. A creature takes 5d8 damage of the same type as the weapon's damage and 5d8 force damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one line is affected only once. The weapons then immediately return to your hand.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 8th level or higher, the weapon damage and force damage each increase by 1d8 for each slot level above 7th.",
+    "concentration": false
+  },
+  {
+    "name": "Force Propel",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d8 [kinetic]",
+        "name": "damage",
+        "higher": {
+          "2": "1d8 [kinetic]",
+          "3": "2d8 [kinetic]",
+          "4": "3d8 [kinetic]",
+          "5": "4d8 [kinetic]",
+          "6": "5d8 [kinetic]",
+          "7": "6d8 [kinetic]",
+          "8": "7d8 [kinetic]",
+          "9": "8d8 [kinetic]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
+    "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
   }
 ]
