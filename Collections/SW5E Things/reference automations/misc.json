@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Recharge",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Volley Used",
+            "buttons": [
+              {
+                "label": "Recharge (Blaster Volley)",
+                "style": 3,
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "1d6",
+                    "name": "recharge"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "lastRoll >= 5",
+                    "onFalse": [
+                      {
+                        "type": "text",
+                        "text": "Recharge failed."
+                      }
+                    ],
+                    "onTrue": [
+                      {
+                        "type": "remove_ieffect"
+                      },
+                      {
+                        "type": "text",
+                        "text": "Blaster Volley Recharged!"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

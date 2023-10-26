@@ -1,0 +1,10 @@
+<drac2>
+c = character()
+com = combat()
+amt = 1
+
+if com:
+    eff = com.me.add_effect("Defensive", duration=2, end=True, passive_effects={"ac_bonus": f'{amt}'})
+
+return f'''-b -{amt} -d -{amt} -f "{com.me.name} - Defensive|{eff}\n\nWhen you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you’re holding the weapon." '''
+</drac2>

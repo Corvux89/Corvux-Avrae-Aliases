@@ -1,37 +1,26 @@
 {
-  "name": "Tentacle Slam",
+  "name": "Bite",
+  "_v": 2,
   "automation": [
-    {
-          "type": "roll",
-          "dice": "2d6+3",
-          "name": "damage"
-        },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "save",
-          "stat": "con",
-          "dc": 14,
-          "success": [
+          "type": "attack",
+          "attackBonus": 6,
+          "miss": [],
+          "hit": [
             {
               "type": "damage",
-              "damage": "{damage}/2 [kinetic]"
-            }
-          ],
-          "fail": [
-            {
-              "type": "damage",
-              "damage": "{damage} [kinetic]"
+              "damage": "3d8+4 [kinetic]"
             },
             {
-              "type": "ieffect2",
-              "name": "Stunned",
-              "duration": 2,
-              "end": true,
-              "tick_on_caster": true,
-              "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+              "type": "save",
+              "stat": "con",
+              "dc": 17,
+              "success": [],
+              "fail": []
             }
           ]
         }
@@ -39,8 +28,7 @@
     },
     {
       "type": "text",
-      "text": "The dianoga slams creatures grappled by it into each other or a solid surface. Each creature must succeed on a DC 14 Constitution saving throw or take 10 (2d6 + 3) kinetic damage and be stunned until the end of the dianoga's next turn. On a successful save, the target takes half the kinetic damage and isn't stunned."
+      "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 14 (3d8+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 17) or become poisoned and take 6 (2d6) toxin damage per turn. The target is also grappled (escape DC 16). Until this grapple ends, the target is restrained, and the Hssiss can't bite another target"
     }
-  ],
-  "_v": 2
+  ]
 }

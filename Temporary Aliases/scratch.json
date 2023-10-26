@@ -1,40 +1,21 @@
 {
-  "name": "Silver-Tongued",
+  "name": "Test Weapon",
   "_v": 2,
-  "activation_type": 1,
   "automation": [
     {
       "type": "target",
-      "target": "each",
+      "target": "self",
       "effects": [
         {
-          "type": "check",
-          "ability": "insight",
-          "contestAbility": "deception",
-          "success": [
-            {
-              "type": "ieffect2",
-              "name": "Resisted {name}'s Silver-Tongue",
-              "desc": "Immunme to {name}'s Silver-Tongue for 1 hour",
-              "duration": 600
-            }
-          ],
-          "fail": [
-            {
-              "type": "ieffect2",
-              "name": "{name}'s Silver-Tongue",
-              "desc": "If your check succeeds, your movement doesn’t provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target.",
-              "duration": 2,
-              "end": true,
-              "tick_on_caster": true
-            }
-          ]
+          "type": "ieffect2",
+          "name": "Test Weapon - Effects"
         }
       ]
     },
     {
-      "type": "text",
-      "text": "When you take the Attack action, you can replace one attack with an attempt to deceive one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Deception) check contested by the target’s Wisdom (Insight) check. If your check succeeds, your movement doesn’t provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target. If your check fails, the target can’t be deceived by you in this way for 1 hour."
+      "type": "target",
+      "target": "each",
+      "effects": []
     }
   ]
 }

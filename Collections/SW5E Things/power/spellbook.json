@@ -3947,24 +3947,6 @@
     "concentration": true
   },
   {
-    "name": "Paralyze Humanoid",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You emit a paralyzing dart at a humanoid that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
-    "concentration": true
-  },
-  {
     "name": "Phasestrike",
     "level": 1,
     "school": "Force",
@@ -6722,8 +6704,8 @@
         "text": "You expel a burst of flame in a line 30 feet long and 5 feet wide, originating from you. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
       }
     ],
-    "classes": "Sorcerer, Wizard",
-    "subclasses": "Circle of Wildfire, Light Domain, The Fiend, The Genie",
+    "classes": "",
+    "subclasses": "",
     "casttime": "1 action",
     "range": "Self (30-foot line)",
     "components": {
@@ -16820,5 +16802,161 @@
     "description": "Choose one or more creatures or objects not being worn or carried within 60 feet that weigh up to a combined total of 15 pounds. The creatures or objects immediately move 60 feet in a direction of your choice. If the creatures or objects end this movement in the air, they immediately fall to the ground. If the creatures or objects collide with any one target during its travel, both the creatures or objects and the target take 3d8 kinetic damage. If the target is a creature, it must make a Dexterity saving throw. On a failed save, it takes the kinetic damage, or half as much on a successful one.",
     "higherlevels": "**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the maximum weight increases by 15 pounds and the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
+  },
+  {
+    "name": "Sense Shatterpoint",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Sense Shatterpoint - Parent",
+            "duration": "2",
+            "end": true,
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Sense Shatterpoint - Targeted",
+            "desc": "{name} has advantage on the next two attack rolls against this target",
+            "parent": "peff"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You seek deeper insight into the defenses of a creature you can see within range. Until the end of your next turn, you have advantage on your next two attack rolls against the target."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 round",
+    "ritual": false,
+    "description": "You seek deeper insight into the defenses of a creature you can see within range. Until the end of your next turn, you have advantage on your next two attack rolls against the target.",
+    "concentration": true
+  },
+  {
+    "name": "Paralyze Humanoid",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Paralyzed (Hold Person)",
+                "duration": "11",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect",
+                                "removeParent": "if_no_children"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Paralysis",
+                    "verb": "attempts to resist Paralysis",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "At the end of each of its turns, the target can make another DC {lastSaveDC} {lastSaveAbility} saving throw\n - On a success, the spell ends on the target"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a paralyzing dart at a humanoid that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target."
+      }
+    ],
+    "classes": "",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You emit a paralyzing dart at a humanoid that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.",
+    "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
+    "concentration": true
+  },
+  {
+    "name": "Battlemind",
+    "level": 2,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 10 minutes",
+    "ritual": false,
+    "description": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Battlemind",
+            "desc": "+2 AC Bonus against melee attacks\n - +3 AC bonus against ranged attacks\n - This AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
+            "duration": 100,
+            "conc": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage."
+      }
+    ]
   }
 ]

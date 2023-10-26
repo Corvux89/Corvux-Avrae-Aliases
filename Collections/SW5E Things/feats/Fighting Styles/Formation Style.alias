@@ -1,0 +1,15 @@
+<drac2>
+c = character()
+
+gText = {"type": "text", "text": "You can defend an ally within 5 feet of you. When you take the Guard action, you focus entirely on preventing attacks from reaching your ally. Until the start of your next turn, any attack roll made against the guarded ally has disadvantage if you can see the attacker, as long as the ally is within 5 feet of you.\nAdditionally, if an attack would hit the guarded ally, you can instead have it hit you (no action required). If you do so, the attacker chooses the maximum amount of damage instead of rolling.", "title": "Guard"}
+
+fmPeff = {"type": "ieffect2", "name": "Guarding", "duration": 1, "save_as": "peff"}
+tSelf = {"type": "target", "target": "self", "effects": [fmPeff]}
+
+fmEff = {"type": "ieffect2", "name": "Being Guarded by {name}", "parent": "peff", "desc": "Any attack roll made against the guarded ally has disadvantage if {name} can see the attacker\n - If an attack would hit, {name} can instead have it hit them (no action required). The attacker chooses the maximum amount of damage instead of rolling."}
+targ = {"type": "target", "target": "each", "effects": [fmEff]}
+
+guard = {"name": "Guard", "_v": 2, "automation": [tSelf ,targ, gText], "activation_type": 3}
+
+return f'''a import {dump_json(guard)} '''
+</drac2>

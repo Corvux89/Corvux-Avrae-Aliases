@@ -1,19 +1,19 @@
 {
-  "name": "Sense Shatterpoint",
+  "name": "Battlemind",
   "level": 2,
   "school": "Force",
   "classes": "Universal",
   "subclasses": "",
-  "casttime": "1 bonus action",
-  "range": "30 feet",
+  "casttime": "1 action",
+  "range": "Self",
   "components": {
     "verbal": false,
     "somatic": false,
     "material": ""
   },
-  "duration": "up to 1 round",
+  "duration": "up to 10 minutes",
   "ritual": false,
-  "description": "You seek deeper insight into the defenses of a creature you can see within range. Until the end of your next turn, you have advantage on your next two attack rolls against the target.",
+  "description": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
   "concentration": true,
   "automation": [
     {
@@ -22,29 +22,16 @@
       "effects": [
         {
           "type": "ieffect2",
-          "name": "Sense Shatterpoint - Parent",
-          "duration": 2,
-          "end": true,
-
-        }
-      ]
-    },
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Sense Shatterpoint - Targeted",
-          "desc": "{name} has advantage on the next two attack rolls.",
-          "parent": "ieffect",
-
+          "name": "Battlemind",
+          "desc": "+2 AC Bonus against melee attacks\n - +3 AC bonus against ranged attacks\n - This AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
+          "duration": 100,
+          "conc": true
         }
       ]
     },
     {
       "type": "text",
-      "text": "You seek deeper insight into the defenses of a creature you can see within range. Until the end of your next turn, you have advantage on your next two attack rolls against the target."
+      "text": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage."
     }
   ]
 }
