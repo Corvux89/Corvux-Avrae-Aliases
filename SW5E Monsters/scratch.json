@@ -1,5 +1,5 @@
 {
-  "name": "Bite",
+  "name": "Claws",
   "_v": 2,
   "automation": [
     {
@@ -8,19 +8,60 @@
       "effects": [
         {
           "type": "attack",
-          "attackBonus": 6,
+          "attackBonus": 4,
           "miss": [],
           "hit": [
             {
               "type": "damage",
-              "damage": "3d8+4 [kinetic]"
+              "damage": "2d4+2 [slashing]"
             },
             {
-              "type": "save",
-              "stat": "con",
-              "dc": 17,
-              "success": [],
-              "fail": []
+              "type": "condition",
+              "condition": "'undead' in target.creature_type.lower()",
+              "onTrue": [],
+              "onFalse": [
+                {
+                  "type": "save",
+                  "stat": "con",
+                  "dc": 10,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Paralyzed",
+                      "duration": 10,
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "self",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "wis",
+                                  "fail": [],
+                                  "success": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "label": "Resist Paralysis - End of Turn",
+                          "verb": "attempts to resist paralysis",
+                          "style": "1",
+                          "defaultDC": "lastSaveDC"
+                        }
+                      ],
+                      "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                      "parent": "ieffect"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -28,7 +69,7 @@
     },
     {
       "type": "text",
-      "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 14 (3d8+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 17) or become poisoned and take 6 (2d6) toxin damage per turn. The target is also grappled (escape DC 16). Until this grapple ends, the target is restrained, and the Hssiss can't bite another target"
+      "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
     }
   ]
 }

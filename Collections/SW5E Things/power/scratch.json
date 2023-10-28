@@ -1,37 +1,100 @@
 {
-  "name": "Battlemind",
-  "level": 2,
-  "school": "Force",
-  "classes": "Universal",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "Self",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "up to 10 minutes",
-  "ritual": false,
-  "description": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
-  "concentration": true,
+  "name": "Stack the Deck",
+  "level": 1,
+  "school": "Tech",
   "automation": [
     {
       "type": "target",
-      "target": "self",
+      "target": "all",
       "effects": [
         {
+          "type": "condition",
+          "condition": "if the spell level is less than 3",
+          "onTrue": [
+            {
+              "type": "ieffect2",
+              "name": "Deck Stacked",
+              "duration": "11",
+              "effects": {
+                "to_hit_bonus": "1d4 [stacked]",
+                "save_bonus": "1d4 [stacked]"
+              }
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "condition",
+              "condition": "if the spell level is less than 6",
+              "onTrue": [
+                {
+                  "type": "ieffect2",
+                  "name": "Deck Stacked",
+                  "duration": "11",
+                  "effects": {
+                    "to_hit_bonus": "1d6 [stacked]",
+                    "save_bonus": "1d6 [stacked]"
+                  }
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "condition",
+                  "condition": "if the spell level is less than 9",
+                  "onTrue": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Deck Stacked",
+                      "duration": "11",
+                      "effects": {
+                        "to_hit_bonus": "1d8 [stacked]",
+                        "save_bonus": "1d8 [stacked]"
+                      }
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Deck Stacked",
+                      "duration": "11",
+                      "effects": {
+                        "to_hit_bonus": "1d10 [stacked]",
+                        "save_bonus": "1d10 [stacked]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "type": "ieffect2",
-          "name": "Battlemind",
-          "desc": "+2 AC Bonus against melee attacks\n - +3 AC bonus against ranged attacks\n - This AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
-          "duration": 100,
-          "conc": true
+          "name": "Deck Stacked",
+          "duration": "11",
+          "effects": {
+            "to_hit_bonus": "1d4 [stacked]",
+            "save_bonus": "1d4 [stacked]"
+          }
         }
       ]
     },
     {
       "type": "text",
-      "text": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage."
+      "text": "You boost up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the power ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw."
     }
-  ]
+  ],
+  "classes": "",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "30 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "Concentration, up to 1 minute",
+  "ritual": false,
+  "description": "You boost up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the power ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nOvercharge Tech. When you cast this power with a tech slot of 3rd level or higher, you can target one additional creature for every two slot levels above 1st. When you cast this power at 3rd, 6th, or 9th level, the die increases to d6, d8, and d10, respectively.",
+  "higherlevels": "",
+  "concentration": true
 }
