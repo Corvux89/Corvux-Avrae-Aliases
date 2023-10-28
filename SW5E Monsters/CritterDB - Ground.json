@@ -7,7 +7,7 @@
   "description": "",
   "ownerId": "604af76faf3aa903ed077438",
   "__v": 0,
-  "lastActive": "2023-10-28T17:03:33.256Z",
+  "lastActive": "2023-10-28T17:18:09.451Z",
   "owner": {
     "_id": "604af76faf3aa903ed077438",
     "username": "Epsikon"
@@ -8938,14 +8938,14 @@
             "proficient": true,
             "modifier": 6,
             "modifierStr": "Int +6",
-            "$$hashKey": "object:149000"
+            "$$hashKey": "object:191832"
           },
           {
             "ability": "wisdom",
             "proficient": true,
             "modifier": 5,
             "modifierStr": "Wis +5",
-            "$$hashKey": "object:149001"
+            "$$hashKey": "object:191833"
           }
         ],
         "skills": [
@@ -8954,14 +8954,14 @@
             "proficient": true,
             "modifier": 5,
             "modifierStr": "Perception +5",
-            "$$hashKey": "object:149009"
+            "$$hashKey": "object:191841"
           },
           {
             "name": "Stealth",
             "proficient": true,
             "modifier": 6,
             "modifierStr": "Stealth +6",
-            "$$hashKey": "object:149010"
+            "$$hashKey": "object:191842"
           }
         ],
         "additionalAbilities": [
@@ -8969,7 +8969,7 @@
             "name": "Incorporeal Movement",
             "description": "the dark side spirit can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.",
             "descriptionHtml": {},
-            "$$hashKey": "object:148960"
+            "$$hashKey": "object:191792"
           }
         ],
         "actions": [
@@ -8977,19 +8977,19 @@
             "name": "Maddening Touch",
             "description": "<i>Melee Weapon Attack:</i> +6 to hit, reach 5 ft., one target. <i>Hit:</i> 17 (4d6 + 3) psychic damage.",
             "descriptionHtml": {},
-            "$$hashKey": "object:148965"
+            "$$hashKey": "object:191797"
           },
           {
             "name": "Whispers of Madness",
             "description": "The spirit chooses up to three creatures it can see within 60 feet of it. Each target must succeed on a DC 14 Wisdom saving throw, or it takes 7 (1d8 + 3) psychic damage and must use its reaction to make a melee weapon attack against one creature of the spirit's choice that the spirit can see.\n\n<avrae hidden>\n{\"name\":\"Whispers of Madness\",\"_v\":2,\"automation\":[{\"type\":\"roll\",\"dice\":\"1d8+3 [psychic]\",\"name\":\"damage\"},{\"type\":\"target\",\"target\":\"each\",\"effects\":[{\"type\":\"save\",\"stat\":\"wis\",\"dc\":14,\"success\":[],\"fail\":[{\"type\":\"damage\",\"damage\":\"{damage}\"}]}]},{\"type\":\"text\",\"text\":\"The spirit chooses up to three creatures it can see within 60 feet of it. Each target must succeed on a DC 14 Wisdom saving throw, or it takes 7 (1d8 + 3) psychic damage and must use its reaction to make a melee weapon attack against one creature of the spirit's choice that the spirit can see.\"}]}\n</avrae>",
             "descriptionHtml": {},
-            "$$hashKey": "object:148966"
+            "$$hashKey": "object:191798"
           },
           {
             "name": "Howling Babble",
             "description": "(Recharge 6). Each creature within 30 feet of the spirit that can hear it must make a DC 14 Wisdom saving throw. On a failed save, a target takes 12 (2d8 + 3) psychic damage, and it is stunned until the end of its next turn. On a successful save, it takes half as much damage and isn't stunned.\n\n<avrae hidden>\n{\"name\":\"Howling Babble\",\"_v\":2,\"automation\":[{\"type\":\"target\",\"target\":\"self\",\"effects\":[{\"type\":\"ieffect2\",\"name\":\"Howling Babble Used\",\"buttons\":[{\"label\":\"Recharge (Howling Babble)\",\"style\":3,\"automation\":[{\"type\":\"roll\",\"dice\":\"1d6\",\"name\":\"recharge\"},{\"type\":\"condition\",\"condition\":\"lastRoll >= 5\",\"onFalse\":[{\"type\":\"text\",\"text\":\"Recharge failed.\"}],\"onTrue\":[{\"type\":\"remove_ieffect\"},{\"type\":\"text\",\"text\":\"Howling Babble Recharged!\"}]}]}]}]},{\"type\":\"roll\",\"dice\":\"2d8+3\",\"name\":\"damage\"},{\"type\":\"target\",\"target\":\"each\",\"effects\":[{\"type\":\"save\",\"stat\":\"wis\",\"dc\":14,\"success\":[{\"type\":\"damage\",\"damage\":\"{damage}/2 [psychic]\"}],\"fail\":[{\"type\":\"damage\",\"damage\":\"{damage} [psychic]\"},{\"type\":\"ieffect2\",\"name\":\"Stunned\",\"duration\":1,\"end\":true,\"desc\":\"A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\\n - Attack rolls against the creature have advantage.\"}]}]},{\"type\":\"text\",\"text\":\"(Recharge 6). Each creature within 30 feet of the spirit that can hear it must make a DC 14 Wisdom saving throw. On a failed save, a target takes 12 (2d8 + 3) psychic damage, and it is stunned until the end of its next turn. On a successful save, it takes half as much damage and isn't stunned.\"}]}\n</avrae>",
             "descriptionHtml": {},
-            "$$hashKey": "object:148967"
+            "$$hashKey": "object:191799"
           }
         ],
         "reactions": [],
@@ -43000,13 +43000,13 @@
             "name": "Bite",
             "description": "<i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 8 (2d6 + 1) kinetic damage.",
             "descriptionHtml": {},
-            "$$hashKey": "object:33041"
+            "$$hashKey": "object:213287"
           },
           {
             "name": "Claws",
-            "description": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+            "description": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n\n<avrae hidden>\n{\"name\":\"Claws\",\"_v\":2,\"automation\":[{\"type\":\"target\",\"target\":\"each\",\"effects\":[{\"type\":\"attack\",\"attackBonus\":4,\"miss\":[],\"hit\":[{\"type\":\"damage\",\"damage\":\"2d4+2 [slashing]\"},{\"type\":\"condition\",\"condition\":\"'undead' in target.creature_type.lower()\",\"onTrue\":[],\"onFalse\":[{\"type\":\"save\",\"stat\":\"con\",\"dc\":10,\"success\":[],\"fail\":[{\"type\":\"ieffect2\",\"name\":\"Paralyzed\",\"duration\":10,\"buttons\":[{\"automation\":[{\"type\":\"target\",\"target\":\"self\",\"effects\":[{\"type\":\"save\",\"stat\":\"wis\",\"fail\":[],\"success\":[{\"type\":\"remove_ieffect\"}]}]}],\"label\":\"Resist Paralysis - End of Turn\",\"verb\":\"attempts to resist paralysis\",\"style\":\"1\",\"defaultDC\":\"lastSaveDC\"}],\"desc\":\"Incapacitated\\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.\",\"parent\":\"ieffect\"}]}]}]}]},{\"type\":\"text\",\"text\":\"*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\"}]}\n</avrae>",
             "descriptionHtml": {},
-            "$$hashKey": "object:33042"
+            "$$hashKey": "object:213288"
           }
         ],
         "reactions": [],
