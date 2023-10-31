@@ -1,75 +1,14 @@
 {
-  "name": "Claws",
+  "name": "Swallow",
   "_v": 2,
   "automation": [
     {
       "type": "target",
       "target": "each",
-      "effects": [
-        {
-          "type": "attack",
-          "attackBonus": 4,
-          "miss": [],
-          "hit": [
-            {
-              "type": "damage",
-              "damage": "2d4+2 [slashing]"
-            },
-            {
-              "type": "condition",
-              "condition": "'undead' in target.creature_type.lower()",
-              "onTrue": [],
-              "onFalse": [
-                {
-                  "type": "save",
-                  "stat": "con",
-                  "dc": 10,
-                  "success": [],
-                  "fail": [
-                    {
-                      "type": "ieffect2",
-                      "name": "Paralyzed",
-                      "duration": 10,
-                      "buttons": [
-                        {
-                          "automation": [
-                            {
-                              "type": "target",
-                              "target": "self",
-                              "effects": [
-                                {
-                                  "type": "save",
-                                  "stat": "wis",
-                                  "fail": [],
-                                  "success": [
-                                    {
-                                      "type": "remove_ieffect"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ],
-                          "label": "Resist Paralysis - End of Turn",
-                          "verb": "attempts to resist paralysis",
-                          "style": "1",
-                          "defaultDC": "lastSaveDC"
-                        }
-                      ],
-                      "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
-                      "parent": "ieffect"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     },
     {
       "type": "text",
-      "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      "text": "The rancor makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the rancor, and it takes 21 (6d6) acid damage at the start of each of the rancor's turns.\nIf the rancor takes 25 damage or more on a single turn from a creature inside it, the Rancor must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the Rancor. If the Rancor dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 10 feet of movement, exiting prone."
     }
   ]
 }

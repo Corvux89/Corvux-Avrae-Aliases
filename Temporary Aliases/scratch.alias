@@ -1,15 +1,1 @@
-[{'name': 'Force Recovery', '_v': 2, 'automation': [{'type': 'variable', 'name': 'clevel',
-                                                     'value': "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"},
-                                                    {'type': 'counter', 'counter': 'Force Points',
-                                                     'amount': '-(ceil(clevel/2)+max(charismaMod, wisdomMod,1))'},
-                                                    {'type': 'counter', 'counter': 'Force Recovery', 'amount': 1,
-                                                     'fixedValue': True, 'errorBehaviour': 'raise'}, {'type': 'text',
-                                                                                                      'text': 'You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again.'}],
-  'verb': 'uses', 'activation_type': 2}, [{'name': 'Force Shield', '_v': 2, 'verb': 'uses', 'activation_type': 4,
-                                           'automation': [{'type': 'target', 'target': 'self', 'effects': [
-                                               {'type': 'ieffect2', 'name': 'Force Shield',
-                                                'effects': {'ac_bonus': '{max(charismaMod,wisdomMod,1)}'},
-                                                'duration': 1}]},
-                                                          {'type': 'counter', 'counter': 'Force Shield', 'amount': 1,
-                                                           'errorBehaviour': 'raise'}, {'type': 'text',
-                                                                                        'text': 'You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack.'}]}]]
+-d1 "{{"1d8 [radiant]" if level < 14 else "2d8 [radiant]"}}" -f "Divine Strike|At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."

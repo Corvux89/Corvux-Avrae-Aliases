@@ -43,7 +43,7 @@ def processJSON(f, name, fileName, autoMode):
         actions = critter["stats"].get("actions")
 
         for a in actions:
-            if "saving throw" in a.get("description").lower():
+            if "saving throw" in a.get("description").lower() or "DC" in a.get("description"):
                 s = {"name": critter.get('name'), 'ability': a.get('name'), 'completed': f'{True if "<avrae hidden>" in a.get("description").lower() else False}'}
                 saveAuto.append(s)
 
