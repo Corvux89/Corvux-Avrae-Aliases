@@ -5,6 +5,24 @@
     {
       "type": "target",
       "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "attackBonus": 10,
+          "miss": [],
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "2d12+6 [kinetic]"
+            },
+            {
+              "type": "ieffect2",
+              "name": "Swallowed",
+              "desc": "Blinded and restrained\n - Has total cover against attacks and other effects outside the rancor\n - Takes 6d6 acid damage at the start of each of the rancor's turns."
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "text",

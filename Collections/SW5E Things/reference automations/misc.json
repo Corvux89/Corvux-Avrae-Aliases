@@ -50,73 +50,84 @@
     "name": "Grappled/Restrained",
     "automation": [
       {
-                  "type": "ieffect2",
-                  "name": "Grappled/Restrained by {name}",
-                  "desc": "Speed is reduced to 0\n - 4 slow levels\n - Attack rolls against the creature have advantage\n - Disadvantage on dex saving throws",
-                  "effects": {"save_dis": ["dex"]},
-                  "parent": "peff",
-                  "buttons": [
-                    {
-                      "label": "Resist Grapple",
-                      "style": 1,
-                      "verb": "attempts to resist the grapple",
-                      "automation": [
-                        {
-                          "type": "target",
-                          "target": "self",
-                          "effects": [
-                            {
-                              "type": "check",
-                              "ability": ["acrobatics", "athletics"],
-                              "dc": 16,
-                              "success": [
-                                {
-                                  "type": "text",
-                                  "text": "Escapes the grapple!"
-                                },
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ],
-                              "fail": []
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
+        "type": "ieffect2",
+        "name": "Grappled/Restrained by {name}",
+        "desc": "Speed is reduced to 0\n - 4 slow levels\n - Attack rolls against the creature have advantage\n - Disadvantage on dex saving throws",
+        "effects": {
+          "save_dis": [
+            "dex"
+          ]
+        },
+        "parent": "peff",
+        "buttons": [
+          {
+            "label": "Resist Grapple",
+            "style": 1,
+            "verb": "attempts to resist the grapple",
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "check",
+                    "ability": [
+                      "acrobatics",
+                      "athletics"
+                    ],
+                    "dc": 16,
+                    "success": [
+                      {
+                        "type": "text",
+                        "text": "Escapes the grapple!"
+                      },
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "fail": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
     "name": "Poisoned",
     "automation": [
       {
-                  "type": "ieffect2",
-                  "name": "Poisoned",
-                  "desc": "Disadvantage on attack rolls and ability checks\n - Takes 2d6 poison damage per turn",
-                  "effects": {"check_dis": ["all"]},
-                  "duration": 10,
-                  "buttons": [
-                    {
-                      "label": "Take poison damage",
-                      "verb": "Takes poison damage",
-                      "style": 4,
-                      "automation": [
-                        {
-                          "type": "target",
-                          "target": "self",
-                          "effects": [
-                            {
-                              "type": "damage",
-                              "damage": "2d6 [poison]"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
+        "type": "ieffect2",
+        "name": "Poisoned",
+        "desc": "Disadvantage on attack rolls and ability checks\n - Takes 2d6 poison damage per turn",
+        "effects": {
+          "check_dis": [
+            "all"
+          ]
+        },
+        "duration": 10,
+        "buttons": [
+          {
+            "label": "Take poison damage",
+            "verb": "Takes poison damage",
+            "style": 4,
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6 [poison]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
 ]
