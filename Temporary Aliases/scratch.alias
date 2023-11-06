@@ -1,1 +1,20 @@
--d1 "{{"1d8 [radiant]" if level < 14 else "2d8 [radiant]"}}" -f "Divine Strike|At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+embed 
+<drac2>
+a,ch   = argparse(&ARGS&), character()
+cType  = "Strength" if a.get("str") else "Constitution" if a.get("con") else "Intelligence" if a.get("int") else "Wisdom" if a.get("wis") else "Charisma" if a.get("cha") else "Dexterity"
+dice   = ["1d20","2d20kh1","2d20kl1"][a.adv()]  # apply adv or dis
+min_chk= "mi"+a.last("mi") if a.last("mi") else "mi10" if ch.csettings.get("talent", 0) and ch.skills.stealth.prof>=1 else ""  # check for reliable talent or -mc
+skill  = f"+{ch.skills.stealth.prof*proficiencyBonus+ch.skills[cType.lower()].value}"  # add our bonus
+bonus  = "+"+a.join("b","+") if a.last("b") else ""  # add other bonuses
+stroll = vroll(dice+min_chk+skill+bonus)  # roll our check
+cType  = f'a{"n" if "I" in cType else ""} {cType}'  # make our output pretty
+
+combatTarget = ""
+if combat() and combat().me:  # add an effect to track our roll
+    combatTarget = combat().me
+    combatTarget.remove_effect("stealth")
+    effect = combatTarget.add_effect(f"Stealth {stroll.total}")  # this now returns the effect so save it for later
+output = f'''-title "{name} makes {cType} (Stealth) check to Hide!" -desc "{stroll}" -f "Hide Action|When you take the Hide action, you make {cType} (Stealth) check in an attempt to hide, following the rules for Hiding. If you succeed, you gain certain benefits, as described in the Unseen Attackers and Targets section.\n\nYou can't hide from a creature that can see you. You must have total cover, be in a heavily obscured area, be invisible, or otherwise block the enemy's vision." -f "Unseen Attackers and Targets|When a creature can't see you, you have advantage on attack rolls against it. If you are hidden—both unseen and unheard—when you make an attack, you give away your location when the attack hits or misses." -footer "{ctx.prefix+ctx.alias}" -color {color}'''+(f''' -f "{combatTarget.name}|**Effect**: {effect}"'''  if combatTarget else "")
+
+return output
+</drac2>
