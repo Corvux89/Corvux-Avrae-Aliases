@@ -1,55 +1,80 @@
 {
-  "name": "Stack the Deck",
-  "level": 1,
-  "school": "Tech",
-  "automation": [
-    {
-      "type": "variable",
-      "name": "dieSize",
-      "value": "4",
-      "higher": {
-        "2": 4,
-        "3": 6,
-        "4": 6,
-        "5": 6,
-        "6": 8,
-        "7": 8,
-        "8": 8,
-        "9": 10
-      }
-    },
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Deck Stacked",
-          "duration": "11",
-          "effects": {
-            "to_hit_bonus": "1d{dieSize} [stacked]",
-            "save_bonus": "1d{dieSize} [stacked]"
+    "name": "Storming Shot",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d6 [lightning]",
+        "name": "damage",
+        "cantripScale": true,
+        "displayName": "Chain Lightning Damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "targetNumber == 1",
+            "onTrue": [
+              {
+                "type": "ieffect2",
+                "name": "Shocked",
+                "duration": "2",
+                "end": true,
+                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                "tick_on_caster": true
+              },
+              {
+                "type": "condition",
+                "condition": "caster.levels.total_level >= 5",
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "{1 if level < 11 else 2 if level < 17 else 2}d6 [lightning]"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "targetIterations > 1",
+                "onFalse": [],
+                "onTrue": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage}"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "errorBehaviour": "raise"
           }
-        }
-      ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\n\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
     },
-    {
-      "type": "text",
-      "text": "You boost up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the power ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nOvercharge Tech. When you cast this power with a tech slot of 3rd level or higher, you can target one additional creature for every two slot levels above 1st. When you cast this power at 3rd, 6th, or 9th level, the die increases to d6, d8, and d10, respectively."
-    }
-  ],
-  "classes": "",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "30 feet",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "Concentration, up to 1 minute",
-  "ritual": false,
-  "description": "You boost up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the power ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nOvercharge Tech. When you cast this power with a tech slot of 3rd level or higher, you can target one additional creature for every two slot levels above 1st. When you cast this power at 3rd, 6th, or 9th level, the die increases to d6, d8, and d10, respectively.",
-  "higherlevels": "",
-  "concentration": true
-}
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\r\n\r\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level.",
+    "concentration": false
+  }
