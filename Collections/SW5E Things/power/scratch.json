@@ -1,14 +1,145 @@
 {
-    "name": "Storming Shot",
-    "level": 0,
-    "school": "Tech",
+    "name": "Battle Meditation",
+    "level": 2,
+    "school": "Force",
     "automation": [
       {
-        "type": "roll",
-        "dice": "1d6 [lightning]",
-        "name": "damage",
-        "cantripScale": true,
-        "displayName": "Chain Lightning Damage"
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Meditating",
+            "effects": {
+              "to_hit_bonus": "1d4",
+              "save_bonus": "1d4"
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Enemy - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "cha",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Meditating",
+                              "effects": {
+                                "to_hit_bonus": "-1d4",
+                                "save_bonus": "-1d4"
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "target",
+                                      "target": "self",
+                                      "effects": [
+                                        {
+                                          "type": "save",
+                                          "stat": "cha",
+                                          "fail": [],
+                                          "success": [
+                                            {
+                                              "type": "remove_ieffect"
+                                            },
+                                            {
+                                              "type": "ieffect2",
+                                              "name": "Immune to Battle Meditation",
+                                              "desc": "Immune to this power for 1 day"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "label": "Battle Meditation - Start of Turn",
+                                  "verb": "Starts their turn in Battle Meditation",
+                                  "style": "4",
+                                  "defaultDC": "{lastSaveDC}"
+                                },
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Leave Battle Meditation",
+                                  "verb": "Leaves Battle Meditation",
+                                  "style": "3"
+                                }
+                              ],
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Immune to Battle Meditation",
+                              "desc": "Immune to this power for 1 day"
+                            }
+                          ],
+                          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Ally - Spread Battle Meditation",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Meditating",
+                          "effects": {
+                            "to_hit_bonus": "1d4",
+                            "save_bonus": "1d4"
+                          },
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "label": "Leave Battle Meditation",
+                              "verb": "Leaves Battle Meditation",
+                              "style": "3"
+                            }
+                          ],
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Whenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw."
+                    }
+                  ]
+                }
+              }
+            ],
+            "save_as": "bmed"
+          }
+        ]
       },
       {
         "type": "target",
@@ -16,65 +147,109 @@
         "effects": [
           {
             "type": "condition",
-            "condition": "targetNumber == 1",
+            "condition": "target.creature_type is None",
             "onTrue": [
               {
                 "type": "ieffect2",
-                "name": "Shocked",
-                "duration": "2",
-                "end": true,
-                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
-                "tick_on_caster": true
-              },
-              {
-                "type": "condition",
-                "condition": "caster.levels.total_level >= 5",
-                "onTrue": [
+                "name": "Meditating",
+                "effects": {
+                  "to_hit_bonus": "1d4",
+                  "save_bonus": "1d4"
+                },
+                "buttons": [
                   {
-                    "type": "damage",
-                    "damage": "{1 if level < 11 else 2 if level < 17 else 2}d6 [lightning]"
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Leave Battle Meditation",
+                    "verb": "Leaves Battle Meditation",
+                    "style": "3"
                   }
                 ],
-                "onFalse": []
-              },
-              {
-                "type": "condition",
-                "condition": "targetIterations > 1",
-                "onFalse": [],
-                "onTrue": [
-                  {
-                    "type": "damage",
-                    "damage": "{damage}"
-                  }
-                ]
+                "parent": "bmed"
               }
             ],
             "onFalse": [
               {
-                "type": "damage",
-                "damage": "{damage}"
+                "type": "save",
+                "stat": "cha",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Meditating",
+                    "effects": {
+                      "to_hit_bonus": "-1d4",
+                      "save_bonus": "-1d4"
+                    },
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "cha",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  },
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Immune to Battle Meditation",
+                                    "desc": "Immune to this power for 1 day"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Battle Meditation - Start of Turn",
+                        "verb": "Starts their turn in Battle Meditation",
+                        "style": "4",
+                        "defaultDC": "{lastSaveDC}"
+                      },
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Leave Battle Meditation",
+                        "verb": "Leaves Battle Meditation",
+                        "style": "3",
+                        "defaultDC": "spell"
+                      }
+                    ],
+                    "parent": "bmed"
+                  }
+                ],
+                "success": []
               }
-            ],
-            "errorBehaviour": "raise"
+            ]
           }
         ]
       },
       {
         "type": "text",
-        "text": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\n\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level."
+        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       }
     ],
-    "classes": "None",
+    "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "Varies",
+    "range": "Self (5-foot radius)",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "1 round",
+    "duration": "1 minute",
     "ritual": false,
-    "description": "As a part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects and becomes shocked until the end of your next turn. When this power hits a target, if there is a creature within 30 feet who is shocked, an arc of lightning courses between the two creatures, dealing 1d6 lightning damage to both of them. If there are multiple other creatures who are shocked, the lightning leaps to the closest creature.\r\n\r\nThe power's damage increases when you reach higher levels. At 5th level, the effects of both the ranged weapon attack and discharge deal an extra 1d6 lightning damage. Both damage rolls increase by an additional 1d6 at 11th and 17th level.",
-    "concentration": false
+    "description": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "concentration": true
   }

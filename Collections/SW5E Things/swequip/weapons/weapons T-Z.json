@@ -39,7 +39,7 @@
             "hit": [
               {
                 "type": "damage",
-                "damage": "2d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]",
                 "overheal": false
               }
             ],

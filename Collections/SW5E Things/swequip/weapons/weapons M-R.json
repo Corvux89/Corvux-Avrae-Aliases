@@ -5332,19 +5332,19 @@
                 "type": "damage",
                 "damage": "2d10+{dexterityMod} [energy]",
                 "overheal": false
-              },
-              {
-                "type": "counter",
-                "counter": "Rotary Cannon",
-                "amount": "2",
-                "allowOverflow": false,
-                "errorBehaviour": "raise"
               }
             ],
             "success": [],
             "dc": "8+proficiencyBonus+dexterityMod"
           }
         ]
+      },
+      {
+        "type": "counter",
+        "counter": "Rotary Cannon",
+        "amount": "2",
+        "allowOverflow": false,
+        "errorBehaviour": "raise"
       },
       {
         "type": "text",
@@ -5425,12 +5425,12 @@
             "dc": "8+proficiencyBonus+dexterityMod"
           },
           {
-                "type": "counter",
-                "counter": "Rotary Cannon",
-                "amount": "2",
-                "allowOverflow": false,
-                "errorBehaviour": "raise"
-              }
+            "type": "counter",
+            "counter": "Rotary Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
         ]
       },
       {
@@ -5510,12 +5510,12 @@
             "dc": "8+proficiencyBonus+dexterityMod"
           },
           {
-                "type": "counter",
-                "counter": "Rotary Cannon",
-                "amount": "2",
-                "allowOverflow": false,
-                "errorBehaviour": "raise"
-              }
+            "type": "counter",
+            "counter": "Rotary Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
         ]
       },
       {
@@ -5709,12 +5709,12 @@
             "dc": "8+proficiencyBonus+dexterityMod"
           },
           {
-                "type": "counter",
-                "counter": "Rotary Cannon",
-                "amount": "2",
-                "allowOverflow": false,
-                "errorBehaviour": "raise"
-              }
+            "type": "counter",
+            "counter": "Rotary Cannon",
+            "amount": "2",
+            "allowOverflow": false,
+            "errorBehaviour": "raise"
+          }
         ]
       },
       {
