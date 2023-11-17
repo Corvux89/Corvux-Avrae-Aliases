@@ -163,3 +163,12 @@ def replace_mod(text):
         text = vroll(text).total
 
     return int(text)
+
+def get_subclasses():
+    out = []
+    if ch.get_cvar('subclass'):
+        classes = load_json(ch.get_cvar('subclass'))
+        for c in classes:
+            out.append(classes.get(c))
+
+    return out

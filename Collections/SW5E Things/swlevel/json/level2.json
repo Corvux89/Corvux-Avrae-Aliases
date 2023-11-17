@@ -689,13 +689,13 @@
   },
   {
     "Class": "Scholar",
-    "subclass": "Arcaheologist Light",
+    "subclass": "Archaeologist Light",
     "counters": [
       {
         "name": "Force Points",
         "level": 3,
         "value": "ScholarLevel",
-        "modifier": "wisdomMod",
+        "modifier": "max(wisdomMod,charismaMod,intelligenceMod)",
         "reset": "long",
         "display": "default",
         "classLevel": "ScholarLevel"
@@ -747,7 +747,7 @@
         "name": "Force Points",
         "level": 3,
         "value": "ScholarLevel",
-        "modifier": "charismaMod",
+        "modifier": "max(wisdomMod,charismaMod,intelligenceMod)",
         "reset": "long",
         "display": "default",
         "classLevel": "ScholarLevel"

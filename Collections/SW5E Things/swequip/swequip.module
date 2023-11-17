@@ -1,9 +1,10 @@
 # SWEQUIP Primary Module
+c = character()
+using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+subclasses = sup.get_subclasses()
 
 def processAttacks(attacks, args):
     out = []
-    c = character()
-    using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
@@ -219,6 +220,13 @@ def processAttacks(attacks, args):
 
                 if reload > 0:
                     c.create_cc(counter, 0, reload, None, 'bubble', reload)
+
+        # Class Specific Overrides
+        if "Focus" in subclasses:
+            level = max(int(c.levels.get("Sentinellight",0)), int(c.levels.get("Sentineldark",0)),0)
+            bs = weap.blade_storm(attack, level, args)
+            if bs:
+                out.append(load_json(bs))
 
         out.append(load_json(attack))
 

@@ -366,3 +366,22 @@ def vicious(attack, args):
     vicious = {"name": f"Vicious - {a.name}", "_v": 2, "automation": [target]}
 
     return dump_json(vicious)
+
+def blade_storm(attack, level, args):
+    a = load_json(attack)
+    damage = sup.get_damage_die(attack)
+    dmg_str = sup.get_damage_str(attack)
+    kcd = "1d4" if level < 5 else "1d6" if level < 9 else "1d8" if level < 13 else "1d10" if level < 17 else "1d12"
+    new_str = dmg_str.replace(damage, kcd)
+    attack = attack.replace(dmg_str,new_str)
+    on_hit = sup.get_on_hit_effects(attack)
+
+    atk = {"type": "attack", "attackBonus": f"{sup.get_attack_bonus(attack)}", "hit": on_hit, "miss": []}
+    target = {"type": "target", "target": "each", "effects": [atk]}
+    text = {"type": "text", "title": "Blade Storm", "text": "Your bursts become even more overwhelming. Once on your turn, when a creature takes damage from you twice, you can immediately make one additional attack against that creature (no action required). This attack uses your Kinetic Combat die instead of the weapon’s damage die."}
+
+    blade_storm = {"name": f"Blade Storm - {a.name}", "_v": 2, "automation": [target, text]}
+
+    return dump_json(blade_storm)
+
+

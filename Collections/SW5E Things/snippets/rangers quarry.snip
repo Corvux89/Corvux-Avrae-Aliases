@@ -1,0 +1,13 @@
+<drac2>
+ch = character()
+a = argparse(&ARGS&)
+scoutLevel =int(get("ScoutLevel",0))
+desc = "Ranger's Quarry | You learn how to effectively read and track your prey. Once on each of your turns, you can choose a creature you can see within 120 feet and mark it as your quarry (no action required). Once per turn, when you hit the target with a weapon attack, you can deal 1d4 additional damage to it of the same type as the weapon’s damage. This die changes as you gain scout levels, as shown in the Ranger’s Quarry column of the scout table."
+
+if a.get('savage'):
+    dmg = "2d4kh1" if scoutLevel < 5 else "2d6kh1" if scoutLevel < 9 else "2d8kh1" if scoutLevel < 13 else "2d10kh1" if scoutLevel < 17 else "2d12kh1"
+else:
+    dmg = "1d4" if scoutLevel < 5 else "1d6" if scoutLevel < 9 else "1d8" if scoutLevel < 13 else "1d10" if scoutLevel < 17 else "1d12"
+
+return f''' -d1 {dmg} -f "{desc}" '''
+</drac2>

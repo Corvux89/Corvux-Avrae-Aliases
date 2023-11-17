@@ -1,255 +1,37 @@
 {
-    "name": "Battle Meditation",
-    "level": 2,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Meditating",
-            "effects": {
-              "to_hit_bonus": "1d4",
-              "save_bonus": "1d4"
-            },
-            "attacks": [
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Enemy - Spread Battle Meditation",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "cha",
-                          "fail": [
-                            {
-                              "type": "ieffect2",
-                              "name": "Meditating",
-                              "effects": {
-                                "to_hit_bonus": "-1d4",
-                                "save_bonus": "-1d4"
-                              },
-                              "buttons": [
-                                {
-                                  "automation": [
-                                    {
-                                      "type": "target",
-                                      "target": "self",
-                                      "effects": [
-                                        {
-                                          "type": "save",
-                                          "stat": "cha",
-                                          "fail": [],
-                                          "success": [
-                                            {
-                                              "type": "remove_ieffect"
-                                            },
-                                            {
-                                              "type": "ieffect2",
-                                              "name": "Immune to Battle Meditation",
-                                              "desc": "Immune to this power for 1 day"
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ],
-                                  "label": "Battle Meditation - Start of Turn",
-                                  "verb": "Starts their turn in Battle Meditation",
-                                  "style": "4",
-                                  "defaultDC": "{lastSaveDC}"
-                                },
-                                {
-                                  "automation": [
-                                    {
-                                      "type": "remove_ieffect"
-                                    }
-                                  ],
-                                  "label": "Leave Battle Meditation",
-                                  "verb": "Leaves Battle Meditation",
-                                  "style": "3"
-                                }
-                              ],
-                              "parent": "ieffect"
-                            }
-                          ],
-                          "success": [
-                            {
-                              "type": "ieffect2",
-                              "name": "Immune to Battle Meditation",
-                              "desc": "Immune to this power for 1 day"
-                            }
-                          ],
-                          "dc": "8 + proficiencyBonus + max(charismaMod, wisdomMod)"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "Whenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
-                    }
-                  ]
-                }
-              },
-              {
-                "attack": {
-                  "_v": 2,
-                  "name": "Ally - Spread Battle Meditation",
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Meditating",
-                          "effects": {
-                            "to_hit_bonus": "1d4",
-                            "save_bonus": "1d4"
-                          },
-                          "buttons": [
-                            {
-                              "automation": [
-                                {
-                                  "type": "remove_ieffect"
-                                }
-                              ],
-                              "label": "Leave Battle Meditation",
-                              "verb": "Leaves Battle Meditation",
-                              "style": "3"
-                            }
-                          ],
-                          "parent": "ieffect"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "Whenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw."
-                    }
-                  ]
-                }
-              }
-            ],
-            "save_as": "bmed"
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "condition",
-            "condition": "target.creature_type is None",
-            "onTrue": [
-              {
-                "type": "ieffect2",
-                "name": "Meditating",
-                "effects": {
-                  "to_hit_bonus": "1d4",
-                  "save_bonus": "1d4"
-                },
-                "buttons": [
-                  {
-                    "automation": [
-                      {
-                        "type": "remove_ieffect"
-                      }
-                    ],
-                    "label": "Leave Battle Meditation",
-                    "verb": "Leaves Battle Meditation",
-                    "style": "3"
-                  }
-                ],
-                "parent": "bmed"
-              }
-            ],
-            "onFalse": [
-              {
-                "type": "save",
-                "stat": "cha",
-                "fail": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Meditating",
-                    "effects": {
-                      "to_hit_bonus": "-1d4",
-                      "save_bonus": "-1d4"
-                    },
-                    "buttons": [
-                      {
-                        "automation": [
-                          {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
-                              {
-                                "type": "save",
-                                "stat": "cha",
-                                "fail": [],
-                                "success": [
-                                  {
-                                    "type": "remove_ieffect"
-                                  },
-                                  {
-                                    "type": "ieffect2",
-                                    "name": "Immune to Battle Meditation",
-                                    "desc": "Immune to this power for 1 day"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ],
-                        "label": "Battle Meditation - Start of Turn",
-                        "verb": "Starts their turn in Battle Meditation",
-                        "style": "4",
-                        "defaultDC": "{lastSaveDC}"
-                      },
-                      {
-                        "automation": [
-                          {
-                            "type": "remove_ieffect"
-                          }
-                        ],
-                        "label": "Leave Battle Meditation",
-                        "verb": "Leaves Battle Meditation",
-                        "style": "3",
-                        "defaultDC": "spell"
-                      }
-                    ],
-                    "parent": "bmed"
-                  }
-                ],
-                "success": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
-      }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (5-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+  "name": "Instinctive Movement",
+  "level": 0,
+  "school": "Force",
+  "automation": [
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Instinctive Movement",
+          "desc": "Speed increases by 5 ft, resistance to falling damage, ignore difficult terrain, climb speed equal to walking speed, add 10 ft to long jump, add 3 ft to high jump, you can move up, down, and across vertical surfaces and upside down along ceilings while leaving your hands free, you do not sink when moving over soft/brittle terrain (you cannot move across liquid surfaces",
+          "duration": "10",
+          "buttons": []
+        }
+      ]
     },
-    "duration": "1 minute",
-    "ritual": false,
-    "description": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition's combat-effectiveness by eroding their will to fight. \r\n\r\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw. \r\n\r\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
-    "concentration": true
-  }
+    {
+      "type": "text",
+      "text": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st.\n\n"
+    }
+  ],
+  "classes": "Universal",
+  "subclasses": "",
+  "casttime": "1 bonus action",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 minute",
+  "ritual": false,
+  "description": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st.\n\n",
+  "concentration": false
+}

@@ -134,7 +134,7 @@
                             "effects": [
                               {
                                 "type": "attack",
-                                "attackBonus": "spell+proficiencyBonus",
+                                "attackBonus": "spell_attack_bonus",
                                 "hit": [
                                   {
                                     "type": "damage",
@@ -174,7 +174,7 @@
                             "effects": [
                               {
                                 "type": "attack",
-                                "attackBonus": "spell+proficiencyBonus",
+                                "attackBonus": "spell_attack_bonus",
                                 "hit": [
                                   {
                                     "type": "damage",
@@ -354,7 +354,7 @@
                               "effects": [
                                 {
                                   "type": "attack",
-                                  "attackBonus": "spell+proficiencyBonus",
+                                  "attackBonus": "spell_attack_bonus",
                                   "hit": [
                                     {
                                       "type": "damage",
@@ -394,7 +394,7 @@
                               "effects": [
                                 {
                                   "type": "attack",
-                                  "attackBonus": "spell+proficiencyBonus",
+                                  "attackBonus": "spell_attack_bonus",
                                   "hit": [
                                     {
                                       "type": "damage",

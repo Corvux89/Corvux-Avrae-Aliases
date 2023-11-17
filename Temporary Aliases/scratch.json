@@ -1,21 +1,54 @@
-{
-  "name": "Test Weapon",
-  "_v": 2,
-  "automation": [
-    {
-      "type": "target",
-      "target": "self",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Test Weapon - Effects"
-        }
-      ]
-    },
-    {
-      "type": "target",
-      "target": "each",
-      "effects": []
-    }
-  ]
-}
+[
+  {
+    "name": "Blade Storm - Vibrodagger",
+    "_v": 2,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          [
+            {
+              "type": "damage",
+              "damage": "1d10+{max(strengthMod,dexterityMod)} [kinetic]"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Blade Storm",
+        "text": "Your bursts become even more overwhelming. Once on your turn, when a creature takes damage from you twice, you can immediately make one additional attack against that creature (no action required). This attack uses your Kinetic Combat die instead of the weapon\u2019s damage die."
+      }
+    ]
+  },
+  {
+    "name": "Vibrodagger",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]"
+              }
+            ],
+            "miss": [],
+            "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Finesse, Light, Thrown (range 20/60)"
+      }
+    ],
+    "_v": 2,
+    "proper": false,
+    "verb": null
+  }
+]
