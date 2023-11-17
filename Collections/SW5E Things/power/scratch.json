@@ -1,16 +1,32 @@
 {
   "name": "Instinctive Movement",
-  "level": 0,
+  "level": 1,
   "school": "Force",
   "automation": [
+    {
+      "type": "variable",
+      "name": "numToken",
+      "value": 2,
+      "higher": {
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 4,
+        "7": 5,
+        "8": 5,
+        "9": 6
+      }
+    },
     {
       "type": "target",
       "target": "self",
       "effects": [
         {
           "type": "ieffect2",
-          "name": "Instinctive Movement",
-          "desc": "Speed increases by 5 ft, resistance to falling damage, ignore difficult terrain, climb speed equal to walking speed, add 10 ft to long jump, add 3 ft to high jump, you can move up, down, and across vertical surfaces and upside down along ceilings while leaving your hands free, you do not sink when moving over soft/brittle terrain (you cannot move across liquid surfaces",
+          "name": "Instinctive Movement - Parent",
+          "desc": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point.\n{numToken}",
           "duration": "10",
           "buttons": []
         }

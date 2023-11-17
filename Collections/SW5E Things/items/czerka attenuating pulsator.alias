@@ -1,0 +1,19 @@
+<drac2>
+ch = character()
+args = &ARGS&
+cc = "Czerka Attenuating Pulsator"
+tp = "Tech Points"
+
+base = f'''embed -thumb {image} -color {color} -title "{name} activates their {cc}"'''
+ch.create_cc_nx(cc,0,1,'short','bubble')
+if ch.get_cc(cc):
+    ch.mod_cc(cc,-1) if not '-i' in args else ''
+    ch.mod_cc(tp,max(intelligenceMod,1))
+    base += f''' -f "{cc}|When you score a critical hit or reduce a creature to 0 hit points with a ranged attack using this weapon, you can regain a number of tech points equal to your Intelligence modifier (a minimum of one, no action required). Once you’ve used this feature, you must complete a short or long rest before you can use it again." '''
+    base += f''' -f "{cc}{' (-1)' if '-i' not in args else ''}|{ch.cc_str(cc)}" '''
+    base += f''' -f "{tp}{f' (+{max(intelligenceMod,1)})'}|{ch.cc_str(tp)}"'''
+else:
+    base = f'''embed -thumb {image} -color {color} -title "{name} attempts to activate their Czerka Attenuating Pulsator" -desc "Not enough charges of {cc} remaining"'''
+
+return base
+</drac2>
