@@ -1,0 +1,36 @@
+<drac2>
+args = &ARGS&
+weapons = load_json(get_gvar('e9502670-eef7-4024-a334-d723a8f99edf'))
+output = "output" in args
+using(swequip="3e7fce92-a591-4f6a-9e7d-b72142c3c4b9")
+counter = ""
+
+if output:
+    args.remove('output')
+
+if len(args)>1 and "-" not in args[1] and args[1] not in "offhandnoprofdouble":
+    weapon = " ".join([args[0], args[1]])
+else:
+    weapon = args[0]
+
+args = argparse(args)
+attacks = []
+
+for w in weapons:
+    if w.name.lower() == weapon.lower():
+        attacks.append(w)
+
+if not attacks:
+    return err(f"I can't find a weapon named `{weapon}`.")
+
+attacks, counter = swequip.processAttacks(attacks, args)
+
+if output:
+    n = '\n'
+    if counter:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' -f "The following counter was created for **{name}**:" -f "{counter}|{character().cc_str(counter)}"'''
+    else:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' '''
+else:
+    return f'attack import {dump_json(attacks)}'
+</drac2>

@@ -118,7 +118,7 @@ def processAttacks(attacks, args):
             dmg_type = sup.get_damage_type(dmg)
             attack = attack.replace(dmg_type, args.last('dtype'))
 
-        if args.get('gunning') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
+        if args.get('gunmas') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
             attack = attack.replace('"success": []',
                                     '"success": [{"type":"damage","damage":"{dexterityMod}","overheal":"false"}]')
             out.append(load_json(attack))
@@ -127,11 +127,16 @@ def processAttacks(attacks, args):
             if "rapid - " in a.name.lower():
                 dmg = sup.get_damage_str(attack)
                 dmg = dmg.replace(" [", f"+{c.stats.prof_bonus*2} [")
-                attack = attack.replace (sup.get_damage_str(attack), dmg)
+                attack = attack.replace(sup.get_damage_str(attack), dmg)
             else:
                 dmg = sup.get_damage_str(attack)
                 dmg = dmg.replace(" [", f"+{c.stats.prof_bonus} [")
                 attack = attack.replace(sup.get_damage_str(attack), dmg)
+
+        if args.get('gunstyle') and ("rapid - " in a.name.lower() or "burst - " in a.name.lower()):
+                attack, gun = weap.gunning_style(attack, args)
+                if gun:
+                    out.append(load_json(gun))
 
         if args.get('heavy'):
             if "finesse" in prop:
@@ -191,12 +196,12 @@ def processAttacks(attacks, args):
         if args.get('burst') and 'rapid' not in a.name.lower() and 'penetrating' not in a.name.lower():
             burst = weap.burst(attack, args)
             if burst:
-                out.append(load_json(burst))
+                out += load_json(burst)
 
         if args.get('rapid') and 'rapid' not in a.name.lower() and 'burst' not in a.name.lower() and 'penetrating' not in a.name.lower():
             rapid = weap.rapid(attack, args)
             if rapid:
-                out.append(load_json(rapid))
+                out += load_json(rapid)
 
         if args.get('penetrating') and 'rapid' not in a.name.lower() and 'burst' not in a.name.lower() and 'rapid' not in a.name.lower():
             penetrating = weap.penetrating(attack, args)

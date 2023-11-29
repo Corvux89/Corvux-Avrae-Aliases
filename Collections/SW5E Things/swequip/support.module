@@ -131,11 +131,37 @@ def get_on_hit_effects(attack):
 
     return auto
 
+def get_on_save_effects(attack):
+    a = load_json(attack)
+    fail = []
+    success = []
+
+    for e in a.automation:
+        if e.type == "target":
+            for i in e.effects:
+                if i.type == "save":
+                    fail = i.fail
+                    success = i.success
+                    break
+    return fail,success
+
 
 def get_attack_bonus(attack):
     index = attack.find('"attackBonus": "') + 16
     return str(attack[index:attack[index:].find('"') + index])
 
+def get_counter(attack):
+    a = load_json(attack)
+
+    for e in a.automation:
+        if e.type == "counter":
+            return e
+        elif e.type == "target":
+            for i in e.effects:
+                if i.type == "counter":
+                    return i
+
+    return None
 
 def get_damage_die(attack):
     a = load_json(attack)
@@ -146,6 +172,16 @@ def get_damage_die(attack):
 
     damage_str = str(attack[dindex:attack[dindex:].find('+') + dindex])
     return damage_str
+
+def get_save_dc(attack):
+    a = load_json(attack)
+
+    for e in a.automation:
+        if e.type == "target":
+            for i in e.effects:
+                if i.type == "save":
+                    return i.dc
+    return None
 
 
 def replace_mod(text):

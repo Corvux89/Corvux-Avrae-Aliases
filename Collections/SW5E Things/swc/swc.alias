@@ -1,5 +1,6 @@
 <drac2>
 args = &ARGS&
+ch = character()
 if not args:
     return f'''embed -title "Need help rolling a check?" -desc "This command takes all the same arguments as `{ctx.prefix}check`.  For the Star Wars 5e system, History is replaced by Lore, Arcana is replaced by Technology, and Religion is replaced by Piloting." -footer "Alias by @R to the Ichie#6193"'''
 if args[0].lower() in "lore":
@@ -62,5 +63,12 @@ elif args[0].lower() in "religion":
         args.append(f'-title "[name] makes a {ability} (Piloting) check!"')
     else:
         args.append(f'-title "[name] makes a Piloting check!"')
+
+a = argparse(args)
+if a.get('eadv'):
+    skill = ch.skills[args[0].lower()]
+    c_roll = f'''{3 if a.last('eadv') == "True" else int(a.last('eadv'))}d20{f'mi{a.last("mc")}' if a.get("mc") else ''}+{skill.value} '''
+    return err(c_roll)
+
 return f'check {" ".join(args)}'
 </drac2>

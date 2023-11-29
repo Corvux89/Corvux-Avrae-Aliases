@@ -1,46 +1,11 @@
 {
-  "name": "Instinctive Movement",
-  "level": 1,
-  "school": "Force",
-  "automation": [
-    {
-      "type": "variable",
-      "name": "numToken",
-      "value": 2,
-      "higher": {
-        "1": 2,
-        "2": 2,
-        "3": 3,
-        "4": 3,
-        "5": 4,
-        "6": 4,
-        "7": 5,
-        "8": 5,
-        "9": 6
-      }
-    },
-    {
-      "type": "target",
-      "target": "self",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Instinctive Movement - Parent",
-          "desc": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point.\n{numToken}",
-          "duration": "10",
-          "buttons": []
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st.\n\n"
-    }
-  ],
-  "classes": "Universal",
+  "name": "Production Values",
+  "level": 0,
+  "school": "Tech",
+  "classes": "None",
   "subclasses": "",
-  "casttime": "1 bonus action",
-  "range": "Self",
+  "casttime": "1 action",
+  "range": "30 feet",
   "components": {
     "verbal": false,
     "somatic": false,
@@ -48,6 +13,6 @@
   },
   "duration": "1 minute",
   "ritual": false,
-  "description": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st.\n\n",
+  "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect–to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
   "concentration": false
 }

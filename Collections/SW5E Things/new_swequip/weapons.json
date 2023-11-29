@@ -1,0 +1,4105 @@
+[
+  {
+    "name": "Assault cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Burst 4",
+      "power cell (range 90/360)",
+      "reload 4",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 4",
+      "Power Cell": "power cell (range 90/360)",
+      "Reload": "reload 4",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "BKG",
+    "damageNumberOfDice": 3,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Auto",
+      "burst 2",
+      "disintegrate 13",
+      "power cell (range 120/480)",
+      "reload 2",
+      "strength 19",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 2",
+      "Disintegrate": "disintegrate 13",
+      "Power Cell": "power cell (range 120/480)",
+      "Reload": "reload 2",
+      "Strength": "strength 19",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Beam rifle",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Penetrating 2",
+      "power cell (range 150/600)",
+      "reload 2",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Penetrating": "Penetrating 2",
+      "Power Cell": "power cell (range 150/600)",
+      "Reload": "reload 2",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Bitesaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Acid",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Biting 13",
+      "hidden",
+      "luminous",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Biting": "Biting 13",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Blaster carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 70/280)",
+      "reload 16",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 70/280)",
+      "Reload": "reload 16",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Blaster pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 50/200)",
+      "reload 16"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 50/200)",
+      "Reload": "reload 16"
+    }
+  },
+  {
+    "name": "Blaster rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 105/420)",
+      "reload 12",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 105/420)",
+      "Reload": "reload 12",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Blightsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Necrotic",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Corruption 13",
+      "hidden",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Corruption": "Corruption 13",
+      "Hidden": "hidden",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Bowcaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Burst 4",
+      "power cell (range 50/200)",
+      "reload 4",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 4",
+      "Power Cell": "power cell (range 50/200)",
+      "Reload": "reload 4",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Brightsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Bright 13",
+      "hidden",
+      "luminous",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Bright": "Bright 13",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Broadsaber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 13",
+      "dire 1",
+      "luminous",
+      "versatile (1d8)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Dire": "dire 1",
+      "Luminous": "luminous",
+      "Versatile": "versatile (1d8)"
+    }
+  },
+  {
+    "name": "Bustersaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Brutal 1",
+      "dexterity 19",
+      "heavy",
+      "keen 1",
+      "luminous",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 19",
+      "Heavy": "heavy",
+      "Keen": "keen 1",
+      "Luminous": "luminous",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Carbine rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Auto",
+      "power cell (range 90/360)",
+      "rapid 3",
+      "reload 12",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Power Cell": "power cell (range 90/360)",
+      "Rapid": "rapid 3",
+      "Reload": "reload 12",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Chaingun",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Auto",
+      "rapid 2",
+      "reload 8",
+      "slug cartridge (range 80/320)",
+      "strength 13",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Rapid": "rapid 2",
+      "Reload": "reload 8",
+      "Range": "slug cartridge (range 80/320)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Chakram",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Finesse",
+      "returning",
+      "thrown (range 30/90)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Returning": "returning",
+      "Range": "thrown (range 30/90)"
+    }
+  },
+  {
+    "name": "Crossguard saber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Defensive 1",
+      "dexterity 13",
+      "heavy",
+      "luminous",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Dexterity": "dexterity 13",
+      "Heavy": "heavy",
+      "Luminous": "luminous",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Cryo cannon",
+    "damageNumberOfDice": 2,
+    "damageType": "Cold",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Auto",
+      "burst 2",
+      "power cell (range 75/300)",
+      "reload 4",
+      "strength 13",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 2",
+      "Power Cell": "power cell (range 75/300)",
+      "Reload": "reload 4",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Cryo carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Cold",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 45/180)",
+      "reload 12",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 45/180)",
+      "Reload": "reload 12",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Cryo pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Cold",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 30/120)",
+      "reload 8",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 30/120)",
+      "Reload": "reload 8",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Cryo rifle",
+    "damageNumberOfDice": 2,
+    "damageType": "Cold",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 50/200)",
+      "reload 4",
+      "strength 11",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 50/200)",
+      "Reload": "reload 4",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Cycler rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Rapid 2",
+      "reload 8",
+      "slug cartridge (range 90/360)",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Rapid": "Rapid 2",
+      "Reload": "reload 8",
+      "Range": "slug cartridge (range 90/360)",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Dire vibroblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Dexterity 13",
+      "dire 1",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Dire": "dire 1",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Diresword",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 11",
+      "dire 1",
+      "heavy"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Dire": "dire 1",
+      "Heavy": "heavy"
+    }
+  },
+  {
+    "name": "Disruptor carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Acid",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Disintegrate 13",
+      "power cell (range 60/240)",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Disintegrate": "Disintegrate 13",
+      "Power Cell": "power cell (range 60/240)",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Disruptor pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Acid",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Disintegrate 13",
+      "power cell (range 45/180)",
+      "reload 12",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Disintegrate": "Disintegrate 13",
+      "Power Cell": "power cell (range 45/180)",
+      "Reload": "reload 12",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Disruptor rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Acid",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Disintegrate 13",
+      "power cell (range 60/240)",
+      "reload 4",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Disintegrate": "Disintegrate 13",
+      "Power Cell": "power cell (range 60/240)",
+      "Reload": "reload 4",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Disruptor sniper",
+    "damageNumberOfDice": 1,
+    "damageType": "Acid",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Disintegrate 13",
+      "power cell (range 120/480)",
+      "reload 2",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Disintegrate": "Disintegrate 13",
+      "Power Cell": "power cell (range 120/480)",
+      "Reload": "reload 2",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Doubleblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Double (1d6 kinetic)",
+      "finesse",
+      "light"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d6 kinetic)",
+      "Finesse": "finesse",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Doublesaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Double (1d8 energy)",
+      "finesse",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d8 energy)",
+      "Finesse": "finesse",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Doubleshoto",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Double (1d6 energy)",
+      "finesse",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d6 energy)",
+      "Finesse": "finesse",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Doublesword",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Double (1d8 kinetic)",
+      "finesse"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d8 kinetic)",
+      "Finesse": "finesse"
+    }
+  },
+  {
+    "name": "Dual-phase saber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 13",
+      "hidden",
+      "luminous",
+      "versatile (1d12)",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (1d12)",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Echostaff",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Double (1d6 kinetic)",
+      "finesse",
+      "sonorous 13"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d6 kinetic)",
+      "Finesse": "finesse",
+      "Sonorous": "sonorous 13"
+    }
+  },
+  {
+    "name": "Electrobaton",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "light",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Light": "light",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Electrohammer",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 11",
+      "Heavy",
+      "shocking 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Heavy": "Heavy",
+      "Shocking": "shocking 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Electrostaff",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Double (1d6 kinetic)",
+      "finesse",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d6 kinetic)",
+      "Finesse": "finesse",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Flechette cannon",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 6",
+      "special (range special)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 6",
+      "Range": "special (range special)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Great-saber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 11",
+      "luminous",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Luminous": "luminous",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Grenade launcher",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 1",
+      "special (range 90/360)",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 1",
+      "Range": "special (range 90/360)",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Guard shoto",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Defensive 1",
+      "finesse",
+      "hidden",
+      "light luminous"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Finesse": "finesse",
+      "Hidden": "hidden",
+      "Light": "light luminous"
+    }
+  },
+  {
+    "name": "Hand BKG",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Brutal 1",
+      "disintegrate 13",
+      "keen 1",
+      "power cell (range 50/200)",
+      "reload 4",
+      "strength 15"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Disintegrate": "disintegrate 13",
+      "Keen": "keen 1",
+      "Power Cell": "power cell (range 50/200)",
+      "Reload": "reload 4",
+      "Strength": "strength 15"
+    }
+  },
+  {
+    "name": "Hand blaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Keen 1",
+      "light",
+      "power cell (range 40/160)",
+      "reload 8"
+    ],
+    "propertiesMap": {
+      "Keen": "Keen 1",
+      "Light": "light",
+      "Power Cell": "power cell (range 40/160)",
+      "Reload": "reload 8"
+    }
+  },
+  {
+    "name": "Hand cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Brutal 1",
+      "slug cartridge (range 25/100)",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Range": "slug cartridge (range 25/100)",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy blaster rifle",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 100/400)",
+      "rapid 2",
+      "reload 8",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 100/400)",
+      "Rapid": "rapid 2",
+      "Reload": "reload 8",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy bowcaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Burst 2",
+      "power cell (range 90/360)",
+      "reload 4",
+      "strength 17",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 2",
+      "Power Cell": "power cell (range 90/360)",
+      "Reload": "reload 4",
+      "Strength": "strength 17",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 60/240)",
+      "rapid 4",
+      "reload 16",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Rapid": "rapid 4",
+      "Reload": "reload 16",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 45/180)",
+      "reload 16"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 45/180)",
+      "Reload": "reload 16"
+    }
+  },
+  {
+    "name": "Heavy repeater",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Auto",
+      "burst 4",
+      "power cell (range 80/320)",
+      "rapid 4",
+      "reload 8",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 4",
+      "Power Cell": "power cell (range 80/320)",
+      "Rapid": "rapid 4",
+      "Reload": "reload 8",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy shotgun",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Burst 2",
+      "reload 8",
+      "slug cartridge (range 60/240)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 2",
+      "Reload": "reload 8",
+      "Range": "slug cartridge (range 60/240)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Heavy slugpistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Rapid 8",
+      "reload 12",
+      "slug cartridge (range 30/120)"
+    ],
+    "propertiesMap": {
+      "Rapid": "Rapid 8",
+      "Reload": "reload 12",
+      "Range": "slug cartridge (range 30/120)"
+    }
+  },
+  {
+    "name": "Hidden blade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "fixed",
+      "hidden",
+      "light"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Fixed": "fixed",
+      "Hidden": "hidden",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Hold-out",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Hidden",
+      "light",
+      "power cell (range 30/120)",
+      "reload 8"
+    ],
+    "propertiesMap": {
+      "Hidden": "Hidden",
+      "Light": "light",
+      "Power Cell": "power cell (range 30/120)",
+      "Reload": "reload 8"
+    }
+  },
+  {
+    "name": "Hunting rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Reload 4",
+      "slug cartridge (range 125/500)",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 4",
+      "Range": "slug cartridge (range 125/500)",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Incinerator carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Dire 1",
+      "disintegrate 13",
+      "power cell (range 60/240)",
+      "reload 12",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dire": "Dire 1",
+      "Disintegrate": "disintegrate 13",
+      "Power Cell": "power cell (range 60/240)",
+      "Reload": "reload 12",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Incinerator pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Dire 1",
+      "disintegrate 13",
+      "power cell (range 40/160)",
+      "reload 16",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Dire": "Dire 1",
+      "Disintegrate": "disintegrate 13",
+      "Power Cell": "power cell (range 40/160)",
+      "Reload": "reload 16",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Incinerator rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Dire 1",
+      "disintegrate 13",
+      "power cell (range 80/320)",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dire": "Dire 1",
+      "Disintegrate": "disintegrate 13",
+      "Power Cell": "power cell (range 80/320)",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Incinerator sniper",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Dire 1",
+      "disintegrate 13",
+      "power cell (range 120/480)",
+      "reload 2",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dire": "Dire 1",
+      "Disintegrate": "disintegrate 13",
+      "Power Cell": "power cell (range 120/480)",
+      "Reload": "reload 2",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Ion cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Ion",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Auto",
+      "burst 4",
+      "power cell (range 90/360)",
+      "reload 4",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 4",
+      "Power Cell": "power cell (range 90/360)",
+      "Reload": "reload 4",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Ion carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Ion",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 60/240)",
+      "reload 12",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Reload": "reload 12",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Ion pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Ion",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 3,
+    "properties": [
+      "Power cell (range 40/160)",
+      "reload 16"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 40/160)",
+      "Reload": "reload 16"
+    }
+  },
+  {
+    "name": "Ion rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Ion",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 80/320)",
+      "reload 8",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 80/320)",
+      "Reload": "reload 8",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Light pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Light",
+      "power cell (range 40/160)",
+      "reload 8"
+    ],
+    "propertiesMap": {
+      "Light": "Light",
+      "Power Cell": "power cell (range 40/160)",
+      "Reload": "reload 8"
+    }
+  },
+  {
+    "name": "Light repeater",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Auto",
+      "power cell (range 50/200)",
+      "rapid 5",
+      "reload 20",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Power Cell": "power cell (range 50/200)",
+      "Rapid": "rapid 5",
+      "Reload": "reload 20",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Light slugpistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Light",
+      "reload 8",
+      "slug cartridge (range 35/140)"
+    ],
+    "propertiesMap": {
+      "Light": "Light",
+      "Reload": "reload 8",
+      "Range": "slug cartridge (range 35/140)"
+    }
+  },
+  {
+    "name": "Lightaxe",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Dexterity 11",
+      "heavy",
+      "luminous",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Heavy": "heavy",
+      "Luminous": "luminous",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Lightbow",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Piercing 1",
+      "power cell (range 60/240)",
+      "reload 2",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Piercing": "Piercing 1",
+      "Power Cell": "power cell (range 60/240)",
+      "Reload": "reload 2",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightclub",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 11",
+      "heavy",
+      "luminous",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Heavy": "heavy",
+      "Luminous": "luminous",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightdagger",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "light",
+      "luminous",
+      "thrown (range 20/60)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Light": "light",
+      "Luminous": "luminous",
+      "Range": "thrown (range 20/60)"
+    }
+  },
+  {
+    "name": "Lightfoil",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Lightglaive",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Brutal 1",
+      "dexterity 13",
+      "luminous",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 13",
+      "Luminous": "luminous",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightkatana",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Dexterity 11",
+      "hidden",
+      "luminous",
+      "piercing 1",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Piercing": "piercing 1",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Lightnodachi",
+    "damageNumberOfDice": 3,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 17",
+      "luminous",
+      "piercing 1",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 17",
+      "Luminous": "luminous",
+      "Piercing": "piercing 1",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Lightsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Hidden",
+      "luminous",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Hidden": "Hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Lightstaff",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "luminous",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Luminous": "luminous",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Martial lightsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Hidden",
+      "luminous",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Hidden": "Hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Nervebaton",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disruptive",
+      "neuralizing 13"
+    ],
+    "propertiesMap": {
+      "Disruptive": "Disruptive",
+      "Neuralizing": "neuralizing 13"
+    }
+  },
+  {
+    "name": "Net",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 0,
+    "properties": [
+      "Light",
+      "finesse",
+      "special",
+      "thrown (range 15)"
+    ],
+    "propertiesMap": {
+      "Light": "Light",
+      "Finesse": "finesse",
+      "Special": "special",
+      "Range": "thrown (range 15)"
+    }
+  },
+  {
+    "name": "Pikesaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 11",
+      "luminous",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Luminous": "luminous",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Railgun",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Piercing 1",
+      "reload 2",
+      "slug cartridge (range 150/600)",
+      "strength 17",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Piercing": "Piercing 1",
+      "Reload": "reload 2",
+      "Range": "slug cartridge (range 150/600)",
+      "Strength": "strength 17",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Repeating blaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Auto",
+      "burst 4",
+      "power cell (range 75/300)",
+      "rapid 4",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 4",
+      "Power Cell": "power cell (range 75/300)",
+      "Rapid": "rapid 4",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Rocket launcher",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 1",
+      "special (range 150/600)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 1",
+      "Range": "special (range 150/600)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Rotary cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Auto",
+      "power cell (range 75/300)",
+      "rapid 2",
+      "reload 8",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Power Cell": "power cell (range 75/300)",
+      "Rapid": "rapid 2",
+      "Reload": "reload 8",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Sabermace",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Brutal 1",
+      "dexterity 13",
+      "hidden",
+      "luminous",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 13",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Saberwhip",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "luminous",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "Scattergun",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Burst 2",
+      "reload 8",
+      "slug cartridge (range 30/120)",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 2",
+      "Reload": "reload 8",
+      "Range": "slug cartridge (range 30/120)",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Shotgun",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Burst 2",
+      "reload 4",
+      "slug cartridge (range 30/120)",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Burst": "Burst 2",
+      "Reload": "reload 4",
+      "Range": "slug cartridge (range 30/120)",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Shotosaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Shoulder blaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 40/160)",
+      "rapid 4",
+      "reload 16",
+      "smart (15/+2)",
+      "special"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 40/160)",
+      "Rapid": "rapid 4",
+      "Reload": "reload 16",
+      "Smart": "smart (15/+2)",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Shoulder cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Auto",
+      "burst 8",
+      "power cell (range 60/240)",
+      "reload 8",
+      "smart (15/+2)",
+      "special",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 8",
+      "Power Cell": "power cell (range 60/240)",
+      "Reload": "reload 8",
+      "Smart": "smart (15/+2)",
+      "Special": "special",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Sicklesaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 11",
+      "dire 1",
+      "hidden",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Dire": "dire 1",
+      "Hidden": "hidden",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Sith saber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "hidden",
+      "keen 1",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Hidden": "hidden",
+      "Keen": "keen 1",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Slugpistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Rapid 8",
+      "reload 16",
+      "slug cartridge (range 40/160)",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Rapid": "Rapid 8",
+      "Reload": "reload 16",
+      "Range": "slug cartridge (range 40/160)",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Slugthrower",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Reload 12",
+      "slug cartridge (range 105/420)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 12",
+      "Range": "slug cartridge (range 105/420)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Smart cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Auto",
+      "burst 2",
+      "rapid 2",
+      "reload 4",
+      "slug cartridge (range 75/300)",
+      "smart (15/+2)",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst 2",
+      "Rapid": "rapid 2",
+      "Reload": "reload 4",
+      "Range": "slug cartridge (range 75/300)",
+      "Smart": "smart (15/+2)",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Smart pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Piercing 1",
+      "rapid 2",
+      "reload 16",
+      "slug cartridge (range 40/160)",
+      "smart (15/+2)",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Piercing": "Piercing 1",
+      "Rapid": "rapid 2",
+      "Reload": "reload 16",
+      "Range": "slug cartridge (range 40/160)",
+      "Smart": "smart (15/+2)",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Sniper rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Power cell (range 150/600)",
+      "reload 2",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 150/600)",
+      "Reload": "reload 2",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Splitsaber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Double (2d4 energy)",
+      "interlocking",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Double": "Double (2d4 energy)",
+      "Interlocking": "interlocking",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Splitshoto",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Double (1d8 energy)",
+      "interlocking",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Double": "Double (1d8 energy)",
+      "Interlocking": "interlocking",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Subrepeater",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Auto",
+      "rapid 4",
+      "light",
+      "power cell (range 30/120)",
+      "reload 16",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Rapid": "rapid 4",
+      "Light": "light",
+      "Power Cell": "power cell (range 30/120)",
+      "Reload": "reload 16",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Techaxe",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Light",
+      "thrown (range 25/75)"
+    ],
+    "propertiesMap": {
+      "Light": "Light",
+      "Range": "thrown (range 25/75)"
+    }
+  },
+  {
+    "name": "Techblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Finesse",
+      "light"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Techstaff",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "double (2d4 kinetic)",
+      "light"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Double": "double (2d4 kinetic)",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Vapor projector",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 6",
+      "special (range special)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 6",
+      "Range": "special (range special)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibroaxe",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Dexterity 11",
+      "heavy",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Heavy": "heavy",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrobattleaxe",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Brutal 1",
+      "dexterity 13",
+      "heavy",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 13",
+      "Heavy": "heavy",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibroblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Versatile": "Versatile (1d10)"
+    }
+  },
+  {
+    "name": "Vibrobuster",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Brutal 1",
+      "dexterity 19",
+      "heavy",
+      "keen 1",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 19",
+      "Heavy": "heavy",
+      "Keen": "keen 1",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrodagger",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "light",
+      "thrown (range 20/60)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Light": "light",
+      "Range": "thrown (range 20/60)"
+    }
+  },
+  {
+    "name": "Vibrodart",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "special",
+      "thrown (range 20/60)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Special": "special",
+      "Range": "thrown (range 20/60)"
+    }
+  },
+  {
+    "name": "Vibroflail",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "reckless 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "": "reckless 1"
+    }
+  },
+  {
+    "name": "Vibroglaive",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Brutal 1",
+      "dexterity 13",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal 1",
+      "Dexterity": "dexterity 13",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrohammer",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Heavy",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Heavy": "Heavy",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Vibrokatana",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Dexterity 11",
+      "piercing 1",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Piercing": "piercing 1",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Vibroknife",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "light",
+      "piercing 1"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Light": "light",
+      "Piercing": "piercing 1"
+    }
+  },
+  {
+    "name": "Vibroknuckler",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Hidden",
+      "light"
+    ],
+    "propertiesMap": {
+      "Hidden": "Hidden",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Vibromace",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 11",
+      "heavy",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Heavy": "heavy",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibronodachi",
+    "damageNumberOfDice": 3,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 17",
+      "piercing 1",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 17",
+      "Piercing": "piercing 1",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Vibropike",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 11",
+      "reach",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Reach": "reach",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrorapier",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Finesse"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse"
+    }
+  },
+  {
+    "name": "Vibrosabre",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 11",
+      "keen 1",
+      "light"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Keen": "keen 1",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Vibroshield",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Defensive 1",
+      "fixed"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Fixed": "fixed"
+    }
+  },
+  {
+    "name": "Vibrospear",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Thrown (range 25/75)",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Range": "Thrown (range 25/75)",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Vibrostaff",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Versatile": "Versatile (2d4)"
+    }
+  },
+  {
+    "name": "Vibrostiletto",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "keen 1",
+      "light",
+      "thrown (range 30/90)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Keen": "keen 1",
+      "Light": "light",
+      "Range": "thrown (range 30/90)"
+    }
+  },
+  {
+    "name": "Vibrosword",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrotonfa",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Defensive 1",
+      "finesse",
+      "light"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Finesse": "finesse",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Vibrowhip",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "War hat",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Defensive 1",
+      "disguised",
+      "returning",
+      "thrown (range 30/90)"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Disguised": "disguised",
+      "Returning": "returning",
+      "Range": "thrown (range 30/90)"
+    }
+  },
+  {
+    "name": "Warsaber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 15",
+      "reckless 1",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 15",
+      "": "reckless 1",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Warsword",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Dexterity 15",
+      "reckless 1",
+      "two-handed",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 15",
+      "": "reckless 1",
+      "Two-Handed": "two-handed",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Wrist launcher",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Fixed",
+      "reload 1",
+      "special (range 30/120)"
+    ],
+    "propertiesMap": {
+      "Fixed": "Fixed",
+      "Reload": "reload 1",
+      "Range": "special (range 30/120)"
+    }
+  },
+  {
+    "name": "Wristblaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Disguised",
+      "fixed",
+      "light",
+      "power cell (range 30/120)",
+      "reload 8"
+    ],
+    "propertiesMap": {
+      "Disguised": "Disguised",
+      "Fixed": "fixed",
+      "Light": "light",
+      "Power Cell": "power cell (range 30/120)",
+      "Reload": "reload 8"
+    }
+  },
+  {
+    "name": "ARC caster",
+    "damageNumberOfDice": 2,
+    "damageType": "Lightning",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 60/240)",
+      "burst 8",
+      "rapid 4",
+      "reload 9",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Burst": "burst 8",
+      "Rapid": "rapid 4",
+      "Reload": "reload 9",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Affixed Rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 90/360)",
+      "fixed",
+      "rapid 4",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 90/360)",
+      "Fixed": "fixed",
+      "Rapid": "rapid 4",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Anti-materiel blaster",
+    "damageNumberOfDice": 3,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 180/720)",
+      "auto",
+      "reload 2",
+      "penetrating 2",
+      "strength 19",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 180/720)",
+      "Auto": "auto",
+      "Reload": "reload 2",
+      "Penetrating": "penetrating 2",
+      "Strength": "strength 19",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Anti-materiel rifle",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Slug cartridge (range 180/720)",
+      "reload 2",
+      "penetrating 2",
+      "strength 19",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 180/720)",
+      "Reload": "reload 2",
+      "Penetrating": "penetrating 2",
+      "Strength": "strength 19",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Atlatl",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Disguised",
+      "light",
+      "special"
+    ],
+    "propertiesMap": {
+      "Disguised": "Disguised",
+      "Light": "light",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Blaster cannon",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Auto",
+      "burst",
+      "rapid",
+      "special (range 120/480)",
+      "strength 19",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Auto": "Auto",
+      "Burst": "burst",
+      "Rapid": "rapid",
+      "Range": "special (range 120/480)",
+      "Strength": "strength 19",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Bo-rifle",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "ExoticBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Modal (blaster rifle and techstaff)"
+    ],
+    "propertiesMap": {
+      "Modal": "Modal (blaster rifle and techstaff)"
+    }
+  },
+  {
+    "name": "Bo-rifle",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "ExoticVibroweapon",
+    "damageDieType": 0,
+    "properties": [
+      "Modal (blaster rifle and techstaff)"
+    ],
+    "propertiesMap": {
+      "Modal": "Modal (blaster rifle and techstaff)"
+    }
+  },
+  {
+    "name": "Bolas",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 0,
+    "properties": [
+      "Light",
+      "special",
+      "thrown (range 20/60)"
+    ],
+    "propertiesMap": {
+      "Light": "Light",
+      "Special": "special",
+      "Range": "thrown (range 20/60)"
+    }
+  },
+  {
+    "name": "Bolt-thrower",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 1",
+      "silent",
+      "special (range 90/360)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 1",
+      "Silent": "silent",
+      "Range": "special (range 90/360)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Cesta",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Disguised",
+      "double (1d8) finesse",
+      "special"
+    ],
+    "propertiesMap": {
+      "Disguised": "Disguised",
+      "Double": "double (1d8) finesse",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Chained dagger",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disarming",
+      "finesse",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Disarming": "Disarming",
+      "Finesse": "finesse",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "Chained lightdagger",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disarming",
+      "finesse",
+      "luminous",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Disarming": "Disarming",
+      "Finesse": "finesse",
+      "Luminous": "luminous",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "Claymoresaber",
+    "damageNumberOfDice": 3,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 13",
+      "luminous",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Luminous": "luminous",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Compound bow",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Mighty",
+      "silent",
+      "special (range 75/300)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Mighty": "Mighty",
+      "Silent": "silent",
+      "Range": "special (range 75/300)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Crosssaber",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 15",
+      "double (2d4 energy)",
+      "heavy",
+      "luminous",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 15",
+      "Double": "double (2d4 energy)",
+      "Heavy": "heavy",
+      "Luminous": "luminous",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "Disguised blade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disarming",
+      "disguised",
+      "finesse",
+      "light"
+    ],
+    "propertiesMap": {
+      "Disarming": "Disarming",
+      "Disguised": "disguised",
+      "Finesse": "finesse",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Disruptorshiv",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disruptive",
+      "finesse",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Disruptive": "Disruptive",
+      "Finesse": "finesse",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Electroprod",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Disruptive",
+      "shocking 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Disruptive": "Disruptive",
+      "Shocking": "shocking 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Electrovoulge",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 10,
+    "properties": [
+      "Dexterity 13",
+      "reach",
+      "shocking 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Reach": "reach",
+      "Shocking": "shocking 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Electrowhip",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "disruptive",
+      "reach",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Disruptive": "disruptive",
+      "Reach": "reach",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Energy bow",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 80/320)",
+      "mighty",
+      "reload 4",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 80/320)",
+      "Mighty": "mighty",
+      "Reload": "reload 4",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Energy slingshot",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 20/80)",
+      "disruptive",
+      "fixed",
+      "mighty",
+      "reload 20",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 20/80)",
+      "Disruptive": "disruptive",
+      "Fixed": "fixed",
+      "Mighty": "mighty",
+      "Reload": "reload 20",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Hooked vibroblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Disarming",
+      "finesse"
+    ],
+    "propertiesMap": {
+      "Disarming": "Disarming",
+      "Finesse": "finesse"
+    }
+  },
+  {
+    "name": "IWS",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "ExoticBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Modal (blaster rifle, grenade launcher, and sniper rifle)"
+    ],
+    "propertiesMap": {
+      "Modal": "Modal (blaster rifle, grenade launcher, and sniper rifle)"
+    }
+  },
+  {
+    "name": "Jagged vibroblade",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 13",
+      "keen 1",
+      "versatile (1d12)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Keen": "keen 1",
+      "Versatile": "versatile (1d12)"
+    }
+  },
+  {
+    "name": "Lightbaton",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Hidden",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Hidden": "Hidden",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Lightcutlass",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "hidden",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Hidden": "hidden",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Lightfist",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disguised",
+      "disruptive",
+      "fixed",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Disguised": "Disguised",
+      "Disruptive": "disruptive",
+      "Fixed": "fixed",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Lightning cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Lightning",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 90/360)",
+      "auto",
+      "penetrating 2",
+      "reload 4",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 90/360)",
+      "Auto": "auto",
+      "Penetrating": "penetrating 2",
+      "Reload": "reload 4",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightning carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Lightning",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 60/240)",
+      "penetrating 6",
+      "reload 12",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Penetrating": "penetrating 6",
+      "Reload": "reload 12",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightning pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Lightning",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 30/120)",
+      "penetrating 8",
+      "reload 16"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 30/120)",
+      "Penetrating": "penetrating 8",
+      "Reload": "reload 16"
+    }
+  },
+  {
+    "name": "Lightning rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Lightning",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 60/240)",
+      "penetrating 2",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Penetrating": "penetrating 2",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Lightring",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Finesse",
+      "hidden",
+      "luminous",
+      "returning",
+      "thrown (range 25/75)"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Hidden": "hidden",
+      "Luminous": "luminous",
+      "Returning": "returning",
+      "Range": "thrown (range 25/75)"
+    }
+  },
+  {
+    "name": "Lightsaber pike",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Dexterity 11",
+      "double (1d8 energy)",
+      "luminous",
+      "reach"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Double": "double (1d8 energy)",
+      "Luminous": "luminous",
+      "Reach": "reach"
+    }
+  },
+  {
+    "name": "Mancatcher",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Reach",
+      "special",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reach": "Reach",
+      "Special": "special",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Marksman blaster",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Power cell (range 125/500)",
+      "reload 8",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 125/500)",
+      "Reload": "reload 8",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Mortar launcher",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Special (range 150/600)",
+      "reload 1",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Range": "Special (range 150/600)",
+      "Reload": "reload 1",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Needler",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Slug cartridge (range 30/160)",
+      "piercing 1",
+      "reload 12",
+      "silent",
+      "special"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 30/160)",
+      "Piercing": "piercing 1",
+      "Reload": "reload 12",
+      "Silent": "silent",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Neuronic whip",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "ExoticVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Reach",
+      "shocking 15",
+      "specialized (shocking)"
+    ],
+    "propertiesMap": {
+      "Reach": "Reach",
+      "Shocking": "shocking 15",
+      "Special": "specialized (shocking)"
+    }
+  },
+  {
+    "name": "Nightstinger rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Power cell (range 125/500)",
+      "reload 2",
+      "silent",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 125/500)",
+      "Reload": "reload 2",
+      "Silent": "silent",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Phase knife",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11",
+      "disguised",
+      "hidden",
+      "keen 1",
+      "light",
+      "luminous",
+      "vicious 1"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11",
+      "Disguised": "disguised",
+      "Hidden": "hidden",
+      "Keen": "keen 1",
+      "Light": "light",
+      "Luminous": "luminous",
+      "Vicious": "vicious 1"
+    }
+  },
+  {
+    "name": "Radiation cannon",
+    "damageNumberOfDice": 2,
+    "damageType": "Necrotic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 75/300)",
+      "auto",
+      "burst 2",
+      "disrupt ive",
+      "piercing 1",
+      "reload 4",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 75/300)",
+      "Auto": "auto",
+      "Burst": "burst 2",
+      "": "disrupt ive",
+      "Piercing": "piercing 1",
+      "Reload": "reload 4",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Radrifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Necrotic",
+    "weaponClassification": "ExoticBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Disintegrate 15",
+      "power cell (range 120/480)",
+      "reload 8",
+      "specialized (disintegrate)",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Disintegrate": "Disintegrate 15",
+      "Power Cell": "power cell (range 120/480)",
+      "Reload": "reload 8",
+      "Special": "specialized (disintegrate)",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Retrosaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Dexterity 13",
+      "dire 1",
+      "reckless 1",
+      "versatile (1d10)"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Dire": "dire 1",
+      "": "reckless 1",
+      "Versatile": "versatile (1d10)"
+    }
+  },
+  {
+    "name": "Revolver",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Slug cartridge (range 60/240)",
+      "rapid 4",
+      "reload 8",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 60/240)",
+      "Rapid": "rapid 4",
+      "Reload": "reload 8",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Riot baton",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Defensive 1",
+      "light"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Riot shocker",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Defensive 1",
+      "light",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Defensive": "Defensive 1",
+      "Light": "light",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Rocket rifle",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Reload 6",
+      "special (range 60/240)",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Reload": "Reload 6",
+      "Range": "special (range 60/240)",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Saberaxe",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Luminous"
+    ],
+    "propertiesMap": {
+      "Luminous": "Luminous"
+    }
+  },
+  {
+    "name": "Sabergauntlet",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialLightweapon",
+    "damageDieType": 8,
+    "properties": [
+      "Finesse",
+      "fixed",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Fixed": "fixed",
+      "Luminous": "luminous"
+    }
+  },
+  {
+    "name": "Saberspear",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Luminous",
+      "thrown (range 20/60)",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Luminous": "Luminous",
+      "Range": "thrown (range 20/60)",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Saberstaff",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "ExoticLightweapon",
+    "damageDieType": 0,
+    "properties": [
+      "Modal (double-saber and tech-staff)"
+    ],
+    "propertiesMap": {
+      "Double": "Modal (double-saber and tech-staff)"
+    }
+  },
+  {
+    "name": "Saberstaff",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "ExoticVibroweapon",
+    "damageDieType": 0,
+    "properties": [
+      "Modal (double-saber and tech-staff)"
+    ],
+    "propertiesMap": {
+      "Double": "Modal (double-saber and tech-staff)"
+    }
+  },
+  {
+    "name": "Scatter blaster",
+    "damageNumberOfDice": 2,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 40/160)",
+      "burst 3",
+      "reload 12",
+      "strength 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 40/160)",
+      "Burst": "burst 3",
+      "Reload": "reload 12",
+      "Strength": "strength 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Sentry gun",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Brutal",
+      "keen 1",
+      "reload 4",
+      "special (range 120/480)",
+      "strength 19",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Brutal": "Brutal",
+      "Keen": "keen 1",
+      "Reload": "reload 4",
+      "Range": "special (range 120/480)",
+      "Strength": "strength 19",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Shatter cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Slug cartridge (range 75/300)",
+      "auto",
+      "burst 4",
+      "reload 8",
+      "silent",
+      "strength 15",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 75/300)",
+      "Auto": "auto",
+      "Burst": "burst 4",
+      "Reload": "reload 8",
+      "Silent": "silent",
+      "Strength": "strength 15",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Shatter pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Slug cartridge (range 60/240)",
+      "light",
+      "reload 12",
+      "silent",
+      "strength 11"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 60/240)",
+      "Light": "light",
+      "Reload": "reload 12",
+      "Silent": "silent",
+      "Strength": "strength 11"
+    }
+  },
+  {
+    "name": "Shatter rifle",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Slug cartridge (range 100/400)",
+      "reload 8",
+      "silent",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 100/400)",
+      "Reload": "reload 8",
+      "Silent": "silent",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Shock whip",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Reach",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Reach": "Reach",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Shortbow",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Mighty",
+      "silent",
+      "special (range 60/240)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Mighty": "Mighty",
+      "Silent": "silent",
+      "Range": "special (range 60/240)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Sonic cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Sonic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Power cell (range 90/360)",
+      "auto",
+      "burst 2",
+      "disruptive",
+      "reload 4",
+      "strength 17",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 90/360)",
+      "Auto": "auto",
+      "Burst": "burst 2",
+      "Disruptive": "disruptive",
+      "Reload": "reload 4",
+      "Strength": "strength 17",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Sonic carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Sonic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 60/240)",
+      "disruptive",
+      "reload 12",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Disruptive": "disruptive",
+      "Reload": "reload 12",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Sonic pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Sonic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Power cell (range 30/120)",
+      "disruptive",
+      "reload 16"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 30/120)",
+      "Disruptive": "disruptive",
+      "Reload": "reload 16"
+    }
+  },
+  {
+    "name": "Sonic rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Sonic",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 80/320)",
+      "disruptive",
+      "reload 8",
+      "strength 11",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 80/320)",
+      "Disruptive": "disruptive",
+      "Reload": "reload 8",
+      "Strength": "strength 11",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Stealth carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 70/280)",
+      "reload 16",
+      "silent",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 70/280)",
+      "Reload": "reload 16",
+      "Silent": "silent",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Stun gauntlet",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Disruptive",
+      "fixed",
+      "shocking 13"
+    ],
+    "propertiesMap": {
+      "Disruptive": "Disruptive",
+      "Fixed": "fixed",
+      "Shocking": "shocking 13"
+    }
+  },
+  {
+    "name": "Sunsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Fire",
+    "weaponClassification": "ExoticLightweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Bright 15",
+      "dexterity 11",
+      "hidden",
+      "specialized (bright)",
+      "versatile (2d4)"
+    ],
+    "propertiesMap": {
+      "Bright": "Bright 15",
+      "Dexterity": "dexterity 11",
+      "Hidden": "hidden",
+      "Special": "specialized (bright)",
+      "Versatile": "versatile (2d4)"
+    }
+  },
+  {
+    "name": "Switch cannon",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 10,
+    "properties": [
+      "Power cell (range 100/400)",
+      "burst 2",
+      "reload 4",
+      "strength 15",
+      "switch (2d4 acid/cold/fire/lightning)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 100/400)",
+      "Burst": "burst 2",
+      "Reload": "reload 4",
+      "Strength": "strength 15",
+      "Switch": "switch (2d4 acid/cold/fire/lightning)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Switch carbine",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 70/280)",
+      "reload 16",
+      "switch (1d4 acid)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 70/280)",
+      "Reload": "reload 16",
+      "Switch": "switch (1d4 acid)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Switch pistol",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 6,
+    "properties": [
+      "Power cell (range 40/160)",
+      "reload 20",
+      "switch (1d4 fire)"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 40/160)",
+      "Reload": "reload 20",
+      "Switch": "switch (1d4 fire)"
+    }
+  },
+  {
+    "name": "Switch rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 105/420)",
+      "reload 8",
+      "switch (1d6 lightning)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 105/420)",
+      "Reload": "reload 8",
+      "Switch": "switch (1d6 lightning)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Switch sniper",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 12,
+    "properties": [
+      "Power cell (range 150/600)",
+      "reload 2",
+      "strength 13",
+      "switch (1d10 cold)",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 150/600)",
+      "Reload": "reload 2",
+      "Strength": "strength 13",
+      "Switch": "switch (1d10 cold)",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Torpedo launcher",
+    "damageNumberOfDice": 0,
+    "damageType": "Unknown",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 0,
+    "properties": [
+      "Special (range 1200/3600)",
+      "reload 1",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Range": "Special (range 1200/3600)",
+      "Reload": "reload 1",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Tranquilizer rifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleBlaster",
+    "damageDieType": 4,
+    "properties": [
+      "Slug cartridge (range 60/240)",
+      "reload 4",
+      "silent",
+      "special"
+    ],
+    "propertiesMap": {
+      "Range": "Slug cartridge (range 60/240)",
+      "Reload": "reload 4",
+      "Silent": "silent",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Vibrobaton",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "\u2014"
+    ],
+    "propertiesMap": {
+      "": "\u2014"
+    }
+  },
+  {
+    "name": "Vibroclaw",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "fixed",
+      "light"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Fixed": "fixed",
+      "Light": "light"
+    }
+  },
+  {
+    "name": "Vibroclaymore",
+    "damageNumberOfDice": 3,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 13",
+      "two-handed"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Two-Handed": "two-handed"
+    }
+  },
+  {
+    "name": "Vibrocutlass",
+    "damageNumberOfDice": 2,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Dexterity 11"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 11"
+    }
+  },
+  {
+    "name": "Vibrocutter",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "SimpleVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Heavy"
+    ],
+    "propertiesMap": {
+      "Heavy": "Heavy"
+    }
+  },
+  {
+    "name": "Vibrolance",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 12,
+    "properties": [
+      "Dexterity 13",
+      "reach",
+      "special"
+    ],
+    "propertiesMap": {
+      "Dexterity": "Dexterity 13",
+      "Reach": "reach",
+      "Special": "special"
+    }
+  },
+  {
+    "name": "Wristblade",
+    "damageNumberOfDice": 1,
+    "damageType": "Kinetic",
+    "weaponClassification": "MartialVibroweapon",
+    "damageDieType": 6,
+    "properties": [
+      "Fixed",
+      "light",
+      "piercing 1"
+    ],
+    "propertiesMap": {
+      "Fixed": "Fixed",
+      "Light": "light",
+      "Piercing": "piercing 1"
+    }
+  },
+  {
+    "name": "Wristrifle",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "MartialBlaster",
+    "damageDieType": 8,
+    "properties": [
+      "Power cell (range 60/240)",
+      "fixed",
+      "reload 12"
+    ],
+    "propertiesMap": {
+      "Power Cell": "Power cell (range 60/240)",
+      "Fixed": "fixed",
+      "Reload": "reload 12"
+    }
+  },
+  {
+    "name": "Wristsaber",
+    "damageNumberOfDice": 1,
+    "damageType": "Energy",
+    "weaponClassification": "SimpleLightweapon",
+    "damageDieType": 4,
+    "properties": [
+      "Finesse",
+      "fixed",
+      "light",
+      "luminous"
+    ],
+    "propertiesMap": {
+      "Finesse": "Finesse",
+      "Fixed": "fixed",
+      "Light": "light",
+      "Luminous": "luminous"
+    }
+  }
+]

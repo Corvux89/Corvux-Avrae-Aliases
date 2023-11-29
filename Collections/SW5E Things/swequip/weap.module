@@ -239,18 +239,24 @@ def burst(attack, args):
 
     burst = {"name": f"Burst - {a.name}", "_v": 2, "automation": [damage, target, counter, text]}
 
+    if args.get('gunstyle'):
+        burst, new = gunning_style(dump_json(burst), args)
+        burst = [load_json(burst), load_json(new)]
+    else:
+        burst = [burst]
+
     return dump_json(burst)
 
 def rapid(attack, args):
     a = load_json(attack)
     rNum = 2 if args.last('rapid') == 'True' else int(args.last('rapid'))
-    dc = f"8+{sup.get_attack_bonus(attack)}"
+    dc = f"8+{sup.get_attack_bonus(attack)}" if not args.get('dc') else int(args.last('dc'))
     dtype = sup.get_damage_type(sup.get_damage_str(attack))
     die = sup.get_damage_die(attack)
 
     numDie = die[:die.find('d')]
     dieType = die[die.find('d')+1:]
-    d_str = f"{int(numDie)*2}d{dieType} [{dtype}]"
+    d_str = f"{int(numDie)*2}d{dieType}" + "+{dexterityMod}" + f" [{dtype}]"
     on_hit = sup.get_on_hit_effects(attack)
     for e in on_hit:
         if e.type=="damage":
@@ -264,6 +270,12 @@ def rapid(attack, args):
     text = {"type": "text", "text": f"{sup.getProperties(attack)}, rapid {rNum}"}
 
     rapid = {"name": f"Rapid - {a.name}", "_v": 2, "automation": [target, text]}
+
+    if args.get('gunstyle'):
+        rapid, new = gunning_style(dump_json(rapid), args)
+        rapid = [load_json(rapid), load_json(new)]
+    else:
+        rapid = [rapid]
 
     return dump_json(rapid)
 
@@ -383,5 +395,58 @@ def blade_storm(attack, level, args):
     blade_storm = {"name": f"Blade Storm - {a.name}", "_v": 2, "automation": [target, text]}
 
     return dump_json(blade_storm)
+
+def gunning_style(attack, args):
+    a = load_json(attack)
+    dmg_str = sup.get_damage_str(attack)
+    die = sup.get_damage_die(attack)
+    numDie = ceil(int(die[:die.find('d')])/2)
+    dieType = int(die[die.find('d')+1:])
+    counter = sup.get_counter(attack)
+    dc = sup.get_save_dc(attack)
+    gun_str = dmg_str.replace(f'{die}', f"({numDie}d{dieType}, {numDie}d{dieType})kh1")
+    max_str = dmg_str.replace(f'{dieType}', f'{dieType}mi{dieType}')
+    fail, save = sup.get_on_save_effects(attack)
+    con_fail, con_save = sup.get_on_save_effects(attack)
+    gun_fail, gun_save = sup.get_on_save_effects(attack)
+
+    for e in con_fail:
+        if e.type == "damage":
+            e["damage"] = max_str
+            break
+
+    for f in gun_fail:
+        if f.type == "damage":
+            f["damage"] = gun_str
+            break
+
+    for g in gun_save:
+        if g.type == "damage":
+            g["damage"] = gun_str
+            break
+
+    condition = {"type": "condition", "condition": "lastSaveNaturalRoll <= 1", "onTrue": con_fail, "onFalse": fail}
+    save = {"type": "save", "stat": "dex", "dc": dc, "fail": [condition], "success": save}
+    target = {"type": "target", "target": "all", "effects": [save]}
+    text = {"type": "text", "text": f"{sup.getProperties(attack)}"}
+
+
+    base_attack = {"name": a.name, "_v": 2, "automation": [target, text]}
+
+    if counter:
+        base_attack["automation"].append(counter)
+
+    condition = {"type": "condition", "condition": "lastSaveNaturalRoll <= 1", "onTrue": con_fail, "onFalse": gun_fail}
+    save = {"type": "save", "stat": "dex", "dc": dc, "fail": [condition], "success": gun_save}
+    target = {"type": "target", "target": "all", "effects": [save]}
+    text = {"type": "text", "text": f"{sup.getProperties(attack)}"}
+
+    gun_attack = {"name": f'Gunning - {a.name}', "_v": 2, "automation": [target, text]}
+
+    if counter:
+        base_attack["automation"].append(counter)
+
+    return dump_json(base_attack), dump_json(gun_attack)
+
 
 
