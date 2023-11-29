@@ -43,7 +43,7 @@ elif args[0].lower() in "arcana":
             ability = "Charisma"
         elif args[1].lower() in "constitution":
             ability = "Constitution"
-        args.append(f'-title "[name] makes a {ability} (Technology) check!"')
+            args.append(f'-title "[name] makes a {ability} (Technology) check!"')
     else:
         args.append(f'-title "[name] makes a Technology check!"')
 elif args[0].lower() in "religion":
@@ -60,15 +60,27 @@ elif args[0].lower() in "religion":
             ability = "Charisma"
         elif args[1].lower() in "constitution":
             ability = "Constitution"
-        args.append(f'-title "[name] makes a {ability} (Piloting) check!"')
+            args.append(f'-title "[name] makes a {ability} (Piloting) check!"')
     else:
         args.append(f'-title "[name] makes a Piloting check!"')
 
-a = argparse(args)
+a = argparse(" ".join(args))
 if a.get('eadv'):
-    skill = ch.skills[args[0].lower()]
-    c_roll = f'''{3 if a.last('eadv') == "True" else int(a.last('eadv'))}d20{f'mi{a.last("mc")}' if a.get("mc") else ''}+{skill.value} '''
-    return err(c_roll)
+    try:
+        skill = ch.skills[args[0].lower()]
+    except:
+        return err(f"{args[0]} is not a valid skill")
+    c_roll = f'''{3 if a.last('eadv') == "True" else int(a.last('eadv'))}d20{f'mi{a.last("mc")}' if a.get("mc") else ''}kh1+{skill.value}{f'+{a.last("b")}' if a.get("b") else ''} '''
+    out = f'''embed -title "{a.last('title')}" -phrase "{a.last('phrase','')}" -thumb "{a.last('thumb',image)}" '''
+    out = out.replace('[name]', name)
+    iter_roll = 1 if not a.get('rr') else int(a.last('rr'))
+    for i in range(iter_roll):
+        if iter_roll == 1:
+            out += f''' -desc "{vroll(c_roll)}"'''
+        else:
+            out += f''' -f "Check {i+1}|{vroll(c_roll)}|inline" '''
+
+    return out
 
 return f'check {" ".join(args)}'
 </drac2>

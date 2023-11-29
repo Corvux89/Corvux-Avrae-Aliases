@@ -1,0 +1,75 @@
+<drac2>
+ch = character()
+com = combat()
+args = &ARGS&
+a = argparse(args)
+gname = com.me.group if com and com.me and com.me.group else f"{ch.name} and Friend(s)" if not a.get(
+    'group') else a.last('group')
+tName = "Turret#" if not a.get('name') else a.last('name')
+out = []
+resist = f'{ch.name}Turret'
+desc = f"You learn how to craft small sentry turrets shaped like globes that can adhere to any surface. As an action or bonus action (your choice), you can throw a sentry to a point you can see within range (30 feet + your Strength modifier x 5). At the end of each of your turns, a deployed sentry automatically targets a hostile creature within 10 feet of it. If multiple targets are available, one is chosen at random. The target must make a Dexterity saving throw. On a failed save, it takes 1d4 energy damage and gains 1 slowed level until the end of your next turn. If a creature would be targeted by more than one of these sentries, it only makes this saving throw once, taking an additional d4 damage for each sentry beyond the first. The sentries have 1 hit point, an armor class of 10, and can be repaired over the course of a long rest. Each sentry lasts for 1 minute before deactivating. You can maintain a number of sentries equal to your Intelligence modifier ({intelligenceMod})."
+
+attack = {"name": "Sentry Turret - Attack", "_v": 2, "automation": [
+    {"type": "target", "target": "each", "effects": [
+        {"type": "condition",
+         "condition": f"target.resistances.is_resistant('{resist}')",
+         "onTrue": [
+            {
+                      "type": "damage",
+                      "damage": "1d4 [energy]"
+                  }
+         ],
+         "onFalse": [
+             {"type": "save",
+              "stat": "dex",
+              "fail": [
+                  {
+                      "type": "damage",
+                      "damage": "1d4 [energy]"
+                  },
+                  {
+                      "type": "condition",
+                      "condition": f"target.resistances.is_resistant('{resist}')",
+                      "onTrue": [],
+                      "onFalse": [
+                          {
+                              "type": "ieffect2",
+                              "name": "1 Slowed Level",
+                              "duration": 2,
+                              "end": True,
+                              "tick_on_caster": True,
+                              "effects": {"resistances": [resist]}
+                          }
+                      ]
+                  }
+              ],
+              "success": []}
+         ]}
+    ]}]}
+
+ch.create_cc_nx("Sentry Turret", 0, intelligenceMod, "short", "bubble")
+v = ch.get_cc("Sentry Turret") or "-i" in args
+
+if v:
+    if com:
+        eff = com.me.add_effect("Sentry Turrets Active!", duration=10, attacks=[{"attack": attack}])
+        ch.mod_cc("Sentry Turret", -1)
+        com.me.set_group(gname)
+        out.append("multiline")
+        out.append(f'''init add 0 {tName} -p {com.me.init} -group "{gname}" -hp 1 -ac 10''')
+        out.append(f'''init opt "{com.me.name}" -group "{gname}"''')
+
+    out.append(f'''embed -title "{ch.name} deploys their turrets!" -desc "{desc}" {f'-f "{com.me.name}|{eff}"' if com else ''} {f'-f "Sentry Turret|{ch.cc_str("Sentry Turret")}"' if "-i" not in args else ''}''')
+
+else:
+    out.append(f'''embed -title "{ch.name} attempts to deploy a turret" -desc "Unfortunately there are not enough charges left. Take a short/long rest then try again." ''')
+
+
+out_str = f"\n{ctx.prefix}".join(out)
+
+if a.get('dev'):
+    return err(out_str)
+
+return out_str
+</drac2>

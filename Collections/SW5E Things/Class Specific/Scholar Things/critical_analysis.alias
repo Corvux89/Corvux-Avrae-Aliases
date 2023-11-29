@@ -65,7 +65,7 @@ if v:
                                          "counter": "Mutagenic Transformation",
                                          "amount": 1, "errorBehaviour": "raise"}]}]})
                 elif subclass == "Politician":
-                    amt = round(mod/2)
+                    amt = ceil(mod/2)
                     effects["ac_bonus"] = amt
                     if "CharmingFeint" in discoveries:
                         effects["damage_bonus"] = amt

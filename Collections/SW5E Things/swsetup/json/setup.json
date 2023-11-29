@@ -217,6 +217,61 @@
     ]
   },
   {
+    "Class": "Consularlight",
+    "subclass": "Endurance",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {"resistances":  ["kinetic", "energy"]},
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+        "type": "text",
+        "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+      }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Class": "Consulardark",
     "subclassLevel": 3,
     "attacks": [
@@ -288,6 +343,61 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Endurance",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {"resistances":  ["kinetic", "energy"]},
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+        "type": "text",
+        "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+      }
+          ]
+        }
       }
     ]
   },
