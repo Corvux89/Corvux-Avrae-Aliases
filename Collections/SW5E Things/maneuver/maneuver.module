@@ -17,6 +17,7 @@ def maneuver(args):
     a = argparse(args)
     out = f"embed -thumb {image} -color {color}"
     sm = a.get("sm")
+    mm = a.get('mm')
 
     if sm:
         c.create_cc_nx("Superiority Mastery", 0, c.stats.prof_bonus, "long", "square")
@@ -30,13 +31,13 @@ def maneuver(args):
     fail = 'fail' in args
     pss = 'pass' in args
     superiorityDice = '1d4' if lvl < 5 or sm else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
-    superiorityDice+= f"mi{a.last('mi')}" if a.last('mi') else f"mi{2 if 'd4' in superiorityDice or 'd6' in superiorityDice else 3 if 'd8' in superiorityDice else 4 if 'd10' in superiorityDice else 5}" if "PerfectManeuver" in feats.get("Discoveries",[]) else ""
+    superiorityDice += f"mi{a.last('mi')}" if a.last('mi') else f"mi{2 if 'd4' in superiorityDice or 'd6' in superiorityDice else 3 if 'd8' in superiorityDice else 4 if 'd10' in superiorityDice else 5}" if "PerfectManeuver" in feats.get("Discoveries",[]) else ""
     superiorityDice = superiorityDice.replace('1d', '2d') + "kh1" if a.last('savage') or 'adv' in args else superiorityDice
-
 
     type = a.last('type') if a.last('type') else feature.sub
     maneuverMod = get_mod(type)
-    cc = "Superiority Dice" if not sm else "Superiority Mastery"
+    cc = "Superiority Mastery" if sm else "Channel the Force" if mm else "Superiority Dice"
+    superiorityDice += f"+{ceil(maneuverMod/2)}" if mm else ''
     ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
     cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
     dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
@@ -186,6 +187,9 @@ def maneuver(args):
 
     if sm:
         out += f''' -f "Superiority Mastery|Choose one maneuver you know. When you would use the chosen maneuver, you can use a d4 instead of expending a superiority die. You can do so a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest."'''
+
+    if mm:
+        out += f''' -f "Masters Maneuver|When you would use a maneuver, you can expend a use of your Channel the force. You do not expend a die to use the maneuver and if you would roll the maneuver die for the maneuver, you add half your maneuver modifier to the result." '''
 
     return out
 
