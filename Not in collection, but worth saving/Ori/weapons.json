@@ -20,7 +20,7 @@
                   }
                 ],
                 "miss": [],
-                "attackBonus": "proficiencyBonus+2"
+                "attackBonus": "2+2"
               }
             ],
             "onFalse": [
@@ -82,7 +82,7 @@
               }
             ],
             "success": [],
-            "dc": "8+proficiencyBonus+2"
+            "dc": "8+2+2"
           }
         ]
       },

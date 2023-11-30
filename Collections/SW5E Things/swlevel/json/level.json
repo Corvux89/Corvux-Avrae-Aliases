@@ -1397,13 +1397,12 @@
     "subclass": "Audiotech",
     "counters": [
       {
-        "name": "Enhanced Song",
+        "name": "Potent Amplitude",
         "level": 3,
         "value": 2,
         "display": "bubble",
         "reset": "long",
-        "classLevel": "EngineerLevel",
-        "desc": "As an action while wielding your modified instrument, you can begin performing an enhanced song, which lasts for 1 minute. While playing a song, you gain access to a new use for your Potent Aptitude, as determined by the song, listed below. You can end your song at any time, no action required.\n\nWhenever you take damage while playing your song, you must make a Constitution saving throw to continue playing. The DC equals 10 or half the damage you take, which number is higher. If you take damage from multiple sources, you must make a separate saving throw for each source of damage.\n\nWhen you cast a damage dealing tech power while playing your song that requires an attack roll or saving throw, you can cause that power to instead deal sonic damage. If you do so, instead of an attack roll or saving throw, the power instead requires a Constitution saving throw.\n\nYour song ends early if you are incapacitated or die, or if you are no longer holding your modified instrument.\n\nYou can initiate playing an enhanced song twice. You regain all expended songs when you finish a short or long rest."
+        "classLevel": "EngineerLevel"
       },
       {
         "name": "Legendary Coda",

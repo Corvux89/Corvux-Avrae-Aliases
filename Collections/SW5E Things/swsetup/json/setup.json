@@ -554,71 +554,89 @@
       {
         "level": 1,
         "action": {
+  "name": "Potent Aptitude",
+  "_v": 2,
+  "activation_type": 3,
+  "verb": "uses",
+  "automation": [
+    {
+      "type": "variable",
+      "value": "{caster.levels.get('Engineer')}",
+      "name": "level"
+    },
+    {
+      "type": "variable",
+      "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+      "name": "die"
+    },
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "ieffect2",
           "name": "Potent Aptitude",
-          "_v": 2,
-          "activation_type": 3,
-          "verb": "uses",
-          "automation": [
+          "duration": 100,
+          "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
+          "buttons": [
             {
-              "type": "variable",
-              "value": "{caster.levels.get('Engineer')}",
-              "name": "level"
-            },
-            {
-              "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
-              "name": "die"
-            },
-            {
-              "type": "target",
-              "target": "each",
-              "effects": [
+              "label": "Use Potent Aptitude",
+              "verb": "is using assistance",
+              "style": 3,
+              "automation": [
                 {
-                  "type": "ieffect2",
-                  "name": "Potent Aptitude",
-                  "duration": 100,
-                  "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n1d{die}",
-                  "buttons": [
-                    {
-                      "label": "Use Potent Aptitude",
-                      "verb": "is using assistance",
-                      "style": 3,
-                      "automation": [
-                        {
-                          "type": "remove_ieffect"
-                        },
-                        {
-                          "type": "roll",
-                          "dice": "{ieffect.desc.split()[-1]}",
-                          "name": "Potent Aptitude"
-                        },
-                        {
-                          "type": "text",
-                          "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
-                        }
-                      ]
-                    }
-                  ]
+                  "type": "remove_ieffect"
+                },
+                {
+                  "type": "roll",
+                  "dice": "{ieffect.desc.split()[-1]}",
+                  "name": "Potent Aptitude"
+                },
+                {
+                  "type": "text",
+                  "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
                 }
               ]
-            },
-            {
-              "type": "text",
-              "title": "Meta",
-              "text": "**Die to add:** 1d{die}"
-            },
-            {
-              "type": "text",
-              "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
-            },
-            {
-              "type": "counter",
-              "counter": "Potent Aptitude",
-              "amount": 1,
-              "errorBehaviour": "raise"
             }
           ]
         }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Meta",
+      "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
+    },
+    {
+      "type": "text",
+      "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
+    },
+    {
+      "type": "counter",
+      "counter": "Potent Aptitude",
+      "amount": 1,
+      "errorBehaviour": "raise"
+    },
+    {
+      "type": "condition",
+      "condition": "choice == 'gott'",
+      "onFalse": [],
+      "onTrue": [
+        {
+          "type": "counter",
+          "counter": "Goggles of the Tinkerer",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
+          "title": "Goggles of the Tinkerer"
+        }
+      ]
+    }
+  ]
+}
       }
     ]
   },

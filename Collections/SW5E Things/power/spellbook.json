@@ -530,54 +530,6 @@
     "concentration": false
   },
   {
-    "name": "Burst",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d8 [kinetic]",
-        "name": "damage",
-        "cantripScale": false
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "save",
-            "stat": "dex",
-            "fail": [
-              {
-                "type": "damage",
-                "damage": "{damage}",
-                "cantripScale": true
-              }
-            ],
-            "success": []
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\n\nThis power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
-      }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (5-foot sphere)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-    "concentration": false
-  },
-  {
     "name": "Cage",
     "level": 7,
     "school": "Tech",
@@ -16960,6 +16912,192 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You gain the minor ability to move or manipulate creatures and objects with the Force. You can exert fine control on objects with your telekinetic grip, such as manipulating a simple tool, opening a door or a container, stowing or retrieving an item from an open container, or pouring the contents from a vial. Alternatively, you can push or pull a creature or object you can see. \r\n\r\nYou use the Force to move a Medium or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 20 feet, a Small creature or object can be moved up to 10 feet, and a Medium creature or object can be moved up to 5 feet. If at the end of this movement the creature or object strikes another creature or object, it must make a Dexterity saving throw. An object automatically fails this saving throw. On a failed save, they both take 1d4 kinetic damage.\r\n\r\nThis power improves when you reach higher levels. At 5th level, you can move a Tiny creature or object up to 30 feet, a Small creature or object up to 20 feet, a Medium creature or object up to 10 feet, and the power's damage increases to 2d4 kinetic damage. At 11th level, you can move a Small creature or object up to 30 feet, a Medium creature up to 20 feet, and the power's damage increases to 3d4 kinetic damage. At 17th level, you can move a Medium creature to up 30 feet, and the power's damage increases to 4d4 kinetic damage.",
+    "concentration": false
+  },
+  {
+    "name": "Burst",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "1d8 [kinetic]",
+        "name": "damage",
+        "cantripScale": true
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\n\nThis power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (5-foot sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Instinctive Movement",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numToken",
+        "value": "2",
+        "higher": {
+          "2": "2",
+          "3": "3",
+          "4": "3",
+          "5": "4",
+          "6": "4",
+          "7": "5",
+          "8": "5",
+          "9": "6"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Instinctive Movement - Parent",
+            "duration": "10",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "ieffect2",
+                        "name": "Speed point used",
+                        "stacking": true,
+                        "parent": "ieffect"
+                      },
+                      {
+                        "type": "ieffect2",
+                        "name": "Speed boosted!",
+                        "duration": "1",
+                        "end": true,
+                        "desc": "All movement effects active!\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra {ieffect.desc.split()[-1]}d4 damage with that attack."
+                      },
+                      {
+                        "type": "text",
+                        "text": "Your speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra {ieffect.desc.split()[-1]}d4 damage with that attack."
+                      }
+                    ]
+                  }
+                ],
+                "label": "Use Speed Point",
+                "style": "3"
+              }
+            ],
+            "desc": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain {numToken} speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point.\n{numDie}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You enhance your movement with the Force, allowing you to traverse your environment with speed and acrobatic grace. When you cast this power, you gain two speed points. When you cast the power and as a bonus action on subsequent turns, you can expend a speed point, granting yourself all of the following benefits until the end of that turn:\n\nYour speed increases by 5 feet.\nYou have resistance to falling damage.\nYou ignore difficult terrain.\nYou have a climb speed equal to your walking speed.\nYou add 10 feet to your long jump distance and 3 feet to your high jump distance.\nYou can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.\nYou do not sink when moving over soft or brittle terrain, such as dust, silt, mud, snow, or thin ice. This effect does not allow you to move across liquid surfaces.\nIf you move at least 20 feet straight toward a creature and then hit it with a melee weapon attack for the first time on the same turn, you deal an extra 1d4 damage with that attack.\nAt the end of the turn, the benefits fade entirely until you spend another speed point. If these benefits end while you are still on a vertical surface, or anywhere else where you would normally fall or sink, you immediately fall or begin to sink unless you have some other means to remain there.\n\nThis power ends when its duration expires, when you cast this power again, or when you have spent all your speed points. When the power ends, any unspent speed points are lost.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, the extra damage increases by 1d4 for each slot level above 1st. In addition, if you cast this power with a force slot of 3rd level or higher, you gain one additional speed point for every two slot levels above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Art of Movement",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "By letting the Force flow through you, you move with preternatural grace, leaping onto or over tall obstacles that impede others. Until the power ends, you gain the following benefits:\n\nYour speed increases by 10 feet.\nYou have resistance to damage from falling.\nYour jumping distance is tripled.\nYou gain a climbing speed equal to your walking speed, and you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. If you are on a vertical surface when you end your turn and are not using your hands to climb, you immediately fall unless you have some other means of remaining there.\nYour movement is unaffected by difficult terrain or squeezing.\nYou ignore the effects of slowed levels under 3.\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d10 force damage on a hit. Whether you hit or miss, you gain a flying speed equal to your walking speed until the end of that turn."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 10 minutes",
+    "ritual": false,
+    "description": "By letting the Force flow through you, you move with preternatural grace, leaping onto or over tall obstacles that impede others. Until the power ends, you gain the following benefits:\n\nYour speed increases by 10 feet.\nYou have resistance to damage from falling.\nYour jumping distance is tripled.\nYou gain a climbing speed equal to your walking speed, and you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. If you are on a vertical surface when you end your turn and are not using your hands to climb, you immediately fall unless you have some other means of remaining there.\nYour movement is unaffected by difficult terrain or squeezing.\nYou ignore the effects of slowed levels under 3.\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d10 force damage on a hit. Whether you hit or miss, you gain a flying speed equal to your walking speed until the end of that turn.",
+    "concentration": true
+  },
+  {
+    "name": "Production Values",
+    "level": 0,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect–to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
     "concentration": false
   }
 ]

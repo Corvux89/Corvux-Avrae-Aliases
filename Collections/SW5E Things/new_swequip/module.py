@@ -2,11 +2,12 @@
 
 ch = character()
 
-def processAttacks(attacks, args):
+def processAttacks(args):
     out = []
+    type = None
 
-    for i, a in enumerate(attacks):
-        weapon_name = a.get("name") if not args.get("name") else args.last("name")
-        num_die = a.get("damageNumberOfDice") if not args.get("numDie") else args.last("numDie")
-        die_size =
-        return err(a)
+    if len(args) == 0:
+        return err("Need to specify a weapon type")
+    elif len(args) >1 and "-" not in args[0]:
+        type = args[0]
+

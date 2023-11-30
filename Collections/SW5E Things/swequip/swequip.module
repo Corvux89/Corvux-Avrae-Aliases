@@ -52,6 +52,9 @@ def processAttacks(attacks, args):
         if args.get('d'):
             attack = attack.replace('} [', '}' + f'+{args.last("d")} [')
 
+        if args.get('ad'):
+            attack = attack.replace(sup.get_damage_str(attack), f'{sup.get_damage_str(attack)}+{args.last("ad")}')
+
         if args.get('criton'):
             if "criton" in attack:
                 index = attack.find('"criton": ') + 10

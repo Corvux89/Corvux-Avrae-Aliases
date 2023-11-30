@@ -16,7 +16,7 @@
               }
             ],
             "miss": [],
-            "attackBonus": "proficiencyBonus+3+2"
+            "attackBonus": "8+3+2"
           },
           {
             "type": "counter",
@@ -52,7 +52,7 @@
               }
             ],
             "success": [],
-            "dc": "8+proficiencyBonus+3+2"
+            "dc": "8+3+2"
           },
           {
             "type": "counter",

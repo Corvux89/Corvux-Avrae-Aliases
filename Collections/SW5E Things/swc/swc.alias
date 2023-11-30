@@ -67,11 +67,14 @@ elif args[0].lower() in "religion":
 a = argparse(" ".join(args))
 if a.get('eadv'):
     try:
-        skill = ch.skills[args[0].lower()]
+        for n, s in ch.skills:
+            if args[0].lower() in n.lower():
+                skill = s
+                skill_name = n
     except:
         return err(f"{args[0]} is not a valid skill")
     c_roll = f'''{3 if a.last('eadv') == "True" else int(a.last('eadv'))}d20{f'mi{a.last("mc")}' if a.get("mc") else ''}kh1+{skill.value}{f'+{a.last("b")}' if a.get("b") else ''} '''
-    out = f'''embed -title "{a.last('title')}" -phrase "{a.last('phrase','')}" -thumb "{a.last('thumb',image)}" '''
+    out = f'''embed -title "{a.last('title') if a.get('title') else f'{ch.name} makes a {skill_name.title()} Check!'}" -phrase "{a.last('phrase','')}" -thumb "{a.last('thumb',image)}" '''
     out = out.replace('[name]', name)
     iter_roll = 1 if not a.get('rr') else int(a.last('rr'))
     for i in range(iter_roll):

@@ -1,0 +1,31 @@
+<drac2>
+args = &ARGS&
+conditions = load_json(get_gvar('4c60fcdd-3247-4d28-99b9-d222b763f9ac'))
+
+if len(args)>1 and "-" not in args[1]:
+    lookup = " ".join([args[0], args[1]])
+elif len(args) == 0:
+    return err(f"Need to lookup something. Ex: `{ctx.prefix}swcondition blinded`")
+else:
+    lookup = args[0]
+
+for c in conditions:
+    if lookup.lower() in c.get('name').lower():
+        start = 0
+        desc = []
+        while start < len(c.get('desc')):
+            end = start + 1024
+            while end < len(c.get('desc')) and c.get('desc')[end] != ' ':
+                end -= 1
+            if end == start:
+                end = start + 1024
+            desc.append(c.get('desc')[start:end].strip())
+            start = end
+
+        out = f'''embed -title "Condition: {c.get('name')}" '''
+        for d in desc:
+            out += f''' -f "{'Description' if desc.index(d) == 0 else ''}|{d}"'''
+        return out
+
+return f'''embed -title "Condition not found" -desc "Cannot find a condition by the name `{lookup}`" '''
+</drac2>
