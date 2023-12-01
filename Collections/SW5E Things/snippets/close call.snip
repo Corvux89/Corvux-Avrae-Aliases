@@ -1,0 +1,15 @@
+<drac2>
+ch = character()
+cc = "Potent Aptitude"
+out = ""
+level = int(get("EngineerLevel",0))
+pad = "1d4" if level < 5 else "1d6" if level < 9 else "1d8" if level < 13 else "1d10" if level < 17 else "1d12"
+if ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+    out = f''' -f "Close Call||When you make an attack roll with your modified weapon and miss, you can expend one use of your Potent Aptitude to attempt to turn that miss into a hit. Roll the die and add it to the attack roll." '''
+    out += f''' -f "{cc}|{ch.cc_str(cc)}"'''
+    out += f''' -b {pad} '''
+else:
+    out = f''' -f "{cc}|Not enough charges left" '''
+return out
+</drac2>

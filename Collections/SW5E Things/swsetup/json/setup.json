@@ -69,6 +69,57 @@
             }
           ]
         }
+      },
+      {
+        "level": 3,
+        "action": {
+          "name": "Force Affinity - Ashla",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "iwillneverhaveacounternamedthis",
+              "amount": 0,
+              "errorBehaviour": "ignore",
+              "allowOverflow": true
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterRequestedAmount == 0",
+              "onTrue": [
+                {
+                  "type": "text",
+                  "text": "Use the `-amt` argument to specify how much to heal. Ex: `!a 'Force Affinity - Ashla` -t zo1 -amt 4`"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Ashla",
+                      "duration": 10,
+                      "effects": {
+                        "max_hp_bonus": "{lastCounterRequestedAmount }"
+                      }
+                    },
+                    {
+                      "type": "damage",
+                      "damage": "-{lastCounterRequestedAmount } [healing]"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "When you successfully cast a light side power, either your or the target’s (your choice) hit point maximum and current hit points increase by an amount equal to the power’s level. This effect lasts for 1 minute. You can only have one instance of this effect active at a time."
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -233,7 +284,12 @@
                 {
                   "type": "ieffect2",
                   "name": "Upheld by the Force",
-                  "effects": {"resistances":  ["kinetic", "energy"]},
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
                   "duration": 10,
                   "buttons": [
                     {
@@ -263,9 +319,62 @@
               "errorBehaviour": "raise"
             },
             {
-        "type": "text",
-        "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
+          ]
+        }
       }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Telekinetics",
+    "attacks": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
           ]
         }
       }
@@ -343,6 +452,57 @@
             ]
           }
         ]
+      },
+      {
+        "level": 3,
+        "action": {
+          "name": "Force Affinity - Ashla",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "iwillneverhaveacounternamedthis",
+              "amount": 0,
+              "errorBehaviour": "ignore",
+              "allowOverflow": true
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterRequestedAmount == 0",
+              "onTrue": [
+                {
+                  "type": "text",
+                  "text": "Use the `-amt` argument to specify how much to heal. Ex: `!a 'Force Affinity - Ashla` -t zo1 -amt 4`"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Ashla",
+                      "duration": 10,
+                      "effects": {
+                        "max_hp_bonus": "{lastCounterRequestedAmount }"
+                      }
+                    },
+                    {
+                      "type": "damage",
+                      "damage": "-{lastCounterRequestedAmount } [healing]"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "When you successfully cast a light side power, either your or the target’s (your choice) hit point maximum and current hit points increase by an amount equal to the power’s level. This effect lasts for 1 minute. You can only have one instance of this effect active at a time."
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -363,7 +523,12 @@
                 {
                   "type": "ieffect2",
                   "name": "Upheld by the Force",
-                  "effects": {"resistances":  ["kinetic", "energy"]},
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
                   "duration": 10,
                   "buttons": [
                     {
@@ -393,9 +558,9 @@
               "errorBehaviour": "raise"
             },
             {
-        "type": "text",
-        "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
-      }
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
           ]
         }
       }
@@ -548,95 +713,357 @@
     ]
   },
   {
+    "Class": "Consulardark",
+    "subclass": "Telekinetics",
+    "attacks": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Class": "Engineer",
     "subclassLevel": 3,
     "attacks": [
       {
         "level": 1,
         "action": {
-  "name": "Potent Aptitude",
-  "_v": 2,
-  "activation_type": 3,
-  "verb": "uses",
-  "automation": [
-    {
-      "type": "variable",
-      "value": "{caster.levels.get('Engineer')}",
-      "name": "level"
-    },
-    {
-      "type": "variable",
-      "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
-      "name": "die"
-    },
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "ieffect2",
           "name": "Potent Aptitude",
-          "duration": 100,
-          "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
-          "buttons": [
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
             {
-              "label": "Use Potent Aptitude",
-              "verb": "is using assistance",
-              "style": 3,
-              "automation": [
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
                 {
-                  "type": "remove_ieffect"
-                },
+                  "type": "ieffect2",
+                  "name": "Potent Aptitude",
+                  "duration": 100,
+                  "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
+                  "buttons": [
+                    {
+                      "label": "Use Potent Aptitude",
+                      "verb": "is using assistance",
+                      "style": 3,
+                      "automation": [
+                        {
+                          "type": "remove_ieffect"
+                        },
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[-1]}",
+                          "name": "Potent Aptitude"
+                        },
+                        {
+                          "type": "text",
+                          "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Meta",
+              "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
+            },
+            {
+              "type": "text",
+              "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "condition",
+              "condition": "choice == 'gott'",
+              "onFalse": [],
+              "onTrue": [
                 {
-                  "type": "roll",
-                  "dice": "{ieffect.desc.split()[-1]}",
-                  "name": "Potent Aptitude"
+                  "type": "counter",
+                  "counter": "Goggles of the Tinkerer",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
                 },
                 {
                   "type": "text",
-                  "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
+                  "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
+                  "title": "Goggles of the Tinkerer"
                 }
               ]
             }
           ]
         }
-      ]
-    },
-    {
-      "type": "text",
-      "title": "Meta",
-      "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
-    },
-    {
-      "type": "text",
-      "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
-    },
-    {
-      "type": "counter",
-      "counter": "Potent Aptitude",
-      "amount": 1,
-      "errorBehaviour": "raise"
-    },
-    {
-      "type": "condition",
-      "condition": "choice == 'gott'",
-      "onFalse": [],
-      "onTrue": [
-        {
-          "type": "counter",
-          "counter": "Goggles of the Tinkerer",
-          "amount": 1,
-          "errorBehaviour": "raise"
-        },
-        {
-          "type": "text",
-          "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
-          "title": "Goggles of the Tinkerer"
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Audiotech",
+    "attacks": [
+      {
+        "level": 5,
+        "action": {
+          "name": "Battle Song Enhancement",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "condition",
+              "condition": "len(targets) <=1",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "While playing your Song of Battle, as an action, you can send forth busts of directed sonic energy, make two ranged power attacks. These attacks can target the same creature different ones. Make separate attack rolls for each burst. The attack has a range equal to the radius of your song, and deals 1d8 sonic damage on a hit."
+            }
+          ]
         }
-      ]
-    }
-  ]
-}
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Gadgeteer",
+    "attacks": [
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Environmental Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'acidcoldfireforcelightningnecroticpoisonpsychicsonic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{level}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Environmental Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Environmental Barrier",
+                  "text": "You project an environmental barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + your engineer level. Whenever a creature with this barrier takes damage (one of acid, cold, fire, force, lightning, necrotic, poison, psychic, or sonic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Environmental Barrier' -t zo1 -choice cold`"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Physical Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'energyionkinetic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{ceil(level/2)}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Physical Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Physical Barrier",
+                  "text": "You project a physical barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + half your engineer level. Whenever a creature with this barrier takes damage (one of energy, ion, or kinetic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Physical Barrier' -t zo1 -choice kinetic`"
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -815,6 +1242,67 @@
     ]
   },
   {
+    "Class": "Guardianlight",
+    "subclass": "Makashi",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+  "name": "Makashi Riposte - Channel the Force",
+  "_v": 2,
+  "activation_type": 4,
+  "automation": [
+    {
+      "type": "variable",
+      "name": "level",
+      "value": "{max(caster.levels.get('Guardianlight',0),caster.levels.get('Guardiandark',0))}"
+    },
+    {
+      "type": "counter",
+      "counter": "iwillneverhaveacounternamedthis",
+      "amount": 0,
+      "errorBehaviour": "ignore",
+      "allowOverflow": true
+    },
+    {
+      "type": "roll",
+      "dice": "1d10+{dexterityMod}+{level}",
+      "name": "damage",
+      "displayName": "Damage Reduction"
+    },
+    {
+      "type": "condition",
+      "condition": "lastCounterRequestedAmount == 0",
+      "onTrue": [],
+      "onFalse": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "-{damage if lastCounterRequestedAmount >= damage else lastCounterRequestedAmount} [damage reduction]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+    {
+      "type": "text",
+      "text": "When another creature damages you with a melee attack, you can expend a use of your Channel the Force and use your reaction to attempt to deflect the attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your guardian level.\n\nIf you reduce the damage to 0, you can immediately make a single melee weapon attack against that creature as a part of the reaction."
+    }
+  ]
+}
+      }
+    ]
+  },
+  {
     "Class": "Guardiandark",
     "subclassLevel": 3,
     "attacks": [
@@ -931,6 +1419,67 @@
             }
           ]
         }
+      }
+    ]
+  },
+  {
+    "Class": "Guardiandark",
+    "subclass": "Makashi",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+  "name": "Makashi Riposte - Channel the Force",
+  "_v": 2,
+  "activation_type": 4,
+  "automation": [
+    {
+      "type": "variable",
+      "name": "level",
+      "value": "{max(caster.levels.get('Guardianlight',0),caster.levels.get('Guardiandark',0))}"
+    },
+    {
+      "type": "counter",
+      "counter": "iwillneverhaveacounternamedthis",
+      "amount": 0,
+      "errorBehaviour": "ignore",
+      "allowOverflow": true
+    },
+    {
+      "type": "roll",
+      "dice": "1d10+{dexterityMod}+{level}",
+      "name": "damage",
+      "displayName": "Damage Reduction"
+    },
+    {
+      "type": "condition",
+      "condition": "lastCounterRequestedAmount == 0",
+      "onTrue": [],
+      "onFalse": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "-{damage if lastCounterRequestedAmount >= damage else lastCounterRequestedAmount} [damage reduction]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+              "type": "counter",
+              "counter": "Channel the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+    {
+      "type": "text",
+      "text": "When another creature damages you with a melee attack, you can expend a use of your Channel the Force and use your reaction to attempt to deflect the attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your guardian level.\n\nIf you reduce the damage to 0, you can immediately make a single melee weapon attack against that creature as a part of the reaction."
+    }
+  ]
+}
       }
     ]
   },
@@ -1184,13 +1733,68 @@
                   "name": "Empty Body - Invisible",
                   "duration": 10,
                   "desc": "You can use your action to spend 4 focus points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.",
-                  "effects": {"resistances": ["acid", "cold", "energy", "fire", "ion", "kinetic", "lightning", "necrotic", "poison", "psychic", "sonic"]}
+                  "effects": {
+                    "resistances": [
+                      "acid",
+                      "cold",
+                      "energy",
+                      "fire",
+                      "ion",
+                      "kinetic",
+                      "lightning",
+                      "necrotic",
+                      "poison",
+                      "psychic",
+                      "sonic"
+                    ]
+                  }
                 }
               ]
             },
             {
               "type": "text",
               "text": "You can use your action to spend 4 focus points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Scholar",
+    "subclass": "Physician",
+    "attacks": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Tend the Wounded",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Scholar')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 13 if level < 17 else 12",
+              "name": "dieSize"
+            },
+            {
+              "type": "roll",
+              "dice": "1d{dieSize} [healing]",
+              "name": "healing"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "-{healing}"
+                }
+              ]
             }
           ]
         }

@@ -1,9 +1,9 @@
 **Assert your superiority!**
-
+ 
 `!maneuver "[name]" [*args]`
-
+ 
 You have you have a counter named "Superiority Dice" for this to work
-
+ 
 **Valid Arguments**
 `-t [target]` - Specify any number of targets of the maneuver. Can specify adv/dis per target. ex `-t [target]|dis`
 `dis` - Disadvantage on any saves
@@ -19,3 +19,4 @@ You have you have a counter named "Superiority Dice" for this to work
 `-dc` - Override the default maneuver DC
 `-dtype` - Set the damage type if applicable
 `sm` - Superiority Mastery indicator (forces the dice to be 1d4 and switches the counter)
+`mm` - Maneuver Master (Adds a bonus to any superiority dice rolls, and switches the counter)

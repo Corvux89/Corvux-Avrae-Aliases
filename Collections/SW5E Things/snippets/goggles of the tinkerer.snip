@@ -1,0 +1,16 @@
+<drac2>
+ch = character()
+cc = "Goggles of the Tinkerer"
+out = ""
+level = int(get("EngineerLevel",0))
+pad = "1d4" if level < 5 else "1d6" if level < 9 else "1d8" if level < 13 else "1d10" if level < 17 else "1d12"
+ch.create_cc_nx(cc,0, ceil(level/2), 'long', 'bubble')
+if ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+    out = f''' -f "{cc}|Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together." '''
+    out += f''' -f "{cc}|{ch.cc_str(cc)}"'''
+    out += f''' -d {pad} '''
+else:
+    out = f''' -f "{cc}|Not enough charges left" '''
+return out
+</drac2>

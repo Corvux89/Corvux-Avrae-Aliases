@@ -9,13 +9,12 @@ char_classes = load_json(ch.get_cvar("subclass", "{}"))
 def setup(args):
     args = [x.lower() for x in args]
     dev = True if argparse(args).get('dev') else False
-    out = ""
 
     class_ref = getClass()
     out = getAttacks(class_ref)
 
     if dev:
-        return err(load_json(out))
+        return f'''embed -title "DEV Output" -desc '```{dump_json(out)}```' '''
 
     return f"a import {out}"
 

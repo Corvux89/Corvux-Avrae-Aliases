@@ -1,0 +1,6 @@
+<drac2>
+ch = character()
+ch.set_cvar("dewbackInstinct", dump_json(&ARGS&))
+r_str = '\n'.join(&ARGS&)
+return f'''embed -title "Dewback's Instinct Resistances set!" -f "Resistances|{r_str}" '''
+</drac2>

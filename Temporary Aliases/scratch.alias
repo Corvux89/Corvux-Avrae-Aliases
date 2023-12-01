@@ -1,3 +1,68 @@
 <drac2>
-return err(max(int(get("SentinellightLevel",0)), int(get("SentineldarkLevel",0)),0))
+out = {
+          "name": "Projected Barrier - Physical Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'energyionkinetic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{ceil(level/2)}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Physical Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Physical Barrier",
+                  "text": "You project a physical barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + half your engineer level. Whenever a creature with this barrier takes damage (one of energy, ion, or kinetic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Physical Barrier' -t zo1 -choice kinetic`"
+                }
+              ]
+            }
+          ]
+        }
+
+return err(dump_json(out))
 </drac2>
