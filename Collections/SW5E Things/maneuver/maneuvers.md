@@ -1,10 +1,11 @@
-**Assert your superiority!**
+Maneuvers
  
-`!maneuver "[name]" [*args]`
+`!maneuver "<maneuver>" [args]`
  
-You have you have a counter named "Superiority Dice" for this to work
+You have to have a counter named "Superiority Dice" for this to work
  
-**Valid Arguments**
+__Valid Arguments__
+ 
 `-t [target]` - Specify any number of targets of the maneuver. Can specify adv/dis per target. ex `-t [target]|dis`
 `dis` - Disadvantage on any saves
 `adv` - Advantage on any saves

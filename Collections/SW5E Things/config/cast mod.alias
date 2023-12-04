@@ -1,0 +1,29 @@
+<drac2>
+c = character()
+stat = &ARGS&[0] if &ARGS& else ""
+server = argparse(&ARGS&).get('server')
+
+stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+
+base = f'''embed -thumb {image} -color {color} -title "Casting Stat Override" '''
+
+if server:
+    config_dict = load_json(get_svar("sw5e", "{}"))
+else:
+    config_dict = load_json(c.get_cvar("sw5e", "{}"))
+
+if "del" in stat.lower():
+    config_dict.remove("castMod")
+    base += f''' -desc "Feature deleted!" '''
+else:
+    stat = [x for x in stats if stat.lower() in x][0]
+    config_dict["castMod"] = stat
+    base += f''' -desc "{'Server' if server else 'Character'} Casting stat set to {stat}" '''
+
+if server:
+    set_cvar("sw5e", dump_json(config_dict))
+else:
+    c.set_cvar("sw5e", dump_json(config_dict))
+
+return base
+</drac2>

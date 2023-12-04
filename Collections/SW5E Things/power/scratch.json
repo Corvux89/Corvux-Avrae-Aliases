@@ -1,18 +1,38 @@
 {
-  "name": "Production Values",
-  "level": 0,
-  "school": "Tech",
-  "classes": "None",
-  "subclasses": "",
-  "casttime": "1 action",
-  "range": "30 feet",
-  "components": {
-    "verbal": false,
-    "somatic": false,
-    "material": ""
-  },
-  "duration": "1 minute",
-  "ritual": false,
-  "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect–to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
-  "concentration": false
-}
+    "name": "Shock",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10 [lightning]",
+                "cantripScale": true,
+                "overheal": false
+              }
+            ],
+            "miss": []
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+    "concentration": false
+  }

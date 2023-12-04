@@ -2045,24 +2045,6 @@
     "concentration": false
   },
   {
-    "name": "Force Scream",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (15-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a scream imbued with the power of the Force. Each creature you choose within 15 feet of you must succeed on a Constitution saving throw. On a failed save, a creature take 4d6 psychic damage, 4d6 sonic damage, and is deafened until the end of its next turn. On a successful save, it takes half as much damage and isn't deafened.",
-    "concentration": false
-  },
-  {
     "name": "Force Shunt",
     "level": 0,
     "school": "Force",
@@ -2358,24 +2340,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You expell a massive explosion at a point within range. Each creature in a 40-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 40d6 fire damage and is knocked prone on a failed save, or half as much damage on a successful one but remain standing.\r\n\r\nThe fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
-    "concentration": false
-  },
-  {
-    "name": "Greater Heal",
-    "level": 6,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This power also ends blindness, deafness, and any diseases affecting the target. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the healing increases by 10 for each slot level above 6th.",
     "concentration": false
   },
   {
@@ -2755,42 +2719,6 @@
     "ritual": false,
     "description": "An immobile, faintly shimmering barrier springs into existence in a 15-foot radius around you and remains for the duration. The barrier moves with you.\r\n\r\nAny force power of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the power is cast using a higher level force slot. Such a power can target creatures and objects within the barrier, but the power has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such powers.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the barrier blocks powers of one level higher for each slot level above 6th.",
     "concentration": true
-  },
-  {
-    "name": "Improved Force Scream",
-    "level": 5,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (30-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a failed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened, and is knocked prone. On a successful save, it takes half as much damage and isn't deafened or knocked prone.",
-    "concentration": false
-  },
-  {
-    "name": "Improved Heal",
-    "level": 5,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your forcecasting ability modifier. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
-    "concentration": false
   },
   {
     "name": "Improved Phasestrike",
@@ -3349,42 +3277,6 @@
     "ritual": false,
     "description": "A 10-foot-radius faintly shimmering barrier surrounds you. Within the sphere, powers can't be cast and enhanced items become mundane. Until the power ends, the sphere moves with you, centered on you.\r\n\r\nPowers and other enhanced effects are suppressed in the sphere and can't protrude into it. A slot expended to cast a suppressed power is consumed. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.\r\n\r\n***Targeted Effects.*** Powers and other enhanced effects that target a creature or an object in the sphere have no effect on that target.\r\n\r\n***Enhanced Areas.*** The area of another power or enhanced effect, such as _force storm_, can't extend into the sphere. If the sphere overlaps an enhanced area, the part of the area that is covered by the sphere is suppressed.\r\n\r\n***Powers.*** Any active power or other enhanced effect on a creature or an object in the sphere is suppressed while the creature or object is in it.\r\n\r\n***Enhanced Items.*** The properties and powers of enhanced items are suppressed in the sphere. For example, a +1 vibrosword in the sphere functions as an unenhanced vibrosword.\r\n\r\nAn enhanced weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If an enhanced weapon or a piece of enhanced ammunition fully leaves the sphere (for example, if you fire an enhanced shot or throw an enhanced saberspear at a target outside the sphere), the enhancement of the item ceases to be suppressed as soon as it exits.\r\n\r\n***Enhanced Travel.*** Teleportation fails to work in the sphere, whether the sphere is the destination or the departure point for such enhanced travel. A portal to another location temporarily closes while in the sphere.\r\n\r\n***Creatures and Objects.*** A creature or object summoned or created by powers temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.\r\n\r\n***Tech Override/Sever Force.*** Powers and enhanced effects such as *sever force* have no effect on the sphere. Likewise, the spheres created by different scrambling field powers don't nullify each other.",
     "concentration": true
-  },
-  {
-    "name": "Master Force Scream",
-    "level": 8,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self (60-foot radius)",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You emit a cacophonous scream imbued with the power of the Force. Each creature you choose within 60 feet of you must succeed on a Constitution saving throw. On a failed save, a creature takes 6d6 psychic damage, 6d6 sonic damage, is deafened, knocked prone, and blinded for 1 minute. On a successful save, it takes half as much damage and isn't deafened, knocked prone, or blinded by this power. \r\n\r\nA creature blinded by this power makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.",
-    "concentration": false
-  },
-  {
-    "name": "Master Heal",
-    "level": 9,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is charmed, frightened, paralyzed, or stunned, the condition ends. If the creature is prone, it can use its reaction to stand up. This power has no effect on droids or constructs.",
-    "concentration": false
   },
   {
     "name": "Master Malacia",
@@ -6799,64 +6691,6 @@
     "concentration": false
   },
   {
-    "name": "(SW) Heal",
-    "level": 1,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "condition",
-            "condition": "target.creature_type and ('undead' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
-            "onTrue": [
-              {
-                "type": "text",
-                "text": "{{target.name}} is unaffected."
-              }
-            ],
-            "onFalse": [
-              {
-                "type": "damage",
-                "damage": "-(1d8 + {spell}) [heal]",
-                "higher": {
-                  "2": "-(1d8 [heal])",
-                  "3": "-(2d8 [heal])",
-                  "4": "-(3d8 [heal])",
-                  "5": "-(4d8 [heal])",
-                  "6": "-(5d8 [heal])",
-                  "7": "-(6d8 [heal])",
-                  "8": "-(7d8 [heal])",
-                  "9": "-(8d8 [heal])"
-                }
-              }
-            ],
-            "errorBehaviour": "false"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "A creature you touch regains a number of hit points equal to 1d8 + your forcecasting ability modifier. This power has no effect on droids or constructs."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A creature you touch regains a number of hit points equal to 1d8 + your forcecasting ability modifier. This power has no effect on droids or constructs.",
-    "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Project",
     "level": 1,
     "school": "Force",
@@ -6985,49 +6819,6 @@
     "duration": "8 hours",
     "ritual": false,
     "description": "Your attunement to the Force warns you when you are about to enter danger. Until the power ends, your base AC becomes 13 + your Dexterity modifier. This power has no effect if you are wearing armor.",
-    "concentration": false
-  },
-  {
-    "name": "Shock",
-    "level": 0,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "1d10",
-        "name": "damage",
-        "cantripScale": true
-      },
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "{damage} [lightning]",
-                "overheal": false
-              }
-            ],
-            "miss": []
-          }
-        ]
-      }
-    ],
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
     "concentration": false
   },
   {
@@ -17098,6 +16889,506 @@
     "duration": "1 minute",
     "ritual": false,
     "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect–to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
+    "concentration": false
+  },
+  {
+    "name": "Master Heal",
+    "level": 9,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
+            "onTrue": [
+              {
+                "type": "text",
+                "text": "{{target.name}} is unaffected."
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "-{target.max_hp - target.hp} [healing]"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is charmed, frightened, paralyzed, or stunned, the condition ends. If the creature is prone, it can use its reaction to stand up. This power has no effect on droids or constructs."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is charmed, frightened, paralyzed, or stunned, the condition ends. If the creature is prone, it can use its reaction to stand up. This power has no effect on droids or constructs.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Heal",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "-(3d8+{spell}) [heal]",
+        "name": "heal"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
+            "onTrue": [
+              {
+                "type": "text",
+                "text": "{{target.name}} is unaffected."
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "{heal} [healing]",
+                "higher": {
+                  "6": "-(1d8 [healing])",
+                  "7": "-(2d8 [healing])",
+                  "8": "-(3d8 [healing])",
+                  "9": "-(4d8 [healing])"
+                }
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your forcecasting ability modifier. This power has no effect on droids or constructs.\n\n***Force Potency.*** When you cast this power using a force slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your forcecasting ability modifier. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
+    "concentration": false
+  },
+  {
+    "name": "(SW) Heal",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "-1d8-{spell}",
+        "name": "heal"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
+            "onTrue": [
+              {
+                "type": "text",
+                "text": "{{target.name}} is unaffected."
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "{heal} [healing]",
+                "higher": {
+                  "2": "-1d8 [healing]",
+                  "3": "-2d8 [healing]",
+                  "4": "-3d8 [healing]",
+                  "5": "-4d8 [healing]",
+                  "6": "-5d8 [healing]",
+                  "7": "-6d8 [healing]",
+                  "8": "-7d8 [healing]",
+                  "9": "-8d8 [healing]"
+                }
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A creature you touch regains a number of hit points equal to 1d8 + your forcecasting ability modifier. This power has no effect on droids or constructs."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A creature you touch regains a number of hit points equal to 1d8 + your forcecasting ability modifier. This power has no effect on droids or constructs.",
+    "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Greater Heal",
+    "level": 6,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
+            "onTrue": [
+              {
+                "type": "text",
+                "text": "{{target.name}} is unaffected."
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "-70 [healing]",
+                "higher": {
+                  "7": "-10 [healing]",
+                  "8": "-20 [healing]",
+                  "9": "-30 [healing]"
+                }
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This power also ends blindness, deafness, and any diseases affecting the target. This power has no effect on droids or constructs.\n\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the healing increases by 10 for each slot level above 6th."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This power also ends blindness, deafness, and any diseases affecting the target. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the healing increases by 10 for each slot level above 6th.",
+    "concentration": false
+  },
+  {
+    "name": "Force Scream",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d6 [psychic]+4d6 [sonic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened",
+                "duration": "1",
+                "end": true,
+                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing."
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a scream imbued with the power of the Force. Each creature you choose within 15 feet of you must succeed on a Constitution saving throw. On a failed save, a creature take 4d6 psychic damage, 4d6 sonic damage, and is deafened until the end of its next turn. On a successful save, it takes half as much damage and isn't deafened."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (15-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a scream imbued with the power of the Force. Each creature you choose within 15 feet of you must succeed on a Constitution saving throw. On a failed save, a creature take 4d6 psychic damage, 4d6 sonic damage, and is deafened until the end of its next turn. On a successful save, it takes half as much damage and isn't deafened.",
+    "concentration": false
+  },
+  {
+    "name": "Master Force Scream",
+    "level": 8,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "5d6 [psychic]+5d6 [sonic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened & Blinded",
+                "duration": "10",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Deafened & Blinded",
+                    "verb": "attempts to resist deafened",
+                    "style": "3",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.\n - A blinded creature can't see and automatically fails any ability check that requires sight.\n - Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
+              },
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up",
+                    "style": "1"
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a cacophonous scream imbued with the power of the Force. Each creature you choose within 60 feet of you must succeed on a Constitution saving throw. On a failed save, a creature takes 6d6 psychic damage, 6d6 sonic damage, is deafened, knocked prone, and blinded for 1 minute. On a successful save, it takes half as much damage and isn't deafened, knocked prone, or blinded by this power. \n\nA creature blinded by this power makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (60-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a cacophonous scream imbued with the power of the Force. Each creature you choose within 60 feet of you must succeed on a Constitution saving throw. On a failed save, a creature takes 6d6 psychic damage, 6d6 sonic damage, is deafened, knocked prone, and blinded for 1 minute. On a successful save, it takes half as much damage and isn't deafened, knocked prone, or blinded by this power. \r\n\r\nA creature blinded by this power makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Force Scream",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "5d6 [psychic]+5d6 [sonic]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened",
+                "duration": "1",
+                "end": true,
+                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing."
+              },
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up",
+                    "style": "1"
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn’t deafened or knocked prone."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (30-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn’t deafened or knocked prone.",
+    "concentration": false
+  },
+  {
+    "name": "Shock",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d10 [lightning]",
+                "cantripScale": true,
+                "overheal": false
+              }
+            ],
+            "miss": []
+          }
+        ]
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
     "concentration": false
   }
 ]

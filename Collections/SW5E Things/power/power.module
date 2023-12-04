@@ -156,9 +156,12 @@ def processPower(args):
         c.mod_cc("Personal Barrier", +points)
         out.append(f''' -f "Personal Barrier ({points})|{c.cc_str("Personal Barrier")}" ''')
 
-    # Default to the DC on the character sheet unless overwritten
+    # Add DC Bonus unless overriden
     if not a.get('dc'):
-        out.append(f''' -dc {c.spellbook.dc}''')
+        out.append(f''' -dc +{c.spellbook.dc - 8 - c.spellbook.spell_mod - c.stats.prof_bonus}''')
+
+    # Add spell attack bonus
+    out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus}''')
 
     # Troubleshooting
     if a.get('dev'):
@@ -186,9 +189,8 @@ def search(keyword, gvar):
 
 def getWith(spell):
     c = character()
-    var = get_svar("sw5e", None)
-    var = None if not var else load_json(var)
-    ovr = None if not var else var["castMod"]
+    var = load_json(c.get_cvar("sw5e", get_svar("sw5e", "{}")))
+    ovr = var.get('castMod')
 
     if ovr:
         return f'-with {ovr}'

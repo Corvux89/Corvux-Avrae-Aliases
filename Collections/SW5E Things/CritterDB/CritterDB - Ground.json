@@ -7,7 +7,7 @@
   "description": "",
   "ownerId": "604af76faf3aa903ed077438",
   "__v": 0,
-  "lastActive": "2023-11-21T20:01:07.569Z",
+  "lastActive": "2023-12-04T22:47:09.280Z",
   "owner": {
     "_id": "604af76faf3aa903ed077438",
     "username": "Epsikon"
@@ -28672,8 +28672,8 @@
           "darkvision 60 ft."
         ],
         "languages": [],
-        "challengeRating": 4,
-        "experiencePoints": 1100,
+        "challengeRating": 7,
+        "experiencePoints": 2900,
         "legendaryActionsPerRound": 3,
         "legendaryActionsDescription": "",
         "savingThrows": [
@@ -28734,7 +28734,7 @@
           },
           {
             "name": "Claw",
-            "description": "<i>Melee Weapon Attack:</i> +6 to hit, reach 5 ft., one target. <i>Hit:</i> 5 (1d6 + 2) kinetic damage and 3 (1d6) necrotic damage.",
+            "description": "<i>Melee Weapon Attack:</i> +6 to hit, reach 5 ft., one target. <i>Hit:</i> 9 (2d6 + 2) kinetic damage and 7 (2d6) necrotic damage.",
             "descriptionHtml": {},
             "$$hashKey": "object:26627"
           },
@@ -28769,7 +28769,7 @@
         "hitPoints": 120,
         "hitPointsStr": "120 (16d12 + 16)",
         "passivePerception": 13,
-        "challengeRatingStr": "4"
+        "challengeRatingStr": "7"
       },
       "sharing": {
         "linkSharingEnabled": false
