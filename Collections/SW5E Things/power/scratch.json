@@ -1,38 +1,78 @@
-{
-    "name": "Shock",
-    "level": 0,
+[
+  {
+    "name": "Force Camouflage",
+    "level": 2,
     "school": "Force",
-    "automation": [
-      {
-        "type": "target",
-        "target": "all",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "damage",
-                "damage": "1d10 [lightning]",
-                "cantripScale": true,
-                "overheal": false
-              }
-            ],
-            "miss": []
-          }
-        ]
-      }
-    ],
-    "classes": "Dark",
+    "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "120 feet",
+    "range": "Self",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "Instantaneous",
+    "duration": "up to 1 hour",
     "ritual": false,
-    "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
-    "concentration": false
+    "description": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Invisible",
+            "duration": 600,
+            "parent": "ieffect",
+            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
+            "effects": {"attack_advantage": 1}
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action."
+      }
+    ]
+  },
+  {
+    "name": "Improved Force Camouflage",
+    "level": 4,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Invisible",
+            "duration": 10,
+            "parent": "ieffect",
+            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
+            "effects": {"attack_advantage": 1}
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person."
+      }
+    ]
   }
+]

@@ -4,7 +4,6 @@ com = combat()
 a = argparse(&ARGS&)
 type = &ARGS&[0] if &ARGS& else ""
 dur = a.last('dur') if a.get('dur') else 1
-stat = a.last('stat') if a.get('stat') else ""
 desc="When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1"
 f_str = ""
 targs = a.get('t') if a.get('t') else [com.me.name] if com else [c.name]
@@ -23,8 +22,7 @@ if "ac" in type.lower():
 elif "save" in type.lower():
     if com:
         for t in targs:
-            description = desc + f"\n{stat} save bonus: 1" if stat != "" else desc
-            eff = t.add_effect("Bansche Purifier MENAD Pro MK I", desc=description, duration=dur)
+            eff = t.add_effect("Bansche Purifier MENAD Pro MK I", desc=desc, duration=dur, passive_effects={"save_bonus": 1})
             f_str += f'''  -f "{t.name}|{eff}" '''
     else:
         f_str += " ".join([f'-f "{x}|**{stat} save bonus**: 1"' for x in targs])
