@@ -5,13 +5,18 @@ image = ch.image
 color = ch.csettings.color
 gvars = ['0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b']
 char_classes = load_json(ch.get_cvar("subclass", "{}"))
+stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
 
 def setup(args):
     args = [x.lower() for x in args]
     dev = True if argparse(args).get('dev') else False
+    stat = argparse(args).last('stat')
+
+    if stat:
+        stat = f'{[x for x in stats if stat.lower() in x][0]}Mod'
 
     class_ref = getClass()
-    out = getAttacks(class_ref)
+    out = getAttacks(class_ref, stat)
 
     if dev:
         return f'''embed -title "DEV Output" -desc '```{dump_json(out)}```' '''
@@ -32,7 +37,7 @@ def getClass():
 
     return class_list
 
-def getAttacks(class_list):
+def getAttacks(class_list, stat = None):
     attacks = []
 
     for cl in class_list:
@@ -41,6 +46,9 @@ def getAttacks(class_list):
         for a in cl.attacks:
             if int(level) >= int(a.level):
                 attacks = [x for x in attacks if x.get('name') != a.action.get("name")]  # Allow for subclass overrides
-                attacks.append(a.action)
+                action = a.action
+                if stat:
+                    action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod', stat).replace('charismaMod', stat))
+                attacks.append(action)
 
     return attacks
