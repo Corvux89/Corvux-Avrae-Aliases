@@ -61,6 +61,11 @@ def processJSON(f, name, fileName, autoMode):
     with open("automation.json", "w") as outfile:
         json.dump(autoMon, outfile)
 
+    with open("Critter Todo.py", "w") as outfile:
+        for x in autoMon:
+            if x["completed"] == 'False':
+                outfile.write(f"# TODO {x.get('name')}: {x.get('ability')}\n")
+
     print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {len([x for x in saveAuto if x.get("completed") == "False"])} out of {len(saveAuto)}\n')
 
 

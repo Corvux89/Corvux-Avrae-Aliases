@@ -854,24 +854,6 @@
     "concentration": false
   },
   {
-    "name": "Cryogenic Spray",
-    "level": 5,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A blast of cold air erupts from you. Each creature in a 60-foot cone must make a Constitution saving throw. On a failed save, a creature takes 8d8 cold damage, and gains 1 slowed level until the start of your next turn. On a successful save, a creature takes half as much damage and isn't slowed.\r\n\r\nA creature killed by this power becomes frozen in carbonite.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
-    "concentration": false
-  },
-  {
     "name": "Cryogenic Storm",
     "level": 4,
     "school": "Tech",
@@ -1775,24 +1757,6 @@
     "concentration": false
   },
   {
-    "name": "Force Camouflage",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 hour",
-    "ritual": false,
-    "description": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action.",
-    "concentration": true
-  },
-  {
     "name": "Force Concealment",
     "level": 2,
     "school": "Force",
@@ -2683,24 +2647,6 @@
     "ritual": false,
     "description": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\r\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\r\n- The creature becomes immune to being frightened by powers.\r\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\r\n\r\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first.",
     "concentration": false
-  },
-  {
-    "name": "Improved Force Camouflage",
-    "level": 4,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
-    "concentration": true
   },
   {
     "name": "Improved Force Immunity",
@@ -17368,8 +17314,8 @@
               {
                 "type": "damage",
                 "damage": "1d10 [lightning]",
-                "cantripScale": true,
-                "overheal": false
+                "overheal": false,
+                "cantripScale": true
               }
             ],
             "miss": []
@@ -17389,6 +17335,231 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You hurl a bolt of lightning at a target within range, making a ranged force attack. On a hit, the target takes 1d10 lightning damage. The lightning ignites flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).",
+    "concentration": false
+  },
+  {
+    "name": "Cryogenic Spray",
+    "level": 5,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "8d8",
+        "name": "damage",
+        "higher": {
+          "6": "1d8",
+          "7": "2d8",
+          "8": "3d8",
+          "9": "4d8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [cold]"
+              },
+              {
+                "type": "ieffect",
+                "name": "Slowed",
+                "duration": "1",
+                "effects": "",
+                "end": true
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Frozen in Carbonite"
+                  }
+                ],
+                "onFalse": []
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2 [cold]"
+              },
+              {
+                "type": "condition",
+                "condition": "target.hp <= 0",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Frozen in Carbonite"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A blast of cold air erupts from you. Each creature in a 60-foot cone must make a Constitution saving throw. On a failed save, a creature takes 8d8 cold damage, and gains 1 slowed level until the start of your next turn. On a successful save, a creature takes half as much damage and isn't slowed.\n\nA creature killed by this power becomes frozen in carbonite.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A blast of cold air erupts from you. Each creature in a 60-foot cone must make a Constitution saving throw. On a failed save, a creature takes 8d8 cold damage, and gains 1 slowed level until the start of your next turn. On a successful save, a creature takes half as much damage and isn't slowed.\r\n\r\nA creature killed by this power becomes frozen in carbonite.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
+    "concentration": false
+  },
+  {
+    "name": "Force Camouflage",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Invisible",
+            "duration": "600",
+            "effects": {
+              "attack_advantage": "1"
+            },
+            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 hour",
+    "ritual": false,
+    "description": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Force Camouflage",
+    "level": 4,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Invisible",
+            "duration": "10",
+            "effects": {
+              "attack_advantage": "1"
+            },
+            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
+    "concentration": true
+  },
+  {
+    "name": "Saber Slash",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d4",
+        "name": "damage",
+        "higher": {
+          "4": "1d4",
+          "5": "2d4",
+          "6": "3d4",
+          "7": "4d4",
+          "8": "5d4",
+          "9": "6d4"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [force]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "{damage}/2 [force]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power’s range and strike a creature within your weapon’s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon’s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power’s range and strike a creature within your weapon’s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon’s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd.",
     "concentration": false
   }
 ]

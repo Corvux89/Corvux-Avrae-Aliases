@@ -1,78 +1,40 @@
-[
-  {
-    "name": "Force Camouflage",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 hour",
-    "ritual": false,
-    "description": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action.",
-    "concentration": true,
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Invisible",
-            "duration": 600,
-            "parent": "ieffect",
-            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
-            "effects": {"attack_advantage": 1}
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action."
-      }
-    ]
+{
+  "name": "Affliction",
+  "level": 2,
+  "school": "Force",
+  "classes": "Dark",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "30 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
   },
-  {
-    "name": "Improved Force Camouflage",
-    "level": 4,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+  "duration": "up to 1 minute",
+  "ritual": false,
+  "description": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.",
+  "concentration": true,
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "con",
+          "success": [],
+          "fail": [
+            {
+              "type": "ieffect"
+            }
+          ]
+        }
+      ]
     },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
-    "concentration": true,
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Invisible",
-            "duration": 10,
-            "parent": "ieffect",
-            "desc": "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person.",
-            "effects": {"attack_advantage": 1}
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "A willing creature you touch becomes invisible until the power ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person."
-      }
-    ]
-  }
-]
+    {
+      "type": "text",
+      "text": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\n\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\n\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends."
+    }
+  ]
+}

@@ -158,10 +158,10 @@ def processPower(args):
 
     # Add DC Bonus unless overriden
     if not a.get('dc'):
-        out.append(f''' -dc +{c.spellbook.dc - 8 - c.spellbook.spell_mod - c.stats.prof_bonus}''')
+        out.append(f''' -dc +{c.spellbook.dc - 8 - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.dc else ''}''')
 
     # Add spell attack bonus
-    out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus}''')
+    out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.sab else ''}''')
 
     # Troubleshooting
     if a.get('dev'):
