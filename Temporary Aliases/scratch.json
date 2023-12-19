@@ -1,10 +1,1972 @@
-{
-  "name": "Rancor Jackhammer",
-  "_v": 2,
-  "automation": [
-    {
-      "type": "text",
-      "text": ""
-    }
-  ]
-}
+[
+  {
+    "name": "Acrobat",
+    "prerequisite": null,
+    "text": "You become more nimble, gaining the following benefits: \r\n- Increase your Dexterity score by 1, to a maximum of 20. \r\n- You gain proficiency in the Acrobatics skill. If you are already proficient in it, you instead gain expertise in it. \r\n- As a bonus action, you can make a DC 15 Dexterity (Acrobatics) check. If you succeed, difficult terrain doesn't cost you extra movement until the end of the current turn.\r\n",
+    "attributesIncreased": [
+      "Dexterity"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Acrobat",
+    "timestamp": "2023-05-30T20:15:09.5508648+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5508648Z'\""
+  },
+  {
+    "name": "Actor",
+    "prerequisite": null,
+    "text": "Skilled at mimicry and dramatics, you gain the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- You have advantage on Charisma (Deception) and Charisma (Performance) checks when trying to pass yourself off as a different person.\r\n- You can mimic the speech of another person or the sounds made by other creatures. You must have heard the person speaking, or heard the creature make the sound, for at least 1 minute. A successful Wisdom (Insight) check contested by your Charisma (Deception) check allows a listener to determine that the effect is faked.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Actor",
+    "timestamp": "2023-05-30T20:15:09.5508648+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5508648Z'\""
+  },
+  {
+    "name": "Alert",
+    "prerequisite": null,
+    "text": "Always on the lookout for danger, you gain the following benefits:\r\n- You are proficient in Initiative checks..\r\n- You can't be surprised while you are conscious.\r\n- Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Alert",
+    "timestamp": "2023-05-30T20:15:09.5508648+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5508648Z'\""
+  },
+  {
+    "name": "Animal Handler",
+    "prerequisite": null,
+    "text": "You master the techniques needed to train and handle animals. You gain the following benefits:\r\n- Increase your Wisdom score by 1, to a maximum of 20. \r\n- You gain proficiency in the Animal Handling skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You can use a bonus action on your turn to command one friendly beast within 60 feet of you that can hear you and that isn't currently following the command of someone else. You decide now what action the beast will take and where it will move during its next turn, or you issue a general command that lasts for 1 minute, such as to guard a particular area.\r\n",
+    "attributesIncreased": [
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Animal Handler",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Armor Expert",
+    "prerequisite": null,
+    "text": "You've learned how to fluidly move in armor, gaining the following benefits:\r\n- Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.\r\n- You gain proficiency with light armor. If you are already proficient with light armor, instead while you are wearing light armor, your speed increases by 5 feet. \r\n- If you are already proficient in light armor when you take this feat, you also gain proficiency in medium armor. If you are already proficient with medium armor, instead while you are wearing medium armor, you can add 3, rather than 2, to your AC if you have a Dexterity of 16 or higher, and you ignore the bulky property of medium armor. \r\n- If you are already proficient in medium armor when you take this feat, you also gain proficiency in heavy armor. If you are already proficient with heavy armor, instead while you are wearing heavy armor, critical hits made against you are treated as normal hits.\r\n\r\nYou can take this feat multiple times. \r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity",
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\",\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Armor Expert",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Athlete",
+    "prerequisite": null,
+    "text": "You have undergone extensive physical training to gain the following benefits:\r\n- Increase your Strength or Dexterity score by 1, to a maximum of 20.\r\n- When you are prone, standing up uses only 5 feet of your movement.\r\n- Climbing doesn't cost you extra movement.\r\n- You can make a running long jump or a running high jump after moving only 5 feet on foot, rather than 10 feet.\r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Athlete",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Augmented Cyborg",
+    "prerequisite": "Type beast or humanoid",
+    "text": "You've experimented with cybernetic augmentations, granting the following benefits: \r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- Choose one cybernetic augmentation of standard rarity from Appendix A. That augmentation is installed and doesn't count against the maximum cybernetic augmentations you can support, but it does count towards your total cybernetics augmentations as shown in the Cybernetic Augmentations Side Effects table in Chapter 7.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Augmented Cyborg",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Battle Scarred",
+    "prerequisite": null,
+    "text": "You've spent a lifetime fighting, with the scars to prove it. You gain the following benefits:\r\n- Increase your Constitution score by 1, to a maximum of 20.\r\n- When you roll a 19 or a 20 on the d20 for a death saving throw, you regain 1 hit point. \r\n- When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. Once you've used this ability, you must complete a long rest before you can use it again.\r\n",
+    "attributesIncreased": [
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Battle Scarred",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Bountiful Luck",
+    "prerequisite": "4th level, Lucky feat",
+    "text": "Your people have extraordinary luck, which you have learned to lend to your companions when you see them falter. You're not sure how you do it; you just wish it, and it happens. Surely a sign of fortune's favor!\r\n\r\nWhen an ally you can see within 30 feet of you rolls a 1 on the d20 for an attack roll, an ability check, or a saving throw, you can use your reaction and expend 1 luck point to let the ally reroll the die. The ally must use the new roll. When you use this ability, you can't use luck points before the end of your next turn. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Bountiful Luck",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Brawny",
+    "prerequisite": null,
+    "text": "You become stronger, gaining the following benefits: \r\n- Increase your Strength score by 1, to a maximum of 20. \r\n- You gain proficiency in the Athletics skill. If you are already proficient in it, you instead gain expertise in it. \r\n- Your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.\r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Brawny",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Charmer",
+    "prerequisite": null,
+    "text": "You've master the art of charming those around you, gaining the following benefits: \r\n- Increase your Charisma score by 1, to a maximum of 20. \r\n- You gain proficiency in the Persuasion skill. If you are already proficient in it, you instead gain expertise in it. \r\n- If you spend 1 minute talking to someone who can understand what you say, you can make a Charisma (Persuasion) check contested by the creature's Wisdom (Insight) check. If you or your companions are fighting the creature, your check automatically fails. If your check succeeds, the target is charmed by you as long as it remains within 60 feet of you and for 1 minute thereafter. \r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Charmer",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Class Proficiencies",
+    "prerequisite": null,
+    "text": "Certain classes, such as fighters or guardians, gain proficiency in all weapons within a specific category. For instance, fighters gain proficiency in all blasters and vibroweapons, and guardians gain proficiency in all lightweapons and vibroweapons. Monk, operative, scholar, and sentinel, on the other hand, only gain proficiency in martial weapons that meet certain criteria. If that criteria is met due to the use of an item or feature that add�or remove�a referenced property, this does not grant that class proficiency in the weapon. For instance, operatives gain proficiency in simple blasters, simple vibroweapons, martial blasters that lack the auto, special, strength, and two-handed properties, martial vibroweapons with the finesse property. If they add the finesse property to a vibroweapon, or remove the strength property from a blaster weapon, this would not grant the operative proficiency in that weapon.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Class Proficiencies",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Climber",
+    "prerequisite": null,
+    "text": "You excel at scaling cliffsides, hills, trees, and general climbing. You gain the following benefits:\r\n- Increase your Strength score by 1, to a maximum of 20. \r\n- You gain a climbing speed equal to your movement speed.\r\n- You have advantage on ability checks and saving throws to avoid falling off or down while climbing. \r\n- You can spend 5 minutes instructing, pointing out handholds, and guiding other creatures before making a climb. When you do so, choose up to six friendly creatures (which can include yourself) within 30 feet of you. Each creature can add a 1d6 to any ability check or saving throw they make for that climb.\r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Climber",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Commando",
+    "prerequisite": null,
+    "text": "You've practiced fighting while prone, gaining the following benefits:\r\n- Increase your Dexterity score by 1, to a maximum of 20.\r\n- You gain a crawling speed equal to your movement speed.\r\n- While prone, you no longer have disadvantage on ranged attack rolls against targets within 30 feet due to being prone.\r\n- When you attempt to hide on your turn while prone, you can opt to not move on that turn. If you avoid moving, you are considered lightly obscured. You lose this benefit if you move or stand up, either voluntarily or because of some external effect. You are still automatically detected if any effect or action causes you to no longer be hidden. If you are still hidden on your next turn, you can continue to remain motionless and gain this benefit until you are detected.\r\n",
+    "attributesIncreased": [
+      "Dexterity"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Commando",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Competitor",
+    "prerequisite": null,
+    "text": "You have a strong aptitude for competing. Select one gaming set. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain proficiency in the chosen gaming set. If you are already proficient with it, you instead gain expertise with it.\r\n- As long as you spend at least 1 minute using your gaming set, you can't have disadvantage on Intelligence checks you make to use the gaming set, Charisma (Deception) checks you make to bluff with the gaming set, or Wisdom (Insight) checks you make to read an opponent with whom you are competing with the gaming set.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different gaming set.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Competitor",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Crafter",
+    "prerequisite": null,
+    "text": "You have a knack for crafting; you work with greater efficiency and produce goods of higher quality. Select one type of artisan's implements. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain proficiency with the chosen tool. If you are already proficient with it, you instead gain expertise with it.\r\n- When you craft something with the chosen tool, the total market value you can craft increases 50 cr per day. If you have expertise with it, the market value instead increases by 100 cr per day.\r\n- If you use the tool you've selected to practice a profession during downtime, you can support a lifestyle one higher than you would normally be able to.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different set of artisan's implements. \r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Crafter",
+    "timestamp": "2023-05-30T20:15:09.5518633+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5518633Z'\""
+  },
+  {
+    "name": "Customized Droid",
+    "prerequisite": "Type droid",
+    "text": "You've been customized beyond other droids of the same model, granting the following benefits: \r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- Choose one droid customization of standard rarity from Appendix A. That customization is installed and doesn't count against the maximum droid customizations you can support, but it does count towards your maximum parts or protocols, as appropriate.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Customized Droid",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Dungeon Delver",
+    "prerequisite": null,
+    "text": "Alert to the hidden traps and secret doors found in many dungeons, you gain the following benefits:\r\n- Increase your Intelligence or Wisdom score by 1, to a maximum of 20.\r\n- You have advantage on Wisdom (Perception) and Intelligence (Investigation) checks made to detect the presence of secret doors.\r\n- You have advantage on saving throws made to avoid or resist traps.\r\n- You have resistance to the damage dealt by traps. \r\n- Traveling at a fast pace no longer imposes a -5 penalty to your passive Wisdom (Perception) score.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Dungeon Delver",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Durable",
+    "prerequisite": null,
+    "text": "Hardy and resilient, you gain the following benefits:\r\n- Increase your Constitution score by 1, to a maximum of 20.\r\n- When you roll a Hit Die to regain hit points, the minimum number of hit points you can regain from the roll equals twice your Constitution modifier (minimum of 2).\r\n- Your hit point maximum increases by an amount equal to twice your level when you gain this feat. Whenever you gain a level thereafter, your hit point maximum increases by an additional 2 hit points.\r\n",
+    "attributesIncreased": [
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Durable",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Empathic",
+    "prerequisite": null,
+    "text": "You possess keen insight into how other people think and feel. You gain the following benefits: \r\n- Increase your Wisdom score by 1, to a maximum of 20. \r\n- You gain proficiency in the Insight skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You can use your action to try to get uncanny insight about one humanoid you can see within 30 feet of you. Make a Wisdom (Insight) check contested by the target's Charisma (Deception) check. On a success, you have advantage on attack rolls and ability checks against the target until the end of your next turn.\r\n",
+    "attributesIncreased": [
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Empathic",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Entertainer",
+    "prerequisite": null,
+    "text": "You have a natural gift for performing. Select one musical instrument. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain proficiency in the chosen musical instrument. If you are already proficient with it, you instead gain expertise with it.\r\n- While playing your chosen musical instrument, you can always readily read the emotions of those paying attention to you. During this time, and for up to one minute after completing, you have advantage on Wisdom (Insight) checks to read the emotions of those you performed for.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different musical instrument.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Entertainer",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Fanatic",
+    "prerequisite": "4th level",
+    "text": "Every blow that hits your enemies make you feel closer to victory, making you shake in excitement. You gain the following benefits:\r\n- When you score a critical hit with an attack roll or reduce a creature to 0 hit points, you can make one weapon attack as a bonus action.\r\n- Whenever a creature you can see within 30 feet is reduced to 0 hit points, you go into a fervor gaining temporary hit points equal to 1d4 + your Constitution modifier. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Fanatic",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Feigned Confidence",
+    "prerequisite": null,
+    "text": "You've spent years pretending you know what you're doing, gaining the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- When you would make an ability check with a skill or tool that doesn't add your proficiency bonus, you can first make a DC 15 Charisma (Deception) check. On a success, you can add your proficiency bonus to the initial ability check. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you finish a short or long rest.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Feigned Confidence",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Fighting Master",
+    "prerequisite": "4th level",
+    "text": "You've mastered a particular style of fighting. Choose one of the fighting mastery options, detailed later in this chapter. You can take this feat multiple times. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Fighting Master",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Fighting Styles and Masteries",
+    "prerequisite": null,
+    "text": "Wretched Hives introduces new ammunition types, such as the specialized power cells, or rockets. You'll want to extend the benefits of certain Fighting Styles and Fighting Masteries to these new munitions, as explained below.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Fighting Styles and Masteries",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Fighting Stylist",
+    "prerequisite": "4th level",
+    "text": "You adopt a particular style of fighting as your specialty, gaining the following benefits:\r\n- Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.\r\n- Choose one of the fighting style options, detailed later in this chapter. \r\n\r\nYou can take this feat multiple times. \r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity",
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\",\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Fighting Stylist",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Force Guidance",
+    "prerequisite": "The ability to cast force powers",
+    "text": "You've learned to utilize your gift with the Force in a specific, unique way. You gain the following benefits\r\n- Increase your Wisdom or Charisma score by 1, to a maximum of 20. \r\n- Choose a skill or tool in which you are proficient. When you make an ability check with the chosen skill or tool, you can add half your Wisdom or Charisma modifier (your choice, minimum of one) to the check if it doesn't already include that modifier. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different skill or tool.\r\n",
+    "attributesIncreased": [
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Force Guidance",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Force of Personality",
+    "prerequisite": null,
+    "text": "Rooms never go unalerted to your presence, and the strength of your personality make others lose focus on their own social game. Powers and other effects infrequently override your force of will. You gain the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- You can use your Charisma modifier instead of your Wisdom modifier when making Insight checks.\r\n- When you would make a Wisdom saving throw, you can instead make a Charisma saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Force of Personality",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Force-Sensitive",
+    "prerequisite": "Type humanoid",
+    "text": "You know two at-will force powers. When you reach 3rd level, you learn one 1st-level force power, which you can cast once per long rest. When you reach 5th level, you learn one 2nd-level force power, which you can once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment). Additionally, you lose the Force-Insensitive special trait if you have it.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Force-Sensitive",
+    "timestamp": "2023-05-30T20:15:09.5528641+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5528641Z'\""
+  },
+  {
+    "name": "Forceful Vigor",
+    "prerequisite": null,
+    "text": "Your strength and virility rarely go unnoticed, often to the point of distraction. You gain the following benefits:\r\n- Increase your Strength score by 1, to a maximum of 20.\r\n- You can use your Strength modifier instead of your Constitution modifier when making Constitution checks.\r\n- When you would make a Constitution saving throw, you can instead make a Strength saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Forceful Vigor",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Formfighting Dabbler",
+    "prerequisite": "The ability to cast force powers",
+    "text": "You've dabbled in the basics of the known forms of lightsaber combat. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You learn one lightsaber form, detailed later in this chapter. If you already know at least one lightsaber form, you instead learn three lightsaber forms. If you already know at least three lightsaber forms, you instead learn seven lightsaber forms. If you already know at least ten lightsaber forms, you instead learn the remaining forms.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Formfighting Dabbler",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Galvanizing Presence",
+    "prerequisite": null,
+    "text": "Your presence on the battlefield is a source of inspiration. You gain the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- As a bonus action, you let out a rallying war cry, ending the frightened or charmed condition on yourself and a number of allies that can hear you equal to your Charisma modifier (minimum of one). Once you've used this ability, you must complete a short or long rest before you can use it again.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Galvanizing Presence",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Haggler",
+    "prerequisite": null,
+    "text": "Your skills at bartering have granted you the following benefits:\r\n- Increase your Charisma score by 1 up to a maximum of 20. \r\n- You have advantage on Charisma (Persuasion) and Charisma (Deception) checks when attempting to barter or trade. \r\n- You are always aware of the current monetary value for any unenhanced or common enhanced item. Whenever you identify an item, you gain a rough estimate of its current monetary value.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Haggler",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Healer",
+    "prerequisite": null,
+    "text": "You are an able medic, allowing you to mend wounds quickly and get your allies back in the fight. You gain the following benefits:\r\n- Increase your Intelligence or Wisdom score by 1, to a maximum of 20.\r\n- When you use a traumakit to stabilize a dying creature, that creature also regains 1 hit point.\r\n- As an action, you can spend one use of a traumakit to tend to a creature and restore 1d6 + 4 hit points to it, plus additional hit points equal to the creature's maximum number of Hit Dice. The creature can't regain hit points again in this way until it finishes a short or long rest.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Healer",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Inspiring Leader",
+    "prerequisite": "Charisma 13",
+    "text": "You can spend 10 minutes inspiring your companions, shoring up their resolve to fight. When you do so, choose up to six friendly creatures (which can include yourself) within 30 feet of you who can see or hear you and who can understand you. Each creature can gain temporary hit points equal to your level + your Charisma modifier. A creature can't gain temporary hit points from this feat again until it has finished a short or long rest.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Inspiring Leader",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Investigative Attunement",
+    "prerequisite": "4th level",
+    "text": "You've spent a significant amount of time appraising and testing enhanced items. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- Your maximum attunement increases by 1.\r\n- You have advantage on ability checks made to identify items.\r\n- Once per long rest, you can choose one object that you must touch for 10 minutes. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Investigative Attunement",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Investigator",
+    "prerequisite": null,
+    "text": "You have an eye for detail and can pick out the smallest clues. You gain the following benefits: \r\n- Increase your Intelligence score by 1, to a maximum of 20. \r\n- You gain proficiency in the Investigation skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You can take the Search action as a bonus action. \t\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Investigator",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Keen Mind",
+    "prerequisite": null,
+    "text": "You have a mind that can track time, direction, and detail with uncanny precision. You gain the following benefits.\r\n- Increase your Intelligence score by 1, to a maximum of 20.\r\n- You always know which way is north.\r\n- You always know the number of hours left before the next sunrise or sunset.\r\n- You can accurately recall anything you have seen or heard within the past month.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Keen Mind",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Linguist",
+    "prerequisite": null,
+    "text": "You have studied languages and codes, gaining the following benefits:\r\n- Increase your Intelligence score by 1, to a maximum of 20.\r\n- You learn three languages of your choice.\r\n- You can ably create written ciphers. Others can't decipher a code you create unless you teach them, they succeed on an Intelligence check (DC = your Intelligence score + your proficiency bonus), or they use a power to decipher it.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Linguist",
+    "timestamp": "2023-05-30T20:15:09.5538628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5538628Z'\""
+  },
+  {
+    "name": "Loremaster",
+    "prerequisite": null,
+    "text": "Your study of history rewards you with the following benefits: \r\n- Increase your Intelligence score by 1, to a maximum of 20. \r\n- You gain proficiency in the Lore skill. If you are already proficient in it, you instead gain expertise in it. \r\n- When you take the Help action to aid another creature's ability check, you can make a DC 15 Intelligence (Lore) check. On a success, that creature's check gains a bonus equal to your proficiency bonus, as you share pertinent advice and historical examples. To receive this bonus, the creature must be able to understand what you're saying.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Loremaster",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Lucky",
+    "prerequisite": "4th level",
+    "text": "You have inexplicable luck that seems to kick in at just the right moment.\r\n\r\nYou have 3 luck points. Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point to roll an additional d20. You can choose to spend one of your luck points after you roll the die, but before the outcome is determined. You choose which of the d20s is used for the attack roll, ability check, or saving throw.\r\n\r\nYou can also spend one luck point when an attack roll is made against you. Roll a d20, and then choose whether the attack uses the attacker's roll or yours. If more than one creature spends a luck point to influence the outcome of a roll, the points cancel each other out; no additional dice are rolled.\r\n\r\nYou regain your expended luck points when you finish a long rest.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Lucky",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Mariner",
+    "prerequisite": null,
+    "text": "You've spent an exorbitant amount of time in water. You gain the following benefits:\r\n- Increase your Constitution score by 1, to a maximum of 20.\r\n- You gain a swimming speed equal to your movement speed.\r\n- You have advantage on a ability checks and saving throws related to swimming.\r\n- You can hold your breath for a number of minutes equal to 1 + twice your Constitution modifier.\r\n",
+    "attributesIncreased": [
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Mariner",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Medic",
+    "prerequisite": null,
+    "text": "You master the physician's arts, gaining the following benefits: \r\n- Increase your Wisdom score by 1, to a maximum of 20. \r\n- You gain proficiency in the Medicine skill. If you are already proficient in it, you instead gain expertise in it. \r\n- During a short rest, you can clean and bind the wounds of up to six willing beasts and humanoids. Make a DC 15 Wisdom (Medicine) check for each creature. On a success, if a creature spends a Hit Die during this rest, that creature can forgo the roll and instead regain the maximum number of hit points the die can restore. A creature can do so only once per rest, regardless of how many Hit Dice it spends.\r\n",
+    "attributesIncreased": [
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Medic",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Mobile",
+    "prerequisite": "4th level",
+    "text": "You are exceptionally speedy and agile. You gain the following benefits:\r\n- Your speed increases by 10 feet.\r\n- When you use the Dash action, difficult terrain doesn't cost you extra movement on that turn.\r\n- When you make a melee attack against a creature, you don't provoke opportunity attacks from that creature for the rest of the turn, whether you hit or not.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Mobile",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Muscled Menace",
+    "prerequisite": "Strength 13, size Medium",
+    "text": "Despite being of otherwise average size, your might extends beyond that of your peers. You gain the following benefits:\r\n- Increase your Strength score by 1, to a maximum of 20.\r\n- Your speed increases by 5 feet.\r\n- You can't add more than +3 when determining your bonus to AC from your Dexterity.\r\n- You can't add more than +3 when determing your bonus to Dexterity saving throws from Dexterity.\r\n- You gain the Oversized special trait: ***Oversized.*** Light- and vibro-weapons that lack the dexterity or light property are considered to have the heavy property for you. The strength number for blasters is reduced by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If the strength number is 11, you ignore it entirely. \r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Muscled Menace",
+    "timestamp": "2023-05-30T20:15:17.9490758+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9490758Z'\""
+  },
+  {
+    "name": "Naturalist",
+    "prerequisite": null,
+    "text": "Your extensive study of nature rewards you with the following benefits: \r\n- Increase your Intelligence score by 1, to a maximum of 20. \r\n- You gain proficiency in the Nature skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You learn the *toxin scan* tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Naturalist",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Observant",
+    "prerequisite": null,
+    "text": "Quick to notice details of your environment, you gain the following benefits:\r\n- Increase your Intelligence or Wisdom score by 1, to a maximum of 20.\r\n- If you can see a creature's mouth while it is speaking a language you understand, you can interpret what it's saying by reading its lips.\r\n- You are considered to have advantage when determining your passive Wisdom (Perception) and passive Intelligence (Investigation) scores.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Observant",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Perceptive",
+    "prerequisite": null,
+    "text": "You hone your senses until they become razor sharp. You gain the following benefits: \r\n- Increase your Wisdom score by 1, to a maximum of 20. \r\n- You gain proficiency in the Perception skill. If you are already proficient in it, you instead gain expertise in it. \r\n- Being in a lightly obscured area doesn't impose disadvantage on your Wisdom (Perception) checks if you can both see and hear.\r\n",
+    "attributesIncreased": [
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Perceptive",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Performer",
+    "prerequisite": null,
+    "text": "You master performance so that you can command any stage. You gain the following benefits: \r\n- Increase your Charisma score by 1, to a maximum of 20. \r\n- You gain proficiency in the Performance skill. If you are already proficient in it, you instead gain expertise in it. \r\n- While performing, you can try to distract one humanoid you can see who can see and hear you. Make a Charisma (Performance) check contested by the humanoid's Wisdom (Insight) check. If your check succeeds, you grab the humanoid's attention enough that it makes Wisdom (Perception) and Intelligence (Investigation) checks with disadvantage until you stop performing.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Performer",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Power Adept",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "When you gain this feat, choose one of the following damage types: acid, cold, fire, force, lightning, or necrotic. Powers you cast ignore resistance to damage of the chosen type. In addition, when you roll damage for a power you cast that deals damage of that type, you can treat any 1 on a damage die as a 2.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different damage type.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Power Adept",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Power Channeling",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "Choose one from force- or tech-casting. You've learned to cast powers of the chosen type with greater deliberation. Choose a number of powers you know of 1st level or higher equal to half your proficiency bonus. When you cast one of the chosen powers, you can choose to spend an additional minute casting the power for each level of the power. If you do so, the cost of the power is reduced by half the number of points. Casting a power in this way requires concentration (explained in chapter 10). If your concentration is broken, the power dissipates without taking effect. \r\n\r\nWhenever you gain a level in a class with casting of the chosen type, you can replace one of the chosen powers with another power of 1st level or higher you know.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Power Channeling",
+    "timestamp": "2023-05-30T20:15:09.5548618+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5548618Z'\""
+  },
+  {
+    "name": "Practiced",
+    "prerequisite": null,
+    "text": "You have acquired skills over your career, gaining the following benefits: \r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain proficiency in any combination of two skills or tools of your choice.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Practiced",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Promising Commander",
+    "prerequisite": null,
+    "text": "You've trained relentless to lead your allies on the field of battle, gaining the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- As an action, you can gain tactical insight. For one minute, once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you've used this feature, you must complete a short or long rest before you can use it again.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Promising Commander",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Quick-Fingered",
+    "prerequisite": null,
+    "text": "Your nimble fingers and agility let you perform sleight of hand. You gain the following benefits: \r\n- Increase your Dexterity score by 1, to a maximum of 20. \r\n- You gain proficiency in the Sleight of Hand skill. If you are already proficient in it, you instead gain expertise in it. \r\n- As a bonus action, you can make a Dexterity (Sleight of Hand) check to plant something on someone else, conceal an object on a creature, lift a purse, or take something from a pocket. \r\n",
+    "attributesIncreased": [
+      "Dexterity"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Quick-Fingered",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Quick-Witted",
+    "prerequisite": null,
+    "text": "Great ideas come to you naturally, often when your life depends on it. You always have a plan, or at least parts of it. You gain the following benefits:\r\n- Increase your Intelligence score by 1, to a maximum of 20.\r\n- You can use your Intelligence modifier instead of your Dexterity modifier when making Initiative checks.\r\n- When you would make a Dexterity saving throw, you can instead make an Intelligence saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Quick-Witted",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Resilient",
+    "prerequisite": "4th level",
+    "text": "Choose one ability score. You gain the following benefits:\r\n- Increase the chosen ability score by 1, to a maximum of 20.\r\n- You gain proficiency in saving throws using the chosen ability.\r\n",
+    "attributesIncreased": [],
+    "attributesIncreasedJson": "[]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Resilient",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Savage Shorty",
+    "prerequisite": "Strength 13, size Small",
+    "text": "Despite being short of stature, your size has no impact on your strength and virility. You gain the following benefits:\r\n- Increase your Strength score by 1, to a maximum of 20.\r\n- Your speed increases by 5 feet.\r\n- You lose the Undersized special trait.\r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Savage Shorty",
+    "timestamp": "2023-05-30T20:15:17.9500743+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9500743Z'\""
+  },
+  {
+    "name": "Shard Modification",
+    "prerequisite": "Type droid",
+    "text": "You are specially modified droid used to house a shard. Shards are sentient crystals native to the planet Orax, roughly a foot in length, that communicate with each other through pulses of light. While inhabiting a specialized droid host, shards are able to overcome the droid's inability to wield the Force, granting the following benefits:\r\n\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You lose the Force-Insensitive special trait.\r\n- You can cast the *sense force* force power once per day. Wisdom or Charisma (your choice) is your forcecasting ability for this power.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Shard Modification",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Silver-Tongued",
+    "prerequisite": null,
+    "text": "You develop your conversational skill to better deceive others. You gain the following benefits: \r\n- Increase your Charisma score by 1, to a maximum of 20. \r\n- You gain proficiency in the Deception skill. If you are already proficient in it, you instead gain expertise in it. \r\n- When you take the Attack action, you can replace one attack with an attempt to deceive one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Deception) check contested by the target's Wisdom (Insight) check. If your check succeeds, your movement doesn't provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target. If your check fails, the target can't be deceived by you in this way for 1 hour.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Silver-Tongued",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Snappy Interjection",
+    "prerequisite": null,
+    "text": "You've mastered a quick tongue to aid your allies. You gain the following benefits:\r\n- Increase your Charisma score by 1, to a maximum of 20.\r\n- Once per short or long rest, when an ally makes an attack roll, an ability check or a saving throw, you can spend your reaction to give them advantage on the roll.\r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Snappy Interjection",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Specialist",
+    "prerequisite": null,
+    "text": "You have focused training with a specific tool. Select one type of specialist's kit. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain proficiency with the chosen kit. If you are already proficient with it, you instead gain expertise with it. \r\n- You can attempt ability checks with the chosen kit without the kit present, but you have disadvantage on the check when you do so.\r\n- Whenever you make an ability check with the chosen kit and you don't have disadvantage on the check, you can treat a d20 roll of 9 or lower as a 10, as long as you spend at least 1 minute on the check.\r\n\r\nYou can take this feat multiple times. Each time you do so, you must choose a different specialist's kit.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Specialist",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Stealthy",
+    "prerequisite": null,
+    "text": "You know how best to hide, gaining the following benefits: \r\n- Increase your Dexterity score by 1, to a maximum of 20. \r\n\r\n- You gain proficiency in the Stealth skill. If you are already proficient in it, you instead gain expertise in it. \r\n- If you are hidden, you can move up to 10 feet in the open without revealing yourself if you end the move in a position where you're not clearly visible. \r\n",
+    "attributesIncreased": [
+      "Dexterity"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Stealthy",
+    "timestamp": "2023-05-30T20:15:09.5558628+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5558628Z'\""
+  },
+  {
+    "name": "Supreme Accuracy",
+    "prerequisite": "4th level; Dexterity, Intelligence, Wisdom, or Charisma 13",
+    "text": "You have uncanny aim with attacks that rely on precision. You gain the following benefits:\r\n- Increase your Dexterity, Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma you can reroll one of the dice once. \r\n",
+    "attributesIncreased": [
+      "Dexterity",
+      "Intelligence",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\",\"Intelligence\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Supreme Accuracy",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Supreme Aptitude",
+    "prerequisite": "4th level; Strength, Dexterity, Constitution, or Intelligence 13",
+    "text": "You have uncanny skill with a preternatural focus. You gain the following benefits:\r\n- Increase your Strength, Dexterity, Constitution, or Intelligence score by 1, to a maximum of 20.\r\n- Whenever you have advantage on an ability check using Strength, Dexterity, Constitution, or Intelligence you can reroll one of the dice once. \r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity",
+      "Constitution",
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\",\"Constitution\",\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Supreme Aptitude",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Supreme Durability",
+    "prerequisite": "4th level; Strength, Constitution, Wisdom, or Charisma 13",
+    "text": "You have uncanny resilience of both body and mind. You gain the following benefits:\r\n- Increase your Strength, Constitution, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- Whenever you have advantage on a saving throw using Strength, Constitution, Wisdom, or Charisma you can reroll one of the dice once. \r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Constitution",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Constitution\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Supreme Durability",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Survivalist",
+    "prerequisite": null,
+    "text": "You master wilderness lore, gaining the following benefits: \r\n- Increase your Wisdom score by 1, to a maximum of 20. \r\n- You gain proficiency in the Survival skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You learn the *alarm* tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. \r\n",
+    "attributesIncreased": [
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Survivalist",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Tech Dabbler",
+    "prerequisite": null,
+    "text": "You know two at-will tech powers. When you reach 3rd level, you learn and can cast one 1st-level tech power once per long rest. When you reach 5th level, you learn and can cast one 2nd-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. Additionally, you lose the Tech-Impaired special trait if you have it.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Tech Dabbler",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Techie",
+    "prerequisite": null,
+    "text": "You master the theory and practice of technology, gaining the following benefits: \r\n- Increase your Intelligence score by 1, to a maximum of 20. \r\n- You gain proficiency in the Technology skill. If you are already proficient in it, you instead gain expertise in it. \r\n- You learn the *repair droid* tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Techie",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Threatening",
+    "prerequisite": null,
+    "text": "You become fearsome to others, gaining the following benefits: \r\n- Increase your Charisma score by 1, to a maximum of 20. \r\n- You gain proficiency in the Intimidation skill. If you are already proficient in it, you instead gain expertise in it. \r\n- When you take the Attack action, you can replace one attack with an attempt to demoralize one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Intimidation) check contested by the target's Wisdom (Insight) check. If your check succeeds, the target is frightened until the end of your next turn. If your check fails, the target can't be frightened by you in this way for 1 hour. \r\n",
+    "attributesIncreased": [
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Charisma\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Threatening",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Tiny Terror",
+    "prerequisite": "Strength 13, size Tiny",
+    "text": "Despite falling below knee height of other species, your size has less impact on your strength and virility. You gain the following benefits:\r\n- Increase your Strength score by 1, to a maximum of 20.\r\n- Your speed increases by 5 feet.\r\n- You lose the Pintsized special trait, and you are no longer limited to +3 when determining your bonus to attack and damage rolls for weapon attacks using Strength due to the Puny special trait.\r\n- You gain the Undersized special trait: ***Undersized.*** Your small stature makes it hard for you to wield bigger weapons. You can't use heavy shields or martial weapons with the two-handed property unless it has the light property, and if a martial weapon has the versatile property, you can only wield it in two-hands.\r\n",
+    "attributesIncreased": [
+      "Strength"
+    ],
+    "attributesIncreasedJson": "[\"Strength\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Tiny Terror",
+    "timestamp": "2023-05-30T20:15:17.9500743+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9500743Z'\""
+  },
+  {
+    "name": "Tough",
+    "prerequisite": "4th level, Durable feat",
+    "text": "You have the blood of heroes flowing through your veins. You gain the following benefits:\r\n- Increase your Constitution score by 1, to a maximum of 20.\r\n- Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. Roll the die, add your Constitution modifier, and regain a number of hit points equal to the total (minimum of one). \r\n",
+    "attributesIncreased": [
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Tough",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Weapon Expert",
+    "prerequisite": null,
+    "text": "You have practiced extensively with a variety of weapons, gaining the following benefits:\r\n- Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.\r\n- You gain proficiency with all blasters. If you are already proficient with all blasters, instead once per turn when you would roll weapon damage using a blaster, you can choose to have advantage.\r\n- You gain proficiency with all lightweapons. If you are already proficient with all lightweapons, instead once per turn when you would roll weapon damage using a lightweapon, you can choose to have advantage.\r\n- You gain proficiency with all vibroweapons. If you are already proficient with all vibroweapons, instead once per turn when you would roll weapon damage using a vibroweapon, you can choose to have advantage.\r\n\r\nYou can take this feat twice. \r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity",
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\",\"Constitution\"]",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 1,
+    "contentSource": "PHB",
+    "partitionKey": "Core",
+    "rowKey": "Weapon Expert",
+    "timestamp": "2023-05-30T20:15:09.5568611+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A09.5568611Z'\""
+  },
+  {
+    "name": "Weapon Focused",
+    "prerequisite": "4th level",
+    "text": "You adopt a particular type of weapon as your focus. Choose one of the weapon focus options, detailed later in this chapter. You can take this feat multiple times. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Weapon Focused",
+    "timestamp": "2023-05-30T20:15:17.9500743+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9500743Z'\""
+  },
+  {
+    "name": "Weapon Supremacist",
+    "prerequisite": "4th level",
+    "text": "You've mastered a particular type of weapon. Choose one of the weapon supremacist options, detailed later in this chapter. You can take this feat multiple times. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 1,
+    "contentType": "Core",
+    "contentSourceEnum": 2,
+    "contentSource": "WH",
+    "partitionKey": "Core",
+    "rowKey": "Weapon Supremacist",
+    "timestamp": "2023-05-30T20:15:17.9500743+00:00",
+    "eTag": "W/\"datetime'2023-05-30T20%3A15%3A17.9500743Z'\""
+  },
+  {
+    "name": "Adaptable Fading",
+    "prerequisite": "4th level",
+    "text": "You can easily overthrow an enemy's fortitude. You gain the following benefits:\r\n- Increase your Strength or Constitution score by 1, to a maximum of 20.\r\n- When you make an attack roll using your Strength, you can choose to add half your Constitution modifier to the attack roll. Alternatively, when you would make an attack roll using Constitution, you can add half your Strength modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n- When an effect you control would call for a Strength saving throw, you can instead have it call for a Constitution saving throw. Alternatively, when an effect you control would call for a Constitution saving throw, you can instead have it call for a Strength saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Constitution\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Adaptable Fading",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Auditory Dampening",
+    "prerequisite": null,
+    "text": "You've developed resilience against debilitating noises, gaining the following benefits:\r\n- Increase your Constitution, Intelligence, or Wisdom score by 1, to a maximum of 20.\r\n- While you are deafened, you can make ability checks that rely on hearing with disadvantage, instead of automatically failing them.\r\n- You have advantage on saving throws made to avoid sonic damage.\r\n",
+    "attributesIncreased": [
+      "Constitution",
+      "Intelligence",
+      "Wisdom"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\",\"Intelligence\",\"Wisdom\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Auditory Dampening",
+    "timestamp": "2023-05-06T20:49:23.7396289+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7396289Z'\""
+  },
+  {
+    "name": "Blinding Agility",
+    "prerequisite": "12th level, Dexterity 20",
+    "text": "You have the reflexes one who can see things before they happen, granting the following benefits:\r\n- You gain proficiency in Dexterity saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n- Weapons that lack the two-handed or special properties are considered to have the finesse property for you.\r\n- Opportunity attacks made against you have disadvantage.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Blinding Agility",
+    "timestamp": "2023-05-06T20:49:23.7476241+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7476241Z'\""
+  },
+  {
+    "name": "Casting Specialist",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "Choose one from force- or tech-casting. You've mastered your chosen casting type, gaining the following benefits:\r\n- You gain a +1 bonus to your force or tech save DC and your force or tech attack modifier.\r\n- Once per turn, when you cast a power that requires an attack roll or saving throw, you can have advantage on one attack roll, or you can force one creature affected by the power to have advantage or disadvantage on the saving throw (your choice). Once you've used this feature on a power, you can't affect that power again until you complete a short or long rest. Once you've used this feature on a creature, you can't do so again until you complete a short or long rest.\r\n- Once per turn, when you cast a power that doesn't require an ability check, attack roll, or saving throw, but requires a die roll, you can choose the maximum or minimum on the die (your choice). If the power requires rolling multiple dice, you can only affect a number of them equal to half your proficiency bonus (rounded up) in this way. Once you've used this feature on a power, you can't affect that power again until you complete a short or long rest.\r\n\r\nYou can select this feat twice. Each time you do so, you must choose a different casting type.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Casting Specialist",
+    "timestamp": "2023-05-06T20:49:23.7476241+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7476241Z'\""
+  },
+  {
+    "name": "Chemical Buffer",
+    "prerequisite": null,
+    "text": "You're able to neutralize caustic chemicals, mitigating their worst effects. You gain the following benefits:\r\n- Increase your Dexterity, Constitution, or Intelligence score by 1, to a maximum of 20.\r\n- You cannot be disintegrated, and you ignore the first corroded level you receive.\r\n- You have advantage on saving throws made to avoid acid damage.\r\n",
+    "attributesIncreased": [
+      "Dexterity",
+      "Constitution",
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\",\"Constitution\",\"Intelligence\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Chemical Buffer",
+    "timestamp": "2023-05-06T20:49:23.7396289+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7396289Z'\""
+  },
+  {
+    "name": "Class Improvement",
+    "prerequisite": "4th level",
+    "text": "You adopt a particular new application to your class, gaining the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- Choose one of the class improvement options, detailed later in this chapter. \r\n\r\nYou can take this feat multiple times. \r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Class Improvement",
+    "timestamp": "2023-05-06T20:49:24.5012011+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A24.5012011Z'\""
+  },
+  {
+    "name": "Close Quarters Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've practiced utilizing powers in close quarters, learning techniques that grant you the following benefits:\r\n- When making a ranged force or tech attack while you are within 5 feet of a hostile creature, you do not have disadvantage on the attack roll.  \r\n- Your ranged force and tech attacks ignore half cover and three-quarters cover against targets within 30 feet of you. \r\n- You learn one at-will power that requires an attack roll. Your casting ability for this at-will power depends on the power list you chose from: Wisdom or Charisma (depending on power alignment) for force powers or Intelligence for tech powers.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Close Quarters Caster",
+    "timestamp": "2023-05-06T20:49:23.7456245+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7456245Z'\""
+  },
+  {
+    "name": "Combat Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've practiced making your powers more difficult to avoid, learning techniques that grant you the following benefits:\r\n- When a creature rolls a 1 on the d20 roll of a saving throw against a power you cast that deals damage, they instead take the highest number possible for the damage die.\r\n- You learn one at-will power that requires a saving throw. Your casting ability for this at-will power depends on the power list you chose from: Wisdom or Charisma (depending on power alignment) for force powers or Intelligence for tech powers.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Combat Caster",
+    "timestamp": "2023-05-06T20:49:23.7456245+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7456245Z'\""
+  },
+  {
+    "name": "Companion Keeper",
+    "prerequisite": "4th level",
+    "text": "You gain the services of a companion. Choose one of the companion nature options, detailed later in this chapter.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Companion Keeper",
+    "timestamp": "2023-05-06T20:49:23.7456245+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7456245Z'\""
+  },
+  {
+    "name": "Cunning Forcecaster",
+    "prerequisite": "The ability to cast force powers",
+    "text": "You've discovered a clever avenue to your study of the Force. Choose one from Wisdom or Charisma. You gain the following benefits:\r\n- Increase your Intelligence score by 1, to a maximum of 20.\r\n- You can use Intelligence instead of the chosen ability as your forcecasting ability.\r\n- You can add Intelligence instead of the chosen ability when determining your maximum force points.\r\n",
+    "attributesIncreased": [
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Cunning Forcecaster",
+    "timestamp": "2023-05-06T20:49:23.7396289+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7396289Z'\""
+  },
+  {
+    "name": "Cunning Intellect",
+    "prerequisite": "12th level, Intelligence 20",
+    "text": "You have the cunning of the most prolific scholars, granting the following benefits:\r\n- You gain proficiency in Intelligence saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n\r\n- When you engage in the Training downtime activity, during resolution, you add your proficiency bonus to the check. If you would already add your proficiency bonus, you instead add twice your proficiency bonus. If you would already add twice your proficiency bonus, you instead have advantage on the check.\r\n- Whenever you make an ability check that uses your Intelligence, you can add half your proficiency bonus (rounded down) if it doesn't already include your proficiency bonus. Additionally, if you roll lower than half your level (rounded down) on an Intelligence check, you can instead use your level for the d20 roll.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Cunning Intellect",
+    "timestamp": "2023-05-06T20:49:23.7476241+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7476241Z'\""
+  },
+  {
+    "name": "Double-Weapon Casting",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've learned to blend your prowess with twinblades with your casting. You gain the following benefits:\r\n- Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- When you use your action to Cast a Power that calls for a weapon attack and attack with a weapon with the light and double properties while wielding it in two hands, you can use your bonus action to engage in Double-Weapon Fighting. All the rules of Double-Weapon Fighting still apply to you.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Double-Weapon Casting",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Dual Focused Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You have learned to bifurcate your attention while concentrating on powers, learning techniques that grant you the following benefits:\r\n- If you attempt to cast a power that requires concentration while already concentrating on an existing power, you can maintain concentration on both powers simultaneously. You must spend your action each subsequent round on maintaining this concentration, or lose concentration for both powers.                              \r\n- At the end of each of your turns where you have two powers you are concentrating on, you must make a Constitution saving throw (DC equals 10 + the number of complete rounds you've been concentrating on two powers). On a failure, you lose concentration for both powers. You can drop concentration on one of your powers during your turn as a free action to avoid this saving throw.\r\n- Any time you would be forced to make a Constitution saving throw to maintain concentration due to taking damage, the DC equals 10 + both powers' levels combined, or half the damage you take, whichever number is higher. On a failure, you lose concentration on both powers.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Dual Focused Caster",
+    "timestamp": "2023-05-06T20:49:23.7466253+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7466253Z'\""
+  },
+  {
+    "name": "Dutifully Deployed",
+    "prerequisite": null,
+    "text": "You've developed an aptitude for a particular deployment on a starship. You gain the following benefits:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- You gain 1 rank in a deployment of your choice. This rank does not count towards or affect your prestige.\r\n- The maximum number of ranks you can gain in deployments increases by 1. You can still only gain 5 ranks in a deployment.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Dutifully Deployed",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Electrical Grounding",
+    "prerequisite": null,
+    "text": "You're able to avoid the brunt of electric shocks. You gain the following benefits:\r\n- Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- At the start of each of your turns while shocked, you can choose to have a reaction, or you can choose to be able to take both an action and a bonus action on your turn.\r\n- You have advantage on saving throws made to avoid lightning damage.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Electrical Grounding",
+    "timestamp": "2023-05-06T20:49:23.7406284+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7406284Z'\""
+  },
+  {
+    "name": "Exalted Awareness",
+    "prerequisite": "12th level, Wisdom 20",
+    "text": "You have the wisdom associated with the most renowned masters of the Force, granting the following benefits:\r\n- You gain proficiency in Wisdom saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n- Creatures within 60 feet of you have disadvantage on Dexterity (Stealth) checks made to hide from you.\r\n- As an action, you can sense the presence of illusions and other effects designed to deceive the senses within 30 feet of you, provided that you aren't blinded or deafened. You sense that an effect is trying to trick you, but you gain no insight into what is hidden or its true nature. Once you've used this feature, you must complete a short or long rest before you can use it again.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Exalted Awareness",
+    "timestamp": "2023-05-06T20:49:23.7486238+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7486238Z'\""
+  },
+  {
+    "name": "Exotic Weapon Training",
+    "prerequisite": null,
+    "text": "Mastery of simple and martial weapons has unlocked new potential for you. You gain the following benefits:\r\n- Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.\r\n- You gain proficiency in three exotic weapons. You must have proficiency in all simple and martial weapons in the exotic weapon's category to gain proficiency in it. If the exotic has modes that would fall in two different weapon categories, you require proficiency all simple and martial weapons in both categories in order to gain proficiency in that exotic.\r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Dexterity",
+      "Constitution"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Dexterity\",\"Constitution\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Exotic Weapon Training",
+    "timestamp": "2023-05-06T20:49:23.7416276+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7416276Z'\""
+  },
+  {
+    "name": "Fighting Styles and Masteries",
+    "prerequisite": null,
+    "text": "Wretched Hives introduces new ammunition types, such as the specialized power cells, or rockets. You'll want to extend the benefits of certain Fighting Styles and Fighting Masteries to these new munitions, as explained below.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Fighting Styles and Masteries",
+    "timestamp": "2023-05-06T20:49:23.7386289+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7386289Z'\""
+  },
+  {
+    "name": "Flexible Rending",
+    "prerequisite": "4th level",
+    "text": "You are adept at overwhelming an opponent's reflexes. You gain the following benefits:\r\n- Increase your Dexterity or Intelligence score by 1, to a maximum of 20.\r\n- When you make an attack roll using your Dexterity, you can choose to add half your Intelligence modifier to the attack roll. Alternatively, when you would make an attack roll using Intelligence, you can add half your Dexterity modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n- When an effect you control would call for a Dexterity saving throw, you can instead have it call for a Intelligence saving throw. Alternatively, when an effect you control would call for a Intelligence saving throw, you can instead have it call for a Dexterity saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Dexterity",
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\",\"Intelligence\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Flexible Rending",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Force Frustrater",
+    "prerequisite": null,
+    "text": "You've practiced techniques to resist being manipulated by the Force. You gain the following benefits:\r\n- Increase your Strength, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- When a creature attempts to move you against your will using a force power, the maximum distance it can move you is halved.\r\n- You have advantage on saving throws made to avoid force damage.\r\n",
+    "attributesIncreased": [
+      "Strength",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Strength\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Force Frustrater",
+    "timestamp": "2023-05-06T20:49:23.7406284+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7406284Z'\""
+  },
+  {
+    "name": "Greater Force-Sensitive",
+    "prerequisite": "The ability to cast 3rd-level force powers",
+    "text": "You know one at-will force power. Additionally, you know one 4th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment).\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Greater Force-Sensitive",
+    "timestamp": "2023-05-06T20:49:23.7436257+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7436257Z'\""
+  },
+  {
+    "name": "Greater Tech Dabbler",
+    "prerequisite": "The ability to cast 3rd-level tech powers",
+    "text": "You know one at-will tech power. Additionally, you know one 4th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Greater Tech Dabbler",
+    "timestamp": "2023-05-06T20:49:23.7446256+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7446256Z'\""
+  },
+  {
+    "name": "Heat Shielded",
+    "prerequisite": null,
+    "text": "You can tolerate extremely hot temperatures. You gain the following benefits:\r\n- Increase your Dexterity, Consitution, or Intelligence score by 1, to a maximum of 20.\r\n- You have advantage on Constitution saving throws made to avoid exhaustion due to extreme heat, and you can use your bonus action to end the ignited condition on yourself, instead of your action.\r\n- You have advantage on saving throws made to avoid fire damage.\r\n",
+    "attributesIncreased": [
+      "Dexterity",
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\",\"Intelligence\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Heat Shielded",
+    "timestamp": "2023-05-06T20:49:23.7406284+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7406284Z'\""
+  },
+  {
+    "name": "Improved Force-Sensitive",
+    "prerequisite": "The ability to cast 2nd-level force powers",
+    "text": "You know one at-will force power. Additionally, you know one 3rd-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment).\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Improved Force-Sensitive",
+    "timestamp": "2023-05-06T20:49:23.7436257+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7436257Z'\""
+  },
+  {
+    "name": "Improved Tech Dabbler",
+    "prerequisite": "The ability to cast 2nd-level tech powers",
+    "text": "You know one at-will tech power. Additionally, you know one 3rd-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Improved Tech Dabbler",
+    "timestamp": "2023-05-06T20:49:23.7446256+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7446256Z'\""
+  },
+  {
+    "name": "Master Force-Sensitive",
+    "prerequisite": "The ability to cast 4th-level force powers",
+    "text": "You know one at-will force power. Additionally, you know one 5th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment).\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Master Force-Sensitive",
+    "timestamp": "2023-05-06T20:49:23.7446256+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7446256Z'\""
+  },
+  {
+    "name": "Master Tech Dabbler",
+    "prerequisite": "The ability to cast 4th-level tech powers",
+    "text": "You know one at-will tech power. Additionally, you know one 5th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Master Tech Dabbler",
+    "timestamp": "2023-05-06T20:49:23.7446256+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7446256Z'\""
+  },
+  {
+    "name": "Metabolic Tolerance",
+    "prerequisite": null,
+    "text": "You've developed resilience against many poisons, gaining the following benefits:\r\n- Increase your Constitution, Intelligence, or Charisma score by 1, to a maximum of 20.\r\n- As an action or bonus action, you can expend a Hit Die to end the poisoned condition on yourself.\r\n- You have advantage on saving throws made to avoid poison damage.\r\n",
+    "attributesIncreased": [
+      "Constitution",
+      "Intelligence",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\",\"Intelligence\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Metabolic Tolerance",
+    "timestamp": "2023-05-06T20:49:23.7406284+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7406284Z'\""
+  },
+  {
+    "name": "Mindful Meditator",
+    "prerequisite": null,
+    "text": "You've learned meditation techniques to calm your mind. You gain the following benefits:\r\n- Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- You only need 3 hours of sleep during a long rest to gain its benefits, instead of 6. Additionally, if your long rest would be interrupted, you only need to complete the long rest instead of restarting it to gain its benefits.\r\n- You have advantage on saving throws made to avoid psychic damage.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Mindful Meditator",
+    "timestamp": "2023-05-06T20:49:23.7416276+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7416276Z'\""
+  },
+  {
+    "name": "Mounted Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You are trained in the use of powers while mounted. While you are mounted and aren't incapacitated, you gain the following benefits:\r\n- When you cast a power targeting yourself, you can also affect your mount with the power.\r\n- You have advantage on melee force or tech attack rolls against any unmounted creature that is smaller than your mount.\r\n- If your mount is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Mounted Caster",
+    "timestamp": "2023-05-06T20:49:23.7466253+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7466253Z'\""
+  },
+  {
+    "name": "Multiclass Improvement",
+    "prerequisite": "4th level",
+    "text": "You've learned to blend the skills of your different classes. Choose two of the multiclass improvement options, detailed later in this chapter. You can take this feat multiple times. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Multiclass Improvement",
+    "timestamp": "2023-05-06T20:49:24.5012011+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A24.5012011Z'\""
+  },
+  {
+    "name": "Overwhelming Presence",
+    "prerequisite": "12th level, Charisma 20",
+    "text": "You have the presence of the most affluent of leaders, granting the following benefits:\r\n- You gain proficiency in Charisma saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n- While you are conscious, up to five friendly creatures within 30 feet of you who can see or hear you and who can understand you can gain a bonus to one Intelligence, Wisdom, or Charisma saving throw they make equal to your Charisma modifier. Once they've done so, they can't do so again until they finish a short or long rest.\r\n- As an action, you can attempt to distract up to five creatures you can see within 30 feet of you. Each creature must make a Wisdom saving throw (DC = 8 + your proficiency bonus + your Charisma modifier). Any creature immune to being charmed is unaffected. If you or your companions are fighting a creature, it has advantage on the saving throw. On a failed save, for the next minute, a creature has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the effect ends or until the target can no longer see or hear you. This ends early if you are incapacitated or die.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Overwhelming Presence",
+    "timestamp": "2023-05-06T20:49:23.7486238+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7486238Z'\""
+  },
+  {
+    "name": "Quick Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've practiced casting powers in quick succession, learning techniques that grant you the following benefits:\r\n- When you cast a power with a casting time of a bonus action, you may use your action to cast a power with a power level no higher than half your proficiency bonus (rounded down).\r\n- When you cast a power with a casting time of a bonus action, you can cast it without expending force or tech points as long as it is no higher level than your proficiency bonus. Once you've used this feature, you must complete a long rest before you can use it again.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Quick Caster",
+    "timestamp": "2023-05-06T20:49:23.7466253+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7466253Z'\""
+  },
+  {
+    "name": "Sniping Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've practiced casting powers more accurately from long range, learning techniques that give you the following benefits:\r\n- When you cast a power that requires you to make an attack roll, the power's range is doubled.\r\n- Your ranged force and tech attacks ignore one-quarter, half, and three-quarters cover.\r\n- You learn one at-will power that requires an attack roll. Your casting ability for this at-will power depends on the power list you chose from: Wisdom or Charisma (depending on power alignment) for force powers or Intelligence for tech powers.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Sniping Caster",
+    "timestamp": "2023-05-06T20:49:23.7466253+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7466253Z'\""
+  },
+  {
+    "name": "Spiritual Techcaster",
+    "prerequisite": "The ability to cast tech powers",
+    "text": "You've developed a transcendent approach to your tech prowess. Choose one from Wisdom or Charisma. You gain the following benefits:\r\n- Increase the chosen ability score by 1, to a maximum of 20.\r\n- You can use the chosen ability instead of Intelligence as your techcasting ability.\r\n- You can add the chosen ability instead of Intelligence when determining your maximum tech points.\r\n",
+    "attributesIncreased": [],
+    "attributesIncreasedJson": "[]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Spiritual Techcaster",
+    "timestamp": "2023-05-06T20:49:23.7396289+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7396289Z'\""
+  },
+  {
+    "name": "Splashclass Improvement",
+    "prerequisite": "4th level",
+    "text": "You've learned to blend the skills of your different classes. Choose one of the splashclass improvement options, detailed later in this chapter. You can take this feat multiple times. \r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Splashclass Improvement",
+    "timestamp": "2023-05-06T20:49:24.5012011+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A24.5012011Z'\""
+  },
+  {
+    "name": "Titan's Power",
+    "prerequisite": "12th level, Strength 20",
+    "text": "You have the strength that legends tell of, granting the following benefits:\r\n- You gain proficiency in Strength saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n- You ignore the two-handed property of weapons with which you are proficient.\r\n- When you miss with a melee weapon attack, the creature takes damage equal to your Strength modifier. This damage is of the same type as the weapon's damage.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Titan's Power",
+    "timestamp": "2023-05-06T20:49:23.7476241+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7476241Z'\""
+  },
+  {
+    "name": "Total Reconstruction",
+    "prerequisite": "Type beast or humanoid",
+    "text": "You are more machine than man. While repaired in a similar configuration as your own species, you are subject to the following changes:\r\n- Increase an ability score of your choice by 1, to a maximum of 20.\r\n- Choose one class of droid (class I-V or tracker). You count as the chosen creature type in addition to your other type.\r\n- You are resistant to necrotic and poison damage, and are immune to poison and disease.\r\n- You do not need to eat or drink. Additionally, you no longer require a tech focus to cast tech powers.\r\n- You are vulnerable to ion damage. Additionally, you have disadvantage on saving throws against effects that would deal ion or lightning damage.\r\n- You can not sense the Force, use force powers, or take levels in forcecasting classes.\r\n- You are no longer a valid target for cybernetic augmentations or genetic mutations. However, you are now a valid target for droid customizations.\r\n",
+    "attributesIncreased": [
+      "Any"
+    ],
+    "attributesIncreasedJson": "[\"Any\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Total Reconstruction",
+    "timestamp": "2023-05-06T20:49:23.7416276+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7416276Z'\""
+  },
+  {
+    "name": "Two-Weapon Casting",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've learned to better combine your dual wielding with your powers. You gain the following benefits:\r\n- Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.\r\n- When you use your action to Cast a Power that calls for a weapon attack and attack with a light weapon that you're holding in one hand, you can use your bonus action to engage in Two-Weapon Fighting. All the rules of Two-Weapon Fighting still apply to you.\r\n",
+    "attributesIncreased": [
+      "Intelligence",
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Intelligence\",\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Two-Weapon Casting",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Unnatural Resilience",
+    "prerequisite": "12th level, Constitution 20",
+    "text": "You have the fortitude often attributed to gods, granting the following benefits:\r\n- You gain proficiency in Constitution saving throws. If you are already proficient in them, you instead gain expertise in them.\r\n- Enhanced effects, such as powers or medpacs, that would restore hit points to you can't restore an amount less than half your level + your Constitution modifier. If this amount would exceed that maximum amount of hit points that effect could restore, you instead take that effect's maximum.\r\n- You can add your Constitution modifier to death saving throws you make.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Unnatural Resilience",
+    "timestamp": "2023-05-06T20:49:23.7476241+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7476241Z'\""
+  },
+  {
+    "name": "Versatile Withering",
+    "prerequisite": "4th level",
+    "text": "You have learned to easily overcome an adversary's will. You gain the following benefits:\r\n- Increase your Wisdom or Charisma score by 1, to a maximum of 20.\r\n- When you make an attack roll using your Wisdom, you can choose to add half your Charisma modifier to the attack roll. Alternatively, when you would make an attack roll using Charisma, you can add half your Wisdom modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n- When an effect you control would call for a Wisdom saving throw, you can instead have it call for a Charisma saving throw. Alternatively, when an effect you control would call for a Charisma saving throw, you can instead have it call for a Wisdom saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.\r\n",
+    "attributesIncreased": [
+      "Wisdom",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Wisdom\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Versatile Withering",
+    "timestamp": "2023-05-06T20:49:23.7426273+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7426273Z'\""
+  },
+  {
+    "name": "Vigorous Virility",
+    "prerequisite": null,
+    "text": "Thanks to the strength of your vitality, you gain the following benefits:\r\n- Increase your Constitution, Intelligence, or Charisma score by 1, to a maximum of 20.\r\n- As an action, you can expend a Hit Die to end the weakened condition on yourself.\r\n- Once per long rest, when you complete a short rest, you can expend a Hit Die to remove 1 level of exhaustion.\r\n- You have advantage on saving throws made to avoid necrotic damage.\r\n",
+    "attributesIncreased": [
+      "Constitution",
+      "Intelligence",
+      "Charisma"
+    ],
+    "attributesIncreasedJson": "[\"Constitution\",\"Intelligence\",\"Charisma\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Vigorous Virility",
+    "timestamp": "2023-05-06T20:49:23.7416276+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7416276Z'\""
+  },
+  {
+    "name": "War Caster",
+    "prerequisite": "4th level, the ability to cast force or tech powers",
+    "text": "You've practiced casting powers in the midst of combat, learning techniques that grant you the following benefits:\r\n- You have advantage on Constitution saving throws that you make to maintain your concentration on a power when you take damage.\r\n- Once per round, when a hostile creature provokes an opportunity attack from you, you can use your reaction to cast a power at the creature, rather than making an opportunity attack. The power must have a casting time of 1 action and must target only that creature.\r\n",
+    "attributesIncreased": null,
+    "attributesIncreasedJson": "",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "War Caster",
+    "timestamp": "2023-05-06T20:49:23.7466253+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7466253Z'\""
+  },
+  {
+    "name": "Well-Insulated",
+    "prerequisite": null,
+    "text": "You can tolerate extremely cold temperatures. You gain the following benefits:\r\n- Increase your Dexterity, Constitution, or Intelligence score by 1, to a maximum of 20.\r\n- You have advantage on Constitution saving throws made to avoid exhaustion due to extreme cold, and each slowed level only reduces your speed by 5 feet, unless it would reduce your speed to 0.\r\n- You have advantage on saving throws made to avoid cold damage.\r\n",
+    "attributesIncreased": [
+      "Dexterity",
+      "Constitution",
+      "Intelligence"
+    ],
+    "attributesIncreasedJson": "[\"Dexterity\",\"Constitution\",\"Intelligence\"]",
+    "contentTypeEnum": 2,
+    "contentType": "ExpandedContent",
+    "contentSourceEnum": 5,
+    "contentSource": "EC",
+    "partitionKey": "ExpandedContent",
+    "rowKey": "Well-Insulated",
+    "timestamp": "2023-05-06T20:49:23.7416276+00:00",
+    "eTag": "W/\"datetime'2023-05-06T20%3A49%3A23.7416276Z'\""
+  }
+]

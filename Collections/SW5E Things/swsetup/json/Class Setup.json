@@ -1491,47 +1491,6 @@
     ]
   },
   {
-    "Class": "Scholar",
-    "subclass": "Physician",
-    "attacks": [
-      {
-        "level": 3,
-        "action": {
-          "name": "Tend the Wounded",
-          "_v": 2,
-          "activation_type": 2,
-          "automation": [
-            {
-              "type": "variable",
-              "value": "{caster.levels.get('Scholar')}",
-              "name": "level"
-            },
-            {
-              "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 13 if level < 17 else 12",
-              "name": "dieSize"
-            },
-            {
-              "type": "roll",
-              "dice": "1d{dieSize} [healing]",
-              "name": "healing"
-            },
-            {
-              "type": "target",
-              "target": "each",
-              "effects": [
-                {
-                  "type": "damage",
-                  "damage": "-{healing}"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Class": "Sentinellight",
     "subclassLevel": 3,
     "attacks": [

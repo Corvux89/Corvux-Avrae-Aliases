@@ -7,7 +7,6 @@ v = "cha" in stat.lower() or "wis" in stat.lower() or "del" in stat.lower()
 base = f'''embed -thumb {image} -color {color} -title "Rancor's Discipline Feature!" '''
 
 feat_dict = load_json(c.get_cvar("SWFeats", "{}"))
-feat_dict["ForceSensitive"] = True
 
 if v:
     if "del" in stat.lower():

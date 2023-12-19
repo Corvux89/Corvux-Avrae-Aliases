@@ -5,9 +5,10 @@ image = ch.image
 color = ch.csettings.color
 gvars = ['0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b']
 add_gvars = ['ca3279fd-537e-477b-a2b6-e9c45f1f1939']
+add_gvars += load_json(get_svar("swActions", "[]"))
 char_classes = load_json(ch.get_cvar("subclass", "{}"))
 stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
-modCounters = load_json(ch.get_cvar("swModCounters", "[]"))
+actionTracker = load_json(ch.get_cvar("swActionMods", "{}"))
 
 def setup(args):
     args = [x.lower() for x in args]
@@ -56,6 +57,8 @@ def getAttacks(class_list, stat = None):
 def additionalActions(stat = None):
     a_str = ""
     actions = []
+    modCounters = actionTracker.get('counters', [])
+    modVars = actionTracker.get('cvars', [])
     for i_action in ch.attacks:
         if i_action.name == "zCustomImport":
             a_str = i_action.raw["automation"][1]["text"].lower().split("\n")[1].split(", ")
@@ -66,20 +69,32 @@ def additionalActions(stat = None):
 
         for a in add_actions:
             if a.name.lower() in a_str:
+                if a.get('level') and ch.levels.total_level < int(a.level):
+                    break
+
                 if a.get("action"):
                     action = a.action
                     if stat:
                         action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod',stat).replace('charismaMod', stat))
                     actions.append(action)
 
+                # Add a counter
                 if a.get("counter"):
                     addCounter(a.counter)
 
-                if a.get("modCounter") and a.modCounter.name not in modCounters:
+                # Modify a counter
+                if a.get("modCounter") and a.name not in modCounters:
                     modCounters.append(a.name)
                     modCounter(a.modCounter)
 
-    ch.set_cvar("swModCounters", dump_json(modCounters))
+                # Update a CVAR
+                if a.get("cvar") and a.name not in modVars:
+                    modVars.append(a.name)
+                    modCVAR(a.cvar)
+
+    actionTracker["counters"] = modCounters
+    actionTracker["cvars"] = modVars
+    ch.set_cvar("swActionMods", dump_json(actionTracker))
     return actions
 
 def addCounter(counter):
@@ -111,4 +126,26 @@ def modCounter(counter):
         modifier = modifier[totalLevel - 1] if typeof(modifier) == 'SafeList' else modifier
         ch.create_cc(counter.name, cc.min, f"{cc.max}+{modifier}", cc.reset_on, cc.display_type, cc.reset_to,
                      cc.reset_by, cc.title, cc.desc, f"{cc.value}+{modifier}")
+def modCVAR(cvar_ref):
+    cvar = load_json(ch.get_cvar(cvar_ref.name, cvar_ref.get('default',"[]")))
+    if 'node' in cvar_ref:
+        base_val = cvar.get(cvar_ref.node)
+    else:
+        base_val = cvar
 
+    if not base_val:
+        base_val = [] if 'append' in cvar_ref else 0 if 'modifier' in cvar_ref else ""
+
+    if 'value' in cvar_ref:
+        base_val = cvar_ref.value
+    elif 'modifier' in cvar_ref:
+        base_val += int(cvar_ref.modifier)
+    elif 'append' in cvar_ref and cvar_ref.append not in base_val:
+        base_val.append(cvar_ref.append)
+
+    if 'node' in cvar_ref:
+        cvar[cvar_ref.node] = base_val
+    else:
+        cvar = base_val
+
+    ch.set_cvar(cvar_ref.name, dump_json(cvar))

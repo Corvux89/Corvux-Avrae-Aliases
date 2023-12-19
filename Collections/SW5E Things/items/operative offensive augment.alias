@@ -7,7 +7,7 @@ item_dict["OperativeOffensiveAugment"] = num
 
 ch.set_cvar("SWItems", dump_json(item_dict))
 
-base = f'''embed -thumb {image} -color {color} -title "Operative Offensive Augment!" -desc "\n**\# of Operative Offensive Autments**: {num}" '''
+base = f'''embed -thumb {image} -color {color} -title "Operative Offensive Augment!" -desc "\n**\# of Operative Offensive Augments**: {num}" '''
 
 return base
 </drac2>

@@ -88,7 +88,6 @@ def level(args):
     if argparse(args).get('dev'):
         return err(base)
 
-    ch.delete_cvar("swModCounters")
     return base
 
 def options(args):
@@ -207,6 +206,9 @@ def getArchetype(playerClass, str):
 def updateCVARS(playerClass, playerArchetype, inLevel):
     subclass = load_json(ch.get_cvar("subclass", "{}"))
     subclass.update({f"{x.Class}Level": "" for x in playerClass if not subclass.get(f"{x.Class}Level")})
+    actionMods = load_json(ch.get_cvar("swActionMods", "{}"))
+    actionMods["counters"] = []
+    ch.set_cvar("swActionMods", dump_json(actionMods))
 
     if len(playerArchetype) > 0:
         for arch in playerArchetype:

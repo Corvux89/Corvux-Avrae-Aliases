@@ -94,6 +94,13 @@
     }
   },
   {
+    "name": "Force Affinity - Bendu",
+    "modCounter": {
+      "name": "Force Points",
+      "modifier": "max(0,min(charismaMod,wisdomMod))"
+    }
+  },
+  {
     "name": "Lend Aid",
     "action": {
       "name": "Lend Aid - Channel the Force",
@@ -191,40 +198,674 @@
   {
     "name": "Slipstream Kickers",
     "action": {
-  "name": "Splipstream Kickers",
-  "activation_type": 3,
-  "_v": 2,
-  "automation": [
-    {
-      "type": "target",
-      "target": "self",
-      "effects": [
+      "name": "Splipstream Kickers",
+      "activation_type": 3,
+      "_v": 2,
+      "automation": [
         {
-          "type": "ieffect2",
-          "name": "Slipstream Kickers - Tactical Advantage",
-          "desc": "Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action\\n\\nWhen the power ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
-          "duration": 10,
-          "effects": {"ac_bonus": 2, "save_adv":  ["dexterity"]}
+          "type": "target",
+          "target": "self",
+          "effects": [
+            {
+              "type": "ieffect2",
+              "name": "Slipstream Kickers - Tactical Advantage",
+              "desc": "Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action\\n\\nWhen the power ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+              "duration": 10,
+              "effects": {
+                "ac_bonus": 2,
+                "save_adv": [
+                  "dexterity"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Slipstream Kickers",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "While you wear these boots, you can use a bonus action to activate or deactivate their overdrive mode. If you do, you gain the effect of the tactical advantage tech power for 1 minute. Once you’ve used this feature, you must complete a long rest before you can use it again."
         }
       ]
     },
-    {
-      "type": "counter",
-      "counter": "Slipstream Kickers",
-      "amount": 1,
-      "errorBehaviour": "raise"
-    },
-    {
-      "type": "text",
-      "text": "While you wear these boots, you can use a bonus action to activate or deactivate their overdrive mode. If you do, you gain the effect of the tactical advantage tech power for 1 minute. Once you’ve used this feature, you must complete a long rest before you can use it again."
-    }
-  ]
-},
     "counter": {
       "name": "Splipstream Kickers",
       "value": 1,
       "reset": "long",
       "display": "star"
     }
+  },
+  {
+    "name": "Bansche Purifier MENAD Pro Mk I",
+    "action": {
+      "name": "Bansche Purifier MENAD Pro Mk I - AC Bonus",
+      "_v": 2,
+      "activation_type": "2",
+      "automation": [
+        {
+          "type": "condition",
+          "condition": "len(targets)>0",
+          "onTrue": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Bansche Purifier MENAD Pro MK I",
+                  "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
+                  "duration": 1,
+                  "effects": {
+                    "ac_bonus": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Bansche Purifier MENAD Pro MK I",
+                  "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
+                  "duration": 1,
+                  "effects": {
+                    "ac_bonus": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bansche Purifier MENAD Pro Mk I",
+    "action": {
+      "name": "Bansche Purifier MENAD Pro Mk I - Save Bonus",
+      "_v": 2,
+      "activation_type": "2",
+      "automation": [
+        {
+          "type": "condition",
+          "condition": "len(targets)>0",
+          "onTrue": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Bansche Purifier MENAD Pro MK I",
+                  "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
+                  "duration": 1,
+                  "effects": {
+                    "save_bonus": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Bansche Purifier MENAD Pro MK I",
+                  "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
+                  "duration": 1,
+                  "effects": {
+                    "save_bonus": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Czerka Attenuating Pulsator",
+    "action": {
+      "name": "Czerka Attenuating Pulsator",
+      "_v": 2,
+      "activation_type": 2,
+      "automation": [
+        {
+          "type": "counter",
+          "counter": "Tech Points",
+          "amount": "-max(intelligenceMod,1)",
+          "errorBehaviour": "ignore",
+          "fixedValue": true
+        },
+        {
+          "type": "counter",
+          "counter": "Czerka Attenuating Pulsator",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "When you score a critical hit or reduce a creature to 0 hit points with a ranged attack using this weapon, you can regain a number of tech points equal to your Intelligence modifier (a minimum of one, no action required). Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+        }
+      ]
+    },
+    "counter": {
+      "name": "Czerka Attenuating Pulsator",
+      "value": 1,
+      "reset": "short",
+      "display": "bubble"
+    }
+  },
+  {
+    "name": "Scholar Offensive Augment",
+    "modCounter": {
+      "name": "Superiority Dice",
+      "modifier": 1
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Force",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "force"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Acid",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "acid"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Cold",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "cold"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Fire",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "fire"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Ion",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "ion"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Lightning",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "Lightning"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Necrotic",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "necrotic"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Poison",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "poison"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Psychic",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "psychic"
+    }
+  },
+  {
+    "name": "Dewback's Instinct - Sonic",
+    "cvar": {
+      "name": "dewbackInstinct",
+      "append": "sonic"
+    }
+  },
+  {
+    "name": "Frynock's Instinct",
+    "action": {
+      "name": "Frynock's Instinct",
+      "_v": 2,
+      "activation_type": 3,
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "{strengthMod} [kinetic]"
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Frynock's Instinct",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "While raging, you can use your bonus action to leap up to 30 feet to an empty space you can see. When you land you deal kinetic damage equal to your Strength modifier to each creature within 5 feet of where you land"
+        }
+      ]
+    },
+    "counter": {
+      "name": "Frynock's Instinct",
+      "value": [
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "display": "bubble",
+      "reset": "long"
+    }
+  },
+  {
+    "name": "Acklay's Instinct",
+    "cvar": {
+      "name": "acklayInstinct",
+      "value": 1
+    }
+  },
+  {
+    "name": "Tend the Wounded",
+    "action": {
+      "name": "Tend the Wounded",
+      "_v": 2,
+      "activation_type": 2,
+      "automation": [
+        {
+          "type": "variable",
+          "value": "{caster.levels.get('Scholar')}",
+          "name": "level"
+        },
+        {
+          "type": "variable",
+          "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 13 if level < 17 else 12",
+          "name": "dieSize"
+        },
+        {
+          "type": "roll",
+          "dice": "1d{dieSize} [healing]",
+          "name": "healing"
+        },
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "-{healing}"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Rancor's Discipline - Wisdom",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "RancorsDiscipline",
+      "value": "Wisdom"
+    }
+  },
+  {
+    "name": "Rancor's Discipline - Charisma",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "RancorsDiscipline",
+      "value": "Charisma"
+    }
+  },
+  {
+    "name": "Charming Feint",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "Discoveries",
+      "append": "CharmingFeint"
+    }
+  },
+  {
+  "name": "Adapted Hide",
+  "cvar": {
+    "name": "SWFeats",
+    "default": "{}",
+    "node": "Discoveries",
+    "append": "AdaptedHide"
   }
+},
+  {
+  "name": "Perfect Maneuver",
+  "cvar": {
+    "name": "SWFeats",
+    "default": "{}",
+    "node": "Discoveries",
+    "append": "PerfectManeuver"
+  }
+},
+  {
+    "name": "Force-Sensitive",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "ForceSensitive",
+      "value": "True"
+    }
+  },
+  {
+    "name": "Force-Sensitive",
+    "level": 3,
+    "counter": {
+      "name": "Force-Sensitive - 1",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know two at-will force powers. When you reach 3rd level, you learn one 1st-level force power, which you can cast once per long rest. When you reach 5th level, you learn one 2nd-level force power, which you can once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment). Additionally, you lose the Force-Insensitive special trait if you have it."
+    }
+  },
+  {
+    "name": "Force-Sensitive",
+    "level": 5,
+    "counter": {
+      "name": "Force-Sensitive - 2",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know two at-will force powers. When you reach 3rd level, you learn one 1st-level force power, which you can cast once per long rest. When you reach 5th level, you learn one 2nd-level force power, which you can once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment). Additionally, you lose the Force-Insensitive special trait if you have it."
+    }
+  },
+  {
+    "name": "Greater Force-Sensitive",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "ForceSensitive",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Force-Sensitive - 4",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will force power. Additionally, you know one 4th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+    }
+  },
+  {
+    "name": "Improved Force-Sensitive",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "ForceSensitive",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Force-Sensitive - 3",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will force power. Additionally, you know one 3rd-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+    }
+  },
+  {
+    "name": "Master Force-Sensitive",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "ForceSensitive",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Force-Sensitive - 5",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will force power. Additionally, you know one 5th-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment)."
+    }
+  },
+  {
+    "name": "Tech Dabbler",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "TechDabbler",
+      "value": "True"
+    }
+  },
+  {
+    "name": "Tech Dabbler",
+    "level": 3,
+    "counter": {
+      "name": "Tech Dabbler - 1",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know two at-will tech powers. When you reach 3rd level, you learn and can cast one 1st-level tech power once per long rest. When you reach 5th level, you learn and can cast one 2nd-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. Additionally, you lose the Tech-Impaired special trait if you have it."
+    }
+  },
+  {
+    "name": "Tech Dabbler",
+    "level": 5,
+    "counter": {
+      "name": "Tech Dabbler - 2",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know two at-will tech powers. When you reach 3rd level, you learn and can cast one 1st-level tech power once per long rest. When you reach 5th level, you learn and can cast one 2nd-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers. Additionally, you lose the Tech-Impaired special trait if you have it."
+    }
+  },
+  {
+    "name": "Greater Tech Dabbler",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "TechDabbler",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Tech Dabbler - 4",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will tech power. Additionally, you know one 4th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+    }
+  },
+  {
+    "name": "Improved Tech Dabbler",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "TechDabbler",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Tech Dabbler - 3",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will tech power. Additionally, you know one 3rd-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+    }
+  },
+  {
+    "name": "Master Tech Dabbler",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "TechDabbler",
+      "value": "True"
+    },
+    "counter": {
+      "name": "Tech Dabbler - 5",
+      "value": 1,
+      "reset": "long",
+      "display": "square",
+      "desc": "You know one at-will tech power. Additionally, you know one 5th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+    }
+  },
+  {
+  "name": "Threatening",
+  "action": {
+    "name": "Demoralize - Threatening Feature",
+    "_v": 2,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "check",
+            "ability": "insight",
+            "contestAbility": "intimidation",
+            "success": [
+              {
+                "type": "ieffect2",
+                "duration": 100,
+                "name": "Cannot be demoralized by {name}"
+              }
+            ],
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Frightened",
+                "duration": 2,
+                "tick_on_caster": true,
+                "end": true,
+                "effects": {"attack_advantage": -1, "check_dis": ["all"]},
+                "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you take the Attack action, you can replace one attack with an attempt to demoralize one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Intimidation) check contested by the target’s Wisdom (Insight) check. If your check succeeds, the target is frightened until the end of your next turn. If your check fails, the target can’t be frightened by you in this way for 1 hour."
+      }
+    ]
+  }
+},
+  {
+  "name": "Silver-Tongued",
+  "action": {
+    "name": "Silver-Tongued",
+    "_v": 2,
+    "activation_type": 1,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "check",
+            "ability": "insight",
+            "contestAbility": "deception",
+            "success": [
+              {
+                "type": "ieffect2",
+                "name": "Resisted {name}'s Silver-Tongue",
+                "desc": "Immunme to {name}'s Silver-Tongue for 1 hour",
+                "duration": 100
+              }
+            ],
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "{name}'s Silver-Tongue",
+                "desc": "If your check succeeds, your movement doesn’t provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target.",
+                "duration": 2,
+                "end": true,
+                "tick_on_caster": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you take the Attack action, you can replace one attack with an attempt to deceive one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Deception) check contested by the target’s Wisdom (Insight) check. If your check succeeds, your movement doesn’t provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target. If your check fails, the target can’t be deceived by you in this way for 1 hour."
+      }
+    ]
+  }
+},
+  {
+  "name": "Acrobat",
+  "action": {
+    "name": "Acrobat",
+    "_v": 2,
+    "activation_type": 3,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "check",
+            "ability": "acrobatics",
+            "dc": 15,
+            "fail": [],
+            "succeed": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As a bonus action, you can make a DC 15 Dexterity (Acrobatics) check. If you succeed, difficult terrain doesn’t cost you extra movement until the end of the current turn."
+      }
+    ]
+  }
+}
 ]
+

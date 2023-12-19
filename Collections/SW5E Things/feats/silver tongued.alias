@@ -10,7 +10,7 @@ check = {"type": "check", "ability": "insight", "contestAbility": "deception", "
 
 target = {"type": "target", "target": "each", "effects": [check]}
 
-atk = {"name": "Silve-Tongued", "_v": 2, "activation_type": 1, "automation": [target, txt]}
+atk = {"name": "Silver-Tongued", "_v": 2, "activation_type": 1, "automation": [target, txt]}
 
 return f'''a import {dump_json(atk)}'''
 </drac2>
