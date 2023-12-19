@@ -88,6 +88,7 @@ def level(args):
     if argparse(args).get('dev'):
         return err(base)
 
+    ch.delete_cvar("swModCounters")
     return base
 
 def options(args):

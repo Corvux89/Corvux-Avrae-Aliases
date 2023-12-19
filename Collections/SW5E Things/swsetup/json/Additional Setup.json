@@ -1,0 +1,230 @@
+[
+  {
+    "name": "Reflex Enhancer Mk II",
+    "action": {
+      "name": "Reflex Enhancer Mk II - Half Damage",
+      "activation_type": 2,
+      "_v": 2,
+      "automation": [
+        {
+          "type": "counter",
+          "counter": "iwillneverhaveacounternamedthis",
+          "amount": 0,
+          "errorBehaviour": "ignore",
+          "allowOverflow": true
+        },
+        {
+          "type": "condition",
+          "condition": "lastCounterRequestedAmount == 0",
+          "onTrue": [
+            {
+              "type": "text",
+              "text": "Use the `-amt` argument to specify how much to heal. Ex: `!a 'Reflex Enhancer Mk II - Half Damage` -amt 4`"
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "-{lastCounterRequestedAmount} [healing]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.\n\nSide Effect: When you fail a Dexterity saving throw, you treat the damage as if the source had rolled the maximum."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Force Affinity - Ashla",
+    "action": {
+      "name": "Force Affinity - Ashla",
+      "_v": 2,
+      "activation_type": 2,
+      "automation": [
+        {
+          "type": "counter",
+          "counter": "iwillneverhaveacounternamedthis",
+          "amount": 0,
+          "errorBehaviour": "ignore",
+          "allowOverflow": true
+        },
+        {
+          "type": "condition",
+          "condition": "lastCounterRequestedAmount == 0",
+          "onTrue": [
+            {
+              "type": "text",
+              "text": "Use the `-amt` argument to specify how much to heal. Ex: `!a 'Force Affinity - Ashla` -t zo1 -amt 4`"
+            }
+          ],
+          "onFalse": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Ashla",
+                  "duration": 10,
+                  "effects": {
+                    "max_hp_bonus": "{lastCounterRequestedAmount }"
+                  }
+                },
+                {
+                  "type": "damage",
+                  "damage": "-{lastCounterRequestedAmount } [healing]"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "When you successfully cast a light side power, either your or the target’s (your choice) hit point maximum and current hit points increase by an amount equal to the power’s level. This effect lasts for 1 minute. You can only have one instance of this effect active at a time."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lend Aid",
+    "action": {
+      "name": "Lend Aid - Channel the Force",
+      "_v": 2,
+      "verb": "uses",
+      "activation_type": 3,
+      "automation": [
+        {
+          "type": "variable",
+          "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardiandark'),0)}",
+          "name": "level"
+        },
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "-({level}+{wisdomMod}) [healing]"
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Channel the Force",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "As a bonus action, you can expend a use of your Channel the Force and touch a beast or humanoid within 5 feet of you. That creature regains hit points equal to your guardian level + your Wisdom modifier (minimum of +1). Alternatively, if the beast or humanoid is poisoned or diseased, you neutralize the poison or disease. If more than one poison or disease afflicts the target, you neutralize one poison or disease that you know is present, or you neutralize one at random."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Cause Harm",
+    "action": {
+      "name": "Cause Harm - Channel the Force",
+      "_v": 2,
+      "verb": "uses",
+      "activation_type": 1,
+      "automation": [
+        {
+          "type": "variable",
+          "value": "{max(caster.levels.get('Guardianlight'),caster.levels.get('Guardianlark'),0)}",
+          "name": "level"
+        },
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "save",
+              "stat": "con",
+              "success": [
+                {
+                  "type": "damage",
+                  "damage": "({level}+{charismaMod})/2 [necrotic]"
+                }
+              ],
+              "fail": [
+                {
+                  "type": "damage",
+                  "damage": "{level}+{charismaMod} [necrotic]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Channel the Force",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "As an action, you can expend a use of your Channel the Force to sap the life from a hostile creature you can see within 60 feet. That creature must make a Constitution saving throw. On a failed save, the creature takes necrotic damage equal to your guardian level + your Charisma modifier (minimum of +1), or half as much on a successful one."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Goggles of the Tinkerer",
+    "counter": {
+      "name": "Goggles of the Tinkerer",
+      "level": "Engineer",
+      "value": "ceil(int({level}/2))",
+      "reset": "long",
+      "display": "bubble",
+      "desc": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together."
+    }
+  },
+  {
+    "name": "Slipstream Kickers",
+    "action": {
+  "name": "Splipstream Kickers",
+  "activation_type": 3,
+  "_v": 2,
+  "automation": [
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Slipstream Kickers - Tactical Advantage",
+          "desc": "Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action\\n\\nWhen the power ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+          "duration": 10,
+          "effects": {"ac_bonus": 2, "save_adv":  ["dexterity"]}
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "counter": "Slipstream Kickers",
+      "amount": 1,
+      "errorBehaviour": "raise"
+    },
+    {
+      "type": "text",
+      "text": "While you wear these boots, you can use a bonus action to activate or deactivate their overdrive mode. If you do, you gain the effect of the tactical advantage tech power for 1 minute. Once you’ve used this feature, you must complete a long rest before you can use it again."
+    }
+  ]
+},
+    "counter": {
+      "name": "Splipstream Kickers",
+      "value": 1,
+      "reset": "long",
+      "display": "star"
+    }
+  }
+]

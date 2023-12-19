@@ -4,8 +4,10 @@ ch = character()
 image = ch.image
 color = ch.csettings.color
 gvars = ['0ed9e086-f3ed-4e1b-83f4-1d18e2276f1b']
+add_gvars = ['ca3279fd-537e-477b-a2b6-e9c45f1f1939']
 char_classes = load_json(ch.get_cvar("subclass", "{}"))
 stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+modCounters = load_json(ch.get_cvar("swModCounters", "[]"))
 
 def setup(args):
     args = [x.lower() for x in args]
@@ -17,9 +19,7 @@ def setup(args):
 
     class_ref = getClass()
     out = getAttacks(class_ref, stat)
-
-    if dev:
-        return f'''embed -title "DEV Output" -desc '```{dump_json(out)}```' '''
+    out += additionalActions(stat)
 
     return f"a import {out}"
 
@@ -52,3 +52,63 @@ def getAttacks(class_list, stat = None):
                 attacks.append(action)
 
     return attacks
+
+def additionalActions(stat = None):
+    a_str = ""
+    actions = []
+    for i_action in ch.attacks:
+        if i_action.name == "zCustomImport":
+            a_str = i_action.raw["automation"][1]["text"].lower().split("\n")[1].split(", ")
+            break
+
+    for g in add_gvars:
+        add_actions = load_json(get_gvar(g))
+
+        for a in add_actions:
+            if a.name.lower() in a_str:
+                if a.get("action"):
+                    action = a.action
+                    if stat:
+                        action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod',stat).replace('charismaMod', stat))
+                    actions.append(action)
+
+                if a.get("counter"):
+                    addCounter(a.counter)
+
+                if a.get("modCounter") and a.modCounter.name not in modCounters:
+                    modCounters.append(a.name)
+                    modCounter(a.modCounter)
+
+    ch.set_cvar("swModCounters", dump_json(modCounters))
+    return actions
+
+def addCounter(counter):
+    level = ch.levels.total_level if not counter.get('level') else max(ch.levels.get(counter.level,0), ch.levels.get(f'{counter.level}light',0), ch.levels.get(f'{counter.level}dark',0))
+
+    if int(level) == 0:
+        return
+
+    # Max Value
+    max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace('{level}', str(level)) if typeof(counter.value) == 'str' else counter.value
+
+    # Max Value Modifier
+    modifier = counter.modifier if 'modifier' in counter else 0
+    modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier
+
+    # Reset On
+    reset = counter.reset.split('$')
+    reset = reset[0] if not '$' in counter.reset or level < int(reset[1]) else reset[2]
+
+    # Create the counter
+    ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display, counter.get('reset_to'), None,
+                 None, counter.get('desc'))
+
+def modCounter(counter):
+    totalLevel = ch.levels.total_level
+    if ch.cc_exists(counter.name):
+        cc = ch.cc(counter.name)
+        modifier = counter.modifier if 'modifier' in counter else 0
+        modifier = modifier[totalLevel - 1] if typeof(modifier) == 'SafeList' else modifier
+        ch.create_cc(counter.name, cc.min, f"{cc.max}+{modifier}", cc.reset_on, cc.display_type, cc.reset_to,
+                     cc.reset_by, cc.title, cc.desc, f"{cc.value}+{modifier}")
+
