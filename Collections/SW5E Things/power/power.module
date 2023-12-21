@@ -79,7 +79,7 @@ def processPower(args):
     points = point_list[spell_level]
 
     if a.get('p'):
-        points += int(a.last('p'))
+        points += int(str(a.last('p')).replace('{spell_level}',str(spell_level)))
 
     # --------------------
     # Pre Cost Processing

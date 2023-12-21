@@ -61,7 +61,10 @@ def additionalActions(stat = None):
     modVars = actionTracker.get('cvars', [])
     for i_action in ch.attacks:
         if i_action.name == "zCustomImport":
-            a_str = i_action.raw["automation"][1]["text"].lower().split("\n")[1].split(", ")
+            try:
+                a_str = i_action.raw["automation"][1]["text"].lower().split("\n")[1].split(", ")
+            except:
+                break
             break
 
     for g in add_gvars:

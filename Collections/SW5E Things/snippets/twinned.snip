@@ -1,1 +1,31 @@
--f "Twinned Power|When you cast a power that can only have one target and doesn’t have a range of self, you can spend a number of additional force points equal to the power’s level to choose a second target in range with the same power (1 force point if the power is at-will)."
+<drac2>
+ch = character()
+args = &ARGS&
+result = None
+cc = "Force Points"
+v = ch.cc_exists(cc)
+output = ""
+if v:
+    for a in args:
+        if cc in a:
+            try:
+                points = a.split('-')[1].split(")")[0]
+            except:
+                pass
+
+            if points.isdigit():
+                value = max(int(points)-1,1)
+                if ch.get_cc(cc) >= value:
+                    output += '''-f "Twinned Power|When you cast a power that can only have one target and doesn’t have a range of self, you can spend a number of additional force points equal to the power’s level to choose a second target in range with the same power (1 force point if the power is at-will)." '''
+                    ch.mod_cc(cc,-value)
+                    output += f''' -f "{cc}(-{value})|{ch.cc_str(cc)}" '''
+                    break
+                else:
+                    output += f'''-f "Twinned Power|You don't have enough force points to twinned and cast" '''
+
+else:
+    err(f"You do not have this ability")
+
+
+return output
+</drac2>

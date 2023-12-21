@@ -1,14 +1,15 @@
-import json
+input_array = ['(SW) Call Lightning', '-with', 'wis', 'bch', '-f', 'Force Points (-4)|37/57', '-dc', '+0', '-b', '2', '-i']
 
-f = open('scratch.json', encoding='utf-8')
+# Iterate through the array
+result = None
+for item in input_array:
+    # Check if the string contains a '-' followed by digits
+    if 'Force Points' in item:
+        result = item.split('-')
+        result = result[1].split(")")[0]
+        break
 
-objects = json.load(f)
-todo = []
+    if result:
+        break
 
-
-for o in objects:
- todo.append(o.get("name"))
-
-with open("../Collections/SW5E Things/swsetup/feats todo.py", "w") as outfile:
- for x in todo:
-  outfile.write(f"# TODO: {x}\n")
+print(result)

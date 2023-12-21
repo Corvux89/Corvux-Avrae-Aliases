@@ -1843,7 +1843,12 @@
                 {
                   "type": "ieffect2",
                   "name": "Distracted",
-                  "effects": {"check_dis":  ["perception", "investigation"]},
+                  "effects": {
+                    "check_dis": [
+                      "perception",
+                      "investigation"
+                    ]
+                  },
                   "desc": "Wisdom (Perception) and Intelligence (Investigation) checks with disadvantage"
                 }
               ],
@@ -1859,98 +1864,171 @@
     }
   },
   {
-  "name": "Promising Commander",
-  "counter": {
     "name": "Promising Commander",
+    "counter": {
+      "name": "Promising Commander",
+      "value": 1,
+      "reset": "short",
+      "display": "bubble",
+      "desc": "As an action, you can gain tactical insight. For one minute, once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+    },
+    "action": {
+      "name": "Promising Commander - Tactical Insight",
+      "_v": 2,
+      "automation": [
+        {
+          "type": "target",
+          "target": "self",
+          "effects": [
+            {
+              "type": "ieffect2",
+              "name": "Tactical Insight",
+              "duration": 10,
+              "desc": "Once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Promising Commander",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "As an action, you can gain tactical insight. For one minute, once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Quick-Witted",
+    "counter": {
+      "name": "Quick Witted",
+      "value": "proficiencyBonus",
+      "display": "bubble",
+      "reset": "long",
+      "desc": "When you would make a Dexterity saving throw, you can instead make an Intelligence saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
+    }
+  },
+  {
+    "name": "Snappy Interjection",
+    "counter": {
+      "name": "Snappy Interjection",
+      "value": 1,
+      "desc": "Once per short or long rest, when an ally makes an attack roll, an ability check or a saving throw, you can spend your reaction to give them advantage on the roll.",
+      "display": "bubble",
+      "reset": "short"
+    }
+  },
+  {
+    "name": "Survivalist",
+    "counter": {
+      "name": "Survivalist",
+      "value": 1,
+      "reset": "long",
+      "display": "bubble",
+      "desc": "You learn the alarm tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest."
+    },
+    "action": {
+      "name": "Survivalist - Alarm",
+      "_v": 2,
+      "automation": [
+        {
+          "type": "target",
+          "target": "self",
+          "effects": [
+            {
+              "type": "ieffect2",
+              "name": "Alarm Set",
+              "desc": "A silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Survivalist",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the power ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the power, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Techie",
+    "counter": {
+      "name": "Techie - Repair Droid",
+      "value": 1,
+      "reset": "long",
+      "display": "bubble",
+      "desc": "You learn the repair droid tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest."
+    },
+    "action": {
+      "name": "Techie - Repair Droid",
+      "_v": 2,
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "-(1d8+{spell}) [healing]"
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "counter": "Techie - Repair Droid",
+          "amount": 1,
+          "errorBehaviour": "raise"
+        },
+        {
+          "type": "text",
+          "text": "A droid or construct you touch regains a number of hit points equal to 1d8 + your techcasting ability modifier. This power only effects droids and constructs."
+        }
+      ]
+    }
+  },
+  {
+    "name": "Adaptable Fading",
+    "counter": {
+      "name": "Adaptable Fading - Attack Roll Bonus",
+      "value": "proficiencyBonus",
+      "reset": "long",
+      "display": "bubble",
+      "desc": "When you make an attack roll using your Strength, you can choose to add half your Constitution modifier to the attack roll. Alternatively, when you would make an attack roll using Constitution, you can add half your Strength modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
+    }
+  },
+  {
+    "name": "Adaptable Fading",
+    "counter": {
+      "name": "Adaptable Fading - Saving Thorw Bonus",
+      "value": "proficiencyBonus",
+      "reset": "long",
+      "display": "bubble",
+      "desc": "When an effect you control would call for a Strength saving throw, you can instead have it call for a Constitution saving throw. Alternatively, when an effect you control would call for a Constitution saving throw, you can instead have it call for a Strength saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
+    }
+  },
+  {
+  "name": "Cunning Forcecaster",
+  "modCounter": {
+    "name": "Force Points",
+    "modifier": "intelligenceMod-max(wisdomMod,charismaMod)"
+  }
+},
+  {
+  "name": "Exalted Awareness",
+  "counter": {
+    "name": "Exalted Awareness",
     "value": 1,
     "reset": "short",
-    "display": "bubble",
-    "desc": "As an action, you can gain tactical insight. For one minute, once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
-  },
-  "action": {
-    "name": "Promising Commander - Tactical Insight",
-    "_v": 2,
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Tactical Insight",
-            "duration": 10,
-            "desc": "Once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
-          }
-        ]
-      },
-      {
-        "type": "counter",
-        "counter": "Promising Commander",
-        "amount": 1,
-        "errorBehaviour": "raise"
-      },
-      {
-        "type": "text",
-        "text": "As an action, you can gain tactical insight. For one minute, once per turn you can utter a special command or warning whenever an ally you can see within 30 feet makes an attack roll or saving throw. This creature can add a d4 to the roll provided it can hear and understand you. A creature can only benefit from one such die at a time. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
-      }
-    ]
-  }
-},
-  {
-  "name": "Quick-Witted",
-  "counter": {
-    "name": "Quick Witted",
-    "value": "proficiencyBonus",
-    "display": "bubble",
-    "reset": "long",
-    "desc": "When you would make a Dexterity saving throw, you can instead make an Intelligence saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
-  }
-},
-  {
-  "name": "Snappy Interjection",
-  "counter": {
-    "name": "Snappy Interjection",
-    "value": 1,
-    "desc": "Once per short or long rest, when an ally makes an attack roll, an ability check or a saving throw, you can spend your reaction to give them advantage on the roll.",
-    "display": "bubble",
-    "reset": "short"
-  }
-},
-  {
-  "name": "Survivalist",
-  "counter": {
-    "name": "Survivalist",
-    "value": 1,
-    "reset": "long",
-    "display": "bubble",
-    "desc": "You learn the alarm tech power. You can cast it once, using supplies scavenged around you, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest."
-  },
-  "action": {
-    "name": "Survivalist - Alarm",
-    "_v": 2,
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Alarm Set",
-            "desc": "A silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
-          }
-        ]
-      },
-      {
-        "type": "counter",
-        "counter": "Survivalist",
-        "amount": 1,
-        "errorBehaviour": "raise"
-      },
-      {
-        "type": "text",
-        "text": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the power ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the power, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
-      }
-    ]
+    "desc": "As an action, you can sense the presence of illusions and other effects designed to deceive the senses within 30 feet of you, provided that you aren’t blinded or deafened. You sense that an effect is trying to trick you, but you gain no insight into what is hidden or its true nature. Once you’ve used this feature, you must complete a short or long rest before you can use it again.",
+    "display": "bubble"
   }
 }
 ]

@@ -1,25 +1,5 @@
 [
   {
-    "name": "Absorb Energy",
-    "level": 1,
-    "school": "Tech",
-    "automation": [],
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take when you take acid, cold, energy, fire, ion, kinetic, lightning, or sonic damage",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "The power captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the power ends.\n\n***Overcharge Tech.*** When you cast this power using a power slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
-    "higherlevels": "",
-    "concentration": false
-  },
-  {
     "name": "Acid Dart",
     "level": 2,
     "school": "Tech",
@@ -115,24 +95,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "A shimmering green dart streaks toward a target within range and bursts in a spray of acid. Make a ranged tech attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the dart splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd.",
-    "concentration": false
-  },
-  {
-    "name": "Acidic Strike",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Varies",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in a thick acidic slime until the start of your next turn. Until the start of your next turn, if the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take 1d8 acid damage. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 acid damage to the target, and the damage the target takes for taking grappling or maintaining a grapple increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
     "concentration": false
   },
   {
@@ -17560,6 +17522,156 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power’s range and strike a creature within your weapon’s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon’s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Absorb Energy",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Absorb Energy - Parent",
+                "duration": "1",
+                "effects": {
+                  "resistances": [
+                    "{choice}"
+                  ]
+                },
+                "attacks": [
+                  {
+                    "attack": {
+                      "_v": 2,
+                      "name": "Absorb Energy - Damage",
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "each",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "1d6 [{choice}]",
+                              "higher": {
+                                "2": "1d4",
+                                "3": "2d4",
+                                "4": "3d4",
+                                "5": "4d4",
+                                "6": "5d4",
+                                "7": "6d4",
+                                "8": "7d4",
+                                "9": "8d4"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify the triggering damage type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The power captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the power ends.\n\n***Overcharge Tech.*** When you cast this power using a power slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you take acid, cold, energy, fire, ion, kinetic, lightning, or sonic damage",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "The power captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the power ends.\n\n***Overcharge Tech.*** When you cast this power using a power slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
+    "name": "Acidic Strike",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "level < 5",
+            "onTrue": [],
+            "onFalse": [
+              {
+                "type": "damage",
+                "damage": "{'' if level < 5 else '1d8 [acid]' if level < 11 else '2d8 [acid]' if level < 17 else '3d8 [acid]'}"
+              }
+            ]
+          },
+          {
+            "type": "ieffect2",
+            "name": "Acidic Slime - Covered in Slime",
+            "duration": "1",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "{ieffect.desc.split()[-1]} [acid]"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Take Grappling Damage",
+                "verb": "is hurt by the acid.",
+                "style": "4"
+              }
+            ],
+            "desc": "{'1d8' if level < 5 else '2d8' if level < 11 else '3d8' if level < 17 else '4d8'}",
+            "tick_on_caster": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in a thick acidic slime until the start of your next turn. Until the start of your next turn, if the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take 1d8 acid damage. \n\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 acid damage to the target, and the damage the target takes for taking grappling or maintaining a grapple increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in a thick acidic slime until the start of your next turn. Until the start of your next turn, if the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take 1d8 acid damage. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 acid damage to the target, and the damage the target takes for taking grappling or maintaining a grapple increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
     "concentration": false
   }
 ]
