@@ -1,15 +1,8 @@
-input_array = ['(SW) Call Lightning', '-with', 'wis', 'bch', '-f', 'Force Points (-4)|37/57', '-dc', '+0', '-b', '2', '-i']
+import json
 
-# Iterate through the array
-result = None
-for item in input_array:
-    # Check if the string contains a '-' followed by digits
-    if 'Force Points' in item:
-        result = item.split('-')
-        result = result[1].split(")")[0]
-        break
+f = open('scratch.json', encoding='utf-8')
+stuff = json.load(f)
+todos = []
 
-    if result:
-        break
-
-print(result)
+for thing in stuff:
+    print(f'# TODO: {thing["name"]}')

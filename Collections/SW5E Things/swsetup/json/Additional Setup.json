@@ -2015,20 +2015,117 @@
     }
   },
   {
-  "name": "Cunning Forcecaster",
-  "modCounter": {
-    "name": "Force Points",
-    "modifier": "intelligenceMod-max(wisdomMod,charismaMod)"
-  }
-},
+    "name": "Cunning Forcecaster",
+    "modCounter": {
+      "name": "Force Points",
+      "modifier": "intelligenceMod-max(wisdomMod,charismaMod)"
+    }
+  },
   {
-  "name": "Exalted Awareness",
-  "counter": {
     "name": "Exalted Awareness",
-    "value": 1,
-    "reset": "short",
-    "desc": "As an action, you can sense the presence of illusions and other effects designed to deceive the senses within 30 feet of you, provided that you aren’t blinded or deafened. You sense that an effect is trying to trick you, but you gain no insight into what is hidden or its true nature. Once you’ve used this feature, you must complete a short or long rest before you can use it again.",
-    "display": "bubble"
+    "counter": {
+      "name": "Exalted Awareness",
+      "value": 1,
+      "reset": "short",
+      "desc": "As an action, you can sense the presence of illusions and other effects designed to deceive the senses within 30 feet of you, provided that you aren’t blinded or deafened. You sense that an effect is trying to trick you, but you gain no insight into what is hidden or its true nature. Once you’ve used this feature, you must complete a short or long rest before you can use it again.",
+      "display": "bubble"
+    }
+  },
+  {
+    "name": "Flexible Rending",
+    "counter": {
+      "name": "Flexible Rending - Attack",
+      "value": "proficiencyBonus",
+      "reset": "long",
+      "display": "bubble",
+      "desc": "When you make an attack roll using your Dexterity, you can choose to add half your Intelligence modifier to the attack roll. Alternatively, when you would make an attack roll using Intelligence, you can add half your Dexterity modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
+    }
+  },
+  {
+    "name": "Flexible Rending",
+    "counter": {
+      "name": "Flexible Rending - Save",
+      "value": "proficiencyBonus",
+      "reset": "long",
+      "display": "bubble",
+      "desc": "When an effect you control would call for a Dexterity saving throw, you can instead have it call for a Intelligence saving throw. Alternatively, when an effect you control would call for a Intelligence saving throw, you can instead have it call for a Dexterity saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest"
+    }
+  },
+  {
+  "name": "Metabolic Tolerance",
+  "action": {
+    "name": "Metabolic Tolerance - Cure Poison",
+    "_v": 2,
+    "activation_type": 3,
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "Hit Dice (d12)",
+        "amount": "1",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "condition",
+        "condition": "lastCounterUsedAmount",
+        "onTrue": [
+          {
+            "type": "text",
+            "text": "As an action or bonus action, you can expend a Hit Die to end the poisoned condition on yourself."
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d10)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+            "type": "text",
+            "text": "As an action or bonus action, you can expend a Hit Die to end the poisoned condition on yourself."
+          }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d8)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+            "type": "text",
+            "text": "As an action or bonus action, you can expend a Hit Die to end the poisoned condition on yourself."
+          }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d6)",
+                    "amount": "1",
+                    "errorBehaviour": "raise"
+                  },
+                  {
+            "type": "text",
+            "text": "As an action or bonus action, you can expend a Hit Die to end the poisoned condition on yourself."
+          }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ],
+        "errorBehaviour": "false"
+      }
+    ]
   }
 }
 ]

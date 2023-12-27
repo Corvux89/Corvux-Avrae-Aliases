@@ -64,6 +64,8 @@ def level(args):
         # Setup Counters
         counters = getCounters(playerClass, playerArchetype, inLevel)
         updateCounters(counters, inLevel)
+        if len({x.Class for x in playerClass}) > 1:
+            multiclass(counters, inLevel)
         c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
         base += f''' -f  "Counter{'s' if len(counters)>1 else ''}|{c_str}"'''
 
@@ -73,11 +75,6 @@ def level(args):
                 err_str.append(f"Don't forget your subclass!|One or more of your classes is high enough level "
                                 f"to select a subclass, do so with `{ctx.prefix}swlevel <class> <archetype>`.")
 
-        if ctx.author.id == 225752877316964352 and dev:
-            actions = getActions(playerClass, playerArchetype, inLevel)
-            updateActions(actions)
-            return err({a.action.name for a in actions})
-
         # Error Strings
         if len(err_str) > 0:
             base += " -f " + " -f ".join([f"\"{x}\"" for x in err_str])
@@ -85,8 +82,11 @@ def level(args):
     else:
         base += f''' -title "{ctx.prefix}swlevel help!" -desc "Coming soon" '''
 
-    if argparse(args).get('dev'):
-        return err(base)
+    if dev:
+        if len({x.Class for x in playerClass}) > 1:
+            multiclass(counters, inLevel)
+        else:
+            return err("Nope")
 
     return base
 
@@ -238,26 +238,6 @@ def getCounters(playerClass, playerArchetype, inLevel):
                     counters.append(counter)
     return counters
 
-def getActions(playerClass, playerArchetype, inLevel):
-    actions = []
-
-    for cl in playerClass:
-        level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
-        if cl.get('actions'):
-            for action in cl.actions:
-                if level >= action.level:
-                    actions.append(action)
-
-    if len(playerArchetype)>0:
-        for arch in playerArchetype:
-            level = ch.levels.get(arch.Class) if not inLevel else int(inLevel)
-            if arch.get('actions'):
-                for action in arch.actions:
-                    if level >= action.level:
-                        actions.append(action)
-    return actions
-
-
 def updateCounters(counters, inLevel):
     for counter in counters:
         # Class level
@@ -298,3 +278,36 @@ def setupHD(playerClass, inLevel):
             out.append(f"{hitDict[x]}{x}")
 
     return out
+
+def multiclass(counters, inLevel):
+    classList = []
+    fp = 0
+    fpMod = []
+    tp = 0
+    tpMod = []
+
+    for counter in counters:
+        # Class level
+        level = min(int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel), 20)
+
+        if counter.name == "Force Points" and counter.classLevel not in classList:
+            classList.append(counter.classLevel)
+            fp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
+            modifier = counter.modifier if 'modifier' in counter else 0
+            modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
+            fpMod.append(modifier)
+
+        if counter.name == "Tech Points" and counter.classLevel not in classList:
+            classList.append(counter.classLevel)
+            tp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
+            modifier = counter.modifier if 'modifier' in counter else 0
+            modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
+            tpMod.append(modifier)
+
+    if fp > 0:
+        ch.edit_cc("Force Points", 0, f"{fp} + max({','.join(fpMod)})")
+        ch.set_cc("Force Points", ch.get_cc_max("Force Points"))
+
+    if tp > 0:
+        ch.edit_cc("Tech Points", 0, f"{tp} + max({','.join(tpMod)})")
+        ch.set_cc("Tech Points", ch.get_cc_max("Tech Points"))
