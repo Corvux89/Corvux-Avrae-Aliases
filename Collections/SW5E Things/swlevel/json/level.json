@@ -338,6 +338,75 @@
         "classLevel": "ConsularlightLevel",
         "desc": "Your attunement to the Force is absolute. Your Wisdom or Charisma score increases by 4, and your maximum for this score increases by 4. Additionally, you gain mastery over a single force power, and can cast it with little effort. Choose one 3rd-level force power that you know as your signature power. You can cast it once at 3rd level without expending force points. When you do so, you can’t do so again until you finish a short or long rest."
       }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Force Recovery",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "name": "clevel",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": "-(ceil(clevel/2)+max(charismaMod, wisdomMod,1))"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Recovery",
+              "amount": 1,
+              "fixedValue": true,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+            }
+          ],
+          "verb": "uses",
+          "activation_type": 2
+        }
+      },
+      {
+        "level": "2",
+        "action": {
+          "name": "Force Shield",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Force Shield",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Shield",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -545,6 +614,62 @@
         "classLevel": "ConsularlightLevel",
         "desc": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn."
       }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -558,6 +683,146 @@
         "reset": "short",
         "display": "bubble",
         "classLevel": "ConsularlightLevel"
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Saber Storm",
+          "_v": 2,
+          "verb": "activates",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+              "name": "num_weap"
+            },
+            {
+              "type": "variable",
+              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+              "name": "distance"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Saber Storm",
+                  "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                  "duration": "10",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Kinetic)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [kinetic]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Energy)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [energy]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Saber Storm",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+              "title": "Meta"
+            },
+            {
+              "type": "text",
+              "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+            }
+          ]
+        }
       }
     ]
   },
@@ -612,6 +877,55 @@
         "display": "bubble",
         "classLevel": "ConsularlightLevel",
         "desc": "When you are dealt damage by a creature within 5 feet of you, you can use your reaction to deal force damage to the creature equal to your Consularlight level + your Wisdom or Charisma modifier (your choice, minimum of +1). If the attacker is Huge or smaller, it must also make a Strength saving throw against your universal force save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you."
+      }
+    ],
+    "actions": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
+          ]
+        }
       }
     ]
   },
@@ -668,7 +982,7 @@
       },
       {
         "name": "Strength Flows From the Force",
-        "level":6,
+        "level": 6,
         "value": "proficiencyBonus",
         "reset": "long",
         "classLevel": "ConsularlightLevel",
@@ -1010,6 +1324,62 @@
         "classLevel": "ConsulardarkLevel",
         "desc": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn."
       }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -1023,6 +1393,146 @@
         "reset": "short",
         "display": "bubble",
         "classLevel": "ConsulardarkLevel"
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Saber Storm",
+          "_v": 2,
+          "verb": "activates",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+              "name": "num_weap"
+            },
+            {
+              "type": "variable",
+              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+              "name": "distance"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Saber Storm",
+                  "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                  "duration": "10",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Kinetic)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [kinetic]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Energy)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [energy]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Saber Storm",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+              "title": "Meta"
+            },
+            {
+              "type": "text",
+              "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+            }
+          ]
+        }
       }
     ]
   },
@@ -1077,6 +1587,55 @@
         "display": "bubble",
         "classLevel": "ConsulardarkLevel",
         "desc": "When you are dealt damage by a creature within 5 feet of you, you can use your reaction to deal force damage to the creature equal to your Consulardark level + your Wisdom or Charisma modifier (your choice, minimum of +1). If the attacker is Huge or smaller, it must also make a Strength saving throw against your universal force save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you."
+      }
+    ],
+    "actions": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
+          ]
+        }
       }
     ]
   },
@@ -1133,7 +1692,7 @@
       },
       {
         "name": "Strength Flows From the Force",
-        "level":6,
+        "level": 6,
         "value": "proficiencyBonus",
         "reset": "long",
         "classLevel": "ConsulardarkLevel",
@@ -1259,6 +1818,95 @@
         "desc": "You gain the ability to temporarily enhance a weapon or armor. At the end of a long rest, you can touch one unenhanced object that is a suit of armor, a shield, or a simple or martial weapon. Until the end of your next long rest or until you die, the object becomes an enhanced item, granting a +1 bonus to AC if it’s armor or a shield or a +1 bonus to attack and damage rolls if it’s a weapon.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest.\n\nThis bonus increases to +2 at 10th level and +3 at 15th level.",
         "classLevel": "EngineerLevel"
       }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Potent Aptitude",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Potent Aptitude",
+                  "duration": 100,
+                  "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
+                  "buttons": [
+                    {
+                      "label": "Use Potent Aptitude",
+                      "verb": "is using assistance",
+                      "style": 3,
+                      "automation": [
+                        {
+                          "type": "remove_ieffect"
+                        },
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[-1]}",
+                          "name": "Potent Aptitude"
+                        },
+                        {
+                          "type": "text",
+                          "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Meta",
+              "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
+            },
+            {
+              "type": "text",
+              "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "condition",
+              "condition": "choice == 'gott'",
+              "onFalse": [],
+              "onTrue": [
+                {
+                  "type": "counter",
+                  "counter": "Goggles of the Tinkerer",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                },
+                {
+                  "type": "text",
+                  "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
+                  "title": "Goggles of the Tinkerer"
+                }
+              ]
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -1304,6 +1952,142 @@
         "classLevel": "EngineerLevel",
         "desc": "You can take a second bonus action on each of your turns. You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest."
       }
+    ],
+    "actions": [
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Environmental Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'acidcoldfireforcelightningnecroticpoisonpsychicsonic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{level}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Environmental Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Environmental Barrier",
+                  "text": "You project an environmental barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + your engineer level. Whenever a creature with this barrier takes damage (one of acid, cold, fire, force, lightning, necrotic, poison, psychic, or sonic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Environmental Barrier' -t zo1 -choice cold`"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Physical Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'energyionkinetic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{ceil(level/2)}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Physical Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Physical Barrier",
+                  "text": "You project a physical barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + half your engineer level. Whenever a creature with this barrier takes damage (one of energy, ion, or kinetic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Physical Barrier' -t zo1 -choice kinetic`"
+                }
+              ]
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -1339,6 +2123,56 @@
         "reset": "long",
         "classLevel": "EngineerLevel",
         "desc": "Your tinkercannon come equipped with four overrides, and they gain more at higher levels, as shown in the Modification Slots column of the engineer table. Each time you trigger an Unstable Engineering Surge, you can use an override to reroll the percentile dice. You must use the new result, you can only do this once per surge, and each time you do so in excess of your proficiency bonus (resetting on a long rest) your maximum tech points is reduced by 1 until you complete a long rest. You regain all expended overrides when you complete a long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Unstable Volley",
+          "_v": 2,
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "roll",
+              "dice": "1d6",
+              "name": "damage",
+              "cantripScale": true
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "dex",
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage} [lightning]"
+                    }
+                  ],
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage}/2 [lightning]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "While wielding your tinkercannon, as a bonus action you can expend one use of your Potent Aptitude to launch a volley of unstable energy at a surface located within 30 feet of you that you can see. This energy adheres to the surface for 1 minute, after which it erupts. As a part of this bonus action, or as a bonus action on a following turn, you can cause the energy to erupt early. Each creature within 5 feet of it must make a Dexterity saving throw against your tech save DC. A creature takes 1d6 lightning damage on a failed save, or half as much on a successful one.\\n\\nThe range at which you can launch your volley increases to 60 feet at 9th level, and 120 feet at 17th level.\\n\\nThis damage increases when you reach certain levels in this class, increasing to 2d6 at 5th level, 3d6 at 11th level, and 4d6 at 17th level"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1412,6 +2246,71 @@
         "reset": "long",
         "classLevel": "EngineerLevel",
         "desc": "You’ve gained mastery over your modified instrument. As an action, you can end your enhanced song in a triumphant blast of power with an effect determined by the song you are playing.\n\nOnce you’ve used this feature, you must complete a long rest before you can use it again."
+      }
+    ],
+    "actions": [
+      {
+        "level": 5,
+        "action": {
+          "name": "Battle Song Enhancement",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "condition",
+              "condition": "len(targets) <=1",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "While playing your Song of Battle, as an action, you can send forth busts of directed sonic energy, make two ranged power attacks. These attacks can target the same creature different ones. Make separate attack rolls for each burst. The attack has a range equal to the radius of your song, and deals 1d8 sonic damage on a hit."
+            }
+          ]
+        }
       }
     ]
   },
@@ -1999,7 +2898,28 @@
         "classLevel": "Fighterlevel",
         "reset": "long",
         "display": "short",
-        "value": [0,0,0,0,0,0,2,2,3,3,3,3,4,4,4,4,5,5,5,5],
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5
+        ],
         "desc": "When you would roll a critical hit against a creature or would reduce a creature to 0 hit points while hidden, you can choose to turn invisible until the start of your next, or if you attack, cast a power, or otherwise take a hostile action.\n\nYou can use this feature twice per short or long rest. You gain an additional use at 9th, 13th, and 17th level."
       },
       {
@@ -2010,1044 +2930,6 @@
         "display": "short",
         "value": 2,
         "desc": "When you would roll a critical hit from a creature you are hidden from, you can choose to roll the weapons dice three times instead of twice.\n\nYou can use this feature twice per short or long rest."
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "hitDie": "d10",
-    "subclassLevel": 3,
-    "counters": [
-      {
-        "name": "Force Points",
-        "level": 1,
-        "classLevel": "GuardianlightLevel",
-        "value": [
-          2,
-          4,
-          6,
-          8,
-          10,
-          12,
-          14,
-          16,
-          18,
-          20,
-          22,
-          24,
-          26,
-          28,
-          30,
-          32,
-          34,
-          36,
-          38,
-          40
-        ],
-        "modifier": "wisdomMod",
-        "reset": "long",
-        "display": "default",
-        "desc": "You have a number of force points equal to your guardian level x 2, as shown in the Force Points column of the guardian table, + your Wisdom or Charisma modifier (your choice). You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
-      },
-      {
-        "name": "Channel the Force",
-        "level": 1,
-        "classLevel": "GuardianlightLevel",
-        "value": "proficiencyBonus",
-        "reset": "short",
-        "display": "bubble",
-        "desc": "You know how to channel the Force to create a unique effect. You start with your choice of one from two such effects: Cause Harm or Lend Aid. At 3rd level, your Guardian Focus grants you an additional effect. When you use your Channel the Force, you choose which effect to create.\n\nSome Channel the Force effects require saving throws. When you use such an effect from this class, the DC equals your universal force save DC.\n\nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, minimum of once). You regain all expended uses when you finish a short or long rest."
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Makashi",
-    "counters": [
-      {
-        "name": "Ysalamiri",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Contention",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Niman",
-    "counters": [
-      {
-        "name": "Rancor",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Redirect",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Moderation",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Shien/Djem",
-    "counters": [
-      {
-        "name": "Krayt Dragon",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Perserverance",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Soresu",
-    "counters": [
-      {
-        "name": "Mynock",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Circle of Shelter",
-        "level": 7,
-        "value": "constitutionMod",
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Resilience",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "Guardianlight"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Aqinos",
-    "counters": [
-      {
-        "name": "Droid Companion",
-        "level": 3,
-        "value": "proficiencyBonus",
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Adaptation",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Ataru",
-    "counters": [
-      {
-        "name": "Hawk-Bat",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Aggression",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Jar'Kai",
-    "counters": [
-      {
-        "name": "Acklay",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Rising Whirlwind",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Domination",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Juyo/Vaapad",
-    "counters": [
-      {
-        "name": "Vornskr",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Vengeance",
-        "level": 15,
-        "value": "wisdomMod",
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Ferocity",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Shii-Cho",
-    "counters": [
-      {
-        "name": "Sarlaac",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Determination",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Sokan",
-    "counters": [
-      {
-        "name": "Varactyl",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Unwavering Self",
-        "level": 3,
-        "value": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2
-        ],
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Persistence",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Trakata",
-    "counters": [
-      {
-        "name": "Monkey-Lizard",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Deception",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Vonil/Ishu",
-    "counters": [
-      {
-        "name": "Hydra",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Unity",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Ysannanite",
-    "counters": [
-      {
-        "name": "Yerdua",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Phasestorm",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Master of Unorthodox",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Drallig",
-    "counters": []
-  },
-  {
-  "Class": "Guardianlight",
-  "subclass": "Drallig",
-  "counters": [
-    {
-      "name": "Way of the Wyyyschook",
-      "level": 3,
-      "value": 1,
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardianlightLevel",
-      "desc": "As a bonus action, you can enter a focused stance for one minute. While in this stance, when you cast a power that calls for a melee weapon attack, you can instead make a ranged attack with a thrown weapon. If the attack hits, you add your Wisdom or Charisma modifier (your choice, minimum of +1) to the damage roll. Additionally, when you throw a weapon in this way, it automatically returns to your hand after the attack is complete, whether you hit or miss.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest."
-    },
-    {
-      "name": "Returning Strike",
-      "level": 15,
-      "value": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        3,
-        4,
-        3,
-        3,
-        3
-      ],
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardianlightLevel",
-      "desc": "When you miss with a ranged attack with a thrown weapon, you can use your bonus action to repeat the attack against a creature within 15 feet and behind your initial target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.\n\nYou can use this feature a twice per long rest. You gain an additional use of this feature at 18th level."
-    },
-    {
-      "name": "Master of the Arc",
-      "level": 20,
-      "value": 1,
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardianlightLevel",
-      "desc": "Your throwing game is on point. Your Strength or Dexterity scores increase by 2. Your Strength or Dexterity and Wisdom or Charisma scores (your choice) increase by 2. Your maximum for these scores increases by 2. Additionally, you can use your action to gain the following benefits for 1 minute:\n\nYou have resistance to kinetic, energy, and ion damage from weapons.\nOnce per turn, when you hit a creature with a ranged weapon attack with a thrown weapon, you can make a second ranged weapon attack with that weapon against that creature.\nCreatures provoke an opportunity attack from you when they enter the range of your thrown weapons, and you can make ranged weapon attacks with your thrown weapons when making attacks of opportunity.\nThis effect ends early if you are incapacitated or die. Once you use this feature, you can’t use it again until you finish a long rest."
-    }
-  ]
-},
-  {
-    "Class": "Guardianlight",
-    "subclass": "Bakuuni",
-    "counters": [
-      {
-        "name": "The Way of the Gundark",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Tempered By The Force",
-        "level": 15,
-        "value": "max(wisdomMod, charismaMod, 1)",
-        "reset": "long",
-        "classLevel": "GuardianlightLevel",
-        "display": "bubble"
-      },
-      {
-        "name": "Master of Pulverizing",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "classLevel": "GuardianlightLevel",
-        "display": "bubble"
-      }
-    ]
-  },
-  {
-    "Class": "Guardianlight",
-    "subclass": "Mastery",
-    "counters": [
-      {
-        "name": "Superiority Dice",
-        "level": 3,
-        "value": "proficiencyBonus",
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      },
-      {
-        "name": "Way of the Katarn",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel",
-        "desc": "As a bonus action, you can drawn on your knowledge of the various lightsaber forms to assist you in combat. As part of the bonus action to activate this feature you can use a lightsaber form.\n\nFor the next minute while this feature is active, when you use your bonus action to activate a lightsaber form, you can activate another lightsaber form, regardless of whether you know the second form (no action required). You can only use a lightsaber form this way once, unless you already know the form. You cannot activate the same form twice on the same turn using this feature.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest."
-      },
-      {
-        "name": "Master of the Forms",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardianlightLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "hitDie": "d10",
-    "subclassLevel": 3,
-    "counters": [
-      {
-        "name": "Force Points",
-        "level": 1,
-        "classLevel": "GuardiandarkLevel",
-        "value": [
-          2,
-          4,
-          6,
-          8,
-          10,
-          12,
-          14,
-          16,
-          18,
-          20,
-          22,
-          24,
-          26,
-          28,
-          30,
-          32,
-          34,
-          36,
-          38,
-          40
-        ],
-        "modifier": "charismaMod",
-        "reset": "long",
-        "display": "default",
-        "desc": "You have a number of force points equal to your guardian level x 2, as shown in the Force Points column of the guardian table, + your Wisdom or Charisma modifier (your choice). You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
-      },
-      {
-        "name": "Channel the Force",
-        "level": 1,
-        "classLevel": "GuardiandarkLevel",
-        "value": "proficiencyBonus",
-        "reset": "short",
-        "display": "bubble",
-        "desc": "You know how to channel the Force to create a unique effect. You start with your choice of one from two such effects: Cause Harm or Lend Aid. At 3rd level, your Guardian Focus grants you an additional effect. When you use your Channel the Force, you choose which effect to create.\n\nSome Channel the Force effects require saving throws. When you use such an effect from this class, the DC equals your universal force save DC.\n\nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, minimum of once). You regain all expended uses when you finish a short or long rest."
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Makashi",
-    "counters": [
-      {
-        "name": "Ysalamiri",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Contention",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Niman",
-    "counters": [
-      {
-        "name": "Rancor",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Redirect",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Moderation",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Shien/Djem",
-    "counters": [
-      {
-        "name": "Krayt Dragon",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Perserverance",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Soresu",
-    "counters": [
-      {
-        "name": "Mynock",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Circle of Shelter",
-        "level": 7,
-        "value": "constitutionMod",
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Resilience",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Aqinos",
-    "counters": [
-      {
-        "name": "Droid Companion",
-        "level": 3,
-        "value": "proficiencyBonus",
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Adaptation",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Ataru",
-    "counters": [
-      {
-        "name": "Hawk-Bat",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Aggression",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Jar'Kai",
-    "counters": [
-      {
-        "name": "Acklay",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Rising Whirlwind",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Domination",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Juyo/Vaapad",
-    "counters": [
-      {
-        "name": "Vornskr",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Vengeance",
-        "level": 15,
-        "value": "charismaMod",
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Ferocity",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Shii-Cho",
-    "counters": [
-      {
-        "name": "Sarlaac",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Determination",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Sokan",
-    "counters": [
-      {
-        "name": "Varactyl",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Unwavering Self",
-        "level": 3,
-        "value": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2
-        ],
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Persistence",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Trakata",
-    "counters": [
-      {
-        "name": "Monkey-Lizard",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Deception",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Vonil/Ishu",
-    "counters": [
-      {
-        "name": "Hydra",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Unity",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Ysannanite",
-    "counters": [
-      {
-        "name": "Yerdua",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Phasestorm",
-        "level": 15,
-        "value": 1,
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of Unorthodox",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      }
-    ]
-  },
-  {
-  "Class": "Guardiandark",
-  "subclass": "Drallig",
-  "counters": [
-    {
-      "name": "Way of the Wyyyschook",
-      "level": 3,
-      "value": 1,
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardiandarkLevel",
-      "desc": "As a bonus action, you can enter a focused stance for one minute. While in this stance, when you cast a power that calls for a melee weapon attack, you can instead make a ranged attack with a thrown weapon. If the attack hits, you add your Wisdom or Charisma modifier (your choice, minimum of +1) to the damage roll. Additionally, when you throw a weapon in this way, it automatically returns to your hand after the attack is complete, whether you hit or miss.\n\nThis effect ends early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest."
-    },
-    {
-      "name": "Returning Strike",
-      "level": 15,
-      "value": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        3,
-        4,
-        3,
-        3,
-        3
-      ],
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardiandarkLevel",
-      "desc": "When you miss with a ranged attack with a thrown weapon, you can use your bonus action to repeat the attack against a creature within 15 feet and behind your initial target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.\n\nYou can use this feature a twice per long rest. You gain an additional use of this feature at 18th level."
-    },
-    {
-      "name": "Master of the Arc",
-      "level": 20,
-      "value": 1,
-      "reset": "long",
-      "display": "bubble",
-      "classLevel": "GuardiandarkLevel",
-      "desc": "Your throwing game is on point. Your Strength or Dexterity scores increase by 2. Your Strength or Dexterity and Wisdom or Charisma scores (your choice) increase by 2. Your maximum for these scores increases by 2. Additionally, you can use your action to gain the following benefits for 1 minute:\n\nYou have resistance to kinetic, energy, and ion damage from weapons.\nOnce per turn, when you hit a creature with a ranged weapon attack with a thrown weapon, you can make a second ranged weapon attack with that weapon against that creature.\nCreatures provoke an opportunity attack from you when they enter the range of your thrown weapons, and you can make ranged weapon attacks with your thrown weapons when making attacks of opportunity.\nThis effect ends early if you are incapacitated or die. Once you use this feature, you can’t use it again until you finish a long rest."
-    }
-  ]
-},
-  {
-    "Class": "Guardiandark",
-    "subclass": "Bakuuni",
-    "counters": [
-      {
-        "name": "The Way of the Gundark",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Tempered By The Force",
-        "level": 15,
-        "value": "max(wisdomMod, charismaMod, 1)",
-        "reset": "long",
-        "classLevel": "GuardiandarkLevel",
-        "display": "bubble"
-      },
-      {
-        "name": "Master of Pulverizing",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "classLevel": "GuardiandarkLevel",
-        "display": "bubble"
-      }
-    ]
-  },
-  {
-    "Class": "Guardiandark",
-    "subclass": "Mastery",
-    "counters": [
-      {
-        "name": "Superiority Dice",
-        "level": 3,
-        "value": "proficiencyBonus",
-        "reset": "short",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Way of the Katarn",
-        "level": 3,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
-      },
-      {
-        "name": "Master of the Forms",
-        "level": 20,
-        "value": 1,
-        "reset": "long",
-        "display": "bubble",
-        "classLevel": "GuardiandarkLevel"
       }
     ]
   }

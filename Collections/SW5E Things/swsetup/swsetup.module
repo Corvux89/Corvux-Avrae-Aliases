@@ -20,7 +20,10 @@ def setup(args):
 
     class_ref = getClass()
     out = getAttacks(class_ref, stat)
-    out += additionalActions(stat)
+    # out += additionalActions(stat)
+
+    if dev:
+        return f'''multiline\n{ctx.prefix}a import {out}\n{ctx.prefix}embed -title "Here" -f "Something|Or other" '''
 
     return f"a import {out}"
 
