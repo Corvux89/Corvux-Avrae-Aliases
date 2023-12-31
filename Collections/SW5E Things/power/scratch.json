@@ -1,70 +1,31 @@
 {
-  "name": "Affliction",
-  "level": 2,
-  "school": "Force",
-  "classes": "Dark",
+  "name": "(SW) Antipathy/Sympathy",
+  "level": 8,
+  "school": "Tech",
+  "classes": "None",
   "subclasses": "",
-  "casttime": "1 action",
-  "range": "30 feet",
+  "casttime": "1 hour",
+  "range": "60 feet",
   "components": {
     "verbal": false,
     "somatic": false,
     "material": ""
   },
-  "duration": "up to 1 minute",
+  "duration": "10 days",
   "ritual": false,
-  "description": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.",
-  "concentration": true,
+  "description": "This power attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as rancors, kath hounds, or twi'leks. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.\r\n\r\n***Antipathy.*** The power causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.\r\n\r\n***Sympathy.*** The power causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \r\n\r\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.\r\n\r\n***Ending the Effect.*** If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural. In addition, a creature affected by the power is allowed another Wisdom saving throw every 24 hours while the power persists.\r\n\r\nA creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
+  "concentration": false,
   "automation": [
     {
-      "type": "target",
-      "target": "each",
-      "effects": [
+      "type": "condition",
+      "condition": "choice",
+      "onFalse": [
         {
-          "type": "save",
-          "stat": "con",
-          "success": [],
-          "fail": [
-            {
-              "type": "ieffect2",
-              "name": "Slowed",
-              "effects": {
-                "ac_bonus": -2
-              },
-              "desc": "the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\n\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\n\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.",
-              "buttons": [
-                {
-                  "label": "Cast spell",
-                  "verb": "Attempts to cast a spell",
-                  "style": 3,
-                  "automation": [
-                    {
-                      "type": "roll",
-                      "dice": "1d20",
-                      "name": "castSpell"
-                    },
-                    {
-                      "type": "condition",
-                      "condition": "castSpell >=11",
-                      "onTrue": [],
-                      "onFalse": [
-                        {
-                          "type": "text",
-                          "text": ""
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "type": "text",
+          "text": "Please use `-choice` to specify whether to invoke antipathy or sympathy. Ex: `-choice sympathy`"
         }
-      ]
-    },
-    {
-      "type": "text",
-      "text": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\n\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\n\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends."
+      ],
+      "onTrue": []
     }
   ]
 }

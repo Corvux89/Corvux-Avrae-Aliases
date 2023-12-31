@@ -1,6 +1,3 @@
-# TODO: Affliction
-# TODO: (SW) Alarm
-# TODO: Analyze
 # TODO: (SW) Antipathy/Sympathy
 # TODO: Armor of Abeloth
 # TODO: Assess the Situation
