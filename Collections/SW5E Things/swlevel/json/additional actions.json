@@ -2281,6 +2281,12 @@
     "modCounter": {
       "name": "Force Points",
       "modifier": "intelligenceMod-max(wisdomMod,charismaMod)"
+    },
+    "cvar": {
+      "name": "sw5e",
+      "default": "{}",
+      "node": "castMod",
+      "value": "int"
     }
   },
   {

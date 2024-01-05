@@ -19,7 +19,7 @@ def level(args):
     updateOnly = argparse(args).last('update')
     remover = [args.remove(x) if x in args else None for x in
                ["practice", "engineering", "specialist", "technique", "pursuit", "order", "approach", "path", "form",
-                "way", "of", "-cc", "-dev", "-stat", "-update"]]
+                "way", "of", "-cc", "-dev", "-stat", "-update", stat]]
     inLevel = ([args.pop(args.index(x)) for x in args if x.isdigit()] + [''])[0]
     help = args and args[0] in ["help","?"]
     base = f'''embed -thumb {image} -color {color} -footer {footer} 
@@ -30,6 +30,11 @@ def level(args):
     err_str = []
     counters = []
     actions = []
+    if stat:
+        stat = f'{[x for x in stats if stat.lower() in x][0]}Mod'
+
+    if dev:
+        return err(classSearch)
 
     if not help:
         base += f''' -title "Level Summary for {ch.name}" '''
@@ -84,16 +89,14 @@ def level(args):
                 multiclass(counters, inLevel)
 
         # Additional Actions and Feats
-        test = []
-        if dev:
-            test = additionalActions(actions, counters, stat)
+        add_act_str = additionalActions(actions, counters, stat)
 
         # Setup Output
         c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
         base += f''' -f  "Counter{'s' if len(counters)>1 else ''}|{c_str}"'''
-        if len(test) > 0:
-            test = "\n".join(test)
-            base += f''' -f "Additional Actions/Setup|{test}"'''
+        if len(add_act_str) > 0:
+            add_act_str = "\n".join(add_act_str)
+            base += f''' -f "Additional Actions/Setup|{add_act_str}"'''
 
         for cl in playerClass:
             level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
@@ -108,10 +111,8 @@ def level(args):
     else:
         base += f''' -title "{ctx.prefix}swlevel help!" -desc "Coming soon" '''
 
-    if dev:
-        if len(actions) > 0:
-            return f'''multiline\n{ctx.prefix}a import {actions}\n{ctx.prefix}{base} '''
-
+    if len(actions) > 0:
+        return f'''multiline\n{ctx.prefix}{base}\n{ctx.prefix}a import {actions}'''
     return base
 
 def options(args):
@@ -323,18 +324,25 @@ def multiclass(counters, inLevel):
 
         if counter.name == "Tech Points" and counter.classLevel not in classList:
             classList.append(counter.classLevel)
-            tp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
+            tp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else translate_str(counter.value,counter.classLevel, level) if typeof(counter.value) == 'str' else counter.value
             modifier = counter.modifier if 'modifier' in counter else 0
             modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
             tpMod.append(modifier)
 
     if fp > 0:
-        ch.edit_cc("Force Points", 0, f"{fp} + max({','.join(fpMod)})")
+        ch.edit_cc("Force Points", 0, f"{fp} + {max({','.join(fpMod)}) if len(fpMod) > 1 else fpMod[0]}")
         ch.set_cc("Force Points", ch.get_cc_max("Force Points"))
 
     if tp > 0:
-        ch.edit_cc("Tech Points", 0, f"{tp} + max({','.join(tpMod)})")
+        ch.edit_cc("Tech Points", 0, f"{tp} + {max({','.join(tpMod)}) if len(tpMod) > 1 else tpMod[0]}")
         ch.set_cc("Tech Points", ch.get_cc_max("Tech Points"))
+
+def translate_str(val, class_str, level):
+    val = val.replace(f"{class_str}", f"{level}").replace("strengthMod", f"{ch.stats.get_mod('str')}").replace("dexterityMod", f"{ch.stats.get_mod('dex')}")
+    val = val.replace("constitutionMod", f"{ch.stats.get_mod('con')}").replace("intelligenceMod", f"{ch.stats.get_mod('int')}")
+    val = val.replace('wisdomMod', f"{ch.stats.get_mod('wis')}").replace("charismaMod", f"{ch.stats.get_mod('cha')}")
+    val = val.replace('proficiencyBonus', f"{ch.stats.prof_bonus}")
+    return int(val)
 
 def getActions(playerClass, playerArchetype, inLevel, stat = None):
     actions = []

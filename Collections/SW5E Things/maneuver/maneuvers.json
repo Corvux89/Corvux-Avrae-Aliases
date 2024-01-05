@@ -24,6 +24,23 @@
     }
   },
   {
+    "name": "Agonizing Lethargy",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Agonizing Lethargy!\" #desc# -footer \"#combatantFooter#\"",
+    "validUse": "-f \"Meta|**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can use an action to expend a superiority die. When you do so, choose a creature you can see within 30 feet of you. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 necrotic damage for each attack it makes until the start of your next turn.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "con"
+    }
+  },
+  {
+    "name": "Assess the Situation",
+    "sub": "General",
+    "desc": "-title \"#name# is Asessing the Situation!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|You can expend one superiority die to make a Wisdom (Perception) or Intelligence (Investigation) check as a bonus action, adding the superiority die to the check.\"",
+    "roll": "#superiorityDice#"
+  },
+  {
     "name": "Assist",
     "sub": "General",
     "desc": "-title \"#name# #uses# Assist!\" #desc#",

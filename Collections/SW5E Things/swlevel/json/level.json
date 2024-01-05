@@ -375,37 +375,62 @@
       {
         "level": "2",
         "action": {
+  "name": "Force Shield",
+  "_v": 2,
+  "verb": "uses",
+  "activation_type": 4,
+  "automation": [
+
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
           "name": "Force Shield",
-          "_v": 2,
-          "verb": "uses",
-          "activation_type": 4,
-          "automation": [
+          "effects": {
+            "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+          },
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "counter": "Force Shield",
+      "amount": 1,
+      "errorBehaviour": "raise",
+      "fixedValue": true
+    },
+    {
+      "type": "counter",
+      "counter": "\"",
+      "amount": 0,
+      "errorBehaviour": "ignore"
+    },
+    {
+          "type": "condition",
+          "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+          "onTrue": [
             {
               "type": "target",
               "target": "self",
               "effects": [
                 {
-                  "type": "ieffect2",
-                  "name": "Force Shield",
-                  "effects": {
-                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
-                  },
-                  "duration": 1
-                }
-              ]
-            },
-            {
-              "type": "counter",
-              "counter": "Force Shield",
-              "amount": 1,
-              "errorBehaviour": "raise"
-            },
-            {
-              "type": "text",
-              "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+              "type": "damage",
+              "damage": "-({lastCounterRequestedAmount}) [healing]"
             }
-          ]
-        }
+              ]
+            }
+          ],
+          "onFalse": []
+        },
+    {
+      "type": "text",
+      "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+    }
+  ]
+}
       }
     ]
   },
@@ -1116,6 +1141,100 @@
         "reset": "short",
         "classLevel": "ConsulardarkLevel",
         "desc": "Your attunement to the Force is absolute. Your Wisdom or Charisma score increases by 4, and your maximum for this score increases by 4. Additionally, you gain mastery over a single force power, and can cast it with little effort. Choose one 3rd-level force power that you know as your signature power. You can cast it once at 3rd level without expending force points. When you do so, you can’t do so again until you finish a short or long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Force Recovery",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "name": "clevel",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": "-(ceil(clevel/2)+max(charismaMod, wisdomMod,1))"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Recovery",
+              "amount": 1,
+              "fixedValue": true,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+            }
+          ],
+          "verb": "uses",
+          "activation_type": 2
+        }
+      },
+      {
+        "level": "2",
+        "action": {
+  "name": "Force Shield",
+  "_v": 2,
+  "verb": "uses",
+  "activation_type": 4,
+  "automation": [
+
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Force Shield",
+          "effects": {
+            "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+          },
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "counter": "Force Shield",
+      "amount": 1,
+      "errorBehaviour": "raise",
+      "fixedValue": true
+    },
+    {
+      "type": "counter",
+      "counter": "\"",
+      "amount": 0,
+      "errorBehaviour": "ignore"
+    },
+    {
+          "type": "condition",
+          "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+          "onTrue": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+              "type": "damage",
+              "damage": "-({lastCounterRequestedAmount}) [healing]"
+            }
+              ]
+            }
+          ],
+          "onFalse": []
+        },
+    {
+      "type": "text",
+      "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+    }
+  ]
+}
       }
     ]
   },

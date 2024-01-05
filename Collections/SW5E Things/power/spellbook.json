@@ -147,61 +147,6 @@
     "concentration": true
   },
   {
-    "name": "Affliction",
-    "level": 2,
-    "school": "Force",
-    "automation": [],
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.",
-    "concentration": true
-  },
-  {
-    "name": "(SW) Alarm",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 minute",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "8 hours",
-    "ritual": false,
-    "description": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the power ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the power, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. \r\n\r\nA silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\r\n\r\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
-    "concentration": false
-  },
-  {
-    "name": "Analyze",
-    "level": 1,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 minute",
-    "range": "Touch",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\r\n\r\nIf you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it.",
-    "concentration": false
-  },
-  {
     "name": "(SW) Antipathy/Sympathy",
     "level": 8,
     "school": "Tech",
@@ -17672,6 +17617,161 @@
     "duration": "1 round",
     "ritual": false,
     "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes sheathed in a thick acidic slime until the start of your next turn. Until the start of your next turn, if the target becomes grappled, or succeeds in grappling or maintaining a grapple, the slime is pressed into its body, causing it to immediately take 1d8 acid damage. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 acid damage to the target, and the damage the target takes for taking grappling or maintaining a grapple increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Affliction",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "effects": {
+                  "ac_bonus": "-2"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "roll",
+                        "dice": "1d20",
+                        "name": "castSpell"
+                      },
+                      {
+                        "type": "condition",
+                        "condition": "castSpell >=11",
+                        "onTrue": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Affliction - Casting a spell",
+                                "duration": "1",
+                                "desc": "Must use their next action on their next turn to cast the power, otherwise the power is wasted"
+                              }
+                            ]
+                          }
+                        ],
+                        "onFalse": [
+                          {
+                            "type": "text",
+                            "text": "Power failed!"
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Cast spell",
+                    "verb": "Attempts to cast a spell",
+                    "style": "3"
+                  },
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "End of turn - resist affliction",
+                    "verb": "Attempts to resist affliction",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\n\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\n\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends."
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\n\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\n\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Choose a creature that you can see within range. That creature must make a Constitution saving throw. On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nThe creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.",
+    "concentration": true
+  },
+  {
+    "name": "(SW) Alarm",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the power ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the power, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. \n\nA silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 minute",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "8 hours",
+    "ritual": false,
+    "description": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the power ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the power, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. \r\n\r\nA silent alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\r\n\r\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
+    "concentration": false
+  },
+  {
+    "name": "Analyze",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\n\nIf you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 minute",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\r\n\r\nIf you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it.",
     "concentration": false
   }
 ]

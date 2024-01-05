@@ -4,25 +4,14 @@ f = open('scratch.json', encoding='utf-8')
 stuff = json.load(f)
 todos = []
 
+f = open('out.json', encoding='utf-8')
+already_done = json.load(f)
+
+maneuvers = {x["name"] for x in already_done}
+
 for thing in stuff:
-    new_thing = {"name": thing.get('name')}
-    if thing.get('level'):
-        new_thing["level"] = thing.get('level')
-
-    if thing.get('action'):
-        new_thing["actions"] = [{"action": thing.get('action')}]
-
-    if thing.get('counter'):
-        new_thing["counters"] = [thing.get('counter')]
-
-    if thing.get('modCounter'):
-        new_thing["modCounter"] = thing.get('modCounter')
-
-    if thing.get('modCVAR'):
-        new_thing["modCVAR"] = thing.get('modCVAR')
-
-    todos.append(new_thing)
-
+    if thing["name"] not in maneuvers:
+        todos.append(thing["name"])
 
 with open('out.json', 'w') as outfile:
     json.dump(todos, outfile)
