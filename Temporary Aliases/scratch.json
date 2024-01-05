@@ -12,7 +12,7 @@
       "type": "counter",
       "counter": "Cursed Energy",
       "amount": "-chargeAmount",
-      "allowOverflow": false,
+      "allowOverflow": true,
       "errorBehaviour": "ignore"
     }
   ],
