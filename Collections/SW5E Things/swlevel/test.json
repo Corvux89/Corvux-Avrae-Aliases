@@ -1,57 +1,7 @@
 {
-  "name": "Force Shield",
-  "_v": 2,
-  "verb": "uses",
-  "activation_type": 4,
-  "automation": [
-
-    {
-      "type": "target",
-      "target": "self",
-      "effects": [
-        {
-          "type": "ieffect2",
-          "name": "Force Shield",
-          "effects": {
-            "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
-          },
-          "duration": 1
-        }
-      ]
-    },
-    {
-      "type": "counter",
-      "counter": "Force Shield",
-      "amount": 1,
-      "errorBehaviour": "raise",
-      "fixedValue": true
-    },
-    {
-      "type": "counter",
-      "counter": "\"",
-      "amount": 0,
-      "errorBehaviour": "ignore"
-    },
-    {
-          "type": "condition",
-          "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
-          "onTrue": [
-            {
-              "type": "target",
-              "target": "self",
-              "effects": [
-                {
-              "type": "damage",
-              "damage": "-({lastCounterRequestedAmount}) [healing]"
-            }
-              ]
-            }
-          ],
-          "onFalse": []
-        },
-    {
-      "type": "text",
-      "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+  "name": "Scholar Offensive Augment",
+  "modCounter": {
+      "name": "Superiority Dice",
+      "modifier": 1
     }
-  ]
 }

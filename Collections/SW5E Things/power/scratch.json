@@ -1,210 +1,94 @@
-[
-  {
-    "name": "(SW) Antipathy/Sympathy",
-    "level": 8,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 hour",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "10 days",
-    "ritual": false,
-    "description": "This power attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as rancors, kath hounds, or twi'leks. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.\r\n\r\n***Antipathy.*** The power causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.\r\n\r\n***Sympathy.*** The power causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \r\n\r\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.\r\n\r\n***Ending the Effect.*** If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural. In addition, a creature affected by the power is allowed another Wisdom saving throw every 24 hours while the power persists.\r\n\r\nA creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "condition",
-        "condition": "choice",
-        "onFalse": [
-          {
-            "type": "text",
-            "text": "Please use `-choice` to specify whether to invoke antipathy or sympathy. Ex: `-choice sympathy`"
-          }
-        ],
-        "onTrue": [
-          {
-            "type": "condition",
-            "condition": "choice.lower() in 'sympathy'",
-            "onTrue": [
-              {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Sympathetic Aura",
-                    "desc": "Causes creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \n\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect",
-                    "attacks": [
-                      {
-                        "attack": {
-                          "name": "Sympathetic  Aura - Sympathize",
-                          "_v": 2,
-                          "automation": [
-                            {
-                              "type": "target",
-                              "target": "each",
-                              "effects": [
-                                {
-                                  "type": "save",
-                                  "stat": "wis",
-                                  "success": [
-                                    {
-                                      "type": "ieffect2",
-                                      "name": "Immune to Sympathize",
-                                      "duration": 10
-                                    }
-                                  ],
-                                  "fail": [
-                                    {
-                                      "type": "ieffect2",
-                                      "name": "Sympathetic",
-                                      "desc": "Must Use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target.",
-                                      "buttons": [
-                                        {
-                                          "label": "Resist Sympathetic Aura",
-                                          "style": "4",
-                                          "verb": "Attempts to resist the sympathetic aura",
-                                          "defaultDC": "lastSaveDC",
-                                          "automation": [
-                                            {
-                                              "type": "target",
-                                              "target": "self",
-                                              "effects": [
-                                                {
-                                                  "type": "save",
-                                                  "stat": "wis",
-                                                  "success": [
-                                                    {
-                                                      "type": "remove_ieffect"
-                                                    },
-                                                    {
-                                                      "type": "text",
-                                                      "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
-                                                    }
-                                                  ],
-                                                  "fail": []
-                                                }
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "onFalse": [
-              {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                  {
-                    "type": "ieffect2",
-                    "name": "Antipathetic Aura",
-                    "desc": "Causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.",
-                    "attacks": [
-                      {
-                        "attack": {
-                          "name": "Antipathetic  Aura - Antipathy",
-                          "_v": 2,
-                          "automation": [
-                            {
-                              "type": "target",
-                              "target": "each",
-                              "effects": [
-                                {
-                                  "type": "save",
-                                  "stat": "wis",
-                                  "success": [
-                                    {
-                                      "type": "ieffect2",
-                                      "name": "Immune to Antipathy",
-                                      "duration": 10
-                                    }
-                                  ],
-                                  "fail": [
-                                    {
-                                      "type": "ieffect2",
-                                      "name": "Frightened",
-                                      "desc": "Must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.",
-                                      "buttons": [
-                                        {
-                                          "label": "Resist Sympathetic Aura",
-                                          "style": "4",
-                                          "verb": "Attempts to resist the sympathetic aura",
-                                          "defaultDC": "lastSaveDC",
-                                          "automation": [
-                                            {
-                                              "type": "target",
-                                              "target": "self",
-                                              "effects": [
-                                                {
-                                                  "type": "save",
-                                                  "stat": "wis",
-                                                  "success": [
-                                                    {
-                                                      "type": "remove_ieffect"
-                                                    },
-                                                    {
-                                                      "type": "text",
-                                                      "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
-                                                    }
-                                                  ],
-                                                  "fail": []
-                                                }
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
+{
+  "name": "Telekinetic Shield",
+  "level": 3,
+  "school": "Force",
+  "classes": "Universal",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
   },
-  {
-    "name": "(SW) Shatter",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
+  "duration": "up to 1 minute",
+  "ritual": false,
+  "description": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \r\n\r\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\r\n\r\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd.",
+  "concentration": true,
+  "automation": [
+    {
+      "type": "variable",
+      "name": "numPiles",
+      "value": "3",
+      "higher": {
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9"
+      }
     },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 sonic damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\r\n\r\nAn unenhanced object that isn't being worn or carried also takes the damage if it's in the power's area.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
-    "concentration": false
-  }
-]
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Telekinetic Shield - Parent",
+          "desc": "While at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses./n/n{numPiles}",
+          "save_as": "peff",
+          "attacks": [
+            {
+              "attack": {
+                "name": "Telekinetic Shield - Fire Pile",
+                "_v": 2,
+                "automation": [
+                  {
+                    "type": "condition",
+                    "condition": "len(ieffect.children)-1 + ieffect.desc.split()[-1] - len(targets) < 0",
+                    "onTrue": [
+                      {
+                        "type": "text",
+                        "text": "Not enough stacks remaining to attack {len(targets)} targets."
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                    "type": "target",
+                    "target": "each",
+                    "effects": [
+                      {
+                        "type": "attack",
+                        "miss": [],
+                        "hit": [
+                          {
+                            "type": "damage",
+                            "damage": "2d6 [kinetic] + 1d10 [force]"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "ieffect2",
+          "name": "Telekinetic Shield - Cover",
+          "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
+          "parent": "peff",
+          "effects": {"ac_bonus": 5}
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \n\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\n\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd."
+    }
+  ]
+}

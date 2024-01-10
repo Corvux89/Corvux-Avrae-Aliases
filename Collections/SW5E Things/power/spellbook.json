@@ -147,24 +147,6 @@
     "concentration": true
   },
   {
-    "name": "(SW) Antipathy/Sympathy",
-    "level": 8,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 hour",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "10 days",
-    "ritual": false,
-    "description": "This power attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as rancors, kath hounds, or twi'leks. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.\r\n\r\n***Antipathy.*** The power causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.\r\n\r\n***Sympathy.*** The power causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \r\n\r\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.\r\n\r\n***Ending the Effect.*** If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural. In addition, a creature affected by the power is allowed another Wisdom saving throw every 24 hours while the power persists.\r\n\r\nA creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
-    "concentration": false
-  },
-  {
     "name": "Armor of Abeloth",
     "level": 1,
     "school": "Force",
@@ -4335,24 +4317,6 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You sacrifice some of your health to mend another creature's injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": false
-  },
-  {
-    "name": "(SW) Shatter",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 sonic damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\r\n\r\nAn unenhanced object that isn't being worn or carried also takes the damage if it's in the power's area.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
     "concentration": false
   },
   {
@@ -17772,6 +17736,454 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.\r\n\r\nIf you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it.",
+    "concentration": false
+  },
+  {
+    "name": "(SW) Antipathy/Sympathy",
+    "level": 8,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "condition",
+            "condition": "choice.lower() in 'sympathy'",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Sympathetic Aura",
+                    "attacks": [
+                      {
+                        "attack": {
+                          "_v": 2,
+                          "name": "Sympathetic  Aura - Sympathize",
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "wis",
+                                  "fail": [
+                                    {
+                                      "type": "ieffect2",
+                                      "name": "Sympathetic",
+                                      "buttons": [
+                                        {
+                                          "automation": [
+                                            {
+                                              "type": "target",
+                                              "target": "self",
+                                              "effects": [
+                                                {
+                                                  "type": "save",
+                                                  "stat": "wis",
+                                                  "fail": [],
+                                                  "success": [
+                                                    {
+                                                      "type": "remove_ieffect"
+                                                    },
+                                                    {
+                                                      "type": "text",
+                                                      "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "label": "Resist Sympathetic Aura",
+                                          "verb": "Attempts to resist the sympathetic aura",
+                                          "style": "4",
+                                          "defaultDC": "lastSaveDC"
+                                        }
+                                      ],
+                                      "desc": "Must Use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target."
+                                    }
+                                  ],
+                                  "success": [
+                                    {
+                                      "type": "ieffect2",
+                                      "name": "Immune to Sympathize",
+                                      "duration": "10"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "desc": "Causes creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \n\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Antipathetic Aura",
+                    "attacks": [
+                      {
+                        "attack": {
+                          "_v": 2,
+                          "name": "Antipathetic  Aura - Antipathy",
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "each",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "wis",
+                                  "fail": [
+                                    {
+                                      "type": "ieffect2",
+                                      "name": "Frightened",
+                                      "effects": {
+                                        "attack_advantage": "-1",
+                                        "check_dis": [
+                                          "all"
+                                        ]
+                                      },
+                                      "buttons": [
+                                        {
+                                          "automation": [
+                                            {
+                                              "type": "target",
+                                              "target": "self",
+                                              "effects": [
+                                                {
+                                                  "type": "save",
+                                                  "stat": "wis",
+                                                  "fail": [],
+                                                  "success": [
+                                                    {
+                                                      "type": "remove_ieffect"
+                                                    },
+                                                    {
+                                                      "type": "text",
+                                                      "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "label": "Resist Antipathetic Aura",
+                                          "verb": "Attempts to resist the Antipathetic aura",
+                                          "style": "4",
+                                          "defaultDC": "lastSaveDC"
+                                        },
+                                        {
+                                          "automation": [
+                                            {
+                                              "type": "target",
+                                              "target": "self",
+                                              "effects": [
+                                                {
+                                                  "type": "remove_ieffect"
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "label": "Out of Range Antipathetic Aura",
+                                          "verb": "is out of range of the Aura",
+                                          "style": "3",
+                                          "defaultDC": "lastSaveDC"
+                                        }
+                                      ],
+                                      "desc": "Must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it."
+                                    }
+                                  ],
+                                  "success": [
+                                    {
+                                      "type": "ieffect2",
+                                      "name": "Immune to Antipathy",
+                                      "duration": "10"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "desc": "Causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Please use `-choice` to specify whether to invoke antipathy or sympathy. Ex: `-choice sympathy`"
+          }
+        ]
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 hour",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "10 days",
+    "ritual": false,
+    "description": "This power attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as rancors, kath hounds, or twi'leks. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.\r\n\r\n***Antipathy.*** The power causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.\r\n\r\n***Sympathy.*** The power causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target. \r\n\r\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.\r\n\r\n***Ending the Effect.*** If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural. In addition, a creature affected by the power is allowed another Wisdom saving throw every 24 hours while the power persists.\r\n\r\nA creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.",
+    "concentration": false
+  },
+  {
+    "name": "(SW) Shatter",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d8",
+        "name": "damage",
+        "higher": {
+          "3": "1d8",
+          "4": "2d8",
+          "5": "3d8",
+          "6": "4d8",
+          "7": "5d8",
+          "8": "6d8",
+          "9": "7d8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage} [sonic]"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2) [sonic]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 sonic damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\n\nAn unenhanced object that isn't being worn or carried also takes the damage if it's in the power's area.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 sonic damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\r\n\r\nAn unenhanced object that isn't being worn or carried also takes the damage if it's in the power's area.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+    "concentration": false
+  },
+  {
+    "name": "Saber Strike",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "1d10 [energy]",
+            "higher": {
+              "4": "1d10",
+              "5": "1d10",
+              "6": "2d10",
+              "7": "2d10",
+              "8": "3d10",
+              "9": "3d10"
+            }
+          },
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "effects": {
+                  "attack_advantage": "-1"
+                }
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon’s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon’s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
+    "name": "Saber Onslaught",
+    "level": 4,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "5": "2",
+          "6": "3",
+          "7": "4",
+          "8": "5",
+          "9": "6"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Saber Onslaught - Parent",
+            "duration": "1",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Saber Onslaught - Prone",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc.split()[-1]}d6 [energy]"
+                        },
+                        {
+                          "type": "save",
+                          "stat": "str",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Prone",
+                              "effects": {
+                                "attack_advantage": "-1"
+                              }
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Saber Onslaught - Push",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc.split()[-1]}d6 [energy]"
+                        },
+                        {
+                          "type": "save",
+                          "stat": "str",
+                          "fail": [],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              }
+            ],
+            "end": true,
+            "desc": "Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra {numDie}d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\n{numDie}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 turn",
+    "ritual": false,
+    "description": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th.",
+    "higherlevels": "",
     "concentration": false
   }
 ]

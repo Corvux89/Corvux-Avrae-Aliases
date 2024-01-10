@@ -1,24 +1,155 @@
 {
-  "name": "Cursed Charge",
+  "name": "Test",
   "automation": [
     {
-      "type": "roll",
-      "dice": "1d4+1",
-      "name": "chargeAmount",
-      "hidden": null,
-      "displayName": "Cursed Charge"
+      "type": "variable",
+      "name": "numPiles",
+      "value": "3",
+      "higher": {
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9"
+      }
     },
     {
-      "type": "counter",
-      "counter": "Cursed Energy",
-      "amount": "-chargeAmount",
-      "allowOverflow": true,
-      "errorBehaviour": "ignore"
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Debris Piles",
+          "desc": "{numPiles}",
+          "save_as": "peff",
+          "attacks": [
+            {
+              "attack": {
+                "name": "Telekinetic Shield - Fire Pile",
+                "_v": 2,
+                "automation": [
+                  {
+                    "type": "variable",
+                    "name": "numPiles",
+                    "value": "int(ieffect.desc.split()[-1])-(max(len(ieffect.children)-1,0))-len(targets)"
+                  },
+                  {
+                    "type": "text",
+                    "title": "Debug",
+                    "text": "numpiles: {numPiles}\nStarting amount: {ieffect.desc.split()[-1]}"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "numPiles < 0",
+                    "onTrue": [
+                      {
+                        "type": "text",
+                        "text": "Not enough stacks remaining to attack {len(targets)} targets."
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "target",
+                        "target": "each",
+                        "effects": [
+                          {
+                            "type": "attack",
+                            "miss": [],
+                            "hit": [
+                              {
+                                "type": "damage",
+                                "damage": "2d6 [kinetic] + 1d10 [force]"
+                              },
+                              {
+                                "type": "ieffect2",
+                                "name": "Debris Piles",
+                                "stacking": true,
+                                "target_self": true,
+                                "parent": "ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "variable",
+                            "name": "numPiles2",
+                            "value": "numPiles"
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "numPiles2 >= 3",
+                            "onTrue": [
+                              {
+                                "type": "ieffect2",
+                                "name": "Telekinetic Shield - Cover",
+                                "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
+                                "parent": "ieffect",
+                                "effects": {
+                                  "ac_bonus": 5
+                                }
+                              }
+                            ],
+                            "onFalse": [
+                              {
+                                "type": "condition",
+                                "condition": "numPiles2 == 2",
+                                "onTrue": [
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Telekinetic Shield - Cover",
+                                    "desc": "A target with half cover has a +3 bonus to AC and Dexterity saving throws. A target has half cover if an obstacle blocks at least half of its body, such as a low wall or a creature of the same size category.",
+                                    "parent": "ieffect",
+                                    "effects": {
+                                      "ac_bonus": 3
+                                    }
+                                  }
+                                ],
+                                "onFalse": [
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Telekinetic Shield - Cover",
+                                    "desc": "A target with one-quarter cover has a +2 bonus to AC and Dexterity saving throws. A target has one-quarter cover if an obstacle blocks at least one-fourth of its body, such as a thin pillar or a creature of one size category smaller.",
+                                    "parent": "ieffect",
+                                    "effects": {
+                                      "ac_bonus": 2
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "ieffect2",
+          "name": "Telekinetic Shield - Cover",
+          "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
+          "parent": "peff",
+          "effects": {
+            "ac_bonus": 5
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \n\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\n\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd."
     }
   ],
   "_v": 2,
   "proper": true,
-  "verb": "Uses Cursed Technique",
-  "phrase": "Charging",
   "activation_type": 3
 }

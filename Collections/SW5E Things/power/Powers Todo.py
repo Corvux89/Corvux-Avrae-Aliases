@@ -1,4 +1,3 @@
-# TODO: (SW) Antipathy/Sympathy
 # TODO: Armor of Abeloth
 # TODO: Assess the Situation
 # TODO: (SW) Aura of Purity
@@ -220,7 +219,6 @@
 # TODO: Sever Force
 # TODO: Shadow Sight
 # TODO: Share Life
-# TODO: (SW) Shatter
 # TODO: Shocking Ray
 # TODO: Shocking Shield
 # TODO: Short Circuit
