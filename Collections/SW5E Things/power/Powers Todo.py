@@ -251,7 +251,6 @@
 # TODO: Tech Override
 # TODO: (SW) Telekinesis
 # TODO: Telekinetic Burst
-# TODO: Telekinetic Shield
 # TODO: Telekinetic Wave
 # TODO: Telemetry
 # TODO: Tonal Translocate

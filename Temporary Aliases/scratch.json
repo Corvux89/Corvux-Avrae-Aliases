@@ -35,11 +35,6 @@
                     "value": "int(ieffect.desc.split()[-1])-(max(len(ieffect.children)-1,0))-len(targets)"
                   },
                   {
-                    "type": "text",
-                    "title": "Debug",
-                    "text": "numpiles: {numPiles}\nStarting amount: {ieffect.desc.split()[-1]}"
-                  },
-                  {
                     "type": "condition",
                     "condition": "numPiles < 0",
                     "onTrue": [
@@ -77,13 +72,8 @@
                         "target": "self",
                         "effects": [
                           {
-                            "type": "variable",
-                            "name": "numPiles2",
-                            "value": "numPiles"
-                          },
-                          {
                             "type": "condition",
-                            "condition": "numPiles2 >= 3",
+                            "condition": "numPiles >= 3",
                             "onTrue": [
                               {
                                 "type": "ieffect2",
@@ -98,7 +88,7 @@
                             "onFalse": [
                               {
                                 "type": "condition",
-                                "condition": "numPiles2 == 2",
+                                "condition": "numPiles == 2",
                                 "onTrue": [
                                   {
                                     "type": "ieffect2",
@@ -125,7 +115,11 @@
                             ]
                           }
                         ]
-                      }
+                      },
+                      {
+      "type": "text",
+      "text": "***# of Piles***: {numPiles}"
+    }
                     ]
                   }
                 ]
@@ -141,12 +135,20 @@
           "effects": {
             "ac_bonus": 5
           }
-        }
+        },
+        {
+      "type": "text",
+      "text": "***# of Piles***: {numPiles}"
+    }
       ]
     },
     {
       "type": "text",
       "text": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \n\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\n\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd."
+    },
+    {
+      "type": "text",
+      "text": "***# of Piles***: {numPiles}"
     }
   ],
   "_v": 2,
