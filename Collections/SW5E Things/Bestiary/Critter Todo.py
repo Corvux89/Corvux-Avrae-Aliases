@@ -1,3 +1,24 @@
+# TODO 000 Series Protocol Droid: Torturous Strike
+# TODO 1.4 FD P-Tower Turret: Laser Cannon
+# TODO AT-AT: Laser Cannon Volley
+# TODO AT-AT: Stomp
+# TODO AT-AT: Frightful Presence
+# TODO AT-RT: Mortar Launcher
+# TODO AT-ST: Stomp
+# TODO AT-ST: Frightful Presence
+# TODO AT-TE: Laser Cannon Volley
+# TODO AX-108 Sentry Gun: Repeating Blaster Burst
+# TODO Adolescent Dianoga: Tentacles
+# TODO Adolescent Dianoga: Bite
+# TODO Adolescent Exogorth: Bite
+# TODO Adolescent Exogorth: Tail
+# TODO Adolescent Rancor: Bite
+# TODO Adult Bantha: Stomp
+# TODO Adult Dianoga: Bite
+# TODO Adult Dianoga: Tentacles
+# TODO Adult Dianoga: Tentacle Slam
+# TODO Adult Exogorth: Bite
+# TODO Adult Exogorth: Tail
 # TODO Adult Rancor: Bite
 # TODO Adult Rancor: Swallow
 # TODO Ancient Rancor: Bite
@@ -31,17 +52,21 @@
 # TODO DF.9 Anti-Infantry Turret: Laser Cannon
 # TODO DSD1 Dwarf Spider Droid: Burst
 # TODO DSD1 Dwarf Spider Droid: Self-Destruct
+# TODO Dark Side Spirit: Whispers of Madness
+# TODO Dark Side Spirit: Howling Babble
 # TODO Death Trooper: Volley
 # TODO Destroyer Droid: Blaster Volley
 # TODO Energy Spider: Web
 # TODO Fambaa: Stomp
 # TODO Fambaa Howdah: Stomp
 # TODO Fexian Skullborer: Bite
+# TODO Fexian Skullborer: Extract Brain
 # TODO Force Storm Eye: Lightning Storm
 # TODO GH-7 Medical Analysis Unit: Administer Antidote (1/rest)
 # TODO Ghest: Bite
 # TODO Ghest: Swallow
 # TODO Giant Worrt: Bite
+# TODO Giant Worrt: Swallow
 # TODO Pit Gladiator: Shield Bash
 # TODO Pit Gladiator: Are You Not Entertained?
 # TODO Gorax: Stomp
@@ -50,10 +75,14 @@
 # TODO Trooper, Heavy Assault: Rotary Cannon (Burst)
 # TODO Trooper, Heavy Assault: Rotary Cannon (Rapid)
 # TODO Hive Rat: Bite
+# TODO Hssiss: Bite
+# TODO Hssiss: Claws
 # TODO Hulking Rakghoul: Bite
 # TODO Hulking Rakghoul: Claws
 # TODO Hutt Crime Lord: Slam
+# TODO Hutt Crime Lord: Tail
 # TODO Hutt Wrestler: Slam
+# TODO Hutt Wrestler: Tail
 # TODO Hutt Wrestler: Crush
 # TODO Hyena-Class Bomber: Concussion Missile (4/maintenance)
 # TODO Hyena-Class Bomber: Proton Torpedo (4/maintenance)
@@ -87,6 +116,7 @@
 # TODO Maalraas: Bite
 # TODO Manifestation of Abeloth: Tentacles
 # TODO Manifestation of Abeloth: Will
+# TODO Melee Destroyer Droid: Claws
 # TODO Melee Destroyer Droid: Rend
 # TODO Mistryl Apprentice: Mistryl Unarmed Strikes
 # TODO Mistryl Apprentice: Dart
@@ -105,8 +135,10 @@
 # TODO Rakghoul, Hulking: Claws
 # TODO Rathtar: Bite
 # TODO Rathtar: Flailing Arms
+# TODO Rathtar: Consume
 # TODO Rathtar: Grasping Tentacles
 # TODO Rathtar, Dwarf: Flailing Arms
+# TODO Ronto: Stomp
 # TODO Rock Wart: Bite
 # TODO Sando Aqua Monster: Bite
 # TODO Sando Aqua Monster: Frightful Presence
@@ -123,9 +155,12 @@
 # TODO Starweird: Telepathic Scream (1/Day)
 # TODO Steep: Bite
 # TODO Swamp Slug: Bite
+# TODO Swamp Slug: Swallow
 # TODO Swamp Wampa: Bite
 # TODO TX-225 Occupier Tank: Blaster Cannon Volley (Recharge 5-6)
 # TODO TX-225 Occupier Tank: Frightful Presence
+# TODO Terentatek: Tusks
+# TODO Terentatek: Claws
 # TODO Mercenary Thug: Burst
 # TODO Trandoshan Elite Warrior: Burst
 # TODO Trandoshan Huntmaster: Shield Bash
@@ -161,6 +196,9 @@
 # TODO Wyyyschokk: Bite
 # TODO Wyyyschokk: Web (Recharge 5-6)
 # TODO Zombie, Swarm: Flesh Entomb (5-6)
+# TODO Trooper, Engineer: Ion Carbine
+# TODO Trooper, Engineer: Hold-out
+# TODO Trooper, Engineer: Electroshock
 # TODO Trooper, Rocket Assault: Rocket Launcher (Fragmentation) (5/Day)
 # TODO Trooper, Rocket Assault: Rocket Launcher (Ion) (1/Day)
 # TODO E-XD-Series Infiltrator Droid: Strike
@@ -171,10 +209,20 @@
 # TODO Trooper, EVO: Flechette Cannon
 # TODO Trooper, Shadow EVO: Burst
 # TODO Trooper, Shadow EVO: Flechette Cannon
+# TODO Dark Trooper, Phase 0: Blaster Volley (Recharge 5-6)
+# TODO Dark Trooper, Phase 0: Frag Grenade (1/day)
+# TODO Dark Trooper, Phase I: Shield Bash
+# TODO Dark Trooper, Phase II: Assault Cannon Barrage (Recharge 5-6)
+# TODO Dark Trooper, Phase II: Underslung Missile Launcher
+# TODO Dark Trooper, Phase III: Assault Cannon Barrage (Recharge 5-6)
+# TODO Dark Trooper, Phase III: Shoulder Missile Launcher
+# TODO Dark Trooper, Phase III: Shoulder Missile Barrage (Recharge 5-6)
+# TODO Dark Trooper, Phase III: Frag Grenade (5/day)
 # TODO Cultist, Electromancer: Charged Touch
 # TODO Cultist, Master: Charged Touch
 # TODO Roggwart: Claw
 # TODO Roggwart: Frightening Presence
+# TODO Fireteam: B2-A Super Battle Droid: Wrist Blaster Volley (Recharge 6)
 # TODO Fireteam: Trooper: Massed Fire
 # TODO Trooper, Demolitions: Fragmentation Grenade (3/day)
 # TODO Trooper, Demolitions: Set Mine (2/day)
@@ -184,3 +232,9 @@
 # TODO Squad: Trooper, Demolitions: Breaching Charge (4/day)
 # TODO Fireteam: Trooper, Flame: Flamethrower
 # TODO Squad: Trooper, Flame: Flamethrower
+# TODO Zombie, Alchemy: Claws
+# TODO TIE/IN New Republic: Missile launcher (4/day)
+# TODO Z-95-NR Headhunter: Missile Launcher (8/day)
+# TODO TIE/sa Bomber: Missile Launcher - Rapid
+# TODO TIE/sa Bomber: Missile Launcher - Burst
+# TODO TIE/sa Bomber: Bomb Deployer

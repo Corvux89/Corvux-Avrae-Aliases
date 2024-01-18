@@ -18172,19 +18172,6 @@
     "name": "Telekinetic Shield",
     "level": 3,
     "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \r\n\r\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\r\n\r\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd.",
-    "concentration": true,
     "automation": [
       {
         "type": "variable",
@@ -18206,14 +18193,11 @@
           {
             "type": "ieffect2",
             "name": "Debris Piles",
-            "desc": "{numPiles}",
-            "save_as": "peff",
-            "parent": "ieffect",
             "attacks": [
               {
                 "attack": {
-                  "name": "Telekinetic Shield - Fire Pile",
                   "_v": 2,
+                  "name": "Telekinetic Shield - Fire Pile",
                   "automation": [
                     {
                       "type": "variable",
@@ -18236,7 +18220,6 @@
                           "effects": [
                             {
                               "type": "attack",
-                              "miss": [],
                               "hit": [
                                 {
                                   "type": "damage",
@@ -18246,10 +18229,11 @@
                                   "type": "ieffect2",
                                   "name": "Debris Piles",
                                   "stacking": true,
-                                  "target_self": true,
-                                  "parent": "ieffect"
+                                  "parent": "ieffect",
+                                  "target_self": true
                                 }
-                              ]
+                              ],
+                              "miss": []
                             }
                           ]
                         },
@@ -18264,11 +18248,11 @@
                                 {
                                   "type": "ieffect2",
                                   "name": "Telekinetic Shield - Cover",
-                                  "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
-                                  "parent": "ieffect",
                                   "effects": {
-                                    "ac_bonus": 5
-                                  }
+                                    "ac_bonus": "5"
+                                  },
+                                  "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
+                                  "parent": "ieffect"
                                 }
                               ],
                               "onFalse": [
@@ -18279,22 +18263,22 @@
                                     {
                                       "type": "ieffect2",
                                       "name": "Telekinetic Shield - Cover",
-                                      "desc": "A target with half cover has a +3 bonus to AC and Dexterity saving throws. A target has half cover if an obstacle blocks at least half of its body, such as a low wall or a creature of the same size category.",
-                                      "parent": "ieffect",
                                       "effects": {
-                                        "ac_bonus": 3
-                                      }
+                                        "ac_bonus": "3"
+                                      },
+                                      "desc": "A target with half cover has a +3 bonus to AC and Dexterity saving throws. A target has half cover if an obstacle blocks at least half of its body, such as a low wall or a creature of the same size category.",
+                                      "parent": "ieffect"
                                     }
                                   ],
                                   "onFalse": [
                                     {
                                       "type": "ieffect2",
                                       "name": "Telekinetic Shield - Cover",
-                                      "desc": "A target with one-quarter cover has a +2 bonus to AC and Dexterity saving throws. A target has one-quarter cover if an obstacle blocks at least one-fourth of its body, such as a thin pillar or a creature of one size category smaller.",
-                                      "parent": "ieffect",
                                       "effects": {
-                                        "ac_bonus": 2
-                                      }
+                                        "ac_bonus": "2"
+                                      },
+                                      "desc": "A target with one-quarter cover has a +2 bonus to AC and Dexterity saving throws. A target has one-quarter cover if an obstacle blocks at least one-fourth of its body, such as a thin pillar or a creature of one size category smaller.",
+                                      "parent": "ieffect"
                                     }
                                   ]
                                 }
@@ -18311,16 +18295,19 @@
                   ]
                 }
               }
-            ]
+            ],
+            "desc": "{numPiles}",
+            "save_as": "peff",
+            "parent": "ieffect"
           },
           {
             "type": "ieffect2",
             "name": "Telekinetic Shield - Cover",
-            "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
-            "parent": "peff",
             "effects": {
-              "ac_bonus": 5
-            }
+              "ac_bonus": "5"
+            },
+            "desc": "A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarter cover if about three-quarters of it is obstructed, whether by an obstacle or a creature of one size category larger.",
+            "parent": "peff"
           },
           {
             "type": "text",
@@ -18336,6 +18323,19 @@
         "type": "text",
         "text": "***# of Piles***: {numPiles}"
       }
-    ]
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \r\n\r\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\r\n\r\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd.",
+    "concentration": true
   }
 ]

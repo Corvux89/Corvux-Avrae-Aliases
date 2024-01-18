@@ -1,0 +1,38 @@
+{
+  "name": "Torturous Strike",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "1d4 [kinetic]",
+              "overheal": false
+            },
+            {
+              "type": "ieffect",
+              "name": "Shocked",
+              "duration": "1",
+              "effects": "",
+              "end": true,
+              "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+            }
+          ],
+          "miss": [],
+          "attackBonus": "3"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "*Melee Weapon Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 2 (1d4) kinetic damage and, if the target is a creature, the creature is shocked until the end of its next turn.",
+      "title": "Effect"
+    }
+  ],
+  "_v": 2,
+  "activation_type": 1
+}
