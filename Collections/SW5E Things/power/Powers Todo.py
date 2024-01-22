@@ -1,4 +1,3 @@
-# TODO: Armor of Abeloth
 # TODO: Assess the Situation
 # TODO: (SW) Aura of Purity
 # TODO: Aura of Vigor

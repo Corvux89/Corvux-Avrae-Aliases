@@ -1,9 +1,7 @@
 import json
 import urllib.request
 
-to_automate_keywords = ["saving throw", "dc", "shocked", "paralyzed", "poisoned", "blinded", "charmed", "corroded",
-                        "deafened", "diseased", "exhaustion", "frightened", "grappled", "ignited", "incapacitated",
-                        "paralyzed", "petrified", "prone", "restrained", "slowed", "stunned", "weakened"]
+to_automate_keywords = ["saving throw", "dc", "shocked until"]
 def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
     url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
     r = urllib.request.urlopen(url)
@@ -50,7 +48,17 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
 
         for a in actions:
             if any(x in a.get('description').lower() for x in to_automate_keywords):
-                s = {"name": mon.get('name'), 'ability': a.get('name')}
+                try:
+                    auto=a.get('automation',{}).get('automation', [])
+                except:
+                    auto=[]
+                    pass
+                auto_type = []
+                for obj in auto:
+                    get_type(obj, auto_type)
+
+                s = {"name": mon.get('name'), 'ability': a.get('name'),
+                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable"]) else False}
                 saveAuto.append(s)
 
     with open(fileName, "w") as outfile:
@@ -68,9 +76,28 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
 
     with open("Critter Todo.py", "w") as outfile:
         for x in autoMon:
-            outfile.write(f"# TODO {x.get('name')}: {x.get('ability')}\n")
+            if x['complete'] == False:
+                outfile.write(f"# TODO {x.get('name')}: {x.get('ability')}\n")
 
-    print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {len(saveAuto)}\n')
+    print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {sum(x["complete"] == False for x in saveAuto)} out of {len(saveAuto)}\n')
+
+def get_type(object, type_list):
+    obj_type = object.get('type')
+
+    if obj_type:
+        type_list.append(obj_type)
+        if obj_type == "ieffect2":
+            return
+
+    if "effects" in object.keys():
+        for child in object["effects"]:
+            get_type(child, type_list)
+    elif "automation" in object.keys():
+        for child in object["automation"]:
+            get_type(child, type_list)
+    elif "hit" in object.keys():
+        for child in object["hit"]:
+            get_type(child,type_list)
 
 processBestiaryBuilderAPI("65a99d77e03abba02d8599c1",'KFC Ground.json', "w")
 processBestiaryBuilderAPI("65a9a0e2b4f2853f0d4cbba4",'KFC Space.json', "a")

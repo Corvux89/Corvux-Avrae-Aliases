@@ -330,11 +330,11 @@ def multiclass(counters, inLevel):
             tpMod.append(modifier)
 
     if fp > 0:
-        ch.edit_cc("Force Points", 0, f"{fp} + {max({','.join(fpMod)}) if len(fpMod) > 1 else fpMod[0]}")
+        ch.edit_cc("Force Points", 0, f'''{fp} + {f"max({','.join(fpMod)})" if len(fpMod) > 1 else fpMod[0]}''')
         ch.set_cc("Force Points", ch.get_cc_max("Force Points"))
 
     if tp > 0:
-        ch.edit_cc("Tech Points", 0, f"{tp} + {max({','.join(tpMod)}) if len(tpMod) > 1 else tpMod[0]}")
+        ch.edit_cc("Tech Points", 0, f'''{tp} + {f"max({','.join(tpMod)})" if len(tpMod) > 1 else tpMod[0]}''')
         ch.set_cc("Tech Points", ch.get_cc_max("Tech Points"))
 
 def translate_str(val, class_str, level):

@@ -147,24 +147,6 @@
     "concentration": true
   },
   {
-    "name": "Armor of Abeloth",
-    "level": 1,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 hour",
-    "ritual": false,
-    "description": "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot.",
-    "concentration": false
-  },
-  {
     "name": "Assess the Situation",
     "level": 0,
     "school": "Tech",
@@ -18337,5 +18319,76 @@
     "ritual": false,
     "description": "You lift three piles of debris or small objects from the ground and interpose them between you and your opponents for the duration. \r\n\r\nWhile at least three piles remain, you have three-quarters cover. While two piles remain, you have half cover. While only one pile remains, you have one-quarter cover. The piles don't hinder your attacks. When you cast the power, or as an action on a subsequent turn, you can direct up to two piles to attack up to two creatures you can see within 30 feet. Make a ranged force attack roll for each pile. On a hit, a creature takes 2d6 kinetic plus 1d10 force damage. The pile is destroyed whether it hits or misses.\r\n\r\n***Force Potency.*** If you cast this power with a force slot of 4th level or higher, the power creates one additional pile for each level above 3rd.",
     "concentration": true
+  },
+  {
+    "name": "Armor of Abeloth",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "temphp",
+            "amount": "5",
+            "higher": {
+              "2": "5",
+              "3": "10",
+              "4": "15",
+              "5": "20",
+              "6": "25",
+              "7": "30",
+              "8": "35",
+              "9": "40"
+            }
+          },
+          {
+            "type": "ieffect2",
+            "name": "Armor of Abeloth - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Armor of Abeloth - Damage",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc.split()[-1]} [psychic]"
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              }
+            ],
+            "desc": "You gain {lastTempHp} temporary hit points for the duration\n -If a creature hits you with a melee attack while you have these hit points, the creature takes {lastTempHp} psychic damage.\n{lastTempHp}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot.",
+    "concentration": false
   }
 ]
