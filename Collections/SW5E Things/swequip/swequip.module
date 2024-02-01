@@ -237,6 +237,10 @@ def processAttacks(attacks, args):
         # Class Specific Overrides
         if "Focus" in subclasses:
             level = max(int(c.levels.get("Sentinellight",0)), int(c.levels.get("Sentineldark",0)),0)
+
+            if args.get('dev'):
+                return err(level)
+
             bs = weap.blade_storm(attack, level, args)
             if bs:
                 out.append(load_json(bs))

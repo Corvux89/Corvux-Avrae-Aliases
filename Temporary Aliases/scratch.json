@@ -3,13 +3,14 @@
   "_v": 2,
   "automation": [
     {
-      "type": "variable",
-      "value": "pickMe[2]",
-      "name": "test"
-    },
-    {
-      "type": "text",
-      "text": "Value: {test}"
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "damage",
+          "damage": "2 [piercing]"
+        }
+      ]
     }
   ]
 }

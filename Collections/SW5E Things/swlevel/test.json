@@ -1,7 +1,29 @@
 {
-  "name": "Scholar Offensive Augment",
-  "modCounter": {
-      "name": "Superiority Dice",
-      "modifier": 1
+  "name": "Blade Storm - Strength",
+  "_v": 2,
+  "activation_type": 2,
+  "automation": [
+    {
+      "type": "variable",
+      "value": "{max(caster.levels.get('Sentinellight'),caster.levels.get('Sentineldark'),0)}",
+      "name": "sentinelLevel"
+    },
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "attack",
+          "hit": [],
+          "miss": [],
+          "attackBonus":
+        },
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Blade Storm",
+      "text": "Your bursts become even more overwhelming. Once on your turn, when a creature takes damage from you twice, you can immediately make one additional attack against that creature (no action required). This attack uses your Kinetic Combat die instead of the weapon’s damage die."
     }
+  ]
 }

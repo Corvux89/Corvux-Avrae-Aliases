@@ -1,111 +1,5 @@
 [
   {
-    "name": "Force Barrier",
-    "level": 2,
-    "school": "Force",
-    "automation": [
-      {
-        "type": "variable",
-        "name": "hp",
-        "value": "5",
-        "higher": {
-          "3": "10",
-          "4": "15",
-          "5": "20",
-          "6": "25",
-          "7": "30",
-          "8": "35",
-          "9": "40"
-        }
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Force Barrier",
-            "duration": "4800",
-            "effects": {
-              "max_hp_bonus": "{hp}"
-            }
-          },
-          {
-            "type": "damage",
-            "damage": "-{hp} [healing]",
-            "overheal": false
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\n\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
-      }
-    ],
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "8 hours",
-    "ritual": false,
-    "description": "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
-    "concentration": false
-  },
-  {
-    "name": "Improved Force Barrier",
-    "level": 5,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "10 minutes",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\r\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\r\n- The creature becomes immune to being frightened by powers.\r\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\r\n\r\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "2d10",
-        "name": "healAmt"
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Improved Force Barrier",
-            "desc": "Immune to poison and disease\n - Immune to being frightened by powers \n - Hit point maximum and current HP increase by {healAmt}",
-            "duration": "-1",
-            "effects": {
-              "max_hp_bonus": "{healAmt}"
-            }
-          },
-          {
-            "type": "damage",
-            "damage": "-{healAmt} [healing]",
-            "overheal": false
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\n- The creature becomes immune to being frightened by powers.\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\n\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first."
-      }
-    ]
-  },
-  {
     "name": "Master Force Barrier",
     "level": 8,
     "school": "Force",
@@ -126,7 +20,53 @@
       {
         "type": "target",
         "target": "each",
-        "effects": []
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Master Force Barrier - Parent",
+            "parent": "ieffect",
+            "desc": "Sheds dim light in a 5-foot radius\n - Advantage on all saving throws\n - Other creatures have disadvantage on attack rolls against them\n - When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
+            "effects": {
+              "save_adv": [
+                "all"
+              ]
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Master Force Barrier - Dark Side Melee Attacker",
+                  "_v": 2,
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "success": [],
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Blinded",
+                              "parent": "ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends."
+                    }
+                  ],
+                  "activation_type": 2
+                },
+                "defaultDC": "spell_dc"
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "text",
