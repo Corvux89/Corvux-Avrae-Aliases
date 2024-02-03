@@ -1,3 +1,32 @@
+# TODO: Missing Adrenaline
+# TODO: Missing Construct Droid
+# TODO: Missing Cryogenic Blow
+# TODO: Missing Delayed Detonator
+# TODO: Missing Disassemble
+# TODO: Missing Fabricate
+# TODO: Missing Force Intuition
+# TODO: Missing Greater Kinetite
+# TODO: Missing Improved Kinetite
+# TODO: Missing Irradiate
+# TODO: Missing Itemize
+# TODO: Missing Jump
+# TODO: Missing Jump Pad
+# TODO: Missing Kinetite
+# TODO: Missing Land Stride
+# TODO: Missing Lesser Mislead
+# TODO: Missing Mutate/Augment
+# TODO: Missing Probe Mind
+# TODO: Missing Pull Earthward
+# TODO: Missing Reveal Shatterpoint
+# TODO: Missing Saber Dance
+# TODO: Missing Spectrum Discharge
+# TODO: Missing Squad Shield
+# TODO: Missing Tapas
+# TODO: Missing Telepathic Link
+# TODO: Missing Transposition
+# TODO: Missing Tune-up
+# TODO: Missing Wakefulness
+# TODO: Missing Wire Tow
 # TODO: Assess the Situation
 # TODO: (SW) Aura of Purity
 # TODO: Aura of Vigor

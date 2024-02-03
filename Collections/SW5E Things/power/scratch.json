@@ -1,77 +1,83 @@
-[
-  {
-    "name": "Master Force Barrier",
-    "level": 8,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "This power massively bolsters your allies with toughness and resolve. Creatures of your choice in a 30-foot radius around you when you cast this power gain the following benefits:\r\n- The creature sheds dim light in a 5-foot radius.\r\n- The creature has advantage on all saving throws\r\n- Other creatures have disadvantage on attack rolls against them.\r\n- When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
-    "concentration": true,
-    "automation": [
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Master Force Barrier - Parent",
-            "parent": "ieffect",
-            "desc": "Sheds dim light in a 5-foot radius\n - Advantage on all saving throws\n - Other creatures have disadvantage on attack rolls against them\n - When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
-            "effects": {
-              "save_adv": [
-                "all"
-              ]
-            },
-            "attacks": [
-              {
-                "attack": {
-                  "name": "Master Force Barrier - Dark Side Melee Attacker",
-                  "_v": 2,
-                  "automation": [
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "save",
-                          "stat": "con",
-                          "success": [],
-                          "fail": [
-                            {
-                              "type": "ieffect2",
-                              "name": "Blinded",
-                              "parent": "ieffect"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "text": "When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends."
-                    }
-                  ],
-                  "activation_type": 2
-                },
-                "defaultDC": "spell_dc"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "This power massively bolsters your allies with toughness and resolve. Creatures of your choice in a 30-foot radius around you when you cast this power gain the following benefits:\n- The creature sheds dim light in a 5-foot radius.\n- The creature has advantage on all saving throws\n- Other creatures have disadvantage on attack rolls against them.\n- When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends."
+{
+  "name": "Improved Kinetite",
+  "level": 4,
+  "school": "Force",
+  "classes": "Dark",
+  "subclasses": "",
+  "casttime": "1 action",
+  "range": "150 feet",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "up to 1 minute",
+  "ritual": false,
+  "description": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.",
+  "concentration": true,
+  "automation": [
+    {
+      "type": "variable",
+      "name": "bonusDie",
+      "value": "0",
+      "higher": {
+        "5": "1",
+        "6": "2",
+        "7": "3",
+        "8": "4",
+        "9": "5"
       }
-    ]
-  }
-]
+    },
+    {
+      "type": "roll",
+      "dice": "2d6",
+      "higher": {
+        "5": "1d6",
+        "6": "2d6",
+        "7": "3d6",
+        "8": "4d6",
+        "9": "5d6"
+      },
+      "name": "damage"
+    },
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Improved Kinetite - Parent",
+          "desc": "{bonusDie}",
+          "attacks": [
+          ]
+        }
+      ]
+    },
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "str",
+          "success": [
+            {
+              "type": "damage",
+              "damage": "({damage}/2) [kinetic]"
+            }
+          ],
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "{damage} [kinetic]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "A 5-foot-diameter sphere of compressed lightning appears in an unoccupied space of your choice within range and lasts for the duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 lightning damage on a failed save, or half as much damage on a successful one.\n\nAs a bonus action, you can move the sphere up to 30 feet. If you ram the sphere into a creature, that creature must make a Dexterity saving throw, taking 2d6 kinetic damage on a failed save or half as much damage on a successful one, and the sphere stops moving this turn.\n\nWhen you move the sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.\n\nForce Potency. When you cast this power with a force slot of 3rd level or higher, both the lightning and kinetic damage increase by 1d6 for each slot level above 2nd."
+    }
+  ]
+}

@@ -1,6 +1,12 @@
 import json
+import urllib.request
+
+url = "https://sw5eapi.azurewebsites.net/api/power"
 
 f = open('spellbook.json', encoding='utf-8')
+r = urllib.request.urlopen(url)
+site_spells = json.load(r)
+site_list = [x.get('name') for x in site_spells]
 
 spells = json.load(f)
 out_dict = {}
@@ -22,10 +28,21 @@ for sp in spells:
     else:
         out_dict["todo"].append(sp.get('name'))
 
+    formatted_name = sp.get('name').replace('(SW) ', '')
 
-print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\nForce Powers: {out_dict['Force']}\nTech Power: {out_dict['Tech']}")
+    if formatted_name in site_list:
+        site_list.remove(formatted_name)
+
+
+print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
+      f"Force Powers: {out_dict['Force']}\n"
+      f"Tech Power: {out_dict['Tech']}\n"
+      f"Missing Powers: {len(site_list)}")
 
 
 with open("Powers Todo.py", "w") as outfile:
+    for x in site_list:
+        outfile.write(f"# TODO: Missing {x}\n")
+
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")

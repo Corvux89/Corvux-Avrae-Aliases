@@ -147,24 +147,6 @@
     "concentration": true
   },
   {
-    "name": "Assess the Situation",
-    "level": 0,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 round",
-    "ritual": false,
-    "description": "You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\r\n\r\nThis power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level.",
-    "concentration": true
-  },
-  {
     "name": "(SW) Aura of Purity",
     "level": 4,
     "school": "Force",
@@ -2502,24 +2484,6 @@
     "concentration": false
   },
   {
-    "name": "Improved Force Barrier",
-    "level": 5,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "10 minutes",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\r\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\r\n- The creature becomes immune to being frightened by powers.\r\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\r\n\r\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first.",
-    "concentration": false
-  },
-  {
     "name": "Improved Force Immunity",
     "level": 6,
     "school": "Force",
@@ -3058,24 +3022,6 @@
     "ritual": false,
     "description": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
     "concentration": false
-  },
-  {
-    "name": "Master Force Barrier",
-    "level": 8,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "This power massively bolsters your allies with toughness and resolve. Creatures of your choice in a 30-foot radius around you when you cast this power gain the following benefits:\r\n- The creature sheds dim light in a 5-foot radius.\r\n- The creature has advantage on all saving throws\r\n- Other creatures have disadvantage on attack rolls against them.\r\n- When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
-    "concentration": true
   },
   {
     "name": "Master Force Immunity",
@@ -18390,5 +18336,187 @@
     "ritual": false,
     "description": "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot.",
     "concentration": false
+  },
+  {
+    "name": "Assess the Situation",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numAttacks",
+        "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Assess the Situation - Parent",
+            "duration": "1",
+            "desc": "Sensory snapshot taken. Advantage on the next {numAttacks} attack{'s' if numAttacks > 1 else ''} against the target.",
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Assessed by [name]",
+            "desc": "[name] has advantage on the next {numAttacks} attack{'s' if numAttacks > 1 else ''}.",
+            "parent": "peff"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\n\nThis power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level.\n\n**# of Attacks:** {numAttacks}"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 round",
+    "ritual": false,
+    "description": "You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\r\n\r\nThis power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Force Barrier",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d10",
+        "name": "healAmt"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Force Barrier",
+            "duration": "-1",
+            "effects": {
+              "immunities": [
+                "poison",
+                "disease"
+              ],
+              "max_hp_bonus": "{healAmt}"
+            },
+            "desc": "Immune to poison and disease\n - Immune to being frightened by powers \n - Hit point maximum and current HP increase by {healAmt}"
+          },
+          {
+            "type": "damage",
+            "damage": "-{healAmt} [healing]",
+            "overheal": false
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\n- The creature becomes immune to being frightened by powers.\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\n\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "10 minutes",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "This power further bolsters your allies with toughness and resolve. Choose up to twelve creatures within range. Each target gains the following benefits:\r\n- The becomes immune to poison and disease. Any currently existing poison or diseases still exist.\r\n- The creature becomes immune to being frightened by powers.\r\n- The creature's hit point maximum and current hit points increase by 2d10 for the duration.\r\n\r\nThese benefits last for 24 hours or until the end of your next long rest, whichever happens first.",
+    "concentration": false
+  },
+  {
+    "name": "Master Force Barrier",
+    "level": 8,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Master Force Barrier - Parent",
+            "effects": {
+              "save_adv": [
+                "all"
+              ]
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Master Force Barrier - Dark Side Melee Attacker",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "con",
+                          "fail": [
+                            {
+                              "type": "ieffect2",
+                              "name": "Blinded",
+                              "parent": "ieffect"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends."
+                    }
+                  ],
+                  "activation_type": 2
+                },
+                "defaultDC": "spell_dc"
+              }
+            ],
+            "desc": "Sheds dim light in a 5-foot radius\n - Advantage on all saving throws\n - Other creatures have disadvantage on attack rolls against them\n - When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "This power massively bolsters your allies with toughness and resolve. Creatures of your choice in a 30-foot radius around you when you cast this power gain the following benefits:\n- The creature sheds dim light in a 5-foot radius.\n- The creature has advantage on all saving throws\n- Other creatures have disadvantage on attack rolls against them.\n- When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "This power massively bolsters your allies with toughness and resolve. Creatures of your choice in a 30-foot radius around you when you cast this power gain the following benefits:\r\n- The creature sheds dim light in a 5-foot radius.\r\n- The creature has advantage on all saving throws\r\n- Other creatures have disadvantage on attack rolls against them.\r\n- When a dark side creature hits them with a melee attack, that creature must make a Constitution saving throw or be blinded until the power ends.",
+    "concentration": true
   }
 ]
