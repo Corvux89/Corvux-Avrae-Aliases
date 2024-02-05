@@ -55,6 +55,23 @@
     "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|Prerequisite: The ability to cast tech powers\n\nWhen a creature makes a saving throw against a tech power you cast, you may expend a superiority die, subtracting the number rolled from their total.\""
   },
   {
+    "name": "Befogging Ichor",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Befogging Ichor!\" #desc#",
+    "validUse": "-f \"Meta|**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can use a bonus action to expend a superiority die. When you do so, choose a creature you can see within 30 feet of you. The target must make a Wisdom saving throw. On a failed save, the target can’t take reactions until the start of its next turn and on its turn must use its movement to move half its speed in a random direction. Roll a d8 and assign a direction to each face. If the direction rolled is blocked, the target doesn’t move.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "wis",
+      "fail": {
+        "effect": {
+          "name": "Befogging Ichor",
+          "desc": "The target can’t take reactions until the start of its next turn and on its turn must use its movement to move half its speed in a random direction. Roll a d8 and assign a direction to each face. If the direction rolled is blocked, the target doesn’t move.",
+          "duration": "1"
+        }
+      }
+    }
+  },
+  {
     "name": "Body over Bother",
     "sub": "Physical",
     "desc": "-title \"#name# #uses# Body over Bother!\" #desc#",
@@ -67,6 +84,13 @@
     "validUse": "-f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nIf you are surprised at the start of combat and aren’t incapacitated, you can expend one superiority die to act normally.\n\n**Improved**\nWhen you use your Call to Arms maneuver, you can roll the superiority die and extend the benefits of the maneuver to a number of allies up to the result of the roll, provided those allies can see or hear you.\""
   },
   {
+    "name": "Call the Guards",
+    "sub": "Mental",
+    "desc": "-title \"#name# Calls the Guards!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange\" -f \"Effect|*Prerequisite: Proficiency in Persuasion*\n\nWhen a creature makes an attack roll against you, you can use your reaction and expend a superiority die and command a willing ally within 5 feet of that creature to use their reaction to intercede. The creature is then forced to make an attack on the ally instead. If the attack misses, the ally can immediately make a weapon attack against that creature as a part of that same reaction. Roll the superiority die, and add the result to the ally’s attack roll.\""
+  },
+  {
     "name": "Calling Card",
     "sub": "Physical",
     "desc": "-title \"#name# #uses# Calling Card!\" #desc# -footer \"#combatantFooter#\"",
@@ -77,6 +101,23 @@
       "type": "dex",
       "fail": {
         "damage": "#diceTotal#"
+      }
+    }
+  },
+  {
+    "name": "Chains of Transfixing",
+    "sub": "Mental",
+    "desc": "-title \"#name# #uses# Chains of Transfixing!\" #desc#",
+    "validUse": "-f \"Meta|**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can use a bonus action to expend a superiority die. When you do so, choose a creature you can see within 30 feet of you that is no more than one size larger than you. The target must succeed on a Strength saving throw or gain four slowed levels until the start of your next turn.\"",
+    "save": {
+      "dc": "8+#prof_bonus#+#maneuverMod#",
+      "type": "str",
+      "fail": {
+        "effect": {
+          "name": "Chains of Transfixing",
+          "desc": "Gain four slowed levels",
+          "duration": "2"
+        }
       }
     }
   },
@@ -369,6 +410,13 @@
     }
   },
   {
+    "name": "Go Get 'Em",
+    "sub": "General",
+    "roll": "#superiorityDice#*5",
+    "desc": "-title \"#name# #uses# Go Get 'Em!\" #desc#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterchange#\" -f \"Effect|*Prerequisite: Companion*\n\nWhile your companion is moving, you can expend a superiority die and add 5 times the number rolled to its movement speed.\""
+  },
+  {
     "name": "Hacked Communications",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Hacked Communications!\" #desc# -footer \"#combatantFooter#\"",
@@ -487,7 +535,7 @@
     }
   },
   {
-    "name": "Mind over Matter",
+    "name": "Mind Over Matter",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Mind over Matter!\" #desc#",
     "roll": "#superiorityDice#",

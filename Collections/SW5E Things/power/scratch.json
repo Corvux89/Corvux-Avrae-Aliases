@@ -59,12 +59,51 @@
                     "type": "target",
                     "target": "each",
                     "effects": [
-
+                      {
+                        "type": "attack",
+                        "hit": [
+                          {
+                            "type": "damage",
+                            "damage": "{4+int(ieffect.desc.split()[-1])}d6 [lightning]"
+                          }
+                        ],
+                        "miss": []
+                      }
                     ]
                   },
                   {
                     "type": "text",
-                    "text": "Until the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage."
+                    "text": "Until the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes {4+int(ieffect.desc.split()[-1])}d6 lightning damage."
+                  }
+                ]
+              }
+            },
+            {
+              "attack": {
+                "name": "Improved Kinetite - End of Turn Damage",
+                "_v": 2,
+                "activation_type": 2,
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "each",
+                    "effects": [
+                      {
+                        "type": "save",
+                        "stat": "str",
+                        "success": [],
+                        "fail": [
+                          {
+                            "type": "damage",
+                            "damage": "{2+int(ieffect.desc.split()[-1])}d6 [kinetic]"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {2+int(ieffect.desc.split()[-1])}d6 kinetic damage. The sphere’s space is difficult terrain."
                   }
                 ]
               }

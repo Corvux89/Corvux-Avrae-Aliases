@@ -6,12 +6,10 @@
 # TODO: Missing Fabricate
 # TODO: Missing Force Intuition
 # TODO: Missing Greater Kinetite
-# TODO: Missing Improved Kinetite
 # TODO: Missing Irradiate
 # TODO: Missing Itemize
 # TODO: Missing Jump
 # TODO: Missing Jump Pad
-# TODO: Missing Kinetite
 # TODO: Missing Land Stride
 # TODO: Missing Lesser Mislead
 # TODO: Missing Mutate/Augment
@@ -27,7 +25,6 @@
 # TODO: Missing Tune-up
 # TODO: Missing Wakefulness
 # TODO: Missing Wire Tow
-# TODO: Assess the Situation
 # TODO: (SW) Aura of Purity
 # TODO: Aura of Vigor
 # TODO: Autonomous Servant
@@ -147,7 +144,6 @@
 # TODO: (SW) Illusory Terrain
 # TODO: Immolate
 # TODO: Implant Message
-# TODO: Improved Force Barrier
 # TODO: Improved Force Immunity
 # TODO: Improved Phasestrike
 # TODO: Improved Phasewalk
@@ -178,7 +174,6 @@
 # TODO: Mass Coerce Mind
 # TODO: Mass Hysteria
 # TODO: Mass Repair Droid
-# TODO: Master Force Barrier
 # TODO: Master Force Immunity
 # TODO: Master Malacia
 # TODO: Master Revitalize
