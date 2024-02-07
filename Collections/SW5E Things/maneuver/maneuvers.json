@@ -500,6 +500,13 @@
     "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Proficiency in Investigation*\n\nWhen you make an Investigation check, you can expend a superiority die, rolling the die and adding it to the d20 roll. You can wait until after rolling the d20 before doing so, but you must decide before the GM says whether the roll succeeds or fails.\""
   },
   {
+    "name": "Loyal Bond",
+    "sub": "General",
+    "desc": "-title \"#name# #uses# Loyal Bond!\" #desc#",
+    "roll": "#superiorityDice#",
+    "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|*Prerequisite: Companion*\n\nWhenever you are hit with an attack, you can expend one superiority die to command your companion to immediately use its reaction and move up to its speed directly towards you. If it ends this movement within 5 feet of you, roll the superiority die. Your companion takes the damage instead of you, subtracting the amount you rolled from the total.\""
+  },
+  {
     "name": "Lunging Attack",
     "sub": "Physical",
     "desc": "-title \"#name# #uses# Lunging Attack!\" #desc#",

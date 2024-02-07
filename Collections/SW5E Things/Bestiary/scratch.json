@@ -1,38 +1,93 @@
 {
-  "name": "Torturous Strike",
+  "name": "Swallow",
+  "_v": 2,
+  "activation_type": 1,
   "automation": [
+    {
+      "type": "target",
+      "target": "self",
+      "effects": [
+        {
+          "type": "ieffect2",
+          "name": "Swallowing - Parent",
+          "save_as": "peff",
+          "buttons": [
+            {
+              "label": "Start of Turn - Acid Damage",
+              "verb": "starts digesting.",
+              "style": 1,
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "children",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "6d6 [acid]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Save - Keep swallowing",
+              "verb": "tries to keep it in.",
+              "style": 4,
+              "automation": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "save",
+                      "stat": "con",
+                      "dc": "20",
+                      "success": [],
+                      "fail": [
+                        {
+                          "type": "remove_ieffect"
+                        },
+                        {
+                          "type": "text",
+                          "text": "Regurgitates all swallowed creatures, which fall prone in a space within 10 feet of the Rancor."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
           "type": "attack",
+          "attackBonus": 10,
+          "miss": [],
           "hit": [
             {
               "type": "damage",
-              "damage": "1d4 [kinetic]",
-              "overheal": false
+              "damage": "2d12+6 [kinetic]"
             },
             {
               "type": "ieffect2",
-              "name": "Shocked",
-              "duration": "1",
-              "effects": "",
-              "end": true,
-              "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+              "name": "Swallowed by {name}",
+              "parent": "peff",
+              "desc": "Gains 4 slowed levels, and is blinded and restrained."
             }
-          ],
-          "miss": [],
-          "attackBonus": "3"
+          ]
         }
       ]
     },
     {
       "type": "text",
-      "text": "*Melee Weapon Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 2 (1d4) kinetic damage and, if the target is a creature, the creature is shocked until the end of its next turn.",
-      "title": "Effect"
+      "title": "Effect",
+      "text": "The rancor makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the rancor, and it takes 21 (6d6) acid damage at the start of each of the rancor's turns.\nIf the rancor takes 25 damage or more on a single turn from a creature inside it, the Rancor must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the Rancor. If the Rancor dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 10 feet of movement, exiting prone."
     }
-  ],
-  "_v": 2,
-  "activation_type": 1
+  ]
 }

@@ -1,5 +1,3 @@
-# TODO Adult Rancor: Bite
-# TODO Adult Rancor: Swallow
 # TODO Ancient Rancor: Bite
 # TODO Ancient Rancor: Frightful Roar
 # TODO Ancient Rancor: Swallow
@@ -188,8 +186,8 @@
 # TODO Fireteam: Trooper, Flame: Flamethrower
 # TODO Squad: Trooper, Flame: Flamethrower
 # TODO Zombie, Alchemy: Claws
-# TODO TIE/IN New Republic: Missile launcher (4/day)
-# TODO Z-95-NR Headhunter: Missile Launcher (8/day)
-# TODO TIE/sa Bomber: Missile Launcher - Rapid
-# TODO TIE/sa Bomber: Missile Launcher - Burst
-# TODO TIE/sa Bomber: Bomb Deployer
+# TODO TIE/IN New Republic (old): Missile launcher (4/day)
+# TODO Z-95-NR Headhunter (old): Missile Launcher (8/day)
+# TODO TIE/sa Bomber (old): Missile Launcher - Rapid
+# TODO TIE/sa Bomber (old): Missile Launcher - Burst
+# TODO TIE/sa Bomber (old): Bomb Deployer

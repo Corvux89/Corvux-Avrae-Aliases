@@ -5,6 +5,7 @@ to_automate_keywords = ["saving throw", "dc", "shocked until"]
 def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
     url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
     r = urllib.request.urlopen(url)
+    print(f"URL: {url} loaded")
     data = json.load(r)
 
     count = 0
