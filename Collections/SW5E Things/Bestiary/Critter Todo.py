@@ -1,22 +1,3 @@
-# TODO Ancient Rancor: Bite
-# TODO Ancient Rancor: Frightful Roar
-# TODO Ancient Rancor: Swallow
-# TODO Anooba: Bite
-# TODO Armored Assault Tank (AAT): Ram
-# TODO Armored Assault Tank (AAT): Rocket Launchers
-# TODO Armored Assault Tank (AAT): Plasma Cannon
-# TODO Aqualish Enforcer: Burst
-# TODO B'Omarr Brain Walker: Mind Thrust
-# TODO B'Omarr Brain Walker: Daze (Recharge 5-6)
-# TODO Squad: B1-A Series Battle Droid: Massed Fire
-# TODO B2-A Super Battle Droid: Wrist Blaster Volley (Recharge 6)
-# TODO B2-HA Series Super Battle Droid: Wrist Blaster Volley (Recharge 5-6)
-# TODO B2-HA Series Super Battle Droid: Rocket Launcher (1/Day)
-# TODO Battle Hydra: Stinger
-# TODO Beggar's Canyon Womp Rat: Bite
-# TODO Blastromech Series, BT-1: Blaster Cannon
-# TODO Blastromech Series, BT-1: Flamethrower (2/day)
-# TODO Blastromech Series, BT-1: Rocket Barrage (2/Day)
 # TODO Bor Gullet: Tentacle
 # TODO Bor Gullet: Mind Blast
 # TODO Brain Worm: Consume Mind

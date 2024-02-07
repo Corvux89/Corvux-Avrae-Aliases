@@ -5,7 +5,6 @@ to_automate_keywords = ["saving throw", "dc", "shocked until"]
 def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
     url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
     r = urllib.request.urlopen(url)
-    print(f"URL: {url} loaded")
     data = json.load(r)
 
     count = 0
@@ -48,9 +47,12 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
         actions = mon.get('actions', [])
 
         for a in actions:
-            if any(x in a.get('description').lower() for x in to_automate_keywords):
+            if a.get('description') and any(x in a.get('description').lower() for x in to_automate_keywords):
                 try:
-                    auto=a.get('automation',{}).get('automation', [])
+                    auto=a.get('automation',{})
+                    if isinstance(auto, list):
+                        auto=auto[0]
+                    auto=auto.get('automation',[])
                 except:
                     auto=[]
                     pass
@@ -59,7 +61,9 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                     get_type(obj, auto_type)
 
                 s = {"name": mon.get('name'), 'ability': a.get('name'),
-                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable"]) else False}
+                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable"]) else False,
+                     'test': auto_type,
+                     'auto': auto}
                 saveAuto.append(s)
 
     with open(fileName, "w") as outfile:
