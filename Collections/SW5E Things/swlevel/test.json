@@ -1,29 +1,40 @@
 {
-  "name": "Blade Storm - Strength",
+  "name": "Steel Hands Form",
   "_v": 2,
-  "activation_type": 2,
+  "activation_type": 3,
   "automation": [
     {
-      "type": "variable",
-      "value": "{max(caster.levels.get('Sentinellight'),caster.levels.get('Sentineldark'),0)}",
-      "name": "sentinelLevel"
-    },
-    {
       "type": "target",
-      "target": "each",
+      "target": "self",
       "effects": [
         {
-          "type": "attack",
-          "hit": [],
-          "miss": [],
-          "attackBonus":
-        },
+          "type": "ieffect2",
+          "name": "Steel Hands Form",
+          "duration": 10,
+          "attacks": [
+            {
+              "attack": {
+                "name": "Charging Wampa",
+                "_v": 2,
+                "activation_type": 2,
+                "automation": [
+                  {
+                    "type": "text",
+                    "text": "Once per round, when you are forced to make a saving throw against a force power, your movement speed increases by 10 feet until the end of your next turn."
+                  }
+                ]
+              }
+            },
+            {
+              "attack": {
+                "name": "Nexu Grin",
+                "_v": 2,
+                "activation_type": 4
+              }
+            }
+          ]
+        }
       ]
-    },
-    {
-      "type": "text",
-      "title": "Blade Storm",
-      "text": "Your bursts become even more overwhelming. Once on your turn, when a creature takes damage from you twice, you can immediately make one additional attack against that creature (no action required). This attack uses your Kinetic Combat die instead of the weapon’s damage die."
     }
   ]
 }
