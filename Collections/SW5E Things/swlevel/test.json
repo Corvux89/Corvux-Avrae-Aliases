@@ -29,7 +29,32 @@
               "attack": {
                 "name": "Nexu Grin",
                 "_v": 2,
-                "activation_type": 4
+                "activation_type": 4,
+                "automation": [
+                  {
+                    "type": "counter",
+                    "counter": "Focus Point",
+                    "amount": 1,
+                    "errorBehaviour": "raise"
+                  },
+                  {
+                    "type": "text",
+                    "text": "When a creature you can see within 10 feet of you casts a force power that requires a force attack roll against you or an an allied creature, you can use your reaction and expend 1 focus point to impose disadvantage on the attack roll. If the attack misses, and the higher of the two d20 rolls would also miss, the creature cannot cast that force power again until it completes a short or long rest."
+                  }
+                ]
+              }
+            },
+            {
+              "attack": {
+                "name": "Screaming Squill",
+                "_v": 2,
+                "activation_type": 2,
+                "automation": [
+                  {
+                    "type": "text",
+                    "text": "Once per turn, when you hit a creature that is concentrating on a force power and it makes a Constitution saving throw to maintain concentration, the DC for the check equals your focus save DC, unless the DC for the Constitution saving throw would be higher."
+                  }
+                ]
               }
             }
           ]

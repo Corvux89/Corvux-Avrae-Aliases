@@ -1,44 +1,46 @@
 {
-  "name": "Improved Kinetite",
-  "level": 4,
+  "name": "(SW) Call Lightning",
+  "level": 3,
   "school": "Force",
-  "classes": "Dark",
+  "classes": "Light",
   "subclasses": "",
   "casttime": "1 action",
-  "range": "150 feet",
+  "range": "120 feet",
   "components": {
     "verbal": false,
     "somatic": false,
     "material": ""
   },
-  "duration": "up to 1 minute",
+  "duration": "up to 10 minutes",
   "ritual": false,
-  "description": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.",
+  "description": "As you align yourself with nature through the Force, a 10-foot tall, 60-foot radius storm cloud cylinder appears, centered on a point you can see within range above you, with you as the center point. The power fails if your location can't accommodate the cloud's size or height. When you cast the power, choose a point under the cloud for lightning to strike. Each creature within 5 feet must make a Dexterity save, taking 3d10 lightning damage on a fail and half on a success. While the power persists, you can use your action to call lightning to a point in range again.\r\n\r\nIf you're outdoors and in a storm, the power gives you control of the storm rather than creating a new one. The lightning damage also increases by 1d10.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.",
   "concentration": true,
   "automation": [
     {
-      "type": "variable",
-      "name": "bonusDie",
-      "value": "0",
+      "type": "roll",
+      "dice": "3d10 [lightning]",
+      "name": "damage",
       "higher": {
-        "5": "1",
-        "6": "2",
-        "7": "3",
-        "8": "4",
-        "9": "5"
+        "4": "1d10",
+        "5": "2d10",
+        "6": "3d10",
+        "7": "4d10",
+        "8": "5d10",
+        "9": "6d10"
       }
     },
     {
-      "type": "roll",
-      "dice": "2d6",
+      "type": "variable",
+      "value": "3",
+      "name": "numDie",
       "higher": {
-        "5": "1d6",
-        "6": "2d6",
-        "7": "3d6",
-        "8": "4d6",
-        "9": "5d6"
-      },
-      "name": "damage"
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9"
+      }
     },
     {
       "type": "target",
@@ -46,56 +48,38 @@
       "effects": [
         {
           "type": "ieffect2",
-          "name": "Improved Kinetite - Parent",
-          "desc": "{bonusDie}",
+          "name": "Call Lightning (parent)",
+          "parent": "ieffect",
+          "desc": "{numDie}",
           "attacks": [
             {
+              "defaultDC": "spell_dc",
               "attack": {
-                "name": "Improved Kinetite - Lightning Attack",
+                "name": "Call Lightning Strike",
                 "_v": 2,
-                "activation_type": 3,
                 "automation": [
                   {
-                    "type": "target",
-                    "target": "each",
-                    "effects": [
-                      {
-                        "type": "attack",
-                        "hit": [
-                          {
-                            "type": "damage",
-                            "damage": "{4+int(ieffect.desc.split()[-1])}d6 [lightning]"
-                          }
-                        ],
-                        "miss": []
-                      }
-                    ]
+                    "type": "roll",
+                    "dice": "{ieffect.desc.split()[-1]}d10 [lightning]",
+                    "name": "damage"
                   },
-                  {
-                    "type": "text",
-                    "text": "Until the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes {4+int(ieffect.desc.split()[-1])}d6 lightning damage."
-                  }
-                ]
-              }
-            },
-            {
-              "attack": {
-                "name": "Improved Kinetite - End of Turn Damage",
-                "_v": 2,
-                "activation_type": 2,
-                "automation": [
                   {
                     "type": "target",
                     "target": "each",
                     "effects": [
                       {
                         "type": "save",
-                        "stat": "str",
-                        "success": [],
+                        "stat": "dex",
+                        "success": [
+                          {
+                            "type": "damage",
+                            "damage": "({damage})/2"
+                          }
+                        ],
                         "fail": [
                           {
                             "type": "damage",
-                            "damage": "{2+int(ieffect.desc.split()[-1])}d6 [kinetic]"
+                            "damage": "{damage}"
                           }
                         ]
                       }
@@ -103,7 +87,7 @@
                   },
                   {
                     "type": "text",
-                    "text": "Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {2+int(ieffect.desc.split()[-1])}d6 kinetic damage. The sphere’s space is difficult terrain."
+                    "text": "While the power persists, you can use your action to call lightning to a point in range again."
                   }
                 ]
               }
@@ -118,17 +102,17 @@
       "effects": [
         {
           "type": "save",
-          "stat": "str",
+          "stat": "dex",
           "success": [
             {
               "type": "damage",
-              "damage": "({damage}/2) [kinetic]"
+              "damage": "({damage})/2"
             }
           ],
           "fail": [
             {
               "type": "damage",
-              "damage": "{damage} [kinetic]"
+              "damage": "{damage}"
             }
           ]
         }
@@ -136,7 +120,7 @@
     },
     {
       "type": "text",
-      "text": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th."
+      "text": "As you align yourself with nature through the Force, a 10-foot tall, 60-foot radius storm cloud cylinder appears, centered on a point you can see within range above you, with you as the center point. The power fails if your location can't accommodate the cloud's size or height. When you cast the power, choose a point under the cloud for lightning to strike. Each creature within 5 feet must make a Dexterity save, taking 3d10 lightning damage on a fail and half on a success. While the power persists, you can use your action to call lightning to a point in range again.\n\nIf you're outdoors and in a storm, the power gives you control of the storm rather than creating a new one. The lightning damage also increases by 1d10.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd."
     }
   ]
 }
