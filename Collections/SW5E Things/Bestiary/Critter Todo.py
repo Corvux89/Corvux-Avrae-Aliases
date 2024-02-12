@@ -1,3 +1,4 @@
+# TODO B2-HA Series Super Battle Droid: Rocket Launcher (1/Day)
 # TODO Bor Gullet: Tentacle
 # TODO Bor Gullet: Mind Blast
 # TODO Brain Worm: Consume Mind
@@ -167,6 +168,8 @@
 # TODO Fireteam: Trooper, Flame: Flamethrower
 # TODO Squad: Trooper, Flame: Flamethrower
 # TODO Zombie, Alchemy: Claws
+# TODO Yevethan Commando: Dewclaw
+# TODO Yevethan Supercommando: Dewclaw
 # TODO TIE/IN New Republic (old): Missile launcher (4/day)
 # TODO Z-95-NR Headhunter (old): Missile Launcher (8/day)
 # TODO TIE/sa Bomber (old): Missile Launcher - Rapid
