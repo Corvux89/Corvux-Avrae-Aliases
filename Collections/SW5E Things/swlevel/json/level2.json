@@ -1785,13 +1785,132 @@
             },
             {
               "type": "text",
-              "text": "our honed focus allows you to enter a stance of mental fortification and power. You can use your bonus action to enter this stance. When you do so, you unleash a flurry of blows on creatures of your choice that you can see within 10 feet of you. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon’s normal damage.\n\nThis stance lasts for 1 minute. While you are in this stance, you gain the following benefits:",
+              "text": "Your honed focus allows you to enter a stance of mental fortification and power. You can use your bonus action to enter this stance. When you do so, you unleash a flurry of blows on creatures of your choice that you can see within 10 feet of you. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon’s normal damage.\n\nThis stance lasts for 1 minute. While you are in this stance, you gain the following benefits:",
               "title": "Effect"
             },
             {
               "type": "text",
               "title": "Benefits",
               "text": "Death Weave. When you reduce a creature to 0 hit points, you gain temporary hit points equal to your focus ability modifier + half your monk level.\nGundark Slap. Once on each of your turns, when you hit a creature with an unarmed strike or a monk weapon, you can choose to make it unable to take reactions until the end of your next turn.\nSleeping Krayt. You can use your focus ability modifier instead of Strength whenever you would make a Strength check or a Strength saving throw. Additionally, you have advantage on saving throws against being charmed or frightened."
+            },
+            {
+              "type": "text",
+              "title": "Effect Cont'd",
+              "text": "These effects end early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest.\n\nWhile you have no remaining uses of this feature, you can instead expend 1 focus point to use it. When you do so, your maximum focus points are reduced by 1 until you complete a long rest."
+            }
+          ]
+        }
+      },
+      {
+        "level": 6,
+        "action": {
+          "name": "Steel Hands Form",
+          "_v": 2,
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Steel Hands Form",
+                  "duration": 10,
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Charging Wampa",
+                        "_v": 2,
+                        "activation_type": 2,
+                        "automation": [
+                          {
+                            "type": "text",
+                            "text": "Once per round, when you are forced to make a saving throw against a force power, your movement speed increases by 10 feet until the end of your next turn."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Nexu Grin",
+                        "_v": 2,
+                        "activation_type": 4,
+                        "automation": [
+                          {
+                            "type": "counter",
+                            "counter": "Focus Point",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                          },
+                          {
+                            "type": "text",
+                            "text": "When a creature you can see within 10 feet of you casts a force power that requires a force attack roll against you or an an allied creature, you can use your reaction and expend 1 focus point to impose disadvantage on the attack roll. If the attack misses, and the higher of the two d20 rolls would also miss, the creature cannot cast that force power again until it completes a short or long rest."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Screaming Squill",
+                        "_v": 2,
+                        "activation_type": 2,
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "con",
+                                "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)",
+                                "success": [],
+                                "fail": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "Once per turn, when you hit a creature that is concentrating on a force power and it makes a Constitution saving throw to maintain concentration, the DC for the check equals your focus save DC, unless the DC for the Constitution saving throw would be higher."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "name": "Steel Hands Form",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterName is None",
+              "onTrue": [
+                {
+                  "type": "counter",
+                  "counter": "Focus Points",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                },
+                {
+                  "type": "text",
+                  "text": "Maximum focus points are reduced by 1 until you complete a long rest."
+                }
+              ],
+              "onFalse": []
+            },
+            {
+              "type": "text",
+              "title": "Effect",
+              "text": "You can draw upon your focus to utilize an array of practiced techniques to strike your opponents with precision and power. You can use your bonus action to enter this stance, and when you do so, you can also enter your Forredari Stance as a part of this same bonus action. This form lasts for 1 minute. While you are in this stance, you gain the following benefits."
+            },
+            {
+              "type": "text",
+              "title": "Benefits",
+              "text": "Charging Wampa. Once per round, when you are forced to make a saving throw against a force power, your movement speed increases by 10 feet until the end of your next turn.\nNexu Grin. When a creature you can see within 10 feet of you casts a force power that requires a force attack roll against you or an an allied creature, you can use your reaction and expend 1 focus point to impose disadvantage on the attack roll. If the attack misses, and the higher of the two d20 rolls would also miss, the creature cannot cast that force power again until it completes a short or long rest.\nScreaming Squill. Once per turn, when you hit a creature that is concentrating on a force power and it makes a Constitution saving throw to maintain concentration, the DC for the check equals your focus save DC, unless the DC for the Constitution saving throw would be higher."
             },
             {
               "type": "text",
@@ -3083,7 +3202,7 @@
       {
         "name": "Twin Saber Throw",
         "level": 7,
-        "value": "wisdomMod",
+        "value": "proficiencyBonus",
         "classLevel": "SentinellightLevel",
         "reset": "long",
         "display": "bubble"
@@ -3545,7 +3664,7 @@
       {
         "name": "Twin Saber Throw",
         "level": 7,
-        "value": "charismaMod",
+        "value": "proficiencyBonus",
         "classLevel": "SentineldarkLevel",
         "reset": "long",
         "display": "bubble"
