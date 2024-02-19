@@ -1,16 +1,1 @@
-{
-  "name": "Test",
-  "_v": 2,
-  "automation": [
-    {
-      "type": "target",
-      "target": "each",
-      "effects": [
-        {
-          "type": "damage",
-          "damage": "2 [piercing]"
-        }
-      ]
-    }
-  ]
-}
+embed -title "Manifest Ideal of the Fighter: Throwing Mastery" -desc "As a bonus action, you can manifest your Ideal of the Fighter in a brief surge of energy. For the next minute, you know the Fighting Mastery: Throwing Mastery. If you already know that fighting mastery, you instead learn another of your choice for the duration." -f "Sentinel Ideals {{character().mod_cc("Sentinel Ideals", -1)}}|{{character().cc_str("Sentinel Ideals")}}" -f "Effects|{{combat().me.add_effect("Manifesting Ideal of the Fighter: Throwing Mastery", duration=10) if combat() else 'Maifesting Ideal of the Fighter: Throwing Mastery [10 rounds]'}}"

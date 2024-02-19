@@ -13,7 +13,7 @@
     "dmgType": "healing",
     "sub": "Mental",
     "desc": "-title \"#name# #uses# Adrenaline Hit!\" #desc# -footer \"#combatantFooter#\"",
-    "validUse": "-f \"Meta|**THP**: #thp#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You expend one superiority die to inject a creature with regenerative medication that temporarily enhances their agility. When you do so, a creature you can touch regains hit points equal to the superiority die roll. Additionally, until the start of your next turn, when that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\"",
+    "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You expend one superiority die to inject a creature with regenerative medication that temporarily enhances their agility. When you do so, a creature you can touch regains hit points equal to the superiority die roll. Additionally, until the start of your next turn, when that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\"",
     "effect": {
       "name": "Adrenaline Hit",
       "desc": "When that creature would take damage, the amount is reduced by an amount equal to your maneuver ability modifier.\n - Maneuver ability modifier: #maneuverMod#",

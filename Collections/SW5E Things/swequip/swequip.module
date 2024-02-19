@@ -1,6 +1,7 @@
 # SWEQUIP Primary Module
 c = character()
 using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
 subclasses = sup.get_subclasses()
 
 def processAttacks(attacks, args):
@@ -44,10 +45,22 @@ def processAttacks(attacks, args):
             else:
                 attack = attack.replace(sup.get_damage_die(attack), args.last("dmg"))
 
+        if args.get('bstat'):
+            stat = f'{[x for x in stats if args.last("bstat").lower() in x][0]}Mod'
+            bonus = sup.get_attack_bonus(attack)
+            bonus = bonus.replace('dexterityMod', stat).replace('strengthMod', stat)
+            attack = attack.replace(sup.get_attack_bonus(attack), f"{bonus}")
+
         if args.get('b'):
             attack = attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
             if "burst" in a.name.lower() or "rapid" in a.name.lower():
                 attack = attack.replace('"8+proficiencyBonus', f'"8+proficiencyBonus+{args.last("b")}')
+
+        if args.get('dstat'):
+            stat = f'{[x for x in stats if args.last("dstat").lower() in x][0]}Mod'
+            bonus = sup.get_damage_str(attack)
+            bonus = bonus.replace('dexterityMod', stat).replace('strengthMod', stat)
+            attack = attack.replace(sup.get_damage_str(attack), f"{bonus}")
 
         if args.get('d'):
             attack = attack.replace('} [', '}' + f'+{args.last("d")} [')

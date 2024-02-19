@@ -17,6 +17,7 @@ __Available Arguments__
  
 **To Hit**
 `-b` - Add a bonus to the to-hit roll
+`-bstat` - Will swap out the modifier used for the to-hit roll. Ex: `-bstat wis` will swap the current weapons to-hit stat to the characters wisdom modifier
  
 **Damage**
 `-dmg` - Change the damage die on the attack
@@ -27,6 +28,7 @@ __Available Arguments__
 `-criton` - Allows a different natural dice roll that scores a critical hit
 `-keen` - Set a different natural dice roll scoring a critical hit (20 - keen). Same as `-criton` just different math
 `-enhanced` - Upgrade the damage to `enhanced` damage
+`-dstat` - Will swap out the modifier used for the damage roll. Ex: `-dstat wis` will swap the current weapons damage stat to the characters wisdom modifier
  
 **Properties**
 `-biting` - Sets up the weapon as if it had the biting property

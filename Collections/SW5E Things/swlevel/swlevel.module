@@ -33,9 +33,6 @@ def level(args):
     if stat:
         stat = f'{[x for x in stats if stat.lower() in x][0]}Mod'
 
-    if dev:
-        return err(classSearch)
-
     if not help:
         base += f''' -title "Level Summary for {ch.name}" '''
         # Initial Validation
@@ -110,6 +107,9 @@ def level(args):
 
     else:
         base += f''' -title "{ctx.prefix}swlevel help!" -desc "Coming soon" '''
+
+    if dev:
+        return err([a.name for a in actions])
 
     if len(actions) > 0:
         return f'''multiline\n{ctx.prefix}{base}\n{ctx.prefix}a import {actions}'''

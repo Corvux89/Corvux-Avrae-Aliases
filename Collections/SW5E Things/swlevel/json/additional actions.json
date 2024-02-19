@@ -294,6 +294,20 @@
     ]
   },
   {
+    "name": "Cape of the Orator",
+    "counters": [
+      {
+        "name": "Cape of the Orator",
+        "classLevel": "Scholar",
+        "level": 3,
+        "value": "ceil(int({level}/2))",
+        "reset": "long",
+        "display": "bubble",
+        "desc": "This item can hold a number of charges equal to half your scholar level (rounded up). When you complete a long rest, this item regains all missing charges. When your superiority die is rolled, you can expend one charge to reroll the die and choose either roll."
+      }
+    ]
+  },
+  {
     "name": "Cause Harm",
     "actions": [
       {
@@ -2358,6 +2372,13 @@
     "name": "Scholar Offensive Augment",
     "modCounter": {
       "name": "Superiority Dice",
+      "modifier": 1
+    }
+  },
+  {
+    "name": "Sentinel Defensive Augment",
+    "modCounter": {
+      "name": "Sentinel Ideals",
       "modifier": 1
     }
   },

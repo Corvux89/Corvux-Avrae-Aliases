@@ -1364,6 +1364,16 @@
           "activation_type": 4,
           "automation": [
             {
+              "type": "variable",
+              "name": "monkLevel",
+              "value": "caster.levels.get('Monk')"
+            },
+            {
+              "type": "variable",
+              "name": "dieSize",
+              "value": "4 if monkLevel < 5 else 6 if monkLevel < 9 else 8 if monkLevel < 13 else 10 if monkLevel < 17 else 12"
+            },
+            {
               "type": "counter",
               "counter": "Focus Points",
               "amount": 1,
@@ -1378,7 +1388,7 @@
                   "hit": [
                     {
                       "type": "damage",
-                      "damage": "1d4+{dexterityMod} [kinetic]"
+                      "damage": "1d{dieSize}+{dexterityMod} [kinetic]"
                     }
                   ],
                   "miss": [],
@@ -1881,7 +1891,7 @@
             },
             {
               "type": "counter",
-              "name": "Steel Hands Form",
+              "counter": "Steel Hands Form",
               "amount": 1,
               "errorBehaviour": "raise"
             },
@@ -1916,6 +1926,148 @@
               "type": "text",
               "title": "Effect Cont'd",
               "text": "These effects end early if you are incapacitated or die. Once you’ve used this feature, you can’t use it again until you finish a long rest.\n\nWhile you have no remaining uses of this feature, you can instead expend 1 focus point to use it. When you do so, your maximum focus points are reduced by 1 until you complete a long rest."
+            }
+          ]
+        }
+      },
+      {
+        "level": 11,
+        "action": {
+          "name": "Matter over Mind",
+          "_v": 2,
+          "activation_type": "2",
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Matter Over Mind",
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Dancing Dragonsnake",
+                        "_v": 2,
+                        "activation_type": 4,
+                        "automation": [
+                          {
+                            "type": "counter",
+                            "counter": "damageAmountDummyCounter",
+                            "amount": 0,
+                            "errorBehaviour": "ignore"
+                          },
+                          {
+                            "type": "variable",
+                            "name": "monkLevel",
+                            "value": "caster.levels.get('Monk')"
+                          },
+                          {
+                            "type": "condition",
+                            "condition": "lastCounterRequestedAmount",
+                            "onTrue": [
+                              {
+                                "type": "target",
+                                "target": "self",
+                                "effects": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "-(1d10+{max(wisdomMod,charismaMod)}+{monkLevel}, {lastCounterRequestedAmount})kl1 [reduce]"
+                                  }
+                                ]
+                              }
+                            ],
+                            "onFalse": [
+                              {
+                                "type": "roll",
+                                "dice": "1d10+{dexterityMod}+{monkLevel}",
+                                "name": "Amount Deflected"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "When you take force, lightning, or necrotic damage, you can use your reaction to deflect it. When you do so, the damage you take is reduced by 1d10 + your focus ability modifier + your monk level."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Aryx Slash",
+                        "activation_type": 2,
+                        "_v": 2,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "name": "monkLevel",
+                            "value": "caster.levels.get('Monk')"
+                          },
+                          {
+                            "type": "variable",
+                            "name": "dieSize",
+                            "value": "4 if monkLevel < 5 else 6 if monkLevel < 9 else 8 if monkLevel < 13 else 10 if monkLevel < 17 else 12"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "damage",
+                                "damage": "1d{dieSize} [psychic]"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "Once on each of your turns, when you hit a target with an unarmed strike or monk weapon, you can roll a Martial Arts die and deal additional psychic damage equal to the amount rolled."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Effect",
+              "text": "You tap into the greater power of your focus. While both your Forredari Stance and your Steel Hands Form are active, you gain the following benefits:"
+            },
+            {
+              "type": "text",
+              "title": "Benefits",
+              "text": "Dancing Dragonsnake. When you take force, lightning, or necrotic damage, you can use your reaction to deflect it. When you do so, the damage you take is reduced by 1d10 + your focus ability modifier + your monk level.\nAryx Slash. Once on each of your turns, when you hit a target with an unarmed strike or monk weapon, you can roll a Martial Arts die and deal additional psychic damage equal to the amount rolled.\nPiercing Gaze. When you would make an Insight check against a creature you know to wield the Force, you can use your focus ability modifier for the roll, and you are considered to have expertise in the Insight skill. If you would already have expertise in the check, you instead have advantage on the roll."
+            }
+          ]
+        }
+      },
+      {
+        "level": 17,
+        "action": {
+          "name": "Spitting Rawl",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "1d12 [psychic]"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Focus Points",
+                  "amount": "1",
+                  "errorBehaviour": "raise"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "You have learned to harness your strikes in a blistering fury. On your turn, when a creature takes damage from you three times, you can make up to three additional unarmed strikes against the creature (no action required). The first additional unarmed strike costs 1 focus point and deals 1d12 additional psychic damage on a hit, and each unarmed strike after the first costs 1 additional focus point and deals 1d12 additional psychic damage on a hit, cumulatively."
             }
           ]
         }
