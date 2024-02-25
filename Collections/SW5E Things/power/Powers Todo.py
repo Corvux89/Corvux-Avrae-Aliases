@@ -37,7 +37,6 @@
 # TODO: Breath Control
 # TODO: Buffer
 # TODO: Cage
-# TODO: (SW) Call Lightning
 # TODO: (SW) Calm Emotions
 # TODO: Capacity Boost
 # TODO: Carbon Fog
@@ -58,7 +57,6 @@
 # TODO: Cryogenic Volley
 # TODO: Cryogenic Wave
 # TODO: Danger Sense
-# TODO: Dark Aura
 # TODO: Dark Shear
 # TODO: (SW) Darkness
 # TODO: (SW) Darkvision
@@ -145,8 +143,6 @@
 # TODO: Immolate
 # TODO: Implant Message
 # TODO: Improved Force Immunity
-# TODO: Improved Phasestrike
-# TODO: Improved Phasewalk
 # TODO: Improved Restoration
 # TODO: Improved Revitalize
 # TODO: (SW) Incendiary Cloud
@@ -199,8 +195,6 @@
 # TODO: Overload
 # TODO: Override Interface
 # TODO: Paralyze Creature
-# TODO: Phasestrike
-# TODO: Phasewalk
 # TODO: Pheromone Burst
 # TODO: Plant Surge
 # TODO: Poison Dart

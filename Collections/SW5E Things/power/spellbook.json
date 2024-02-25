@@ -401,24 +401,6 @@
     "concentration": false
   },
   {
-    "name": "(SW) Call Lightning",
-    "level": 3,
-    "school": "Force",
-    "classes": "Light",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 10 minutes",
-    "ritual": false,
-    "description": "As you align yourself with nature through the Force, a 10-foot tall, 60-foot radius storm cloud cylinder appears, centered on a point you can see within range above you, with you as the center point. The power fails if your location can't accommodate the cloud's size or height. When you cast the power, choose a point under the cloud for lightning to strike. Each creature within 5 feet must make a Dexterity save, taking 3d10 lightning damage on a fail and half on a success. While the power persists, you can use your action to call lightning to a point in range again.\r\n\r\nIf you're outdoors and in a storm, the power gives you control of the storm rather than creating a new one. The lightning damage also increases by 1d10.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.",
-    "concentration": true
-  },
-  {
     "name": "(SW) Calm Emotions",
     "level": 2,
     "school": "Force",
@@ -777,24 +759,6 @@
     "ritual": false,
     "description": "You put your faith in the Force, feeling out the future and seeing whether your actions will lead to fortune or ruin. The GM chooses from the following possible omens:\r\n- **Peace**, for results which are not dangerous\r\n- **Danger**, for results which are dangerous but perhaps still worth the danger\r\n- **Ruin**, for results which are certain to end in death or tragedy\r\n\r\nThe power doesn't take into account any possible circumstances that might change the outcome, such as the use of additional powers or the loss or gain of a companion.\r\n\r\nIf you use this power two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a neutral result regardless of the actual outcome.",
     "concentration": false
-  },
-  {
-    "name": "Dark Aura",
-    "level": 3,
-    "school": "Force",
-    "classes": "Dark",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You manifest a mantle of malevolent dark side energy for the duration.\r\n\r\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can't regain hit points until the start of your next turn.\r\n\r\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the extra damage increases by 1d8 for each slot level above 3rd.",
-    "concentration": true
   },
   {
     "name": "Dark Shear",
@@ -2502,42 +2466,6 @@
     "concentration": true
   },
   {
-    "name": "Improved Phasestrike",
-    "level": 5,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose.",
-    "concentration": false
-  },
-  {
-    "name": "Improved Phasewalk",
-    "level": 5,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again.",
-    "concentration": true
-  },
-  {
     "name": "Improved Restoration",
     "level": 5,
     "school": "Force",
@@ -3472,42 +3400,6 @@
     "ritual": false,
     "description": "You emit a paralyzing dart at a creature that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, you can target one additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them.",
     "concentration": true
-  },
-  {
-    "name": "Phasestrike",
-    "level": 1,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "up to 1 minute",
-    "ritual": false,
-    "description": "Until the power ends, your movement doesn't provoke opportunity attacks.\r\n\r\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
-    "concentration": true
-  },
-  {
-    "name": "Phasewalk",
-    "level": 2,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You teleport up to 30 feet to an unoccupied space that you can see.",
-    "concentration": false
   },
   {
     "name": "Pheromone Burst",
@@ -6389,7 +6281,7 @@
                   }
                 ],
                 "label": "Temp HP Gone",
-                "verb": "dismesses their Vitality Shield",
+                "verb": "dismisses their Vitality Shield",
                 "style": "4"
               }
             ],
@@ -18791,5 +18683,364 @@
     "ritual": false,
     "description": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.",
     "concentration": true
+  },
+  {
+    "name": "(SW) Call Lightning",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d10 [lightning]",
+        "name": "damage",
+        "higher": {
+          "4": "1d10",
+          "5": "2d10",
+          "6": "3d10",
+          "7": "4d10",
+          "8": "5d10",
+          "9": "6d10"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "3",
+        "higher": {
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Call Lightning (parent)",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Call Lightning Strike",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "{ieffect.desc.split()[-1]}d10 [lightning]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage})/2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "While the power persists, you can use your action to call lightning to a point in range again."
+                    }
+                  ]
+                },
+                "defaultDC": "spell_dc"
+              }
+            ],
+            "desc": "{numDie}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As you align yourself with nature through the Force, a 10-foot tall, 60-foot radius storm cloud cylinder appears, centered on a point you can see within range above you, with you as the center point. The power fails if your location can't accommodate the cloud's size or height. When you cast the power, choose a point under the cloud for lightning to strike. Each creature within 5 feet must make a Dexterity save, taking 3d10 lightning damage on a fail and half on a success. While the power persists, you can use your action to call lightning to a point in range again.\n\nIf you're outdoors and in a storm, the power gives you control of the storm rather than creating a new one. The lightning damage also increases by 1d10.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 10 minutes",
+    "ritual": false,
+    "description": "As you align yourself with nature through the Force, a 10-foot tall, 60-foot radius storm cloud cylinder appears, centered on a point you can see within range above you, with you as the center point. The power fails if your location can't accommodate the cloud's size or height. When you cast the power, choose a point under the cloud for lightning to strike. Each creature within 5 feet must make a Dexterity save, taking 3d10 lightning damage on a fail and half on a success. While the power persists, you can use your action to call lightning to a point in range again.\r\n\r\nIf you're outdoors and in a storm, the power gives you control of the storm rather than creating a new one. The lightning damage also increases by 1d10.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Dark Aura",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Dark Aura",
+            "duration": "10",
+            "effects": {
+              "damage_bonus": "1d8[necrotic]"
+            },
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Dark Aura",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Slowed 1",
+                          "duration": "1",
+                          "desc": "Speed reduced by 15 feet",
+                          "tick_on_caster": true
+                        }
+                      ]
+                    }
+                  ],
+                  "verb": "slows an enemy with",
+                  "proper": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can’t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the extra damage increases by 1d8 for for every two slot levels above 3rd."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can’t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the extra damage increases by 1d8 for for every two slot levels above 3rd.",
+    "concentration": true
+  },
+  {
+    "name": "Improved Phasewalk",
+    "level": 5,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Phasewalk - Parent",
+            "parent": "ieffect",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Improved Phasewalk - Teleport",
+                  "_v": 2,
+                  "automation": [
+                    {
+                      "type": "text",
+                      "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
+      }
+    ]
+  },
+  {
+    "name": "Phasewalk",
+    "level": 2,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You teleport up to 30 feet to an unoccupied space that you can see.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "text",
+        "text": "You teleport up to 30 feet to an unoccupied space that you can see."
+      }
+    ]
+  },
+  {
+    "name": "Improved Phasestrike",
+    "level": 5,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "6d10 [force]"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose."
+      }
+    ]
+  },
+  {
+    "name": "Phasestrike",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Until the power ends, your movement doesn't provoke opportunity attacks.\r\n\r\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
+    "concentration": true,
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Phasestrike - Parent",
+            "parent": "ieffect",
+            "attacks": [
+              {
+                "attack": {
+                  "name": "Phasestrike - Damage",
+                  "_v": 2,
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [force]"
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Until the power ends, your movement doesn't provoke opportunity attacks.\n\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn."
+      }
+    ]
   }
 ]
