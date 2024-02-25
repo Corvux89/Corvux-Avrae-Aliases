@@ -1,7 +1,9 @@
 {
-  "name": "Sentinel Defensive Augment",
-  "modCounter": {
-    "name": "Sentinel Ideals",
-    "modifier": 1
+    "name": "Vow of the Devoted",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "Vows",
+      "append": "devoted"
+    }
   }
-}

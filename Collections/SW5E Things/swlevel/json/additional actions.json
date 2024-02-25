@@ -2831,5 +2831,14 @@
         "desc": "When you make an attack roll using your Wisdom, you can choose to add half your Charisma modifier to the attack roll. Alternatively, when you would make an attack roll using Charisma, you can add half your Wisdom modifier to the attack roll. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest."
       }
     ]
+  },
+  {
+    "name": "Vow of the Devoted",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "Vows",
+      "append": "devoted"
+    }
   }
 ]
