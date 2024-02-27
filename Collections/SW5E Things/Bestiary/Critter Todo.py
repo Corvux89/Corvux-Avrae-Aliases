@@ -1,6 +1,3 @@
-# TODO B2-HA Series Super Battle Droid: Rocket Launcher (1/Day)
-# TODO Bor Gullet: Tentacle
-# TODO Bor Gullet: Mind Blast
 # TODO Brain Worm: Consume Mind
 # TODO Brain Worm: Body Thief
 # TODO Captain: Leadership (Recharges after a Short or Long Rest).

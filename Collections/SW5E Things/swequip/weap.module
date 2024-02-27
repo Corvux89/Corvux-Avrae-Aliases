@@ -448,5 +448,51 @@ def gunning_style(attack, args):
 
     return dump_json(base_attack), dump_json(gun_attack)
 
+def ideal_of_the_steadfast(attack, args):
+    a = load_json(attack)
+    dc = f"8+{sup.get_attack_bonus(attack)}" if not args.get('dc') else int(args.last('dc'))
+    on_hit = sup.get_on_hit_effects(attack)
+    dmg_str = sup.get_damage_str(attack)
+    dmg_type = sup.get_damage_type(dmg_str)
+    max_dmg = sup.get_max_roll(dmg_str)
+    max_dmg_str = f"{max_dmg} [{dmg_type}]"
+    max_dmg_on_hit = load_json(dump_json(on_hit).replace(f'{dmg_str}', f'{max_dmg_str}'))
+
+    # Save Attack
+    save = {"type": "save", "stat": "dex", "dc": dc, "fail": on_hit, "success": []}
+    target = {"type": "target", "target": "each", "effects": [save]}
+    text = {"type": "text", "text": "When you would make a melee weapon attack roll, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their!ex saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit.",
+            "title": "Ideal of the Steadfast"}
+
+    save_attack = {"name": f"Ideal of the Steadfast - {a.name}", "_v": 2, "automation": [target, text]}
+
+    surge_condition = {"type": "condition", "condition": "lastSaveNaturalRoll == 1", "onTrue": max_dmg_on_hit, "onFalse": on_hit}
+    surge_save = {"type": "save", "stat": "dex", "dc": dc, "fail": [surge_condition], "success": [{"type": "damage", "damage": f"({dmg_str})/2 [{dmg_type}]"}]}
+    surge_attack = {"name": f"Surge of Energy - Ideal of the Steadfast - {a.name}", "_v": 2, "automation": [{"type": "target", "target": "each", "effects": [surge_save]}]}
+
+    ba_attack = {"name": f"Manifest - {a.name}", "_v": 2, "activation_type": 3,
+                 "automation": [
+                     {
+                         "type": "target",
+                         "target": "self",
+                         "effects": [
+                             {
+                                 "type": "ieffect2",
+                                 "name": "Ideal of the Steadfast - Surge of Energy",
+                                 "duration": 10,
+                                 "attacks": [{"attack": surge_attack}]
+                             }
+                         ]
+                     },
+                     {
+                         "type": "text",
+                         "text": "Additionally, as a bonus action, you can manifest this ideal in a brief surge of energy. For the next minute, when a creature succeeds on the saving throw, they take half the normal weapon damage, and when a creature rolls a 1 on the saving throw, they treat the damage as if you had rolled the maximum.",
+                         "title": "Ideal of the Steadfast"
+                     }
+                 ]}
+
+    return dump_json([save_attack, ba_attack])
+
+
 
 

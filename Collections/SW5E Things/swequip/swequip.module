@@ -6,6 +6,7 @@ subclasses = sup.get_subclasses()
 
 def processAttacks(attacks, args):
     out = []
+    add_actions = get_additional_actions()
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
@@ -251,9 +252,6 @@ def processAttacks(attacks, args):
         if "Focus" in subclasses:
             level = max(int(c.levels.get("Sentinellight",0)), int(c.levels.get("Sentineldark",0)),0)
 
-            if args.get('dev'):
-                return err(level)
-
             bs = weap.blade_storm(attack, level, args)
             if bs:
                 out.append(load_json(bs))
@@ -263,4 +261,25 @@ def processAttacks(attacks, args):
     if args.get('auto'):
         out = [x for x in out if "burst" in x.name.lower() or "rapid" in x.name.lower() or "penetrating" in x.name.lower()]
 
+    if 'ideal of the steadfast' in add_actions and 'reload' not in attack.lower():
+        ios = weap.ideal_of_the_steadfast(attack, args)
+        if ios:
+            out += load_json(ios)
+
+    if args.get('dev'):
+        return err(add_actions)
+
     return out, counter
+
+
+def get_additional_actions():
+    action_str = []
+    for a in c.attacks:
+        if a.name == "zCustomImport":
+            try:
+                action_str = a.raw['automation'][1]['text'].lower().split('\n')[1].split(', ')
+            except:
+                break
+            break
+
+    return action_str

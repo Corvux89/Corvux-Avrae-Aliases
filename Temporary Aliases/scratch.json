@@ -1,1 +1,45 @@
-embed -title "Manifest Ideal of the Fighter: Throwing Mastery" -desc "As a bonus action, you can manifest your Ideal of the Fighter in a brief surge of energy. For the next minute, you know the Fighting Mastery: Throwing Mastery. If you already know that fighting mastery, you instead learn another of your choice for the duration." -f "Sentinel Ideals {{character().mod_cc("Sentinel Ideals", -1)}}|{{character().cc_str("Sentinel Ideals")}}" -f "Effects|{{combat().me.add_effect("Manifesting Ideal of the Fighter: Throwing Mastery", duration=10) if combat() else 'Maifesting Ideal of the Fighter: Throwing Mastery [10 rounds]'}}"
+{
+  "name": "Surge of Energy - Ideal of the Steadfast - Vibrodagger",
+  "automation": [
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "dex",
+          "fail": [
+            {
+              "type": "condition",
+              "condition": "lastSaveNaturalRoll == 1",
+              "onTrue": [
+                {
+                  "type": "damage",
+                  "damage": "4 [kinetic]",
+                  "overheal": null
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "damage",
+                  "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
+                  "overheal": null
+                }
+              ],
+              "errorBehaviour": null
+            }
+          ],
+          "success": [
+            {
+              "type": "damage",
+              "damage": "(1d4+{max(strengthMod,dexterityMod)} [kinetic])/2 [kinetic]",
+              "overheal": null
+            }
+          ],
+          "dc": "8+proficiencyBonus+max(strengthMod,dexterityMod)"
+        }
+      ]
+    }
+  ],
+  "_v": 2
+}

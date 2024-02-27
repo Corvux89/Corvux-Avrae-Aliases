@@ -1,0 +1,102 @@
+{
+  "name": "Mind Blast",
+  "_v": 2,
+  "activation_type": 2,
+  "automation": [
+    {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Mind Blast Used",
+            "buttons": [
+              {
+                "label": "Recharge (Mnind Blast)",
+                "style": 3,
+                "automation": [
+                  {
+                    "type": "roll",
+                    "dice": "1d6",
+                    "name": "recharge"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "lastRoll >= 5",
+                    "onFalse": [
+                      {
+                        "type": "text",
+                        "text": "Recharge failed."
+                      }
+                    ],
+                    "onTrue": [
+                      {
+                        "type": "remove_ieffect"
+                      },
+                      {
+                        "type": "text",
+                        "text": "Mind Blast Recharged!"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+    {
+      "type": "target",
+      "target": "each",
+      "effects": [
+        {
+          "type": "save",
+          "stat": "int",
+          "dc": 18,
+          "success": [],
+          "fail": [
+            {
+              "type": "damage",
+              "damage": "5d10+5 [psychic]"
+            },
+            {
+              "type": "ieffect2",
+              "name": "Stunned",
+              "duration": 10,
+              "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.",
+              "buttons": [
+                {
+                  "label": "Resist Stun",
+                  "defaultDC": "lastSaveDC",
+                  "style": 1,
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "int",
+                          "success": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "fail": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "(Recharge 5-6). The bor gullet emits psychic energy. Creatures of the bor gullet's choice within 60 feet of it must succeed on a DC 18 Intelligence saving throw or take 32 (5d10 + 5) psychic damage and be stunned for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    }
+  ]
+}

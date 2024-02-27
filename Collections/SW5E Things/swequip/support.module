@@ -1,4 +1,4 @@
-# SWEQUIP Main Help Function
+# SWEQUIP Main Help Module
 
 ch = character()
 
@@ -208,3 +208,24 @@ def get_subclasses():
             out.append(classes.get(c))
 
     return out
+
+def get_max_roll(dmg_str):
+    parts = dmg_str.split("+")
+
+    total_damage = ""
+    test = ""
+
+    for part in parts:
+        if '[' in part or ']' in part:
+            start = part.index('[')
+            part = part[:start].strip()
+
+        if '{' in part or '}' in part:
+            total_damage += f"+{part}"
+        elif 'd' in part:
+            num, size = [int(x) for x in part.split('d')]
+            total_damage += num * size
+        else:
+            total_damage += f"+{part}"
+
+    return total_damage
