@@ -1,0 +1,838 @@
+{
+  "gvars": [
+    {
+      "name": "SWLevel Class JSON 1",
+      "file": "Collections/SW5E Things/swlevel/json/level.json",
+      "gvar": "2f0a8c13-ad94-488f-9f1b-d44af24db1c4"
+    },
+    {
+      "name": "SWLevel Class JSON 2",
+      "file": "Collections/SW5E Things/swlevel/json/level2.json",
+      "gvar": "e917643b-768e-46e9-be26-c8d3b8ea5339"
+    },
+    {
+      "name": "SWLevel Additional Actions",
+      "file": "Collections/SW5E Things/swlevel/json/additional actions.json",
+      "gvar": "8301258f-1c61-4ca7-bf04-11ed10b9d65d"
+    },
+    {
+      "name": "SWLevel Module",
+      "file": "Collections/SW5E Things/swlevel/swlevel.module",
+      "gvar": "30190ab5-1d16-4f4a-afa3-16d9535f8d3f"
+    },
+    {
+      "name": "SWEquip Main Module",
+      "file": "Collections/SW5E Things/swequip/swequip.module",
+      "gvar": "df07d6ae-140d-45b1-b026-de831064acab"
+    },
+    {
+      "name": "SWEquip Support Module",
+      "file": "Collections/SW5E Things/swequip/support.module",
+      "gvar": "8b78365a-5c05-4c8f-8364-fbde2e3de862"
+    },
+    {
+      "name": "SWEquip Weapons Module",
+      "file": "Collections/SW5E Things/swequip/weap.module",
+      "gvar": "8202f283-16d2-47ba-8a5e-0d0cf29a1ef1"
+    },
+    {
+      "name": "Maneuver Module",
+      "file": "Collections/SW5E Things/maneuver/maneuver.module",
+      "gvar": "2cc62139-afc5-45d7-9fe0-f7f6a3c14925"
+    },
+    {
+      "name": "Maneuver JSON",
+      "file": "Collections/SW5E Things/maneuver/maneuvers.json",
+      "gvar": "9b5b0cde-2e3c-4a8a-a662-eb843f6e85a8"
+    },
+    {
+      "name": "Race JSON",
+      "file": "Collections/SW5E Things/setrace/race.json",
+      "gvar": "ac05e043-c546-48c3-af2e-280869d012c6"
+    },
+    {
+      "name": "Race Resources JSON",
+      "file": "Collections/SW5E Things/setrace/race resources.json",
+      "gvar": "fbecf9dd-0d1c-4704-bd1a-53f2daa451c2"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "7c1d4998-89cd-4e2d-a7ea-d92c4bd3387a"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "c906190c-4968-4fec-81fd-9cbbc1f2e92e"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "ef21fed4-8472-4b0b-a375-54ae476ef38a"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "6269cf7a-0df9-4789-992c-29dbc20ac053"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "1a531fe9-4517-42d0-b4c5-a6664ed492b9"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "799c0a03-762d-4fe4-b270-b640bcc3bb30"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "810ee3eb-d100-4d44-902a-f40542d49b2f"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "4493b438-2a29-477e-b371-61de1942e91c"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "37a60afe-968b-4abf-8eec-c7fae1072aa3"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "56a0b569-973f-41e3-98fb-cee7a2618386"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "a0b29e52-f23c-422d-8f3a-615de8911065"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "81d02af2-f616-40bf-85eb-2aa07be54a9f"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "dee962fb-f71d-4e17-9b6f-c86cf1a58c33"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "85c74b16-b249-499b-b3f7-3f364fefdfb9"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "117e553e-adeb-4735-9cbd-f686564e1777"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "6506e1cc-a2aa-4c42-aca1-177af767a49b"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "e45f68f5-96d4-4f52-96c8-862734dfa7ff"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "4573b73e-b1cf-43b6-a9bf-833e54300781"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "d098c09f-9cc8-444a-8b8d-d15c728fa134"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "d4a4b558-55a8-4c8e-acf3-54f5d7af34c5"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "2ed3c187-f347-4af6-bdf0-e2969faa6d30"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "00b78106-fa38-4de6-b38c-9697b21515f2"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "4c60fcdd-3247-4d28-99b9-d222b763f9ac"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "e9fa4672-b75f-42a6-a32e-29e205ccb387"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "cbb8565f-bff8-405a-b6e6-0908ed567f7e"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "874901ba-d611-4418-b1c8-8ef43be23764"
+    },
+    {
+      "name": "",
+      "file": "",
+      "gvar": "e6b95573-6117-4336-812b-760f686012d1"
+    }
+  ],
+  "collection": {
+    "name": "SW5E Things",
+    "aliases": [
+      {
+        "name": "cover",
+        "subcommands": [],
+        "id": "63e0699308217259946dc4c4",
+        "file": "Collections/SW5E Things/cover/cover.alias",
+        "desc": "Collections/SW5E Things/cover/cover.md"
+      },
+      {
+        "name": "maneuver",
+        "subcommands": [],
+        "id": "63e06c7a08217259946dc4c6",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "sch",
+        "subcommands": [
+          {
+            "name": "analysis",
+            "subcommands": [],
+            "id": "63e147b4d6596a5e18f160c6",
+            "file": "Collections/SW5E Things/Class Specific/Scholar Things/critical_analysis.alias",
+            "desc": "Collections/SW5E Things/Class Specific/Scholar Things/critical_analysis.md"
+          },
+          {
+            "name": "discovery",
+            "subcommands": [],
+            "id": "64c2cfc9909bfc38f5b3a43f",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e1053fd6596a5e18f16094",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "eng",
+        "subcommands": [
+          {
+            "name": "armor",
+            "subcommands": [
+              {
+                "name": "shieldamp",
+                "subcommands": [],
+                "id": "643c8852e3f6ba9e95a256c7",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "643c8833e3f6ba9e95a256c6",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "unstable",
+            "subcommands": [
+              {
+                "name": "surge",
+                "subcommands": [],
+                "id": "643c891974a809f68fcb2476",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "643c88c8e3f6ba9e95a256c8",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "prismatic",
+            "subcommands": [
+              {
+                "name": "ldp",
+                "subcommands": [],
+                "id": "64bc70d187bc4756ca89f326",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "64bc70aa909bfc38f5b3a131",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "gadget",
+            "subcommands": [
+              {
+                "name": "turret",
+                "subcommands": [],
+                "id": "6567be8a99d1bfdcad0cb7f4",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "6567be6999d1bfdcad0cb7f3",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e10e07d6596a5e18f16095",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "form",
+        "subcommands": [],
+        "id": "63e142c5d6596a5e18f160bc",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "gua",
+        "subcommands": [
+          {
+            "name": "mak",
+            "subcommands": [
+              {
+                "name": "ysalamiri",
+                "subcommands": [],
+                "id": "643b34dd74a809f68fcb23d6",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "643b319874a809f68fcb23d1",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "shien",
+            "subcommands": [
+              {
+                "name": "krayt",
+                "subcommands": [],
+                "id": "64762c23aa4ea0905ad74051",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "64762c03aa4ea0905ad74050",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e16f66d6596a5e18f160dc",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "ope",
+        "subcommands": [
+          {
+            "name": "exploit",
+            "subcommands": [],
+            "id": "63e283311ed0fe9112c3b510",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e2832008e41312c43c55bc",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "w",
+        "subcommands": [
+          {
+            "name": "disintegrate",
+            "subcommands": [],
+            "id": "640d20851206b8100f739b14",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "defensive",
+            "subcommands": [],
+            "id": "640d242f1206b8100f739b18",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "shock",
+            "subcommands": [],
+            "id": "642194155b7f189d31ac8f90",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "spiked",
+            "subcommands": [],
+            "id": "648cfd79d4ff5357d7b1c83e",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "barbed",
+            "subcommands": [],
+            "id": "648cfdd5d4ff5357d7b1c83f",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e3c82afc05a6c2eb9d76ff",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "ber",
+        "subcommands": [
+          {
+            "name": "rage",
+            "subcommands": [],
+            "id": "63e3e088848b4f0b1a090dee",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "endrage",
+            "subcommands": [],
+            "id": "63e3e09ec19c9015f390a330",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63e3e072848b4f0b1a090ded",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "sen",
+        "subcommands": [
+          {
+            "name": "fed",
+            "subcommands": [],
+            "id": "63eb881ddca2b0c9ddded4c2",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "med",
+            "subcommands": [
+              {
+                "name": "fea",
+                "subcommands": [],
+                "id": "643f2108af3f78039bc7df62",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "643f20fdaf3f78039bc7df61",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "63eb880bc095fa0655db9f50",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "swequip",
+        "subcommands": [],
+        "id": "63f3e6813ea049e17382a3f3",
+        "file": "Collections/SW5E Things/swequip/swequip.alias",
+        "desc": "Collections/SW5E Things/swequip/swequip.md"
+      },
+      {
+        "name": "swc",
+        "subcommands": [],
+        "id": "63f962296b396483ac3c39e9",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "racecast",
+        "subcommands": [],
+        "id": "6413147b9a393aadde0def73",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "hdh",
+        "subcommands": [],
+        "id": "641f31605b7f189d31ac8e82",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "reload",
+        "subcommands": [],
+        "id": "64270db6fb83b69c4f9db39b",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "guard",
+        "subcommands": [],
+        "id": "64285a1946944f5c7539387b",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "sco",
+        "subcommands": [
+          {
+            "name": "pbh",
+            "subcommands": [],
+            "id": "642e1cbc74a809f68fcb1bd4",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "pbd",
+            "subcommands": [],
+            "id": "642e1ebc74a809f68fcb1bd6",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "642e19ed74a809f68fcb1bd3",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "power",
+        "subcommands": [],
+        "id": "6436d36274a809f68fcb21b1",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "sharpshooter",
+        "subcommands": [],
+        "id": "643b36ec74a809f68fcb23d7",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "feats",
+        "subcommands": [
+          {
+            "name": "mastery",
+            "subcommands": [
+              {
+                "name": "formation",
+                "subcommands": [],
+                "id": "653984ac99ec7830704de76d",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "6539849f6941aa59984e9924",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "style",
+            "subcommands": [
+              {
+                "name": "formation",
+                "subcommands": [],
+                "id": "653985956941aa59984e9925",
+                "file": "",
+                "desc": ""
+              }
+            ],
+            "id": "6539858d99ec7830704de76e",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "6462d8fa89cf5c4607d3baf9",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "swi",
+        "subcommands": [
+          {
+            "name": "ooa",
+            "subcommands": [],
+            "id": "6511757337f23950e067e3df",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "boa",
+            "subcommands": [],
+            "id": "653c767eac7cd2bc9072290d",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "cap",
+            "subcommands": [],
+            "id": "6557e432fe08d18dde41a5e0",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "64997fb0a4c452b2f3f37689",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "swlevel",
+        "subcommands": [
+          {
+            "name": "options",
+            "subcommands": [],
+            "id": "64a5c74330d3647012745138",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "64a5c72e010227089331dd8d",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "ship",
+        "subcommands": [
+          {
+            "name": "equip",
+            "subcommands": [],
+            "id": "64ade4f247088352635c144d",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "c",
+            "subcommands": [],
+            "id": "64b06062692066ec40292a0e",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "level",
+            "subcommands": [],
+            "id": "64b5634e692066ec40292c8c",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "combat",
+            "subcommands": [],
+            "id": "64b9b31c87bc4756ca89f195",
+            "file": "",
+            "desc": ""
+          },
+          {
+            "name": "a",
+            "subcommands": [],
+            "id": "64ca515f87bc4756ca89fa72",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "64ac800f47088352635c134e",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "hide",
+        "subcommands": [],
+        "id": "65492eabac7cd2bc90722e4a",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "swcondition",
+        "subcommands": [],
+        "id": "6568998f99d1bfdcad0cb84c",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "swconfig",
+        "subcommands": [
+          {
+            "name": "castStat",
+            "subcommands": [],
+            "id": "656dff5234ffa93c2b9c3ce9",
+            "file": "",
+            "desc": ""
+          }
+        ],
+        "id": "656dff2e3fa35c24652b844a",
+        "file": "",
+        "desc": ""
+      }
+    ],
+    "snippets": [
+      {
+        "name": "quickened",
+        "id": "641650bfa6bbd079369905e0",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "extended",
+        "id": "641665e8a6bbd079369905e9",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "distant",
+        "id": "6416664d8a034cebee476014",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "canalysis",
+        "id": "6422d7fe175690cc901fcc10",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "reckless",
+        "id": "642705ee46944f5c753937e2",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "osneak",
+        "id": "642c5ab946944f5c75393add",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "twinned",
+        "id": "644142a4af3f78039bc7e01f",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "fots",
+        "id": "64584c2389cf5c4607d3b53d",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "krayt",
+        "id": "64762c46aa4ea0905ad74052",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "hex",
+        "id": "64871a3645e8b49cb538b44e",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "racersreflex",
+        "id": "64b70ddf692066ec40292d3f",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "incenpen",
+        "id": "64bc82ed909bfc38f5b3a140",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "manalysis",
+        "id": "64c2e0df87bc4756ca89f5fe",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "dniman",
+        "id": "64e7fd7519b6a910363f8bb1",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "sniman",
+        "id": "64e7fd89fbe690a8c5a600ff",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "tbm2",
+        "id": "651af7d4d49cebcdbb8dfce3",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "tbm1",
+        "id": "651af826d49cebcdbb8dfce4",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "def1",
+        "id": "6537e6d199ec7830704de5e2",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "rq",
+        "id": "65567e88570fbb99660e40ae",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "gottd",
+        "id": "6569e98d99d1bfdcad0cb949",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "gottb",
+        "id": "6569e9a999d1bfdcad0cb94a",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "close",
+        "id": "6569f30999d1bfdcad0cb94b",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "careful",
+        "id": "6594d06482ef81882313ad43",
+        "file": "",
+        "desc": ""
+      },
+      {
+        "name": "def2",
+        "id": "659c0b6645d6e3977bbd4430",
+        "file": "Collections/SW5E Things/snippets/defensive2.snip",
+        "desc": ""
+      }
+    ],
+    "desc": "Collections/SW5E Things/README.md",
+    "image": "https://cdn.discordapp.com/attachments/1069074273190285353/1070477277852340339/image.png"
+  }
+}

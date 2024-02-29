@@ -286,7 +286,7 @@ def staggering(attack, args):
     text = {"type": "text", "title": "Staggering Oscillator",
             "text": "When you hit with the weapon, you can force the target to make a DC 13 Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."}
     effect = {"type": "ieffect2", "name": "Prone",
-              "buttons": [{"label": "Stand Up", "verb": "stands up", "automation": [{"type": "remove_ieffect"}]}],
+              "buttons": [{"gvar_label": "Stand Up", "verb": "stands up", "automation": [{"type": "remove_ieffect"}]}],
               "duration": 1}
 
     save = {"type": "save", "stat": "str", "dc": f"{dc}", "fail": [effect], "success": []}
@@ -309,10 +309,10 @@ def igniting(attack, args):
     ignite = "1d4" if args.last('igniting') == 'True' else args.last('igniting')
     damage = {"type": "damage", "damage": f"{ignite} [fire]"}
     tdamage = {"type": "target", "target": "self", "effects": [damage]}
-    eot = {"label": "Ignited - End of Turn", "verb": "burns!", "style": 4, "automation": [tdamage]}
+    eot = {"gvar_label": "Ignited - End of Turn", "verb": "burns!", "style": 4, "automation": [tdamage]}
 
     tdrop = {"type": "remove_ieffect"}
-    drop = {"label": "Put out the fire", "verb": "is not longer ignited!", "style": 1, "automation": [tdrop]}
+    drop = {"gvar_label": "Put out the fire", "verb": "is not longer ignited!", "style": 1, "automation": [tdrop]}
 
     effect = {"type": "ieffect2", "name": "ignited", "buttons": [eot, drop], "desc": "A creature that is ignited suffers fire damage at the end of each of its turns. A damage value in parentheses appears with this condition—the fire damage the creature takes at the end of its turn.\n - If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."}
     text = {"type": "text", "text": f"A creature that is ignited suffers {damage} fire damage at the end of each of its turns. A damage value in parentheses appears with this condition—the fire damage the creature takes at the end of its turn.\n\nIf the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."}

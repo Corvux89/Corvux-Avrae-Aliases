@@ -28,7 +28,7 @@ if v:
 
         eff = t.add_effect(cc, duration=100, desc=f"The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost. Current die size: {pad}",
             buttons=[{
-                "label": f"Use {cc}",
+                "gvar_label": f"Use {cc}",
                 "verb": "is using assistance",
                 "style": 3,
                 "automation": [{

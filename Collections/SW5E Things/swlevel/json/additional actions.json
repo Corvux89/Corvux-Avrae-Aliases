@@ -1767,6 +1767,15 @@
     ]
   },
   {
+    "name": "Ideal of the Steadfast",
+    "cvar": {
+      "name": "SWFeats",
+      "default": "{}",
+      "node": "Ideals",
+      "append": "Steadfast"
+    }
+  },
+  {
     "name": "Improved Force-Sensitive",
     "cvar": {
       "name": "SWFeats",

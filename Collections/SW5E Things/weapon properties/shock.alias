@@ -34,7 +34,7 @@ if com:
                 desc="A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
                 buttons=[
                 {
-                    "label": "Resist Shocked",
+                    "gvar_label": "Resist Shocked",
                     "style": 3,
                     "verb": "attemps to resist shocked",
                     "automation":[

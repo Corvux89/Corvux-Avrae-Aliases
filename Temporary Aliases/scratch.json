@@ -1,45 +1,552 @@
 {
-  "name": "Surge of Energy - Ideal of the Steadfast - Vibrodagger",
-  "automation": [
+  "name": "SW5E Things",
+  "desc": "Aliases and snippets for the Resolute SW5E server. This is an active work in progress for the Resolute SW5E server.\n\nSome of this are updates of R to the Ichie's work, some of this is my own work. \n\nYou can view the source code for these (plus some of my scratch work) on my [GitHub](https://github.com/Corvux89/Corvux-Avrae-Aliases).\n\nIf you like what i'm doing you can buy me a coffee on [Ko-Fi](https://ko-fi.com/corvux).\n\nIf you see an issue, or have a request of something you would like added you can either do a PR to the repo, or contact me on discord\n\n__Setup__\nUsing the adapted SW5E Character sheet, [link here if you don't have it](https://docs.google.com/spreadsheets/d/17majk3zixwQguF8AqsS2ZfgLm4neZaimq9vmjwniuBw/edit#gid=359784640), import in, unsing `!import <url>`\n \nAfter importing run `!swlevel` to setup your levels, and hit die, and any customizations as defined via our [action spreadsheet](https://docs.google.com/spreadsheets/d/1V8BJrzt56jJNxRlx4daZayHBZJSQ7nrjNTavix2caSg/edit?usp=sharing). Refer to those command help texts for any specifics on running them, but this should cover your base setup. `!swequip` will help setup weapons and counters.\n\n \n[Spell Tome](https://avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc)\n[Racecast Tome](https://avrae.io/homebrew/spells/63f6250d10480b313f4ee666)",
+  "aliases": [
     {
-      "type": "target",
-      "target": "each",
-      "effects": [
+      "name": "cover",
+      "subcommands": [],
+      "desc": "**TAKE COVER!!!**\n\nUse `!cover [type] [*ARGS]` to apply cover to yourself, or you can apply\ncover to a target using `!cover -cover [type] -t [target]`\n\n**Valid Arguments**\n\n`-t [target]` - The target of the cover. If not provided will apply to the player running the command\n\n**Types of Cover**\n1/4 Cover = 'quarter', '1/4'\n1/2 Cover = 'half', '1/2'\n3/4 Cover = 'three', '3', '3/4'\nFull Cover = 'total', 'complete', 'full'",
+      "id": "63e0699308217259946dc4c4"
+    },
+    {
+      "name": "maneuver",
+      "subcommands": [],
+      "desc": "Maneuvers\n \n`!maneuver \"<maneuver>\" [args]`\n \nYou have to have a counter named \"Superiority Dice\" for this to work\n \n__Valid Arguments__\n \n`-t [target]` - Specify any number of targets of the maneuver. Can specify adv/dis per target. ex `-t [target]|dis`\n`dis` - Disadvantage on any saves\n`adv` - Advantage on any saves\n`pass` - Automatically pass any saves\n`fail` - Automatically fail any saves\n`-i` - Ignore the \"Superiority Dice\" requirement\n`-mi [number]` - Minimum dice roll.\n`-savage` - Roll 2 superiority dice and take the highest value\n`crit` - Crit the die!\n`-d` - Add a bonus to the dice roll\n`-type [Maneuver Type]` - Used to override the maneuver type\n`-dc` - Override the default maneuver DC\n`-dtype` - Set the damage type if applicable\n`sm` - Superiority Mastery indicator (forces the dice to be 1d4 and switches the counter)\n`mm` - Maneuver Master (Adds a bonus to any superiority dice rolls, and switches the counter)",
+      "id": "63e06c7a08217259946dc4c6"
+    },
+    {
+      "name": "sch",
+      "subcommands": [
         {
-          "type": "save",
-          "stat": "dex",
-          "fail": [
-            {
-              "type": "condition",
-              "condition": "lastSaveNaturalRoll == 1",
-              "onTrue": [
-                {
-                  "type": "damage",
-                  "damage": "4 [kinetic]",
-                  "overheal": null
-                }
-              ],
-              "onFalse": [
-                {
-                  "type": "damage",
-                  "damage": "1d4+{max(strengthMod,dexterityMod)} [kinetic]",
-                  "overheal": null
-                }
-              ],
-              "errorBehaviour": null
-            }
-          ],
-          "success": [
-            {
-              "type": "damage",
-              "damage": "(1d4+{max(strengthMod,dexterityMod)} [kinetic])/2 [kinetic]",
-              "overheal": null
-            }
-          ],
-          "dc": "8+proficiencyBonus+max(strengthMod,dexterityMod)"
+          "name": "analysis",
+          "subcommands": [],
+          "desc": "Scholar Critical Analysis\n \n`!sch analysis [args]`\n \n__Available Arguments__\n`-t <target>` - Specify a target for Critical Analysis\n`-mod <modifier>` - Override the default Critical Analysis modifier\n`ally` - Specify if the target is an ally or not (not required if the target is a character already)\n`enemy` - Specify if the target is an enemy or not (not required if the target is a monster)\n \n__Variations__\n                -> `Rancor's Discipline` will work if setup via `!feats rancorsdisc`\n**Geneticist**  -> Will account for Mutagenic Transformation\n                -> `Adapted Hide` will work as well if setup in `!sch discovery`\n**Politician**  -> Weill setup Motivating Diplomat\n                -> `Charming Feint` will work as well if setup in `!sch discovery`",
+          "id": "63e147b4d6596a5e18f160c6"
+        },
+        {
+          "name": "discovery",
+          "subcommands": [],
+          "desc": "Discoveries",
+          "id": "64c2cfc9909bfc38f5b3a43f"
         }
-      ]
+      ],
+      "desc": "Scholar specific aliases",
+      "id": "63e1053fd6596a5e18f16094"
+    },
+    {
+      "name": "eng",
+      "subcommands": [
+        {
+          "name": "armor",
+          "subcommands": [
+            {
+              "name": "shieldamp",
+              "subcommands": [],
+              "desc": "Shield Amp",
+              "id": "643c8852e3f6ba9e95a256c7"
+            }
+          ],
+          "desc": "Armormech engineering",
+          "id": "643c8833e3f6ba9e95a256c6"
+        },
+        {
+          "name": "unstable",
+          "subcommands": [
+            {
+              "name": "surge",
+              "subcommands": [],
+              "desc": "SURRRRRRGGGEEE",
+              "id": "643c891974a809f68fcb2476"
+            }
+          ],
+          "desc": "Unstable Engineering",
+          "id": "643c88c8e3f6ba9e95a256c8"
+        },
+        {
+          "name": "prismatic",
+          "subcommands": [
+            {
+              "name": "ldp",
+              "subcommands": [],
+              "desc": "Laserweb Defensive Protocol",
+              "id": "64bc70d187bc4756ca89f326"
+            }
+          ],
+          "desc": "Prismatic Engineering\n",
+          "id": "64bc70aa909bfc38f5b3a131"
+        },
+        {
+          "name": "gadget",
+          "subcommands": [
+            {
+              "name": "turret",
+              "subcommands": [],
+              "desc": "Sentry Turret",
+              "id": "6567be8a99d1bfdcad0cb7f4"
+            }
+          ],
+          "desc": "Gadgeteer",
+          "id": "6567be6999d1bfdcad0cb7f3"
+        }
+      ],
+      "desc": "Engineer specific aliases",
+      "id": "63e10e07d6596a5e18f16095"
+    },
+    {
+      "name": "form",
+      "subcommands": [],
+      "desc": "**Lightsaber Forms!**\n\nUse `!form [form]` to assume a new form. If in combat, it will add an effect to your effect list so you you can keep track.\n\n*Example*: `!form aquinos` \n\nDon't do `!form \"aquinos form`. It won't work and that is too much typing\n\n\n**GVARS**\n`874901ba-d611-4418-b1c8-8ef43be23764` - List of lightsaber forms\n",
+      "id": "63e142c5d6596a5e18f160bc"
+    },
+    {
+      "name": "gua",
+      "subcommands": [
+        {
+          "name": "mak",
+          "subcommands": [
+            {
+              "name": "ysalamiri",
+              "subcommands": [],
+              "desc": "Way of the Ysalamiri",
+              "id": "643b34dd74a809f68fcb23d6"
+            }
+          ],
+          "desc": "Makashi",
+          "id": "643b319874a809f68fcb23d1"
+        },
+        {
+          "name": "shien",
+          "subcommands": [
+            {
+              "name": "krayt",
+              "subcommands": [],
+              "desc": "The way of the Krayt Dragon",
+              "id": "64762c23aa4ea0905ad74051"
+            }
+          ],
+          "desc": "Shien/Djem So",
+          "id": "64762c03aa4ea0905ad74050"
+        }
+      ],
+      "desc": "Guardian specific aliases",
+      "id": "63e16f66d6596a5e18f160dc"
+    },
+    {
+      "name": "ope",
+      "subcommands": [
+        {
+          "name": "exploit",
+          "subcommands": [],
+          "desc": "**Exploitin'**\n\nUse `!ope exploit [exploit] [args]` to give Potent Aptitude to a player. This will add an effect and button to that player. \nIf they click the button they will get to roll the Potent Aptitude die and it removes the effect.\n\n**Valid Arguments**\n\n`-t [target]` - Target of the exploit\n\n`-i` - Ignore the \"Skill's Exploit\" counter requirement\n\n`fail` - Force the target to auto-fail the save\n\n`adv` - Advantage on the check\n\n`dis` - Disadvantage on the check\n\n`tadv` - Target has advantage on the save\n\n`tdis` - Target has disadvantage on the save\n\n**GVARS**\n`4573b73e-b1cf-43b6-a9bf-833e54300781` - List of Skill's Exploits\n",
+          "id": "63e283311ed0fe9112c3b510"
+        }
+      ],
+      "desc": "Operative specific aliases",
+      "id": "63e2832008e41312c43c55bc"
+    },
+    {
+      "name": "w",
+      "subcommands": [
+        {
+          "name": "disintegrate",
+          "subcommands": [],
+          "desc": "Disintegrate",
+          "id": "640d20851206b8100f739b14"
+        },
+        {
+          "name": "defensive",
+          "subcommands": [],
+          "desc": "Defensive",
+          "id": "640d242f1206b8100f739b18"
+        },
+        {
+          "name": "shock",
+          "subcommands": [],
+          "desc": "Shocked",
+          "id": "642194155b7f189d31ac8f90"
+        },
+        {
+          "name": "spiked",
+          "subcommands": [],
+          "desc": "Spiked",
+          "id": "648cfd79d4ff5357d7b1c83e"
+        },
+        {
+          "name": "barbed",
+          "subcommands": [],
+          "desc": "Barbed",
+          "id": "648cfdd5d4ff5357d7b1c83f"
+        }
+      ],
+      "desc": "Weapon stuff and Armor stuff",
+      "id": "63e3c82afc05a6c2eb9d76ff"
+    },
+    {
+      "name": "ber",
+      "subcommands": [
+        {
+          "name": "rage",
+          "subcommands": [],
+          "desc": "Please, pardon me while I RAAAAAGE\n\n`!ber rage` - Will start a rage on your active character, using your Rage or Rages counter. If you're in initiative, will add an effect to you, granting resistances and damage bonus.\n\n__Available Arguments__\n \n`-i` - Ignore requires, does not use a counter\n`-t <target>` - Start the rage on a target\n`frenzy` - Causes the rage to be a frenzied rage\n`-d` - Damage bonus override. Will account for Berserker Offensive Augment if setup in `!swi boa`\n\n__CVARS__\n`dewbackInstinct` - List of resistances from Dewback's Instinct to add to the effect. Use `!ber dbi` to set this up\n`acklayInstinct` - If set then will add constitution to the save advantages\n\nOriginally created by @Croebh#5603, adapted for Star Wars 5e by @R to the Ichie #6193 and updated by @Corvux#5222",
+          "id": "63e3e088848b4f0b1a090dee"
+        },
+        {
+          "name": "endrage",
+          "subcommands": [],
+          "desc": "Will end a rage on your active character.\n\nIf the Rage was a frenzied rage, and there is no `-t` target, will add to (and create if necessary) your Exhaustion counter.\n\n**Parameters**\n`-t <target>` - Will end a rage on the target.",
+          "id": "63e3e09ec19c9015f390a330"
+        }
+      ],
+      "desc": "Berserker specific aliases",
+      "id": "63e3e072848b4f0b1a090ded"
+    },
+    {
+      "name": "sen",
+      "subcommands": [
+        {
+          "name": "fed",
+          "subcommands": [],
+          "desc": "Force Empowered Detonators",
+          "id": "63eb881ddca2b0c9ddded4c2"
+        },
+        {
+          "name": "med",
+          "subcommands": [
+            {
+              "name": "fea",
+              "subcommands": [],
+              "desc": "Force Empowered Allies",
+              "id": "643f2108af3f78039bc7df62"
+            }
+          ],
+          "desc": "Meditation",
+          "id": "643f20fdaf3f78039bc7df61"
+        }
+      ],
+      "desc": "Sentinel Things",
+      "id": "63eb880bc095fa0655db9f50"
+    },
+    {
+      "name": "swequip",
+      "subcommands": [],
+      "desc": "Add SW5e attacks to your character.\n \n`!swequip <weapon name> [args]`\n \nThis will create the appropriate counter for weapons with ammunition.\nAdds Burst, Rapid, and Two-Handed Attack variants for those weapons that have them.\n \n__Available Arguments__\n \n**General**\n`-title` - Rename the weapon\n`-noprof` - Removes the proficiency bonus from an attack bonus\n`-prop` - Set the property string on a weapon\n`-ammo` - Add an ammo variant on the attack. Either specify the ammo, ie. `-ammo fragmentation` or just `-ammo` will load up all the ammo variants\n`-offhand` - Removes the ability mod from the damage roll and adds an attack called \"Offhand ...\" for Two-Weapon Fighting\n`-double` - Removes the ability mod from the damage roll and adds an attack called \"Double ...\" for Double-Weapon Fighting\n \n**To Hit**\n`-b` - Add a bonus to the to-hit roll\n`-bstat` - Will swap out the modifier used for the to-hit roll. Ex: `-bstat wis` will swap the current weapons to-hit stat to the characters wisdom modifier\n \n**Damage**\n`-dmg` - Change the damage die on the attack\n`-d` - Add a bonus to the damage\n`-dtype` - Change the damage type to the provided type\n`-ad` - Add a bonus damage with a different damage type. Ex: `-ad 1d4 [force]`\n`-c` - Adds extra damage when a critical hit is scored. Accepts XdY dice strings or a flat number\n`-criton` - Allows a different natural dice roll that scores a critical hit\n`-keen` - Set a different natural dice roll scoring a critical hit (20 - keen). Same as `-criton` just different math\n`-enhanced` - Upgrade the damage to `enhanced` damage\n`-dstat` - Will swap out the modifier used for the damage roll. Ex: `-dstat wis` will swap the current weapons damage stat to the characters wisdom modifier\n \n**Properties**\n`-biting` - Sets up the weapon as if it had the biting property\n`-bright` - Sets up the weapon as if it had the bright property\n`-burst` - Sets up the weapon as if it had the burst property\n`-corruption` - Sets up the weapon as if it had the corruption property\n`-disarming` - Sets up the weapon as if it had the disarming property\n`-disintegrate` - Sets up the weapon as if it had the disintegrate property\n`-finesse` or `-mighty` - Replaces the stat used for rolls with either strength or dexterity (whichever is higher)\n`-heavy` - Sets up the weapon as if it had the heavy property\n`-igniting` - Sets up the weapon as if it had the igniting property\n`-neuralizing` - Sets up the weapon as if it had the neuralizing property\n`-penetrating` - Sets up the weapon as if it had the penetrating property\n`-reload` - Set or override a reload amount for the weapon\n`-rapid` - Sets up the weapon as if it had the rapid property\n`-shocking` - Sets up the weapon as if it had the shocking property\n`-sonorous` - Sets up the weapon as if it had the sonorous property\n`-staggering` - Sets up the weapon as if it had the staggering property\n`-vicious` - - Sets up the weapon as if it had the vicious property\n \n**Feats**\n`-gwm` - Adds an attack called \"Great...\" for Great-Weapon Master. Removes the proficiency mod from the attack roll and adds double proficiency mod to the damage roll\n`-sharp` - Adds an attack called \"Sharpshooter...\" for Sharpshooter Mastery. Removes the proficiency mod from the attack roll and adds double proficiency mod to the damage roll\n`-gunning` Sets up the weapon for Gunning Mastery\n`-gunmas` - Adds an attack called \"Gunning...\"for Gunning Mastery. Removes the proficiency bonus from teh attack roll and updates the damage as appropriate\n`-gunstyle` - Adds an attack called \"Gunning...\"for Gunning Style. \n \n**Extras**\n`output` returns the JSON code for the attacks so you can modify it and use `!attack import <code>` to add it manually.\n \n*Note:* Make sure you input any desired arguments *after* the weapon name\n \nOriginally created by R to the Ichie and modified/updated by Corvux",
+      "id": "63f3e6813ea049e17382a3f3"
+    },
+    {
+      "name": "swc",
+      "subcommands": [],
+      "desc": "Run checks, replacing D&D skills with their SW5e counterparts.\n\nAutomatically replaces Arcana, History, and Religion with Technology, Lore, and Piloting (respectively).\nAlso accepts Technology, Lore, and Piloting (or part of the name) as skill names.\n\nUses `!check` as a base command and accepts all of the same arguments. See !help check for more info.\n\nOriginal alias by R to the Ichie",
+      "id": "63f962296b396483ac3c39e9"
+    },
+    {
+      "name": "racecast",
+      "subcommands": [],
+      "desc": "racecast stuff",
+      "id": "6413147b9a393aadde0def73"
+    },
+    {
+      "name": "hdh",
+      "subcommands": [],
+      "desc": "Hit Die Healing (hdh)\n \n`!hdh [# of Die] [args]`\n \nUse a hit die to heal yourself or a friend\n \n__Available Arguments__\n \n*# of Die* - Number of hit die to use (optional)\n*-b* - Bonus to healing\n*-mi <minimum roll>* - Sets the minimum roll on the dice\n*-i* - Roll a die, but don't spend a resource\n*-t \"<target>\"* - Sets the target for healing. Default is self. \n*-con* - Add constitution mod to the healing ",
+      "id": "641f31605b7f189d31ac8e82"
+    },
+    {
+      "name": "reload",
+      "subcommands": [],
+      "desc": "Reload weapons",
+      "id": "64270db6fb83b69c4f9db39b"
+    },
+    {
+      "name": "guard",
+      "subcommands": [],
+      "desc": "Guard Action",
+      "id": "64285a1946944f5c7539387b"
+    },
+    {
+      "name": "sco",
+      "subcommands": [
+        {
+          "name": "pbh",
+          "subcommands": [],
+          "desc": "Personal Barrier Healing",
+          "id": "642e1cbc74a809f68fcb1bd4"
+        },
+        {
+          "name": "pbd",
+          "subcommands": [],
+          "desc": "Personal Barrier Damage",
+          "id": "642e1ebc74a809f68fcb1bd6"
+        }
+      ],
+      "desc": "Scout Things",
+      "id": "642e19ed74a809f68fcb1bd3"
+    },
+    {
+      "name": "power",
+      "subcommands": [],
+      "desc": "**Cast Powers using Force or Tech Points**\n\nUse `!power \"Power Name\"` to cast a power using either Force or Tech Points. This requires a counter named \"Force Points\" or \"Tech Points\" and the power must be in your spellbook (or use `-i` to ignore requirements). This uses `!cast` as a base command, so it accepts any argument that `!help cast` lists as available.  You may modify the points cost without changing the level of the power by using `-p #`.\n\nMade by Corvux#5222",
+      "id": "6436d36274a809f68fcb21b1"
+    },
+    {
+      "name": "sharpshooter",
+      "subcommands": [],
+      "desc": "Sharpshooter style",
+      "id": "643b36ec74a809f68fcb23d7"
+    },
+    {
+      "name": "feats",
+      "subcommands": [
+        {
+          "name": "mastery",
+          "subcommands": [
+            {
+              "name": "formation",
+              "subcommands": [],
+              "desc": "Formation Mastery",
+              "id": "653984ac99ec7830704de76d"
+            }
+          ],
+          "desc": "Fighting Masteries",
+          "id": "6539849f6941aa59984e9924"
+        },
+        {
+          "name": "style",
+          "subcommands": [
+            {
+              "name": "formation",
+              "subcommands": [],
+              "desc": "Formation Style",
+              "id": "653985956941aa59984e9925"
+            }
+          ],
+          "desc": "Fighting Styles\n",
+          "id": "6539858d99ec7830704de76e"
+        }
+      ],
+      "desc": "Various Feature automation\n",
+      "id": "6462d8fa89cf5c4607d3baf9"
+    },
+    {
+      "name": "swi",
+      "subcommands": [
+        {
+          "name": "ooa",
+          "subcommands": [],
+          "desc": "Operative Offensive Augment",
+          "id": "6511757337f23950e067e3df"
+        },
+        {
+          "name": "boa",
+          "subcommands": [],
+          "desc": "Berserker Offensive Augment\n",
+          "id": "653c767eac7cd2bc9072290d"
+        },
+        {
+          "name": "cap",
+          "subcommands": [],
+          "desc": "Czerka Attenuating Pulsator",
+          "id": "6557e432fe08d18dde41a5e0"
+        }
+      ],
+      "desc": "Star Wars Items\n",
+      "id": "64997fb0a4c452b2f3f37689"
+    },
+    {
+      "name": "swlevel",
+      "subcommands": [
+        {
+          "name": "options",
+          "subcommands": [],
+          "desc": "Displays available classes and subclasses when a class is provided\n \n__Basic Use__\n`!swlevel options` - Will list all classes available\n`!swlevel options <archetype>` - Lists all available archetypes for the given class",
+          "id": "64a5c74330d3647012745138"
+        }
+      ],
+      "desc": "Star Wars Level (swlevel)\n  \nJust like the `!level` we all know and love, but in space. Makes counters for Hit Dice and limited-use class features, and sets archetype in a `subclass` cvar.\n \n__Supported Actions__\nOn top of supporting base class actions, we have implemented custom actions as well for various supported automations. To view how to setup these actions with your sheet (if you are not using the base character sheet in the collection description), or to view the list of supported actions you can check out the [document here](https://docs.google.com/spreadsheets/d/1V8BJrzt56jJNxRlx4daZayHBZJSQ7nrjNTavix2caSg/edit?usp=sharing)\n  \n__Basic Use__\n`!swlevel` - Picks up class levels from your `character()` data.\n`!swlevel <class> <archetype>` - Sets your archetype for the provided class.\n`!swlevel <class> <level> [archetype]` - Sets the class levels for classes **not defined** in your `character()` data. \n`!swlevel <class>` - Removes class levels and archetype added by `!swlevel`. Cannot remove class levels pulled from your sheet.\n \n__Available Arguments__\n`-stat` - Overrides the stat used in the imported actions. Ex: `-stat str` \n`-update` - Will not re-create health/class counters and instead only do the supported actions section",
+      "id": "64a5c72e010227089331dd8d"
+    },
+    {
+      "name": "ship",
+      "subcommands": [
+        {
+          "name": "equip",
+          "subcommands": [],
+          "desc": "Equip ship weapons",
+          "id": "64ade4f247088352635c144d"
+        },
+        {
+          "name": "c",
+          "subcommands": [],
+          "desc": "Ship checks",
+          "id": "64b06062692066ec40292a0e"
+        },
+        {
+          "name": "level",
+          "subcommands": [],
+          "desc": "Level command for Ship",
+          "id": "64b5634e692066ec40292c8c"
+        },
+        {
+          "name": "combat",
+          "subcommands": [],
+          "desc": "Start ship combat!",
+          "id": "64b9b31c87bc4756ca89f195"
+        },
+        {
+          "name": "a",
+          "subcommands": [],
+          "desc": "Ship Action",
+          "id": "64ca515f87bc4756ca89fa72"
+        }
+      ],
+      "desc": "Ship combat!\n\n__Ship Sheets__\nAssuming you're using a shipyard sheet for your ship tracking, there is a formula in the notes of S2 (ship string) to generate a string to import into our ship import template. [Template and formula can be found here.](https://docs.google.com/spreadsheets/d/16ZxpqZe46-Rzb5UZDAzRunUzuk9AcShBTXVRLLsmi0c/edit?usp=sharing)\n \nFrom there this will function just like a character to import into avrae.\n \nThen you can `!ship level` to setup hit/shield die as well as custom counters (in-process), and then `!ship equip [weapon name]` to weapons. Both the level and equip commands are similar to the character equivalents. \n \n__Combat Setup__\nIn initiative, the plan is to setup a group with the ship name, and load up the ship sheet as well as all of the characters aboard. Then you should be able to do most actions as your character (and not the ship). `!ship a` will run actions. Pulling the actions from the ship, and adding proficiency bonuses (or not depending on parameters) to the actions. `!ship c` will do checks. \n",
+      "id": "64ac800f47088352635c134e"
+    },
+    {
+      "name": "hide",
+      "subcommands": [],
+      "desc": "hide\n",
+      "id": "65492eabac7cd2bc90722e4a"
+    },
+    {
+      "name": "swcondition",
+      "subcommands": [],
+      "desc": "SW5E Condition Lookup",
+      "id": "6568998f99d1bfdcad0cb84c"
+    },
+    {
+      "name": "swconfig",
+      "subcommands": [
+        {
+          "name": "castStat",
+          "subcommands": [],
+          "desc": "Override the default casting stat. Only use this if you aren't following the wis/cha for force powers\n\nThis will tell`!power` to use a different modifier than what the power calls for. Ex: Stat is set here to `int`, force powers will use intelligence rather than Wis/Cha. Or set to `Wisdom` and all dark side force powers will also be cast with Wisdom.\n \n`!swconfig castStat <stat> [args]`\n\n__Available Arguments__\n`-server` Set this if this should be the force power cast stat for the server. ",
+          "id": "656dff5234ffa93c2b9c3ce9"
+        }
+      ],
+      "desc": "SW5E Configuration Aliases\n",
+      "id": "656dff2e3fa35c24652b844a"
     }
   ],
-  "_v": 2
+  "snippets": [
+    {
+      "name": "quickened",
+      "desc": "Consular Quickened",
+      "id": "641650bfa6bbd079369905e0"
+    },
+    {
+      "name": "extended",
+      "desc": "Consular Extended",
+      "id": "641665e8a6bbd079369905e9"
+    },
+    {
+      "name": "distant",
+      "desc": "Consular Distant",
+      "id": "6416664d8a034cebee476014"
+    },
+    {
+      "name": "canalysis",
+      "desc": "Critical Analysis",
+      "id": "6422d7fe175690cc901fcc10"
+    },
+    {
+      "name": "reckless",
+      "desc": "Reckless Attack",
+      "id": "642705ee46944f5c753937e2"
+    },
+    {
+      "name": "osneak",
+      "desc": "Sneak Attack",
+      "id": "642c5ab946944f5c75393add"
+    },
+    {
+      "name": "twinned",
+      "desc": "Consular Twinned",
+      "id": "644142a4af3f78039bc7e01f"
+    },
+    {
+      "name": "fots",
+      "desc": "Fury of the Small",
+      "id": "64584c2389cf5c4607d3b53d"
+    },
+    {
+      "name": "krayt",
+      "desc": "The way of the Krayt Dragon\n",
+      "id": "64762c46aa4ea0905ad74052"
+    },
+    {
+      "name": "hex",
+      "desc": "Hex",
+      "id": "64871a3645e8b49cb538b44e"
+    },
+    {
+      "name": "racersreflex",
+      "desc": "Racer's Reflex",
+      "id": "64b70ddf692066ec40292d3f"
+    },
+    {
+      "name": "incenpen",
+      "desc": "Incendiary Penetration",
+      "id": "64bc82ed909bfc38f5b3a140"
+    },
+    {
+      "name": "manalysis",
+      "desc": "Mutagenic Analysis",
+      "id": "64c2e0df87bc4756ca89f5fe"
+    },
+    {
+      "name": "dniman",
+      "desc": "Dexterity Niman Form",
+      "id": "64e7fd7519b6a910363f8bb1"
+    },
+    {
+      "name": "sniman",
+      "desc": "Strength Niman Form",
+      "id": "64e7fd89fbe690a8c5a600ff"
+    },
+    {
+      "name": "tbm2",
+      "desc": "Two-Handed twin-bladed mastery",
+      "id": "651af7d4d49cebcdbb8dfce3"
+    },
+    {
+      "name": "tbm1",
+      "desc": "One-Handed twin-bladed mastery\n",
+      "id": "651af826d49cebcdbb8dfce4"
+    },
+    {
+      "name": "def1",
+      "desc": "Defensive 1",
+      "id": "6537e6d199ec7830704de5e2"
+    },
+    {
+      "name": "rq",
+      "desc": "Ranger's Quarry",
+      "id": "65567e88570fbb99660e40ae"
+    },
+    {
+      "name": "gottd",
+      "desc": "Goggles of the Tinkerer -d version",
+      "id": "6569e98d99d1bfdcad0cb949"
+    },
+    {
+      "name": "gottb",
+      "desc": "Goggles of the Tinkerer -b version",
+      "id": "6569e9a999d1bfdcad0cb94a"
+    },
+    {
+      "name": "close",
+      "desc": "Close Call",
+      "id": "6569f30999d1bfdcad0cb94b"
+    },
+    {
+      "name": "careful",
+      "desc": "Careful Casting",
+      "id": "6594d06482ef81882313ad43"
+    },
+    {
+      "name": "def2",
+      "desc": "Defensive 2",
+      "id": "659c0b6645d6e3977bbd4430"
+    }
+  ]
 }

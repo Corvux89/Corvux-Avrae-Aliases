@@ -30,13 +30,13 @@ if v:
     if com and tar:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
         attacks, effects = [], {}
-        peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, buttons=[{"label": f"Stop Analyzing {tar.name}",
+        peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, buttons=[{"gvar_label": f"Stop Analyzing {tar.name}",
                                                                                 "verb": f"Stops analyzing {tar.name}",
                                                                                 "style": 4, "automation": [
                 {"type": "remove_ieffect"}]}])
 
         if not (tar.monster_name or enemy) or ally:
-            buttons = [{"label": "Use Critical Analysis", "verb": f"Uses {name}'s Critical Analysis", "style": 1,
+            buttons = [{"gvar_label": "Use Critical Analysis", "verb": f"Uses {name}'s Critical Analysis", "style": 1,
                         "automation": [{"type": "text", "text": f"**Mod**: {mod}", "title": "Meta"},
                                        {"type": "text", "text": f"The target can end your Critical Analysis on them "
                                                                 f"(no action required) to add your Critical Analysis "
@@ -53,14 +53,14 @@ if v:
             if tar.name == com.me.name:
                 if subclass == "Geneticist" and lvl >= 6:
                     ac_mod = mod if "AdaptedHide" in discoveries else ceil(mod/2)
-                    buttons.append({"label": "Use Mutagenic Transformation", "verb": "begins to transform", "style": 3,
+                    buttons.append({"gvar_label": "Use Mutagenic Transformation", "verb": "begins to transform", "style": 3,
                                     "automation": [{"type": "text", "text": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier."},
                                                    {"type": "target", "target": "self", "effects": [{
                                         "type": "ieffect2", "name": "Mutagenic Transformation", "duration": 600,
                                         "desc": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier.",
                                         "effects": {"ac_bonus": f"{max(1, ac_mod)}"},
                                         "buttons": [{
-                                            "label": "End Mutagenic Transformation",
+                                            "gvar_label": "End Mutagenic Transformation",
                                             "verb": "transforms back",
                                             "automation": [{"type": "remove_ieffect"}]}]},
                                         {"type": "counter",

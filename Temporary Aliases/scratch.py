@@ -1,6 +1,6 @@
-add_actions =  ['force affinity - ashla', 'force affinity - bendu', 'cunning forcecaster', 'ideal of the steadfast']
+import requests
 
-if 'ideal of the steadfast' in add_actions:
-    print("here")
-else:
-    print("Nope")
+result = requests.get('https://i.imgur.com/EmHWQnR.jpeg')
+
+test = resul
+t

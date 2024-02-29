@@ -213,19 +213,19 @@ def get_max_roll(dmg_str):
     parts = dmg_str.split("+")
 
     total_damage = ""
-    test = ""
 
     for part in parts:
         if '[' in part or ']' in part:
             start = part.index('[')
             part = part[:start].strip()
-
         if '{' in part or '}' in part:
             total_damage += f"+{part}"
         elif 'd' in part:
             num, size = [int(x) for x in part.split('d')]
-            total_damage += num * size
+            if len(total_damage) > 1:
+                total_damage += f"+{num * size}"
+            else:
+                total_damage += num*size
         else:
             total_damage += f"+{part}"
-
     return total_damage

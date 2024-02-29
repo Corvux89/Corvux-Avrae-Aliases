@@ -36,24 +36,24 @@ def startCombat(args):
 
 
 def get_boost_engine_button():
-    return {"label": "Boost Engines", "verb": "uses Boost Engines!", "style": 1,
+    return {"gvar_label": "Boost Engines", "verb": "uses Boost Engines!", "style": 1,
             "automation": ship.get_boost_engine_automation()}
 
 
 def get_boost_shields_button():
-    return {"label": "Boost Shields", "verb": "uses Boost Shields!", "style": 1,
+    return {"gvar_label": "Boost Shields", "verb": "uses Boost Shields!", "style": 1,
             "automation": ship.get_boost_shield_automation()}
 
 
 def get_boost_weapons_button():
-    return {"label": "Boost Weapons", "verb": "uses Boost Weapons!", "style": 1,
+    return {"gvar_label": "Boost Weapons", "verb": "uses Boost Weapons!", "style": 1,
             "automation": ship.get_boost_weapons_automation()}
 
 
 def get_recharge_button():
-    return {"label": "Recharge Shields", "verb": "recharges their shields!", "style": 3,
+    return {"gvar_label": "Recharge Shields", "verb": "recharges their shields!", "style": 3,
             "automation": ship.get_recharge_automation()}
 
 def get_patch_button():
-    return {"label": "Patch", "verb": "patches their hull!", "style": 3, "automation": ship.get_patch_automation()}
+    return {"gvar_label": "Patch", "verb": "patches their hull!", "style": 3, "automation": ship.get_patch_automation()}
 

@@ -14,11 +14,12 @@ __Available Arguments__
 `-ammo` - Add an ammo variant on the attack. Either specify the ammo, ie. `-ammo fragmentation` or just `-ammo` will load up all the ammo variants
 `-offhand` - Removes the ability mod from the damage roll and adds an attack called "Offhand ..." for Two-Weapon Fighting
 `-double` - Removes the ability mod from the damage roll and adds an attack called "Double ..." for Double-Weapon Fighting
+`-f` - Adds a description field. If the weapon has a property text, all fields defined here will be added before
  
 **To Hit**
 `-b` - Add a bonus to the to-hit roll
 `-bstat` - Will swap out the modifier used for the to-hit roll. Ex: `-bstat wis` will swap the current weapons to-hit stat to the characters wisdom modifier
- 
+  
 **Damage**
 `-dmg` - Change the damage die on the attack
 `-d` - Add a bonus to the damage

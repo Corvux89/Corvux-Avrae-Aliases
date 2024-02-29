@@ -1,12 +1,13 @@
 # SWEQUIP Primary Module
+
 c = character()
+feats = load_json(c.get_cvar("SWFeats", "{}"))
 using(weap="8202f283-16d2-47ba-8a5e-0d0cf29a1ef1", sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
 subclasses = sup.get_subclasses()
 
 def processAttacks(attacks, args):
     out = []
-    add_actions = get_additional_actions()
     for i, a in enumerate(attacks):
         attack = dump_json(a)
         counter = ""
@@ -56,6 +57,25 @@ def processAttacks(attacks, args):
             attack = attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')
             if "burst" in a.name.lower() or "rapid" in a.name.lower():
                 attack = attack.replace('"8+proficiencyBonus', f'"8+proficiencyBonus+{args.last("b")}')
+
+        if args.get('f'):
+            atk = load_json(attack)
+            automation = atk['automation']
+            for piece in args.get('f'):
+                field = piece.split('|')
+
+                if len(field) == 2:
+                    title_string, body_string = field
+                else:
+                    title_string = field[0]
+                    body_string = ""
+                text_obj = {"type": "text", "text": body_string, "title": title_string}
+                first_p = automation[:-1]
+                last_p = automation[-1:]
+                automation = first_p + [text_obj] + last_p
+
+            atk['automation'] = automation
+            attack = dump_json(atk)
 
         if args.get('dstat'):
             stat = f'{[x for x in stats if args.last("dstat").lower() in x][0]}Mod'
@@ -261,25 +281,9 @@ def processAttacks(attacks, args):
     if args.get('auto'):
         out = [x for x in out if "burst" in x.name.lower() or "rapid" in x.name.lower() or "penetrating" in x.name.lower()]
 
-    if 'ideal of the steadfast' in add_actions and 'reload' not in attack.lower():
+    if 'Steadfast' in feats.get('Ideals', []) and 'reload' not in attack.lower():
         ios = weap.ideal_of_the_steadfast(attack, args)
         if ios:
             out += load_json(ios)
 
-    if args.get('dev'):
-        return err(add_actions)
-
     return out, counter
-
-
-def get_additional_actions():
-    action_str = []
-    for a in c.attacks:
-        if a.name == "zCustomImport":
-            try:
-                action_str = a.raw['automation'][1]['text'].lower().split('\n')[1].split(', ')
-            except:
-                break
-            break
-
-    return action_str
