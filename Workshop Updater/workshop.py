@@ -188,7 +188,7 @@ class CollectionMenu(tk.Frame):
 
     def _activate_alias_code(self,alias_data, alias_info):
         data = {"version": alias_info['data']['version']}
-        result = requests.put(f"{base_url}workshop/alias/{alias_data['id']}/active-code", headers=header, data=data)
+        result = requests.put(f"{base_url}workshop/alias/{alias_data['id']}/active-code", headers=header, json=data)
         if result.status_code != 200:
             return messagebox.showerror(title="Error updating Alias", message=f"Error updating Alias.\n"
                                                                               f" Error: {result.status_code}")
@@ -326,6 +326,9 @@ def get_snippets(snippets: []):
     return out
 
 # test = load_collection('63e066ecd6596a5e18f1604f')
+test = requests.get(f"{base_url}homebrew/spells/60f243f60dc83c7c1d3a37cc", headers=header)
+data = json.dumps(json.loads(test.text)['data'])
+here = 1
 
 if __name__ == "__main__":
     app = MainWindow(600, 200)
