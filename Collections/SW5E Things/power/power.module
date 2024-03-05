@@ -139,7 +139,7 @@ def processPower(args):
     elif 'devoted' in feats.get('Vows',[]) and cc == "Force Points":
         if c.get_cc("Focus Points") and not ignore:
             cc = f"Focus Points"
-            points = points-1
+            points = points-1 if points > 0 else 0
 
     # --------------------
     # Pay the cost

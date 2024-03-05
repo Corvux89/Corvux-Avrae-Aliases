@@ -281,7 +281,7 @@ def processAttacks(attacks, args):
     if args.get('auto'):
         out = [x for x in out if "burst" in x.name.lower() or "rapid" in x.name.lower() or "penetrating" in x.name.lower()]
 
-    if 'Steadfast' in feats.get('Ideals', []) and 'reload' not in attack.lower():
+    if 'Steadfast' in feats.get('Ideals', []) and 'reload' not in attack.lower() and sup.stripAmmo(a.name) == a.name and 'grenade' not in a.name.lower():
         ios = weap.ideal_of_the_steadfast(attack, args)
         if ios:
             out += load_json(ios)
