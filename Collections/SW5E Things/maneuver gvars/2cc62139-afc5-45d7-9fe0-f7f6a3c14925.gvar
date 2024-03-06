@@ -18,6 +18,7 @@ def maneuver(args):
     out = f"embed -thumb {image} -color {color}"
     sm = a.get("sm")
     mm = a.get('mm')
+    fs = a.get('fs')
 
     if sm:
         c.create_cc_nx("Superiority Mastery", 0, c.stats.prof_bonus, "long", "square")
@@ -40,12 +41,14 @@ def maneuver(args):
     superiorityDice += f"+{ceil(maneuverMod/2)}" if mm else ''
     ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
     cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
+    cc_valid = False if (fs and not (c.cc_exists("Field Surgeon") and c.get_cc("Field Surgeon")) or i) else cc_valid
     dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
 
     v = bool(lvl>=0 and cc_valid and feature)
     if v:
         ccNum = ccNum if v and not i else 0
         c.mod_cc(cc,ccNum) if v and not i else ""
+        c.mod_cc("Field Surgeon", -1) if v and not i else ""
 
         # Straight Superiority Dice Rolls
         dice = do_roll(feature,superiorityDice, maneuverMod, args) if feature and "roll" in feature and feature.roll else ""
@@ -67,12 +70,11 @@ def maneuver(args):
 
         # Do some rolls
         roll_str = feature.damage + roll_add(feature, dmgType, args) if 'damage' in feature else '0'
-        roll_str = get_max_roll(roll_str) if 'max' in args else roll_str
+        roll_str = get_max_roll(roll_str) if fs else get_max_roll(roll_str) if 'max' in args else roll_str
 
         dc = int(a.last('dc')) if a.last('dc') else roll(feature.save.dc) if "save" in feature and "dc" in feature.save else 8+c.stats.prof_bonus+maneuverMod
         damage = vroll(f"""{f'-({roll_str})' if dmgType == "healing" else f'{roll_str}'}""",2 if crit else 1)
-        # damage = vroll(f"""{f'-({roll_str})' if dmgType == "healing" else f'{roll_str}'}""",2 if crit else 1) if "damage" in feature else vroll("0")
-        thp = vroll(get_max_roll(feature.thp) if 'max' in args else feature.thp) if "thp" in feature else vroll("0")
+        thp = vroll(get_max_roll(feature.thp) if 'max' in args else get_max_roll(feature.thp) if fs else feature.thp) if "thp" in feature else vroll("0")
 
         # Start processing targets
         targetHeader = [f'-f "{target[0].name}|' for target in targets]
@@ -180,20 +182,26 @@ def maneuver(args):
 
         out += " " + feature.desc
 
-        for i in range(len(format)):
-            out = out.replace(format[i], str(r[i]))
+        for x in range(len(format)):
+            out = out.replace(format[x], str(r[x]))
     elif not c.cc_exists(cc) and not i:
         return err(f"No counter name `{cc}` exists")
     elif not c.get_cc(cc) and not i:
         out += f''' -title "{name} attempts {feature.name}." -desc "Unfortunately there are no `{cc}` to do it. Take a short/long reset then try again"'''
+    elif not cc_valid:
+        out += f''' -title "{name} attempts {feature.name}." -desc "Unfortunately there are not enough to do it how they wanted!maneu. Take a short/long reset then try again"'''
     else:
         return err(f"Something went wrong here. Let Corvux know and he'll break it better.")
+    if v:
+        if sm:
+            out += f''' -f "Superiority Mastery|Choose one maneuver you know. When you would use the chosen maneuver, you can use a d4 instead of expending a superiority die. You can do so a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest."'''
 
-    if sm:
-        out += f''' -f "Superiority Mastery|Choose one maneuver you know. When you would use the chosen maneuver, you can use a d4 instead of expending a superiority die. You can do so a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest."'''
+        if mm:
+            out += f''' -f "Masters Maneuver|When you would use a maneuver, you can expend a use of your Channel the force. You do not expend a die to use the maneuver and if you would roll the maneuver die for the maneuver, you add half your maneuver modifier to the result." '''
 
-    if mm:
-        out += f''' -f "Masters Maneuver|When you would use a maneuver, you can expend a use of your Channel the force. You do not expend a die to use the maneuver and if you would roll the maneuver die for the maneuver, you add half your maneuver modifier to the result." '''
+        if fs:
+            out += f''' -f "Field Surgeon ({"-1" if not i else ""})|{c.cc_str("Field Surgeon")}\nWhenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, if the creature is the target of your Critical Analysis, you can instead choose the maximum on both dice. Once you’ve used this feature, you must finish a short or long rest before you can use it again. Starting at 11th level, you can use it twice before a rest, but only once on the same turn."'''
+
 
     return out
 
@@ -216,7 +224,7 @@ def do_roll(feature, superiorityDice, maneuverMod, args):
     for n, sk in c.skills:
         roll_str = roll_str.replace(f'#{n}#', f'1d20+{sk.value}')
 
-    if 'max' in args:
+    if args.get('max') or args.get('fs'):
         roll_str = get_max_roll(roll_str)
 
     return vroll(roll_str)

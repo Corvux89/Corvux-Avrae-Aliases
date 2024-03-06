@@ -27,6 +27,22 @@ for a in c.attacks:
                     belt.mod(-belt_amt, True)
                     base += f''' -f "{belt.name} (-{belt_amt})|{belt.full_str()}" '''
 
+            if args.get('count'):
+                if not weap:
+                    return err("Cannot use an additional counter without specifying a weapon")
+                try:
+                    if (add_count := c.cc(args.last('count'))):
+                        if add_count.value > 0:
+                            add_count.mod(-1, True)
+                            base += f''' -f "{add_count.name} (-1)|{add_count.full_str()}"'''
+                        else:
+                            return err(f"Not enough {add_count.name} left")
+                    else:
+                        return err(f"Invalid counter name {args.last('count')}")
+                except:
+                    return err(f"Invalid counter name {args.last('count')}")
+
+
             count+=1
             cc.reset()
             base += f''' -f "{cc.name}|{cc.full_str()}" '''
