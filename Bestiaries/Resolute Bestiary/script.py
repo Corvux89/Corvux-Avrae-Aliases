@@ -65,9 +65,9 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                      'test': auto_type,
                      'auto': auto}
                 saveAuto.append(s)
-
-    with open(fileName, "w") as outfile:
-        json.dump(kfcdb, outfile)
+    if fileName:
+        with open(fileName, "w") as outfile:
+            json.dump(kfcdb, outfile)
 
     if autoMode == "a":
         mf = open("automation.json", encoding='utf-8')

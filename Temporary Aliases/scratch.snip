@@ -1,6 +1,0 @@
-<drac2>
-ch = character()
-item_dict = load_json(ch.get_cvar("SWItems", "{}"))
-
-return err(min(int(item_dict.get('OperativeOffensiveAugment',0)),3))
-</drac2>

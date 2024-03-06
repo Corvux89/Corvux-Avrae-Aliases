@@ -48,7 +48,7 @@ def maneuver(args):
     if v:
         ccNum = ccNum if v and not i else 0
         c.mod_cc(cc,ccNum) if v and not i else ""
-        c.mod_cc("Field Surgeon", -1) if v and not i else ""
+        c.mod_cc("Field Surgeon", -1) if v and not i and fs else ""
 
         # Straight Superiority Dice Rolls
         dice = do_roll(feature,superiorityDice, maneuverMod, args) if feature and "roll" in feature and feature.roll else ""

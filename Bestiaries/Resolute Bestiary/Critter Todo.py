@@ -1,10 +1,3 @@
-# TODO Brain Worm: Consume Mind
-# TODO Brain Worm: Body Thief
-# TODO Captain: Leadership (Recharges after a Short or Long Rest).
-# TODO Cliff Wampa: Bite
-# TODO Cliff Wampa: Throw Boulder
-# TODO Cyborg Khagan: Frightful Presence
-# TODO Cyborg Khagan: Whirling Advance
 # TODO DF.9 Anti-Infantry Turret: Laser Cannon
 # TODO DSD1 Dwarf Spider Droid: Burst
 # TODO DSD1 Dwarf Spider Droid: Self-Destruct
