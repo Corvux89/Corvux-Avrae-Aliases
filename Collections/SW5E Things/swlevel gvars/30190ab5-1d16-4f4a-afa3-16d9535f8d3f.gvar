@@ -1,0 +1,485 @@
+# SWLevel Module
+
+ch = character()
+class_gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
+class_gvars += load_json(get_svar("sw5e","{}")).get('levels',[])
+additional_actions = ['8301258f-1c61-4ca7-bf04-11ed10b9d65d']
+additional_actions += load_json(get_svar("sw5e","{}")).get('actions',[])
+actionTracker = load_json(ch.get_cvar("swActionMods", "{}"))
+stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+dagger = '†'
+image = ch.image
+color = ch.csettings.color
+footer = f"\"{ctx.prefix}swlevel v1.1 | @Corvux\""
+
+def level(args):
+    args = [x.lower() for x in args]
+    dev = True if argparse(args).get('dev') else False
+    stat = argparse(args).last('stat')
+    updateOnly = argparse(args).last('update')
+    remover = [args.remove(x) if x in args else None for x in
+               ["practice", "engineering", "specialist", "technique", "pursuit", "order", "approach", "path", "form",
+                "way", "of", "-cc", "-dev", "-stat", "-update", stat]]
+    inLevel = ([args.pop(args.index(x)) for x in args if x.isdigit()] + [''])[0]
+    help = args and args[0] in ["help","?"]
+    base = f'''embed -thumb {image} -color {color} -footer {footer} 
+    -f "Total Level|{ch.levels.total_level}" '''
+    classSearch = args[0] if args else None
+    remover = args.remove(args[0]) if args else None
+    archetypeSearch = args[0] if args else None
+    err_str = []
+    counters = []
+    actions = []
+    if stat:
+        stat = f'{[x for x in stats if stat.lower() in x][0]}Mod'
+
+    if not help:
+        base += f''' -title "Level Summary for {ch.name}" '''
+        # Initial Validation
+        if inLevel and classSearch:
+            for (cl, lvl) in ch.levels:
+                if classSearch.lower() in cl.lower():
+                    inLevel = None
+                    err_str.append(
+                        f"Cannot override class level|Your {cl} level is being set by your sheet. "
+                        f"`{ctx.prefix}swlevel` can't alter this. You need to change your level on your sheet "
+                        f"and `{ctx.prefix}update`")
+
+        # Find information
+        playerClass = getClass(classSearch)
+        playerArchetype = getArchetype(playerClass, archetypeSearch)
+
+        # Update Level CVARs
+        updateLevelCVAR(playerClass, playerArchetype, inLevel)
+
+        # Hit Die
+        if not updateOnly:
+            hdStr = setupHD(playerClass, inLevel)
+            hdStr = "\n".join(hdStr)
+
+            base += f''' -f "Hit Die|{hdStr}|inline" '''
+
+        # Total Levels
+        c_str, total_levels = get_levels()
+        base += f''' -f "Class Levels|{c_str}|inline" '''
+
+        if total_levels > ch.levels.total_level:
+            err_str.append(f"Invalid Total Level|Your total class levels exceed your character level. "
+                           f"Remember to `{ctx.prefix}update` your sheet with your new level.")
+
+        if dagger in c_str:
+            err_str.append(f"Unrecognized Class|One or more classes imported from your sheet are marked with "
+                           f"a dagger({dagger}). This means `{ctx.prefix}swlevel` does not recognize it and "
+                           f"therefore cannot make counters or hit dice for it. You will have to set those up manually.")
+
+        # Get Counters
+        if not updateOnly:
+            counters = getCounters(playerClass, playerArchetype, inLevel)
+
+        # Get Actions
+        actions = getActions(playerClass, playerArchetype, inLevel, stat)
+
+        # Setup Counters
+        if not updateOnly:
+            createCounters(counters, inLevel)
+            if len({x.Class for x in playerClass}) > 1:
+                multiclass(counters, inLevel)
+
+        # Additional Actions and Feats
+        add_act_str = additionalActions(actions, counters, stat)
+
+        # Setup Output
+        c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
+        base += f''' -f  "Counter{'s' if len(counters)>1 else ''}|{c_str}"'''
+        if len(add_act_str) > 0:
+            add_act_str = "\n".join(add_act_str)
+            base += f''' -f "Additional Actions/Setup|{add_act_str}"'''
+
+        for cl in playerClass:
+            level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
+            if level >= cl.get("subclassLevel") and cl.Class not in [x.Class for x in playerArchetype]:
+                err_str.append(f"Don't forget your subclass!|One or more of your classes is high enough level "
+                                f"to select a subclass, do so with `{ctx.prefix}swlevel <class> <archetype>`.")
+
+        # Error Strings
+        if len(err_str) > 0:
+            base += " -f " + " -f ".join([f"\"{x}\"" for x in err_str])
+
+    else:
+        base += f''' -title "{ctx.prefix}swlevel help!" -desc "Coming soon" '''
+
+    if dev:
+        return err([a.name for a in actions])
+
+    if len(actions) > 0:
+        return f'''multiline\n{ctx.prefix}{base}\n{ctx.prefix}a import {actions}'''
+    return base
+
+def options(args):
+    args = [x.lower() for x in args]
+    classSearch = args[0] if args else None
+    base = f'''embed -thumb {image} -color {color} -footer {footer} -title "Available {'Archetypes' if classSearch else 'Classes'}" '''
+    out_list = []
+
+    for g in class_gvars:
+        classes = load_json(get_gvar(g))
+
+        if classSearch:
+            out_list += list({x.get("subclass") for x in classes if classSearch.lower() in x.Class.lower() and x.get("subclass")})
+            cl = list({x.get("Class") for x in classes if classSearch.lower() in x.Class.lower() and x.get("Class")})
+            cl = cl[0] if len(cl) > 0 else ""
+        else:
+            out_list += list({x.Class for x in classes})
+
+    if len(out_list) == 0:
+        return err(f"**No class found matching that input.**\n"
+                   f"Use `{ctx.prefix}swlevel options to see your available classes.")
+    else:
+        out_list.sort()
+        base += f''' -f "{f'{cl} Subclasses:' if classSearch else 'Classes'}|{', '.join(out_list)}" '''
+
+    return base
+
+def getClass(str):
+    classList = []
+
+    # Manually Entered
+    if str:
+        for g in class_gvars:
+            classes = load_json(get_gvar(g))
+
+            for c in classes:
+                if str and c.Class.lower() == str.lower() and not c.get("subclass") and c not in classList:
+                    classList.append(c)
+
+    if str and len(classList) == 0:
+        return err("**No class found matching that input.**\n Use `!swlevel options` to see your available classes.")
+
+    for g in class_gvars:
+        classes = load_json(get_gvar(g))
+
+        for c in classes:
+            if not c.get("subclass"):
+
+                # From Character sheet
+                for (pc, lvl) in ch.levels:
+                    if c.Class.lower() == pc.lower() and not c.get("subclass") and c not in classList:
+                        classList.append(c)
+
+                # Overrides
+                if ch.get_cvar(f"{c.Class}Level") and c not in classList:
+                    classList.append(c)
+
+    if len(classList) == 0:
+        return err("**No class found.**\n Use `!swlevel options` to see your available classes.")
+
+    return classList
+
+
+def get_levels():
+    out_list = []
+    total_level = 0
+    ref_list = []
+
+    for g in class_gvars:
+        classes = load_json(get_gvar(g))
+        ref_list += list({x.Class for x in classes if x.Class != "ExampleClass"})
+
+    ref_set = {x: 0 for x in ref_list}
+
+    for cl in ref_set:
+        cl_str = None
+        if ch.levels.get(cl):
+            ref_set[cl]=ch.levels.get(cl)
+            total_level += int(ch.levels.get(cl))
+            cl_str = cl
+        elif ch.get_cvar(f"{cl}Level"):
+            ref_set[cl] = ch.get_cvar(f"{cl}Level")
+            total_level += int(ch.get_cvar(f"{cl}Level"))
+            cl_str = cl
+
+        if ch.get_cvar("subclass") and load_json(ch.get_cvar("subclass")).get(f"{cl}Level"):
+            cl_str += f" ({load_json(ch.get_cvar('subclass')).get(f'{cl}Level')})"
+
+        out_list.append(f"{cl_str}: {ref_set[cl]}") if cl_str else ""
+
+    for (cl, lvl) in ch.levels:
+        if cl not in ref_set:
+            out_list.append(f"{cl}{dagger}: {lvl}")
+
+    cl_str = "\n".join(out_list)
+
+    return cl_str, total_level
+
+
+def getArchetype(playerClass, str):
+    class_list = [y for y in {x.Class for x in playerClass}]
+    archetype = []
+    subclass = load_json(ch.get_cvar("subclass")) if ch.get_cvar("subclass") else {}
+    for g in class_gvars:
+        classes = load_json(get_gvar(g))
+
+        for c in classes:
+            if c.get("subclass") and c.Class in class_list and str and c.get("subclass").lower() == str.lower():
+                archetype.append(c)
+            elif c.get("subclass") and subclass.get(f"{c.Class}Level") == c.get("subclass"):
+                archetype.append(c)
+
+    return archetype
+
+
+def updateLevelCVAR(playerClass, playerArchetype, inLevel):
+    subclass = load_json(ch.get_cvar("subclass", "{}"))
+    subclass.update({f"{x.Class}Level": "" for x in playerClass if not subclass.get(f"{x.Class}Level")})
+    actionMods = load_json(ch.get_cvar("swActionMods", "{}"))
+    actionMods["counters"] = []
+    ch.set_cvar("swActionMods", dump_json(actionMods))
+
+    if len(playerArchetype) > 0:
+        for arch in playerArchetype:
+            subclass[f"{arch.Class}Level"] = arch.subclass
+
+    character().set_cvar("subclass", dump_json(subclass))
+
+    for c in playerClass:
+        if not ch.levels.get(c.Class) and inLevel:
+            ch.set_cvar(f"{c.Class}Level", inLevel)
+
+
+def getCounters(playerClass, playerArchetype, inLevel):
+    counters = []
+
+    for cl in playerClass:
+        level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
+        for counter in cl.counters:
+            if level >= counter.level:
+                counters.append(counter)
+
+    if len(playerArchetype)>0:
+        for arch in playerArchetype:
+            level = ch.levels.get(arch.Class) if not inLevel else int(inLevel)
+            for counter in arch.counters:
+                if level >= counter.level:
+                    counters.append(counter)
+    return counters
+
+def createCounters(counters, inLevel):
+    for counter in counters:
+        # Class level
+        level = min(int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel),20)
+
+        # Max Value
+        max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
+
+        # Max value modifier
+        modifier = counter.modifier if 'modifier' in counter else 0
+        modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
+
+        # Reset on
+        reset = counter.reset.split('$')
+        reset = reset[0] if not '$' in counter.reset or level < int(reset[1]) else reset[2]
+
+        # Create the counters
+        ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display,
+                     counter.get('reset_to'), None, None, counter.get('desc'))
+
+
+def setupHD(playerClass, inLevel):
+    hitDict = {"d6": 0, "d8": 0, "d10": 0, "d12": 0}
+    out = []
+    for cl in playerClass:
+        level = int(ch.levels.get(cl.Class)) if not inLevel else int(inLevel)
+
+        if cl.get("hitDie"):
+            hitDict[cl.hitDie] += level
+
+    for x in hitDict:
+        if hitDict[x]:
+            name = f"Hit Dice ({x})"
+            if ch.cc_exists(name):
+                ch.delete_cc(name)
+            ch.create_cc_nx(name, 0, hitDict[x])
+
+            out.append(f"{hitDict[x]}{x}")
+
+    return out
+
+def multiclass(counters, inLevel):
+    classList = []
+    fp = 0
+    fpMod = []
+    tp = 0
+    tpMod = []
+
+    for counter in counters:
+        # Class level
+        level = min(int(ch.levels.get(counter.classLevel.replace("Level", ''))) if not inLevel else int(inLevel), 20)
+
+        if counter.name == "Force Points" and counter.classLevel not in classList:
+            classList.append(counter.classLevel)
+            fp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace(f"{counter.classLevel}", f"{level}") if typeof(counter.value) == 'str' else counter.value
+            modifier = counter.modifier if 'modifier' in counter else 0
+            modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
+            fpMod.append(modifier)
+
+        if counter.name == "Tech Points" and counter.classLevel not in classList:
+            classList.append(counter.classLevel)
+            tp += counter.value[level - 1] if typeof(counter.value) == 'SafeList' else translate_str(counter.value,counter.classLevel, level) if typeof(counter.value) == 'str' else counter.value
+            modifier = counter.modifier if 'modifier' in counter else 0
+            modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier.replace(f"{counter.classLevel}", f"{level}") if typeof(modifier) == 'str' else modifier
+            tpMod.append(modifier)
+
+    if fp > 0:
+        ch.edit_cc("Force Points", 0, f'''{fp} + {f"max({','.join(fpMod)})" if len(fpMod) > 1 else fpMod[0]}''')
+        ch.set_cc("Force Points", ch.get_cc_max("Force Points"))
+
+    if tp > 0:
+        ch.edit_cc("Tech Points", 0, f'''{tp} + {f"max({','.join(tpMod)})" if len(tpMod) > 1 else tpMod[0]}''')
+        ch.set_cc("Tech Points", ch.get_cc_max("Tech Points"))
+
+def translate_str(val, class_str, level):
+    val = val.replace(f"{class_str}", f"{level}").replace("strengthMod", f"{ch.stats.get_mod('str')}").replace("dexterityMod", f"{ch.stats.get_mod('dex')}")
+    val = val.replace("constitutionMod", f"{ch.stats.get_mod('con')}").replace("intelligenceMod", f"{ch.stats.get_mod('int')}")
+    val = val.replace('wisdomMod', f"{ch.stats.get_mod('wis')}").replace("charismaMod", f"{ch.stats.get_mod('cha')}")
+    val = val.replace('proficiencyBonus', f"{ch.stats.prof_bonus}")
+    return int(val)
+
+def getActions(playerClass, playerArchetype, inLevel, stat = None):
+    actions = []
+
+    for cl in playerClass:
+        if cl.get('actions'):
+            level = ch.levels.get(cl.Class) if not inLevel else int(inLevel)
+            for a in cl.actions:
+                if int(level) >= int(a.level):
+                    action = a.action
+                    if stat:
+                        action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod',stat).replace('charismaMod', stat))
+                    actions.append(action)
+
+    if len(playerArchetype)>0:
+        for arch in playerArchetype:
+            if arch.get('actions'):
+                level = ch.levels.get(arch.Class) if not inLevel else int(inLevel)
+                for a in  arch.actions:
+                    if int(level) >= int(a.level):
+                        actions = [x for x in actions if x.get('name') != a.action.get('name')]
+                        action = a.action
+                        if stat:
+                            action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod',stat).replace('charismaMod', stat))
+                        actions.append(action)
+
+    return actions
+
+def additionalActions(actions = [], counters = [], stat = None):
+    action_str = ""
+    modVars = actionTracker.get('cvars', [])
+    modCnt = actionTracker.get('modCounters', [])
+    out = []
+
+    for a in ch.attacks:
+        if a.name == "zCustomImport":
+            try:
+                action_str = a.raw['automation'][1]['text'].lower().split('\n')[1].split(', ')
+            except:
+                break
+            break
+
+    if action_str != "":
+        for g in additional_actions:
+            add_actions = load_json(get_gvar(g))
+
+            for a in add_actions:
+                if a.name.lower() in action_str:
+                    if a.get('level') and ch.levels.total_level < int(a.level):
+                        break
+
+                    # Add actions
+                    if a.get('actions'):
+                        for act in a.actions:
+                            action = act.action
+                            if act.get('level') and ch.levels.total_level < int(act.level):
+                                break
+                            if stat:
+                                action = load_json(dump_json(action).replace('max(wisdomMod,charismaMod)', stat).replace('wisdomMod',stat).replace('charismaMod', stat))
+                            actions.append(action)
+                            out.append(action.name)
+
+                    # Modify an existing counter
+                    if a.get('modCounter'):
+                        if not(a.modCounter.get('nonce') and a.name in modCnt):
+                            modCounter(a.modCounter)
+                            modCnt.append(a.name)
+                            out.append(a.name)
+
+                    # Add counters
+                    if a.get('counters'):
+                        for counter in a.counters:
+                            additionalCounter(counter, counters)
+
+                    # Update/Set a CVAR
+                    if a.get('cvar') and a.name not in modVars:
+                        modVars.append(a.name)
+                        modCVAR(a.cvar)
+                        out.append(a.name)
+
+
+    actionTracker["cvars"] = modVars
+    actionTracker["modCounters"] = modCnt
+    ch.set_cvar("swActionMods", dump_json(actionTracker))
+    return [x for x in {x for x in out}]
+
+def additionalCounter(counter, counters):
+    level = ch.levels.total_level if not counter.get('classLevel') else max(ch.levels.get(counter.classLevel, 0),ch.levels.get(f'{counter.classLevel}light', 0),ch.levels.get(f'{counter.classLevel}dark', 0))
+
+    if int(level) == 0 or (counter.get('level') and counter.level > level):
+        return
+    elif counter.get('new') and ch.cc_exists(counter.name):
+        return
+
+    # Max Value
+    max_value = counter.value[level - 1] if typeof(counter.value) == 'SafeList' else counter.value.replace('{level}',str(level)) if typeof(counter.value) == 'str' else counter.value
+
+    # Max Value Modifier
+    modifier = counter.modifier if 'modifier' in counter else 0
+    modifier = modifier[level - 1] if typeof(modifier) == 'SafeList' else modifier
+
+    # Reset On
+    reset = counter.reset.split('$')
+    reset = reset[0] if not '$' in counter.reset or level < int(reset[1]) else reset[2]
+
+    # Create the counter
+    ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display, counter.get('reset_to'), None,None, counter.get('desc'))
+    counters.append({"name": counter.name})
+
+
+def modCounter(counter):
+    totalLevel = ch.levels.total_level
+    if ch.cc_exists(counter.name):
+        cc = ch.cc(counter.name)
+        modifier = counter.modifier if 'modifier' in counter else 0
+        modifier = modifier[totalLevel - 1] if typeof(modifier) == 'SafeList' else modifier
+        ch.create_cc(counter.name, cc.min, f"{cc.max}+{modifier}", cc.reset_on, cc.display_type, cc.reset_to,cc.reset_by, cc.title, cc.desc, f"{cc.value}+{modifier}")
+def modCVAR(cvar_ref):
+    cvar = load_json(ch.get_cvar(cvar_ref.name, cvar_ref.get('default',"[]")))
+    if 'node' in cvar_ref:
+        base_val = cvar.get(cvar_ref.node)
+    else:
+        base_val = cvar
+
+    if not base_val:
+        base_val = [] if 'append' in cvar_ref else 0 if 'modifier' in cvar_ref else ""
+
+    if 'value' in cvar_ref:
+        base_val = cvar_ref.value
+    elif 'modifier' in cvar_ref:
+        base_val += int(cvar_ref.modifier)
+    elif 'append' in cvar_ref and cvar_ref.append not in base_val:
+        base_val.append(cvar_ref.append)
+
+    if 'node' in cvar_ref:
+        cvar[cvar_ref.node] = base_val
+    else:
+        cvar = base_val
+
+    ch.set_cvar(cvar_ref.name, dump_json(cvar))

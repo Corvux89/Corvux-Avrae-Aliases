@@ -1,0 +1,1 @@
+Goggles of the Tinkerer -d version

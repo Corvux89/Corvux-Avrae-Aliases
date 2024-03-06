@@ -3,7 +3,7 @@ from tkinter import filedialog, ttk
 from utils import *
 
 
-ioFileTypes = [('QuickMenu Files', '*.io'), ('All Files', '*.*')]
+ioFileTypes = [('Collection Files', '*.io'), ('All Files', '*.*')]
 gvarFileTypes = [('GVAR Files', '*.gvar'), ('All Files', '*.*')]
 jsonFileTypes = [('JSON Files', '*.json'), ('All Files', '*.*')]
 aliasFileTypes = [('Alias Files', '*.alias'), ('All Files', '*.*')]
@@ -18,50 +18,64 @@ class QuickMenu(tk.Frame):
         self.ext = os.path.splitext(self.current_file)[1]
         self.name = os.path.splitext(self.current_file)[0]
 
-        tk.Button(self, text="1. Push Update", command=self.push_update)\
+        tk.Button(self, text="1. Push Update", command=self.push_update, width=12)\
             .grid(row=0, column=0, pady=10, padx=5)
         self.bind_all('1', self.push_update)
 
-        tk.Button(self, text="2. Pull Update", command=self.pull_update)\
+        tk.Button(self, text="2. Pull Update", command=self.pull_update, width=12)\
             .grid(row=0, column=1, pady=10, padx=5)
         self.bind_all('2', self.pull_update)
 
-        tk.Button(self, text="3. Pull Description", command=self.pull_description)\
-            .grid(row=0, column=2, pady=10, padx=5)
-        self.bind_all('3', self.pull_description)
+        tk.Button(self, text="Pull Alias", width=12,
+                  command=lambda: controller.show_frame("AliasSelect")).grid(row=1, column=0, pady=10, padx=5, sticky="ws")
 
-        tk.Button(self, text="Pull Alias",
-                  command=lambda: controller.show_frame("AliasSelect")).grid(row=1, column=0, pady=10, padx=5, sticky="w")
-
-        tk.Button(self, text="Pull Snippet", command=lambda: controller.show_frame("SnippetSelect"))\
+        tk.Button(self, text="Pull Snippet", command=lambda: controller.show_frame("SnippetSelect"), width=12)\
             .grid(row=1, column=1, pady=10, padx=5, sticky="w")
+
+        tk.Button(self, text="Pull GVAR", command=lambda: controller.show_frame("GVAR"), width=12) \
+            .grid(row=1, column=3, pady=10, padx=5, sticky="w")
 
         tk.Button(self, text="Main Menu", command=lambda: controller.show_frame("SettingsMenu"))\
             .grid(row=2, column=0, padx=5, pady=10, columnspan=2, sticky="w")
 
-    def pull_description(self, *args):
-        if not self.is_topmost:
-            return
-        elif self.ext.lower() == '.alias':
-            alias_id = self.controller.collection.get('aliases', {}).get(self.name, "")
-            get = AvraeRest("GET", f"workshop/alias/{alias_id}")
-            alias_data = json.loads(get.text)['data']
-            with open(os.path.join(os.path.dirname(sys.argv[1]), f"{self.name}.md"), mode="w+", encoding="utf-8") as outfile:
-                outfile.write("".join(alias_data['docs']).replace('\r',''))
-            messagebox.showinfo(title="Alias Document Saved", message=f"Alias Documentation Sucessfully saved!")
-            self.controller.destroy()
-        else:
-            messagebox.showerror(title="Error", message="This probably doesn't have a description")
-
     def pull_update(self, *args):
         if not self.is_topmost:
             return
-        if self.ext.lower() == '.alias':
-            print("alias")
-        elif self.ext.lower() == '.snippet':
-            print("snippet")
-        elif self.ext.lower() == '.md':
-            print('readme stuff')
+        if alias_id := self.controller.collection.get('aliases', {}).get(self.name, None):
+            get = AvraeRest("GET", f"workshop/alias/{alias_id}")
+            alias_data = json.loads(get.text)['data']
+            if self.ext.lower() == '.alias':
+                with open(os.path.join(os.path.dirname(sys.argv[1]), f"{self.name}.alias"), mode="w+",
+                          encoding="utf-8") as outfile:
+                    outfile.write("".join(alias_data['code']).replace('\r', ''))
+            elif len(alias_data['docs']) > 0 and self.ext.lower() == '.md':
+                with open(os.path.join(os.path.dirname(sys.argv[1]), f"{self.name}.md"), mode="w+",
+                          encoding="utf-8") as outfile:
+                    outfile.write("".join(alias_data['docs']).replace('\r', ''))
+            messagebox.showinfo(title="Alias Saved", message=f"Alias Sucessfully saved!")
+
+        elif snippet_id := self.controller.collection.get('snippets', {}).get(self.name, None):
+                get = AvraeRest("GET", f"workshop/snippet/{snippet_id}")
+                snippet_data = json.loads(get.text)['data']
+
+                if self.ext.lower() == '.snippet':
+                    with open(os.path.join(os.path.dirname(sys.argv[1]), f"{snippet_data['name']}.snippet"), mode="w+",
+                              encoding="utf-8") as outfile:
+                        outfile.write("".join(snippet_data['code']).replace('\r', ''))
+                elif len(snippet_data['docs']) > 0 and self.ext.lower() == '.md':
+                    with open(os.path.join(os.path.dirname(sys.argv[1]), f"{self.name}.md"), mode="w+",
+                              encoding="utf-8") as outfile:
+                        outfile.write("".join(snippet_data['docs']).replace('\r', ''))
+                messagebox.showinfo(title="Snippet Saved", message=f"Snippet Sucessfully saved!")
+
+        elif self.name == "readme":
+            get = AvraeRest("GET", f"workshop/collection/{self.controller.collection.get('collection','')}/full")
+            collection = json.loads(get.text)['data']
+
+            with open(os.path.join(os.path.dirname(sys.argv[1]), f"{self.name}.md"), mode="w+", encoding="utf-8") as outfile:
+                outfile.write(collection.get('description', ''))
+            messagebox.showinfo(title="Readme Saved", message=f"Colleciton Readme Sucessfully saved!")
+
         elif self.ext.lower() in ['.json', '.gvar']:
             if gvar_id := UUID_PATTERN.search(self.name):
                 get = AvraeRest("GET", f"/customizations/gvars/{gvar_id.group(0)}")
@@ -82,50 +96,46 @@ class QuickMenu(tk.Frame):
     def push_update(self, *args):
         if not self.is_topmost:
             return
-
-        if self.ext.lower() == '.alias':
-            if alias_id := self.controller.collection.get('aliases', {}).get(self.name, None):
-                data = getFileContent(sys.argv[1])
+        if alias_id := self.controller.collection.get('aliases', {}).get(self.name, None):
+            data = getFileContent(sys.argv[1])
+            name = self.name.split()[-1]
+            if self.ext.lower() == '.alias':
                 if len(data) > 100000:
                     messagebox.showerror(title="Error", message="Aliases are limited to 100k characters")
+                    self.controller.destroy()
                 self._updateCollectionContent("alias", "code", alias_id, {"content": data})
-            else:
-                messagebox.showerror(title="Error", message="Invalid Alias")
-
-        elif self.ext.lower() == '.snippet':
-            if snippet_id := self.controller.collection.get('snippets', {}).get(self.name, None):
-                data = getFileContent(sys.argv[1])
-                if len(data)>100000:
-                    messagebox.showerror(title="Error", message="Snippets are limited to 100k characters")
-                self._updateCollectionContent("snippet", "code", snippet_id, {"content": data})
-            else:
-                messagebox.showerror(title="Error", message="Invalid Snippet")
-
-        elif self.ext.lower() == '.md':
-            if alias_id := self.controller.collection.get('aliases', {}).get(self.name, None):
-                data = getFileContent(sys.argv[1])
-                name = self.name.split()[-1]
+            elif self.ext.lower() == '.md':
                 self._updateCollectionContent("alias", "docs", alias_id, {"name": name, "docs": data})
-            elif snippet_id := self.controller.collection.get('snippets', {}).get(self.name, None):
-                data = getFileContent(sys.argv[1])
-                name = self.name.split()[-1]
+            else:
+                messagebox.showerror(title="Error", message="Invalid file type")
+        elif snippet_id := self.controller.collection.get('snippets', {}).get(self.name, None):
+            data = getFileContent(sys.argv[1])
+            name = self.name.split()[-1]
+            if self.ext.lower() == '.snippet':
+                    if len(data)>100000:
+                        messagebox.showerror(title="Error", message="Snippets are limited to 100k characters")
+                    self._updateCollectionContent("snippet", "code", snippet_id, {"content": data})
+            elif self.ext.lower() == '.md':
                 self._updateCollectionContent("snippet", "docs", snippet_id, {"name": name, "docs": data})
-            elif self.name == "readme":
-                get = AvraeRest("GET", f"workshop/collection/{self.controller.collection.get('collection','')}/full")
-                data = getFileContent(sys.argv[1])
-                if get.status_code in [200, 201]:
-                    collection_data = json.loads(get.text)['data']
-                    patch = AvraeRest("PATCH", f"workshop/collection/{self.controller.collection.get('collection', '')}",
-                                      {"name": collection_data['name'],
-                                       "description": data,
-                                       "image": collection_data['image']},
-                                      )
-                    if patch.status_code in [200, 201]:
-                        messagebox.showinfo(title="Success!", message=f"Successfully updated Workshop content:\n"
-                                                                      f"Collection: {collection_data['name']}\n"
-                                                                      f"ID: {self.controller.collection.get('collection', '')}")
-                else:
-                    messagebox.showerror(title="Error", message="Error getting collection information")
+            else:
+                messagebox.showerror(title="Error", message="Invalid file type")
+        elif self.name == "readme":
+            get = AvraeRest("GET", f"workshop/collection/{self.controller.collection.get('collection', '')}/full")
+            data = getFileContent(sys.argv[1])
+            if get.status_code in [200, 201]:
+                collection_data = json.loads(get.text)['data']
+                patch = AvraeRest("PATCH", f"workshop/collection/{self.controller.collection.get('collection', '')}",
+                                  {"name": collection_data['name'],
+                                   "description": data,
+                                   "image": collection_data['image']},
+                                  )
+                if patch.status_code in [200, 201]:
+                    messagebox.showinfo(title="Success!", message=f"Successfully updated Workshop content:\n"
+                                                                  f"Collection: {collection_data['name']}\n"
+                                                                  f"ID: {self.controller.collection.get('collection', '')}")
+            else:
+                messagebox.showerror(title="Error", message="Error getting collection information")
+
 
         elif self.ext.lower() in ['.json', '.gvar']:
             data = getFileContent(sys.argv[1])
@@ -166,11 +176,12 @@ class QuickMenu(tk.Frame):
         else:
             messagebox.showerror(title="Error", message=f"Unable to update {type.lower()}: {self.name}")
 
+
 class SettingsMenu(tk.Frame):
     def __init__(self, master, controller):
         tk.Frame.__init__(self, master)
         self.controller = controller
-        self.collection_id = tk.StringVar(self, value='63e066ecd6596a5e18f1604f')
+        self.collection_id = tk.StringVar(self)
         self.is_topmost = False
 
         # QuickMenu Input
@@ -178,13 +189,48 @@ class SettingsMenu(tk.Frame):
         tk.Entry(self, textvariable=self.collection_id, width=30).grid(row=0,column=1,columnspan=4, padx=5, pady=5)
 
         # Buttons
-        tk.Button(self, text="Pull New Collection Data", command=self.get_collection_data).grid(row=1,column=0, padx=5, pady=10)
-        tk.Button(self, text="Update Existing Collection", command=self.update_collection).grid(row=1, column=2, padx=5,pady=10)
-        tk.Button(self, text="Get GVARs", command=lambda: controller.show_frame('GVAR')).grid(row=1, column=3, padx=5,
+        tk.Button(self, text="Pull New Collection Data", command=self.get_collection_data, width=20).grid(row=1,column=0, padx=5, pady=10)
+        tk.Button(self, text="Update Existing Collection", command=self.update_collection, width=20).grid(row=1, column=1, padx=5,pady=10)
+        tk.Button(self, text="Import entire collection", command=self.import_collection, width=20).grid(row=2, column=0, pady=10, padx=5)
+        tk.Button(self, text="Pull GVAR", command=lambda: controller.show_frame('GVAR'), width=20).grid(row=2, column=1, padx=5,
                                                                                                 pady=10)
 
-        tk.Button(self, text="Update Secret Key", command=lambda: controller.show_frame("AvraeSecret"))\
-            .grid(row=2, column=0, padx=5, pady=10, columnspan=3, sticky='w')
+    def import_collection(self):
+        file = filedialog.askopenfile(mode='r',
+                                      title='Select collection file',
+                                      initialdir=os.path.abspath(os.path.join(sys.argv[1], os.pardir)),
+                                      filetypes=ioFileTypes,
+                                      defaultextension=ioFileTypes)
+
+        if not file:
+            return
+        collection = json.load(file)
+
+        for name, alias_id in collection.get('aliases', {}).items():
+            get = AvraeRest("GET", f"workshop/alias/{alias_id}")
+            alias_data = json.loads(get.text)['data']
+            with open(os.path.join(os.path.dirname(file.name), f"{name}.alias"), mode="w+",
+                      encoding="utf-8") as outfile:
+                outfile.write("".join(alias_data['code']).replace('\r', ''))
+                if len(alias_data['docs']) > 0:
+                    with open(os.path.join(os.path.dirname(file.name), f"{name}.md"), mode="w+",
+                              encoding="utf-8") as outfile:
+                        outfile.write("".join(alias_data['docs']).replace('\r', ''))
+
+            print(f"{name} [{alias_id}] - Imported")
+
+        for name, snippet_id in collection.get('snippets', {}).items():
+            get = AvraeRest("GET", f"workshop/snippet/{snippet_id}")
+            snippet_data = json.loads(get.text)['data']
+            with open(os.path.join(os.path.dirname(file.name), f"{name}.snippet"), mode="w+",
+                      encoding="utf-8") as outfile:
+                outfile.write("".join(snippet_data['code']).replace('\r', ''))
+            if len(snippet_data['docs']) > 0:
+                with open(os.path.join(os.path.dirname(file.name), f"{name}.md"), mode="w+",
+                          encoding="utf-8") as outfile:
+                    outfile.write("".join(snippet_data['docs']).replace('\r', ''))
+            print(f"{name} [{alias_id}] - Imported")
+        self.controller.destroy()
 
     def update_collection(self):
         file = filedialog.askopenfile(mode='r',
@@ -237,25 +283,6 @@ class SettingsMenu(tk.Frame):
         for subalias in alias.get('subcommands'):
             self.find_sub_aliases(subalias, out, curName)
 
-class AvraeSecret(tk.Frame):
-    def __init__(self, master, controller):
-        tk.Frame.__init__(self, master)
-        self.controller = controller
-        self.secret = tk.StringVar(self, value=os.environ['AVRAE_TOKEN'])
-        self.is_topmost = False
-
-        # QuickMenu Input
-        tk.Label(self, text="Avrae Secret Key ID: ", justify="left").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-        tk.Entry(self, textvariable=self.secret, width=30).grid(row=0, column=1, columnspan=4, padx=5, pady=5)
-
-        tk.Button(self, text="Main Menu", command=lambda: controller.show_frame("SettingsMenu"))\
-            .grid(row=1, column=0, padx=5,pady=10)
-
-        self.secret.trace_add('write', callback=self.callback)
-
-    def callback(self, *args):
-        os.environ['AVRAE_TOKEN'] = self.secret.get()
-
 class GVAR(tk.Frame):
     def __init__(self, master, controller):
         tk.Frame.__init__(self, master)
@@ -268,9 +295,14 @@ class GVAR(tk.Frame):
         self.entry = tk.Entry(self, textvariable=self.gvar, width=50)
         self.entry.grid(row=0, column=1, columnspan=4, padx=5, pady=5)
 
-        tk.Button(self, text="Save GVAR", command=self.get_gvar) \
-            .grid(row=1, column=0, padx=5, pady=10)
-        tk.Button(self, text="Main Menu", command=lambda: controller.show_frame("SettingsMenu")) \
+        if len(self.controller.collection) >0:
+            tk.Button(self, text="Back", command=lambda: controller.show_frame("QuickMenu"), width=20) \
+                .grid(row=1, column=0, padx=5, pady=10)
+        else:
+            tk.Button(self, text="Main Menu", command=lambda: controller.show_frame("SettingsMenu"), width=20) \
+                .grid(row=1, column=0, padx=5, pady=10)
+
+        tk.Button(self, text="Pull", command=self.get_gvar, width=20) \
             .grid(row=1, column=1, padx=5, pady=10)
     def get_gvar(self):
         if gvar_id := UUID_PATTERN.search(self.gvar.get()):
@@ -288,7 +320,10 @@ class GVAR(tk.Frame):
                                                        defaultextension=gvarFileTypes,
                                                        initialfile=f"{gvar_id.group(0)}.gvar")
             else:
-                out = os.path.join(os.path.dirname(sys.argv[1]),f"{gvar_id.group(0)}.gvar")
+                if isJSON(gvar_data):
+                    out = os.path.join(os.path.dirname(sys.argv[1]), f"{gvar_id.group(0)}.json")
+                else:
+                    out = os.path.join(os.path.dirname(sys.argv[1]),f"{gvar_id.group(0)}.gvar")
 
             if out:
                 with open(out, mode='w+', encoding='utf-8') as outfile:

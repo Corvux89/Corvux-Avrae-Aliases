@@ -1,0 +1,66 @@
+{
+  "name": "Disperse Force",
+  "level": 1,
+  "school": "Force",
+  "classes": "Universal",
+  "subclasses": "",
+  "casttime": "1 reaction, which you take when you take cold, energy, fire, ion, lightning, or sonic damage",
+  "range": "Self",
+  "components": {
+    "verbal": false,
+    "somatic": false,
+    "material": ""
+  },
+  "duration": "1 round",
+  "ritual": false,
+  "description": "This power absorbs damage from certain incoming attacks, lessening its effect on you and distributing it throughout your body. You have resistance to the triggering damage type until the start of your next turn. Also, you gain 5 temporary hit points to potentially absorb the attack. These temporary hit points last until the start of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the temporary hit points increases by 5 for each slot level above 1st.",
+  "concentration": false,
+  "automation": [
+    {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Disperse Force - Parent",
+                "duration": "1",
+                "effects": {
+                  "resistances": [
+                    "{choice}"
+                  ]
+                }
+              },
+              {
+                "type": "temphp",
+                "amount": 5,
+                "higher": {
+                  "2": 10,
+                  "3": 15,
+                  "4": 20,
+                  "5": 25,
+                  "6": 30,
+                  "7": 35,
+                  "8": 40,
+                  "9": 45
+                }
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify the triggering damage type"
+          }
+        ]
+      },
+    {
+      "type": "text",
+      "text": "This power absorbs damage from certain incoming attacks, lessening its effect on you and distributing it throughout your body. You have resistance to the triggering damage type until the start of your next turn. Also, you gain 5 temporary hit points to potentially absorb the attack. These temporary hit points last until the start of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the temporary hit points increases by 5 for each slot level above 1st."
+    }
+  ]
+}

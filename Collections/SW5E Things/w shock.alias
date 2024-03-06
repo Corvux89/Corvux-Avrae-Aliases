@@ -1,0 +1,75 @@
+<drac2>
+c = character()
+com = combat()
+a = argparse(&ARGS&)
+targs = a.get('t')
+dc = int(a.last('dc')) if a.last('dc') else 13
+tadv = 'tadv' in &ARGS&
+tdis = 'tdis' in &ARGS&
+fail = 'fail' in &ARGS&
+spass = 'pass' in &ARGS&
+
+
+base = f'''embed -thumb {image} -color {color}'''
+
+dam = vroll("1d4 [lightning]")
+dam_str = f"{dam.total} [lightning]"
+
+base += f''' -f "Meta|**DC**: {dc}\n**Damage**: {dam}" '''
+
+if com:
+    ts = [com.get_combatant(x) for x in targs]
+
+    for t in ts:
+        if not t:
+            return err("Invalid target/targets")
+        else:
+            s = t.save("dex",True if tadv else False if tdis else None)
+
+            if (s.total < dc or fail) and not spass:
+                f_str = f"{s} *Failure!*\n"
+                f_str += f"{t.damage(dam_str).damage}\n"
+                f_str += f"**Effect**: Shocked [1 round]"
+                t.add_effect("Shocked", duration=1, end=True,
+                desc="A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                buttons=[
+                {
+                    "label": "Resist Shocked",
+                    "style": 3,
+                    "verb": "attemps to resist shocked",
+                    "automation":[
+                    {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                        {
+                            "type": "save",
+                            "stat": "dex",
+                            "fail": [],
+                            "success": [
+                            {
+                                "type": "remove_ieffect"
+                            }
+                            ],
+                            "dc": f"{dc}"
+                        }
+                        ]
+
+                    }
+                    ]
+                }
+                ])
+
+            else:
+                f_str = f"{s} **Success!**\n"
+
+            base += f''' -f "{t.name}|{f_str}" '''
+
+    if len(ts)>0:
+        f_str = '\n'.join([f"{x.name}: {x.hp_str()}" for x in ts])
+        base += f''' -footer "{f_str}" '''
+
+base += f''' -f "Effect|When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional 1d4 lightning damage and becomes shocked until the end of its next turn." '''
+
+return base
+</drac2>

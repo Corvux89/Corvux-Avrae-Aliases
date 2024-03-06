@@ -1,0 +1,3053 @@
+[
+  {
+    "Class": "Berserker",
+    "hitDie": "d12",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Rage",
+        "level": 1,
+        "value": [
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "On your turn, you can enter a rage as a bonus action if you aren't wearing heavy armor.\n\nWhile raging, you gain the following benefits:\n\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a berserker, as shown in the Rage Damage column of the berserker table.\n- You have resistance to kinetic and energy damage.\n\nIf you are able to cast powers, you can't cast them or concentrate on them while raging.\n\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious, you don heavy armor, or if your turn ends and you haven't taken a hostile action or taken damage since your last turn. You can also end your rage on your turn as a bonus action.\n\nYou can enter a rage a number of times as shown for your berserker level in the Rages column of the berserker table. You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Ballistic",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Marauder Dark",
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 3,
+        "value": "BerserkerLevel",
+        "modifier": "charismaMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "BerserkerLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Powerful Presence",
+        "level": 10,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "As a bonus action, you unleash a battle cry infused with force energy. Choose up to ten other creatures of within 60 feet of you that can hear you. Friendly creatures have advantage on attack rolls and saving throws until the start of your next turn, and hostile creatures have disadvantage on attack rolls and saving throws until the end of your next turn.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Marauder Light",
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 3,
+        "value": "BerserkerLevel",
+        "modifier": "wisdomMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "BerserkerLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Powerful Presence",
+        "level": 10,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "As a bonus action, you unleash a battle cry infused with force energy. Choose up to ten other creatures of within 60 feet of you that can hear you. Friendly creatures have advantage on attack rolls and saving throws until the start of your next turn, and hostile creatures have disadvantage on attack rolls and saving throws until the end of your next turn.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Precision",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Warchief",
+    "counters": [
+      {
+        "name": "Commanding Rage",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "You become more aware of your allies, and their intent when fighting at your side. While you are raging, when an ally within 10 feet of you makes an attack roll against an enemy, you can use your reaction to grant advantage to that attack and add your rage damage bonus to the damage roll, if the attack hits.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown in the berserker table. You regain all expended uses when you complete a short or long rest."
+      },
+      {
+        "name": "War Chant",
+        "level": 14,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "BerserkerLevel",
+        "desc": "You have memorized the litanies, songs, and chants of your people and their dedication to war. When you enter a rage on your turn, you can enter a commanding rage for one minute. When you do so, during this turn and at the start of each of your turns, you have a number of special reactions equal to your proficiency bonus you can only use for your Commanding Rage feature. When you use Commanding Rage with these special reactions, they do not count against your uses of that feature. You can only use one reaction per turn. Additionally, during this rage, when an enemy within 10 feet of you makes an attack roll against an ally, you can use your reaction to reduce the attack by an amount equal to your Charisma modifier.\n\nOnce you’ve used this feature, you must complete a long rest before you can use it again."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Addicted",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Bloodstorm",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Brawling",
+    "counters": [
+      {
+        "name": "Reckless Strikes",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "While you are raging, not wearing heavy armor, and not wielding a shield, when you hit a creature with an unarmed strike or improvised weapon, you can choose to forgo your rage damage to make the attack a reckless strike."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Cyclone",
+    "counters": [
+      {
+        "name": "Tornado",
+        "level": 14,
+        "value": "strengthMod",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "BerserkerLevel",
+        "desc": "You can become a tornado of attacks. When you take the Attack action on your turn, you can forgo one of your regular attacks to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target. If you are wielding a separate melee weapon in each hand, each successful hit against a target deals damage equal to the damage dice of both weapons + your ability modifier + any other modifiers."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Frenzied",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Industrial",
+    "counters": [
+      {
+        "name": "Tech Points",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9,
+          9,
+          10,
+          10
+        ],
+        "display": "default",
+        "modifier": "intelligenceMod",
+        "classLevel": "BerserkerLevel",
+        "reset": "short",
+        "desc": "You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+      },
+      {
+        "name": "Explosive Resilience",
+        "level": 6,
+        "value": "intelligenceMod",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "Once per round, when you deal damage that includes your rage damage, you can cause a localized explosion around the recipient of that damage. Each creature within 5 feet of the damaged creature other than you takes acid, cold, fire, ion, or lightning damage (your choice) equal to your rage damage bonus, and you gain resistance to the chosen damage type until the end of your next turn."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Juggernaut",
+    "counters": [
+      {
+        "name": "Relentless Assault",
+        "level": 14,
+        "value": 1,
+        "reset": "short",
+        "classLevel": "BerserkerLevel",
+        "display": "bubble",
+        "desc": "You’re able to charge in unerring bursts. As an action, you can charge up to twice your speed in a straight line without provoking opportunity attacks. Each creature within 5 feet of your path must make a Strength or Dexterity saving throw (DC = 8 + your proficiency bonus + your Strength modifier, the target chooses the ability they use use). On a failed save, a creature takes damage equal to your Strength modifier + your Rage Bonus and is pushed back 5 feet in a direction of your choice. Creatures smaller than you make this save with disadvantage. When you end this movement, if a creature is within 5 feet of you, you can make one melee weapon attack (no action required). On a hit, the creature takes additional damage equal to your berserker level."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Champion",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "BerserkerLevel",
+        "display": "bubble",
+        "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice Quantity column of the Champion Superiority table. This die changes as you gain berserker levels, as shown in the Superiority Dice Size column of the Champion Superiority table. A superiority die is expended when you use it.\n\nYou regain all of your expended superiority dice when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Nightbrother",
+    "counters": [
+      {
+        "name": "Commune with the Dead",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "BerserkerLevel",
+        "desc": "You have learned a limited version of the Nightsister’s Ritual Witchcraft that allows you to consult with the spirits of the past. When you do so, you may cast the Danger Sense, Locate Object, or Locate Creature Force Powers, without using Force Points. When cast the spirit of one of your ancestors materializes in a greenish aura. This spirit is visible only to you and those with the ability to detect invisible creatures or True Sight. Wisdom is your Forcecasting ability for these powers. After you cast any power in this way, you can’t use this feature again until you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Projection",
+    "counters": []
+  },
+  {
+    "Class": "Berserker",
+    "subclass": "Bonesetter",
+    "counters": [
+      {
+        "name": "Don't You Die On Me",
+        "level": 10,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "desc": "As an action, you can touch a creature that has 0 hit points and expend one use of your Rage to aggressively administer medical care. The creature regains a number of hit points equal to 4d10 + your rage damage bonus. If the creature was subject to any of the following conditions, they are removed: blinded, deafened, paralyzed, poisoned, and stunned.\n\nWhen you reach 14th level in this class, you can expend two uses of your Rage to use this feature on the corpse of a creature that died within the past minute. The creature returns to life and receives the benefits listed above.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "hitDie": "d6",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 1,
+        "value": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80
+        ],
+        "modifier": "wisdomMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Force Recovery",
+        "level": 1,
+        "value": 1,
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Force Shield",
+        "level": 2,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+      },
+      {
+        "name": "One With the Force",
+        "level": 20,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "desc": "Your attunement to the Force is absolute. Your Wisdom or Charisma score increases by 4, and your maximum for this score increases by 4. Additionally, you gain mastery over a single force power, and can cast it with little effort. Choose one 3rd-level force power that you know as your signature power. You can cast it once at 3rd level without expending force points. When you do so, you can’t do so again until you finish a short or long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Force Recovery",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "name": "clevel",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": "-(ceil(clevel/2)+max(charismaMod, wisdomMod,1))"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Recovery",
+              "amount": 1,
+              "fixedValue": true,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+            }
+          ],
+          "verb": "uses",
+          "activation_type": 2
+        }
+      },
+      {
+        "level": "2",
+        "action": {
+          "name": "Force Shield",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Force Shield",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Shield",
+              "amount": 1,
+              "errorBehaviour": "raise",
+              "fixedValue": true
+            },
+            {
+              "type": "counter",
+              "counter": "\"",
+              "amount": 0,
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-({lastCounterRequestedAmount}) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": []
+            },
+            {
+              "type": "text",
+              "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Balance",
+    "counters": [
+      {
+        "name": "Force Barrier",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "You can weave the Force around yourself for protection. When you cast a universal power of 1st level or higher, you can simultaneously manipulate the Force to create a barrier on yourself that lasts until you finish a long rest. The barrier has hit points equal to twice your Consularlight level + your Wisdom or Charisma modifier (your choice). Your barrier can never have hit points greater than twice your Consularlight level + your Wisdom or Charisma modifier (your choice).\n\nWhenever you take damage, the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, you take any remaining damage.\n\nWhile the barrier has 0 hit points, it can’t absorb damage, but its power remains. Whenever you cast a universal power of 1st level or higher, the barrier regains a number of hit points equal to twice the level of the power."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Lightning",
+    "counters": [
+      {
+        "name": "Shocking Affinity",
+        "level": 3,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a force power that deals lightning damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal lightning damage. If the power would call for a saving throw other than Dexterity, it instead calls for a Dexterity saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become shocked until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Blistering Rebuke",
+        "level": 10,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. On a failed save, the creature takes 1d10 plus your Consularlight level lightning damage, is pushed back 10 feet, and becomes shocked until the end of their next turn. On a successful save, the creature takes half as much damage and isn’t moved or shocked."
+      },
+      {
+        "name": "Unlimited Power",
+        "level": 18,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You can increase the power of your simpler lightning force powers. When you cast a force power of 1st through 6th level that deals lightning damage, you can deal maximum damage with that power.\n\nYou can use this feature with no adverse effects a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). If you use this feature beyond this before you finish a long rest, you take 2d12 true damage for each level of the power, immediately after you cast it. Each time you use this feature again before finishing a long rest, the damage increases by 1d12."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Lore",
+    "counters": [
+      {
+        "name": "Malleable Powers",
+        "level": 6,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You are so familiar with your force powers that you can modify them as you cast them. When you cast a force power using force points, you can replace its damage type with a type that appears in another force power you know.\n\nAdditionally, as an action, you can replace a force power you know with another force power that's available for you to learn, or you can replace a Force-Empowered Casting option you know with another option. Once you use this feature, you can't use it again until you finish a long rest."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast one of the powers you know from your Forcecasting Lore feature, you can do so as if the power was cast with a force slot two levels higher than the one you used.\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Suggestion",
+    "counters": [
+      {
+        "name": "Out Of Mind",
+        "level": 6,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You can erase yourself from a single creature’s sight momentarily. As a bonus action, choose a creature within 60 feet of you that you are aware of. That creature must make a Wisdom saving throw against your universal force save DC. On a failed save, you become invisible to that creature for 1 minute, or until you deal damage to it."
+      },
+      {
+        "name": "Delicate Potency",
+        "level": 10,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "Your mind-affecting powers are particularly potent. When you cast one of cloud mind, dominate mind, mass coerce mind, and dominate monster, you can choose to treat the power as if cast at your Max Power Level."
+      },
+      {
+        "name": "Delayed Effect",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a force power, you can delay the effects of the force power for up to a number of rounds equal to half your Consularlight level. If you do so, the power immediately takes effect at the start of your turn, after the specified number of rounds have passed."
+      },
+      {
+        "name": "Subtle Presence",
+        "level": 18,
+        "value": 3,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You’ve learned how to weave the Force around you in a cloak of your choice. As an action, you can focus the Force for 10 minutes. For the duration, you gain your choice of one of the following effects.\n\nYou can use each feature once. You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Sage",
+    "counters": [
+      {
+        "name": "Preserve Life",
+        "level": 6,
+        "value": "wisdomMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "As an action, you can channel the Force and evoke healing energy that restores a number of hit points equal to five times your Consularlight level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half its hit point maximum. This feature has no effect on droids or constructs."
+      },
+      {
+        "name": "Blessed by the Force",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You gain the ability to overcome grievous injuries. As a bonus action when you have fewer than half your hit points remaining, you can regain a number of hit points equal to half your hit point maximum."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Confluence",
+    "counters": [
+      {
+        "name": "Interconnectedness",
+        "level": 14,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a 5th level or lower force power that deals damage or restores hit points and targets only one creature, the power can instead target two creatures within range and within 5 feet of each other."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Endurance",
+    "counters": [
+      {
+        "name": "Upheld by the Force",
+        "level": 3,
+        "value": 2,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "The Force flowing through your body strengthens you, granting the following benefits:\n\n- Your hit point maximum increases by 3, and it increases by 1 again whenever you gain a level in this class.\n- Your base AC becomes 13 + your Constitution modifier.\n- When you make a melee weapon attack as a part of a force power you cast, you can use Wisdom or Charisma (your choice) instead of Strength for the attack and damage rolls.\n\nAdditionally, as an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+      },
+      {
+        "name": "Unrelenting Resilience",
+        "level": 14,
+        "value": 1,
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "reset": "long",
+        "desc": "When you use your Boundless Vitality feature while concentrating on a force power, you can add the result of the roll to the Constitution saving throw made to maintain concentration."
+      },
+      {
+        "name": "The Force Unleashed",
+        "level": 18,
+        "value": "wisdomMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn."
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Manipulation",
+    "counters": [
+      {
+        "name": "Saber Storm",
+        "level": 3,
+        "value": 2,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel"
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Saber Storm",
+          "_v": 2,
+          "verb": "activates",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+              "name": "num_weap"
+            },
+            {
+              "type": "variable",
+              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+              "name": "distance"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Saber Storm",
+                  "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                  "duration": "10",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Kinetic)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [kinetic]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Energy)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [energy]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Saber Storm",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+              "title": "Meta"
+            },
+            {
+              "type": "text",
+              "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Negation",
+    "counters": [
+      {
+        "name": "Force Deflection",
+        "value": "proficiencyBonus",
+        "level": 3,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you fail a saving throw, you can use your reaction to gain a bonus to that saving throw equal to your Wisdom or Charisma modifier (your choice, minimum of +1)."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Technology",
+    "counters": [
+      {
+        "name": "Fundamentals of Mechu-Deru",
+        "level": 3,
+        "value": "wisdomMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "Starting when you choose this tradition at 3rd level, you’ve dabbled in adapting your use of the Force, melding it with technology. You gain proficiency in the Technology skill, as well as simple blasters. When you cast a force power that calls for a melee weapon attack, and you are wielding a blaster with which you are proficient, you can instead make a ranged weapon attack, as long as the target is within your weapon’s normal range.\n\nAdditionally, you’ve learned to manipulate the Force to be able to manipulate technology when it couldn’t previously. When you cast a force power that could not affect droids or constructs, you can choose to have it affect droids or constructs. If it would affect multiple targets, you must expend additional uses of this feature for each additional target. "
+      },
+      {
+        "name": "Mechu-Deru Mastery",
+        "value": 1,
+        "level": 18,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You can cast one 5th-level tech power of your choice at its base level. The power counts as a universal force power for you, and you do not require force points to cast this power. Once you’ve done so, you can’t do so again until you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Telekinetics",
+    "counters": [
+      {
+        "name": "Repulsing Wave",
+        "level": 14,
+        "value": "wisdomMod",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you are dealt damage by a creature within 5 feet of you, you can use your reaction to deal force damage to the creature equal to your Consularlight level + your Wisdom or Charisma modifier (your choice, minimum of +1). If the attacker is Huge or smaller, it must also make a Strength saving throw against your universal force save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you."
+      }
+    ],
+    "actions": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Tutelage",
+    "counters": [
+      {
+        "name": "Strength Flows From the Force",
+        "level": 6,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a power that affects only your companion, you can choose to treat the power as if cast at your Max Power Level."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Seer",
+    "counters": [
+      {
+        "name": "Powerful Mind",
+        "level": 6,
+        "value": "wisdomMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You can use your force abilities to read a creature’s thoughts. You can then use your access to the creature’s mind to command it.\n\nAs an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw against your universal force save DC. If the creature succeeds on the saving throw, you can’t use this feature on it again until you finish a long rest. If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the coerce mind force power at its base level on the creature without expending force points. The target automatically fails its saving throw against the power."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "desc": "You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a force power. Once you’ve used this feature, you can’t use it again until you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Tutelage (Companionless)",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Strength Flows From the Force",
+        "level": 6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "When you cast a force power that targets only your Force Bonded Creature, you can choose to treat the power as if you cast it at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown on the consular table. You regain all expenses uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Wildfire",
+    "counters": [
+      {
+        "name": "Roaring Force",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "The duration of any ignited condition you apply to a creature that is also under the effect of your Incinerate feature increases to the remaining duration of your Incinerate feature. A creature (or another creature within 5 feet of it) can use its action to end both effects.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher, you can apply the effect of your Incinerate feature on any number of creatures suffering from the ignited condition that you hit with a force attack or fails its saving throw to resist the power's effects. This use of your Incinerate feature does not count against your maximum number of uses. You can use this feature once, and regain the use of it at the end of a short or long rest."
+      },
+      {
+        "name": "Heart of the Phoenix",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble",
+        "desc": "When you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead and immediately become petrified until the start of your next turn. If you do, you do not become unconscious, but remain in a state of suspended animation. You are aware, but unable to speak or interact with your surroundings. At the start of your next turn, you erupt in a fiery burst of force energy to creatures within 10 feet of you. The damage you deal equals 1d10 fire damage for each creature suffering from the ignited condition or your Incinerate feature within 60 feet of you, up to a maxium of 10d10 fire damage.\n\nOnce you use this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Firestorm",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsularlightLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Consularlight",
+    "subclass": "Harmonics",
+    "counters": [
+      {
+        "name": "From the Core",
+        "level": 3,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel",
+        "desc": "When you cast a force power that deals sonic damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal sonic damage. If the power would call for a saving throw other than Constitution, it instead calls for a Constitution saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become deafened until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Words of Power",
+        "level": 6,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel"
+      },
+      {
+        "name": "Universal Harmony",
+        "level": 18,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsularlightLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "hitDie": "d6",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 1,
+        "value": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80
+        ],
+        "modifier": "charismaMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Force Recovery",
+        "level": 1,
+        "value": 1,
+        "reset": "long",
+        "display": "default",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Force Shield",
+        "level": 2,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+      },
+      {
+        "name": "One With the Force",
+        "level": 20,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "Your attunement to the Force is absolute. Your Wisdom or Charisma score increases by 4, and your maximum for this score increases by 4. Additionally, you gain mastery over a single force power, and can cast it with little effort. Choose one 3rd-level force power that you know as your signature power. You can cast it once at 3rd level without expending force points. When you do so, you can’t do so again until you finish a short or long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Force Recovery",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "name": "clevel",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Points",
+              "amount": "-(ceil(clevel/2)+max(charismaMod, wisdomMod,1))"
+            },
+            {
+              "type": "counter",
+              "counter": "Force Recovery",
+              "amount": 1,
+              "fixedValue": true,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "You have learned to regain some of your energy by briefly meditating. When you finish a short rest, you can regain a number of force points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one). Once you’ve used this feature, you must complete a long rest before you can use it again."
+            }
+          ],
+          "verb": "uses",
+          "activation_type": 2
+        }
+      },
+      {
+        "level": "2",
+        "action": {
+          "name": "Force Shield",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Force Shield",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "duration": 1
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Force Shield",
+              "amount": 1,
+              "errorBehaviour": "raise",
+              "fixedValue": true
+            },
+            {
+              "type": "counter",
+              "counter": "\"",
+              "amount": 0,
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-({lastCounterRequestedAmount}) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": []
+            },
+            {
+              "type": "text",
+              "text": "You learn how to defend yourself purely through your strength with the Force. When you are hit by an attack, you can use your reaction to shroud yourself in Force energy. Until the start of your next turn, you have a bonus to AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1). This includes the triggering attack."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Balance",
+    "counters": [
+      {
+        "name": "Force Barrier",
+        "level": 3,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "You can weave the Force around yourself for protection. When you cast a universal power of 1st level or higher, you can simultaneously manipulate the Force to create a barrier on yourself that lasts until you finish a long rest. The barrier has hit points equal to twice your Consulardark level + your Wisdom or Charisma modifier (your choice). Your barrier can never have hit points greater than twice your Consulardark level + your Wisdom or Charisma modifier (your choice).\n\nWhenever you take damage, the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, you take any remaining damage.\n\nWhile the barrier has 0 hit points, it can’t absorb damage, but its power remains. Whenever you cast a universal power of 1st level or higher, the barrier regains a number of hit points equal to twice the level of the power."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Lightning",
+    "counters": [
+      {
+        "name": "Shocking Affinity",
+        "level": 3,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a force power that deals lightning damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal lightning damage. If the power would call for a saving throw other than Dexterity, it instead calls for a Dexterity saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become shocked until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Blistering Rebuke",
+        "level": 10,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. On a failed save, the creature takes 1d10 plus your Consulardark level lightning damage, is pushed back 10 feet, and becomes shocked until the end of their next turn. On a successful save, the creature takes half as much damage and isn’t moved or shocked."
+      },
+      {
+        "name": "Unlimited Power",
+        "level": 18,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You can increase the power of your simpler lightning force powers. When you cast a force power of 1st through 6th level that deals lightning damage, you can deal maximum damage with that power.\n\nYou can use this feature with no adverse effects a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). If you use this feature beyond this before you finish a long rest, you take 2d12 true damage for each level of the power, immediately after you cast it. Each time you use this feature again before finishing a long rest, the damage increases by 1d12."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Lore",
+    "counters": [
+      {
+        "name": "Malleable Powers",
+        "level": 6,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You are so familiar with your force powers that you can modify them as you cast them. When you cast a force power using force points, you can replace its damage type with a type that appears in another force power you know.\n\nAdditionally, as an action, you can replace a force power you know with another force power that's available for you to learn, or you can replace a Force-Empowered Casting option you know with another option. Once you use this feature, you can't use it again until you finish a long rest."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast one of the powers you know from your Forcecasting Lore feature, you can do so as if the power was cast with a force slot two levels higher than the one you used.\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Suggestion",
+    "counters": [
+      {
+        "name": "Out Of Mind",
+        "level": 6,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You can erase yourself from a single creature’s sight momentarily. As a bonus action, choose a creature within 60 feet of you that you are aware of. That creature must make a Wisdom saving throw against your universal force save DC. On a failed save, you become invisible to that creature for 1 minute, or until you deal damage to it."
+      },
+      {
+        "name": "Delicate Potency",
+        "level": 10,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "Your mind-affecting powers are particularly potent. When you cast one of cloud mind, dominate mind, mass coerce mind, and dominate monster, you can choose to treat the power as if cast at your Max Power Level."
+      },
+      {
+        "name": "Delayed Effect",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a force power, you can delay the effects of the force power for up to a number of rounds equal to half your Consulardark level. If you do so, the power immediately takes effect at the start of your turn, after the specified number of rounds have passed."
+      },
+      {
+        "name": "Subtle Presence",
+        "level": 18,
+        "value": 3,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You’ve learned how to weave the Force around you in a cloak of your choice. As an action, you can focus the Force for 10 minutes. For the duration, you gain your choice of one of the following effects.\n\nYou can use each feature once. You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Sage",
+    "counters": [
+      {
+        "name": "Preserve Life",
+        "level": 6,
+        "value": "charismaMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "As an action, you can channel the Force and evoke healing energy that restores a number of hit points equal to five times your Consulardark level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half its hit point maximum. This feature has no effect on droids or constructs."
+      },
+      {
+        "name": "Blessed by the Force",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You gain the ability to overcome grievous injuries. As a bonus action when you have fewer than half your hit points remaining, you can regain a number of hit points equal to half your hit point maximum."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Confluence",
+    "counters": [
+      {
+        "name": "Interconnectedness",
+        "level": 14,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a 5th level or lower force power that deals damage or restores hit points and targets only one creature, the power can instead target two creatures within range and within 5 feet of each other."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Endurance",
+    "counters": [
+      {
+        "name": "Upheld by the Force",
+        "level": 3,
+        "value": 2,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "The Force flowing through your body strengthens you, granting the following benefits:\n\n- Your hit point maximum increases by 3, and it increases by 1 again whenever you gain a level in this class.\n- Your base AC becomes 13 + your Constitution modifier.\n- When you make a melee weapon attack as a part of a force power you cast, you can use Wisdom or Charisma (your choice) instead of Strength for the attack and damage rolls.\n\nAdditionally, as an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+      },
+      {
+        "name": "Unrelenting Resilience",
+        "level": 14,
+        "value": 1,
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "reset": "long",
+        "desc": "When you use your Boundless Vitality feature while concentrating on a force power, you can add the result of the roll to the Constitution saving throw made to maintain concentration."
+      },
+      {
+        "name": "The Force Unleashed",
+        "level": 18,
+        "value": "charismaMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn."
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Upheld by the Force",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Upheld by the Force",
+                  "effects": {
+                    "resistances": [
+                      "kinetic",
+                      "energy"
+                    ]
+                  },
+                  "duration": 10,
+                  "buttons": [
+                    {
+                      "label": "End Upheld by the Force",
+                      "verb": "ends Upheld by the Force",
+                      "style": 1,
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Upheld by the Force",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Manipulation",
+    "counters": [
+      {
+        "name": "Saber Storm",
+        "level": 3,
+        "value": 2,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel"
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Saber Storm",
+          "_v": 2,
+          "verb": "activates",
+          "activation_type": 1,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4",
+              "name": "num_weap"
+            },
+            {
+              "type": "variable",
+              "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+              "name": "distance"
+            },
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Saber Storm",
+                  "desc": "You gain a bonus to your AC equal to your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn’t already include that modifier.\\n - You gain a bonus to any Constitution saving throw you make to maintain your concentration on a power. The bonus equals your Wisdom or Charisma modifier (your choice, minimum of +1).\\n - Current bonus: {max(charismaMod,wisdomMod,1)}\"",
+                  "duration": "10",
+                  "effects": {
+                    "ac_bonus": "{max(charismaMod,wisdomMod,1)}"
+                  },
+                  "attacks": [
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Kinetic)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [kinetic]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "attack": {
+                        "name": "Attack - Saber Storm (Energy)",
+                        "_v": 2,
+                        "activation_type": 3,
+                        "automation": [
+                          {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}",
+                            "name": "level"
+                          },
+                          {
+                            "type": "variable",
+                            "value": "10 if level < 5 else 20 if level < 11 else 30 if level < 17 else 40",
+                            "name": "distance"
+                          },
+                          {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                              {
+                                "type": "attack",
+                                "attackBonus": "spell_attack_bonus",
+                                "hit": [
+                                  {
+                                    "type": "damage",
+                                    "damage": "1d8+{spell} [energy]"
+                                  }
+                                ],
+                                "miss": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "text": "You can cause the weapon to move up to {distance} and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side.\\nYour weapon moves with you, and while Saber Storm is active and you have a weapon animated, on each of your turns you can use an action to move a weapon up to {distance} and repeat the attack against a creature within 5 feet of it. The weapon then returns to your side. Your Saber Storm ends early if you are incapacitated. At any time, you can end this feature and return the animated weapon to your hand."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Saber Storm",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "**Bonus**: {max(charismaMod,wisdomMod,1)}\n**# Weapons**: {num_weap}\n**Move Distance**: {distance}",
+              "title": "Meta"
+            },
+            {
+              "type": "text",
+              "text": "You learn to deftly control your weapons utilizing the Force. As an action, you can initiate your Saber Storm. When you do so, select a light- or vibro-weapon within 5 feet that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for 1 minute. When you activate this feature, you can cause the weapon to move up to 10 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. The weapon then returns to your side."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Negation",
+    "counters": [
+      {
+        "name": "Force Deflection",
+        "value": "proficiencyBonus",
+        "level": 3,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you fail a saving throw, you can use your reaction to gain a bonus to that saving throw equal to your Wisdom or Charisma modifier (your choice, minimum of +1)."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Technology",
+    "counters": [
+      {
+        "name": "Fundamentals of Mechu-Deru",
+        "level": 3,
+        "value": "charismaMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "Starting when you choose this tradition at 3rd level, you’ve dabbled in adapting your use of the Force, melding it with technology. You gain proficiency in the Technology skill, as well as simple blasters. When you cast a force power that calls for a melee weapon attack, and you are wielding a blaster with which you are proficient, you can instead make a ranged weapon attack, as long as the target is within your weapon’s normal range.\n\nAdditionally, you’ve learned to manipulate the Force to be able to manipulate technology when it couldn’t previously. When you cast a force power that could not affect droids or constructs, you can choose to have it affect droids or constructs. If it would affect multiple targets, you must expend additional uses of this feature for each additional target. "
+      },
+      {
+        "name": "Mechu-Deru Mastery",
+        "value": 1,
+        "level": 18,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You can cast one 5th-level tech power of your choice at its base level. The power counts as a universal force power for you, and you do not require force points to cast this power. Once you’ve done so, you can’t do so again until you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Telekinetics",
+    "counters": [
+      {
+        "name": "Repulsing Wave",
+        "level": 14,
+        "value": "charismaMod",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you are dealt damage by a creature within 5 feet of you, you can use your reaction to deal force damage to the creature equal to your Consulardark level + your Wisdom or Charisma modifier (your choice, minimum of +1). If the attacker is Huge or smaller, it must also make a Strength saving throw against your universal force save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you."
+      }
+    ],
+    "actions": [
+      {
+        "level": 6,
+        "action": {
+          "name": "Mighty Blast",
+          "_v": 2,
+          "activation_type": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "effects": {
+                        "attack_advantage": -1
+                      },
+                      "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition",
+                      "buttons": [
+                        {
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "style": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone.\n\nThis feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Tutelage",
+    "counters": [
+      {
+        "name": "Strength Flows From the Force",
+        "level": 6,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a power that affects only your companion, you can choose to treat the power as if cast at your Max Power Level."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Seer",
+    "counters": [
+      {
+        "name": "Powerful Mind",
+        "level": 6,
+        "value": "charismaMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You can use your force abilities to read a creature’s thoughts. You can then use your access to the creature’s mind to command it.\n\nAs an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw against your universal force save DC. If the creature succeeds on the saving throw, you can’t use this feature on it again until you finish a long rest. If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute. During that time, you can use your action to end this effect and cast the coerce mind force power at its base level on the creature without expending force points. The target automatically fails its saving throw against the power."
+      },
+      {
+        "name": "Visions of the Past",
+        "level": 10,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a force power. Once you’ve used this feature, you can’t use it again until you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Tutelage (Companionless)",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble"
+      },
+      {
+        "name": "Strength Flows From the Force",
+        "level": 6,
+        "value": "proficiencyBonus",
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "When you cast a force power that targets only your Force Bonded Creature, you can choose to treat the power as if you cast it at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown on the consular table. You regain all expenses uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Wildfire",
+    "counters": [
+      {
+        "name": "Roaring Force",
+        "level": 10,
+        "value": 1,
+        "reset": "short",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "The duration of any ignited condition you apply to a creature that is also under the effect of your Incinerate feature increases to the remaining duration of your Incinerate feature. A creature (or another creature within 5 feet of it) can use its action to end both effects.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher, you can apply the effect of your Incinerate feature on any number of creatures suffering from the ignited condition that you hit with a force attack or fails its saving throw to resist the power's effects. This use of your Incinerate feature does not count against your maximum number of uses. You can use this feature once, and regain the use of it at the end of a short or long rest."
+      },
+      {
+        "name": "Heart of the Phoenix",
+        "level": 14,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble",
+        "desc": "When you are reduced to 0 hit points, you can choose to be reduced to 1 hit point instead and immediately become petrified until the start of your next turn. If you do, you do not become unconscious, but remain in a state of suspended animation. You are aware, but unable to speak or interact with your surroundings. At the start of your next turn, you erupt in a fiery burst of force energy to creatures within 10 feet of you. The damage you deal equals 1d10 fire damage for each creature suffering from the ignited condition or your Incinerate feature within 60 feet of you, up to a maxium of 10d10 fire damage.\n\nOnce you use this feature, you must complete a long rest before you can use it again."
+      },
+      {
+        "name": "Firestorm",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "classLevel": "ConsulardarkLevel",
+        "display": "bubble"
+      }
+    ]
+  },
+  {
+    "Class": "Consulardark",
+    "subclass": "Harmonics",
+    "counters": [
+      {
+        "name": "From the Core",
+        "level": 3,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel",
+        "desc": "When you cast a force power that deals sonic damage, you can use Wisdom or Charisma as your forcecasting ability for it.\n\nAdditionally, when you cast a damage-dealing force power that requires a force attack or saving throw, you can cause that power to instead deal sonic damage. If the power would call for a saving throw other than Constitution, it instead calls for a Constitution saving throw. If you hit with the power, or the target fails the power’s saving throw, affected creatures become deafened until the start of your next turn. You can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain all expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Words of Power",
+        "level": 6,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel"
+      },
+      {
+        "name": "Universal Harmony",
+        "level": 18,
+        "value": "max(wisdomMod,charismaMod)",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ConsulardarkLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclassLevel": 3,
+    "hitDie": "d8",
+    "counters": [
+      {
+        "name": "Tech Points",
+        "level": 1,
+        "value": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40
+        ],
+        "modifier": "intelligenceMod",
+        "display": "default",
+        "reset": "short",
+        "classLevel": "EngineerLevel",
+        "desc": "You have a number of tech points equal to your engineer level x 2, as shown in the Tech Points column of the engineer table, + your Intelligence modifier. You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+      },
+      {
+        "name": "Potent Aptitude",
+        "level": 1,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "EngineerLevel",
+        "desc": "Your technological experience lends you an uncommon insight that you can use to bolster your allies. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Potent Aptitude die, a d4. This die changes as you gain engineer levels, as shown in the Potent Aptitude column of the engineer table.\n\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 beforedeciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost.\n\nA creature can have only one Potent Aptitude die at a time.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown in the engineer table. You regain any expended uses when you finish a short or long rest."
+      },
+      {
+        "name": "Infuse Item",
+        "level": 2,
+        "display": "bubble",
+        "value": 1,
+        "reset": "long",
+        "desc": "You gain the ability to temporarily enhance a weapon or armor. At the end of a long rest, you can touch one unenhanced object that is a suit of armor, a shield, or a simple or martial weapon. Until the end of your next long rest or until you die, the object becomes an enhanced item, granting a +1 bonus to AC if it’s armor or a shield or a +1 bonus to attack and damage rolls if it’s a weapon.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest.\n\nThis bonus increases to +2 at 10th level and +3 at 15th level.",
+        "classLevel": "EngineerLevel"
+      }
+    ],
+    "actions": [
+      {
+        "level": 1,
+        "action": {
+          "name": "Potent Aptitude",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Potent Aptitude",
+                  "duration": 100,
+                  "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
+                  "buttons": [
+                    {
+                      "label": "Use Potent Aptitude",
+                      "verb": "is using assistance",
+                      "style": 3,
+                      "automation": [
+                        {
+                          "type": "remove_ieffect"
+                        },
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[-1]}",
+                          "name": "Potent Aptitude"
+                        },
+                        {
+                          "type": "text",
+                          "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "title": "Meta",
+              "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
+            },
+            {
+              "type": "text",
+              "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "condition",
+              "condition": "choice == 'gott'",
+              "onFalse": [],
+              "onTrue": [
+                {
+                  "type": "counter",
+                  "counter": "Goggles of the Tinkerer",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                },
+                {
+                  "type": "text",
+                  "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
+                  "title": "Goggles of the Tinkerer"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Armormech",
+    "counters": [
+      {
+        "name": "Armormech's Celerity",
+        "level": 14,
+        "value": "intelligenceMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "When you take the Attack action or use your action to a cast a tech power of 1st-level or higher, you can make one weapon attack as a bonus action.\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Armstech",
+    "counters": [
+      {
+        "name": "Targeting Matrix",
+        "level": 14,
+        "value": "intelligenceMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "When you cast a tech power that allows you to force creatures in an area to make a saving throw, you can instead make an attack roll with your modified weapon against a single target that would be in the range of the power. On a hit, the target suffers the effects as though they failed their saving throw. If the power would affect more than one creature, it instead affects only one.\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain any expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Gadgeteer",
+    "counters": [
+      {
+        "name": "Versatile Direction",
+        "level": 6,
+        "value": "intelligenceMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "You can take a second bonus action on each of your turns. You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Environmental Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'acidcoldfireforcelightningnecroticpoisonpsychicsonic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{level}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Environmental Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Environmental Barrier",
+                  "text": "You project an environmental barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + your engineer level. Whenever a creature with this barrier takes damage (one of acid, cold, fire, force, lightning, necrotic, poison, psychic, or sonic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Environmental Barrier' -t zo1 -choice cold`"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "level": "3",
+        "action": {
+          "name": "Projected Barrier - Physical Barrier",
+          "_v": 2,
+          "activation_type": 3,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "variable",
+              "value": "{caster.levels.get('Engineer')}",
+              "name": "level"
+            },
+            {
+              "type": "variable",
+              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "name": "die"
+            },
+            {
+              "type": "condition",
+              "condition": "choice in 'energyionkinetic'",
+              "onTrue": [
+                {
+                  "type": "roll",
+                  "dice": "1d{die}+{ceil(level/2)}",
+                  "name": "barrierAmt",
+                  "displayName": "Barrier HP"
+                },
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Physical Barrier",
+                      "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
+                      "buttons": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
+                  "title": "Projected Barrier"
+                },
+                {
+                  "type": "text",
+                  "title": "Physical Barrier",
+                  "text": "You project a physical barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + half your engineer level. Whenever a creature with this barrier takes damage (one of energy, ion, or kinetic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
+                },
+                {
+                  "type": "counter",
+                  "counter": "Potent Aptitude",
+                  "amount": 1,
+                  "errorBehaviour": "raise"
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "text",
+                  "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Physical Barrier' -t zo1 -choice kinetic`"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Unstable",
+    "counters": [
+      {
+        "name": "Modification Slots",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Your tinkercannon come equipped with four overrides, and they gain more at higher levels, as shown in the Modification Slots column of the engineer table. Each time you trigger an Unstable Engineering Surge, you can use an override to reroll the percentile dice. You must use the new result, you can only do this once per surge, and each time you do so in excess of your proficiency bonus (resetting on a long rest) your maximum tech points is reduced by 1 until you complete a long rest. You regain all expended overrides when you complete a long rest."
+      }
+    ],
+    "actions": [
+      {
+        "level": 3,
+        "action": {
+          "name": "Unstable Volley",
+          "_v": 2,
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "roll",
+              "dice": "1d6",
+              "name": "damage",
+              "cantripScale": true
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "dex",
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage} [lightning]"
+                    }
+                  ],
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage}/2 [lightning]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Potent Aptitude",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "While wielding your tinkercannon, as a bonus action you can expend one use of your Potent Aptitude to launch a volley of unstable energy at a surface located within 30 feet of you that you can see. This energy adheres to the surface for 1 minute, after which it erupts. As a part of this bonus action, or as a bonus action on a following turn, you can cause the energy to erupt early. Each creature within 5 feet of it must make a Dexterity saving throw against your tech save DC. A creature takes 1d6 lightning damage on a failed save, or half as much on a successful one.\\n\\nThe range at which you can launch your volley increases to 60 feet at 9th level, and 120 feet at 17th level.\\n\\nThis damage increases when you reach certain levels in this class, increasing to 2d6 at 5th level, 3d6 at 11th level, and 4d6 at 17th level"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Artificer",
+    "counters": []
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Astrotech",
+    "counters": [
+      {
+        "name": "Direct Controller",
+        "level": 6,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Your mastery of droids improves your ability to manipulate them. When you cast a power that could affect only droids or constructs, and you only affect droids with the power, you can choose to treat the power as if cast at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown in the engineer table. You regain all expended uses when you complete a long rest."
+      },
+      {
+        "name": "Modification Slots",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Lastly, while bonded and within 10 feet of you, when you would use your action to cast a 1st-level tech power, you can instead have your droid companion cast it. You still expend tech points as normal, and if the power requires concentration, it still uses your concentration. Your droid companion must use its action, and it uses its tech attack modifier and tech save DC instead of your own. At 5th level, your droid can cast 2nd-level tech powers in this way. This increases to 3rd-level powers at 9th level, 4th-level powers at 13th level, and 5th-level powers at 17th level. When you cast a power, you consume a number of uses of this feature equal to that power’s level."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Audiotech",
+    "counters": [
+      {
+        "name": "Potent Amplitude",
+        "level": 3,
+        "value": 2,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel"
+      },
+      {
+        "name": "Legendary Coda",
+        "level": 18,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "You’ve gained mastery over your modified instrument. As an action, you can end your enhanced song in a triumphant blast of power with an effect determined by the song you are playing.\n\nOnce you’ve used this feature, you must complete a long rest before you can use it again."
+      }
+    ],
+    "actions": [
+      {
+        "level": 5,
+        "action": {
+          "name": "Battle Song Enhancement",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "condition",
+              "condition": "len(targets) <=1",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "target",
+                  "target": "each",
+                  "effects": [
+                    {
+                      "type": "attack",
+                      "miss": [],
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [sonic]"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "While playing your Song of Battle, as an action, you can send forth busts of directed sonic energy, make two ranged power attacks. These attacks can target the same creature different ones. Make separate attack rolls for each burst. The attack has a range equal to the radius of your song, and deals 1d8 sonic damage on a hit."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Biochem",
+    "counters": [
+      {
+        "name": "Epicenter",
+        "level": 14,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "EngineerLevel",
+        "desc": "As a reaction when you take damage from a creature within 15 feet of you that you can see, you can use one of your mixtures. The effects of the mixture release in a 15-foot-radius sphere centered on you, and if the mixture requires a saving throw, you automatically succeed on it. Additionally, the affected area is difficult terrain to creatures other than you until the end of your next turn.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Biotech",
+    "counters": []
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Construction",
+    "counters": [
+      {
+        "name": "Modification Slots",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "You can deploy your choice from these structures a combined total of four times, and you gain more uses at higher levels, as shown in the Modification Slots column of the engineer table. Each time you use this feature in excess of your proficiency bonus, your tech point maximum is reduced by 1 until you complete a long rest. You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Cybertech",
+    "counters": [
+      {
+        "name": "Adaptable Applications",
+        "level": 6,
+        "value": "intelligenceMod",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level (rounded down).\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
+      },
+      {
+        "name": "Perfected Purposing",
+        "level": 18,
+        "value": 1,
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "EngineerLevel",
+        "desc": "When you cast a tech power, you can choose to deal maximum damage or provide maximum healing with that power.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Munitions",
+    "counters": [
+      {
+        "name": "Collateral Damage",
+        "level": 18,
+        "value": "max(intelligenceMod,1)",
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "When an ammunition you control affects an area, you can choose to maximize its explosive potential. A radius or cone area doubles in size, or a line area doubles in either length or width (your choice).\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Strategic",
+    "counters": [
+      {
+        "name": "Aura of Command",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          9,
+          9,
+          9,
+          9
+        ],
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel"
+      },
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "reset": "short",
+        "classLevel": "EngineerLevel"
+      },
+      {
+        "name": "High Command",
+        "level": 18,
+        "value": 1,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Any battle is yours to control.\n\nWhen you roll a critical hit with an attack, you can expend a superiority die to immediately take an additional turn. Once you use this ability you cannot use it again until you finish a long rest.\n\nIn addition, you can expend four tech points to regain an expended superiority die, or expend a superiority die to regain four expended tech points, both up to their maximums."
+      }
+    ]
+  },
+  {
+    "Class": "Engineer",
+    "subclass": "Prismatic",
+    "counters": [
+      {
+        "name": "Material Refraction",
+        "level": 14,
+        "value": 2,
+        "display": "bubble",
+        "reset": "long",
+        "classLevel": "EngineerLevel",
+        "desc": "Weapon attacks using your modified beam cannon's penetrating property now target all creatures in a line up to its normal range, originating from you.\n\nAdditionally, when you attack your initial target with your modified beam cannon or a tech power that requires an attack roll or Dexterity saving throw to resist damage, you can choose to expend a number of tech points up to your proficiency bonus to cause the effect to split on impact into an equal number of projectiles. The original attack or effect is resolved, and you can then target a number of creatures equal to the number of projectiles within 30 feet of the original target, making subsequent attack rolls with equal bonus to hit or imposing the saving throw DC equal to that of the original target. On a hit or failed saving throw, the secondary target takes half the damage of the original effect. You cannot target the original target creature again with the secondary attack or saving throw.\n\nYou can use this ability twice per long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "hitDie": "d10",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Second Wind",
+        "level": 1,
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble",
+        "value": 1,
+        "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level."
+      },
+      {
+        "name": "Action Surge",
+        "level": 2,
+        "value": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "desc": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.",
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble"
+      },
+      {
+        "name": "Superiority Dice",
+        "level": 2,
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble",
+        "value": [0,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6],
+        "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
+      },
+      {
+        "name": "Indominatable",
+        "level": 9,
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3
+        ],
+        "reset": "long",
+        "classLevel": "FighterLevel",
+        "display": "bubble",
+        "desc": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Assault",
+    "counters": []
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Fireteam",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 3,
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble",
+        "value": "proficiencyBonus",
+        "modifier": "proficiencyBonus",
+        "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Heavy Weapons",
+    "counters": []
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Shield",
+    "counters": [
+      {
+        "name": "Tech Points",
+        "level": 3,
+        "value": [
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6,
+          7,
+          7,
+          8,
+          8,
+          9,
+          9,
+          10,
+          10
+        ],
+        "display": "default",
+        "modifier": "intelligenceMod",
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "desc": "You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Tactical",
+    "counters": [
+      {
+        "name": "Superiority Dice",
+        "level": 2,
+        "classLevel": "FighterLevel",
+        "reset": "short",
+        "display": "bubble",
+        "value": [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "desc": "You have four superiority dice, instead of two, and you earn more at higher levels, as shown in the Superiority Dice column of the Tactical Specialist Combat Superiority table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Adept Dark",
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 3,
+        "value": "FighterLevel",
+        "modifier": "charismaMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "FighterLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Growing Momentum",
+        "level": 3,
+        "value": "charismaMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You can cast the burst of speed force power targeting yourself at 1st-level without expending force points. At 10th level, when you do so, your speed increases by an additional 10 feet. At 18th level, when you do so, your speed increases by an additional 10 feet./n/nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain any expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Adept Light",
+    "counters": [
+      {
+        "name": "Force Points",
+        "level": 3,
+        "value": "FighterLevel",
+        "modifier": "wisdomMod",
+        "reset": "long",
+        "display": "default",
+        "classLevel": "FighterLevel",
+        "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+      },
+      {
+        "name": "Growing Momentum",
+        "level": 3,
+        "value": "wisdomMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You can cast the burst of speed force power targeting yourself at 1st-level without expending force points. At 10th level, when you do so, your speed increases by an additional 10 feet. At 18th level, when you do so, your speed increases by an additional 10 feet./n/nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain any expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Blademaster",
+    "counters": [
+      {
+        "name": "Adaptive Fighting",
+        "level": 3,
+        "value": "proficiencyBonus",
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You’ve learned to make adaptations to your fighting style on the fly. You have three such effects: Change Up, Draw, and Stow. When you use your Adaptive Fighting, you choose which effect to create.\n\nYou can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest."
+      },
+      {
+        "name": "Bladestorm",
+        "level": 18,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You can use your action to make a single melee weapon attack against each creature within your reach. Make a separate attack roll against each target. The first attack gains a +1 bonus to its attack roll, and each attack after the first gains an additional +1 bonus to its attack roll, cumulatively, to a maximum bonus of +6. If you are wielding two light- or vibro-weapons, or a weapon with the double property, you also add this bonus to your damage rolls, and you can use your bonus action to engage in Double- or Two-Weapon Fighting./n/nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Demolitions",
+    "counters": []
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Enhancement",
+    "counters": [
+      {
+        "name": "Amplified Shots",
+        "level": 3,
+        "value": 2,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "You have two amplified shots, which you use to activate your ammunition enhancements. An amplified shot is expended when you use it. When you fire an amplified shot, your weapon is treated as enhanced for overcoming resistance and immunity to unenhanced attacks and damage. You decide to use the option when the shot hits a creature, unless the option doesn’t involve an attack roll. You regain all of your amplified shots when you finish a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Exhibition",
+    "counters": [
+      {
+        "name": "Spotlight",
+        "level": 3,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      },
+      {
+        "name": "Showoff",
+        "level": 3,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      },
+      {
+        "name": "Beauty of Violence",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Mounted",
+    "counters": [
+      {
+        "name": "Unwavering Mark",
+        "level": 3,
+        "value": "strengthMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      },
+      {
+        "name": "Warding Maneuver",
+        "level": 7,
+        "value": "constitutionMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Praetorian",
+    "counters": [
+      {
+        "name": "Fighting Spirit",
+        "level": 3,
+        "value": 3,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "Your intensity in battle can shield you and help you strike true. As a bonus action on your turn, you can give yourself advantage on all weapon attack rolls until the end of the current turn. When you do so, you also gain 5 temporary hit points. The number of hit points increases when you reach certain levels in this class, increasing to 10 at 10th level and 15 at 15th level.\n\nYou can use this feature three times. You regain all expended uses when you finish a long rest."
+      },
+      {
+        "name": "Strength Before Weakness",
+        "level": 18,
+        "value": 1,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel",
+        "desc": "Your fighting spirit can delay the grasp of death. If you take damage that reduces you to 0 hit points, you can use your reaction to delay falling unconscious, and you can immediately take an extra turn. While you have 0 hit points during that extra turn, taking damage causes death saving throw failures as normal, and three death saving throw failures can still kill you. When the extra turn ends, you fall unconscious if you still have 0 hit points.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Totem",
+    "counters": [
+      {
+        "name": "Totemic Might",
+        "level": 3,
+        "value": 2,
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "FighterLevel"
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Journeyman",
+    "counters": [
+      {
+        "name": "Foe Sense",
+        "level": 3,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "bubble",
+        "value": [
+          0,
+          0,
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "Bad Feeling",
+        "level": 3,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "bubble",
+        "value": 1,
+        "desc": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Fighter",
+    "subclass": "Covert",
+    "counters": [
+      {
+        "name": "A Knife in the Dark",
+        "level": 7,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "short",
+        "value": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5
+        ],
+        "desc": "When you would roll a critical hit against a creature or would reduce a creature to 0 hit points while hidden, you can choose to turn invisible until the start of your next, or if you attack, cast a power, or otherwise take a hostile action.\n\nYou can use this feature twice per short or long rest. You gain an additional use at 9th, 13th, and 17th level."
+      },
+      {
+        "name": "Vital Strike",
+        "level": 18,
+        "classLevel": "Fighterlevel",
+        "reset": "long",
+        "display": "short",
+        "value": 2,
+        "desc": "When you would roll a critical hit from a creature you are hidden from, you can choose to roll the weapons dice three times instead of twice.\n\nYou can use this feature twice per short or long rest."
+      }
+    ]
+  }
+]

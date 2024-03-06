@@ -16,16 +16,15 @@ class MainWindow(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
         container.pack(side='top', fill='both', expand=True)
         self.frames = {}
-        for F in [SettingsMenu, AvraeSecret, GVAR, QuickMenu, SnippetSelect, AliasSelect]:
+        for F in [SettingsMenu, GVAR, QuickMenu, SnippetSelect, AliasSelect]:
             page_name = F.__name__
             frame = F(master=container, controller=self)
             self.frames[page_name] = frame
             frame.grid(row=0, column=0, sticky='nsew')
 
         if not os.environ.get('AVRAE_TOKEN'):
-            self.show_frame('AvraeSecret')
-        elif alias := getContent(self.collection, "alias", os.path.basename(sys.argv[1])):
-            self.show_frame('QuickMenu')
+            messagebox.showerror(title="Missing Secret", message="Missing AVRAE_TOKEN")
+            self.destroy()
         elif len(self.collection) > 0:
             self.show_frame('QuickMenu')
         else:

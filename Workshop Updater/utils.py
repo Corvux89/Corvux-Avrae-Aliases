@@ -10,15 +10,25 @@ import re
 UUID_PATTERN = re.compile(r'[\da-f]{8}-([\da-f]{4}-){3}[\da-f]{12}', re.IGNORECASE)
 
 def getCollection():
-    file_dir = os.path.dirname(sys.argv[1])
+    depth = int(os.environ.get('FILE_DEPTH', 1))
     collection_io = {}
+    file_dir = sys.argv[1]
 
-    if file_dir:
-        for file in os.listdir(file_dir):
+    def find_collection(dir):
+        collection_io = {}
+        for file in os.listdir(dir):
             if file == 'collection.io':
-                f = os.path.join(file_dir, file)
+                f = os.path.join(dir, file)
                 with open(f, 'r') as col:
                     collection_io = json.load(col)
+        return collection_io, dir
+
+    for i in range(0, depth):
+        if len(collection_io) == 0:
+            file_dir = os.path.dirname(file_dir)
+            collection_io, file_dir = find_collection(file_dir)
+        else:
+            break
     return collection_io
 
 def getContent(collection: {}, contentType: str, key: str):

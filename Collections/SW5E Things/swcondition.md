@@ -1,0 +1,1 @@
+SW5E Condition Lookup
