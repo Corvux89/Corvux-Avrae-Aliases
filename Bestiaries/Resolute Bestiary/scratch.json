@@ -1,23 +1,82 @@
 {
-  "name": "Whirling Advance",
-  "_v": 2,
+  "name": "Bite",
   "automation": [
     {
       "type": "target",
       "target": "each",
       "effects": [
         {
-          "type": "save",
-          "stat": "dex",
-          "dc": 19,
-          "success": [],
-          "fail": []
+          "type": "attack",
+          "hit": [
+            {
+              "type": "damage",
+              "damage": "1d4+4 [kinetic]",
+              "overheal": false
+            },
+            {
+              "type": "save",
+              "stat": "con",
+              "dc": 14,
+              "success": [
+                {
+                  "type": "ieffect2",
+                  "name": "Grappled/Restrained by {name}",
+                  "desc": "Speed is reduced to 0",
+                  "buttons": [
+                    {
+                      "label": "Resist Grapple",
+                      "style": 1,
+                      "verb": "attempts to resist the grapple",
+                      "automation": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "check",
+                              "ability": [
+                                "acrobatics",
+                                "athletics"
+                              ],
+                              "dc": 14,
+                              "success": [
+                                {
+                                  "type": "text",
+                                  "text": "Escapes the grapple!"
+                                },
+                                {
+                                  "type": "remove_ieffect"
+                                }
+                              ],
+                              "fail": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fail": [
+                {
+                  "type": "ieffect2",
+                  "name": "Grappled/Stunned by {name}",
+                  "desc": "Speed is reduced to 0\n - An incapacitated creature can’t take actions or reactions.\n - An incapacitated creature automatically fails Strength, Dexterity, and Constitution checks.\n - Attack rolls against the creature have advantage. "
+                }
+              ]
+            }
+          ],
+          "miss": [],
+          "attackBonus": "7"
         }
       ]
     },
     {
       "type": "text",
-      "text": "Whirling his blades, Cyborg Khagan advances with a shield of sparks and light. Choose a creature within 30 feet to make a DC 19 Dexterity saving throw. On a fail, the target is pushed 10 feet, Cyborg Khagan moves into their current square ignoring opportunity attacks, and he has advantage on his next attack against them this combat. On a success, Cyborg Khagan moves into a square adjacent to the target and opportunity attacks against Cyborg Khagan have disadvantage during that move."
+      "text": "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 61 (1d4 + 4) kinetic damage. If the target is Medium or smaller, it is grappled (escape DC 14) and must succeed on a DC 14 Constitution saving throw or be stunned until this grapple ends.",
+      "title": "Effect"
     }
-  ]
+  ],
+  "_v": 2,
+  "activation_type": 1
 }

@@ -1,15 +1,1 @@
-<drac2>
-
-cm = "eng"
-cl = "Engineer"
-
-base = f'''embed -thumb {image} -color {color}'''
-
-base += f''' -title "How to use your {cl} skills" '''
-
-base += f''' -desc "Here are the subcommands to `!{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `!help {cm} [command]" '''
-
-base += f''' -f "apt|To use Potent Aptitude: `!{cm} apt -t [target] [*args]`" '''
-
-return base
-</drac2>
+help {{ctx.alias}}{{_=&ARGS&}} -here

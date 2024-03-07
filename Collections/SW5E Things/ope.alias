@@ -1,16 +1,1 @@
-<drac2>
-
-cm = "ope"
-cl = "Operative"
-
-base = f'''embed -thumb {image} -color {color}'''
-
-base += f''' -title "How to use your {cl} skills" '''
-
-base += f''' -desc "Here are the subcommands to `!{cm}` and how they work. To view the specific `[*args]` for a command it would be best to run `!help {cm} [command]" '''
-
-
-base += f''' -f "exploit|To use a Skill's Exploit: `!ope exploit [exploit] [-t target] [*args]`" '''
-
-return base
-</drac2>
+help {{ctx.alias}}{{_=&ARGS&}} -here

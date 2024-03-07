@@ -1,12 +1,3 @@
-# TODO DF.9 Anti-Infantry Turret: Laser Cannon
-# TODO DSD1 Dwarf Spider Droid: Burst
-# TODO DSD1 Dwarf Spider Droid: Self-Destruct
-# TODO Death Trooper: Volley
-# TODO Destroyer Droid: Blaster Volley
-# TODO Energy Spider: Web
-# TODO Fambaa: Stomp
-# TODO Fambaa Howdah: Stomp
-# TODO Fexian Skullborer: Bite
 # TODO Force Storm Eye: Lightning Storm
 # TODO GH-7 Medical Analysis Unit: Administer Antidote (1/rest)
 # TODO Ghest: Bite
