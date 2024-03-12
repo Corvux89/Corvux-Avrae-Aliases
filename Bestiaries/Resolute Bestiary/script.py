@@ -61,9 +61,12 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                     get_type(obj, auto_type)
 
                 s = {"name": mon.get('name'), 'ability': a.get('name'),
-                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable"]) else False,
-                     'test': auto_type,
-                     'auto': auto}
+                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp"]) else False,
+                     'source': name}
+
+                if not s['complete']:
+                    s['description'] = a.get('description')
+                    s['automation'] = a.get('automation', {})
                 saveAuto.append(s)
     if fileName:
         with open(fileName, "w") as outfile:
@@ -77,12 +80,12 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
         autoMon = saveAuto
 
     with open("automation.json", "w") as outfile:
-        json.dump(autoMon, outfile)
+        json.dump(autoMon, outfile, indent=2)
 
     with open("Critter Todo.py", "w") as outfile:
         for x in autoMon:
             if x['complete'] == False:
-                outfile.write(f"# TODO {x.get('name')}: {x.get('ability')}\n")
+                outfile.write(f"# TODO [{x.get('source')}]: {x.get('name')} ({x.get('ability')})\n")
 
     print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {sum(x["complete"] == False for x in saveAuto)} out of {len(saveAuto)}\n')
 
@@ -106,3 +109,4 @@ def get_type(object, type_list):
 
 processBestiaryBuilderAPI("65a99d77e03abba02d8599c1", 'KFC Ground.json', "w")
 processBestiaryBuilderAPI("65a9a0e2b4f2853f0d4cbba4", 'KFC Space.json', "a")
+processBestiaryBuilderAPI("65e4a5606c27b3711b8a9bd1", None, "a")

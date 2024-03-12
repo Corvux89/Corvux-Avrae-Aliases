@@ -8,7 +8,7 @@ dmg = f"{ceil(lvl / 2)}d{die_map[min(int(item_dict.get('OperativeOffensiveAugmen
 
 if lvl > 0:
     base = f"-d {dmg}"
-    base += f''' -f "Sneak Attack|You know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra {dmg}d6 damage to one creature you hit with a weapon attack if you have advantage on the attack roll. This damage is the same as the weapon’s damage, and the attack must use a finesse or a ranged weapon.\n\nYou don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.\n\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the operative table." '''
+    base += f''' -f "Sneak Attack|You know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra {dmg} damage to one creature you hit with a weapon attack if you have advantage on the attack roll. This damage is the same as the weapon’s damage, and the attack must use a finesse or a ranged weapon.\n\nYou don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.\n\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the operative table." '''
 else:
     base = f''' -f "Nope|Someone tried to use sneak attack without being an Operative." '''
 

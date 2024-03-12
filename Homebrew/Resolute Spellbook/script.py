@@ -1,14 +1,17 @@
 import json
 import urllib.request
 
-url = "https://sw5eapi.azurewebsites.net/api/power"
+import requests
 
-f = open('spellbook.json', encoding='utf-8')
+url = "https://sw5eapi.azurewebsites.net/api/power"
+request = requests.get('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
+spells = json.loads(request.text)['data']['spells']
+
 r = urllib.request.urlopen(url)
+
 site_spells = json.load(r)
 site_list = [x.get('name') for x in site_spells]
 
-spells = json.load(f)
 out_dict = {}
 
 out_dict["total"] = len(spells)
@@ -46,3 +49,6 @@ with open("Powers Todo.py", "w") as outfile:
 
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")
+
+with open('spellbook.json', encoding='utf-8', mode="w+") as outfile:
+    outfile.write(json.dumps(spells, indent=2))

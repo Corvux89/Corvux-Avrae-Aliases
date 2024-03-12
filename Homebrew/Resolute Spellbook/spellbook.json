@@ -197,7 +197,7 @@
     },
     "duration": "or until the end of your next short or long rest; whichever happens first",
     "ritual": false,
-    "description": "You touch one Tiny, unenhanced object that isn't attached to another object or a surface and isn't being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics. \r\n\r\n___\r\n> ## Servant\r\n>*Tiny construct, unaligned*\r\n> ___\r\n> - **Armor Class** 15 (natural armor)\r\n> - **Hit Points** 10 (4d4)\r\n> - **Speed** 30 feet, climb 30 feet\r\n>___\r\n>|STR|DEX|CON|INT|WIS|CHA|\r\n>|:---:|:---:|:---:|:---:|:---:|:---:|\r\n>|4 (-3)|16 (+3)|10 (+0)|2 (-4)|10 (+0)|1 (-5)|\r\n>___\r\n> - **Damage Vulnerabilities** ion\r\n> - **Damage Resistances** necrotic, poison, psychic\r\n> - **Condition Immunities** charmed, deafened, exhaustion, poisoned\r\n> - **Senses** blindsight 60 feet (blind beyond this radius), passive Perception 10\r\n> - **Languages** �\r\n> ___\r\n> **Circuitry.** The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.\r\n> ### Actions\r\n> ***Slam.*** *Melee Weapon Attack:* +4 to hit, reach 5 feet, one target. *Hit* 5 (1d4 + 3) kinetic damage.\r\n\r\nAs a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\r\n\r\nWhen the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\r\n\r\nThe creature is considered a valid target for the *tracker droid interface* power.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd.",
+    "description": "You touch one Tiny, unenhanced object that isn't attached to another object or a surface and isn't being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics. \r\n\r\n___\r\n> ## Servant\r\n>*Tiny construct, unaligned*\r\n> ___\r\n> - **Armor Class** 15 (natural armor)\r\n> - **Hit Points** 10 (4d4)\r\n> - **Speed** 30 feet, climb 30 feet\r\n>___\r\n>|STR|DEX|CON|INT|WIS|CHA|\r\n>|:---:|:---:|:---:|:---:|:---:|:---:|\r\n>|4 (-3)|16 (+3)|10 (+0)|2 (-4)|10 (+0)|1 (-5)|\r\n>___\r\n> - **Damage Vulnerabilities** ion\r\n> - **Damage Resistances** necrotic, poison, psychic\r\n> - **Condition Immunities** charmed, deafened, exhaustion, poisoned\r\n> - **Senses** blindsight 60 feet (blind beyond this radius), passive Perception 10\r\n> - **Languages** \ufffd\r\n> ___\r\n> **Circuitry.** The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.\r\n> ### Actions\r\n> ***Slam.*** *Melee Weapon Attack:* +4 to hit, reach 5 feet, one target. *Hit* 5 (1d4 + 3) kinetic damage.\r\n\r\nAs a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\r\n\r\nWhen the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\r\n\r\nThe creature is considered a valid target for the *tracker droid interface* power.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd.",
     "concentration": false
   },
   {
@@ -883,7 +883,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You touch a creature that has died within the last minute and administer a shock to restore it to life. That creature returns to life with 1 hit point. This power can't return to life a creature that has died of old age, nor can it restore any missing body parts. If the creature is lacking body parts or organs integral for its survival�its head, for instance�the power automatically fails. Once this power has restored a creature to life, it cannot benefit from this power again until it finishes a short or long rest.",
+    "description": "You touch a creature that has died within the last minute and administer a shock to restore it to life. That creature returns to life with 1 hit point. This power can't return to life a creature that has died of old age, nor can it restore any missing body parts. If the creature is lacking body parts or organs integral for its survival\ufffdits head, for instance\ufffdthe power automatically fails. Once this power has restored a creature to life, it cannot benefit from this power again until it finishes a short or long rest.",
     "concentration": false
   },
   {
@@ -1047,24 +1047,6 @@
     "ritual": false,
     "description": "You have resistance to acid, cold, fire, lightning, and sonic damage for the power's duration.\r\n\r\nWhen you take damage of one of those types, you can use your reaction to gain immunity to that type of damage, including against the triggering damage. If you do so, the resistances end, and you have the immunity until the end of your next turn, at which time the power ends.",
     "concentration": true
-  },
-  {
-    "name": "Disperse Force",
-    "level": 1,
-    "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take when you take cold, energy, fire, ion, lightning, or sonic damage",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "This power absorbs damage from certain incoming attacks, lessening its effect on you and distributing it throughout your body. You have resistance to the triggering damage type until the start of your next turn. Also, you gain 5 temporary hit points to potentially absorb the attack. These temporary hit points last until the start of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the temporary hit points increases by 5 for each slot level above 1st.",
-    "concentration": false
   },
   {
     "name": "(SW) Dominate Beast",
@@ -1412,7 +1394,7 @@
       },
       {
         "type": "text",
-        "text": "You unleash a burst of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.\n\nThis power’s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
+        "text": "You unleash a burst of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.\n\nThis power\u2019s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
       }
     ],
     "classes": "Dark",
@@ -2029,7 +2011,7 @@
     },
     "duration": "up to 10 minutes",
     "ritual": false,
-    "description": "For the duration, you can detect electronic transmissions. When you cast the power and as your action on each turn until the power ends, you can focus on any one creature that you can see within 30 feet of you. If the creature you choose does not possess a commlink, or is not a droid or construct, the creature is unaffected.\r\n\r\nIf the creature possesses a commlink or other communications device, you receive any transmissions it broadcasts or receives for the duration.\r\n\r\nAdditionally, if the target is a droid or construct, you can read its \"thoughts.\" You initially learn the surface thoughts of the creature�what is most on its mind in that moment. As an action, you can either shift your attention to another creature's thoughts or attempt to probe deeper into the same creature's mind. If you probe deeper, the target must make a Wisdom saving throw. If it fails, you gain insight into its reasoning (if any), and something that looms large in its mind (such as its current objectives). If it succeeds, the power ends. Either way, the target (or its pilot, if it has one) knows that you are probing into its mind, and unless you shift your attention to another creature's thoughts, the creature can use its action on its turn to make an Intelligence check contested by your Intelligence check; if it succeeds, the power ends.\r\n\r\nQuestions verbally directed at the target creature naturally shape the course of its thoughts, so this power is particularly effective as part of an interrogation.\r\n\r\nYou can also use this power to detect the presence of droids, constructs, or creatures bearing communications devices you can't see. When you cast the power or as your action during the duration, you can search for transmissions within 30 feet of you. The power can penetrate barriers, but 2 feet of rock, 2 inches of any metal other than lead, or a thin sheet of lead blocks you.\r\n\r\nOnce you detect the presence of a creature in this way, you can read its thoughts or transmissions for the rest of the duration as described above, even if you can't see it, but it must still be within range.",
+    "description": "For the duration, you can detect electronic transmissions. When you cast the power and as your action on each turn until the power ends, you can focus on any one creature that you can see within 30 feet of you. If the creature you choose does not possess a commlink, or is not a droid or construct, the creature is unaffected.\r\n\r\nIf the creature possesses a commlink or other communications device, you receive any transmissions it broadcasts or receives for the duration.\r\n\r\nAdditionally, if the target is a droid or construct, you can read its \"thoughts.\" You initially learn the surface thoughts of the creature\ufffdwhat is most on its mind in that moment. As an action, you can either shift your attention to another creature's thoughts or attempt to probe deeper into the same creature's mind. If you probe deeper, the target must make a Wisdom saving throw. If it fails, you gain insight into its reasoning (if any), and something that looms large in its mind (such as its current objectives). If it succeeds, the power ends. Either way, the target (or its pilot, if it has one) knows that you are probing into its mind, and unless you shift your attention to another creature's thoughts, the creature can use its action on its turn to make an Intelligence check contested by your Intelligence check; if it succeeds, the power ends.\r\n\r\nQuestions verbally directed at the target creature naturally shape the course of its thoughts, so this power is particularly effective as part of an interrogation.\r\n\r\nYou can also use this power to detect the presence of droids, constructs, or creatures bearing communications devices you can't see. When you cast the power or as your action during the duration, you can search for transmissions within 30 feet of you. The power can penetrate barriers, but 2 feet of rock, 2 inches of any metal other than lead, or a thin sheet of lead blocks you.\r\n\r\nOnce you detect the presence of a creature in this way, you can read its thoughts or transmissions for the rest of the duration as described above, even if you can't see it, but it must still be within range.",
     "concentration": true
   },
   {
@@ -2048,7 +2030,7 @@
     },
     "duration": "up to 1 minute",
     "ritual": false,
-    "description": "You scramble the targeting protocols of nearby machines. Each droid or construct in a 30-foot-radius sphere centered on a point you choose within range must make an Intelligence saving throw. If a construct has the 'Piloted' trait, and has a pilot controlling it that is not incapacitated, it gains a bonus to the saving throw equal to the pilot's Intelligence modifier. On a failed save, the target loses the ability to distinguish friend from foe, regarding all creatures it can see as enemies until the power ends. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success.\r\n\r\nWhenever the affected creature chooses another creature as a target, it must choose the target at random from among the creatures it can see within range of the attack, power, or other ability it�s using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to.",
+    "description": "You scramble the targeting protocols of nearby machines. Each droid or construct in a 30-foot-radius sphere centered on a point you choose within range must make an Intelligence saving throw. If a construct has the 'Piloted' trait, and has a pilot controlling it that is not incapacitated, it gains a bonus to the saving throw equal to the pilot's Intelligence modifier. On a failed save, the target loses the ability to distinguish friend from foe, regarding all creatures it can see as enemies until the power ends. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success.\r\n\r\nWhenever the affected creature chooses another creature as a target, it must choose the target at random from among the creatures it can see within range of the attack, power, or other ability it\ufffds using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to.",
     "concentration": true
   },
   {
@@ -2318,7 +2300,7 @@
     },
     "duration": "up to 1 minute",
     "ritual": false,
-    "description": "A sphere of shimmering energy springs into being and encloses a creature or object of Large size or smaller within range. An unwilling creature must make a Dexterity saving throw. On a failed save, the creature is enclosed for the duration.\r\n\r\nNothing�not physical objects, energy, or other power effects�can pass through the barrier, in or out, though a creature in the sphere can breathe. The sphere is immune to all damage, and a creature or object inside can't be damaged by attacks or effects originating from outside, nor can a creature inside the sphere damage anything outside it.\r\n\r\nThe sphere is weightless and just large enough to contain the creature or object inside. An enclosed creature can use its action to push against the sphere's walls and thus roll the sphere at up to half the creature's speed. Similarly, the globe can be picked up and moved by other creatures.\r\n\r\nA disintegrate power targeting the globe destroys it without harming anything inside it.",
+    "description": "A sphere of shimmering energy springs into being and encloses a creature or object of Large size or smaller within range. An unwilling creature must make a Dexterity saving throw. On a failed save, the creature is enclosed for the duration.\r\n\r\nNothing\ufffdnot physical objects, energy, or other power effects\ufffdcan pass through the barrier, in or out, though a creature in the sphere can breathe. The sphere is immune to all damage, and a creature or object inside can't be damaged by attacks or effects originating from outside, nor can a creature inside the sphere damage anything outside it.\r\n\r\nThe sphere is weightless and just large enough to contain the creature or object inside. An enclosed creature can use its action to push against the sphere's walls and thus roll the sphere at up to half the creature's speed. Similarly, the globe can be picked up and moved by other creatures.\r\n\r\nA disintegrate power targeting the globe destroys it without harming anything inside it.",
     "concentration": true
   },
   {
@@ -3344,7 +3326,7 @@
     },
     "duration": "up to 1 minute",
     "ritual": false,
-    "description": "Choose a manufactured metal object, such as a blaster or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the power. Until the power ends, you can use a bonus action on each of your subsequent turns to cause this damage again.\r\n\r\nIf an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't�or can't�drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+    "description": "Choose a manufactured metal object, such as a blaster or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the power. Until the power ends, you can use a bonus action on each of your subsequent turns to cause this damage again.\r\n\r\nIf an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't\ufffdor can't\ufffddrop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
     "concentration": true
   },
   {
@@ -3668,7 +3650,7 @@
     },
     "duration": "10 minutes",
     "ritual": false,
-    "description": "You read the memory of an incapacitated droid or construct within range. The target must have its memory core (and/or other appropriate components) intact.\r\n\r\nUntil the power ends, you can ask up to five questions. Depending on what it would know or has witnessed, the target provides visual, audio, or text-based data in response. The target can�t provide new information, and can't speculate about future events.",
+    "description": "You read the memory of an incapacitated droid or construct within range. The target must have its memory core (and/or other appropriate components) intact.\r\n\r\nUntil the power ends, you can ask up to five questions. Depending on what it would know or has witnessed, the target provides visual, audio, or text-based data in response. The target can\ufffdt provide new information, and can't speculate about future events.",
     "concentration": false
   },
   {
@@ -3848,7 +3830,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 minutes. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point. This power has no effect on droids or constructs.\r\n\r\nThis power also neutralizes any poisons and cures diseases that affected the creature at the time it died. \r\n\r\nThis power closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival�its head, for instance�the power automatically fails.\r\n\r\nComing back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
+    "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 minutes. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point. This power has no effect on droids or constructs.\r\n\r\nThis power also neutralizes any poisons and cures diseases that affected the creature at the time it died. \r\n\r\nThis power closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival\ufffdits head, for instance\ufffdthe power automatically fails.\r\n\r\nComing back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
     "concentration": false
   },
   {
@@ -3920,7 +3902,7 @@
     },
     "duration": "up to 10 minutes",
     "ritual": false,
-    "description": "Program a creature or object that you are familiar with into your tech focus. Using a sonar scan, the tech focus attempts to find a path to the creature's or objects location, as long as that creature or object is within 1,000 feet of you. If the creature or object is moving, you know the direction of its movement.\r\n\r\nThe power can locate a specific creature or object known to you, or the nearest creature/object of a specific kind (such as a droid or a bothan), so long as you have seen such a creature up close�within 30 feet�at least once.",
+    "description": "Program a creature or object that you are familiar with into your tech focus. Using a sonar scan, the tech focus attempts to find a path to the creature's or objects location, as long as that creature or object is within 1,000 feet of you. If the creature or object is moving, you know the direction of its movement.\r\n\r\nThe power can locate a specific creature or object known to you, or the nearest creature/object of a specific kind (such as a droid or a bothan), so long as you have seen such a creature up close\ufffdwithin 30 feet\ufffdat least once.",
     "concentration": true
   },
   {
@@ -4407,7 +4389,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You enhance your fists�or analogous appendages�with sonic energy. For the duration, you have a natural weapon which deals 1d10 sonic damage on a hit. Every time you hit a creature that is no more than one size larger than you with a melee attack with this weapon, you can push it 5 feet away from you.",
+    "description": "You enhance your fists\ufffdor analogous appendages\ufffdwith sonic energy. For the duration, you have a natural weapon which deals 1d10 sonic damage on a hit. Every time you hit a creature that is no more than one size larger than you with a melee attack with this weapon, you can push it 5 feet away from you.",
     "concentration": false
   },
   {
@@ -5075,7 +5057,7 @@
     },
     "duration": "",
     "ritual": false,
-    "description": "You fire a stinging dart at a creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d8 poison damage, and if the target is a humanoid or beast, it can’t regain hit points until the start of your next turn.\n\nThis power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "description": "You fire a stinging dart at a creature within range. Make a ranged tech attack against the target. On a hit, the target takes 1d8 poison damage, and if the target is a humanoid or beast, it can\u2019t regain hit points until the start of your next turn.\n\nThis power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
     "higherlevels": "",
     "concentration": false
   },
@@ -5180,7 +5162,7 @@
       },
       {
         "type": "text",
-        "text": "You cover the ground in a 10-foot square within range in oil. For the duration, it is difficult terrain.\n\nWhen the oil appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw.\n\nThe oil is flammable. Any 5 foot square of the oil exposed to fire burns away in one round. Each creature who enters the fire or starts it turn there must make a Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried."
+        "text": "You cover the ground in a 10-foot square within range in oil. For the duration, it is difficult terrain.\n\nWhen the oil appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw.\n\nThe oil is flammable. Any 5 foot square of the oil exposed to fire burns away in one round. Each creature who enters the fire or starts it turn there must make a Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren\u2019t being worn or carried."
       }
     ],
     "classes": "",
@@ -5194,7 +5176,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You cover the ground in a 10-foot square within range in oil. For the duration, it is difficult terrain.\n\nWhen the oil appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw.\n\nThe oil is flammable. Any 5 foot square of the oil exposed to fire burns away in one round. Each creature who enters the fire or starts it turn there must make a Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.",
+    "description": "You cover the ground in a 10-foot square within range in oil. For the duration, it is difficult terrain.\n\nWhen the oil appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw.\n\nThe oil is flammable. Any 5 foot square of the oil exposed to fire burns away in one round. Each creature who enters the fire or starts it turn there must make a Dexterity saving throw, taking 3d6 fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren\u2019t being worn or carried.",
     "concentration": false
   },
   {
@@ -5363,7 +5345,7 @@
       },
       {
         "type": "text",
-        "text": "A creature of your choice that you can see within range is overcome with a sense of dizziness and nausea, as you disturb its equilibrium with the Force. The creature must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration.\n\nAt the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it’s triggered by damage. On a success, the power ends. This power has no effect on droids or constructs."
+        "text": "A creature of your choice that you can see within range is overcome with a sense of dizziness and nausea, as you disturb its equilibrium with the Force. The creature must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration.\n\nAt the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it\u2019s triggered by damage. On a success, the power ends. This power has no effect on droids or constructs."
       }
     ],
     "classes": "Universal",
@@ -5377,7 +5359,7 @@
     },
     "duration": "Concentration, up to 1 minute",
     "ritual": false,
-    "description": "A creature of your choice that you can see within range is overcome with a sense of dizziness and nausea, as you disturb its equilibrium with the Force. The creature must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration.\n\nAt the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it’s triggered by damage. On a success, the power ends. This power has no effect on droids or constructs.",
+    "description": "A creature of your choice that you can see within range is overcome with a sense of dizziness and nausea, as you disturb its equilibrium with the Force. The creature must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration.\n\nAt the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it\u2019s triggered by damage. On a success, the power ends. This power has no effect on droids or constructs.",
     "concentration": true
   },
   {
@@ -5463,7 +5445,7 @@
       },
       {
         "type": "text",
-        "text": "Roll 5d8; the total is how many hit points of creatures this power can affect. Creatures within 20 feet of a point you choose are affected in order of their current hit points.\n\nStarting with the creature that has the lowest current hit points, each creature affected by this power falls unconscious. If the power ends, the sleeper takes damage, or someone uses an action wake the sleeper, they will be awoken.\n\nSubtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected.\n\nThis power has no effect on droids or constructs.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, you can roll an additional 2d8 for each slot level above 1st."
+        "text": "Roll 5d8; the total is how many hit points of creatures this power can affect. Creatures within 20 feet of a point you choose are affected in order of their current hit points.\n\nStarting with the creature that has the lowest current hit points, each creature affected by this power falls unconscious. If the power ends, the sleeper takes damage, or someone uses an action wake the sleeper, they will be awoken.\n\nSubtract each creature\u2019s hit points from the total before moving on to the creature with the next lowest hit points. A creature\u2019s hit points must be equal to or less than the remaining total for that creature to be affected.\n\nThis power has no effect on droids or constructs.\n\nForce Potency. When you cast this power using a force slot of 2nd level or higher, you can roll an additional 2d8 for each slot level above 1st."
       }
     ],
     "classes": "Light",
@@ -5477,7 +5459,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "Roll 5d8; the total is how many hit points of creatures this power can affect. Creatures within 20 feet of a point you choose are affected in order of their current hit points.\n\nStarting with the creature that has the lowest current hit points, each creature affected by this power falls unconscious. If the power ends, the sleeper takes damage, or someone uses an action wake the sleeper, they will be awoken.\n\nSubtract each creature’s hit points from the total before moving on to the creature with the next lowest hit points. A creature’s hit points must be equal to or less than the remaining total for that creature to be affected.\n\nThis power has no effect on droids or constructs.",
+    "description": "Roll 5d8; the total is how many hit points of creatures this power can affect. Creatures within 20 feet of a point you choose are affected in order of their current hit points.\n\nStarting with the creature that has the lowest current hit points, each creature affected by this power falls unconscious. If the power ends, the sleeper takes damage, or someone uses an action wake the sleeper, they will be awoken.\n\nSubtract each creature\u2019s hit points from the total before moving on to the creature with the next lowest hit points. A creature\u2019s hit points must be equal to or less than the remaining total for that creature to be affected.\n\nThis power has no effect on droids or constructs.",
     "higherlevels": "When you cast this power using a force slot of 2nd level or higher, you can roll an additional 2d8 for each slot level above 1st.",
     "concentration": false
   },
@@ -5552,7 +5534,7 @@
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power’s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level."
+        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon\u2019s range, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power\u2019s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level."
       }
     ],
     "classes": "",
@@ -5566,7 +5548,7 @@
     },
     "duration": "1 round",
     "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power’s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level.",
+    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon\u2019s range, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and it becomes ignited (your techcasting ability modifier).\n\nThis power\u2019s damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra 1d6 fire damage to the target, and the ignited damage increases to 1d4 + your tech casting ability modifier. Both damage rolls increase by 1d6 and 1d4, respectively, at 11th level and 17th level.",
     "higherlevels": "",
     "concentration": false
   },
@@ -6222,7 +6204,7 @@
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and each Large or smaller creature within 10 feet of the target must succeed on a Strength saving throw or be pulled to the nearest unoccupied space adjacent to the target."
+        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon\u2019s range, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and each Large or smaller creature within 10 feet of the target must succeed on a Strength saving throw or be pulled to the nearest unoccupied space adjacent to the target."
       }
     ],
     "classes": "",
@@ -6533,7 +6515,7 @@
     "automation": [
       {
         "type": "text",
-        "text": "You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can’t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\nBlaster. This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\nPitfall. This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power’s duration. Flying creatures avoid this trap.\n\nSnare. This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\nBlaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\nPitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\nSnare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st."
+        "text": "You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can\u2019t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\nBlaster. This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\nPitfall. This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power\u2019s duration. Flying creatures avoid this trap.\n\nSnare. This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\nBlaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\nPitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\nSnare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st."
       }
     ],
     "classes": "Dark",
@@ -6565,7 +6547,7 @@
     },
     "duration": "Until triggered",
     "ritual": false,
-    "description": "You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can’t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\nBlaster. This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\nPitfall. This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power’s duration. Flying creatures avoid this trap.\n\nSnare. This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\nBlaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\nPitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\nSnare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st.",
+    "description": "You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can\u2019t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\nBlaster. This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\nPitfall. This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power\u2019s duration. Flying creatures avoid this trap.\n\nSnare. This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\nBlaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\nPitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\nSnare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st.",
     "concentration": false
   },
   {
@@ -6661,7 +6643,7 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You use the Force to move a Large or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 90 feet, a Small creature or object can be moved up to 60 feet, a Medium creature or object can be moved up to 30 feet, and a Large creature or object can be moved up to 10 feet. If at the end of this movement the creature or object strikes another creature or object, they both take 2d8 force damage.",
-    "higherlevels": "Force Potency. When you cast this power using a force slot of 3rd level or higher, the range you can throw a creature or object increases by 10 feet, to a maximum of 90 feet, and the power’s damage increases by 1d8.",
+    "higherlevels": "Force Potency. When you cast this power using a force slot of 3rd level or higher, the range you can throw a creature or object increases by 10 feet, to a maximum of 90 feet, and the power\u2019s damage increases by 1d8.",
     "concentration": false
   },
   {
@@ -6741,7 +6723,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
+                      "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn\u2019t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
                     }
                   ],
                   "proper": true
@@ -6814,7 +6796,7 @@
       },
       {
         "type": "text",
-        "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
+        "text": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn\u2019t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire."
       }
     ],
     "classes": "",
@@ -6828,7 +6810,7 @@
     },
     "duration": "Concentration, up to 1 hour",
     "ritual": false,
-    "description": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn’t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
+    "description": "You expel a mass of thick, adhesive mesh at a point of your choice within range. The mesh fill a 20-foot cube from that point for the duration. The mesh is difficult terrain and lightly obscures their area.\n\nIf the mesh isn\u2019t anchored between two solid masses (such as walls) or layered across a floor, wall, or ceiling, the electromesh collapses on itself, and the power ends at the start of your next turn. Mesh layered over a flat surface has a depth of 5 feet.\n\nEach creature that starts its turn in the mesh or that enters it during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the mesh or until it breaks free.\n\nA creature restrained by the mesh can use its action to make a Strength check against your tech save DC. If it succeeds, it is no longer restrained.\n\nThe mesh is flammable. Any 5-foot cube of electromesh exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
     "concentration": true
   },
   {
@@ -6978,13 +6960,13 @@
             "name": "Slowed",
             "duration": "1",
             "end": true,
-            "desc": "Some abilities, effects, and hazards can lead to a special condition called slowed. Slowed is measured in four levels. An effect can give a creature one or more levels of slowed, as specified in the effect’s description.\n\nSlowed Level\nLevel\tEffect\n1\tSpeed reduced by 15 feet\n2\tSpeed reduced by 25 feet\n3\tSpeed reduced by 30 feet\n4\tSpeed reduced to 0, and can’t benefit from any bonus to speed"
+            "desc": "Some abilities, effects, and hazards can lead to a special condition called slowed. Slowed is measured in four levels. An effect can give a creature one or more levels of slowed, as specified in the effect\u2019s description.\n\nSlowed Level\nLevel\tEffect\n1\tSpeed reduced by 15 feet\n2\tSpeed reduced by 25 feet\n3\tSpeed reduced by 30 feet\n4\tSpeed reduced to 0, and can\u2019t benefit from any bonus to speed"
           }
         ]
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level."
+        "text": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon\u2019s range, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level."
       }
     ],
     "classes": "",
@@ -6998,7 +6980,7 @@
     },
     "duration": "1 round",
     "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon’s range, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level.",
+    "description": "As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon\u2019s range, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and the creature gains 1 slowed level until the end of its turn as the air around it turns frigid.\n\nThis power deals additional damage when you reach higher levels. At 5th level the ranged attack deals an extra 1d6 cold damage. This damage increases by 1d6 again at 11th level and 17th level.",
     "higherlevels": "",
     "concentration": false
   },
@@ -7042,7 +7024,7 @@
       },
       {
         "type": "text",
-        "text": "You learn the guidance force power, which does not count against your total powers known. Additionally, this power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).",
+        "text": "You learn the guidance force power, which does not count against your total powers known. Additionally, this power\u2019s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).",
         "title": "Sage Council"
       }
     ],
@@ -7495,7 +7477,7 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       }
     ],
     "classes": "Universal",
@@ -7749,7 +7731,7 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       }
     ],
     "classes": "Universal",
@@ -7763,7 +7745,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
   },
   {
@@ -8003,7 +7985,7 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       }
     ],
     "classes": "Universal",
@@ -8017,7 +7999,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
   },
   {
@@ -8114,7 +8096,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
+                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
                       "title": "Unbreakable Focus"
                     }
                   ]
@@ -8158,7 +8140,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
+                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
                       "title": "Unbreakable Focus"
                     }
                   ]
@@ -8635,11 +8617,11 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 5 feet that boosts the morale and overall battle prowess of you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d4 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d4 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       },
       {
         "type": "text",
-        "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
+        "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
         "title": "Unbreakable Focus"
       }
     ],
@@ -8751,7 +8733,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 13th level\nOnce per long rest, you can cast the improved battle meditation force power at its base level without expending force points. While concentrating on improved battle meditation, at the start of each of your turns, the power’s die increases by one step (from d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, once per round, when a creature rolls a bonus or penalty die from an effect you control, you can have them roll the die with advantage or disadvantage (your choice).",
+                      "text": "Path of Meditation: 13th level\nOnce per long rest, you can cast the improved battle meditation force power at its base level without expending force points. While concentrating on improved battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, once per round, when a creature rolls a bonus or penalty die from an effect you control, you can have them roll the die with advantage or disadvantage (your choice).",
                       "title": "Turbulent Presence"
                     }
                   ]
@@ -8795,7 +8777,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power’s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
+                      "text": "Path of Meditation: 7th level\nOnce per long rest, you can cast the battle meditation force power at its base level without expending force points. While concentrating on battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d4 to d6, d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, whenever you make a Constitution saving throw to maintain concentration on a force power, you can treat a d20 roll of 9 or lower as a 10.",
                       "title": "Unbreakable Focus"
                     }
                   ]
@@ -9182,11 +9164,11 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       },
       {
         "type": "text",
-        "text": "Path of Meditation: 13th level\nOnce per long rest, you can cast the improved battle meditation force power at its base level without expending force points. While concentrating on improved battle meditation, at the start of each of your turns, the power’s die increases by one step (from d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, once per round, when a creature rolls a bonus or penalty die from an effect you control, you can have them roll the die with advantage or disadvantage (your choice).",
+        "text": "Path of Meditation: 13th level\nOnce per long rest, you can cast the improved battle meditation force power at its base level without expending force points. While concentrating on improved battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d6 to d8, d8 to d10, or d10 to d12).\n\nAdditionally, once per round, when a creature rolls a bonus or penalty die from an effect you control, you can have them roll the die with advantage or disadvantage (your choice).",
         "title": "Turbulent Presence"
       }
     ],
@@ -9201,7 +9183,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "description": "You exude an aura out to 15 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d6 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d6 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
   },
   {
@@ -9298,7 +9280,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power’s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
+                      "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
                       "title": "Legendary Battle Meditation"
                     }
                   ]
@@ -9342,7 +9324,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power’s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
+                      "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
                       "title": "Legendary Battle Meditation"
                     }
                   ]
@@ -9639,11 +9621,11 @@
       },
       {
         "type": "text",
-        "text": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
+        "text": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day."
       },
       {
         "type": "text",
-        "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power’s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
+        "text": "Path of Meditation: 18th level\nOnce per long rest, you can cast the master battle meditation force power without expending force points. While concentrating on master battle meditation, at the start of each of your turns, the power\u2019s die increases by one step (from d8 to d10, or d10 to d12).\n\nAdditionally, you gain a second reaction each round that you can only use for your Force-Empowered Allies feature. You can only take one reaction per turn.",
         "title": "Legendary Battle Meditation"
       }
     ],
@@ -9658,7 +9640,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition’s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
+    "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
   },
   {
@@ -10654,7 +10636,7 @@
                     "defaultDC": "lastSaveDC"
                   }
                 ],
-                "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+                "desc": "A stunned creature is incapacitated (see the condition), can\u2019t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
               }
             ],
             "success": [
@@ -10700,7 +10682,7 @@
     },
     "duration": "Up to 1 hour",
     "ritual": false,
-    "description": "\"You alter your form with tech. When you cast the power, choose one of the following options, the effects of which last for the duration of the power. While the power lasts, you can end one option as an action to gain the benefits of a different one.\n\n***Aquatic Adaptation.*** You adapt your body to an aquatic environment. You can breathe underwater and gain a swimming speed equal to your walking speed.\n\n***Change Appearance.*** You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another species (an organic species cannot appear as a droid, or vice versa), though none of your statistics change. You can also alter your vocal cords, enabling you to speak a language you know, but otherwise would be incapable of speaking. You also can’t appear as a creature of a different size than you, and your basic shape stays the same; if you’re bipedal, you can’t use this power to become quadrupedal, for instance. At any time for the duration of the power, you can use your action to change your appearance in this way again.\n\n***Natural Weapons.*** You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your damage die for your unarmed strikes increases by one step (from 1 to d4, d4 to d6, or d6 to d8). Your unarmed strikes are considered enhanced and you have a +1 bonus to attack and damage rolls with them.\"",
+    "description": "\"You alter your form with tech. When you cast the power, choose one of the following options, the effects of which last for the duration of the power. While the power lasts, you can end one option as an action to gain the benefits of a different one.\n\n***Aquatic Adaptation.*** You adapt your body to an aquatic environment. You can breathe underwater and gain a swimming speed equal to your walking speed.\n\n***Change Appearance.*** You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another species (an organic species cannot appear as a droid, or vice versa), though none of your statistics change. You can also alter your vocal cords, enabling you to speak a language you know, but otherwise would be incapable of speaking. You also can\u2019t appear as a creature of a different size than you, and your basic shape stays the same; if you\u2019re bipedal, you can\u2019t use this power to become quadrupedal, for instance. At any time for the duration of the power, you can use your action to change your appearance in this way again.\n\n***Natural Weapons.*** You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your damage die for your unarmed strikes increases by one step (from 1 to d4, d4 to d6, or d6 to d8). Your unarmed strikes are considered enhanced and you have a +1 bonus to attack and damage rolls with them.\"",
     "concentration": false
   },
   {
@@ -10894,7 +10876,7 @@
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level."
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power\u2019s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level."
       }
     ],
     "classes": "Universal",
@@ -10908,7 +10890,7 @@
     },
     "duration": "1 round",
     "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and you ward yourself from it through the Force.\n\nIf the target forces you to make a saving throw before the start of your next turn, the target takes an additional 1d6 psychic damage, and you can roll 1d4 and add the number rolled to your saving throw. The power then ends.\n\nThe power\u2019s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 psychic damage to the target, and the psychic damage the target takes for forcing you to make a saving throw increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level.",
     "higherlevels": "",
     "concentration": false
   },
@@ -11074,7 +11056,7 @@
       },
       {
         "type": "text",
-        "text": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st."
+        "text": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target\u2019s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st."
       }
     ],
     "classes": "None",
@@ -11088,7 +11070,7 @@
     },
     "duration": "Up to 1 minute",
     "ritual": false,
-    "description": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target’s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st.",
+    "description": "Make a melee tech attack against a target you touch. On a miss, this power ends. On a hit, you deal 2d6 kinetic damage as you plant an explosive charge on the target\u2019s body. You can then detonate the charge as a bonus action, which ends this power. It deals 1d8 fire damage if detonated on the same turn. It deals 2d8 fire damage on your next turn, increasing by 1d8 for each round you do not detonate it, to a maximum of 6d8. If this power ends before you detonate the charge, the target takes no fire damage.\n\nA creature affected by this power can use an action to attempt to remove the detonator from its person, making a Strength or Dexterity check (the creature chooses the ability to use) against your tech save DC. On a success, this power ends, as the detonator deactivates harmlessly.\n\nOvercharge Tech. When you cast this power using a tech slot of 2nd level or higher, the kinetic damage increases by 1d6 for each slot level above 1st.",
     "higherlevels": "",
     "concentration": true
   },
@@ -11867,7 +11849,7 @@
       },
       {
         "type": "text",
-        "text": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren’t being worn or carried."
+        "text": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren\u2019t being worn or carried."
       }
     ],
     "classes": "Universal",
@@ -11881,7 +11863,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren’t being worn or carried.",
+    "description": "A storm made up of sheets of roaring, Force-enhanced flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 energy damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube is affected only once.\n\nThe flame damages objects in the area and ignites flammable objects that aren\u2019t being worn or carried.",
     "concentration": false
   },
   {
@@ -11947,7 +11929,7 @@
                   },
                   {
                     "type": "text",
-                    "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+                    "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire\u2019s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire\u2019s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren\u2019t being worn or carried.\n\nThe power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
                   }
                 ],
                 "label": "Within Pyrokinesis (End of Turn)",
@@ -12000,7 +11982,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+                      "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire\u2019s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire\u2019s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren\u2019t being worn or carried.\n\nThe power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
                     }
                   ],
                   "verb": "burns you with"
@@ -12015,7 +11997,7 @@
       },
       {
         "type": "text",
-        "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+        "text": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire\u2019s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire\u2019s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren\u2019t being worn or carried.\n\nThe power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
       }
     ],
     "classes": "Universal",
@@ -12029,7 +12011,7 @@
     },
     "duration": "Concentration, up to 1 minute",
     "ritual": false,
-    "description": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire’s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire’s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren’t being worn or carried.\n\nThe power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "description": "By stimulating air molecules, you create a zone of Force-enhanced fire on ground that you can see within range. Until the power ends, the enhanced fire fills a 5-foot cube. Any creature in the fire\u2019s space when you cast the power must succeed on a Dexterity saving throw or take 1d8 energy damage. A creature must also make the saving throw when it moves into the fire\u2019s space for the first time on a turn or ends its turn there.\n\nThe fire ignites flammable objects in its area that aren\u2019t being worn or carried.\n\nThe power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
     "concentration": true
   },
   {
@@ -12383,7 +12365,7 @@
                   ]
                 },
                 "end": true,
-                "desc": "4 Slowed levels\n - Attack rolls against the creature have advantage, and the creature’s attack rolls have disadvantage.\n - The creature has disadvantage on Dexterity saving throws.",
+                "desc": "4 Slowed levels\n - Attack rolls against the creature have advantage, and the creature\u2019s attack rolls have disadvantage.\n - The creature has disadvantage on Dexterity saving throws.",
                 "tick_on_caster": true
               }
             ],
@@ -13200,7 +13182,7 @@
       },
       {
         "type": "text",
-        "text": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power’s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice)."
+        "text": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power\u2019s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice)."
       }
     ],
     "classes": "",
@@ -13214,7 +13196,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power’s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice).",
+    "description": "Choose up to three creatures within range, none of whom can be more than 10 feet apart. If you choose three creatures, each target must succeed on a Dexterity saving throw or take 1d4 energy damage. If you choose two creatures, each target takes 1d6 energy damage on a failed save instead. If you choose only one creature, the target takes 1d8 energy damage on a failed save.\n\nThis power\u2019s damage increases by one die when you reach 5th level (two dice), 11th level (three dice), and 17th level (four dice).",
     "higherlevels": "",
     "concentration": false
   },
@@ -13295,7 +13277,7 @@
           },
           {
             "type": "text",
-            "text": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from homing rockets.",
+            "text": "An energy shield appears and protects the target. Until the start of the target\u2019s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from homing rockets.",
             "title": "Description"
           }
         ]
@@ -13312,7 +13294,7 @@
     },
     "duration": "1 round",
     "ritual": false,
-    "description": "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from *homing rockets*.",
+    "description": "An energy shield appears and protects the target. Until the start of the target\u2019s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from *homing rockets*.",
     "concentration": false
   },
   {
@@ -13345,7 +13327,7 @@
       },
       {
         "type": "text",
-        "text": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels."
+        "text": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power\u2019s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power\u2019s force damage also increases by 10 at each of these levels."
       }
     ],
     "classes": "Universal",
@@ -13359,7 +13341,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power’s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power’s force damage also increases by 10 at each of these levels.",
+    "description": "You inflict 10 force damage to an object you can see within range that is not being worn or carried, generating an explosion of sound that can be heard up to 100 feet away. Even if the object is not destroyed, small shards of shrapnel fly at creatures within 5 feet of it. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 1d4 kinetic damage.\n\nThis power\u2019s kinetic damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4), and the power\u2019s force damage also increases by 10 at each of these levels.",
     "concentration": false
   },
   {
@@ -13521,7 +13503,7 @@
           },
           {
             "type": "text",
-            "text": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4)."
+            "text": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power\u2019s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4)."
           }
         ]
       }
@@ -13537,7 +13519,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power’s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4).",
+    "description": "You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes 1d6 fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take 1d4 fire damage.\n\nThis power\u2019s damage increases by one die when you reach 5th level (2d6/2d4), 11th level (3d6/3d4), and 17th level (4d6/4d4).",
     "concentration": false
   },
   {
@@ -13564,7 +13546,7 @@
       },
       {
         "type": "text",
-        "text": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+        "text": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power\u2019s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
       }
     ],
     "classes": "None",
@@ -13578,7 +13560,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "description": "You break or tear an unenhanced structure or object you touch that is not being worn or carried by a creature other than you. The break or tear can be up to 1 foot in any dimension. When cast this in this way, this power has a casting time of 1 minute.\n\nAlternatively, you can touch a droid or construct when you cast this power. Make a melee tech attack against the target. On a hit, the target takes 1d6 energy damage. When cast in this way, this power has a casting time of 1 action.\n\nThis power\u2019s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
     "concentration": false
   },
   {
@@ -13668,7 +13650,7 @@
       },
       {
         "type": "text",
-        "text": "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a d8. The weapon also becomes enhanced, if it isn’t already, and you become proficient with it, if you aren’t already. The power ends if you cast it again or if you let go of the weapon."
+        "text": "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon\u2019s damage die becomes a d8. The weapon also becomes enhanced, if it isn\u2019t already, and you become proficient with it, if you aren\u2019t already. The power ends if you cast it again or if you let go of the weapon."
       }
     ],
     "classes": "Universal",
@@ -13748,7 +13730,7 @@
                 "type": "ieffect2",
                 "name": "Shocked",
                 "duration": "1",
-                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                "desc": "A shocked creature can\u2019t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
               }
             ],
             "miss": []
@@ -14137,7 +14119,7 @@
       },
       {
         "type": "text",
-        "text": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\n\nThis power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
+        "text": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\n\nThis power\u2019s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
       }
     ],
     "classes": "Light",
@@ -14908,7 +14890,7 @@
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you can teleport to an unoccupied space of your choice within 10 feet of you. If you teleport to a space within 5 feet of the target, the target cannot take reactions until the end of its next turn.\n\nThis power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 energy damage to the target. This extra energy damage increases to 2d6 at 11th level and 3d6 at 17th level."
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and you can teleport to an unoccupied space of your choice within 10 feet of you. If you teleport to a space within 5 feet of the target, the target cannot take reactions until the end of its next turn.\n\nThis power\u2019s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 energy damage to the target. This extra energy damage increases to 2d6 at 11th level and 3d6 at 17th level."
       }
     ],
     "classes": "None",
@@ -14922,7 +14904,7 @@
     },
     "duration": "1 Round",
     "ritual": false,
-    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack’s normal effects, and you can teleport to an unoccupied space of your choice within 10 feet of you. If you teleport to a space within 5 feet of the target, the target cannot take reactions until the end of its next turn.\n\nThis power’s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 energy damage to the target. This extra energy damage increases to 2d6 at 11th level and 3d6 at 17th level.",
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack\u2019s normal effects, and you can teleport to an unoccupied space of your choice within 10 feet of you. If you teleport to a space within 5 feet of the target, the target cannot take reactions until the end of its next turn.\n\nThis power\u2019s damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 energy damage to the target. This extra energy damage increases to 2d6 at 11th level and 3d6 at 17th level.",
     "concentration": false
   },
   {
@@ -15183,7 +15165,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "Until the power ends, any creature who targets the warded creature with an attack, a harmful power, or a hostile action must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or power. This power doesn’t protect the warded creature from area effects.\n\nIf the warded creature makes an attack, casts a power that affects an enemy creature, or takes a hostile action this power ends.",
+    "description": "Until the power ends, any creature who targets the warded creature with an attack, a harmful power, or a hostile action must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or power. This power doesn\u2019t protect the warded creature from area effects.\n\nIf the warded creature makes an attack, casts a power that affects an enemy creature, or takes a hostile action this power ends.",
     "concentration": false
   },
   {
@@ -15306,7 +15288,7 @@
       },
       {
         "type": "text",
-        "text": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws."
+        "text": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target\u2019s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws."
       }
     ],
     "classes": "",
@@ -15320,7 +15302,7 @@
     },
     "duration": "Concentration, up to 1 minute",
     "ritual": false,
-    "description": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target’s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws.",
+    "description": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target\u2019s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws.",
     "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional droid for each slot level above 2nd.",
     "concentration": true
   },
@@ -15497,7 +15479,7 @@
     "automation": [
       {
         "type": "text",
-        "text": "Spell DC: {wisdomMod + proficiencyBonus + 8}\n\nWhen you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet."
+        "text": "Spell DC: {wisdomMod + proficiencyBonus + 8}\n\nWhen you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn\u2019t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet."
       },
       {
         "type": "target",
@@ -15538,7 +15520,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "When you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn’t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet.",
+    "description": "When you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn\u2019t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet.",
     "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st. For each slot 2 levels higher than 1st, you can add an additional 5 feet to the push.",
     "concentration": false
   },
@@ -16067,7 +16049,7 @@
       },
       {
         "type": "text",
-        "text": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage."
+        "text": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren\u2019t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage."
       }
     ],
     "classes": "Universal",
@@ -16081,7 +16063,7 @@
     },
     "duration": "up to 10 minutes",
     "ritual": false,
-    "description": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren’t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
+    "description": "Through the Force, you gain a limited form of telepathy that enables you to anticipate the moves of your opponents in combat. While you aren\u2019t wearing armor or wielding a shield, you gain a +2 AC bonus against melee attacks and a +3 AC bonus against ranged attacks.\n\nThis AC bonus is not applied against attacks from droids, constructs, or creatures with resistance or immunity to psychic damage.",
     "concentration": true
   },
   {
@@ -16165,7 +16147,7 @@
       },
       {
         "type": "text",
-        "text": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the power is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\n\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can’t benefit from being invisible."
+        "text": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the power is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\n\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can\u2019t benefit from being invisible."
       }
     ],
     "classes": "",
@@ -16179,7 +16161,7 @@
     },
     "duration": "Concentration, up to 1 minute",
     "ritual": false,
-    "description": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the power is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\n\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can’t benefit from being invisible.",
+    "description": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the power is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\n\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can\u2019t benefit from being invisible.",
     "concentration": true
   },
   {
@@ -16207,7 +16189,7 @@
                 "name": "Shocked",
                 "duration": "2",
                 "end": true,
-                "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
+                "desc": "A shocked creature can\u2019t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
                 "tick_on_caster": true
               },
               {
@@ -16307,7 +16289,7 @@
       },
       {
         "type": "text",
-        "text": "You gain the minor ability to move or manipulate creatures and objects with the Force. You can exert fine control on objects with your telekinetic grip, such as manipulating a simple tool, opening a door or a container, stowing or retrieving an item from an open container, or pouring the contents from a vial. Alternatively, you can push or pull a creature or object you can see.\n\nYou use the Force to move a Medium or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 20 feet, a Small creature or object can be moved up to 10 feet, and a Medium creature or object can be moved up to 5 feet. If at the end of this movement the creature or object strikes another creature or object, it must make a Dexterity saving throw. An object automatically fails this saving throw. On a failed save, they both take 1d4 kinetic damage.\n\nThis power improves when you reach higher levels. At 5th level, you can move a Tiny creature or object up to 30 feet, a Small creature or object up to 20 feet, a Medium creature or object up to 10 feet, and the power’s damage increases to 2d4 kinetic damage. At 11th level, you can move a Small creature or object up to 30 feet, a Medium creature up to 20 feet, and the power’s damage increases to 3d4 kinetic damage. At 17th level, you can move a Medium creature to up 30 feet, and the power’s damage increases to 4d4 kinetic damage."
+        "text": "You gain the minor ability to move or manipulate creatures and objects with the Force. You can exert fine control on objects with your telekinetic grip, such as manipulating a simple tool, opening a door or a container, stowing or retrieving an item from an open container, or pouring the contents from a vial. Alternatively, you can push or pull a creature or object you can see.\n\nYou use the Force to move a Medium or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 20 feet, a Small creature or object can be moved up to 10 feet, and a Medium creature or object can be moved up to 5 feet. If at the end of this movement the creature or object strikes another creature or object, it must make a Dexterity saving throw. An object automatically fails this saving throw. On a failed save, they both take 1d4 kinetic damage.\n\nThis power improves when you reach higher levels. At 5th level, you can move a Tiny creature or object up to 30 feet, a Small creature or object up to 20 feet, a Medium creature or object up to 10 feet, and the power\u2019s damage increases to 2d4 kinetic damage. At 11th level, you can move a Small creature or object up to 30 feet, a Medium creature up to 20 feet, and the power\u2019s damage increases to 3d4 kinetic damage. At 17th level, you can move a Medium creature to up 30 feet, and the power\u2019s damage increases to 4d4 kinetic damage."
       }
     ],
     "classes": "Universal",
@@ -16354,7 +16336,7 @@
       },
       {
         "type": "text",
-        "text": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\n\nThis power’s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+        "text": "You cause the earth to burst from beneath your feet. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d8 kinetic damage.\n\nThis power\u2019s damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
       }
     ],
     "classes": "Universal",
@@ -16507,7 +16489,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect–to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
+    "description": "You cause a minor effect within range. Choose one of the following:\n\nYour natural voice booms up to three times louder than normal for 1 minute. You can also alter the sound of your voice to achieve a certain effect\u2013to sound more intimidating, for example.\nYou cause unenhanced electronic lights to flicker, brighten, dim, or change color for 1 minute.\nYou cause harmless tremors in the ground for 1 minute.\nYou create a sound within range for up to 1 minute. The sound can range in volume from a whisper to a scream.\nYou instantaneously cause an unlocked door or window to fly open or slam shut.\nYou alter the appearance of your eyes for 1 minute.\nYou create an illusory image of an object no larger than a 5 foot cube. The illusion is purely visual.\nIf you cast this power multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.\n\nA creature that witnesses the effects of this power can use its action to make an Intelligence (Investigation) check against your tech save DC. On a successful check, the creature discerns that the effects are illusory, and they become faint to the creature.\n\nThe maximum number of active effects increases by 3 when you reach 5th level (6), 11th level (9), and 17th level (12).",
     "concentration": false
   },
   {
@@ -16757,7 +16739,7 @@
                 "name": "Deafened",
                 "duration": "1",
                 "end": true,
-                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing."
+                "desc": "A deafened creature can\u2019t hear and automatically fails any ability check that requires hearing."
               }
             ],
             "success": [
@@ -16843,7 +16825,7 @@
                     "defaultDC": "lastSaveDC"
                   }
                 ],
-                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.\n - A blinded creature can't see and automatically fails any ability check that requires sight.\n - Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
+                "desc": "A deafened creature can\u2019t hear and automatically fails any ability check that requires hearing.\n - A blinded creature can't see and automatically fails any ability check that requires sight.\n - Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
               },
               {
                 "type": "ieffect2",
@@ -16921,7 +16903,7 @@
                 "name": "Deafened",
                 "duration": "1",
                 "end": true,
-                "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing."
+                "desc": "A deafened creature can\u2019t hear and automatically fails any ability check that requires hearing."
               },
               {
                 "type": "ieffect2",
@@ -16955,7 +16937,7 @@
       },
       {
         "type": "text",
-        "text": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn’t deafened or knocked prone."
+        "text": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn\u2019t deafened or knocked prone."
       }
     ],
     "classes": "Dark",
@@ -16969,7 +16951,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn’t deafened or knocked prone.",
+    "description": "You emit a violent scream imbued with the power of the Force. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw. On a\n\nfailed save, a creature take 5d6 psychic damage, 5d6 sonic damage, is deafened until the end of its next turn, and is knocked prone. On a successful save, it takes half as much damage and isn\u2019t deafened or knocked prone.",
     "concentration": false
   },
   {
@@ -17218,7 +17200,7 @@
       },
       {
         "type": "text",
-        "text": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power’s range and strike a creature within your weapon’s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon’s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd."
+        "text": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power\u2019s range and strike a creature within your weapon\u2019s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon\u2019s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd."
       }
     ],
     "classes": "Universal",
@@ -17232,7 +17214,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power’s range and strike a creature within your weapon’s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon’s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd.",
+    "description": "You move in a burst of speed to deliver a deadly blow. When you cast this power, you must be wielding a melee weapon with which you are proficient, otherwise, the power fails. As part of the action used to cast this power, you move in a straight line to an unoccupied space within the power\u2019s range and strike a creature within your weapon\u2019s range. Opportunity attacks provoked by this movement have disadvantage. The creature must make a Dexterity saving throw. On a failed save, it takes damage equal to three rolls of the weapon\u2019s damage dice + 4d4 force damage, or half as much damage on a successful one.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the force damage increases by 1d4 for each slot level above 3rd.",
     "concentration": false
   },
   {
@@ -17852,7 +17834,7 @@
       },
       {
         "type": "text",
-        "text": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon’s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd."
+        "text": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon\u2019s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd."
       }
     ],
     "classes": "Universal",
@@ -17866,7 +17848,7 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon’s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd.",
+    "description": "As part of the action used to cast the power, you can move up to your speed and make one melee weapon attack. On a hit, the attack deals an extra 1d10 damage of the weapon\u2019s type. In addition, if you hit with the attack, the target must succeed on a Strength saving throw or be knocked prone.\n\nForce Potency. When you cast this power using a force slot of 4th level or higher, the bonus weapon damage increases by 1d10 for every two slot levels above 2nd.",
     "higherlevels": "",
     "concentration": false
   },
@@ -17927,7 +17909,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon\u2019s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
                     }
                   ],
                   "activation_type": 2
@@ -17956,7 +17938,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+                      "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon\u2019s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
                     }
                   ],
                   "activation_type": 2
@@ -17964,13 +17946,13 @@
               }
             ],
             "end": true,
-            "desc": "Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra {numDie}d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\n{numDie}"
+            "desc": "Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra {numDie}d6 damage of the weapon\u2019s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\n{numDie}"
           }
         ]
       },
       {
         "type": "text",
-        "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
+        "text": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon\u2019s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th."
       }
     ],
     "classes": "Universal",
@@ -17984,7 +17966,7 @@
     },
     "duration": "1 turn",
     "ritual": false,
-    "description": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon’s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th.",
+    "description": "You assume a battle stance. Until the end of your turn, your movement does not provoke opportunity attacks. Additionally, whenever you move, you can make one melee weapon attack against each creature you move within 5 feet of for the first time this turn. On a hit, the attack deals an extra 1d6 damage of the weapon\u2019s type, and the target must make a Strength saving throw. On a failed save, you can choose to either knock the target prone, or push it 5 feet away from you.\n\nForce Potency. When you cast this power using a force slot of 5th level or higher, the bonus weapon damage increases by 1d6 for each slot level above 4th.",
     "higherlevels": "",
     "concentration": false
   },
@@ -18632,7 +18614,7 @@
                     },
                     {
                       "type": "text",
-                      "text": "Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {2+int(ieffect.desc.split()[-1])}d6 kinetic damage. The sphere’s space is difficult terrain."
+                      "text": "Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take {2+int(ieffect.desc.split()[-1])}d6 kinetic damage. The sphere\u2019s space is difficult terrain."
                     }
                   ],
                   "activation_type": 2
@@ -18667,7 +18649,7 @@
       },
       {
         "type": "text",
-        "text": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th."
+        "text": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power\u2019s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere\u2019s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th."
       }
     ],
     "classes": "Dark",
@@ -18681,7 +18663,7 @@
     },
     "duration": "up to 1 minute",
     "ritual": false,
-    "description": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere’s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.",
+    "description": "A 20-foot-radius sphere of compressed lightning springs into existence centered on a point you choose within range. The sphere remains for the power\u2019s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 kinetic damage. The sphere\u2019s space is difficult terrain.\n\nUntil the power ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged force attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.\n\nCreatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.\n\nForce Potency. When you cast this power with a force slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.",
     "concentration": true
   },
   {
@@ -18856,7 +18838,7 @@
       },
       {
         "type": "text",
-        "text": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can’t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the extra damage increases by 1d8 for for every two slot levels above 3rd."
+        "text": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can\u2019t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the extra damage increases by 1d8 for for every two slot levels above 3rd."
       }
     ],
     "classes": "Dark",
@@ -18870,7 +18852,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can’t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.",
+    "description": "You manifest a mantle of malevolent dark side energy for the duration.\n\nUntil the power ends, any attack you make deals an extra 1d8 necrotic damage when you hit a creature within 10 feet of you. Any creature that takes this damage can\u2019t regain hit points until the start of your next turn.\n\nAdditionally, any creature of your choice that you can see that starts its turn within 10 feet of you gains 1 slowed level until the start of your next turn.",
     "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 5th level or higher, the extra damage increases by 1d8 for for every two slot levels above 3rd.",
     "concentration": true
   },
@@ -18878,6 +18860,37 @@
     "name": "Improved Phasewalk",
     "level": 5,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Phasewalk - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Improved Phasewalk - Teleport",
+                  "automation": [
+                    {
+                      "type": "text",
+                      "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
+                    }
+                  ]
+                }
+              }
+            ],
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
+      }
+    ],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 bonus action",
@@ -18890,43 +18903,18 @@
     "duration": "up to 1 minute",
     "ritual": false,
     "description": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again.",
-    "concentration": true,
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "ieffect2",
-            "name": "Improved Phasewalk - Parent",
-            "parent": "ieffect",
-            "attacks": [
-              {
-                "attack": {
-                  "name": "Improved Phasewalk - Teleport",
-                  "_v": 2,
-                  "automation": [
-                    {
-                      "type": "text",
-                      "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again."
-      }
-    ]
+    "concentration": true
   },
   {
     "name": "Phasewalk",
     "level": 2,
     "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You teleport up to 30 feet to an unoccupied space that you can see."
+      }
+    ],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 bonus action",
@@ -18939,31 +18927,12 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You teleport up to 30 feet to an unoccupied space that you can see.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "text",
-        "text": "You teleport up to 30 feet to an unoccupied space that you can see."
-      }
-    ]
+    "concentration": false
   },
   {
     "name": "Improved Phasestrike",
     "level": 5,
     "school": "Force",
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "30 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose.",
-    "concentration": false,
     "automation": [
       {
         "type": "target",
@@ -18985,25 +18954,25 @@
         "type": "text",
         "text": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose."
       }
-    ]
-  },
-  {
-    "name": "Phasestrike",
-    "level": 1,
-    "school": "Force",
+    ],
     "classes": "Universal",
     "subclasses": "",
-    "casttime": "1 bonus action",
-    "range": "Self",
+    "casttime": "1 action",
+    "range": "30 feet",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "up to 1 minute",
+    "duration": "Instantaneous",
     "ritual": false,
-    "description": "Until the power ends, your movement doesn't provoke opportunity attacks.\r\n\r\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
-    "concentration": true,
+    "description": "Choose up to five creatures you can see within range. Make a melee force attack against each one. On hit, a target takes 6d10 force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the creatures you chose.",
+    "concentration": false
+  },
+  {
+    "name": "Phasestrike",
+    "level": 1,
+    "school": "Force",
     "automation": [
       {
         "type": "target",
@@ -19012,12 +18981,11 @@
           {
             "type": "ieffect2",
             "name": "Phasestrike - Parent",
-            "parent": "ieffect",
             "attacks": [
               {
                 "attack": {
-                  "name": "Phasestrike - Damage",
                   "_v": 2,
+                  "name": "Phasestrike - Damage",
                   "automation": [
                     {
                       "type": "target",
@@ -19033,7 +19001,8 @@
                   "activation_type": 2
                 }
               }
-            ]
+            ],
+            "parent": "ieffect"
           }
         ]
       },
@@ -19041,6 +19010,85 @@
         "type": "text",
         "text": "Until the power ends, your movement doesn't provoke opportunity attacks.\n\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn."
       }
-    ]
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "Until the power ends, your movement doesn't provoke opportunity attacks.\r\n\r\nOnce before the power ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 force damage on a hit. Whether you hit or miss, your walking speed increases by 30 feet until the end of that turn.",
+    "concentration": true
+  },
+  {
+    "name": "Disperse Force",
+    "level": 1,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Disperse Force - Parent",
+                "duration": "1",
+                "effects": {
+                  "resistances": [
+                    "{choice}"
+                  ]
+                }
+              },
+              {
+                "type": "temphp",
+                "amount": "5",
+                "higher": {
+                  "2": "10",
+                  "3": "15",
+                  "4": "20",
+                  "5": "25",
+                  "6": "30",
+                  "7": "35",
+                  "8": "40",
+                  "9": "45"
+                }
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify the triggering damage type"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "This power absorbs damage from certain incoming attacks, lessening its effect on you and distributing it throughout your body. You have resistance to the triggering damage type until the start of your next turn. Also, you gain 5 temporary hit points to potentially absorb the attack. These temporary hit points last until the start of your next turn.\n\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the temporary hit points increases by 5 for each slot level above 1st."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you take cold, energy, fire, ion, lightning, or sonic damage",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "This power absorbs damage from certain incoming attacks, lessening its effect on you and distributing it throughout your body. You have resistance to the triggering damage type until the start of your next turn. Also, you gain 5 temporary hit points to potentially absorb the attack. These temporary hit points last until the start of your next turn.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the temporary hit points increases by 5 for each slot level above 1st.",
+    "concentration": false
   }
 ]

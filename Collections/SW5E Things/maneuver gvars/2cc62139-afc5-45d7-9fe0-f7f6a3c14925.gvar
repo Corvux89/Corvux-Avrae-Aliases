@@ -224,7 +224,7 @@ def do_roll(feature, superiorityDice, maneuverMod, args):
     for n, sk in c.skills:
         roll_str = roll_str.replace(f'#{n}#', f'1d20+{sk.value}')
 
-    if args.get('max') or args.get('fs'):
+    if a.get('max') or a.get('fs'):
         roll_str = get_max_roll(roll_str)
 
     return vroll(roll_str)
