@@ -73,7 +73,6 @@
 # TODO: Disable Droid
 # TODO: (SW) Disintegrate
 # TODO: Disperse Energy
-# TODO: Disperse Force
 # TODO: (SW) Dominate Beast
 # TODO: Dominate Mind
 # TODO: (SW) Dominate Monster
