@@ -34,7 +34,7 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
             "environment": "Custom",
             "ac": mon.get('ac'),
             "hp": mon.get('hp'),
-            "init": mon.get('ability_scores',{}).get('prof_bonus') + ((mon.get('ability_scores',{}).get('dexterity')-10)/2),
+            "init": round(mon.get('ability_scores',{}).get('prof_bonus') + ((mon.get('ability_scores',{}).get('dexterity')-10)/2)),
             "lair": "",
             "legendary": "",
             "unique": "",
@@ -61,7 +61,7 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                     get_type(obj, auto_type)
 
                 s = {"name": mon.get('name'), 'ability': a.get('name'),
-                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp"]) else False,
+                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp", "condition"]) else False,
                      'source': name}
 
                 if not s['complete']:

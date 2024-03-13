@@ -608,560 +608,116 @@
   {
     "name": "Krayt Dragon, Greater",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +17 to hit, reach 15 ft., one target. *Hit:* 27 (3d10 + 10) kinetic damage plus 14 (3d8) poison damage. The target must then succeed on a Constitution saving throw (DC 28) or become poisoned.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d10 + 10 [kinetic] + 3d8 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "17"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +17 to hit, reach 15 ft., one target. *Hit:* 27 (3d10 + 10) kinetic damage plus 14 (3d8) poison damage. The target must then succeed on a Constitution saving throw (DC 28) or become poisoned.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Krayt Dragon, Greater",
     "ability": "Frightful Presence",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature of the dragon's choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the dragon's Frightful Presence for the next 24 hours.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Krayt Dragon, Greater",
     "ability": "Poisonous Saliva (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The dragon spits its poisonous saliva in a 90-foot cone. Each creature in that area must make a DC 28 Constitution saving throw, taking 90 (20d8) poison damage on a failed save, or half as much damage on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Krayt Dragon, Juvenile",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +10 to hit, reach 10 ft., one target. *Hit:* 17 (2d10 + 6) kinetic damage plus 4 (2d4) poison damage. The target must then succeed on a Constitution saving throw (DC 15) or become poisoned.damage.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d10 + 6 [kinetic] + 2d4 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "10"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +10 to hit, reach 10 ft., one target. *Hit:* 17 (2d10 + 6) kinetic damage plus 4 (2d4) poison damage. The target must then succeed on a Constitution saving throw (DC 15) or become poisoned.damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Krayt Dragon, Juvenile",
     "ability": "Poisonous Saliva (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The dragon spits its poisonous saliva in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) poison damage on a failed save, or half as much damage on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "LR1K Sonic Cannon",
     "ability": "Sonic Blast",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The sonic cannon lets loose a devastating blast of sonic energy in a direction it chooses. Each creature and construct in a 60-foot cone must make a Constitution saving throw (DC 14). A creature takes 24 (6d6 + 3) sonic damage and is knocked prone on a failed save. On a success, the creature takes half damage.",
-    "automation": {
-      "name": "Sonic Blast",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "6d6 + 3[sonic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "The sonic cannon lets loose a devastating blast of sonic energy in a direction it chooses. Each creature and construct in a 60-foot cone must make a Constitution saving throw (DC 14). A creature takes 24 (6d6 + 3) sonic damage and is knocked prone on a failed save. On a success, the creature takes half damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Lylek",
     "ability": "Tail Stinger",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 10 (2d6 + 3) kinetic damage, and the target must succeed on a DC 15 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-    "automation": {
-      "name": "Tail Stinger",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 10 (2d6 + 3) kinetic damage, and the target must succeed on a DC 15 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Lylek",
     "ability": "Tentacle",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 10 (2d6 + 3) kinetic damage. If the target is Medium or smaller, it is grappled (escape DC 15). The lylek can have up to two creatures grappled at the same time.",
-    "automation": {
-      "name": "Tentacle",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 10 ft., one target. *Hit:* 10 (2d6 + 3) kinetic damage. If the target is Medium or smaller, it is grappled (escape DC 15). The lylek can have up to two creatures grappled at the same time.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Maalraas",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 11 (2d8 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 11 (2d8 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Manifestation of Abeloth",
     "ability": "Tentacles",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +17 to hit, reach 5 ft., one target. *Hit:* 28 (3d12+9) kinetic damage. If the target is a creature, it must succeed on a DC 23 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. If the target's hit point maximum is reduced to 0, they die and their essence is absorbed into Abeloth.",
-    "automation": {
-      "name": "Tentacles",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d12+9 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "17"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +17 to hit, reach 5 ft., one target. *Hit:* 28 (3d12+9) kinetic damage. If the target is a creature, it must succeed on a DC 23 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. If the target's hit point maximum is reduced to 0, they die and their essence is absorbed into Abeloth.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Manifestation of Abeloth",
     "ability": "Will",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "If the target fails the save, the target suffers one of the following effects of Abeloth's choice or at random: 1. Beguiling Will. The target is stunned until the start of Abeloth's next turn. 2. Hypnotic Will. The target is charmed by Abeloth until the start of Abeloth's next turn. Abeloth chooses how the charmed target uses its actions, reactions, and movement. Because this effect requires Abeloth's strong effort, she can't use her Maddening Will legendary action until the start of her next turn. 3. Insane Will. The target suffers the effect of the confusion power without making a saving throw. The effect lasts until the start of Abeloth's next turn. Abeloth doesn't need to concentrate on the power. Abeloth turns her will upon one creature she can see within 120 feet. That target must make a DC 23 Wisdom saving throw. Unless the target is incapacitated, it can avert it's attention to automatically succeed on the save. If the target does so, it can't see Abeloth until the start of its next turn. If the target again focuses on Abeloth in the meantime, it must immediately make the save.",
-    "automation": {
-      "name": "Will",
-      "_v": 2,
-      "automation": [
-        {
-          "type": "condition",
-          "condition": "choice and choice.lower() in 'beguiling'",
-          "onTrue": [
-            {
-              "type": "target",
-              "target": "each",
-              "effects": [
-                {
-                  "type": "ieffect2",
-                  "name": "Stunned",
-                  "duration": 1,
-                  "desc": "A stunned creature is incapacitated (see the condition), can\u2019t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage.",
-                  "tick_on_caster": true
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "text": "The target is stunned until the start of Abeloth's next turn.",
-              "title": "Beguiling Will"
-            }
-          ],
-          "onFalse": [
-            {
-              "type": "condition",
-              "condition": "choice and choice.lower() in 'hypnotic'",
-              "onTrue": [
-                {
-                  "type": "target",
-                  "target": "each",
-                  "effects": [
-                    {
-                      "type": "ieffect2",
-                      "name": "Charmed",
-                      "desc": "A charmed creature can't attack the charmer or target the charmer with harmful abilities or enhanced effects.\r\n - The charmer has advantage on any ability check to interact socially with the creature.\r\n - Abeloth chooses how the charmed target uses its actions, reactions, and movement."
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "title": "Hypnotic Will",
-                  "text": " The target is charmed by Abeloth until the start of Abeloth's next turn. Abeloth chooses how the charmed target uses its actions, reactions, and movement. Because this effect requires Abeloth's strong effort, she can't use her Maddening Will legendary action until the start of her next turn."
-                }
-              ],
-              "onFalse": [
-                {
-                  "type": "condition",
-                  "condition": "choice and choice.lower() in 'insane'",
-                  "onTrue": [
-                    {
-                      "type": "target",
-                      "target": "each",
-                      "effects": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Charmed",
-                          "duration": 10,
-                          "desc": "A charmed creature can't attack the charmer or target the charmer with harmful abilities or enhanced effects.\r\n- The charmer has advantage on any ability check to interact socially with the creature.\r\n - The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose.",
-                          "buttons": [
-                            {
-                              "label": "Resist Charm",
-                              "style": 1,
-                              "defaultDC": "14",
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "wis",
-                                      "fail": [],
-                                      "success": [
-                                        {
-                                          "type": "remove_ieffect"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "title": "Insane Will",
-                      "text": "The target suffers the effect of the confusion power without making a saving throw. The effect lasts until the start of Abeloth's next turn. Abeloth doesn't need to concentrate on the power. Abeloth turns her will upon one creature she can see within 120 feet. That target must make a DC 23 Wisdom saving throw. Unless the target is incapacitated, it can avert it's attention to automatically succeed on the save. If the target does so, it can't see Abeloth until the start of its next turn. If the target again focuses on Abeloth in the meantime, it must immediately make the save."
-                    },
-                    {
-                      "type": "text",
-                      "title": "Confusion",
-                      "text": "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose.\n\nThe target can act normally on its turn if you choose no creature or if none are within its reach.\n\nOn your subsequent turns, you must use your action to maintain control over the target, or the power ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the power ends."
-                    }
-                  ],
-                  "onFalse": [
-                    {
-                      "type": "text",
-                      "text": "Use `-choice [choice]` to select your effect. Use `-choice beguiling`, `-choice hypnotic`, or `-choice insane`"
-                    },
-                    {
-                      "type": "text",
-                      "text": "If the target fails the save, the target suffers one of the following effects of Abeloth's choice or at random: 1. Beguiling Will. The target is stunned until the start of Abeloth's next turn. 2. Hypnotic Will. The target is charmed by Abeloth until the start of Abeloth's next turn. Abeloth chooses how the charmed target uses its actions, reactions, and movement. Because this effect requires Abeloth's strong effort, she can't use her Maddening Will legendary action until the start of her next turn. 3. Insane Will. The target suffers the effect of the confusion power without making a saving throw. The effect lasts until the start of Abeloth's next turn. Abeloth doesn't need to concentrate on the power. Abeloth turns her will upon one creature she can see within 120 feet. That target must make a DC 23 Wisdom saving throw. Unless the target is incapacitated, it can avert it's attention to automatically succeed on the save. If the target does so, it can't see Abeloth until the start of its next turn. If the target again focuses on Abeloth in the meantime, it must immediately make the save."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "If the target fails the save, the target suffers one of the following effects of Abeloth's choice or at random: 1. Beguiling Will. The target is stunned until the start of Abeloth's next turn. 2. Hypnotic Will. The target is charmed by Abeloth until the start of Abeloth's next turn. Abeloth chooses how the charmed target uses its actions, reactions, and movement. Because this effect requires Abeloth's strong effort, she can't use her Maddening Will legendary action until the start of her next turn. 3. Insane Will. The target suffers the effect of the confusion power without making a saving throw. The effect lasts until the start of Abeloth's next turn. Abeloth doesn't need to concentrate on the power. Abeloth turns her will upon one creature she can see within 120 feet. That target must make a DC 23 Wisdom saving throw. Unless the target is incapacitated, it can avert it's attention to automatically succeed on the save. If the target does so, it can't see Abeloth until the start of its next turn. If the target again focuses on Abeloth in the meantime, it must immediately make the save."
-        }
-      ],
-      "activation_type": 2
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Melee Destroyer Droid",
     "ability": "Rend",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The destroyer droid tears apart a grappled opponent. A grappled creature must make a DC 15 Strength saving throw. On a failure, the creature takes 18 (4d6+4) kinetic damage and is stunned until the end of the destroyer droids' next turn. On a success, the creature takes normal weapon damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Mistryl Apprentice",
     "ability": "Mistryl Unarmed Strikes",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 7 (1d8 + 3) kinetic damage.\n\nIf the target is a creature, the Mistryl can choose one of the following additional effects. The target must Succeed on a DC 13:\n -Strength saving throw or drop one item it is holding (Mistryl's choice). \n-Dexterity saving throw or be knocked prone. \n-Constitution saving throw or be stunned until the Mistryl's next turn.",
-    "automation": {
-      "name": "Mistryl Unarmed Strikes",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d8 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 7 (1d8 + 3) kinetic damage.\n\nIf the target is a creature, the Mistryl can choose one of the following additional effects. The target must Succeed on a DC 13:\n -Strength saving throw or drop one item it is holding (Mistryl's choice). \n-Dexterity saving throw or be knocked prone. \n-Constitution saving throw or be stunned until the Mistryl's next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Mistryl Apprentice",
     "ability": "Dart",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +5 to hit, range 20/60 ft., one target. *Hit:* 5 (1d4 + 3) kinetic damage.\n\nThe target must make a DC 13 Constitution saving throw. On a failure, the target takes 7 (2d6) poison damage and is poisoned for 1 minute. On a success, the target takes half the damage and isn't poisoned.",
-    "automation": {
-      "name": "Dart",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +5 to hit, range 20/60 ft., one target. *Hit:* 5 (1d4 + 3) kinetic damage.\n\nThe target must make a DC 13 Constitution saving throw. On a failure, the target takes 7 (2d6) poison damage and is poisoned for 1 minute. On a success, the target takes half the damage and isn't poisoned.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Mole Serpent, Adult",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 22 (3d8 + 9) kinetic damage. If the target is a Large or smaller creature, it must succeed on a DC 17 Dexterity saving throw or be swallowed by the mole serpent. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the mole serpent, and it takes 14 (4d6) acid damage at the start of each of the mole serpent's turns. If the mole serpent takes 25 damage or more on a single turn from a creature inside it, the mole serpent must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the mole serpent. If the mole serpent dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d8 + 9 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 22 (3d8 + 9) kinetic damage. If the target is a Large or smaller creature, it must succeed on a DC 17 Dexterity saving throw or be swallowed by the mole serpent. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the mole serpent, and it takes 14 (4d6) acid damage at the start of each of the mole serpent's turns. If the mole serpent takes 25 damage or more on a single turn from a creature inside it, the mole serpent must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the mole serpent. If the mole serpent dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Narglatch",
     "ability": "Pounce",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "If the narglatch moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the narglatch can make one bite attack against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "NR-N99 Persuader-Class Enforcer",
     "ability": "Crushing Stride (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The droid moves up to its speed in a straight line. During this move, it can enter Large or smaller creatures' spaces. A creature whose space the droid enters must make a DC 18 Dexterity saving throw. On a failed save, the creature falls prone and takes 36 (8d8) kinetic damage. On a successful save, the creature takes half damage and is pushed 5 feet to the nearest space out of the droid's path.If the droid remains in the prone creature's space, the creature is also restrained until it's no longer in the same space as the droid. While restrained in this way, the creature, or another creature within 5 feet of it, can make a DC 18 Strength check. On a success, the creature is shunted to an unoccupied space of its choice within 5 feet of the droid tank and is no longer restrained.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "NR-N99 Persuader-Class Enforcer",
     "ability": "Ram",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The droid moves up to its speed in a straight line towards a structure or construct target. A structure or construct whose space the droid ends its turn adjacent must make a DC 18 Strength saving throw. On a failed save, the structure or construct takes 70 (10d12 + 5) kinetic damage. On a successful save, the droid and the structure or construct both take half damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Opee Sea Killer",
     "ability": "Tongue",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +7 to hit, range 30/30 ft., one target. *Hit:* The target creature is grappled (escape DC 15), and if it is a Large or smaller creature it must immediately make a DC 15 Strength saving throw, or be pulled up to 30 feet straight toward the sea killer. While a creature is grappled by the tongue, the sea killer can't use its tongue attack on another creature.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Orbalisk Swarm",
@@ -3395,84 +2951,8 @@
   {
     "name": "Zombie, Alchemy",
     "ability": "Claws",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\n\n",
-    "automation": {
-      "name": "Claws",
-      "_v": 2,
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "attackBonus": 4,
-              "miss": [],
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d4+2 [slashing]"
-                },
-                {
-                  "type": "condition",
-                  "condition": "'undead' in target.creature_type.lower()",
-                  "onTrue": [],
-                  "onFalse": [
-                    {
-                      "type": "save",
-                      "stat": "con",
-                      "dc": 10,
-                      "success": [],
-                      "fail": [
-                        {
-                          "type": "ieffect2",
-                          "name": "Paralyzed",
-                          "duration": 10,
-                          "buttons": [
-                            {
-                              "automation": [
-                                {
-                                  "type": "target",
-                                  "target": "self",
-                                  "effects": [
-                                    {
-                                      "type": "save",
-                                      "stat": "wis",
-                                      "fail": [],
-                                      "success": [
-                                        {
-                                          "type": "remove_ieffect"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ],
-                              "label": "Resist Paralysis - End of Turn",
-                              "verb": "attempts to resist paralysis",
-                              "style": "1",
-                              "defaultDC": "lastSaveDC"
-                            }
-                          ],
-                          "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
-                          "parent": "ieffect"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
-        }
-      ]
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Yevethan Commando",
