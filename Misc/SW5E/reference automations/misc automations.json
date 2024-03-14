@@ -1,46 +1,164 @@
 [
   {
-    "name": "Recharge",
+    "name": "Charmed",
     "automation": [
       {
-        "type": "target",
-        "target": "self",
-        "effects": [
+        "type": "ieffect2",
+        "name": "Charmed",
+        "desc": "A charmed creature can't attack the charmer or target the charmer with harmful abilities or enhanced effects.\r\n- The charmer has advantage on any ability check to interact socially with the creature."
+      }
+    ]
+  },
+  {
+    "name": "Frightened",
+    "automation": [
+      {
+        "type": "ieffect2",
+        "name": "Frightened",
+        "duration": 2,
+        "tick_on_caster": true,
+        "end": true,
+        "effects": {
+          "attack_advantage": -1,
+          "check_dis": [
+            "all"
+          ]
+        },
+        "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}"
+      },
+      {
+        "type": "ieffect2",
+        "name": "Frightened",
+        "effects": {
+          "attack_advantage": "-1",
+          "check_dis": [
+            "all"
+          ]
+        },
+        "buttons": [
           {
-            "type": "ieffect2",
-            "name": "Volley Used",
-            "buttons": [
+            "automation": [
               {
-                "label": "Recharge (Blaster Volley)",
-                "style": 3,
-                "automation": [
+                "type": "target",
+                "target": "self",
+                "effects": [
                   {
-                    "type": "roll",
-                    "dice": "1d6",
-                    "name": "recharge"
-                  },
-                  {
-                    "type": "condition",
-                    "condition": "lastRoll >= 5",
-                    "onFalse": [
-                      {
-                        "type": "text",
-                        "text": "Recharge failed."
-                      }
-                    ],
-                    "onTrue": [
+                    "type": "save",
+                    "stat": "wis",
+                    "fail": [],
+                    "success": [
                       {
                         "type": "remove_ieffect"
                       },
                       {
                         "type": "text",
-                        "text": "Blaster Volley Recharged!"
+                        "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
                       }
                     ]
                   }
                 ]
               }
+            ],
+            "label": "Resist Antipathetic Aura",
+            "verb": "Attempts to resist the Antipathetic aura",
+            "style": "4",
+            "defaultDC": "lastSaveDC"
+          },
+          {
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "remove_ieffect"
+                  }
+                ]
+              }
+            ],
+            "label": "Out of Range Antipathetic Aura",
+            "verb": "is out of range of the Aura",
+            "style": "3",
+            "defaultDC": "lastSaveDC"
+          }
+        ],
+        "desc": "Must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it."
+      }
+    ]
+  },
+  {
+    "name": "Frightful Presence",
+    "automation": [
+      {
+        "name": "Frightful Presence",
+        "_v": 2,
+        "automation": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "save",
+                "stat": "wis",
+                "dc": 20,
+                "success": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Immune to {name}'s Frightful Presence",
+                    "duration": "600"
+                  }
+                ],
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Frightened",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                              {
+                                "type": "save",
+                                "stat": "wis",
+                                "fail": [],
+                                "success": [
+                                  {
+                                    "type": "remove_ieffect"
+                                  },
+                                  {
+                                    "type": "ieffect2",
+                                    "name": "Immune to {name}'s Frightful Presence",
+                                    "duration": "600"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "label": "Resist Fright",
+                        "verb": "Attempts to pull themselves together",
+                        "style": "4",
+                        "defaultDC": "lastSaveDC"
+                      }
+                    ],
+                    "desc": "Must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it."
+                  }
+                ]
+              }
             ]
+          },
+          {
+            "type": "text",
+            "text": "Each creature of the monster's choice within 120 feet of the monster and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each turn, ending the effect on itself on a success. If a creature's saving throw is successful or the effects ends for it, the creature is immune to the monster's Frightful Presence for 24 hours.",
+            "title": "Effect"
           }
         ]
       }
@@ -146,6 +264,42 @@
     ]
   },
   {
+    "name": "Paralyzed",
+    "automation": [
+      {
+        "type": "ieffect2",
+        "name": "Paralyzed",
+        "buttons": [
+          {
+            "automation": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "save",
+                    "stat": "wis",
+                    "fail": [],
+                    "success": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "label": "Resist Paralysis - End of Turn",
+            "verb": "attempts to resist paralysis",
+            "style": "1",
+            "defaultDC": "lastSaveDC"
+          }
+        ],
+        "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
+      }
+    ]
+  },
+  {
     "name": "Poisoned",
     "automation": [
       {
@@ -206,79 +360,49 @@
     ]
   },
   {
-    "name": "Frightened",
+    "name": "Recharge",
     "automation": [
       {
-        "type": "ieffect2",
-        "name": "Frightened",
-        "duration": 2,
-        "tick_on_caster": true,
-        "end": true,
-        "effects": {
-          "attack_advantage": -1,
-          "check_dis": [
-            "all"
-          ]
-        },
-        "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}"
-      },
-      {
-        "type": "ieffect2",
-        "name": "Frightened",
-        "effects": {
-          "attack_advantage": "-1",
-          "check_dis": [
-            "all"
-          ]
-        },
-        "buttons": [
+        "type": "target",
+        "target": "self",
+        "effects": [
           {
-            "automation": [
+            "type": "ieffect2",
+            "name": "Volley Used",
+            "buttons": [
               {
-                "type": "target",
-                "target": "self",
-                "effects": [
+                "label": "Recharge (Blaster Volley)",
+                "style": 3,
+                "automation": [
                   {
-                    "type": "save",
-                    "stat": "wis",
-                    "fail": [],
-                    "success": [
+                    "type": "roll",
+                    "dice": "1d6",
+                    "name": "recharge"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "lastRoll >= 5",
+                    "onFalse": [
+                      {
+                        "type": "text",
+                        "text": "Recharge failed."
+                      }
+                    ],
+                    "onTrue": [
                       {
                         "type": "remove_ieffect"
                       },
                       {
                         "type": "text",
-                        "text": "No longer affected by the target and recognizes the feeling of repugnance or attraction as unnatural"
+                        "text": "Blaster Volley Recharged!"
                       }
                     ]
                   }
                 ]
               }
-            ],
-            "label": "Resist Antipathetic Aura",
-            "verb": "Attempts to resist the Antipathetic aura",
-            "style": "4",
-            "defaultDC": "lastSaveDC"
-          },
-          {
-            "automation": [
-              {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                  {
-                    "type": "remove_ieffect"
-                  }
-                ]
-              }
-            ],
-            "label": "Out of Range Antipathetic Aura",
-            "verb": "is out of range of the Aura",
-            "style": "3",
-            "defaultDC": "lastSaveDC"
+            ]
           }
-        ],
-        "desc": "Must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it."
+        ]
       }
     ]
   },
@@ -297,57 +421,59 @@
     "name": "Swallow",
     "automation": [
       {
-    "name": "Swallow",
-    "_v": 2,
-    "activation_type": 1,
-    "automation": [
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
+        "name": "Swallow",
+        "_v": 2,
+        "activation_type": 1,
+        "automation": [
           {
-            "type": "ieffect2",
-            "name": "Swallowing - Parent",
-            "save_as": "peff",
-            "buttons": [
+            "type": "target",
+            "target": "self",
+            "effects": [
               {
-                "label": "Start of Turn - Acid Damage",
-                "verb": "starts digesting.",
-                "style": 1,
-                "automation": [
+                "type": "ieffect2",
+                "name": "Swallowing - Parent",
+                "save_as": "peff",
+                "buttons": [
                   {
-                    "type": "target",
-                    "target": "children",
-                    "effects": [
+                    "label": "Start of Turn - Acid Damage",
+                    "verb": "starts digesting.",
+                    "style": 1,
+                    "automation": [
                       {
-                        "type": "damage",
-                        "damage": "6d6 [acid]"
+                        "type": "target",
+                        "target": "children",
+                        "effects": [
+                          {
+                            "type": "damage",
+                            "damage": "6d6 [acid]"
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "label": "Save - Keep swallowing",
-                "verb": "tries to keep it in.",
-                "style": 4,
-                "automation": [
+                  },
                   {
-                    "type": "target",
-                    "target": "self",
-                    "effects": [
+                    "label": "Save - Keep swallowing",
+                    "verb": "tries to keep it in.",
+                    "style": 4,
+                    "automation": [
                       {
-                        "type": "save",
-                        "stat": "con",
-                        "dc": "20",
-                        "success": [],
-                        "fail": [
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
                           {
-                            "type": "remove_ieffect"
-                          },
-                          {
-                            "type": "text",
-                            "text": "Regurgitates all swallowed creatures, which fall prone in a space within 10 feet of the Rancor."
+                            "type": "save",
+                            "stat": "con",
+                            "dc": "20",
+                            "success": [],
+                            "fail": [
+                              {
+                                "type": "remove_ieffect"
+                              },
+                              {
+                                "type": "text",
+                                "text": "Regurgitates all swallowed creatures, which fall prone in a space within 10 feet of the Rancor."
+                              }
+                            ]
                           }
                         ]
                       }
@@ -356,39 +482,37 @@
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
+          },
           {
-            "type": "attack",
-            "attackBonus": 10,
-            "miss": [],
-            "hit": [
+            "type": "target",
+            "target": "each",
+            "effects": [
               {
-                "type": "damage",
-                "damage": "2d12+6 [kinetic]"
-              },
-              {
-                "type": "ieffect2",
-                "name": "Swallowed by {name}",
-                "parent": "peff",
-                "desc": "Gains 4 slowed levels, and is blinded and restrained."
+                "type": "attack",
+                "attackBonus": 10,
+                "miss": [],
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "2d12+6 [kinetic]"
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Swallowed by {name}",
+                    "parent": "peff",
+                    "desc": "Gains 4 slowed levels, and is blinded and restrained."
+                  }
+                ]
               }
             ]
+          },
+          {
+            "type": "text",
+            "title": "Effect",
+            "text": "The rancor makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the rancor, and it takes 21 (6d6) acid damage at the start of each of the rancor's turns.\nIf the rancor takes 25 damage or more on a single turn from a creature inside it, the Rancor must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the Rancor. If the Rancor dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 10 feet of movement, exiting prone."
           }
         ]
-      },
-      {
-        "type": "text",
-        "title": "Effect",
-        "text": "The rancor makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the rancor, and it takes 21 (6d6) acid damage at the start of each of the rancor's turns.\nIf the rancor takes 25 damage or more on a single turn from a creature inside it, the Rancor must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the Rancor. If the Rancor dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 10 feet of movement, exiting prone."
       }
-    ]
-  }
     ]
   }
 ]

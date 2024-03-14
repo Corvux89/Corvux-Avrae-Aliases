@@ -19,7 +19,6 @@
 # TODO: Missing Saber Dance
 # TODO: Missing Spectrum Discharge
 # TODO: Missing Squad Shield
-# TODO: Missing Tapas
 # TODO: Missing Telepathic Link
 # TODO: Missing Transposition
 # TODO: Missing Tune-up

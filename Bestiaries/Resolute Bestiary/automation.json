@@ -450,18 +450,6 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
-    "name": "Hulking Rakghoul",
-    "ability": "Bite",
-    "complete": true,
-    "source": "Resolute Bestiary - Ground"
-  },
-  {
-    "name": "Hulking Rakghoul",
-    "ability": "Claws",
-    "complete": true,
-    "source": "Resolute Bestiary - Ground"
-  },
-  {
     "name": "Hutt Crime Lord",
     "ability": "Slam",
     "complete": true,
@@ -722,634 +710,122 @@
   {
     "name": "Orbalisk Swarm",
     "ability": "Attach",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 13 (2d8 + 4) kinetic damage, and a small portion of the swarm attaches to the target. Once attached to a target, those orbalisks begin to reproduce through fragmentation. Whenever the host completes a long rest, they must make a DC 14 Wisdom saving throw. For each saving throw the host fails, the size of their Hit Dice is reduced: from d12 to d10, from d10 to d8, from d8 to d6, from d6 to d4, or from d4 to d2. If the host fails a saving throw while their Hit Die is a d2, they die as the orbalisks consume them. The orbalisks can only be removed by reducing the host to 0 hp with lightning damage.",
-    "automation": {
-      "name": "Attach",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 + 4 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 13 (2d8 + 4) kinetic damage, and a small portion of the swarm attaches to the target. Once attached to a target, those orbalisks begin to reproduce through fragmentation. Whenever the host completes a long rest, they must make a DC 14 Wisdom saving throw. For each saving throw the host fails, the size of their Hit Dice is reduced: from d12 to d10, from d10 to d8, from d8 to d6, from d6 to d4, or from d4 to d2. If the host fails a saving throw while their Hit Die is a d2, they die as the orbalisks consume them. The orbalisks can only be removed by reducing the host to 0 hp with lightning damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Pelko Bug",
     "ability": "Barbs",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-    "automation": {
-      "name": "Barbs",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d4-1 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Pelko Bug Swarm",
-    "ability": "Barbs (swarm has more than half HP)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-    "automation": {
-      "name": "Barbs (swarm has more than half HP)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d4-1 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
-  },
-  {
-    "name": "Pelko Bug Swarm",
-    "ability": "Barbs (swarm has half HP or less)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-    "automation": {
-      "name": "Barbs (swarm has half HP or less)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d4-1 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "ability": "Barbs",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rakghoul",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 9 (2d6 + 2) kinetic damage. If the target is a humanoid creature, it must succeed on a DC 12 Constitution saving throw or become infected with the Rakghoul Plague.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 9 (2d6 + 2) kinetic damage. If the target is a humanoid creature, it must succeed on a DC 12 Constitution saving throw or become infected with the Rakghoul Plague.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rakghoul",
     "ability": "Claws",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 7 (2d4 + 2) kinetic damage. If the target is a humanoid creature, it must succeed on a DC 12 Constitution saving throw or become infected with the Rakghoul Plague.",
-    "automation": {
-      "name": "Claws",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d4 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 7 (2d4 + 2) kinetic damage. If the target is a humanoid creature, it must succeed on a DC 12 Constitution saving throw or become infected with the Rakghoul Plague.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rakghoul, Hulking",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 12 (2d8+3) Kinetic damage. If the target is a humanoid creature, it must succeed on a DC 13 Constitution saving throw or become infected with the Rakghoul Plague.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8+3 [Kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 12 (2d8+3) Kinetic damage. If the target is a humanoid creature, it must succeed on a DC 13 Constitution saving throw or become infected with the Rakghoul Plague.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rakghoul, Hulking",
     "ability": "Claws",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 10 (2d6+3) Kinetic damage. If the target is a humanoid creature, it must succeed on a DC 13 Constitution saving throw or become infected with the Rakghoul Plague.",
-    "automation": {
-      "name": "Claws",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6+3 [Kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 10 (2d6+3) Kinetic damage. If the target is a humanoid creature, it must succeed on a DC 13 Constitution saving throw or become infected with the Rakghoul Plague.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rathtar",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage, and the target is swallowed if it is a Medium or smaller creature. A swallowed creature is blinded and restrained, has total cover against attacks other effects outside the rathtar, and takes 14 (4d6) acid damage at the start of each of the rathtar's turns.damage. The rathtar's gullet can hold only one Large creature or up to two Medium or smaller creatures inside it at a time. If the rathtar takes 20 damage or more on a single turn from a creature inside it, the rathtar must succeed on a DC 18 Constitution saving throw at the end of that turn or regurgitate the swallowed creatures, which fall prone in a space within 10 feet of the rathtar. If the rathtar dies, the swallowed creatures are no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage, and the target is swallowed if it is a Medium or smaller creature. A swallowed creature is blinded and restrained, has total cover against attacks other effects outside the rathtar, and takes 14 (4d6) acid damage at the start of each of the rathtar's turns.damage. The rathtar's gullet can hold only one Large creature or up to two Medium or smaller creatures inside it at a time. If the rathtar takes 20 damage or more on a single turn from a creature inside it, the rathtar must succeed on a DC 18 Constitution saving throw at the end of that turn or regurgitate the swallowed creatures, which fall prone in a space within 10 feet of the rathtar. If the rathtar dies, the swallowed creatures are no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rathtar",
     "ability": "Flailing Arms",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 8 (1d6 + 5) kinetic damage, and the target is grappled (escape DC 16) if it is Medium or smaller. Until the grapple ends, the rathar can't use this arm on another target. The rathtar has ten arms and can have up to four creatures grappled at a time.grappled at a time.",
-    "automation": {
-      "name": "Flailing Arms",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 8 (1d6 + 5) kinetic damage, and the target is grappled (escape DC 16) if it is Medium or smaller. Until the grapple ends, the rathar can't use this arm on another target. The rathtar has ten arms and can have up to four creatures grappled at a time.grappled at a time.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rathtar",
     "ability": "Grasping Tentacles",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 15 ft., one target. *Hit:* 12 (2d6 + 5) kinetic damage. If the target is a Medium or smaller creature, it must also make a DC 17 Strength saving throw. On a failed save, the target is pulled into an unoccupied space within 5 feet of the rathtar. The rathtar has two grasping tentacles.",
-    "automation": {
-      "name": "Grasping Tentacles",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 15 ft., one target. *Hit:* 12 (2d6 + 5) kinetic damage. If the target is a Medium or smaller creature, it must also make a DC 17 Strength saving throw. On a failed save, the target is pulled into an unoccupied space within 5 feet of the rathtar. The rathtar has two grasping tentacles.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rathtar, Dwarf",
     "ability": "Flailing Arms",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +7 to hit, reach 15 ft., one target. *Hit:* 6 (1d4 + 4) kinetic damage, and the target is grappled (escape DC 15) if it is Medium or smaller. Until the grapple ends, the rathar can't use this arm on another target. The rathtar has eight arms and can have up to four creatures grappled at a time.",
-    "automation": {
-      "name": "Flailing Arms",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4 + 4 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "7"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +7 to hit, reach 15 ft., one target. *Hit:* 6 (1d4 + 4) kinetic damage, and the target is grappled (escape DC 15) if it is Medium or smaller. Until the grapple ends, the rathar can't use this arm on another target. The rathtar has eight arms and can have up to four creatures grappled at a time.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Rock Wart",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 1 (1d3-1) kinetic damage, and the target must make a Constitution saving throw (DC 14). On a success, the creature is unaffected by the venom. On a failure, the creature loses 1d6 Strength, then must attempt another save 1 minute (10 rounds) later. If the second save fails, the creature loses an additional 1d6 Strength. If this reduces the creature's Strength to 0 or lower, it dies.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d3-1 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "3"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 1 (1d3-1) kinetic damage, and the target must make a Constitution saving throw (DC 14). On a success, the creature is unaffected by the venom. On a failure, the creature loses 1d6 Strength, then must attempt another save 1 minute (10 rounds) later. If the second save fails, the creature loses an additional 1d6 Strength. If this reduces the creature's Strength to 0 or lower, it dies.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sando Aqua Monster",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +17 to hit, reach 15 ft., one target. *Hit:* 21 (2d10 + 10) kinetic damage. If the target is a creature it is grappled (escape DC 20). Until the grapple ends, the target is restrained, and the monster can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d10 + 10 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "17"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +17 to hit, reach 15 ft., one target. *Hit:* 21 (2d10 + 10) kinetic damage. If the target is a creature it is grappled (escape DC 20). Until the grapple ends, the target is restrained, and the monster can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sando Aqua Monster",
     "ability": "Frightful Presence",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature of the monster's choice within 120 feet of the monster and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each turn, ending the effect on itself on a success. If a creature's saving throw is successful or the effects ends for it, the creature is immune to the monster's Frightful Presence for 24 hours.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sando Aqua Monster",
     "ability": "Water Torrent (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The monster exhales a torrent of water in a 120 foot cone. Each creature in the area must make a DC 24 Dexterity saving throw, taking 42 (12d6) kinetic damage and 42 (12d6) cold damage on a failed save, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sando Aqua Monster",
     "ability": "Swallow",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "If the monster takes 50 damage or more on a single turn from a creature inside it, the monster must succeed on a DC 25 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the monster. If the monster dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 30 feet of movement, exiting prone. The monster makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the monster, and it takes 42 (12d6) acid damage at the start of each of the monster's turns.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sarlacc, Adult",
     "ability": "Tentacle",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +14 to hit, reach 60 ft., one target. *Hit:* 26 (4d8 + 8) kinetic damage. The target is grappled (escape DC 16). Until this grapple ends, the target is restrained. The sarlacc has eight tentacles, each of which can grapple one target.",
-    "automation": {
-      "name": "Tentacle",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d8 + 8 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "14"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +14 to hit, reach 60 ft., one target. *Hit:* 26 (4d8 + 8) kinetic damage. The target is grappled (escape DC 16). Until this grapple ends, the target is restrained. The sarlacc has eight tentacles, each of which can grapple one target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sarlacc, Adult",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +0 to hit, reach 5 ft., one target. *Hit:* 30 (4d10 + 8) Kinetic damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the sarlacc can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d10 + 8 [Kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "0"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +0 to hit, reach 5 ft., one target. *Hit:* 30 (4d10 + 8) Kinetic damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the sarlacc can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sarlacc, Adult",
     "ability": "Swallow",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "If the sarlacc takes 40 damage or more on a single turn from a creature inside it, the sarlacc must succeed on a DC 23 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the sarlacc. If the sarlacc dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 10 feet of movement, exiting prone. The sarlacc makes one bite attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the bite's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the sarlacc, and it takes 35 (10d6) psychic damage at the start of each of the sarlacc's turns. A creature reduced to zero hit points this way stops taking the psychic damage and becomes stable.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Sarlacc, Adult",
     "ability": "Pheromones (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The sarlacc releases pheromones in a 300 foot radius. Each creature in that area must make a DC 22 Constitution saving throw. On a failed save the creature is charmed by the sarlacc for 1 minute. While charmed this way, the target tries to get as close to the sarlacc as possible, using its actions to Dash until it is within 5 feet of the sarlacc. A charmed target can repeat the saving throw at the end of each of its turns and whenever it takes damage, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature has advantage on saving throws against the sarlacc's Pheromones for 24 hours.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Scrange",

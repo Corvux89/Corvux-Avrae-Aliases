@@ -1,0 +1,222 @@
+# Power Module
+
+def processPower(args):
+    a = argparse(args)
+    ignore = a.get('i')
+    wi = a.get('with')
+    c = character()
+    out = []
+    point_list = [0,2,3,4,5,6,7,8,9,10]
+    keyword = None if not args else args[0].lower()
+    subclasses = get_subclasses()
+    feats = load_json(c.get_cvar("SWFeats", "{}"))
+
+    if not keyword:
+        return "help power"
+
+    fp = load_json(get_gvar("6269cf7a-0df9-4789-992c-29dbc20ac053"))
+    tp = load_json(get_gvar("e45f68f5-96d4-4f52-96c8-862734dfa7ff"))
+
+    # --------------------
+    # Find the power
+    # --------------------
+
+    if c.cc_exists('Force Points') and not c.cc_exists("Tech Points") and not ignore:
+        if spell := search(keyword, fp):
+            cc = "Force Points"
+            if not wi:
+                out.append(getWith(spell))
+
+        # Subclasses that allow Tech powers as Force Powers
+        elif bool(set(subclasses) & {"Synthesis", "Technology", "Aqinos"}):
+            if spell := search(keyword, tp):
+                cc = "Force Points"
+                spell["classes"] = "Universal"
+                if not wi:
+                    out.append(getWith(spell))
+        elif feats.get("TechDabbler"):
+            if spell := search(keyword, tp):
+                cc = "Tech Points"
+        else:
+            spell = None
+    elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:
+        if spell := search(keyword, tp):
+            cc = "Tech Points"
+
+        # Subclasses that allow Force powers as Tech Powers
+        elif bool(set(subclasses) & {"Artificer", "Inquisitor"}):
+            if spell := search(keyword, fp):
+                cc = "Tech Points"
+        elif feats.get("ForceSensitive"):
+            if spell := search(keyword, fp):
+                cc = "Force Points"
+        else:
+            spell = None
+    else:
+        if spell := search(keyword, fp):
+            cc = "Force Points"
+            if not wi:
+                out.append(getWith(spell))
+        elif spell := search(keyword, tp):
+            cc = "Tech Points"
+        else:
+            spell = None
+
+    # --------------------
+    # Validation
+    # --------------------
+    if spell is None:
+        return err("I don't think that's a supported power. Make sure it is spelled correctly or let us know")
+    if spell.name not in c.spellbook and spell.name.replace("(SW) ",'').lower() not in c.spellbook and not ignore:
+        return err(f"I don't think you know {spell.name.replace('(SW) ', '')}.  Make sure it is added to your spellbook or try to cast it "
+                   f"again with `-i` to ignore requirements. If you didn't intend to use {spell.name.replace('(SW) ', '')}, try "
+                   f"using quotes around the power name.")
+
+    # --------------------
+    # Figure out the cost
+    # --------------------
+    spell_level = max(a.last('l', default=0, type_=int), spell.level)
+    points = point_list[spell_level]
+
+    if a.get('p'):
+        points += int(str(a.last('p')).replace('{spell_level}',str(spell_level)))
+
+    # --------------------
+    # Pre Cost Processing
+    # --------------------
+
+    # Sentinel - Path of Meditation
+    if "Meditation" in subclasses:
+        if spell.name == "(SW) Guidance":
+            spell["name"] = "(SW) Sage Counsel - Guidance"
+        if spell.name == "Battle Meditation" and c.cc_exists("Unbreakable Focus"):
+            if c.get_cc("Unbreakable Focus") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Unbreakable Focus", -1)
+                out.append(f''' -f "Unbreakable Focus (-1)|{c.cc_str("Unbreakable Focus")}" ''')
+            spell["name"] = "Unbreakable Focus - Battle Meditation"
+        elif spell.name == "Improved Battle Meditation" and c.cc_exists("Turbulent Presence"):
+            if c.get_cc("Turbulent Presence") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Turbulent Presence", -1)
+                out.append(f''' -f "Turbulent Presence (-1)|{c.cc_str("Turbulent Presence")}" ''')
+            spell["name"] = "Turbulent Presence - Improved Battle Meditation"
+        elif spell.name == "Mater Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
+            if c.get_cc("Legendary Battle Meditation") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Legendary Battle Meditation", -1)
+                out.append(f''' -f "Legendary Battle Meditation (-1)|{c.cc_str("Legendary Battle Meditation")}" ''')
+            spell["name"] = "Legendary Battle Meditation - Master Battle Meditation"
+
+    # Fighter - Adept Specialist
+    elif bool(set(subclasses) & {"Adept Light", "Adept Dark"}):
+       if spell.name == "Burst of Speed" and c.cc_exists("Growing Momentum"):
+           if c.get_cc("Growing Momentum") and not a.get('p') and not ignore:
+                points = 0
+                c.mod_cc("Growing Momentum", -1)
+                out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
+                spell["name"] = "Growing Momentum - Burst of Speed"
+
+    # Tech Dabbler
+    elif feats.get("TechDabbler") and cc == "Tech Points":
+        if spell_level == 0:
+            ignore = True
+            out.append('-with int')
+        elif c.cc_exists(f"Tech Dabbler - {spell_level}"):
+            out.append('-with int')
+            points = 1
+            cc = f"Tech Dabbler - {spell_level}"
+
+    # Force-Sensitive
+    elif feats.get("ForceSensitive") and cc == "Force Points":
+        if spell_level == 0:
+            ignore = True
+        elif c.cc_exists(f"Force-Sensitive - {spell_level}"):
+            points = 1
+            cc = f"Force-Sensitive - {spell_level}"
+
+    # Monk Vow of the Devoted
+    elif 'devoted' in feats.get('Vows',[]) and cc == "Force Points":
+        if c.get_cc("Focus Points") and not ignore:
+            cc = f"Focus Points"
+            points = points-1 if points > 0 else 0
+
+    # --------------------
+    # Pay the cost
+    # --------------------
+    if not ignore and not c.cc_exists(cc):
+        return err(f"No counter named {cc} found. Either cast with `-i` or run `!swlevel`")
+    elif not ignore and c.get_cc(cc) < points:
+        return err(f"You don't have enough {cc} to cast that power")
+    c.mod_cc(cc, -points) if not ignore else ''
+    args.remove(args[0])
+    out.append(" ".join(args))
+    out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('-h') else ''
+
+    # --------------------
+    # Post Cost Processing
+    # --------------------
+
+    # Scout - Bulwark
+    if cc == "Tech Points" and c.cc_exists("Personal Barrier") and not ignore and not a.get('h'):
+        c.mod_cc("Personal Barrier", +points)
+        out.append(f''' -f "Personal Barrier ({points})|{c.cc_str("Personal Barrier")}" ''')
+
+    # Add DC Bonus unless overriden
+    if not a.get('dc'):
+        dc_add = c.spellbook.dc - 8 - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.dc else None
+        if dc_add:
+            out.append(f''' -dc +{dc_add}''')
+
+    # Add spell attack bonus
+    out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.sab else ''}''')
+
+    # Troubleshooting
+    if a.get('dev'):
+        return err(f'cast "{spell.name}" {" ".join(out)} -i \n\n ARGS = {args}')
+
+    # Send it!
+    return f'cast "{spell.name}" {" ".join(out)} {"-i" if spell_level>0 else ""}'
+
+def search(keyword, gvar):
+    sover = f"(sw) {keyword}"
+    spell = None
+
+    for s in gvar:
+        if keyword == s.name.lower() or sover == s.name.lower():
+            spell = s
+            break
+
+    if spell is None:
+        for s in gvar:
+            if keyword in s.name.lower():
+                spell = s
+                break
+
+    return spell
+
+def getWith(spell):
+    c = character()
+    var = load_json(c.get_cvar("sw5e", get_svar("sw5e", "{}")))
+    ovr = var.get('castMod')
+
+    if ovr:
+        return f'-with {ovr}'
+    elif "light" in spell.classes.lower():
+        return '-with wis'
+    elif "dark" in spell.classes.lower():
+        return '-with cha'
+    elif c.stats.wisdom > c.stats.charisma:
+        return '-with wis'
+    else:
+        return '-with cha'
+
+def get_subclasses():
+    c = character()
+    out = []
+    if c.get_cvar('subclass'):
+        classes = load_json(c.get_cvar('subclass'))
+        for c in classes:
+            out.append(classes.get(c))
+
+    return out
