@@ -1,5 +1,3 @@
-# TODO [Resolute Bestiary - Ground]: Scrange (Tail)
-# TODO [Resolute Bestiary - Ground]: Trooper, Sergeant (Leadership (Recharges after a Short or Long Rest).)
 # TODO [Resolute Bestiary - Ground]: Snow Wampa (Bite)
 # TODO [Resolute Bestiary - Ground]: Spotlight Sloth (Fling Mud)
 # TODO [Resolute Bestiary - Ground]: Starweird (Telepathic Scream (1/Day))

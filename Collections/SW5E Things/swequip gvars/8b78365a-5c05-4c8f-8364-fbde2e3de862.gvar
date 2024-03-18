@@ -61,7 +61,7 @@ def stripAmmo(name):
         "Cartridge, Electrifying - ", '').replace("Cartridge, Gas - ", '')
     out = out.replace("Arrow - ", '').replace("Arrow, Combustive - ", '').replace("Arrow, Electroshock - ", '').replace(
         "Arrow, Noisemaker - ", '')
-    out = out.replace("Dart - ", '').replace("Dart - Deafening - ", '').replace("Dart, Electrifying - ", '').replace(
+    out = out.replace("Dart - ", '').replace("Dart, Deafening - ", '').replace("Dart, Electrifying - ", '').replace(
         "Dart, Panic - ", '')
     out = out.replace("Snare - ", "")
     out = out.replace("Bolt - ", '').replace("Bolt, Deafening - ", '').replace("Bolt, Electrifying - ", '').replace(
