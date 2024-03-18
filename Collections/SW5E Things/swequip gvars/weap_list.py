@@ -56,7 +56,7 @@ for file_name in os.listdir(dir):
     for weapon in weapons:
         name = processName(weapon['name'])
         if name not in weap_out:
-            weap_out.append(name)
+            weap_out.append({"Name": name})
 
 with open('All Weapons.json', mode='w+', encoding='utf-8') as outfile:
     outfile.write(json.dumps(weap_out))
