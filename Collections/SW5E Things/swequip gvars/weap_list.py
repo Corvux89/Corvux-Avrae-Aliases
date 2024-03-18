@@ -48,6 +48,7 @@ def stripAmmo(name):
 
 dir = 'weapons'
 weap_out = []
+filt = []
 
 for file_name in os.listdir(dir):
     with open(os.path.join(dir, file_name)) as file:
@@ -55,7 +56,8 @@ for file_name in os.listdir(dir):
 
     for weapon in weapons:
         name = processName(weapon['name'])
-        if name not in weap_out:
+        if name not in filt:
+            filt.append(name)
             weap_out.append({"name": name})
 
 with open('All Weapons.json', mode='w+', encoding='utf-8') as outfile:
