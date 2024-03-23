@@ -371,7 +371,7 @@
             "name": "Volley Used",
             "buttons": [
               {
-                "label": "Recharge (Blaster Volley)",
+                "label": "Recharge (Volley)",
                 "style": 3,
                 "automation": [
                   {
@@ -394,7 +394,7 @@
                       },
                       {
                         "type": "text",
-                        "text": "Blaster Volley Recharged!"
+                        "text": "Volley Recharged!"
                       }
                     ]
                   }

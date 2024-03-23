@@ -14,7 +14,7 @@ try:
     else:
         weapon = args[0]
 except:
-    return err(f"Use `{ctx.prefix}help swequip` to view usage and parameter information.")
+    return f'''help {ctx.alias} -here'''
 
 args = argparse(args)
 attacks = []

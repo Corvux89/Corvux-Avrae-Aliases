@@ -830,256 +830,62 @@
   {
     "name": "Scrange",
     "ability": "Tail",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 24 (4d10 + 6) kinetic damage, and the target must succeed on a DC 16 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Tail",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d10 + 6 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 24 (4d10 + 6) kinetic damage, and the target must succeed on a DC 16 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Sergeant",
     "ability": "Leadership (Recharges after a Short or Long Rest).",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "For 1 minute, the sergeant can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the sergeant. A creature can benefit from only one Leadership die at a time. This effect ends if the sergeant is incapacitated.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Snow Wampa",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 7 (1d10 + 2) kinetic damage.  The target is grappled (escape DC 14). Until this grapple ends, thetarget is restrained, and the Snow Wampa can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d10 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 7 (1d10 + 2) kinetic damage.  The target is grappled (escape DC 14). Until this grapple ends, thetarget is restrained, and the Snow Wampa can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Spotlight Sloth",
     "ability": "Fling Mud",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +5 to hit, range 25/50 ft., one target. *Hit:* 6 (1d6 + 3) kinetic damage. If the target is a Large or smaller creature, it is must also make a DC 13 Dexterity saving throw. On a failure, it is also blinded until the end of its next turn.",
-    "automation": {
-      "name": "Fling Mud",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +5 to hit, range 25/50 ft., one target. *Hit:* 6 (1d6 + 3) kinetic damage. If the target is a Large or smaller creature, it is must also make a DC 13 Dexterity saving throw. On a failure, it is also blinded until the end of its next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Starweird",
     "ability": "Telepathic Scream (1/Day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The starweird releases a terrifying scream. Each creature of the starweird's choice that is within 30 feet of the starweird and aware of it must succeed on a DC 15 Wisdom saving throw. On a failure, a creature takes 21 (6d6) psychic damage plus 21 (6d6) necrotic damage and is frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself. On a success, a creature takes half damage and is not frightened.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Steep",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 11 (1d8 + 2) kinetic damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the steep can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d8 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 11 (1d8 + 2) kinetic damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the steep can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Swamp Slug",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +11 to hit, reach 5 ft., one target. *Hit:* 17 (2d10 + 6) kinetic damage, and the target is grappled (escape DC 18). Until this grapple ends, the target is restrained, and the slug can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d10 + 6 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "11"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +11 to hit, reach 5 ft., one target. *Hit:* 17 (2d10 + 6) kinetic damage, and the target is grappled (escape DC 18). Until this grapple ends, the target is restrained, and the slug can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Swamp Wampa",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 9 (1d10 + 4) kinetic damage.  The target is grappled (escape DC 14). Until this grapple ends, the target is restrained, and the Wampa can't bite another target.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d10 + 4 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 9 (1d10 + 4) kinetic damage.  The target is grappled (escape DC 14). Until this grapple ends, the target is restrained, and the Wampa can't bite another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "TX-225 Occupier Tank",
     "ability": "Blaster Cannon Volley (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The tank launches a barrage of cannon fire at a point within 120 feet. Each creature within 20 feet of that point must make a DC 15 Dexterity saving throw, taking 17 (5d6) energy damage on a failed save, or half as much damage on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "TX-225 Occupier Tank",
     "ability": "Frightful Presence",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature of the tank's choice that is within 80 feet of the tank and aware of it must succeed on a DC 12 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the tank's Frightful Presence for the next 24 hours.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Terentatek",
@@ -1096,640 +902,176 @@
   {
     "name": "Mercenary Thug",
     "ability": "Burst",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The thug sprays a 10-foot-cube area within normal range of its slugthrower with shots. Each creature in the area must make a DC 11 Dexterity saving throw, taking normal weapon damage on a failed save.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trandoshan Elite Warrior",
     "ability": "Burst",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The Trandoshan sprays a 10-foot-cube area within normal range with shots. Each creature in the area must make a DC 14 Dexterity saving throw, taking 12 (2d8 + 3) kinetic damage on a failed save, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trandoshan Huntmaster",
     "ability": "Shield Bash",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 9 (2d4 + 4) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Shield Bash",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d4 + 4 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "7"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 9 (2d4 + 4) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trandoshan Huntmaster",
     "ability": "Leadership (Recharges after a short or long rest)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "For 1 minute, the trandoshan can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the trandoshan. A creature can benefit from only one Leadership die at a time. This effect ends if the warlord is incapacitated.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trandoshan T'Doshok",
     "ability": "Mortar Gun (Grenade Launcher Form)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +9 to hit, range 100/400 ft, one target. *Hit:* 13 (1d10 + 8) kinetic damage. Hit or miss, the target and every creature within 5 feet of it must succeed on a DC 17 Dexterity saving throw or take 14 (4d6) kinetic damage.",
-    "automation": {
-      "name": "Mortar Gun (Grenade Launcher Form)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d10 + 8 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +9 to hit, range 100/400 ft, one target. *Hit:* 13 (1d10 + 8) kinetic damage. Hit or miss, the target and every creature within 5 feet of it must succeed on a DC 17 Dexterity saving throw or take 14 (4d6) kinetic damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trandoshan T'Doshok",
     "ability": "Dioxus Grenade (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The Trandoshan throws a dioxus grenade, choosing a point within 45 ft., exploding in a 15 feet sphere. The fog lasts 1 round and the area is heavily obscured. When a creature enters the poison's area or starts its turn there, that creature must make a DC 17 Constitution saving throw. On a failure, the creature takes 22 (4d10) poison damage and is poisoned for 1 minute. On a success, the creature takes half the damage and isn't poisoned.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Captain",
     "ability": "Frag Grenade (3/Day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The captain throws a grenade, choosing a point within 40 ft. Each creature within 10 feet must make a DC 12 Dexterity saving throw. A creature takes 2d6 kinetic damage on a failed save, or half as much as on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Fireteam: Trooper, Demolitions",
     "ability": "Fragmentation Grenades (6/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The fireteam throws grenades, choosing two points within 45 feet. Each creature within 10 feet must make a DC 12 Dexterity saving throw. A creature takes 2d6 kinetic damage on a failed save, or half as much as on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Fireteam: Trooper, Demolitions",
     "ability": "Set Mine (4/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After setting this mine, a laser line imperceptible to normal vision extends up to 15 feet out. When the laser is tripped, the mine explodes, and each creature within 15 feet of it must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 kinetic damage, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Fireteam: Trooper, Demolitions",
     "ability": "Breaching Charge (4/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After spending at least 30 seconds setting the charge, the fireteam may attach the charge to a surface. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator, which the trooper has. Once detonated, the breaching charge destroys an unenhanced section of wall up to 10 feet wide, 10 feet tall, and 5 feet deep. Additionally, each creature within 20 feet of the charge must make a DC 15 Dexterity saving throw. A creature takes 3d6 fire damage and 3d6 kinetic damage on a failed save, or half as much on a successful one. A construct makes this save with disadvantage. If the breaching charge is installed on the construct, it automatically fails the saving throw.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Flame",
     "ability": "Flamethrower",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature in a 30-foot cone must make a DC 13 Dexterity saving throw. A creature takes 13 (3d8) fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Jump",
     "ability": "Wrist Launcher",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +5 to hit, range 30/120 ft., one target. *Hit:* 6 (1d6 + 3) kinetic damage, and each creature within 5 feet must make a DC 13 Dexterity saving throw, taking 3 (1d6) kinetic damage on a failed save, or half on a successful save.",
-    "automation": {
-      "name": "Wrist Launcher",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +5 to hit, range 30/120 ft., one target. *Hit:* 6 (1d6 + 3) kinetic damage, and each creature within 5 feet must make a DC 13 Dexterity saving throw, taking 3 (1d6) kinetic damage on a failed save, or half on a successful save.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Mounted",
     "ability": "Trample (Mounted Only)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 9 (2d6 + 2) kinetic damage and the target must succeed on a DC 13 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Trample (Mounted Only)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 9 (2d6 + 2) kinetic damage and the target must succeed on a DC 13 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Mounted",
     "ability": "Flamethrower (Recharges after a Short or Long Rest)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper unleashes a torrent of flame in a 15-foot cone. All creatures in that area must make a DC 13 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Shore",
     "ability": "Thermal Grenade (1/Day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The captain throws a grenade, choosing a point within 40 feet Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 fire and 2d6 kinetic damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, the creature is knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Squad: Trooper",
     "ability": "Massed Fire",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The squad fires en masse at a point within 150 feet Each creature of the squad's choice in a 15-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 36 (8d8) energy damage, or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Tuk'ata",
     "ability": "Poisonous Stingers",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.",
-    "automation": {
-      "name": "Poisonous Stingers",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4+3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Vesuvague Tree",
     "ability": "Constrict",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 11 (1d8 + 5) kinetic damage, and a Large or smaller target is grappled (escape DC 16).",
-    "automation": {
-      "name": "Constrict",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d8 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 11 (1d8 + 5) kinetic damage, and a Large or smaller target is grappled (escape DC 16).",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Vines",
     "ability": "Vines",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 15 ft., one target. *Hit:* 22 (4d8 + 4) kinetic damage, and the target is Grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the vines can't constrict another target.",
-    "automation": {
-      "name": "Vines",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d8 + 4 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 15 ft., one target. *Hit:* 22 (4d8 + 4) kinetic damage, and the target is Grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the vines can't constrict another target.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Vornskr",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 6 (1d8 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 12 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d8 + 2 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 6 (1d8 + 2) kinetic damage. If the target is a creature, it must succeed on a DC 12 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Vornskr",
     "ability": "Tail",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 2) kinetic damage plus 7 (2d6) poison damage. If the target is a creature it must also make DC 13 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
-    "automation": {
-      "name": "Tail",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 2 [kinetic] + 2d6 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "4"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 2) kinetic damage plus 7 (2d6) poison damage. If the target is a creature it must also make DC 13 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Viper Probe Droid",
     "ability": "Self-Destruct",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "When the probe droid is reduced to half of its hit point maximum and is not critically damaged, it can attempt to self-destruct. Each creature within 15 feet of it must make a DC 11 Dexterity saving throw, taking 6d6 fire damage on a failed save, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Voxyn",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d8 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Voxyn",
     "ability": "Tail",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
-    "automation": {
-      "name": "Tail",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "4d6 + 5 [kinetic] + 6d6 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Voxyn",
     "ability": "Sonic Blast (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The Voxyn emits a sonic howl from its snout. Creatures within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 32 (5d10 + 5) Sonic damage, be stunned for 1 minute, and is deafened. Takes half damage on a successful save. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Voxyn can make two bite attacks and one tail attack",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Vulture-Class Droid",
     "ability": "Slam (ranged)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +3 to hit, range 300/600 ft., one target. *Hit:* 9 (2d8) kinetic damage. Hit or miss, the target and each creature within 15 feet must make a Dexterity saving throw (DC 11), taking 9 (2d8) energy damage on a failed save, or half as much on a successful one.",
-    "automation": {
-      "name": "Slam (ranged)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "3"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +3 to hit, range 300/600 ft., one target. *Hit:* 9 (2d8) kinetic damage. Hit or miss, the target and each creature within 15 feet must make a Dexterity saving throw (DC 11), taking 9 (2d8) energy damage on a failed save, or half as much on a successful one.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "War Wyrm",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +13 to hit, reach 10 ft., one target. *Hit:* 20 (3d8+7) kinetic damage. If the target is a Large or smaller creature, it must succeed on a DC 17 Dexterity saving throw or be swallowed by the wyrm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the wyrm, and it takes 21 (6d6) acid damage at the start of each of the wyrm's turns. If the wyrm takes 30 damage or more on a single turn from a creature inside it, the wyrm must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the wyrm. If the wyrm dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d8+7 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "13"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +13 to hit, reach 10 ft., one target. *Hit:* 20 (3d8+7) kinetic damage. If the target is a Large or smaller creature, it must succeed on a DC 17 Dexterity saving throw or be swallowed by the wyrm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the wyrm, and it takes 21 (6d6) acid damage at the start of each of the wyrm's turns. If the wyrm takes 30 damage or more on a single turn from a creature inside it, the wyrm must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the wyrm. If the wyrm dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "War Wyrm",
     "ability": "Tail",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +13 to hit, reach 10 ft., one target. *Hit:* 17 (3d6+7) kinetic damage. If the target is a creature, it must succeed on a DC 19 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Tail",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "3d6+7 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "13"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +13 to hit, reach 10 ft., one target. *Hit:* 17 (3d6+7) kinetic damage. If the target is a creature, it must succeed on a DC 19 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Woodoo",
     "ability": "Shriek",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "(Recharge 6). The woodoo lets out a deafening shriek in a 60-foot cone. All creatures that can hear it must make a DC 13 Constitution saving throw. On a failure, a creature takes 17 (5d6) sonic damage and is deafened for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself. On a success, a creature takes half damage and is not deafened.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Wookiee Hunter",
