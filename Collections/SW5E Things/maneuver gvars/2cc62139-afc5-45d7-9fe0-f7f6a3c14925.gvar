@@ -41,14 +41,14 @@ def maneuver(args):
     superiorityDice += f"+{ceil(maneuverMod/2)}" if mm else ''
     ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
     cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
-    cc_valid = False if (fs and not (c.cc_exists("Field Surgeon") and c.get_cc("Field Surgeon")) or i) else cc_valid
+    cc_valid = False if (fs and not (c.cc_exists("Field Surgeon") and c.get_cc("Field Surgeon")) and not i) else cc_valid
     dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
 
     v = bool(lvl>=0 and cc_valid and feature)
     if v:
-        ccNum = ccNum if v and not i else 0
-        c.mod_cc(cc,ccNum) if v and not i else ""
-        c.mod_cc("Field Surgeon", -1) if v and not i and fs else ""
+        ccNum = ccNum if not i else 0
+        c.mod_cc(cc,ccNum) if not i else ""
+        c.mod_cc("Field Surgeon", -1) if (v and not i) and fs else ""
 
         # Straight Superiority Dice Rolls
         dice = do_roll(feature,superiorityDice, maneuverMod, args) if feature and "roll" in feature and feature.roll else ""
@@ -189,7 +189,7 @@ def maneuver(args):
     elif not c.get_cc(cc) and not i:
         out += f''' -title "{name} attempts {feature.name}." -desc "Unfortunately there are no `{cc}` to do it. Take a short/long reset then try again"'''
     elif not cc_valid:
-        out += f''' -title "{name} attempts {feature.name}." -desc "Unfortunately there are not enough to do it how they wanted!maneu. Take a short/long reset then try again"'''
+        out += f''' -title "{name} attempts {feature.name}." -desc "Unfortunately there are not enough to do it how they wanted! Take a short/long reset then try again"'''
     else:
         return err(f"Something went wrong here. Let Corvux know and he'll break it better.")
     if v:
