@@ -2,7 +2,7 @@ embed
 <drac2>
 a,ch   = argparse(&ARGS&), character()
 cType  = "Strength" if a.get("str") else "Constitution" if a.get("con") else "Intelligence" if a.get("int") else "Wisdom" if a.get("wis") else "Charisma" if a.get("cha") else "Dexterity"
-dice   = ["1d20","2d20kh1","2d20kl1"][a.adv() or ch.skills.stealth.adv]  # apply adv or dis
+dice   = ["1d20","2d20kh1","2d20kl1"][a.adv() or ch.skills.stealth.adv or 0]  # apply adv or dis
 min_chk= "mi"+a.last("mi") if a.last("mi") else ""
 skill  = f"+{ch.skills.stealth.prof*proficiencyBonus+ch.skills[cType.lower()].value}"  # add our bonus
 bonus  = "+"+a.join("b","+") if a.last("b") else ""  # add other bonuses
