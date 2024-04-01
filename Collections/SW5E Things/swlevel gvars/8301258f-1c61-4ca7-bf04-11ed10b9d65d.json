@@ -1776,6 +1776,45 @@
     }
   },
   {
+  "name": "Ideal of the Tranquil",
+  "counters": [
+    {
+      "name": "Tranquil Force Points",
+      "value": "max(charismaMod, wisdomMod, 1)",
+      "display": "buttle",
+      "reset": "short",
+      "desc": "When you finish a short or long rest, you gain a number of temporary force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one)"
+    }
+  ],
+  "actions": [
+    {
+      "action": {
+        "name": "Ideal Of the Tranquil - Manifest",
+        "_v": 2,
+        "verb": "uses",
+        "automation": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "counter",
+                "counter": "Force Points",
+                "amount": "{-max(wisdomMod,charismaMod,1)}",
+                "allowOverflow": "true"
+              },
+              {
+                "type": "text",
+                "text": "When you finish a short or long rest, you gain a number of temporary force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one). When you would spend a force point while you have temporary force points, the temporary force points are spent first. All temporary force points are lost at the end of your next short or long rest.\n\nAdditionally, as an action, you can manifest this ideal in a brief surge of energy. You regain a number of force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one)."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+},
+  {
     "name": "Improved Force-Sensitive",
     "cvar": {
       "name": "SWFeats",

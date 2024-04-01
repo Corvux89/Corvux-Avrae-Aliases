@@ -117,6 +117,14 @@ def processPower(args):
                 out.append(f''' -f "Growing Momentum (-1)|{c.cc_str("Growing Momentum")}" ''')
                 spell["name"] = "Growing Momentum - Burst of Speed"
 
+    # Ideal of the Tranquil
+    elif c.cc_exists("Tranquil Force Points") and c.get_cc("Tranquil Force Points")>1:
+        tcost = min(c.get_cc("Tranquil Force Points"),points)
+        points -= max(tcost,0)
+        c.mod_cc("Tranquil Force Points", -tcost)
+        out.append(f''' -f "Tranquil Force Points (-{tcost})|{c.cc_str("Tranquil Force Points")}" ''')
+        out.append(f''' -f "Ideal of the Tranquil|When you finish a short or long rest, you gain a number of temporary force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one). When you would spend a force point while you have temporary force points, the temporary force points are spent first. All temporary force points are lost at the end of your next short or long rest." ''')
+
     # Tech Dabbler
     elif feats.get("TechDabbler") and cc == "Tech Points":
         if spell_level == 0:

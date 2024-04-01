@@ -252,6 +252,14 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Bor Gullet",
+    "ability": "Sense Thoughts",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The bor gullet targets a creature with which it has a psychic link. The bor gullet gains insight into the target's emotional state and any thoughts that loom large in its mind (including worries, loves, and hates). The bor gullet can also make a Charisma (Deception) check with advantage to deceive the target's mind into thinking it believes one idea or feels a particular emotion. The target contests this attempt with a Wisdom (Insight) check. If the bor gullet succeeds, the mind believes the deception for 1 hour or until evidence of the lie is presented to the target.",
+    "automation": null
+  },
+  {
     "name": "Brain Worm",
     "ability": "Consume Mind",
     "complete": true,
@@ -390,6 +398,36 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Giant Worrt",
+    "ability": "Swallow",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "If the worrt dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone. The worrt makes a bite attack against a Medium or smaller target it is grappling. On a hit, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the worrt, and it takes 14 (4d6) acid damage at the start of each of the worrt's turns. The worrt can have only one target swallowed at a time.",
+    "automation": {
+      "name": "Swallow",
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "4d6[acid]",
+              "overheal": false
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "If the worrt dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone. The worrt makes a bite attack against a Medium or smaller target it is grappling. On a hit, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the worrt, and it takes 14 (4d6) acid damage at the start of each of the worrt's turns. The worrt can have only one target swallowed at a time.",
+          "title": "Effect"
+        }
+      ],
+      "_v": 2,
+      "activation_type": 1
+    }
+  },
+  {
     "name": "Pit Gladiator",
     "ability": "Shield Bash",
     "complete": true,
@@ -414,10 +452,26 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Grand Admiral",
+    "ability": "All-Out Attack (1/rest)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The Grand Admiral chooses a number of allies up to its Intelligence modifier (8) within 60 feet who can see or hear it. The chosen allies may then immediately use their reaction to make one weapon attack against a target of the Grand Admiral's choice. It may choose the target for each attack separately.\nReactions",
+    "automation": null
+  },
+  {
     "name": "Gundark, Alpha",
     "ability": "Claw",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Gundark, Alpha",
+    "ability": "Pummel",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The monster makes one claw attack against a creature it is grappling. The the attack hits, the monster takes the claw's damage.",
+    "automation": null
   },
   {
     "name": "Trooper, Heavy Assault",
@@ -532,6 +586,22 @@
     "ability": "Ion Grenade (3/day)",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Jawa Shaman",
+    "ability": "Grovel, Cower, and Beg",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The jawa cowers pathetically to distract nearby foes. Until the end of its next turn, its allies gain advantage on attack rolls against any target within 10 feet of the jawa.",
+    "automation": null
+  },
+  {
+    "name": "Jawa Tinkerer",
+    "ability": "Grovel, Cower, and Beg",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The jawa cowers pathetically to distract nearby foes. Until the end of its next turn, its allies gain advantage on attack rolls against any target within 10 feet of the jawa.",
+    "automation": null
   },
   {
     "name": "Jundland Wastes Womp Rat",
@@ -702,6 +772,14 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Officer, Junior",
+    "ability": "Command Ally",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The junior officer targets one ally within 30 feet of it. If the target can hear the officer, the target can make one weapon attack as a reaction and gains advantage on the attack roll.",
+    "automation": null
+  },
+  {
     "name": "Opee Sea Killer",
     "ability": "Tongue",
     "complete": true,
@@ -724,6 +802,14 @@
     "ability": "Barbs",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Purge Trooper",
+    "ability": "Volley (Recharge 6)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The trooper makes one ranged attack against every enemy within 10 feet of a point it can see.",
+    "automation": null
   },
   {
     "name": "Rakghoul",
@@ -760,6 +846,36 @@
     "ability": "Flailing Arms",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Rathtar",
+    "ability": "Consume",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The rathtar moves up to its speed. While doing so, it can enter Large or smaller creatures' spaces. The first time the rathar enters a creature's space, the rathtar can make bite attack against that creature. If the attack misses, the creature is pushed 5 feet back or to the side of the rathtar, takes 9 (2d8) kinetic damage, and is knocked prone.",
+    "automation": {
+      "name": "Consume",
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "2d8[kinetic]",
+              "overheal": false
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The rathtar moves up to its speed. While doing so, it can enter Large or smaller creatures' spaces. The first time the rathar enters a creature's space, the rathtar can make bite attack against that creature. If the attack misses, the creature is pushed 5 feet back or to the side of the rathtar, takes 9 (2d8) kinetic damage, and is knocked prone.",
+          "title": "Effect"
+        }
+      ],
+      "_v": 2,
+      "activation_type": 1
+    }
   },
   {
     "name": "Rathtar",
@@ -829,6 +945,14 @@
   },
   {
     "name": "Scrange",
+    "ability": "Multiattack",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The scrange makes two attacks: one with its bite and one with its tail. It can't make both attacks against the same target.",
+    "automation": null
+  },
+  {
+    "name": "Scrange",
     "ability": "Tail",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
@@ -868,6 +992,36 @@
     "ability": "Bite",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Swamp Slug",
+    "ability": "Swallow",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "If the slug dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone. The slug makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the slug, and it takes 7 (2d6) kinetic damage plus 7 (2d6) acid damage at the start of each of the slug's turns. The slug can have only one target swallowed at a time.",
+    "automation": {
+      "name": "Swallow",
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "damage",
+              "damage": "2d6[kinetic]",
+              "overheal": false
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "If the slug dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone. The slug makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the slug, and it takes 7 (2d6) kinetic damage plus 7 (2d6) acid damage at the start of each of the slug's turns. The slug can have only one target swallowed at a time.",
+          "title": "Effect"
+        }
+      ],
+      "_v": 2,
+      "activation_type": 1
+    }
   },
   {
     "name": "Swamp Wampa",
@@ -1642,6 +1796,14 @@
       "_v": 2,
       "activation_type": 1
     }
+  },
+  {
+    "name": "Reborn Master",
+    "ability": "Cyclonic Kata",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The reborn master can make one attack with its doublesaber against every creature within reach.",
+    "automation": null
   },
   {
     "name": "Roggwart",

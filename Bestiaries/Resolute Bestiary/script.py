@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-to_automate_keywords = ["saving throw", "dc", "shocked until"]
+to_automate_keywords = ["saving throw", "dc", "shocked until", "gains"]
 def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
     url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
     r = urllib.request.urlopen(url)
