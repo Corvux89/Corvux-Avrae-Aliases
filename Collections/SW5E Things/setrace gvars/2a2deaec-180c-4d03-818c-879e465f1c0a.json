@@ -1,0 +1,45 @@
+{
+    "lay": {
+        "fail": "True",
+        "d": "-{ccnum} [Lay on Hands]",
+        "cc": "Lay on Hands",
+        "title": "[name] uses their Lay on Hands ability!",
+        "desc": "As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.",
+        "thumb": "https://cdn.discordapp.com/attachments/269276476023635978/634105147198537768/unknown.png"
+    },
+    "smite": {
+        "fail": "True",
+        "d": "{1+slot-(slot//5)-(slot//6)-(slot//7)-(slot//8)-(slot//9)}d8 [radiant]",
+        "slot": 1,
+        "title": "[name] uses their Divine Smite!",
+        "desc": "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend, to a maximum of 6d8.",
+        "thumb": "https://media.discordapp.net/attachments/269276476023635978/634104690275254312/unknown.png"
+    }
+},
+{
+    "sonicScream_dc": "{8+proficiencyBonus+constitutionMod}",
+    "sonicScream_d": "{2*scale}d6 [sonic]",
+    "sonicScream_half": "True",
+    "sonicScream_cc": "Sonic Scream",
+    "sonicScream_title": "[name] emits a Sonic Scream!",
+    "sonicScream_desc": "As an action, you can violently expel air in a 15-foot cone. When you do so, each creature in the area of the exhalation must make a Wisdom saving throw.   This ability has no effect on constructs.",
+    "sonicScream_save": "wis",
+    "grovelCowerBeg_effect": "Distracted|-desc 'Attacks against this opponent have advantage'|1",
+    "grovelCowerBeg_cc": "Grovel, Cower, Beg",
+    "grovelCowerBeg_nosave": true,
+    "grovelCowerBeg_title": "[name] uses Grovel, Cower, and Beg",
+    "secondHeart_d": "-1 [healing]",
+    "secondHeart_cc": "Second Heart",
+    "secondHeart_nosave": true,
+    "secondHeart_title": "[name] uses their Second Heart ability!",
+    "secondHeart_desc": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.",
+    "savingFace_cc": "Saving Face",
+    "savingFace_nosave": true,
+    "savingFace_title": "[name] uses their Saving Face ability!",
+    "savingFace_desc": "Trandoshans are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can’t use it again until you finish a short or long rest.",
+    "arkanianBrilliance_cc": "Arkanian Brilliance",
+    "arkanianBrilliance_nosave": true,
+    "arkanianBrilliance_title": "[name] uses Arkanian Brilliance!",
+    "arkanianBrilliance_desc": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest.",
+    "arkanianBrilliance_roll": "1d4"
+  },

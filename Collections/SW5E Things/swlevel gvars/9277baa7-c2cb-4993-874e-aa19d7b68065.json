@@ -1,0 +1,1747 @@
+[
+  {
+    "name": "Star Wars 5e Species",
+    "cvars":{
+      "race": "",
+      "speed": "30 ft.",
+      "languages": "Galactic Basic",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "resist": "",
+      "immune": "",
+      "cimmune": "",
+      "vuln": "",
+      "senses": ""
+    }
+  },
+  {
+    "name": "bith",
+    "counters": [],
+    "cvars": {
+      "race": "Bith",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Bith"
+    }
+  },
+  {
+    "name": "bothan",
+    "counters": [],
+    "cvars": {
+      "race": "Bothan",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Bothese"
+    }
+  },
+  {
+    "name": "cathar",
+    "counters": [],
+    "cvars": {
+      "race": "Cathar",
+      "size": "Medium",
+      "speed": "30 ft., Climb 20 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Catharese",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "cerean",
+    "counters": [],
+    "cvars": {
+      "race": "Cerean",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Cerean"
+    }
+  },
+  {
+    "name": "chiss",
+    "counters": [],
+    "cvars": {
+      "race": "Chiss",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Cheunh",
+      "senses": "Darkvision 120 ft."
+    }
+  },
+  {
+    "name": "devaronian",
+    "counters": [],
+    "cvars": {
+      "race": "Devaronian",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Devaronese",
+      "resist": "Poison"
+    }
+  },
+  {
+    "name": "droid, class i",
+    "counters": [],
+    "cvars": {
+      "race": "Droid, Class I",
+      "speed": "25 ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Binary",
+      "resist": "Necrotic, Poison, Psychic",
+      "vuln": "Ion",
+      "cimmune": "Poison, Disease",
+      "creatureType": "Droid"
+    }
+  },
+  {
+    "name": "droid, class ii",
+    "counters": [],
+    "cvars": {
+      "race": "Droid, Class II",
+      "speed": "25 ft.",
+      "languages": "Binary, Galactic Basic",
+      "resist": "Necrotic, Poison, Psychic",
+      "vuln": "Ion",
+      "cimmune": "Poison, Disease",
+      "creatureType": "Droid",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "droid, class iii",
+    "counters": [],
+    "cvars": {
+      "race": "Droid, Class III",
+      "speed": "25 ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Binary",
+      "resist": "Necrotic, Poison, Psychic",
+      "vuln": "Ion",
+      "cimmune": "Poison, Disease",
+      "creatureType": "Droid"
+    }
+  },
+  {
+    "name": "droid, class iv",
+    "counters": [],
+    "cvars": {
+      "race": "Droid, Class IV",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Binary",
+      "resist": "Necrotic, Poison, Psychic",
+      "vuln": "Ion",
+      "cimmune": "Poison, Disease",
+      "creatureType": "Droid"
+    }
+  },
+  {
+    "name": "droid, class v",
+    "counters": [],
+    "cvars": {
+      "race": "Droid, Class V",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Binary",
+      "resist": "Necrotic, Poison, Psychic",
+      "vuln": "Ion",
+      "cimmune": "Poison, Disease",
+      "creatureType": "Droid"
+    }
+  },
+  {
+    "name": "duros",
+    "counters": [],
+    "cvars": {
+      "race": "Duros",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Durese",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "ewok",
+    "counters": [],
+    "cvars": {
+      "race": "Ewok",
+      "speed": "25 ft., Climb 25 ft.",
+      "size": "Small",
+      "creatureType": "Humanoid",
+      "languages": "Ewokese, Galactic Basic"
+    }
+  },
+  {
+    "name": "gamorrean",
+    "counters": [],
+    "cvars": {
+      "race": "Gamorrean",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Gamorrese, Galactic Basic"
+    }
+  },
+  {
+    "name": "gungan",
+    "counters": [],
+    "cvars": {
+      "race": "Gungan",
+      "size": "Medium",
+      "languages": "Galactic Basic, Gungan",
+      "speed": "30 ft., Swim 30 ft.",
+      "creatureType": "Humanoid",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "human",
+    "counters": [
+      {
+        "name": "Defiant",
+        "reset": "short",
+        "level": 1,
+        "use": "racecast 'Defiant'",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Human",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic"
+    }
+  },
+  {
+    "name": "ithorian",
+    "counters": [
+      {
+        "name": "Sonic Scream",
+        "reset": "long",
+        "level": 1,
+        "use": "use 'SonicScream' -t [targets]",
+        "value": "proficiencyBonus"
+      }
+    ],
+    "cvars": {
+      "race": "Ithorian",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Ithorese"
+    }
+  },
+  {
+    "name": "jawa",
+    "counters": [
+      {
+        "name": "Ion Blast",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Ion Blast' [-t target]"
+      },
+      {
+        "name": "Repair Droid",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Repair Droid' [-t target]"
+      },
+      {
+        "name": "Hold Droid",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Hold Droid' [-t target]"
+      },
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use grovelCowerBeg -t [targets]",
+        "value": 1
+      },
+      {
+        "name": "Tinker",
+        "reset": "long",
+        "level": 1,
+        "use": "",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Jawa",
+      "languages": "Galactic Basic, Jawaese",
+      "speed": "25 ft.",
+      "size": "Small",
+      "creatureType": "Humanoid",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "kel dor",
+    "counters": [],
+    "cvars": {
+      "race": "Kel Dor",
+      "languages": "Galactic Basic, Kel Dor",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "resist": "necrotic",
+      "creatureType": "Humanoid",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "mon calamari",
+    "counters": [],
+    "cvars": {
+      "race": "Mon Calamari",
+      "languages": "Galactic Basic, Mon Cal",
+      "size": "Medium",
+      "speed": "30 ft., Swim 30 ft.",
+      "resist": "cold",
+      "creatureType": "Humanoid",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "nautolan",
+    "counters": [],
+    "cvars": {
+      "race": "Nautolan",
+      "languages": "Galactic Basic, Nautila",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "speed": "35 ft., Swim 30 ft.",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "rodian",
+    "counters": [],
+    "cvars": {
+      "race": "Rodian",
+      "languages": "Galactic Basic, Rodese",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "speed": "30 ft., Climb 30 ft.",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "sith pureblood",
+    "counters": [
+      {
+        "name": "Denounce",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Denounce' [-t target]"
+      },
+      {
+        "name": "Curse",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'curse' [-t target]"
+      },
+      {
+        "name": "(SW) Darkness",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast '(SW) Darkness' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Sith Pureblood",
+      "languages": "Galactic Basic, Sith",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "speed": "30 ft.",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "togruta",
+    "counters": [],
+    "cvars": {
+      "race": "Togruta",
+      "languages": "Galactic Basic, Togruti",
+      "size": "Medium",
+      "speed": "30 ft.",
+      "creatureType": "Humanoid",
+      "senses": "Darkvision 60 ft., Tremorsense 30ft."
+    }
+  },
+  {
+    "name": "trandoshan",
+    "counters": [
+      {
+        "name": "Saving Face",
+        "reset": "short",
+        "level": 1,
+        "use": "use savingFace",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Trandoshan",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "resist": "sonic",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Dosh",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "tusken",
+    "counters": [
+      {
+        "name": "Intimidating Roar",
+        "reset": "long",
+        "level": 1,
+        "use": "racecast '(SW) Fear' -t [targets]",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Tusken",
+      "speed": "30 ft.",
+      "size": "Medium",
+      "creatureType": "Humanoid",
+      "languages": "Galactic Basic, Tusken"
+    }
+  },
+  {
+    "name": "twi'lek",
+    "counters": [],
+    "cvars": {
+      "race": "Twi'lek",
+      "senses": "Darkvision 60 ft.",
+      "resist": "poison",
+      "languages": "Galactic Basic, Twi'leki"
+    }
+  },
+  {
+    "name": "weequay",
+    "counters": [],
+    "cvars": {
+      "race": "Weequay",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Sriluurian"
+    }
+  },
+  {
+    "name": "wookiee",
+    "counters": [],
+    "cvars": {
+      "race": "Wookiee",
+      "speed": "30 ft., Climb 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Shyriiwook, Galactic Basic"
+    }
+  },
+  {
+    "name": "zabrak",
+    "counters": [
+      {
+        "name": "Second Heart",
+        "level": 1,
+        "reset": "long",
+        "value": 1,
+        "use": "use secondHeart"
+      }
+    ],
+    "cvars": {
+      "race": "Zabrak",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Zabraki"
+    }
+  },
+  {
+    "name": "abyssin",
+    "counters": [],
+    "cvars": {
+      "race": "Abyssin",
+      "languages": "Galactic Basic, Abyissin"
+    }
+  },
+  {
+    "name": "aing-tii",
+    "counters": [
+      {
+        "name": "Force Push/Pull",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Force Push/Pull' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Aing-Tii",
+      "languages": "Galactic Basic, Aing-Tii"
+    }
+  },
+  {
+    "name": "aleena",
+    "counters": [
+      {
+        "name": "Racer's Reflexes",
+        "reset": "short",
+        "use": "snippet `racersreflex`",
+        "level": 1,
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Aleena",
+      "speed": "25 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Allena",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "anomid",
+    "counters": [
+      {
+        "name": "Minor Hologram",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Minor Hologram'"
+      },
+      {
+        "name": "Repair Droid",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Repair Droid' [-t target]"
+      },
+      {
+        "name": "Hold Droid",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Hold Droid' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Anomid",
+      "languages": "Galactic Basic, Anomid Sign"
+    }
+  },
+  {
+    "name": "anzellan",
+    "counters": [
+      {
+        "name": "Tinker",
+        "reset": "long",
+        "level": 1,
+        "use": "tinker",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Anzellan",
+      "speed": "20 ft.",
+      "languages": "Galactic Basic, Anzellan",
+      "size": "Tiny"
+    }
+  },
+  {
+    "name": "aqualish",
+    "counters": [],
+    "cvars": {
+      "race": "Aqualish",
+      "speed": "30 ft., Swim 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Aqualish"
+    }
+  },
+  {
+    "name": "arcona",
+    "counters": [],
+    "cvars": {
+      "race": "Arcona",
+      "languages": "Galactic Basic, Arconese"
+    }
+  },
+  {
+    "name": "ardennian",
+    "counters": [],
+    "cvars": {
+      "race": "Ardennian",
+      "languages": "Galactic Basic, Ardennian",
+      "speed": "30 ft., Climb 25 ft."
+    }
+  },
+  {
+    "name": "arkanian",
+    "counters": [
+      {
+        "name": "Arkanian Brilliance",
+        "reset": "short",
+        "display": "bubble",
+        "level": 1,
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Arkanian",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Arkanian"
+    },
+    "actions": [
+      {
+        "action": {
+          "name": "Arkanian Brilliance",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "roll",
+              "dice": "1d4",
+              "name": "Roll Bonus"
+            },
+            {
+              "type": "counter",
+              "counter": "Arkanian Brilliance",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "balosar",
+    "counters": [
+      {
+        "name": "Snap Senses",
+        "reset": "short",
+        "level": 1,
+        "use": "snapSenses",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Balosar",
+      "resist": "Poison",
+      "languages": "Galactic Basic, Balosur"
+    }
+  },
+  {
+    "name": "barabel",
+    "counters": [
+      {
+        "name": "Tooth and Nail",
+        "reset": "short",
+        "level": 1,
+        "use": "toothAndNail",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Barabel",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Barabel"
+    }
+  },
+  {
+    "name": "baragwin",
+    "counters": [],
+    "cvars": {
+      "race": "Baragwin",
+      "speed": "25 ft.",
+      "languages": "Galactic Basic, Baragwinian"
+    }
+  },
+  {
+    "name": "besalisk",
+    "counters": [],
+    "cvars": {
+      "race": "Besalisk",
+      "languages": "Galactic Basic, Besalisk"
+    }
+  },
+  {
+    "name": "chadra-fan",
+    "counters": [
+      {
+        "name": "Second Heart",
+        "reset": "long",
+        "level": 1,
+        "use": "secondHeart",
+        "value": 1
+      },
+      {
+        "name": "Tinker",
+        "reset": "long",
+        "level": 1,
+        "use": "tinker",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Chadra-Fan",
+      "size": "Small",
+      "speed": "25 ft., Climb 25 ft.",
+      "languages": "Galactic Basic, Chadra-Fan"
+    }
+  },
+  {
+    "name": "chagrian",
+    "counters": [],
+    "cvars": {
+      "race": "Chagrian",
+      "speed": "30 ft., Swim 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Chagri"
+    }
+  },
+  {
+    "name": "chevin",
+    "counters": [],
+    "cvars": {
+      "race": "Chevin",
+      "languages": "Galactic Basic, Chevin"
+    }
+  },
+  {
+    "name": "chironian",
+    "counters": [
+      {
+        "name": "Powerful Charge",
+        "reset": "short",
+        "level": 1,
+        "use": "powerfulCharge",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Chironian",
+      "speed": "40 ft.",
+      "languages": "Galactic Basic, Chironian"
+    }
+  },
+  {
+    "name": "clawdite",
+    "counters": [
+      {
+        "name": "Unsettling Visage",
+        "reset": "short",
+        "level": 1,
+        "use": "unsettlingVisage",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Clawdite",
+      "languages": "Galactic Basic, Clawdite"
+    }
+  },
+  {
+    "name": "codru-ji",
+    "counters": [],
+    "cvars": {
+      "race": "Codru-Ji",
+      "languages": "Galactic Basic, Codruese"
+    }
+  },
+  {
+    "name": "colicoid",
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Colicoid",
+      "senses": "Darkvision 60 ft.",
+      "speed": "25 ft.",
+      "languages": "Galactic Basic, Colicoid",
+      "creatureType": "Insectoid"
+    }
+  },
+  {
+    "name": "dashade",
+    "counters": [],
+    "cvars": {
+      "race": "Dashade",
+      "languages": "Galactic Basic, Dashadi",
+      "resist": "Necrotic"
+    }
+  },
+  {
+    "name": "defel",
+    "counters": [
+      {
+        "name": "Hidden Step",
+        "reset": "short",
+        "level": 1,
+        "use": "hiddenStep",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Defel",
+      "size": "Small",
+      "speed": "25 ft.",
+      "languages": "Galactic Basic, Defel"
+    }
+  },
+  {
+    "name": "draethos",
+    "counters": [],
+    "cvars": {
+      "race": "Draethos",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Draethos"
+    }
+  },
+  {
+    "name": "dug",
+    "counters": [
+      {
+        "name": "Fury of the Small",
+        "reset": "long",
+        "level": 1,
+        "use": "furyOfTheSmall",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Dug",
+      "size": "Small",
+      "speed": "25 ft., Climb 25 ft.",
+      "languages": "Galactic Basic, Dug"
+    }
+  },
+  {
+    "name": "echani",
+    "counters": [
+      {
+        "name": "Echani Art",
+        "reset": "long",
+        "level": 1,
+        "use": "echaniArt",
+        "value": "wisdomMod"
+      }
+    ],
+    "cvars": {
+      "race": "Echani",
+      "languages": "Galactic Basic"
+    }
+  },
+  {
+    "name": "esh-kha",
+    "counters": [],
+    "cvars": {
+      "race": "Esh-Kha",
+      "languages": "Galactic Basic, Kharan"
+    }
+  },
+  {
+    "name": "falleen",
+    "counters": [
+      {
+        "name": "Enthralling Pheromones",
+        "reset": "short",
+        "level": 1,
+        "use": "enthrallingPheromones",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Falleen",
+      "languages": "Galactic Basic, Falleen"
+    }
+  },
+  {
+    "name": "felucian",
+    "counters": [
+      {
+        "name": "Burst",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'burst' [-t target]"
+      },
+      {
+        "name": "Beast Trick",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Beast Trick' [-t target]"
+      },
+      {
+        "name": "Plant Surge",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Plant Surge'"
+      }
+    ],
+    "cvars": {
+      "race": "Felucian",
+      "languages": "Galactic Basic, Felucianese"
+    }
+  },
+  {
+    "name": "flesh raider",
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Flesh Raider",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Rakata"
+    }
+  },
+  {
+    "name": "gand",
+    "counters": [],
+    "cvars": {
+      "race": "Gand",
+      "resist": "Poison",
+      "languages": "Galactic Basic, Gand"
+    }
+  },
+  {
+    "name": "gank",
+    "counters": [],
+    "cvars": {
+      "race": "Gank",
+      "size": "Medium",
+      "speed": "35 ft.",
+      "languages": "Galactic Basic, Gank"
+    }
+  },
+  {
+    "name": "geonosian",
+    "counters": [],
+    "cvars": {
+      "race": "Geonosian",
+      "speed": "30 ft., Fly 30 ft.",
+      "languages": "Galactic Basic, Geonosian"
+    }
+  },
+  {
+    "name": "givin",
+    "counters": [],
+    "cvars": {
+      "race": "Givin",
+      "resist": "Cold",
+      "languages": "Galactic Basic, Givin"
+    }
+  },
+  {
+    "name": "gotal",
+    "counters": [],
+    "cvars": {
+      "race": "Gotal",
+      "languages": "Galactic Basic, Antarian",
+      "senses": "Blindsight 30 ft."
+    }
+  },
+  {
+    "name": "gran",
+    "counters": [],
+    "cvars": {
+      "race": "Gran",
+      "languages": "Galactic Basic, Gran"
+    }
+  },
+  {
+    "name": "harch",
+    "counters": [
+      {
+        "name": "Bite",
+        "reset": "short",
+        "level": 1,
+        "use": "bite",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Harch",
+      "speed": "30 ft., Climb 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Harchese"
+    }
+  },
+  {
+    "name": "herglic",
+    "counters": [],
+    "cvars": {
+      "race": "Herglic",
+      "speed": "30 ft., Swim 30 ft.",
+      "languages": "Galactic Basic, Herglese"
+    }
+  },
+  {
+    "name": "ho’din",
+    "counters": [
+      {
+        "name": "Second Heart",
+        "reset": "long",
+        "level": 1,
+        "use": "secondHeart",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Ho’din",
+      "speed": "30 ft., Climb 30 ft.",
+      "languages": "Galactic Basic, Ho’din"
+    }
+  },
+  {
+    "name": "hutt",
+    "counters": [],
+    "cvars": {
+      "race": "Hutt",
+      "languages": "Galactic Basic, Huttese",
+      "speed": "20 ft."
+    }
+  },
+  {
+    "name": "iktotchi",
+    "counters": [],
+    "cvars": {
+      "race": "Iktotchi",
+      "languages": "Galactic Basic, Iktotchese"
+    }
+  },
+  {
+    "name": "kage",
+    "counters": [],
+    "cvars": {
+      "race": "Kage",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic"
+    }
+  },
+  {
+    "name": "kaleesh",
+    "counters": [],
+    "cvars": {
+      "race": "Kaleesh",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Kaleesh"
+    }
+  },
+  {
+    "name": "kaminoan",
+    "counters": [
+      {
+        "name": "Temporary Boost",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Temporary Boost' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Kaminoan",
+      "languages": "Galactic Basic, Kaminoan"
+    }
+  },
+  {
+    "name": "karkarodon",
+    "counters": [
+      {
+        "name": "Bite",
+        "reset": "short",
+        "level": 1,
+        "use": "bite",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Karkarodon",
+      "speed": "30 ft., Swim 30 ft.",
+      "languages": "Galactic Basic, Karkaran"
+    }
+  },
+  {
+    "name": "killik",
+    "counters": [],
+    "cvars": {
+      "race": "Killik",
+      "languages": "Galactic Basic, Killik"
+    }
+  },
+  {
+    "name": "klatooinian",
+    "counters": [],
+    "cvars": {
+      "race": "Klatooinian",
+      "languages": "Galactic Basic, Klatooinian, Huttese"
+    }
+  },
+  {
+    "name": "kubaz",
+    "counters": [],
+    "cvars": {
+      "race": "Kubaz",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Kubazian"
+    }
+  },
+  {
+    "name": "kushiban",
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use 'grovelCowerBeg' -t [targets]",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Kushiban",
+      "languages": "Galactic Basic, Kushiban",
+      "speed": "25 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "kyuzo",
+    "counters": [],
+    "cvars": {
+      "race": "Kyuzo",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Kyuzo"
+    }
+  },
+  {
+    "name": "lannik",
+    "counters": [
+      {
+        "name": "Guidance",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast '(SW) Guidance' [-t target]"
+      },
+      {
+        "name": "Valor",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Valor' [-t target]"
+      },
+      {
+        "name": "Force Enlightenment",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Force Enlightenment' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Lannik",
+      "languages": "Galactic Basic, Lannik",
+      "speed": "25 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "lasat",
+    "counters": [],
+    "cvars": {
+      "race": "Lasat",
+      "senses": "Darkvision 60 ft.",
+      "speed": "30 ft., Climb 30 ft.",
+      "languages": "Galactic Basic, Lasat"
+    }
+  },
+  {
+    "name": "lurmen",
+    "counters": [],
+    "cvars": {
+      "race": "Lurmen",
+      "languages": "Galactic Basic, Lurmese",
+      "speed": "25 ft., Climb 25 ft.",
+      "size": "Small",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "miraluka",
+    "counters": [
+      {
+        "name": "Mind Trick",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Mind Trick' [-t target]"
+      },
+      {
+        "name": "Sanctuary",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast '(SW) Sanctuary' [-t target]"
+      },
+      {
+        "name": "Force Confusion",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Force Confusion' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Miraluka",
+      "languages": "Galactic Basic, Miralukese",
+      "senses": "Blindsight 30 ft."
+    }
+  },
+  {
+    "name": "mirialan",
+    "counters": [],
+    "cvars": {
+      "race": "Mirialan",
+      "speed": "35 ft.",
+      "languages": "Galactic Basic, Mirialan"
+    }
+  },
+  {
+    "name": "mustafarian",
+    "counters": [],
+    "cvars": {
+      "race": "Mustafarian",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Mustafarian",
+      "resist": "Fire"
+    }
+  },
+  {
+    "name": "munn",
+    "counters": [
+      {
+        "name": "Three Hearts",
+        "reset": "long",
+        "level": 1,
+        "use": "threeHearts",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Munn",
+      "languages": "Galactic Basic, Munn"
+    }
+  },
+  {
+    "name": "mikkian",
+    "counters": [],
+    "cvars": {
+      "race": "Mikkian",
+      "senses": "Blindsight 30 ft.",
+      "languages": "Galactic Basic, Mikkian"
+    }
+  },
+  {
+    "name": "neimoidian",
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use 'grovelCowerBeg' -t [targets]",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Neimoidian",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Pak Pak"
+    }
+  },
+  {
+    "name": "esral'sa'nikto",
+    "counters": [],
+    "cvars": {
+      "race": "Esral'sa'Nikto",
+      "speed": "30 ft.",
+      "size": "Medium,",
+      "languages": "Galactic Basic, Nikto, Huttese"
+    }
+  },
+  {
+    "name": "gluss'sa'nikto",
+    "counters": [],
+    "cvars": {
+      "race": "Gluss'sa'Nikto",
+      "speed": "30 ft., Swim 30 ft.",
+      "size": "Medium,",
+      "languages": "Galactic Basic, Nikto, Huttese"
+    }
+  },
+  {
+    "name": "kadas'sa'nikto",
+    "counters": [],
+    "cvars": {
+      "race": "Kadas'sa'Nikto",
+      "speed": "30 ft., Climb 30 ft.",
+      "size": "Medium,",
+      "languages": "Galactic Basic, Nikto, Huttese"
+    }
+  },
+  {
+    "name": "kajain'sa'nikto",
+    "counters": [],
+    "cvars": {
+      "race": "Kajain'sa'Nikto",
+      "speed": "30 ft.",
+      "size": "Medium,",
+      "languages": "Galactic Basic, Nikto, Huttese"
+    }
+  },
+  {
+    "name": "m'shento'su'nikto",
+    "counters": [],
+    "cvars": {
+      "race": "M'shento'su'Nikto",
+      "speed": "30 ft.",
+      "size": "Medium,",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Nikto, Huttese"
+    }
+  },
+  {
+    "name": "noghri",
+    "counters": [
+      {
+        "name": "Powerful Leap",
+        "reset": "short",
+        "level": 1,
+        "use": "powerfulLeap",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Noghri",
+      "languages": "Galactic Basic, Honorghran"
+    }
+  },
+  {
+    "name": "nothoiin",
+    "counters": [
+      {
+        "name": "Hightened Reflexes",
+        "reset": "short",
+        "level": 1,
+        "use": "hightenedReflexes",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Nothoiin",
+      "languages": "Galactic Basic"
+    }
+  },
+  {
+    "name": "ortolan",
+    "counters": [
+      {
+        "name": "Grovel, Cower, Beg",
+        "reset": "short",
+        "level": 1,
+        "use": "use grovelCowerBeg -t [targets]",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Ortolan",
+      "languages": "Galactic Basic, Ortolan",
+      "speed": "25 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "pa'lowick",
+    "counters": [
+      {
+        "name": "Sonic Scream",
+        "reset": "long",
+        "level": 1,
+        "use": "use sonicScream -t [targets]",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Pa'lowick",
+      "speed": "30 ft., Swim 30 ft.",
+      "languages": "Galactic Basic, Lowickese"
+    }
+  },
+  {
+    "name": "pantoran",
+    "counters": [
+      {
+        "name": "Impose Order",
+        "reset": "long",
+        "level": 1,
+        "value": 1,
+        "use": "racecast 'Impose Order' -t [targets]"
+      }
+    ],
+    "cvars": {
+      "race": "Pantoran",
+      "speed": "30ft.",
+      "size": "Medium",
+      "languages": "Galactic Basic, Pantoran"
+    }
+  },
+  {
+    "name": "patrolian",
+    "counters": [],
+    "cvars": {
+      "race": "Patrolian",
+      "speed": "25 ft., Swim 25 ft.",
+      "senses": "Darkvision 60 ft.",
+      "resist": "Lightning",
+      "languages": "Galactic Basic, Patrolian"
+    }
+  },
+  {
+    "name": "pau'an",
+    "counters": [
+      {
+        "name": "Vigilant",
+        "reset": "short",
+        "level": 1,
+        "use": "vigilant",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Pau'an",
+      "senses": "Darkvision 120 ft.",
+      "languages": "Galactic Basic, Utapese"
+    }
+  },
+  {
+    "name": "pyke",
+    "counters": [],
+    "cvars": {
+      "race": "Pyke",
+      "languages": "Galactic Basic, Pyke"
+    }
+  },
+  {
+    "name": "quarren",
+    "counters": [
+      {
+        "name": "Ink Cloud",
+        "reset": "long",
+        "level": 1,
+        "use": "use inkCloud -t [targets]",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Quarren",
+      "speed": "30 ft., Swim 30 ft., CLimb 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Quarrenese"
+    }
+  },
+  {
+    "name": "rakata",
+    "counters": [
+      {
+        "name": "Cannibalize",
+        "reset": "short",
+        "level": 1,
+        "use": "cannibalize",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Rakata",
+      "speed": "30 ft., Swim 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Rakata"
+    }
+  },
+  {
+    "name": "rattataki",
+    "counters": [],
+    "cvars": {
+      "race": "Rattataki",
+      "speed": "35 ft.",
+      "languages": "Galactic Basic, Rattataki"
+    }
+  },
+  {
+    "name": "rishii",
+    "counters": [],
+    "cvars": {
+      "race": "Rishii",
+      "speed": "30 ft., Fly 30 ft.",
+      "languages": "Galactic Basic, Rishii"
+    }
+  },
+  {
+    "name": "ryn",
+    "counters": [],
+    "cvars": {
+      "race": "Ryn",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Ryn"
+    }
+  },
+  {
+    "name": "selkath",
+    "counters": [
+      {
+        "name": "Temporary Boost",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Temporary Boost' [-t target]"
+      },
+      {
+        "name": "Kolto Pack",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Kolto Pack' [-t target]"
+      },
+      {
+        "name": "Kolto Cloud",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Kolto Cloud' [-t target]"
+      },
+      {
+        "name": "Claws",
+        "reset": "long",
+        "level": 1,
+        "use": "claws",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Selkath",
+      "languages": "Galactic Basic, Selkatha",
+      "speed": "30 ft., Swim 30 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "shistavanen",
+    "counters": [],
+    "cvars": {
+      "race": "Shistavanen",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Shistavanen"
+    }
+  },
+  {
+    "name": "squib",
+    "counters": [],
+    "cvars": {
+      "race": "Squib",
+      "languages": "Galactic Basic, Squibbian",
+      "speed": "25 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "ssi-ruu",
+    "counters": [],
+    "cvars": {
+      "race": "Ssi-Ruu",
+      "speed": "35 ft.",
+      "languages": "Galactic Basic, Ssi-ruuvi",
+      "creatureType": "Alien"
+    }
+  },
+  {
+    "name": "sullustan",
+    "counters": [],
+    "cvars": {
+      "race": "Sullustan",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Sullestese"
+    }
+  },
+  {
+    "name": "talz",
+    "counters": [],
+    "cvars": {
+      "race": "Talz",
+      "languages": "Galactic Basic, Talzzi",
+      "creatureType": "Alien"
+    }
+  },
+  {
+    "name": "tarasin",
+    "counters": [],
+    "cvars": {
+      "race": "Tarasin",
+      "languages": "Galactic Basic, Tarasinese"
+    }
+  },
+  {
+    "name": "thisspiasian",
+    "counters": [],
+    "cvars": {
+      "race": "Thisspiasian",
+      "languages": "Galactic Basic, Thisspiasian"
+    }
+  },
+  {
+    "name": "togorian",
+    "counters": [],
+    "cvars": {
+      "race": "Togorian",
+      "languages": "Galactic Basic, Togorese"
+    }
+  },
+  {
+    "name": "toydarian",
+    "counters": [],
+    "cvars": {
+      "race": "Toydarian",
+      "languages": "Galactic Basic, Toydarian",
+      "speed": "25 ft. Fly 25 ft.",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "ugnaught",
+    "counters": [
+      {
+        "name": "Mending",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast '(SW) Mending)'"
+      },
+      {
+        "name": "Analyze",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Analyze'"
+      },
+      {
+        "name": "Overheat",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Overheat'"
+      },
+      {
+        "name": "Tinker",
+        "reset": "long",
+        "level": 1,
+        "use": "tinker",
+        "value": 2
+      }
+    ],
+    "cvars": {
+      "race": "Ugnaught",
+      "languages": "Galactic Basic, Ugnaught",
+      "speed": "25 ft.",
+      "size": "Small",
+      "resist": "Acid",
+      "senses": "Darkvision 60 ft."
+    }
+  },
+  {
+    "name": "umbaran",
+    "counters": [
+      {
+        "name": "Ward",
+        "reset": "none",
+        "level": 1,
+        "use": "racecast 'Ward'"
+      },
+      {
+        "name": "Analyze",
+        "reset": "long",
+        "level": 3,
+        "use": "racecast 'Analyze'"
+      },
+      {
+        "name": "Infiltrate",
+        "reset": "long",
+        "level": 5,
+        "use": "racecast 'Infiltrate' [-t target]"
+      }
+    ],
+    "cvars": {
+      "race": "Umbaran",
+      "languages": "Galactic Basic, Umbaran",
+      "senses": "Darkvision 120 ft."
+    }
+  },
+  {
+    "name": "verpine",
+    "counters": [],
+    "cvars": {
+      "race": "Verpine",
+      "senses": "Tremorsense 30 ft.",
+      "languages": "Galactic Basic, Verpine"
+    }
+  },
+  {
+    "name": "voss",
+    "counters": [],
+    "cvars": {
+      "race": "Voss",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Voss"
+    }
+  },
+  {
+    "name": "vurk",
+    "counters": [],
+    "cvars": {
+      "race": "Vurk",
+      "speed": "35 ft., Swim 30 ft.",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Semblan"
+    }
+  },
+  {
+    "name": "yevetha",
+    "counters": [],
+    "cvars": {
+      "race": "Yevetha",
+      "languages": "Galactic Basic, Yevethan"
+    }
+  },
+  {
+    "name": "zeltron",
+    "counters": [
+      {
+        "name": "Enthralling Pheromones",
+        "reset": "short",
+        "level": 1,
+        "use": "enthrallingPheromones",
+        "value": 1
+      }
+    ],
+    "cvars": {
+      "race": "Zeltron",
+      "resist": "Poison",
+      "languages": "Galactic Basic"
+    }
+  },
+  {
+    "name": "zygerrian",
+    "counters": [],
+    "cvars": {
+      "race": "Zygerrian",
+      "senses": "Darkvision 60 ft.",
+      "languages": "Galactic Basic, Zygerrian"
+    }
+  }
+]
