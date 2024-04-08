@@ -1,31 +1,3 @@
-# TODO: Bith
-# TODO: Bothan
-# TODO: Cathar
-# TODO: Cerean
-# TODO: Chiss
-# TODO: Devaronian
-# TODO: Droid, Class I
-# TODO: Droid, Class II
-# TODO: Droid, Class III
-# TODO: Droid, Class IV
-# TODO: Droid, Class V
-# TODO: Duros
-# TODO: Ewok
-# TODO: Gamorrean
-# TODO: Gungan
-# TODO: Human
-# TODO: Ithorian
-# TODO: Jawa
-# TODO: Kel Dor
-# TODO: Mon Calamari
-# TODO: Nautolan
-# TODO: Rodian
-# TODO: Sith Pureblood
-# TODO: Togruta
-# TODO: Trandoshan
-# TODO: Tusken
-# TODO: Twi'lek
-# TODO: Weequay
 # TODO: Wookiee
 # TODO: Zabrak
 # TODO: Abyssin
@@ -40,7 +12,6 @@
 # TODO: Ardennian
 # TODO: Arkanian
 # TODO: Balosar
-# TODO: Barabel
 # TODO: Baragwin
 # TODO: Besalisk
 # TODO: Caamasi

@@ -2570,7 +2570,7 @@
     "actions": [
       {
         "level": 9,
-        "actions": {
+        "action": {
           "name": "Resuscitate",
           "_v": 2,
           "activation_type": 3,
@@ -3248,12 +3248,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {
@@ -3285,12 +3285,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {
@@ -3326,12 +3326,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {
@@ -3710,12 +3710,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {
@@ -3747,12 +3747,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {
@@ -3788,12 +3788,12 @@
           "automation": [
             {
               "type": "variable",
-              "value": "{max(int(caster.levels.get('SentinelLight',0)), int(caster.levels.get('SentinelDark',0)),0)}",
+              "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
               "name": "slevel"
             },
             {
               "type": "variable",
-              "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
+              "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
               "name": "dieSize"
             },
             {

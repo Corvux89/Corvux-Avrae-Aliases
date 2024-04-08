@@ -18,7 +18,8 @@ if m is None or m == "":
 
 if com:
     if com.me:
-        com.me.add_effect(m.name, duration=1)
+        eff = com.me.add_effect(m.name, duration=2 if  m.get('end') else 1, end=m.get('end', False))
+        base += f''' -f "{com.me.name}|{eff}" '''
     else:
         return err("You're not on the right sheet for this combat. Try again.")
 

@@ -360,6 +360,114 @@
     ]
   },
   {
+    "name": "Rapid Reconstruction",
+    "automation": [
+      {
+        "name": "Rapid Reconstruction",
+        "activation_type": 3,
+        "_v": 2,
+        "verb": "uses",
+        "automation": [
+          {
+            "type": "counter",
+            "counter": "Hit Dice (d12)",
+            "amount": "1",
+            "errorBehaviour": "ignore"
+          },
+          {
+            "type": "condition",
+            "condition": "lastCounterUsedAmount",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "damage",
+                    "damage": "-(1d12) [healing]"
+                  }
+                ]
+              }
+            ],
+            "onFalse": [
+              {
+                "type": "counter",
+                "counter": "Hit Dice (d10)",
+                "amount": "1",
+                "errorBehaviour": "ignore"
+              },
+              {
+                "type": "condition",
+                "condition": "lastCounterUsedAmount",
+                "onTrue": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-(1d10) [healing]"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": [
+                  {
+                    "type": "counter",
+                    "counter": "Hit Dice (d8)",
+                    "amount": "1",
+                    "errorBehaviour": "ignore"
+                  },
+                  {
+                    "type": "condition",
+                    "condition": "lastCounterUsedAmount",
+                    "onTrue": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "damage",
+                            "damage": "-(1d8) [healing]"
+                          }
+                        ]
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "counter",
+                        "counter": "Hit Dice (d6)",
+                        "amount": "1",
+                        "errorBehaviour": "raise"
+                      },
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "damage",
+                            "damage": "-(1d6) [healing]"
+                          }
+                        ]
+                      }
+                    ],
+                    "errorBehaviour": "false"
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "errorBehaviour": "false"
+          },
+          {
+            "type": "text",
+            "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Recharge",
     "automation": [
       {
@@ -403,6 +511,38 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Second Heart",
+    "automation": [
+      {
+        "name": "Second Heart",
+        "_v": 2,
+        "automation": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "damage",
+                "damage": "-1 [second heard]"
+              }
+            ]
+          },
+          {
+            "type": "counter",
+            "counter": "Second Heart",
+            "amount": 1,
+            "errorBehaviour": "raise"
+          },
+          {
+            "type": "text",
+            "text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest."
+          }
+        ],
+        "verb": "uses"
       }
     ]
   },

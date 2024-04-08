@@ -1,4 +1,4 @@
-multiline {{c = combat()}}{{h = "-h" if "-h" in "&*&" else ""}}
+multiline {{c = combat()}}{{h = "-h" if "-h" not in "&*&" else ""}}
 {{f"{ctx.prefix}i begin turnnotif deathdelete\n" if not c else ""}}{{f"{ctx.prefix}i join -p 40\n" if not (c and c.me) else ''}}{{ctx.prefix}}i madd orc -n 4 -group Orc -p 4 {{h}}
 {{ctx.prefix}}i madd zombie -n 4 -group Zombies -p 3 {{h}}
 {{ctx.prefix}}i madd wolf -n 4 -group Wolf -p 2 {{h}}

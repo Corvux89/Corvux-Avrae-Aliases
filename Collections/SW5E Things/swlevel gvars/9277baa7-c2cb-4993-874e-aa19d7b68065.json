@@ -1,7 +1,7 @@
 [
   {
     "name": "Star Wars 5e Species",
-    "cvars":{
+    "cvars": {
       "race": "",
       "speed": "30 ft.",
       "languages": "Galactic Basic",
@@ -46,11 +46,81 @@
       "creatureType": "Humanoid",
       "languages": "Galactic Basic, Catharese",
       "senses": "Darkvision 60 ft."
-    }
+    },
+    "actions": [
+      {
+        "action": {
+          "name": "Cat's Claws",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "attack",
+                  "attackBonus": "max(strengthMod,dexterityMod)+proficiencyBonus",
+                  "hit": [
+                    {
+                      "type": "damage",
+                      "damage": "1d6 [kinetic]"
+                    }
+                  ],
+                  "miss": []
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Your unarmed strikes deal 1d6 kinetic damage and have the finesse property.",
+              "title": "Cathar - Cat's Claws"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "name": "cerean",
-    "counters": [],
+    "counters": [
+      {
+        "name": "Second Heart",
+        "value": 1,
+        "reset": "long",
+        "display": "bubble"
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Second Heart",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "-1 [second heard]"
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Second Heart",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest."
+            }
+          ],
+          "verb": "uses"
+        }
+      }
+    ],
     "cvars": {
       "race": "Cerean",
       "size": "Medium",
@@ -85,6 +155,113 @@
   {
     "name": "droid, class i",
     "counters": [],
+    "actions": [
+      {
+        "action": {
+          "name": "Rapid Reconstruction",
+          "activation_type": 3,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+            }
+          ]
+        }
+      }
+    ],
     "cvars": {
       "race": "Droid, Class I",
       "speed": "25 ft.",
@@ -99,6 +276,113 @@
   {
     "name": "droid, class ii",
     "counters": [],
+    "actions": [
+      {
+        "action": {
+          "name": "Rapid Reconstruction",
+          "activation_type": 3,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+            }
+          ]
+        }
+      }
+    ],
     "cvars": {
       "race": "Droid, Class II",
       "speed": "25 ft.",
@@ -113,6 +397,113 @@
   {
     "name": "droid, class iii",
     "counters": [],
+    "actions": [
+      {
+        "action": {
+          "name": "Rapid Reconstruction",
+          "activation_type": 3,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+            }
+          ]
+        }
+      }
+    ],
     "cvars": {
       "race": "Droid, Class III",
       "speed": "25 ft.",
@@ -127,6 +518,113 @@
   {
     "name": "droid, class iv",
     "counters": [],
+    "actions": [
+      {
+        "action": {
+          "name": "Rapid Reconstruction",
+          "activation_type": 3,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+            }
+          ]
+        }
+      }
+    ],
     "cvars": {
       "race": "Droid, Class IV",
       "speed": "30 ft.",
@@ -141,6 +639,113 @@
   {
     "name": "droid, class v",
     "counters": [],
+    "actions": [
+      {
+        "action": {
+          "name": "Rapid Reconstruction",
+          "activation_type": 3,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+            }
+          ]
+        }
+      }
+    ],
     "cvars": {
       "race": "Droid, Class V",
       "speed": "30 ft.",
@@ -205,8 +810,35 @@
         "name": "Defiant",
         "reset": "short",
         "level": 1,
-        "use": "racecast 'Defiant'",
+        "display": "bubble",
         "value": 1
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Defiant",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "roll",
+              "dice": "1d4",
+              "name": "Bonus"
+            },
+            {
+              "type": "counter",
+              "counter": "Defiant",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "Humans are known to be stubborn and often refuse to give up, even against the worst odds. When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a d4 and add it to their roll (no action required). Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+            }
+          ],
+          "activation_type": 2
+        }
       }
     ],
     "cvars": {
@@ -224,8 +856,61 @@
         "name": "Sonic Scream",
         "reset": "long",
         "level": 1,
-        "use": "use 'SonicScream' -t [targets]",
+        "display": "bubble",
         "value": "proficiencyBonus"
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Sonic Scream",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "variable",
+              "value": "2 if level < 5 else 4 if level < 11 else 6 if level < 17 else 8",
+              "name": "numDie"
+            },
+            {
+              "type": "roll",
+              "dice": "{numDie}d6 [sonic]",
+              "name": "damage"
+            },
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "wis",
+                  "dc": "8+proficiencyBonus+constitutionMod",
+                  "success": [
+                    {
+                      "type": "damage",
+                      "damage": "({damage})/2"
+                    }
+                  ],
+                  "fail": [
+                    {
+                      "type": "damage",
+                      "damage": "{damage}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "counter",
+              "counter": "Sonic Scream",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action, you can violently expel air in a 15-foot cone. When you do so, each creature in the area of the exhalation must make a Wisdom saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). A creature takes 2d6 sonic damage on a failed save, and half as much damage on a successful one. The damage increases to 4d6 at 5th level, 6d6 at 11th level, and 8d6 at 17th level. This ability has no effect on constructs. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest."
+            }
+          ]
+        }
       }
     ],
     "cvars": {
@@ -243,33 +928,47 @@
         "name": "Ion Blast",
         "reset": "none",
         "level": 1,
-        "use": "racecast 'Ion Blast' [-t target]"
+        "display": "bubble"
       },
       {
         "name": "Repair Droid",
         "reset": "long",
         "level": 3,
-        "use": "racecast 'Repair Droid' [-t target]"
+        "display": "bubble"
       },
       {
         "name": "Hold Droid",
         "reset": "long",
         "level": 5,
-        "use": "racecast 'Hold Droid' [-t target]"
+        "display": "bubble"
       },
       {
         "name": "Grovel, Cower, Beg",
         "reset": "short",
         "level": 1,
-        "use": "use grovelCowerBeg -t [targets]",
+        "display": "bubble",
         "value": 1
-      },
+      }
+    ],
+    "actions": [
       {
-        "name": "Tinker",
-        "reset": "long",
-        "level": 1,
-        "use": "",
-        "value": 2
+        "action": {
+          "name": "Grovel, Cower, and Beg",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Grovel, Cower, Beg",
+              "amount": 1,
+              "errorBehaciour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10 feet of you that can see you. Once you use this trait, you can’t use it again until you finish a short or long rest."
+            }
+          ]
+        }
       }
     ],
     "cvars": {
@@ -335,22 +1034,16 @@
     "name": "sith pureblood",
     "counters": [
       {
-        "name": "Denounce",
-        "reset": "none",
-        "level": 1,
-        "use": "racecast 'Denounce' [-t target]"
-      },
-      {
         "name": "Curse",
         "reset": "long",
         "level": 3,
-        "use": "racecast 'curse' [-t target]"
+        "display": "bubble"
       },
       {
         "name": "(SW) Darkness",
         "reset": "long",
         "level": 5,
-        "use": "racecast '(SW) Darkness' [-t target]"
+        "display": "bubble"
       }
     ],
     "cvars": {
@@ -381,8 +1074,135 @@
         "name": "Saving Face",
         "reset": "short",
         "level": 1,
-        "use": "use savingFace",
+        "display": "bubble",
         "value": 1
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Saving Face",
+          "activation_type": 2,
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Saving Face",
+              "amount": 1,
+              "errorBehaviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": "Trandoshans are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can’t use it again until you finish a short or long rest."
+            }
+          ]
+        }
+      },
+      {
+        "action": {
+          "name": "Regenerative",
+          "_v": 2,
+          "verb": "uses",
+          "activation_type": 4,
+          "automation": [
+            {
+              "type": "counter",
+              "counter": "Hit Dice (d12)",
+              "amount": "1",
+              "errorBehaviour": "ignore"
+            },
+            {
+              "type": "condition",
+              "condition": "lastCounterUsedAmount",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "damage",
+                      "damage": "-(1d12) [healing]"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": [
+                {
+                  "type": "counter",
+                  "counter": "Hit Dice (d10)",
+                  "amount": "1",
+                  "errorBehaviour": "ignore"
+                },
+                {
+                  "type": "condition",
+                  "condition": "lastCounterUsedAmount",
+                  "onTrue": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "-(1d10) [healing]"
+                        }
+                      ]
+                    }
+                  ],
+                  "onFalse": [
+                    {
+                      "type": "counter",
+                      "counter": "Hit Dice (d8)",
+                      "amount": "1",
+                      "errorBehaviour": "ignore"
+                    },
+                    {
+                      "type": "condition",
+                      "condition": "lastCounterUsedAmount",
+                      "onTrue": [
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d8) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "onFalse": [
+                        {
+                          "type": "counter",
+                          "counter": "Hit Dice (d6)",
+                          "amount": "1",
+                          "errorBehaviour": "raise"
+                        },
+                        {
+                          "type": "target",
+                          "target": "self",
+                          "effects": [
+                            {
+                              "type": "damage",
+                              "damage": "-(1d6) [healing]"
+                            }
+                          ]
+                        }
+                      ],
+                      "errorBehaviour": "false"
+                    }
+                  ],
+                  "errorBehaviour": "false"
+                }
+              ],
+              "errorBehaviour": "false"
+            },
+            {
+              "type": "text",
+              "text": "When you take damage, you can use your reaction and expend a Hit Die to regain hit points as long as the damage would not reduce your hit points to 0."
+            }
+          ]
+        }
       }
     ],
     "cvars": {
@@ -402,7 +1222,7 @@
         "name": "Intimidating Roar",
         "reset": "long",
         "level": 1,
-        "use": "racecast '(SW) Fear' -t [targets]",
+        "display": "bubble",
         "value": 1
       }
     ],
@@ -640,8 +1460,63 @@
         "name": "Tooth and Nail",
         "reset": "short",
         "level": 1,
-        "use": "toothAndNail",
+        "display": "bubble",
         "value": 1
+      }
+    ],
+    "actions": [
+      {
+        "action": {
+          "name": "Tooth and Nail",
+          "_v": 2,
+          "activation_type": 3,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "attack",
+                  "attackBonus": "strengthMod+proficiencyBonus",
+                  "miss": [],
+                  "hit": [
+                    {
+                      "type": "damage",
+                      "damage": "1d6 [kinetic]"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "condition",
+              "condition": "lastAttackDidHit",
+              "onTrue": [
+                {
+                  "type": "target",
+                  "target": "self",
+                  "effects": [
+                    {
+                      "type": "temphp",
+                      "amount": "{constitutionMod}"
+                    }
+                  ]
+                }
+              ],
+              "onFalse": []
+            },
+            {
+              "type": "counter",
+              "counter": "Tooth and Nail",
+              "amount": 1,
+              "errorBehviour": "raise"
+            },
+            {
+              "type": "text",
+              "text": " Your sharp teeth and claws are natural weapons, which you can use to make unarmed strikes. Additionally, your unarmed strikes deal 1d6 kinetic damage. Lastly, as a bonus action, you can perform a special claw attack. On a hit, the target suffers the attack’s normal effects, you gain temporary hit points equal to your Constitution modifier (minimum of 1), and you can’t use this trait again until you finish a short or long rest."
+            }
+          ]
+        }
       }
     ],
     "cvars": {

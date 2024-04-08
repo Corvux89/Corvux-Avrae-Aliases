@@ -12,7 +12,7 @@ stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "cha
 dagger = '†'
 image = ch.image
 color = ch.csettings.color
-footer = f"\"{ctx.prefix}swlevel v1.1 | Created by Corvux\""
+footer = f"\"{ctx.prefix}swlevel v1.2 | Created by Corvux\""
 
 
 def level(args):
@@ -85,8 +85,7 @@ def level(args):
         actions = getActions(playerClass, playerArchetype, inLevel, stat)
 
         # Get Race information
-        if dev:
-            raceBase = getRaceInfo(actions)
+        raceBase = getRaceInfo(actions, updateOnly)
 
         # Setup Counters
         if not updateOnly:
@@ -122,13 +121,8 @@ def level(args):
     else:
         return f'''help {ctx.alias} -here'''
 
-    if dev:
-        out_str = '\n'.join(out)
-        return f'''multiline {out_str}'''
-
-    if len(actions) > 0:
-        return f'''multiline\n{ctx.prefix}{base}\n{f"{ctx.prefix}{raceBase}" if raceBase else ""}{ctx.prefix}a import {dump_json(actions)}'''
-    return base
+    out_str = '\n'.join(out)
+    return f'''multiline {out_str}'''
 
 
 def options(args):
@@ -498,7 +492,7 @@ def additionalCounter(counter, counters):
     reset = reset[0] if not '$' in counter.reset or level < int(reset[1]) else reset[2]
 
     # Create the counter
-    ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display, counter.get('reset_to'), None,
+    ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.get('display', 'bubble'), counter.get('reset_to'), None,
                  None, counter.get('desc'))
     counters.append({"name": counter.name})
 
@@ -538,7 +532,7 @@ def modCVAR(cvar_ref):
     ch.set_cvar(cvar_ref.name, dump_json(cvar))
 
 
-def getRaceInfo(actions = []):
+def getRaceInfo(actions = [], updateOnly=False):
     out = []
     counters = []
     base = None
@@ -553,7 +547,7 @@ def getRaceInfo(actions = []):
                 for c, v in race.cvars.items():
                     cvars[c] = v
 
-                if race.get('counters'):
+                if race.get('counters') and not updateOnly:
                     for counter in race.get('counters'):
                         additionalCounter(counter, counters)
 
@@ -570,10 +564,10 @@ def getRaceInfo(actions = []):
 
                 cvar_str = ' -f '.join([f'"{format_cvar_name(str(c))}|{v}|inline"' for c,v in cvars.items() if v != ""])
                 c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
-                base += f''' -f {cvar_str}'''
+                base += f''' -f {cvar_str}''' if len(cvars) > 0 else ""
                 act_str = '\n'.join([x for x in {x for x in out}])
-                base += f''' -f  "Counter{'s' if len(counters) > 1 else ''}|{c_str}"'''
-                base += f''' -f "Action{'s' if len(actions) > 1 else ''}|{act_str}"'''
+                base += f''' -f  "Counter{'s' if len(counters) > 1 else ''}|{c_str}"''' if len(counters) > 0 else ""
+                base += f''' -f "Action{'s' if len(actions) > 1 else ''}|{act_str}"''' if len(out) > 0 else ""
     return base
 
 def format_cvar_name(name):

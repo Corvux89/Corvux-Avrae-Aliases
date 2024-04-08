@@ -51,4 +51,4 @@ with open("Powers Todo.py", "w") as outfile:
         outfile.write(f"# TODO: {x}\n")
 
 with open('spellbook.json', encoding='utf-8', mode="w+") as outfile:
-    outfile.write(json.dumps(spells, indent=2))
+    outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))

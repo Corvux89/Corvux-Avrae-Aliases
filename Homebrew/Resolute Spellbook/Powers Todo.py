@@ -24,6 +24,7 @@
 # TODO: Missing Tune-up
 # TODO: Missing Wakefulness
 # TODO: Missing Wire Tow
+# TODO: (SW) Alter Self
 # TODO: (SW) Aura of Purity
 # TODO: Aura of Vigor
 # TODO: Autonomous Servant
@@ -86,9 +87,11 @@
 # TODO: Eruption
 # TODO: Execute Command
 # TODO: (SW) Expeditious Retreat
+# TODO: Fabricate Minor Trap
 # TODO: Fabricate Trap
 # TODO: (SW) Find the Path
 # TODO: Firestorm
+# TODO: Flaming Shots
 # TODO: Flash
 # TODO: Force Blind/Deafen
 # TODO: Force Blinding
@@ -130,6 +133,7 @@
 # TODO: Greater Translocate
 # TODO: Group Hologram
 # TODO: Hallucination
+# TODO: Heighten Senses
 # TODO: (SW) Heroism
 # TODO: Hold Droid
 # TODO: Holding Cell
@@ -146,10 +150,12 @@
 # TODO: (SW) Incendiary Cloud
 # TODO: Infiltrate
 # TODO: Insanity
+# TODO: Instant Translocation
 # TODO: Invisibility to Cameras
 # TODO: (SW) Invulnerability
 # TODO: Ionic Bond
 # TODO: Jet of Flame
+# TODO: Jump Jet
 # TODO: Kill
 # TODO: Kolto Cloud
 # TODO: Kolto Dispenser
@@ -193,6 +199,7 @@
 # TODO: Overload
 # TODO: Override Interface
 # TODO: Paralyze Creature
+# TODO: Phaseshift
 # TODO: Pheromone Burst
 # TODO: Plant Surge
 # TODO: Poison Dart
@@ -200,6 +207,7 @@
 # TODO: Precognition
 # TODO: Predictive AI
 # TODO: Preparedness
+# TODO: Production Values
 # TODO: (SW) Programmed Illusion
 # TODO: Project Hologram
 # TODO: (SW) Protection from Energy
@@ -256,6 +264,7 @@
 # TODO: Spot the Weakness
 # TODO: Stasis
 # TODO: Stasis Field
+# TODO: Stinger
 # TODO: Stun Dart
 # TODO: Stun Droid
 # TODO: Superior Translation Program
@@ -280,18 +289,9 @@
 # TODO: Truth Serum
 # TODO: Venomous Strike
 # TODO: Vertical Maneuvering
+# TODO: Wall Run
 # TODO: (SW) Wall of Light
 # TODO: Ward
 # TODO: (SW) Whirlwind
 # TODO: Will of the Force
 # TODO: Wrack
-# TODO: Stinger
-# TODO: Fabricate Minor Trap
-# TODO: Instant Translocation
-# TODO: Jump Jet
-# TODO: Wall Run
-# TODO: Heighten Senses
-# TODO: Phaseshift
-# TODO: (SW) Alter Self
-# TODO: Flaming Shots
-# TODO: Production Values
