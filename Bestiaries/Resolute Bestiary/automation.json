@@ -254,10 +254,8 @@
   {
     "name": "Bor Gullet",
     "ability": "Sense Thoughts",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The bor gullet targets a creature with which it has a psychic link. The bor gullet gains insight into the target's emotional state and any thoughts that loom large in its mind (including worries, loves, and hates). The bor gullet can also make a Charisma (Deception) check with advantage to deceive the target's mind into thinking it believes one idea or feels a particular emotion. The target contests this attempt with a Wisdom (Insight) check. If the bor gullet succeeds, the mind believes the deception for 1 hour or until evidence of the lie is presented to the target.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Brain Worm",

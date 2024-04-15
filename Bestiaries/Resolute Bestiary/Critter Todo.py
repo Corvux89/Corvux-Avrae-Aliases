@@ -1,4 +1,3 @@
-# TODO [Resolute Bestiary - Ground]: Bor Gullet (Sense Thoughts)
 # TODO [Resolute Bestiary - Ground]: Giant Worrt (Swallow)
 # TODO [Resolute Bestiary - Ground]: Grand Admiral (All-Out Attack (1/rest))
 # TODO [Resolute Bestiary - Ground]: Gundark, Alpha (Pummel)
