@@ -1,13 +1,14 @@
 import json
-import urllib.request
-
-import requests
+import urllib.request as rq
 
 url = "https://sw5eapi.azurewebsites.net/api/power"
-request = requests.get('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
-spells = json.loads(request.text)['data']['spells']
+# request = requests.get('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
+request = rq.urlopen('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
+spell_data = json.load(request)
 
-r = urllib.request.urlopen(url)
+spells = spell_data['data']['spells']
+
+r = rq.urlopen(url)
 
 site_spells = json.load(r)
 site_list = [x.get('name') for x in site_spells]
@@ -43,12 +44,12 @@ print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
       f"Missing Powers: {len(site_list)}")
 
 
-with open("Powers Todo.py", "w") as outfile:
+with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
     for x in site_list:
         outfile.write(f"# TODO: Missing {x}\n")
 
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")
 
-with open('spellbook.json', encoding='utf-8', mode="w+") as outfile:
+with open('Homebrew\\Resolute Spellbook\\spellbook.json', encoding='utf-8', mode="w+") as outfile:
     outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))

@@ -266,7 +266,6 @@
 # TODO: Stasis Field
 # TODO: Stinger
 # TODO: Stun Dart
-# TODO: Stun Droid
 # TODO: Superior Translation Program
 # TODO: Synchronicity
 # TODO: Tactical Superiority
