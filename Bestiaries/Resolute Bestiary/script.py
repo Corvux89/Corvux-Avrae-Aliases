@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-to_automate_keywords = ["saving throw", "dc", "shocked until", "gains"]
+to_automate_keywords = ["saving throw", "dc", "shocked until"]
 
 automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
 todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
