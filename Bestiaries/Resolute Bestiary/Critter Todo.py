@@ -1,5 +1,3 @@
-# TODO [Resolute Bestiary - Ground]: Wyyyschokk (Bite)
-# TODO [Resolute Bestiary - Ground]: Wyyyschokk (Web (Recharge 5-6))
 # TODO [Resolute Bestiary - Ground]: Zombie, Swarm (Flesh Entomb (5-6))
 # TODO [Resolute Bestiary - Ground]: Trooper, Engineer (Ion Carbine)
 # TODO [Resolute Bestiary - Ground]: Trooper, Engineer (Hold-out)

@@ -2804,6 +2804,10 @@
                                     "damage": "-{healing}"
                                 }
                             ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "If you or any friendly creatures you can touch regain hit points by spending one or more Hit Dice at the end of a short rest, each of those creatures regain 1d4 extra hit points.\n\nThis die increases when you reach certain levels in this class: 1d6 at 5th level, 1d8 at 9th level, 1d10 at 13th level, and to 1d12 at 17th level."
                         }
                     ]
                 }
