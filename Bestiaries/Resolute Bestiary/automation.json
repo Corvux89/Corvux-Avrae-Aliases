@@ -1106,195 +1106,38 @@
   {
     "name": "Zombie, Swarm",
     "ability": "Flesh Entomb (5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "A detached clump of corpses sprint at a creature the swarm can see within 30 feet of it. The target must succeed on a DC 16 Strength saving throw or take 14 (3d8) kinetic damage, and if the target is a Large or smaller creature, it becomes entombed in dead flesh.\nA creature entombed in the dead flesh is restrained, has total cover against attacks and other effects outside the dead flesh, and takes 10 (3d6) kinetic damage at the start of each of its turns. The creature can be freed if the dead flesh is destroyed. The dead flesh is a Large object with AC 10, 25 hit points, and immunity to poison and psychic damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Engineer",
     "ability": "Ion Carbine",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +6 to hit, range 60/240 ft., one target. *Hit:* 5 (1d4 + 3) ion damage plus 3 (1d6) lightning damage. On a hit, the target suffers the attack\u2019s normal effects and becomes shocked until the end of your next turn.",
-    "automation": {
-      "name": "Ion Carbine",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4 + 3 [ion] + 1d6 [lightning]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +6 to hit, range 60/240 ft., one target. *Hit:* 5 (1d4 + 3) ion damage plus 3 (1d6) lightning damage. On a hit, the target suffers the attack\u2019s normal effects and becomes shocked until the end of your next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Engineer",
     "ability": "Hold-out",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +6 to hit, range 30/120 ft., one target. *Hit:* 5 (1d4 + 3) energy damage plus 3 (1d6) lightning damage. On a hit, the target suffers the attack\u2019s normal effects and becomes shocked until the end of your next turn.",
-    "automation": {
-      "name": "Hold-out",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4 + 3 [energy] + 1d6 [lightning]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +6 to hit, range 30/120 ft., one target. *Hit:* 5 (1d4 + 3) energy damage plus 3 (1d6) lightning damage. On a hit, the target suffers the attack\u2019s normal effects and becomes shocked until the end of your next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Engineer",
     "ability": "Electroshock",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 9 (2d8) lightning damage. The engineer has advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit the target becomes shocked until the start of its next turn.",
-    "automation": {
-      "name": "Electroshock",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 [lightning]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 9 (2d8) lightning damage. The engineer has advantage on the attack roll if the target is made of metal or wearing armor made of metal. On a hit the target becomes shocked until the start of its next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Rocket Assault",
     "ability": "Rocket Launcher (Fragmentation) (5/Day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +5 to hit, range 150/600 ft., one target. *Hit:* 10 (2d6+3) kinetic damage. Hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 11 (2d10) kinetic damage on a failed save or half as much on a successful one.",
-    "automation": {
-      "name": "Rocket Launcher (Fragmentation) (5/Day)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6+3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +5 to hit, range 150/600 ft., one target. *Hit:* 10 (2d6+3) kinetic damage. Hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 11 (2d10) kinetic damage on a failed save or half as much on a successful one.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Rocket Assault",
     "ability": "Rocket Launcher (Ion) (1/Day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Ranged Weapon Attack:* +5 to hit, range 150/600 ft., one target. *Hit:* 10 (2d6+3) kinetic damage. Hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 7 (2d6) ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren\u2019t being worn or carried are disabled until rebooted.",
-    "automation": {
-      "name": "Rocket Launcher (Ion) (1/Day)",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d6+3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +5 to hit, range 150/600 ft., one target. *Hit:* 10 (2d6+3) kinetic damage. Hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking 7 (2d6) ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren\u2019t being worn or carried are disabled until rebooted.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "E-XD-Series Infiltrator Droid",

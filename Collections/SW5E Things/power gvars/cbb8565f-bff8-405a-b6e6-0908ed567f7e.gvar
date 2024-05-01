@@ -101,7 +101,7 @@ def processPower(args):
                 c.mod_cc("Turbulent Presence", -1)
                 out.append(f''' -f "Turbulent Presence (-1)|{c.cc_str("Turbulent Presence")}" ''')
             spell["name"] = "Turbulent Presence - Improved Battle Meditation"
-        elif spell.name == "Mater Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
+        elif spell.name == "Master Battle Meditation" and c.cc_exists("Legendary Battle Meditation"):
             if c.get_cc("Legendary Battle Meditation") and not a.get('p') and not ignore:
                 points = 0
                 c.mod_cc("Legendary Battle Meditation", -1)
@@ -145,8 +145,10 @@ def processPower(args):
 
     # Monk Vow of the Devoted
     elif 'devoted' in feats.get('Vows',[]) and cc == "Force Points":
-        if c.get_cc("Focus Points") and not ignore:
-            cc = f"Focus Points"
+        # Validate for multiclass
+        switch = True if not c.cc_exists(cc) or (c.get_cc(cc) and 'focus' in args) else False
+        if c.get_cc("Focus Points") and switch and not ignore:
+            cc = f"Focus Points" 
             points = points-1 if points > 0 else 0
 
     # --------------------
