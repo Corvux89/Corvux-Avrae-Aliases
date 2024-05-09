@@ -944,7 +944,15 @@
           "name": "Prone",
           "passive_effects": {
             "attack_advantage": -1
-          }
+          },
+          "buttons": [
+            {
+              "label": "Stand Up",
+              "verb": "Stands up",
+              "style": 1,
+              "automation": [{"type": "remove_ieffect"}]
+            }
+          ]
         }
       }
     }

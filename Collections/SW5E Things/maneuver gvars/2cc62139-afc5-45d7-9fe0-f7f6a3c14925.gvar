@@ -112,7 +112,8 @@ def maneuver(args):
                                            concentration=feature.effect.conc if "conc" in feature.effect else False,
                                            end=True if "end " in feature.effect else False,
                                            passive_effects=feature.effect.passive_effects if "passive_effects" in feature.effect else None,
-                                           parent=peff
+                                           parent=peff,
+                                           buttons=feature.buttons if "buttons" in feature else None
                                            )
             targetEffect.append(f'**Effect**: {eff}' if get("eff") else "")
 
@@ -147,7 +148,8 @@ def maneuver(args):
                                                duration=option.effect.duration if "duration" in option.effect else -1,
                                                concentration=option.effect.conc if "conc" in option.effect else False,
                                                passive_effects=option.effect.passive_effects if "passive_effects" in option.effect else None,
-                                               parent=peff)
+                                               parent=peff,
+                                               buttons=option.effect.buttons if "buttons" in option.effect else None)
                     s_str+=f"{eff}\n"
 
                 targetSave.append(f"{s_str}")
