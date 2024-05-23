@@ -1,4 +1,3 @@
-# TODO [Resolute Bestiary - Ground]: E-XD-Series Infiltrator Droid (Strike)
 # TODO [Resolute Bestiary - Ground]: Trooper, Shadow (Burst)
 # TODO [Resolute Bestiary - Ground]: Trooper, Shadow (Flash Grenade (recharge 5-6))
 # TODO [Resolute Bestiary - Ground]: Possessed Hunter (Shield Bash)
@@ -6,8 +5,6 @@
 # TODO [Resolute Bestiary - Ground]: Trooper, EVO (Flechette Cannon)
 # TODO [Resolute Bestiary - Ground]: Trooper, Shadow EVO (Burst)
 # TODO [Resolute Bestiary - Ground]: Trooper, Shadow EVO (Flechette Cannon)
-# TODO [Resolute Bestiary - Ground]: Cultist, Electromancer (Charged Touch)
-# TODO [Resolute Bestiary - Ground]: Cultist, Master (Charged Touch)
 # TODO [Resolute Bestiary - Ground]: Roggwart (Claw)
 # TODO [Resolute Bestiary - Ground]: Roggwart (Frightening Presence)
 # TODO [Resolute Bestiary - Ground]: Fireteam: Trooper (Massed Fire)

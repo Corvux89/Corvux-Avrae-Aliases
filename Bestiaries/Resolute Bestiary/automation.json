@@ -1142,39 +1142,8 @@
   {
     "name": "E-XD-Series Infiltrator Droid",
     "ability": "Strike",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage. The target must make a DC 17 Strength saving throw; on failure, it is either grappled (escape DC 17), pushed 5 feet away, or knocked prone (the droid's choice).",
-    "automation": {
-      "name": "Strike",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 10 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage. The target must make a DC 17 Strength saving throw; on failure, it is either grappled (escape DC 17), pushed 5 feet away, or knocked prone (the droid's choice).",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Shadow",
@@ -1318,76 +1287,14 @@
   {
     "name": "Cultist, Electromancer",
     "ability": "Charged Touch",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Force Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 7 (1d4+5) lightning damage. On a hit, the target must make a DC 17 Constitution save or be shocked until the end of its next turn.",
-    "automation": {
-      "name": "Charged Touch",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4+5 [lightning]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Force Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 7 (1d4+5) lightning damage. On a hit, the target must make a DC 17 Constitution save or be shocked until the end of its next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Cultist, Master",
     "ability": "Charged Touch",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Force Attack:* +10 to hit, reach 5 ft., one target. *Hit:* 7 (1d4+5) lightning damage. On a hit, the target must make a DC 18 Constitution save or be shocked until the end of its next turn.",
-    "automation": {
-      "name": "Charged Touch",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4+5 [lightning]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "10"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Force Attack:* +10 to hit, reach 5 ft., one target. *Hit:* 7 (1d4+5) lightning damage. On a hit, the target must make a DC 18 Constitution save or be shocked until the end of its next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Roggwart",
