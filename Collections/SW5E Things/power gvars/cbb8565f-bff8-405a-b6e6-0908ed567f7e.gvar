@@ -147,7 +147,7 @@ def processPower(args):
     elif 'devoted' in feats.get('Vows',[]) and cc == "Force Points":
         # Validate for multiclass
         switch = True if not c.cc_exists(cc) or (c.get_cc(cc) and 'focus' in args) else False
-        if c.get_cc("Focus Points") and switch and not ignore:
+        if c.cc_exists("Focus Points") and switch and not ignore:
             cc = f"Focus Points" 
             points = points-1 if points > 0 else 0
 

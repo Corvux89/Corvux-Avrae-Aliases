@@ -38,6 +38,7 @@ __Available Arguments__
 `-corruption` - Sets up the weapon as if it had the corruption property
 `-disarming` - Sets up the weapon as if it had the disarming property
 `-disintegrate` - Sets up the weapon as if it had the disintegrate property
+`-disruptive` - Sets up the weapon as if it had the disruptive property
 `-finesse` or `-mighty` - Replaces the stat used for rolls with either strength or dexterity (whichever is higher)
 `-heavy` - Sets up the weapon as if it had the heavy property
 `-igniting` - Sets up the weapon as if it had the igniting property

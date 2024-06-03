@@ -4,7 +4,6 @@
 # TODO: Missing Delayed Detonator
 # TODO: Missing Disassemble
 # TODO: Missing Fabricate
-# TODO: Missing Force Intuition
 # TODO: Missing Greater Kinetite
 # TODO: Missing Irradiate
 # TODO: Missing Itemize
@@ -20,7 +19,6 @@
 # TODO: Missing Spectrum Discharge
 # TODO: Missing Squad Shield
 # TODO: Missing Telepathic Link
-# TODO: Missing Transposition
 # TODO: Missing Tune-up
 # TODO: Missing Wakefulness
 # TODO: Missing Wire Tow

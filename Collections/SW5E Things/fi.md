@@ -1,0 +1,1 @@
+Force Intuition snippet for initiative

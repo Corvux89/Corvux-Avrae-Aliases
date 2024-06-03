@@ -379,6 +379,23 @@ def vicious(attack, args):
 
     return dump_json(vicious)
 
+def disruptive(attack, args):
+    a = load_json(attack)
+
+    text = {"type": "text", "title": "Disruptive Property", "text": "When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half."}
+
+    for n in a.automation:
+        if n.type == "target":
+            for e in n.effects:
+                if ('burst' or 'rapid' in a.name.lower()) and e.type == "save":
+                    e.fail.append(text)
+                elif e.type == "attack":
+                    e.hit.append(text)
+                    break
+
+    return dump_json(a)
+
+
 def blade_storm(attack, level, args):
     a = load_json(attack)
     damage = sup.get_damage_die(attack)
