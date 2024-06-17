@@ -86,7 +86,7 @@ def processPower(args):
     # --------------------
 
     # Sentinel - Path of Meditation
-    if "Meditation" in subclasses:
+    if "Meditation" in subclasses and 'base' not in args:
         if spell.name == "(SW) Guidance":
             spell["name"] = "(SW) Sage Counsel - Guidance"
         if spell.name == "Battle Meditation" and c.cc_exists("Unbreakable Focus"):
@@ -118,7 +118,7 @@ def processPower(args):
                 spell["name"] = "Growing Momentum - Burst of Speed"
 
     # Ideal of the Tranquil
-    elif c.cc_exists("Tranquil Force Points") and c.get_cc("Tranquil Force Points")>1:
+    elif c.cc_exists("Tranquil Force Points") and c.get_cc("Tranquil Force Points")>=1:
         tcost = min(c.get_cc("Tranquil Force Points"),points)
         points -= max(tcost,0)
         c.mod_cc("Tranquil Force Points", -tcost)

@@ -31,7 +31,7 @@ def maneuver(args):
     crit = 'crit' in args
     fail = 'fail' in args
     pss = 'pass' in args
-    superiorityDice = '1d4' if lvl < 5 or sm else '1d6' if lvl < 9 else '1d8' if lvl < 16 else '1d12'
+    superiorityDice = '1d4' if lvl < 5 or sm else '1d6' if lvl < 9 else '1d8' if lvl < 13 else '1d10' if lvl < 16 else '1d12'
     superiorityDice += f"mi{a.last('mi')}" if a.last('mi') else f"mi{2 if 'd4' in superiorityDice or 'd6' in superiorityDice else 3 if 'd8' in superiorityDice else 4 if 'd10' in superiorityDice else 5}" if "PerfectManeuver" in feats.get("Discoveries",[]) else ""
     superiorityDice = superiorityDice.replace('1d', '2d') + "kh1" if a.last('savage') or 'adv' in args else superiorityDice
 
@@ -239,6 +239,9 @@ def get_level():
 
     if load_json(c.get_cvar("subclass", "{}")).get("ScoutLevel", "") == "Deadeye":
         lvl = max(int(c.levels.get("Scout", 0)),lvl)
+
+    if load_json(c.get_cvar("subclass", "{}")).get("ConsularlightLevel", "") == "Tutelage (Companionless)":
+        lvl = max(int(c.levels.get('Consularlight', 0)),lvl)
 
     lvl = max(int(c.levels.get("Fighter",0)), int(c.levels.get("Scholar",0)), lvl)
 

@@ -7,6 +7,8 @@ additional_actions = ['8301258f-1c61-4ca7-bf04-11ed10b9d65d']
 additional_actions += load_json(get_svar("sw5e", "{}")).get('actions', [])
 race_gvars = ['9277baa7-c2cb-4993-874e-aa19d7b68065']
 race_gvars += load_json(get_svar("sw5e", "{}")).get('race', [])
+spell_gvars = ['fa1bf2fe-82cc-4f3e-bf72-119d4ceb0f16']
+spell_gvars += load_json(get_svar("sw5e", "{}")).get('spells', [])
 actionTracker = load_json(ch.get_cvar("swActionMods", "{}"))
 stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
 dagger = '†'
@@ -34,6 +36,7 @@ def level(args):
     err_str = []
     counters = []
     actions = []
+    spells = []
     out = []
     if stat:
         stat = f'{[x for x in stats if stat.lower() in x][0]}Mod'
@@ -96,6 +99,9 @@ def level(args):
         # Additional Actions and Feats
         add_act_str = additionalActions(actions, counters, stat)
 
+        # Spells
+        get_spell_override(playerArchetype, spells)
+
         # Setup Output
         c_str = "\n".join([f'{x.name} ({ch.get_cc_max(x.name)}/{ch.cc(x.name).reset_on} rest)' for x in counters])
         base += f''' -f  "Counter{'s' if len(counters) > 1 else ''}|{c_str}"'''
@@ -118,6 +124,9 @@ def level(args):
             out.append(f'{ctx.prefix}{raceBase}')
         if len(actions) > 0:
             out.append(f'{ctx.prefix}a import {actions}')
+        if len(spells) > 0:
+            for s in spells:
+                out.append(f'{ctx.prefix}sb add "{s}"')
     else:
         return f'''help {ctx.alias} -here'''
 
@@ -582,3 +591,15 @@ def format_cvar_name(name):
             formatted_name += char
 
     return formatted_name
+
+def get_spell_override(archetype, spells=[]):
+    if len(archetype) > 0:
+        for arch in archetype:
+            for g in spell_gvars:
+                overrides = load_json(get_gvar(g))
+                for a in overrides:
+                    if arch.subclass == a.archetype:
+                        for spell, override in a.spells.items():
+                            if len(ch.spellbook.find(spell.replace("(SW) ", "")))>0:
+                                spells.append(override)
+

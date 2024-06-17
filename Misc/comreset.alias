@@ -1,0 +1,16 @@
+<drac2>
+com = combat()
+out = []
+for c in com.combatants:
+    if c.type == "combatant":
+        value = f''' -f "{c.name}|'''
+        value += c.modify_hp(c.max_hp, overflow=False)
+
+        for e in c.effects:
+            value += f"\n{e.name} - Removed"
+            c.remove_effect(e.name)
+        value += f'''|inline"'''
+        out.append(value)
+
+return f'''embed -title "Combat Cleanup" {' '.join(out)} '''
+</drac2>

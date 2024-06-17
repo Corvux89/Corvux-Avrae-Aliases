@@ -1148,87 +1148,44 @@
   {
     "name": "Trooper, Shadow",
     "ability": "Burst",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper targets a 10 foot cube within 90/360 feet. Each creature in the area must succeed on a DC 14 Dexterity saving throw, or takes 11 (1d12+4) Energy damage. A target beyond 80 feet makes the save with advantage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Shadow",
     "ability": "Flash Grenade (recharge 5-6)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper throws a grenade at a point within 40 feet. Each creature within 10 feet must make a DC 14 Constitution saving throw. On a failed save, a creature is blinded for 1 minute. At the start of an affected creature\u2019s turn, it can repeat this save, ending the effect on a success.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Possessed Hunter",
     "ability": "Shield Bash",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 5 (1d4 + 3) kinetic damage. If the target is Large or smaller, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
-    "automation": {
-      "name": "Shield Bash",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d4 + 3 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "6"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 5 (1d4 + 3) kinetic damage. If the target is Large or smaller, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, EVO",
     "ability": "Burst",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper targets a 10 foot cube within 60 feet with burst fire. Each creature in the area must succeed on a DC 13 Dexterity saving throw, or takes 7 (1d6+3) Energy damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, EVO",
     "ability": "Flechette Cannon",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper fires a volley of flechettes in a 45-foot long, 5-foot wide line, originating from itself. Each creature in the line must make a DC 14 Dexterity saving throw, taking 11 (2d10) Kinetic damage on failure or half as much on success.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Shadow EVO",
     "ability": "Burst",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper targets a 10 foot cube within 60 feet with burst fire. Each creature in the area must succeed on a DC 14 Dexterity saving throw, or takes 8 (1d6+4) Energy damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Shadow EVO",
     "ability": "Flechette Cannon",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper fires a volley of flechettes in a 45-foot long, 5-foot wide line, originating from itself. Each creature in the line must make a DC 14 Dexterity saving throw, taking 11 (2d10) Kinetic damage on failure or half as much on success.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Dark Trooper, Phase 0",
@@ -1299,47 +1256,14 @@
   {
     "name": "Roggwart",
     "ability": "Claw",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage, and the target is grappled (escape DC 17). While grappled in this way, the target is restrained.",
-    "automation": {
-      "name": "Claw",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "2d8 + 5 [kinetic]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "9"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +9 to hit, reach 5 ft., one target. *Hit:* 14 (2d8 + 5) kinetic damage, and the target is grappled (escape DC 17). While grappled in this way, the target is restrained.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Roggwart",
     "ability": "Frightening Presence",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature of the roggwart's choice that is within 120 feet of the roggwart and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the roggwart's Frightful Presence for the next 24 hours.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Fireteam: B2-A Super Battle Droid",
@@ -1350,74 +1274,56 @@
   {
     "name": "Fireteam: Trooper",
     "ability": "Massed Fire",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The fireteam fires en masse at a point within 150 feet Each creature of the squad's choice in a 5-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 18 (4d8) energy damage, or 9 (2d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Demolitions",
     "ability": "Fragmentation Grenade (3/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The trooper throws a grenade, choosing a point within 35 feet. Each creature within 10 feet must make a DC 12 Dexterity saving throw. A creature takes 2d6 kinetic damage on a failed save, or half as much as on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Demolitions",
     "ability": "Set Mine (2/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After setting this mine, a laser line imperceptible to normal vision extends up to 15 feet out. When the laser is tripped, the mine explodes, and each creature within 15 feet of it must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 kinetic damage, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Trooper, Demolitions",
     "ability": "Breaching Charge (2/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After spending at least 30 seconds setting the charge, the trooper may attach the charge to a surface. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator, which the trooper has. Once detonated, the breaching charge destroys an unenhanced section of wall up to 10 feet wide, 10 feet tall, and 5 feet deep. Additionally, each creature within 20 feet of the charge must make a DC 15 Dexterity saving throw. A creature takes 3d6 fire damage and 3d6 kinetic damage on a failed save, or half as much on a successful one. A construct makes this save with disadvantage. If the breaching charge is installed on the construct, it automatically fails the saving throw.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Squad: Trooper, Demolitions",
     "ability": "Fragmentation Grenades (6/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "The fireteam throws grenades, choosing two points within 45 feet. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 4d6 kinetic damage on a failed save, or half as much as on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Squad: Trooper, Demolitions",
     "ability": "Set Mine (4/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After setting this mine, a laser line imperceptible to normal vision extends up to 15 feet out. When the laser is tripped, the mine explodes, and each creature within 15 feet of it must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 kinetic damage, or half as much on a successful one.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Squad: Trooper, Demolitions",
     "ability": "Breaching Charge (4/day)",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "After spending at least 30 seconds setting the charge, the fireteam may attach the charge to a surface. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator, which the trooper has. Once detonated, the breaching charge destroys an unenhanced section of wall up to 10 feet wide, 10 feet tall, and 5 feet deep. Additionally, each creature within 20 feet of the charge must make a DC 15 Dexterity saving throw. A creature takes 3d6 fire damage and 3d6 kinetic damage on a failed save, or half as much on a successful one. A construct makes this save with disadvantage. If the breaching charge is installed on the construct, it automatically fails the saving throw.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Fireteam: Trooper, Flame",
     "ability": "Flamethrower",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature in a 30-foot cone must make a DC 14 Dexterity saving throw. A creature takes 15 (4d8) fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Squad: Trooper, Flame",
     "ability": "Flamethrower",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "Each creature in a 45-foot cone must make a DC 14 Dexterity saving throw. A creature takes 15 (4d8) fire damage on a failed save, or half as much on a successful one. The fire ignites any flammable objects in the area that aren't being worn or carried.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Zombie, Alchemy",
@@ -1428,76 +1334,26 @@
   {
     "name": "Yevethan Commando",
     "ability": "Dewclaw",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 3) slashing damage and 7 (2d6) poison damage. On a successful hit, the target must make a DC 13 Constitution saving throw or be Poisoned until the end of their next turn.",
-    "automation": {
-      "name": "Dewclaw",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 3 [slashing] + 2d6 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 3) slashing damage and 7 (2d6) poison damage. On a successful hit, the target must make a DC 13 Constitution saving throw or be Poisoned until the end of their next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "Yevethan Supercommando",
     "ability": "Dewclaw",
-    "complete": false,
-    "source": "Resolute Bestiary - Ground",
-    "description": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 3) slashing damage and 7 (2d6) poison damage. On a successful hit, the target must make a DC 13 Constitution saving throw or be Poisoned until the end of their next turn.",
-    "automation": {
-      "name": "Dewclaw",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "attack",
-              "hit": [
-                {
-                  "type": "damage",
-                  "damage": "1d6 + 3 [slashing] + 2d6 [poison]",
-                  "overheal": false
-                }
-              ],
-              "miss": [],
-              "attackBonus": "5"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 5 (1d6 + 3) slashing damage and 7 (2d6) poison damage. On a successful hit, the target must make a DC 13 Constitution saving throw or be Poisoned until the end of their next turn.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Force of Personality",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Legendary Wookiee Smuggler",
+    "ability": "Unarmed Strike",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
   },
   {
     "name": "TIE/LN Starfighter",

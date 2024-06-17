@@ -2,7 +2,6 @@ import json
 import urllib.request as rq
 
 url = "https://sw5eapi.azurewebsites.net/api/power"
-# request = requests.get('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
 request = rq.urlopen('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
 spell_data = json.load(request)
 
@@ -12,6 +11,13 @@ r = rq.urlopen(url)
 
 site_spells = json.load(r)
 site_list = [x.get('name') for x in site_spells]
+
+# Expanded Tech Powers
+# https://www.gmbinder.com/share/-MDp2nOeGD6JJLxNM_lT
+# Expanded Force Powers
+# https://www.gmbinder.com/share/-MDosNzOCLn0_ColYfBf
+with open("Homebrew\expanded.json", "r") as outfile:
+    expanded_list = json.load(outfile)
 
 out_dict = {}
 
@@ -37,16 +43,22 @@ for sp in spells:
     if formatted_name in site_list:
         site_list.remove(formatted_name)
 
+    if formatted_name in expanded_list:
+        expanded_list.remove(formatted_name)
+
 
 print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
       f"Force Powers: {out_dict['Force']}\n"
       f"Tech Power: {out_dict['Tech']}\n"
-      f"Missing Powers: {len(site_list)}")
+      f"Missing Powers: {len(site_list)+len(expanded_list)}")
 
 
 with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
     for x in site_list:
-        outfile.write(f"# TODO: Missing {x}\n")
+        outfile.write(f"# TODO: Source Missing {x}\n")
+
+    for x in expanded_list:
+        outfile.write(f"# TODO: Expanded Missing {x}\n")
 
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")

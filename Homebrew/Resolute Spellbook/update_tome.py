@@ -14,3 +14,8 @@ tome = json.loads(request.text)['data']
 tome['spells'] = data
 
 out = requests.put(url, json=tome, headers=header)
+
+if out.status_code != 200:
+    print(out.text)
+else:
+    print("Complete!")
