@@ -42,7 +42,7 @@
     "cvars": {
       "race": "Cathar",
       "size": "Medium",
-      "speed": "30 ft., Climb 20 ft.",
+      "speed": "30 ft., Climb 30 ft.",
       "creatureType": "Humanoid",
       "languages": "Galactic Basic, Catharese",
       "senses": "Darkvision 60 ft."
@@ -63,7 +63,7 @@
                   "hit": [
                     {
                       "type": "damage",
-                      "damage": "1d6 [kinetic]"
+                      "damage": "1d6+{max(strengthMod,dexterityMod)} [kinetic]"
                     }
                   ],
                   "miss": []

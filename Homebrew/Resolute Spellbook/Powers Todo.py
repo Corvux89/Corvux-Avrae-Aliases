@@ -1,12 +1,3 @@
-# TODO: Source Missing Cryogenic Blow
-# TODO: Source Missing Delayed Detonator
-# TODO: Source Missing Disassemble
-# TODO: Source Missing Fabricate
-# TODO: Source Missing Greater Kinetite
-# TODO: Source Missing Irradiate
-# TODO: Source Missing Itemize
-# TODO: Source Missing Jump
-# TODO: Source Missing Jump Pad
 # TODO: Source Missing Land Stride
 # TODO: Source Missing Lesser Mislead
 # TODO: Source Missing Mutate/Augment
@@ -51,7 +42,6 @@
 # TODO: Expanded Missing Wrathful Blow
 # TODO: Expanded Missing Channel Pain
 # TODO: Expanded Missing Control Force
-# TODO: Expanded Missing Falling Star
 # TODO: Expanded Missing Force Grip
 # TODO: Expanded Missing Force Lift
 # TODO: Expanded Missing Force Listening
@@ -177,7 +167,6 @@
 # TODO: Expanded Missing Courser's Mark
 # TODO: Expanded Missing Create Poison
 # TODO: Expanded Missing Deep Freeze
-# TODO: Expanded Missing Delayed Detonator
 # TODO: Expanded Missing Distort Value
 # TODO: Expanded Missing Electromagnetic Pulse
 # TODO: Expanded Missing Energy Alteration
@@ -187,7 +176,6 @@
 # TODO: Expanded Missing Expand Ward
 # TODO: Expanded Missing Filter Air
 # TODO: Expanded Missing Healing Factor
-# TODO: Expanded Missing Jump
 # TODO: Expanded Missing Ripen
 # TODO: Expanded Missing Lash Object
 # TODO: Expanded Missing Lesser Mutation
@@ -225,7 +213,6 @@
 # TODO: Expanded Missing Conserve Air
 # TODO: Expanded Missing Continual Light
 # TODO: Expanded Missing Courser's Defense
-# TODO: Expanded Missing Data Thief
 # TODO: Expanded Missing Defensive Perimeter
 # TODO: Expanded Missing Density Projector
 # TODO: Expanded Missing Enhance Armor
@@ -283,7 +270,6 @@
 # TODO: Expanded Missing Explosive Cloud
 # TODO: Expanded Missing Flash Freeze
 # TODO: Expanded Missing Gravitic Beam
-# TODO: Expanded Missing Greater Accelerate
 # TODO: Expanded Missing Greater Enhance Armor
 # TODO: Expanded Missing Greater Poison Dart
 # TODO: Expanded Missing Holographic Decoy
@@ -380,7 +366,6 @@
 # TODO: Expanded Missing Vortex Beam
 # TODO: Expanded Missing Adaptive Field
 # TODO: Expanded Missing Carbon Impact
-# TODO: Expanded Missing Disassemble
 # TODO: Expanded Missing Failsafe
 # TODO: Expanded Missing Greater Disperse Energy
 # TODO: Expanded Missing Interdiction
@@ -540,7 +525,6 @@
 # TODO: Instant Translocation
 # TODO: Invisibility to Cameras
 # TODO: (SW) Invulnerability
-# TODO: Ionic Bond
 # TODO: Jet of Flame
 # TODO: Jump Jet
 # TODO: Kill
@@ -627,7 +611,6 @@
 # TODO: Sensor Probe
 # TODO: Sever Force
 # TODO: Shadow Sight
-# TODO: Share Life
 # TODO: Shocking Ray
 # TODO: Shocking Shield
 # TODO: Short Circuit

@@ -3014,6 +3014,88 @@
     "concentration": false
   },
   {
+    "name": "Cryogenic Blow",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "1d6 [cold]",
+            "higher": {
+              "2": "1d6",
+              "3": "2d6",
+              "4": "3d6",
+              "5": "4d6",
+              "6": "5d6",
+              "7": "6d6",
+              "8": "7d6",
+              "9": "8d6"
+            }
+          },
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Slowed",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "str",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Slow",
+                    "verb": "attempts to resist slow",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ]
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "The next time you hit a creature with a weapon attack during this power\u2019s duration, the attack deals an extra 1d6 cold damage to the target. The target must make a Strength saving throw. On a failed save, it gains a level of slowed for the duration. At the start of each of its turns, the target can repeat the saving throw, ending the effect on itself on a success.\n\nOvercharge Tech. If you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "The next time you hit a creature with a weapon attack during this power\u2019s duration, the attack deals an extra 1d6 cold damage to the target. The target must make a Strength saving throw. On a failed save, it gains a level of slowed for the duration. At the start of each of its turns, the target can repeat the saving throw, ending the effect on itself on a success.\n\nOvercharge Tech. If you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Cryogenic Burst",
     "level": 0,
     "school": "Tech",
@@ -3561,6 +3643,31 @@
     "concentration": false
   },
   {
+    "name": "Data Thief",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You touch a computer and instantly copy all of the data stored on the computer onto an empty datacard. Any files that are password protected or encrypted are still that way when copied. The datacard can hold any amount of data from one computer at once."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You touch a computer and instantly copy all of the data stored on the computer onto an empty datacard. Any files that are password protected or encrypted are still that way when copied. The datacard can hold any amount of data from one computer at once.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Death Field",
     "level": 8,
     "school": "Force",
@@ -3704,6 +3811,82 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You touch a creature that has died within the last minute and administer a shock to restore it to life. That creature returns to life with 1 hit point. This power can't return to life a creature that has died of old age, nor can it restore any missing body parts. If the creature is lacking body parts or organs integral for its survival\ufffdits head, for instance\ufffdthe power automatically fails. Once this power has restored a creature to life, it cannot benefit from this power again until it finishes a short or long rest.",
+    "concentration": false
+  },
+  {
+    "name": "Delayed Detonator",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Detonator launched",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Detonate Explosive",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "1d8 [fire] + 1d8 [kinetic]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage})/2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "When the detonator explodes, each creature within 5 feet of the point must make a Dexterity saving throw. A creature takes 1d8 fire damage and 1d8 kinetic damage on a failed save, or half as much damage on a successful one."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a point you can see within range. You launch a detonator at that point, which remains there until the start of your next turn, when it explodes, ending the power. You can also use your reaction at any point during the power\u2019s duration to cause the detonator to explode early. When the detonator explodes, each creature within 5 feet of the point must make a Dexterity saving throw. A creature takes 1d8 fire damage and 1d8 kinetic damage on a failed save, or half as much damage on a successful one.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can launch an additional detonator at another point you can see within range for each slot level above 1st. The detonators all explode simultaneously. A creature in the area of more than one detonator when they explode is only affected once."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "Choose a point you can see within range. You launch a detonator at that point, which remains there until the start of your next turn, when it explodes, ending the power. You can also use your reaction at any point during the power\u2019s duration to cause the detonator to explode early. When the detonator explodes, each creature within 5 feet of the point must make a Dexterity saving throw. A creature takes 1d8 fire damage and 1d8 kinetic damage on a failed save, or half as much damage on a successful one.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can launch an additional detonator at another point you can see within range for each slot level above 1st. The detonators all explode simultaneously. A creature in the area of more than one detonator when they explode is only affected once.",
+    "higherlevels": "",
     "concentration": false
   },
   {
@@ -4015,6 +4198,43 @@
     "ritual": false,
     "description": "Choose a point that you can see within range. Each droid or construct must succeed on a Constitution saving throw or be paralyzed for the duration. At the beginning of each of its turns, an affected creature takes energy damage equal to your forcecasting ability modifier and then repeats this saving throw. On a success, the power ends on the target.",
     "concentration": true
+  },
+  {
+    "name": "Disassemble",
+    "level": 7,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "int",
+            "fail": [],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "One constructed object up to 100 lbs. in weight that you touch falls to pieces, separating into its component parts. For instance, a vibrosword separates into a blade, handle, oscillator, and guard, while a hovercart collapses into a repulsor engine, bolts, and metal panels. If the object is being worn, carried, or operated by a creature, the creature can make an Intelligence saving throw. On a successful save, the item is unaffected."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "One constructed object up to 100 lbs. in weight that you touch falls to pieces, separating into its component parts. For instance, a vibrosword separates into a blade, handle, oscillator, and guard, while a hovercart collapses into a repulsor engine, bolts, and metal panels. If the object is being worn, carried, or operated by a creature, the creature can make an Intelligence saving throw. On a successful save, the item is unaffected.",
+    "higherlevels": "",
+    "concentration": false
   },
   {
     "name": "(SW) Disintegrate",
@@ -5122,6 +5342,31 @@
     "concentration": false
   },
   {
+    "name": "Fabricate",
+    "level": 4,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You convert raw materials into products of the same material.\nFor example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from bantha hide.\n\nChoose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of raw material. If you are working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a single 5-foot cube). The quality of objects made by the power is commensurate with the quality of the raw materials.\n\nCreatures or enhanced items can\u2019t be created by this power. You also can\u2019t use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, weapons, glass, or armor, unless you have proficiency with the type of tool used to craft such objects."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "10 minutes",
+    "range": "10 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You convert raw materials into products of the same material.\nFor example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from bantha hide.\n\nChoose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of raw material. If you are working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a single 5-foot cube). The quality of objects made by the power is commensurate with the quality of the raw materials.\n\nCreatures or enhanced items can\u2019t be created by this power. You also can\u2019t use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, weapons, glass, or armor, unless you have proficiency with the type of tool used to craft such objects.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Fabricate Minor Trap",
     "level": 1,
     "school": "Tech",
@@ -5155,6 +5400,164 @@
     "duration": "Until dispelled or triggered",
     "ritual": false,
     "description": "When you cast this power, you create a trap that will later trigger in response to a certain condition. You must attach it either to a surface (such as a table or a section of floor or wall) or within an object that can be closed or turned on (such as a book, door, or computer terminal) to conceal the trap. The trap can cover an area no larger than 10 feet in diameter. At the GM's discretion, certain actions may cause the trap to break or be rendered inoperative.\r\n\r\nThe trap is well disguised, and generally and requires a successful Intelligence (Investigation) check against your tech save DC to be found.\r\n\r\nYou decide what triggers the trap when you cast the power, such as entering a certain area or powering on the object. You can further refine the trigger so the trap activates only under certain circumstances or according to physical characteristics (such as height or weight) or creature kind (for example, the trap could be set to go off only droids or gungans). You can also set conditions for creatures that don't trigger the trap, such as those who say a certain password.\r\n\r\nYou may only have one instance of this trap active at a time. If you cast another trap before the previous one is triggered, the other trap becomes inert.\r\n\r\nWhen you create the trap, choose an explosive trap or a power trap:\r\n\r\n***Explosive Trap.*** When triggered, the trap erupts in a 20-foot-radius sphere centered on the trap. The explosion spreads around corners. Each creature in the area must make a Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or sonic damage on a failed saving throw (your choice when you create the trap), or half as much damage on a successful one.\r\n\r\n***Power Trap.*** You can store a prepared tech power of 3rd level or lower in the trap by casting it as part of creating the trap. The trap must target a single creature or an area. The power being stored has no immediate effect when cast in this way. When the trap is triggered, the stored power is cast. If the trap has a target, it targets the creature that triggered the trap. If the power affects an area, the area is centered on that creature. If the power requires concentration, it lasts until the end of its full duration.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the damage of an explosive trap increases by 1d8 for each slot level above 3rd. If you create a power trap, you can store any power of up to the same level as the slot you use for this power.",
+    "concentration": false
+  },
+  {
+    "name": "Falling Nova",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d10 [force]",
+        "name": "damage",
+        "higher": {
+          "4": "1d10",
+          "5": "2d10",
+          "6": "3d10",
+          "7": "4d10",
+          "8": "5d10",
+          "9": "6d10"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You leap to an unoccupied space on the ground that you can see within 60 feet of you without provoking opportunity attacks. This power fails if you don't have room to leap at least 10 feet in the air.\n\nEach creature within 10 feet of you when you land must make a Dexterity saving throw. A creature takes 4d10 force damage on a failed save, or half as much damage on a successful one.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You leap to an unoccupied space on the ground that you can see within 60 feet of you without provoking opportunity attacks. This power fails if you don't have room to leap at least 10 feet in the air.\n\nEach creature within 10 feet of you when you land must make a Dexterity saving throw. A creature takes 4d10 force damage on a failed save, or half as much damage on a successful one.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d10 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Falling Star",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "variable",
+            "name": "numDie",
+            "value": "min(floor(int(choice)/10),20)"
+          },
+          {
+            "type": "roll",
+            "dice": "{numDie}d6",
+            "name": "damage"
+          },
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "save",
+                "stat": "str",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "{damage} [force]"
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "({damage})/2 [force]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "condition",
+            "condition": "int(choice) >=30 and int(spell_level) < 5",
+            "onTrue": [
+              {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                  {
+                    "type": "condition",
+                    "condition": "int(choice) > 100",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "{damage} [kinetic]"
+                      }
+                    ],
+                    "onFalse": []
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Stunned",
+                    "duration": "2",
+                    "end": true,
+                    "desc": "A stunned creature is incapacitated (see the condition), can\u2019t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+                  }
+                ]
+              }
+            ],
+            "onFalse": []
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify the fall distance in feet. Ex: `-choice 30`"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power, choose an unoccupied space within range. You move to that location and instantly crash to the ground directly beneath that space, accompanied by a flash of power. As long as your fall was no more than 100 feet, you take no falling damage, and each creature within 5 feet of you when you land must make a Strength saving throw. On a failed save, a creature takes force damage equal to the amount of falling damage you would have taken, or half as much damage on a successful one. For example, if you fell a total of 20 feet, a creature would take 2d6 force damage. If you would land on a creature, you immediately move to the nearest open space. If you fell 30 feet or more, you are stunned until the end of your next turn.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, there is no longer any restriction on the length of your fall, and you are not stunned after falling."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you are falling or after jumping",
+    "range": "15 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "When you cast this power, choose an unoccupied space within range. You move to that location and instantly crash to the ground directly beneath that space, accompanied by a flash of power. As long as your fall was no more than 100 feet, you take no falling damage, and each creature within 5 feet of you when you land must make a Strength saving throw. On a failed save, a creature takes force damage equal to the amount of falling damage you would have taken, or half as much damage on a successful one. For example, if you fell a total of 20 feet, a creature would take 2d6 force damage. If you would land on a creature, you immediately move to the nearest open space. If you fell 30 feet or more, you are stunned until the end of your next turn.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, there is no longer any restriction on the length of your fall, and you are not stunned after falling.",
     "concentration": false
   },
   {
@@ -7168,6 +7571,55 @@
     "concentration": true
   },
   {
+    "name": "Greater Accelerate",
+    "level": 3,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "10d6 [kinetic]",
+                "higher": {
+                  "4": "2d6",
+                  "5": "4d6",
+                  "6": "6d6",
+                  "7": "8d6",
+                  "8": "10d6",
+                  "9": "12d6"
+                }
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You propel a projectile with extreme accuracy, targeting a creature within range. Make a ranged tech attack. On a hit, the creature takes 10d6 kinetic damage. This attack has a critical hit range of 3.\n\n**Overcharge Tech.** When you cast this power with a tech slot of 4th level or higher, the damage increases by 2d6 for each slot level above 3rd.\n\n**Tip** Use the `-criton` parameter to modify the spells crit range. Ex: `-criton 17`"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "500 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You propel a projectile with extreme accuracy, targeting a creature within range. Make a ranged tech attack. On a hit, the creature takes 10d6 kinetic damage. This attack has a critical hit range of 3.\n\n**Overcharge Tech.** When you cast this power with a tech slot of 4th level or higher, the damage increases by 2d6 for each slot level above 3rd.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Greater Analyze",
     "level": 5,
     "school": "Tech",
@@ -7397,6 +7849,129 @@
     "duration": "up to 10 minutes",
     "ritual": false,
     "description": "You create an image no larger than a 20 foot cube. It appears at a spot you can see and lasts for the duration. It seems completely real, sounds and other sensory effects included. You can't create a sensory effect strong enough to cause damage or a condition.\r\n\r\nAs long as you are within range of the illusion, you can use your action to make the image to move to any other spot within range. As the image changes location, you can alter it so that its movements appear natural for the image.\r\n\r\nPhysical interaction with the image reveals it as an illusion. A creature can use its action to determine that it's an illusion with a successful Investigation check. If a creature learns it's an illusion, it can see through the image, and the other sensory qualities become faint to it.\r\n\r\n***Overcharge Tech.*** The power lasts until dispelled without requiring concentration if cast at 6th-level or higher.",
+    "concentration": true
+  },
+  {
+    "name": "Greater Kinetite",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "5",
+        "higher": {
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "roll",
+        "dice": "5d8 [lightning]",
+        "name": "damage",
+        "higher": {
+          "6": "1d8",
+          "7": "2d8",
+          "8": "3d8",
+          "9": "4d8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Greater Kinetite - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Greater Kinetite - Ram",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[-1]}d8 [kinetic]",
+                          "name": "damage"
+                        },
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage})/2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "text": "As a bonus action on each of your turns, you can move the ball of lightning up to 30 feet vertically or horizontally. If you ram the sphere into a creature, that creature must make a Dexterity saving throw or take {ieffect.desc.split()[-1]}d8 kinetic damage (or half as much damage on a success), and the sphere stops moving this turn. A creature takes half as damage on a successful Dexterity saving throw."
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 3
+                }
+              }
+            ],
+            "desc": "{numDie}",
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A 5-foot diameter sphere of compressed lightning appears in an unoccupied space of your choice and lasts for the duration. Each creature within 5 feet of the sphere when the power is cast must make a Dexterity saving throw. A creature takes 5d8 lightning damage on a failed save, or half as much damage on a successful one.\n\nAs a bonus action on each of your turns, you can move the ball of lightning up to 30 feet vertically or horizontally. If you ram the sphere into a creature, that creature must make a Dexterity saving throw or take 5d8 kinetic damage (or half as much damage on a success), and the sphere stops moving this turn. A creature takes half as damage on a successful Dexterity saving throw.\n\n**Force Potency.** When you cast this power with a force slot of 6th level or higher, both the lightning and kinetic damage increase by 1d8 for each slot level above 5th."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "A 5-foot diameter sphere of compressed lightning appears in an unoccupied space of your choice and lasts for the duration. Each creature within 5 feet of the sphere when the power is cast must make a Dexterity saving throw. A creature takes 5d8 lightning damage on a failed save, or half as much damage on a successful one.\n\nAs a bonus action on each of your turns, you can move the ball of lightning up to 30 feet vertically or horizontally. If you ram the sphere into a creature, that creature must make a Dexterity saving throw or take 5d8 kinetic damage (or half as much damage on a success), and the sphere stops moving this turn. A creature takes half as damage on a successful Dexterity saving throw.\n\n**Force Potency.** When you cast this power with a force slot of 6th level or higher, both the lightning and kinetic damage increase by 1d8 for each slot level above 5th.",
     "concentration": true
   },
   {
@@ -9756,6 +10331,76 @@
     "name": "Ionic Bond",
     "level": 1,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Ionic Bond - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Ionic Bond - Damage",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "children",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "1d8 [ion]"
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 3
+                }
+              }
+            ],
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "1d8 [ion]",
+                "higher": {
+                  "2": "1d8",
+                  "3": "2d8",
+                  "4": "3d8",
+                  "5": "4d8",
+                  "6": "5d8",
+                  "7": "6d8",
+                  "8": "7d8",
+                  "9": "8d8"
+                }
+              },
+              {
+                "type": "ieffect2",
+                "name": "Bonded by {name}",
+                "parent": "peff"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A beam of ion energy lances out toward a creature within range, forming a sustained line between you and the target. Make a ranged tech attack against that creature. On a hit, the target takes 1d8 ion damage, and on each of your turns for the duration, you can use a bonus action to deal 1d8 ion damage to the target automatically. The power ends if you use your bonus action to do anything else. The power also ends if the target is ever outside the power's range or if it has total cover from you.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the initial damage increases by 1d8 for each slot level above 1st."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 bonus action",
@@ -9827,6 +10472,128 @@
     "concentration": false
   },
   {
+    "name": "Irradiate",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d10 [necrotic]",
+        "name": "damage",
+        "higher": {
+          "3": "1d10",
+          "4": "2d10",
+          "5": "3d10",
+          "6": "4d10",
+          "7": "5d10",
+          "8": "6d10",
+          "9": "7d10"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              },
+              {
+                "type": "ieffect2",
+                "name": "Exhaustion (1 level)",
+                "effects": {
+                  "check_dis": [
+                    "all"
+                  ]
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resis Exhaustion",
+                    "verb": "attempts to resist exhaustion",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "parent": "ieffect"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A surge of radiation washes over a creature within range. The creature must make a Constitution saving throw. On a failed save, the target takes 3d10 necrotic damage and suffers one level of exhaustion, which lasts for the duration. On a successful save, the target takes half as much damage and does not suffer a level of exhaustion. A creature exhausted by this power can make a Constitution saving throw at the end of each of its turns. On a successful save, the power ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "A surge of radiation washes over a creature within range. The creature must make a Constitution saving throw. On a failed save, the target takes 3d10 necrotic damage and suffers one level of exhaustion, which lasts for the duration. On a successful save, the target takes half as much damage and does not suffer a level of exhaustion. A creature exhausted by this power can make a Constitution saving throw at the end of each of its turns. On a successful save, the power ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
+    "name": "Itemize",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You instantly learn the exact quantity of one type of item within 30 feet of you. It must be a type of item that you\u2019ve handled in the past; you can\u2019t, for example, use *itemize* to find out how many BKGs are nearby if you\u2019ve never handled such a weapon. The object being itemized must also be reasonably specific. You can learn how many meilooruns are nearby, for example, but not how much fruit."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You instantly learn the exact quantity of one type of item within 30 feet of you. It must be a type of item that you\u2019ve handled in the past; you can\u2019t, for example, use *itemize* to find out how many BKGs are nearby if you\u2019ve never handled such a weapon. The object being itemized must also be reasonably specific. You can learn how many meilooruns are nearby, for example, but not how much fruit.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Jet of Flame",
     "level": 0,
     "school": "Tech",
@@ -9842,6 +10609,42 @@
     "duration": "10 minutes",
     "ritual": false,
     "description": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The power ends if you dismiss it as an action or if you cast it again.\r\n\r\nYou can also attack with the flame, although doing so ends the power. When you cast this power, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged tech attack. On a hit, the target takes 1d8 fire damage. The fire ignites any flammable objects in the area that aren't being worn or carried.\r\n\r\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "concentration": false
+  },
+  {
+    "name": "Jump",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Jump Boosted",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch a creature. The creature\u2019s jump distance is tripled until the power ends."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You touch a creature. The creature\u2019s jump distance is tripled until the power ends.",
+    "higherlevels": "",
     "concentration": false
   },
   {
@@ -9862,6 +10665,91 @@
     "ritual": false,
     "description": "You boost yourself through the air with a brief surge of repulsor energy. You can rise a number of feet equal to 20 x your techcasting ability modifier. You can also move a number of feet horizontally during any part of the movement equal to 5 x your techcasting ability modifier. At the end of the turn on which you cast this power, you float gently to the ground if you are still aloft.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, you can rise an additional 20 feet, and move horizontally by another 5 feet for each slot level above 1st.",
     "concentration": false
+  },
+  {
+    "name": "Jump Pad",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Jump Pad - Parent",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Jump Pad - Bounce",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "1d8",
+                      "name": "direction",
+                      "displayName": "Involuntary Bounce Direction"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "condition",
+                          "condition": "target.resistances.is_immune('bounce')",
+                          "onTrue": [],
+                          "onFalse": [
+                            {
+                              "type": "save",
+                              "stat": "dex",
+                              "fail": [],
+                              "success": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              }
+            ],
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Designated Bouncer",
+            "effects": {
+              "immunities": [
+                "bounce"
+              ]
+            },
+            "parent": "peff"
+          }
+        ]
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "UP to 1 minute",
+    "ritual": false,
+    "description": "You create a bouncy surface in a 5-foot square on a surface within range. When you cast the power, you can designate creatures that can safely use the jump pad. For the duration, whenever a creature you haven\u2019t chosen enters the affected area, it must make a Dexterity saving throw or be launched 10 feet upwards, and 5 feet horizontally in a random direction. To determine the direction, roll a d8 and assign a direction to each die face.\n\nWhile a creature you have chosen (or a creature that has succeeded its Dexterity saving throw) is in the area, it can use its reaction to jump with the aid of the bouncy surface. The creature\u2019s jump distance for this jump is multiplied by 5.",
+    "higherlevels": "",
+    "concentration": true
   },
   {
     "name": "Kill",
@@ -15350,6 +16238,41 @@
     "name": "Share Life",
     "level": 3,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "4d8 [necrotic]",
+            "higher": {
+              "4": "1d8",
+              "5": "2d8",
+              "6": "3d8",
+              "7": "4d8",
+              "8": "5d8",
+              "9": "6d8"
+            }
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-{lastDamage} [healing]",
+            "fixedValue": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You sacrifice some of your health to mend another creature's injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+      }
+    ],
     "classes": "Light",
     "subclasses": "",
     "casttime": "1 action",

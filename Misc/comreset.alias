@@ -2,9 +2,10 @@
 com = combat()
 out = []
 for c in com.combatants:
-    if c.type == "combatant":
+    if c.type == "combatant" and c.max_hp > 0:
         value = f''' -f "{c.name}|'''
-        value += c.modify_hp(c.max_hp, overflow=False)
+        c.reset_hp()
+        value += c.hp_str()
 
         for e in c.effects:
             value += f"\n{e.name} - Removed"
