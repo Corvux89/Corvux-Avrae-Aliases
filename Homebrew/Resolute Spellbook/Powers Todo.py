@@ -1,4 +1,3 @@
-# TODO: Source Missing Land Stride
 # TODO: Source Missing Lesser Mislead
 # TODO: Source Missing Mutate/Augment
 # TODO: Source Missing Pull Earthward
@@ -30,7 +29,6 @@
 # TODO: Expanded Missing Force Armor
 # TODO: Expanded Missing Force Defense
 # TODO: Expanded Missing Foresight
-# TODO: Expanded Missing Land Stride
 # TODO: Expanded Missing Lightning Assault
 # TODO: Expanded Missing Manipulation
 # TODO: Expanded Missing Mind Lash
@@ -257,7 +255,6 @@
 # TODO: Expanded Missing Afterburner
 # TODO: Expanded Missing Analyze Area
 # TODO: Expanded Missing Autopilot Program
-# TODO: Expanded Missing Bacta Spray
 # TODO: Expanded Missing Blinding Blow
 # TODO: Expanded Missing Carbon Gas
 # TODO: Expanded Missing Comm Relay
