@@ -9,8 +9,6 @@
 # TODO: Source Missing Tune-up
 # TODO: Source Missing Wakefulness
 # TODO: Source Missing Wire Tow
-# TODO: Expanded Missing Animating Charge
-# TODO: Expanded Missing Banishing Charge
 # TODO: Expanded Missing Dark Transfer
 # TODO: Expanded Missing Force Light
 # TODO: Expanded Missing Guiding Technique
@@ -18,7 +16,6 @@
 # TODO: Expanded Missing Luminous Technique
 # TODO: Expanded Missing Meditative Technique
 # TODO: Expanded Missing Nature Trick
-# TODO: Expanded Missing Saber Burst
 # TODO: Expanded Missing Sprout Flora
 # TODO: Expanded Missing Torment
 # TODO: Expanded Missing Vengeful Charge
@@ -159,7 +156,6 @@
 # TODO: Expanded Missing Climate Refuge
 # TODO: Expanded Missing Climbing Claws
 # TODO: Expanded Missing Construct Lesser Droid
-# TODO: Expanded Missing Construct Vehicle
 # TODO: Expanded Missing Containment Field
 # TODO: Expanded Missing Contaminate
 # TODO: Expanded Missing Courser's Mark
@@ -304,7 +300,6 @@
 # TODO: Expanded Missing Implant Codeword
 # TODO: Expanded Missing Implosion
 # TODO: Expanded Missing Jolt
-# TODO: Expanded Missing Mass Tactical Barrier
 # TODO: Expanded Missing Metal Storm
 # TODO: Expanded Missing Piercing Vision
 # TODO: Expanded Missing Reconstructive Electromesh
@@ -334,7 +329,6 @@
 # TODO: Expanded Missing Protection from Tech
 # TODO: Expanded Missing Ray Shielding
 # TODO: Expanded Missing Repulsorlift Boost
-# TODO: Expanded Missing Self-Destruct
 # TODO: Expanded Missing Shield Tech: Steroid
 # TODO: Expanded Missing Sonic Shriek
 # TODO: Expanded Missing Subroutine

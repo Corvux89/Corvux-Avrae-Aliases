@@ -2773,7 +2773,7 @@
                 "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
             },
             {
-                "name": "Indominatable",
+                "name": "Indomitable",
                 "level": 9,
                 "value": [
                     0,
@@ -2878,26 +2878,26 @@
                 "reset": "short",
                 "display": "bubble",
                 "value": [
-                    0,
                     2,
                     2,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
                     4,
                     4,
                     5,
                     5,
-                    5,
-                    5,
-                    5,
-                    5
+                    6,
+                    6,
+                    7,
+                    7,
+                    8,
+                    8,
+                    9,
+                    9,
+                    10,
+                    10,
+                    11,
+                    11,
+                    12,
+                    12
                 ],
                 "desc": "You have four superiority dice, instead of two, and you earn more at higher levels, as shown in the Superiority Dice column of the Tactical Specialist Combat Superiority table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
             }

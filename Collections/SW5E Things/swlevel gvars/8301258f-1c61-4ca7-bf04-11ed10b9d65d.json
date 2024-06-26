@@ -1776,6 +1776,40 @@
         }
     },
     {
+        "name": "Ideal of the Contender",
+        "actions": [
+            {
+                "action": {
+                    "name": "Ideal of the Contender - Manifest",
+                    "_v": 2,
+                    "verb": "uses",
+                    "acivation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Manifested Contender",
+                                    "duration": 10,
+                                    "effects": {
+                                        "magical_damage": 1
+                                    },
+                                    "desc": "Your unarmed strikes count as enhanced for the purpose of overcoming resistance and immunity to unenhanced attacks and damage, and you can use your Wisdom or Charisma modifier (your choice) instead of Strength for checks made to grapple a target or escape a grapple."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "Your unarmed strike damage increases by one step (from 1 to d4, d4 to d6, or d6 to d8), and your unarmed strikes gain the finesse property.\n\nAdditionally, as a bonus action, you can manifest this ideal in a brief surge of energy. For the next minute, your unarmed strikes count as enhanced for the purpose of overcoming resistance and immunity to unenhanced attacks and damage, and you can use your Wisdom or Charisma modifier (your choice) instead of Strength for checks made to grapple a target or escape a grapple."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Ideal of the Tranquil",
         "counters": [
             {

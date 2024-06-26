@@ -765,6 +765,41 @@
     "concentration": false
   },
   {
+    "name": "Animating Charge",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "1d8 [kinetic]",
+            "cantripScale": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you briefly animate the weapon with the Force to follow up your attack. The target can use its reaction to avoid the strike, or it takes 1d8 damage of the weapon's type.\n\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes from the following strike increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you briefly animate the weapon with the Force to follow up your attack. The target can use its reaction to avoid the strike, or it takes 1d8 damage of the weapon's type.\n\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes from the following strike increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+    "concentration": false
+  },
+  {
     "name": "(SW) Antipathy/Sympathy",
     "level": 8,
     "school": "Tech",
@@ -1262,6 +1297,40 @@
     "ritual": false,
     "description": "A flickering blue shield surrounds your body. Until the power ends, you have resistance to kinetic, energy, and ion damage.",
     "concentration": true
+  },
+  {
+    "name": "Banishing Charge",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "{caster.spellbook.spell_mod}{'' if caster.levels.total_level < 5 else '+1d8' if caster.levels.total_level < 11 else '+2d8' if caster.levels.total_level < 17 else '+3d8' } [kinetic]"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and if it is a Medium creature or smaller, it is pushed 10 feet away from you. If the target collides with a creature or object, it takes kinetic damage equal to your forcecasting ability modifier.\n\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 kinetic damage to the target, and the damage the target takes for colliding increases to 1d8 + your forcecasting ability modifier. Both damage rolls increase by 1d8 at 11th level and 17th level."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and if it is a Medium creature or smaller, it is pushed 10 feet away from you. If the target collides with a creature or object, it takes kinetic damage equal to your forcecasting ability modifier.\n\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 kinetic damage to the target, and the damage the target takes for colliding increases to 1d8 + your forcecasting ability modifier. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+    "concentration": false
   },
   {
     "name": "Barrage",
@@ -2814,6 +2883,143 @@
     "description": "You construct a droid, which is deployed in an unoccupied space that you can see within range. This droid uses the Constructed Droid stat block. When you cast the power, choose a design: Probe, Pyro, or Battle. The droid resembles a Class IV droid, and the design determines certain traits in its stat block. The droid falls to pieces and disintegrates when it drops to 0 hit points or when the power ends.\n\nThe droid is an ally to you and your companions. In combat, the droid shares your initiative count, but it takes its turn immediately after yours. It obeys your commands you issue through your tech focus (no action required). If you don\u2019t issue any, it takes the Dodge action and uses its movement to avoid danger.\n\nThe droid is a valid target for the tracker droid interface power. If that power is cast targeting the constructed droid, it only takes 1 minute to synchronize with the droid.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, use the higher level wherever the power\u2019s level appears in the stat block.",
     "higherlevels": "",
     "concentration": true
+  },
+  {
+    "name": "Construct Vehicle",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "hpBonus",
+        "value": "0",
+        "higher": {
+          "2": "10",
+          "3": "20",
+          "4": "30",
+          "5": "40",
+          "6": "50",
+          "7": "60",
+          "8": "70",
+          "9": "80"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "botAC",
+        "value": "11",
+        "higher": {
+          "2": "12",
+          "3": "13",
+          "4": "14",
+          "5": "15",
+          "6": "16",
+          "7": "17",
+          "8": "18",
+          "9": "19"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "moveSpeed",
+        "value": "60 if int(spell_level) < 4 else 100"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Vehicle Constructed",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Construct Vehicle - Drive Through",
+                  "automation": [
+                    {
+                      "type": "variable",
+                      "name": "spell_level",
+                      "value": "ieffect.desc.split()[-1]"
+                    },
+                    {
+                      "type": "variable",
+                      "name": "vehicleDamage",
+                      "value": "0"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{spell_level}d6 [kinetic]"
+                            },
+                            {
+                              "type": "variable",
+                              "name": "vehicleDamage",
+                              "value": "vehicleDamage+lastDamage"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Vehicle Damage: {vehicleDamage}",
+                      "title": "Vehicle Damage"
+                    },
+                    {
+                      "type": "text",
+                      "text": "The constructed vehicle moves up to its speed in a straight line. During this move, it can enter another creature's space if it is at least one size smaller than the constructed vehicle. A creature whose space the constructed vehicle enters must make a Dexterity saving throw against your tech save DC. On a successful save, the creature is pushed 5 feet to the nearest space out of the constructed vehicle\u2019s path. On a failed save, the creature falls prone and takes 1d6 kinetic damage plus 1d6 kinetic damage for each slot level above 1st. The constructed vehicle also takes kinetic damage equal to half the damage dealt.\n\nIf the constructed vehicle ends this movement in the prone creature\u2019s space, the creature is also restrained until it's no longer in the same space as the constructed vehicle. While restrained in this way, the creature, or another creature within 5 feet of it, can make a Strength or Dexterity check (its choice) against your tech save DC as an action. On a successful save, the creature is pushed to the nearest unoccupied space."
+                    }
+                  ]
+                }
+              }
+            ],
+            "desc": "{spell_level}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You construct a vehicle in a space of your choice within range, which uses the Constructed Vehicle stat block. Only creatures you designate when you cast this power are able to enter this vehicle freely. A creature not designated must succeed on an Intelligence saving throw in order to enter the vehicle. The power ends when it drops to 0 hit points. Once the power ends, the vehicle slows to a stop, then falls to pieces and disintegrates.\n\nThe construct is a valid target for the tracker droid interface power. Its senses are the same as yours while linked. The general appearance is based on the tech slot used in casting the power, listed in the below table."
+      },
+      {
+        "type": "text",
+        "text": "```+-------------+--------------------+\n| Power Level | Loot               |\n+=============+====================+\n| 1st         | Personal Transport |\n+-------------+--------------------+\n| 2nd-3rd     | Hovercard          |\n+-------------+--------------------+\n| 4th-5th     | Landspeeder        |\n+-------------+--------------------+\n| 6th-7th     | Troop Transport    |\n+-------------+--------------------+\n| 8th-9th     | Open Shuttle       |\n+-------------+--------------------+```",
+        "title": "Table"
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power using a tech slot of 2nd level or higher, use the higher level wherever the power\u2019s level appears in the stat block. Additionally, this power's casting time increases to 1 hour.",
+        "title": "Overcharge Tech"
+      },
+      {
+        "type": "text",
+        "text": "**Constructed Vehicle**\n```!i add 1 \"Constructed Vehicle\" -strength 20 -dexterity 12 -constitution 18 -intelligence 10 -wisdom 14 -charisma 7 -hp {20+hpBonus} -vuln ion -resist necrotic -resist poison -resist psychic -immune disease -immune poisoned -immune blinded -immune deafened -immune frightened -ac {botAC} -note \"{moveSpeed}ft.{', fly 100 ft.' if int(spell_level) >= 8 else ''}\"```",
+        "title": "Commands"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "10 minutes",
+    "range": "10 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "24 hours, or until the end of your next short or long rest",
+    "ritual": false,
+    "description": "You construct a vehicle in a space of your choice within range, which uses the Constructed Vehicle stat block. Only creatures you designate when you cast this power are able to enter this vehicle freely. A creature not designated must succeed on an Intelligence saving throw in order to enter the vehicle. The power ends when it drops to 0 hit points. Once the power ends, the vehicle slows to a stop, then falls to pieces and disintegrates.\n\nThe construct is a valid target for the tracker droid interface power. Its senses are the same as yours while linked. The general appearance is based on the tech slot used in casting the power, listed in the below table.\n\n```+-------------+--------------------+\n| Power Level | Loot               |\n+=============+====================+\n| 1st         | Personal Transport |\n+-------------+--------------------+\n| 2nd-3rd     | Hovercard          |\n+-------------+--------------------+\n| 4th-5th     | Landspeeder        |\n+-------------+--------------------+\n| 6th-7th     | Troop Transport    |\n+-------------+--------------------+\n| 8th-9th     | Open Shuttle       |\n+-------------+--------------------+```\n**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, use the higher level wherever the power\u2019s level appears in the stat block. Additionally, this power's casting time increases to 1 hour.",
+    "higherlevels": ""
   },
   {
     "name": "(SW) Contingency",
@@ -12020,6 +12226,44 @@
     "concentration": false
   },
   {
+    "name": "Mass Tactical Barrier",
+    "level": 4,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Tactical Barrier",
+            "effects": {
+              "ac_bonus": "2"
+            },
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A shimmering field appears and surrounds up to six creatures of your choice within range, granting each target a +2 bonus to AC for the duration."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "A shimmering field appears and surrounds up to six creatures of your choice within range, granting each target a +2 bonus to AC for the duration.",
+    "concentration": true
+  },
+  {
     "name": "Master Battle Meditation",
     "level": 9,
     "school": "Force",
@@ -15087,6 +15331,48 @@
     "concentration": false
   },
   {
+    "name": "Saber Burst",
+    "level": 0,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "1d6 [kinetic]",
+                "cantripScale": true
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A light- or vibro-weapon you are wearing or carrying briefly animates and sweeps around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 damage of the weapon's type.\n\nThis power\u2019s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (5-foot sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A light- or vibro-weapon you are wearing or carrying briefly animates and sweeps around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 damage of the weapon's type.\n\nThis power\u2019s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "concentration": false
+  },
+  {
     "name": "Saber Onslaught",
     "level": 4,
     "school": "Force",
@@ -16171,6 +16457,57 @@
     "concentration": false
   },
   {
+    "name": "Self-Destruct",
+    "level": 5,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "10d6 [fire]",
+        "name": "damage"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}"
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As you fall, an explosion emanates from you. Each creature in a 20-foot-radius sphere centered on you must make a Dexterity saving throw. A target takes 10d6 fire damage on a failed save, or half as much damage on a successful one.\n\nWhen you cast this power, you automatically fail your first death saving throw. You may immediately fail an additional one or two death saving throws to increase the fire damage by 2d6 for each additional failed death saving throw."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to taking damage that would reduce your hit points to 0",
+    "range": "Self (20-foot radius sphere)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As you fall, an explosion emanates from you. Each creature in a 20-foot-radius sphere centered on you must make a Dexterity saving throw. A target takes 10d6 fire damage on a failed save, or half as much damage on a successful one.\n\nWhen you cast this power, you automatically fail your first death saving throw. You may immediately fail an additional one or two death saving throws to increase the fire damage by 2d6 for each additional failed death saving throw.",
+    "higherlevels": ""
+  },
+  {
     "name": "(SW) Sending",
     "level": 3,
     "school": "Tech",
@@ -16356,7 +16693,7 @@
         "effects": [
           {
             "type": "damage",
-            "damage": "-{lastDamage} [healing]",
+            "damage": "-({lastDamage*2}) [healing]",
             "fixedValue": true
           }
         ]

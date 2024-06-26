@@ -600,6 +600,6 @@ def get_spell_override(archetype, spells=[]):
                 for a in overrides:
                     if arch.subclass == a.archetype:
                         for spell, override in a.spells.items():
-                            if len(ch.spellbook.find(spell.replace("(SW) ", "")))>0:
+                            if len(ch.spellbook.find(spell.replace("(SW) ", "")))>0 or len(ch.spellbook.find(spell))>0:
                                 spells.append(override)
 
