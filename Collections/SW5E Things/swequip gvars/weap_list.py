@@ -46,7 +46,7 @@ def stripAmmo(name):
     return out
 
 
-dir = 'weapons'
+dir = 'Collections\SW5E Things\swequip gvars\weapons'
 weap_out = []
 filt = []
 
@@ -60,5 +60,5 @@ for file_name in os.listdir(dir):
             filt.append(name)
             weap_out.append({"name": name})
 
-with open('All Weapons.json', mode='w+', encoding='utf-8') as outfile:
+with open('Collections\SW5E Things\swequip gvars\All Weapons.json', mode='w+', encoding='utf-8') as outfile:
     outfile.write(json.dumps(weap_out))
