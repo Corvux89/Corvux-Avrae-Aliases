@@ -96,6 +96,120 @@
         }
     },
     {
+        "name": "Automated Adrenal Package",
+        "actions": [
+            {
+                "action": {
+                    "name": "Automated Adrenal Package",
+                    "_v": 2,
+                    "verb": "actrivates",
+                    "automation": [
+                        {
+                            "type": "condition",
+                            "condition": "choice",
+                            "onTrue": [
+                                {
+                                    "type": "condition",
+                                    "condition": "choice.lower() in 'strength'",
+                                    "onTrue": [
+                                        {
+                                            "type": "target",
+                                            "target": "self",
+                                            "effects": [
+                                                {
+                                                    "type": "ieffect2",
+                                                    "name": "Strength Adrenal",
+                                                    "duration": 10,
+                                                    "effects": {
+                                                        "damage_bonus": 1
+                                                    },
+                                                    "desc": "You gain a +1 bonus to the damage rolls of melee weapon attacks, and your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples."
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "onFalse": [
+                                        {
+                                            "type": "condition",
+                                            "condition": "choice.lower() in 'alactrity'",
+                                            "onTrue": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Alacrity Adrenal",
+                                                            "duration": 10,
+                                                            "effects": {
+                                                                "damage_bonus": 1
+                                                            },
+                                                            "desc": "You gain a +1 bonus to the damage rolls of ranged weapon attacks, and your speed increases by 10 feet."
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "onFalse": [
+                                                {
+                                                    "type": "condition",
+                                                    "condition": "choice.lower() in 'stamina'",
+                                                    "onTrue": [
+                                                        {
+                                                            "type": "target",
+                                                            "target": "self",
+                                                            "effects": [
+                                                                {
+                                                                    "type": "ieffect2",
+                                                                    "name": "Stamina Adrenal",
+                                                                    "duration": 10,
+                                                                    "desc": "You gain 2 temporary hit points and a +2 bonus to Constitution saving throws."
+                                                                },
+                                                                {
+                                                                    "type": "temphp",
+                                                                    "amount": 2
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "onFalse": [
+                                                        {
+                                                            "type": "text",
+                                                            "text": "Invalid adrenal type."
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "text",
+                                    "text": "Use `-choice` to specify the adrenal to activate. Ex: `-choice strength`"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "*Prerequisite: Constitution 15*\n\nOnce on your turn, you can activate this implant to gain the effects of an adrenal (no action required). This effect lasts for one minute, or until a different adrenal is chosen. You can choose from the following types of adrenals:"
+                        },
+                        {
+                            "type": "text",
+                            "text": "**Strength Adrenal:** You gain a +1 bonus to the damage rolls of melee weapon attacks, and your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.\n**Alacrity Adrenal:** You gain a +1 bonus to the damage rolls of ranged weapon attacks, and your speed increases by 10 feet.\n**Stamina Adrenal:** You gain 2 temporary hit points and a +2 bonus to Constitution saving throws",
+                            "title": "Adrenals"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You can no longer benefit from other adrenals.\n\n*This clear plasti-polymer implant has an appearance vaguely resembling a multi-limbed cephalopod, and must be carefully installed by a master cybertech. It attaches by wrapping around the medulla, and produces a variety of combat adrenals for its user’s consumption. It also performs blood-cleansing work to reduce the liver damage (for species that have a liver) caused by long-term adrenal use.*",
+                            "title": "Side Effect"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Bansche Purifier MENAD Pro Mk I",
         "actions": [
             {
@@ -626,6 +740,7 @@
         "name": "Enhanced Reconstructor",
         "actions": [
             {
+                "override": true,
                 "action": {
                     "name": "Rapid Reconstruction",
                     "activation_type": 3,
@@ -736,14 +851,12 @@
                 }
             }
         ],
-        "cvar": [
-            {
-                "name": "SWItems",
-                "default": "{}",
-                "node": "EnhancedReconstructor",
-                "value": 1
-            }
-        ]
+        "cvar": {
+            "name": "SWItems",
+            "default": "{}",
+            "node": "EnhancedReconstructor",
+            "value": 1
+        }
     },
     {
         "name": "Equilibrium Style",
