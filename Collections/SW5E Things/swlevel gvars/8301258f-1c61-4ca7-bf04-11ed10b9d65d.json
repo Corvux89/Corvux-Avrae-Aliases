@@ -623,6 +623,129 @@
         ]
     },
     {
+        "name": "Enhanced Reconstructor",
+        "actions": [
+            {
+                "action": {
+                    "name": "Rapid Reconstruction",
+                    "activation_type": 3,
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Hit Dice (d12)",
+                            "amount": "1",
+                            "errorBehaviour": "ignore"
+                        },
+                        {
+                            "type": "condition",
+                            "condition": "lastCounterUsedAmount",
+                            "onTrue": [
+                                {
+                                    "type": "target",
+                                    "target": "self",
+                                    "effects": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "-(1d12+{max(intelligenceMod,1)}) [healing]"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Hit Dice (d10)",
+                                    "amount": "1",
+                                    "errorBehaviour": "ignore"
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [
+                                        {
+                                            "type": "target",
+                                            "target": "self",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "-(1d10+{max(intelligenceMod,1)}) [healing]"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Hit Dice (d8)",
+                                            "amount": "1",
+                                            "errorBehaviour": "ignore"
+                                        },
+                                        {
+                                            "type": "condition",
+                                            "condition": "lastCounterUsedAmount",
+                                            "onTrue": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "-(1d8+{max(intelligenceMod,1)}) [healing]"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "onFalse": [
+                                                {
+                                                    "type": "counter",
+                                                    "counter": "Hit Dice (d6)",
+                                                    "amount": "1",
+                                                    "errorBehaviour": "raise"
+                                                },
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "-(1d6+{max(intelligenceMod,1)}) [healing]"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "errorBehaviour": "false"
+                                        }
+                                    ],
+                                    "errorBehaviour": "false"
+                                }
+                            ],
+                            "errorBehaviour": "false"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You are built with internal repair mechanisms. As a bonus action, you can choose to spend one of your Hit Dice to recover hit points."
+                        },
+                        {
+                            "type": "text",
+                            "text": "Whenever you roll a Hit Die to recover hit points, you add your Intelligence modifier to the roll (minimum of +1).",
+                            "title": "Enhanced Reconstructor"
+                        }
+                    ]
+                }
+            }
+        ],
+        "cvar": [
+            {
+                "name": "SWItems",
+                "default": "{}",
+                "node": "EnhancedReconstructor",
+                "value": 1
+            }
+        ]
+    },
+    {
         "name": "Equilibrium Style",
         "actions": [
             {
@@ -1814,8 +1937,8 @@
         "counters": [
             {
                 "name": "Tranquil Force Points",
-                "value": "max(charismaMod, wisdomMod, 1)",
-                "display": "buttle",
+                "value": "ceil(max(charismaMod, wisdomMod, 1)/2)",
+                "display": "bubble",
                 "reset": "short",
                 "desc": "When you finish a short or long rest, you gain a number of temporary force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one)"
             }
@@ -1834,7 +1957,7 @@
                                 {
                                     "type": "counter",
                                     "counter": "Force Points",
-                                    "amount": "{-max(wisdomMod,charismaMod,1)}",
+                                    "amount": "{-ceil(max(wisdomMod,charismaMod,1)/2)}",
                                     "allowOverflow": "true"
                                 },
                                 {
