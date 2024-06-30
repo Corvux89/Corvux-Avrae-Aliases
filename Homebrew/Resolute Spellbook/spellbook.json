@@ -21104,7 +21104,7 @@
                         "removeParent": "if_no_children"
                       }
                     ],
-                    "label": "Removes Shatterpoint",
+                    "label": "Defends Shatterpoint - Remove Effect",
                     "verb": "successfully",
                     "style": 4
                   }
@@ -21122,7 +21122,7 @@
                         "removeParent": "if_no_children"
                       }
                     ],
-                    "label": "Attacks Shatterpoint",
+                    "label": "Attacks Shatterpoint - Remove Effect",
                     "verb": "successfully",
                     "style": 4
                   }
@@ -21157,6 +21157,7 @@
     "name": "Saber Dance",
     "level": 4,
     "school": "Force",
+    "automation": [],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
