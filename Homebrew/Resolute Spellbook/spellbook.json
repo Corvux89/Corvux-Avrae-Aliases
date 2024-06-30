@@ -21026,6 +21026,31 @@
     "name": "Pull Earthward",
     "level": 2,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "str",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Fly Speed Negated",
+                "conc": 1,
+                "desc": "The target's fly speed is reduced to 0 for the duration."
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose one creature you can see within range. The target must succeed on a Strength saving throw or its flying speed (if any) is reduced to 0 feet for the power’s duration. An airborne creature affected by this power descends at 60 feet per round until it reaches the ground or the power ends."
+      }
+    ]
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
