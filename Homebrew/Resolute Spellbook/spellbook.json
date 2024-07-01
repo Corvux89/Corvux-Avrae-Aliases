@@ -21387,6 +21387,114 @@
     "ritual": false,
     "description": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails.\n\nOn a hit, the target suffers the attack's normal effects, and it becomes afflicted with an irrational hatred of you. Until the end of its next turn, it cannot willingly move away from you. If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends.\n\nAt 5th level, the attack deals an extra 1d8 psychic damage to the target, and the damage the target takes upon hitting or missing you with an attack increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
     "concentration": false
+  },
+  {
+    "name": "Chastisement",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when a creature you can see and can hear you within range misses an attack",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You berate a creature for its failure. The creature may add 1d6 to the attack roll and damage of its next attack before the end of its next turn. If it does so and hits, the creature gains temporary hit points equal to 1d6 + your forcecasting ability modifier. However, if it does so and misses the attack, it instead takes psychic damage equal to 1d8 + your forcecasting ability modifier. This psychic damage cannot be reduced or prevented in any way. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage of the target's attack increases by an additional 1d6 per slot level above 1st if it hits. If it misses, the psychic damage it receives increases by 1d8 per slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Cleanse Mind",
+    "level": 1,
+    "school": "Force",
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you would fail a Wisdom or Intelligence saving throw",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You clear your mind and repudiate your passions, temporarily making your thoughts a blank and protecting yourself against attempts to invade or control your mind. You can reroll the failed saving throw that triggered this power, but must use the new roll, even if it is lower. In addition, until the end of your next turn, you have resistance against psychic damage.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you cannot be charmed or frightened until the end of your next turn. If you are already charmed or frightened, then the condition is suppressed until the end of your next turn. While the condition is suppressed it doesn’t function but the time spent suppressed counts against its duration.",
+    "concentration": false
+  },
+  {
+    "name": "Dark Rejuvenation",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher.",
+    "concentration": true
+  },
+  {
+    "name": "Destructive Blow",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "The first time you hit with a melee weapon attack (that is not a critical hit) during this power's duration, you double the weapon's damage dice. This power then ends.",
+    "concentration": true
+  },
+  {
+    "name": "Force Armor",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A wave of energy washes over you and creatures of your choice within range. You have a pool of 8 temporary hit points, divided as you choose among any number of creatures that you can see within range.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the pool of temporary hit points increases by 8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
+    "name": "Force Defense",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "Once during the duration, you can grant yourself advantage on a saving throw. When you do so, the power ends."
+    "concentration": false
   }
 ]
   
