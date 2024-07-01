@@ -21050,7 +21050,7 @@
         "type": "text",
         "text": "Choose one creature you can see within range. The target must succeed on a Strength saving throw or its flying speed (if any) is reduced to 0 feet for the power’s duration. An airborne creature affected by this power descends at 60 feet per round until it reaches the ground or the power ends."
       }
-    ]
+    ],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
@@ -21136,9 +21136,9 @@
       },
       {
         "type": "text",
-        "text": "You focus on a creature you can see within range, and gain uncanny insight on its defenses and capabilities through the Force. The target must make a Charisma saving throw. On a failed save, you have advantage on attack rolls against that creature, and it has disadvantage on attack rolls against you for the duration. On a successful save, you have advantage on the next attack roll you make against that creature, and it has disadvantage on its next attack roll against you. Once both attacks have been made, the power ends.",
+        "text": "You focus on a creature you can see within range, and gain uncanny insight on its defenses and capabilities through the Force. The target must make a Charisma saving throw. On a failed save, you have advantage on attack rolls against that creature, and it has disadvantage on attack rolls against you for the duration. On a successful save, you have advantage on the next attack roll you make against that creature, and it has disadvantage on its next attack roll against you. Once both attacks have been made, the power ends."
       }
-    ]
+    ],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
@@ -21492,7 +21492,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "Once during the duration, you can grant yourself advantage on a saving throw. When you do so, the power ends."
+    "description": "Once during the duration, you can grant yourself advantage on a saving throw. When you do so, the power ends.",
     "concentration": false
   },
   {
@@ -21674,6 +21674,6 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power’s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  },
+  }
 ]
   
