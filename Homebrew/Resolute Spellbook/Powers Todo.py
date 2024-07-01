@@ -1,24 +1,10 @@
 # TODO: Source Missing Lesser Mislead
 # TODO: Source Missing Mutate/Augment
-# TODO: Source Missing Pull Earthward
-# TODO: Source Missing Reveal Shatterpoint
-# TODO: Source Missing Saber Dance
 # TODO: Source Missing Spectrum Discharge
 # TODO: Source Missing Squad Shield
-# TODO: Source Missing Telepathic Link
 # TODO: Source Missing Tune-up
-# TODO: Source Missing Wakefulness
 # TODO: Source Missing Wire Tow
-# TODO: Expanded Missing Dark Transfer
-# TODO: Expanded Missing Force Light
-# TODO: Expanded Missing Guiding Technique
 # TODO: Expanded Missing Judgment
-# TODO: Expanded Missing Luminous Technique
-# TODO: Expanded Missing Meditative Technique
-# TODO: Expanded Missing Nature Trick
-# TODO: Expanded Missing Sprout Flora
-# TODO: Expanded Missing Torment
-# TODO: Expanded Missing Vengeful Charge
 # TODO: Expanded Missing Chastisement
 # TODO: Expanded Missing Cleanse Mind
 # TODO: Expanded Missing Dark Rejuvenation
@@ -654,3 +640,17 @@
 # TODO: (SW) Whirlwind
 # TODO: Will of the Force
 # TODO: Wrack
+# TODO: Reveal Shatterpoint
+# TODO: Saber Dance
+# TODO: Telepathic Link
+# TODO: Wakefulness
+# TODO: Dark Transfer
+# TODO: Force Light
+# TODO: Guiding Technique
+# TODO: Judgement
+# TODO: Luminous Technique
+# TODO: Meditative Technique
+# TODO: Nature Trick
+# TODO: Sprout Flora
+# TODO: Torment
+# TODO: Vengeful Charge
