@@ -21088,7 +21088,7 @@
                 "type": "ieffect2",
                 "name": "Attacking Shatterpoint",
                 "duration": "10",
-                "desc:" "Advantage on attack rolls against {target.name}.",
+                "desc": "Advantage on attack rolls against {target.name}.",
                 "target_self": 1
               }
             ],
@@ -21127,7 +21127,7 @@
                     "style": 4
                   }
                 ],
-                "desc:" "Advantage on the next attack roll against {target.name}.",
+                "desc": "Advantage on the next attack roll against {target.name}.",
                 "target_self": 1
               }
             ]
@@ -21136,7 +21136,7 @@
       },
       {
         "type": "text",
-        "text": "You focus on a creature you can see within range, and gain uncanny insight on its defenses and capabilities through the Force. The target must make a Charisma saving throw. On a failed save, you have advantage on attack rolls against that creature, and it has disadvantage on attack rolls against you for the duration. On a successful save, you have advantage on the next attack roll you make against that creature, and it has disadvantage on its next attack roll against you. Once both attacks have been made, the power ends."
+        "text": "You focus on a creature you can see within range, and gain uncanny insight on its defenses and capabilities through the Force. The target must make a Charisma saving throw. On a failed save, you have advantage on attack rolls against that creature, and it has disadvantage on attack rolls against you for the duration. On a successful save, you have advantage on the next attack roll you make against that creature, and it has disadvantage on its next attack roll against you. Once both attacks have been made, the power ends.",
       }
     ]
     "classes": "Universal",
