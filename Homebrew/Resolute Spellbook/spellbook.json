@@ -2345,6 +2345,24 @@
     "concentration": false
   },
   {
+    "name": "Chastisement",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when a creature you can see and can hear you within range misses an attack",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You berate a creature for its failure. The creature may add 1d6 to the attack roll and damage of its next attack before the end of its next turn. If it does so and hits, the creature gains temporary hit points equal to 1d6 + your forcecasting ability modifier. However, if it does so and misses the attack, it instead takes psychic damage equal to 1d8 + your forcecasting ability modifier. This psychic damage cannot be reduced or prevented in any way. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage of the target's attack increases by an additional 1d6 per slot level above 1st if it hits. If it misses, the psychic damage it receives increases by 1d8 per slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Choke",
     "level": 3,
     "school": "Force",
@@ -2415,6 +2433,24 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "You make a constricting gesture at a creature within range. The target must make a Constitution saving throw. On a failed save target takes 5d8 force damage and is restrained until the end of your next turn. On a successful save, the target takes half as much damage and is not restrained.\r\n\r\nYou can use a bonus action while the target is restrained to move the target up to 5 feet in any direction.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "concentration": false
+  },
+  {
+    "name": "Cleanse Mind",
+    "level": 1,
+    "school": "Force",
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you would fail a Wisdom or Intelligence saving throw",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You clear your mind and repudiate your passions, temporarily making your thoughts a blank and protecting yourself against attempts to invade or control your mind. You can reroll the failed saving throw that triggered this power, but must use the new roll, even if it is lower. In addition, until the end of your next turn, you have resistance against psychic damage.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you cannot be charmed or frightened until the end of your next turn. If you are already charmed or frightened, then the condition is suppressed until the end of your next turn. While the condition is suppressed it doesn\u2019t function but the time spent suppressed counts against its duration.",
     "concentration": false
   },
   {
@@ -3776,6 +3812,24 @@
     "concentration": true
   },
   {
+    "name": "Dark Rejuvenation",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher.",
+    "concentration": true
+  },
+  {
     "name": "Dark Shear",
     "level": 2,
     "school": "Force",
@@ -4306,6 +4360,24 @@
     "ritual": false,
     "description": "Make a ranged tech attack against a creature within range. On a hit, the target takes 4d8 ion damage. Additionally, if the target has tech points, it must make an Intelligence saving throw. On a failed save, it loses 5 tech points, as though it expended a tech slot.\r\n\r\n***Overcharge Tech.*** When you cast this power with a tech slot of 4th level or higher, the ion damage increases by 1d8, and the amount of tech points lost increases by 1 for each slot level above 3rd.",
     "concentration": false
+  },
+  {
+    "name": "Destructive Blow",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "The first time you hit with a melee weapon attack (that is not a critical hit) during this power's duration, you double the weapon's damage dice. This power then ends.",
+    "concentration": true
   },
   {
     "name": "Detect Enhancement",
@@ -6043,6 +6115,24 @@
     "concentration": false
   },
   {
+    "name": "Force Armor",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "A wave of energy washes over you and creatures of your choice within range. You have a pool of 8 temporary hit points, divided as you choose among any number of creatures that you can see within range.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the pool of temporary hit points increases by 8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Force Barrier",
     "level": 2,
     "school": "Force",
@@ -6366,6 +6456,24 @@
     "ritual": false,
     "description": "When you cast this power, you raise your hand and unleash a burst of Force energy. Each creature in a 15-foot cone must make a Strength saving throw. On a failed save, a creature takes 3d6 force damage and, if it is Large or smaller, is also pushed back 5 feet. On a successful save, a creature takes half as much damage and isn\u2019t pushed. All Medium or smaller objects that are not worn or carried within the area of effect are also pushed 5 feet.",
     "higherlevels": "Force Potency. When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st. For each slot 2 levels higher than 1st, you can add an additional 5 feet to the push.",
+    "concentration": false
+  },
+  {
+    "name": "Force Defense",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "Once during the duration, you can grant yourself advantage on a saving throw. When you do so, the power ends.",
     "concentration": false
   },
   {
@@ -7612,6 +7720,24 @@
     "duration": "1 round",
     "ritual": false,
     "description": "You use the Force to carry a message in your voice to another creature within range. The target (and only the target) hears the message and can reply in a whisper that only you can hear.\r\n\r\nYou can cast this power through solid objects if you are familiar with the target and know it is beyond the barrier. An enhanced silence effect, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the power. The power doesn't have to follow a straight line and can travel freely around corners or through openings.",
+    "concentration": false
+  },
+  {
+    "name": "Foresight",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when a creature you can see within 60 feet of yourself succeeds on an attack roll, an ability check, or a saving throw",
+    "range": "60ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You can sense the immediate future through the Force, and act on it to change fate in an instant. The triggering creature must reroll the d20 and use the lower roll.\n\nYou can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this power at a time.",
     "concentration": false
   },
   {
@@ -11951,6 +12077,24 @@
     "concentration": false
   },
   {
+    "name": "Lightning Assault",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "Special",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 turn",
+    "ritual": false,
+    "description": "The first time you take the Attack action during your turn, you can simultaneously cast this power to infuse a melee weapon you are wielding with Force lightning. The first time you hit with this weapon, the target takes an additional 1d6 lightning damage, and the static within the weapon discharges. The target must make a Constitution saving throw. On a failed save, the target and up to two creatures of your choice within 10 feet of the target take 1d6 lightning damage.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the lightning damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Lightning Charge",
     "level": 0,
     "school": "Force",
@@ -12191,6 +12335,24 @@
     "ritual": false,
     "description": "A creature of your choice that you can see within range is overcome with a sense of dizziness and nausea, as you disturb its equilibrium with the Force. The creature must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration.\n\nAt the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it\u2019s triggered by damage. On a success, the power ends. This power has no effect on droids or constructs.",
     "concentration": true
+  },
+  {
+    "name": "Manipulation",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "Through the Force, you attempt to sway a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the power ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the power ends, the creature knows it was charmed by you.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+    "concentration": false
   },
   {
     "name": "Mass Animation",
@@ -13161,6 +13323,24 @@
     "concentration": false
   },
   {
+    "name": "Mind Lash",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You lash out with mental energy against a creature within range. Make a melee force attack against the target. If the attack hits, the creature takes 3d8 psychic damage, and it must make an Intelligence saving throw. On a failed save, it cannot take reactions until the end of your next turn.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Mind Prison",
     "level": 6,
     "school": "Force",
@@ -14019,6 +14199,24 @@
     "duration": "up to 1 minute",
     "ritual": false,
     "description": "Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Constitution saving throw or be affected by this power for the duration.\r\n\r\nAn affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or items, it can't make more than one melee or ranged attack during its turn.\r\n\r\nIf the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the power. If it can't, the power is wasted.\t\r\n\r\nA creature affected by this power makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends for it.",
+    "concentration": true
+  },
+  {
+    "name": "Plant Growth",
+    "level": 1,
+    "school": "Force",
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "90ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain.\n\nA creature in the area when you cast the power must succeed on a Strength saving throw or be restrained by the entangling plants until the power ends. A creature restrained by the plants can use its action to make a Strength check against your force save DC. On a success, it frees itself.\n\nWhen the power ends, the plants wilt away.",
     "concentration": true
   },
   {
@@ -15084,9 +15282,95 @@
     "concentration": false
   },
   {
+    "name": "Retribution",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to being damaged by a creature within 10 feet of you that you can see",
+    "range": "Self (10ft radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "When harmed, you release a thunderous explosion of Force energy, audible out to 300 feet, in response. Each creature within 10 feet of you must make a Constitution saving throw. On a failed save, a creature takes 2d8 force damage and is pushed 5 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. All small objects within range that are not worn or carried are also pushed 5 feet back.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Reveal Shatterpoint",
     "level": 5,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "cha",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Shatterpoint Revealed",
+                "duration": "10",
+                "desc": "Disadvantage on attack rolls against {caster.name}."
+              },
+              {
+                "type": "ieffect2",
+                "name": "Attacking Shatterpoint",
+                "duration": "10",
+                "desc": "Advantage on attack rolls against {target.name}.",
+                "target_self": true
+              }
+            ],
+            "success": [
+              {
+                "type": "ieffect2",
+                "name": "Defending Shatterpoint",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Defends Shatterpoint - Remove Effect",
+                    "verb": "successfully",
+                    "style": "4"
+                  }
+                ],
+                "desc": "Disadvantage on the next attack roll against {caster.name}."
+              },
+              {
+                "type": "ieffect2",
+                "name": "Attacking Shatterpoint",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Attacks Shatterpoint - Remove Effect",
+                    "verb": "successfully",
+                    "style": "4"
+                  }
+                ],
+                "desc": "Advantage on the next attack roll against {target.name}.",
+                "target_self": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You focus on a creature you can see within range, and gain uncanny insight on its defenses and capabilities through the Force. The target must make a Charisma saving throw. On a failed save, you have advantage on attack rolls against that creature, and it has disadvantage on attack rolls against you for the duration. On a successful save, you have advantage on the next attack roll you make against that creature, and it has disadvantage on its next attack roll against you. Once both attacks have been made, the power ends."
+      }
+    ],
     "classes": "Universal",
     "subclasses": "",
     "casttime": "1 action",
@@ -16662,6 +16946,24 @@
     "concentration": false
   },
   {
+    "name": "Seize Life",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you are reduced to 0 hit points",
+    "range": "30ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "In a split second before losing your senses, you point towards a creature within range, forcing it to make a Charisma saving throw. If that creature reduced you to 0 hit points, it has disadvantage on this saving throw. A willing creature can choose to fail this saving throw. On a failed save, the target takes 1d6 + your forcecasting ability modifier necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Self-Destruct",
     "level": 5,
     "school": "Tech",
@@ -16921,6 +17223,24 @@
     "ritual": false,
     "description": "You sacrifice some of your health to mend another creature's injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. This power has no effect on droids or constructs.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
     "concentration": false
+  },
+  {
+    "name": "Share Memory",
+    "level": 1,
+    "school": "Force",
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "A willing creature you touch shares a memory with you and up to five other willing creatures within 30 feet of the target. You designate which memories the target shares when you cast this power, although the target can guide you in this designation. The designated memory can be as specific as \u201cthe conversation you just had with the captain\u201d or as vague as \u201cyour favorite childhood memory of being with your father.\u201d For the duration, those sharing the memory experience it through the target\u2019s senses as the target did. Anyone sharing the memory can cease participation at any time. If you end the effect for yourself, or the target ceases sharing, the power ends. If the memory\u2019s length exceeds 1 minute, it continues to play out as long as you maintain concentration on this power. This power does not work on memories that have been altered or removed through powers such as memory rub.",
+    "concentration": true
   },
   {
     "name": "Shared Shielding",
@@ -17233,6 +17553,24 @@
     "ritual": false,
     "description": "You enhance a droid or construct's protocols. You touch one willing droid or construct and give it expertise in one skill of your choice; until the power ends, the creature doubles its proficiency bonus for ability checks it makes that use the chosen skill.\r\n\r\nYou must choose a skill in which the target is proficient and that isn't already benefiting from an effect, such as Expertise, that doubles its proficiency bonus.",
     "concentration": true
+  },
+  {
+    "name": "Skill Understanding",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "8 hours",
+    "ritual": false,
+    "description": "Through the Force, you gain residual knowledge from those who came before you. Choose one skill in which you are not trained. For the power\u2019s duration, you are trained in the chosen skill. The power ends early if you cast it again.",
+    "concentration": false
   },
   {
     "name": "(SW) Slow",
@@ -21316,5 +21654,23 @@
     "ritual": false,
     "description": "You wrack the body of a creature that you can see with a virulent, disease-like condition. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal immediately.\r\n\r\n***Force Potency.*** If you cast this power using a force slot of 7th level or higher, the power deals an extra 2d6 damage for each slot level above 6th.",
     "concentration": false
+  },
+  {
+    "name": "Wrathful Blow",
+    "level": 1,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
+    "concentration": true
   }
 ]
