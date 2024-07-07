@@ -373,4 +373,23 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power’s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  }
+  },
+  {
+    "name": "Channel Pain",
+    "level": 2,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You draw power from your pain. If you have taken 15 or more damage since the end of your last turn, you gain advantage on melee attack rolls and saving throws. Damage to temporary hit points is not included in this calculation. This benefit lasts until the start of your next turn. For the duration of the power, if you start your turn having taken 15 points of damage since the end of your last turn, you will get the bonus again.",
+    "concentration": true
+  },
+
