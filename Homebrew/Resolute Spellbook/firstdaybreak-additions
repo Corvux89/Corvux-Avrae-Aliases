@@ -392,4 +392,59 @@
     "description": "You draw power from your pain. If you have taken 15 or more damage since the end of your last turn, you gain advantage on melee attack rolls and saving throws. Damage to temporary hit points is not included in this calculation. This benefit lasts until the start of your next turn. For the duration of the power, if you start your turn having taken 15 points of damage since the end of your last turn, you will get the bonus again.",
     "concentration": true
   },
+  {
+    "name": "Control Force",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Immune to Spell Damage from {caster.name}.",
+            "duration": 1,
+            "end": 1,
+            "tick_on_caster": 1
+          }
+        ]
+     },
+     {
+      "type": "text",
+      "text": "You harness discipline to prevent damage to unwanted targets of your force powers. Choose a number of creatures within range up to your forcecasting modifier (minimum of one). Until the end of your next turn, those creatures take no damage from force powers you cast."
+     }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You harness discipline to prevent damage to unwanted targets of your force powers. Choose a number of creatures within range up to your forcecasting modifier (minimum of one). Until the end of your next turn, those creatures take no damage from force powers you cast.", 
+    "concentration": false
+  },
+  {
+    "name": "Force Grip",
+    "level": 2,
+    "school": "Force",
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 ft",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You reach out with the Force and attempt to throttle a creature you can see within range that breathes. The creature must be Medium or smaller. At the start of its next turn, the target must make a Constitution saving throw. On a failed save, the target gains a level of slowed and begins to suffocate for the duration of the power. While suffocating, the target can still speak, but only falteringly. The target can repeat the save at the start of each of its turns, ending this power on itself on a successful save. The power also ends for an affected creature if it is ever outside the power's range.\n\nYou must use your action on each of your subsequent turns to continue this power. If you use your action to do anything else, the power ends.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, the target gains an additional level of slowed for every two slot levels above 2nd.",
+    "concentration": true
+  },
 
