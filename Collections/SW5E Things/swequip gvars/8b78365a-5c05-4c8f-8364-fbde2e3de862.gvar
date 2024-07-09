@@ -196,9 +196,45 @@ def replace_mod(text):
         text = text.replace('proficiencyBonus', f"{stats.prof_bonus}")
 
     if 'max' in text or 'min' in text or '+' in text or '-' in text:
-        text = vroll(text).total
+        if "-" in text:
+            parts = test.split("-")
+            result = parse_part(parts[0])
+            for part in parts[1:]:
+                result -= parse_part(parse_part)
+        else:
+            result = parse_part(text)
 
-    return int(text)
+    return result
+
+def parse_part(text):
+    parts = text.split("+")
+    result = 0
+
+    for part in parts:
+        if "max" in part:
+            result += parse_function(part, "max")
+        elif "min" in part:
+            result += parse_function(part, "min")
+        else:
+            result += int(part)
+    
+    return result
+
+def parse_function(text, func_name):
+    if func_name not in text:
+        return int(text)
+    
+    text = text.replace(f"{func_name}(", "")
+    text = text[:-1]
+
+    args = text.split(',')
+
+    if func_name == "max":
+        return max(int(args[0]), int(args[1]))
+    elif func_name == "min":
+        return min(int(args[0]), int(args[1]))
+    else:
+        return 0
 
 def get_subclasses():
     out = []

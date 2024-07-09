@@ -376,6 +376,8 @@
 # TODO: Carbon Fog
 # TODO: Carbonite
 # TODO: Carbonite Explosion
+# TODO: Chastisement
+# TODO: Cleanse Mind
 # TODO: Cloaking Screen
 # TODO: Coerce Mind
 # TODO: Comprehend Speech
@@ -391,6 +393,7 @@
 # TODO: Cryogenic Volley
 # TODO: Cryogenic Wave
 # TODO: Danger Sense
+# TODO: Dark Rejuvenation
 # TODO: Dark Shear
 # TODO: Dark Transfer
 # TODO: (SW) Darkness
@@ -401,6 +404,7 @@
 # TODO: Defibrillate
 # TODO: Delayed Explosion
 # TODO: Destroy Droid
+# TODO: Destructive Blow
 # TODO: Detect Enhancement
 # TODO: Detect Invisibility
 # TODO: Detect Traps
@@ -428,6 +432,7 @@
 # TODO: Firestorm
 # TODO: Flaming Shots
 # TODO: Flash
+# TODO: Force Armor
 # TODO: Force Blind/Deafen
 # TODO: Force Blinding
 # TODO: Force Blur
@@ -435,6 +440,7 @@
 # TODO: Force Breach
 # TODO: Force Concealment
 # TODO: Force Confusion
+# TODO: Force Defense
 # TODO: Force Enlightenment
 # TODO: Force Focus
 # TODO: Force Immunity
@@ -453,6 +459,7 @@
 # TODO: Force Vision
 # TODO: Force Weapon
 # TODO: Force Whisper
+# TODO: Foresight
 # TODO: (SW) Freedom of Movement
 # TODO: Frequency Scan
 # TODO: Friendly Fire
@@ -499,6 +506,7 @@
 # TODO: Kolto Reserve
 # TODO: Kolto Waves
 # TODO: (SW) Light
+# TODO: Lightning Assault
 # TODO: Lightning Charge
 # TODO: (SW) Locate Creature
 # TODO: (SW) Locate Object
@@ -507,6 +515,7 @@
 # TODO: (SW) Maddening Darkness
 # TODO: Magnetic Field
 # TODO: Magnetic Hold
+# TODO: Manipulation
 # TODO: Mass Animation
 # TODO: Mass Coerce Mind
 # TODO: Mass Hysteria
@@ -518,6 +527,7 @@
 # TODO: Meditative Technique
 # TODO: (SW) Mending
 # TODO: (SW) Mind Blank
+# TODO: Mind Lash
 # TODO: Mind Prison
 # TODO: (SW) Mind Spike
 # TODO: Mind Trap
@@ -539,6 +549,7 @@
 # TODO: Paralyze Creature
 # TODO: Phaseshift
 # TODO: Pheromone Burst
+# TODO: Plant Growth
 # TODO: Plant Surge
 # TODO: Poison Dart
 # TODO: (SW) Poison Spray
@@ -563,6 +574,7 @@
 # TODO: Rescue
 # TODO: (SW) Resistance
 # TODO: Restoration
+# TODO: Retribution
 # TODO: Revitalize
 # TODO: Rewrite Memory
 # TODO: Rime Strike
@@ -574,12 +586,14 @@
 # TODO: Scrambling Barrier
 # TODO: Scrambling Field
 # TODO: Security Protocols
+# TODO: Seize Life
 # TODO: (SW) Sending
 # TODO: Sense Emotion
 # TODO: Sense Force
 # TODO: Sensor Probe
 # TODO: Sever Force
 # TODO: Shadow Sight
+# TODO: Share Memory
 # TODO: Shocking Ray
 # TODO: Shocking Shield
 # TODO: Short Circuit
@@ -588,6 +602,7 @@
 # TODO: Siphon Life
 # TODO: (SW) Skill Empowerment
 # TODO: Skill Protocol
+# TODO: Skill Understanding
 # TODO: (SW) Slow
 # TODO: Slow Descent
 # TODO: Slow-Release Medpac
@@ -637,19 +652,4 @@
 # TODO: (SW) Whirlwind
 # TODO: Will of the Force
 # TODO: Wrack
-# TODO: Chastisement
-# TODO: Cleanse Mind
-# TODO: Dark Rejuvenation
-# TODO: Destructive Blow
-# TODO: Force Armor
-# TODO: Force Defense
-# TODO: Foresight
-# TODO: Lightning Assault
-# TODO: Manipulation
-# TODO: Mind Lash
-# TODO: Plant Growth
-# TODO: Retribution
-# TODO: Seize Life
-# TODO: Share Memory
-# TODO: Skill Understanding
 # TODO: Wrathful Blow

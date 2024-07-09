@@ -34,7 +34,7 @@ def processPower(args):
                 spell["classes"] = "Universal"
                 if not wi:
                     out.append(getWith(spell))
-        elif feats.get("TechDabbler"):
+        elif feats.get("TechDabbler") or c.cc_exists("Technologist's Exploit"):
             if spell := search(keyword, tp):
                 cc = "Tech Points"
         else:
@@ -150,6 +150,12 @@ def processPower(args):
         if c.cc_exists("Focus Points") and switch and not ignore:
             cc = f"Focus Points" 
             points = points-1 if points > 0 else 0
+
+    # Operative Technologist's Exploit
+    elif c.cc_exists("Technologist's Exploit") and c.get_cc("Technologist's Exploit") > 0 and cc == "Tech Points":
+        cc = "Technologist's Exploit"
+        out.append(f''' -f "Technologist's Exploit|You learn and can cast one 1st-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for this power.\n\nYou can select this exploit multiple times. Each time you do so, you must choose a different power." ''')
+        points = 1
 
     # --------------------
     # Pay the cost

@@ -2042,13 +2042,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -2187,13 +2189,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         }
@@ -2223,13 +2227,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -2865,13 +2871,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         }
@@ -3190,7 +3198,8 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               },
               {
                 "type": "ieffect2",
@@ -3204,7 +3213,8 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "{damage}/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -4171,13 +4181,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         }
@@ -5611,13 +5623,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -5773,13 +5787,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -5833,13 +5849,15 @@
                 "fail": [
                   {
                     "type": "damage",
-                    "damage": "{damage} [force]"
+                    "damage": "{damage} [force]",
+                    "fixedValue": true
                   }
                 ],
                 "success": [
                   {
                     "type": "damage",
-                    "damage": "({damage})/2 [force]"
+                    "damage": "({damage})/2 [force]",
+                    "fixedValue": true
                   }
                 ]
               }
@@ -7100,13 +7118,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -7151,7 +7171,8 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               },
               {
                 "type": "ieffect2",
@@ -7164,7 +7185,8 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -8321,13 +8343,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         },
@@ -8358,13 +8382,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -8483,13 +8509,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -9989,7 +10017,8 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               },
               {
                 "type": "ieffect2",
@@ -10022,7 +10051,8 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -10365,13 +10395,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -10933,7 +10965,8 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               },
               {
                 "type": "ieffect2",
@@ -10975,7 +11008,8 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -11267,13 +11301,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         }
@@ -11307,13 +11343,15 @@
                           "fail": [
                             {
                               "type": "damage",
-                              "damage": "{damage}"
+                              "damage": "{damage}",
+                              "fixedValue": true
                             }
                           ],
                           "success": [
                             {
                               "type": "damage",
-                              "damage": "({damage})/2"
+                              "damage": "({damage})/2",
+                              "fixedValue": true
                             }
                           ]
                         }
@@ -12965,7 +13003,8 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               },
               {
                 "type": "ieffect2",
@@ -13026,7 +13065,8 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -13136,13 +13176,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }
@@ -16983,13 +17025,15 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage}"
+                "damage": "{damage}",
+                "fixedValue": true
               }
             ],
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage})/2"
+                "damage": "({damage})/2",
+                "fixedValue": true
               }
             ]
           }

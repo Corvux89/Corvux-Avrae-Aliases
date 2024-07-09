@@ -1,0 +1,11 @@
+<drac2>
+ch = character()
+aug = ch.get_cvar("GuardianOffensiveAugments", 0)
+num = min(int(&ARGS&[0] if &ARGS& else aug+1), 2)
+
+ch.set_cvar("GuardianOffensiveAugments", num)
+
+base = f'''embed -thumb {image} -color {color} -title "Guardian Offensive Augment!" -desc "\n**\# of Berserker Offensive Augments**: {num}" '''
+
+return base
+</drac2>

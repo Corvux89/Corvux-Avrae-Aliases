@@ -309,5 +309,3 @@ def get_max_roll(dmg_str):
         else:
             total_damage += f"+{part}"
     return total_damage
-
-

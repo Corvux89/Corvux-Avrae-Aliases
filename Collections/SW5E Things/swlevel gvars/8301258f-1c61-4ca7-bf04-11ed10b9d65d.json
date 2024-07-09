@@ -131,7 +131,7 @@
                                     "onFalse": [
                                         {
                                             "type": "condition",
-                                            "condition": "choice.lower() in 'alactrity'",
+                                            "condition": "choice.lower() in 'alacrity'",
                                             "onTrue": [
                                                 {
                                                     "type": "target",
@@ -384,6 +384,48 @@
         ]
     },
     {
+        "name": "Bolstering Channel (Adept)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "8"
+        }
+    },
+    {
+        "name": "Bolstering Channel (Ancient)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "12"
+        }
+    },
+    {
+        "name": "Bolstering Channel (Apprentice)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "4"
+        }
+    },
+    {
+        "name": "Bolstering Channel (Journeyman)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "6"
+        }
+    },
+    {
+        "name": "Bolstering Channel (Master)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "10"
+        }
+    },
+    {
+        "name": "Bolstering Channel (Novice)",
+        "modCounter": {
+            "name": "Force Points",
+            "modifier": "2"
+        }
+    },
+    {
         "name": "Bountiful Luck",
         "actions": [
             {
@@ -536,6 +578,140 @@
                                     "damage": "proficiencyBonus"
                                 }
                             ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Cryo Amplifier",
+        "actions": [
+            {
+                "action": {
+                    "name": "Cryo Amplifier",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{max(intelligenceMod,1)} [cold]",
+                                    "fixedValue": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes cold damage from a tech power that you cast that requires an attack roll or saving throw, you deal additional cold damage equal to your Intelligence modifier (minimum of +1)."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Cryo Amplifier, Mk II",
+        "counters": [
+            {
+                "name": "Cryo Amplifier, Mk II",
+                "value": "intelligenceMod",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Cryo Amplifier, Mk II",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Slowed",
+                                    "duration": 2,
+                                    "end": true,
+                                    "tick_on_caster": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Cryo Amplifier, Mk II",
+                            "value": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you deal damage to a creature with this amplifier, the creature gains one level of slowed until the end of your next turn. If the tech power already imposes levels of slowed, the number of slowed levels imposed increases by 1.\n\nYou can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain all expended uses when you complete a long rest."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Cryo Amplifier, Mk III",
+        "actions": [
+            {
+                "action": {
+                    "name": "Cryo Amplifier, Mk III",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Cryo Amplifier, Mk III",
+                                    "duration": 2,
+                                    "end": true,
+                                    "tick_on_caster": true,
+                                    "desc": "When the creature fails Constitution saving throw it instead becomes restrained until the start of your next turn.",
+                                    "buttons": [
+                                        {
+                                            "label": "Save Failed",
+                                            "verb": "failed their save",
+                                            "style": 1,
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "each",
+                                                    "effects": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Restrained",
+                                                            "duration": 2,
+                                                            "end": true,
+                                                            "tick_on_caster": true,
+                                                            "effects": {
+                                                                "save_dis": [
+                                                                    "dex"
+                                                                ]
+                                                            },
+                                                            "desc": "4 slow levels\n - Attack rolls against the creature have advantage\n - Disadvantage on dex saving throws"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you deal damage to a creature with this amplifier, the creature gains one level of slowed until the end of your next turn. If the tech power already imposes levels of slowed, the number of slowed levels imposed increases by 1.\n\nYou can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain all expended uses when you complete a long rest."
                         }
                     ]
                 }
@@ -700,6 +876,133 @@
                         {
                             "type": "text",
                             "text": "While you are wielding a weapon in one hand with which you are proficient and no other weapons, you can use your bonus action to feint. If you do so, you must make a Dexterity (Sleight of Hand) or Charisma (Deception) check (your choice) contested by the target’s Wisdom (Insight) check. On a success, you have advantage on the first attack roll you make against them before the start of your next turn."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Electrical Amplifier",
+        "actions": [
+            {
+                "action": {
+                    "name": "Electrical Amplifier",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{max(intelligenceMod,1)} [lightning]",
+                                    "fixedValue": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes lightning damage from a tech power that you cast that requires an attack roll or saving throw, you deal additional lightning damage equal to your Intelligence modifier (minimum of +1)."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Electrical Amplifier, Mk II",
+        "counters": [
+            {
+                "name": "Electrical Amplifier, Mk II",
+                "value": "max(intelligenceMod,1)",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Electrical Amplifier, Mk II",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Shocked",
+                                            "duration": 2,
+                                            "end": true,
+                                            "tick_on_caster": true,
+                                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Electrical Amplifier, Mk II",
+                            "value": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you deal damage to a creature with this amplifier, the creature must succeed at a Constitution saving throw or become shocked until the end of your next turn.\n\nYou can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain all expended uses when you complete a long rest."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Electrical Amplifier, Mk III",
+        "actions": [
+            {
+                "action": {
+                    "name": "Electrical Amplifier, Mk III",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Stunned",
+                                            "duration": 2,
+                                            "tick_on_caster": true,
+                                            "end": true,
+                                            "desc": "A stunned creature is incapacitated (see the condition), can’t move, and can speak only falteringly.\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n - Attack rolls against the creature have advantage."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Electrical Amplifier, Mk II",
+                            "value": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you expend a use of your Electrical Amplifier, Mk II, when the creature fails Constitution saving throw it instead becomes stunned until the start of your next turn."
                         }
                     ]
                 }
@@ -910,6 +1213,116 @@
                 "reset": "short",
                 "desc": "As an action, you can sense the presence of illusions and other effects designed to deceive the senses within 30 feet of you, provided that you aren't blinded or deafened. You sense that an effect is trying to trick you, but you gain no insight into what is hidden or its true nature. Once you've used this feature, you must complete a short or long rest before you can use it again.",
                 "display": "bubble"
+            }
+        ]
+    },
+    {
+        "name": "Explosive Amplifier",
+        "actions": [
+            {
+                "action": {
+                    "name": "Explosive Amplifier",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{max(intelligenceMod,1)} [fire]",
+                                    "fixedValue": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes fire damage from a tech power that you cast that requires an attack roll or saving throw, you deal additional fire damage equal to your Intelligence modifier (rounded up, minimum of +1)."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Explosive Amplifier, Mk II",
+        "counters": [
+            {
+                "name": "Explosive Amplifier, Mk II",
+                "value": "intelligenceMod",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Explosive Amplifier, Mk II",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Ignited",
+                                    "duration": 1,
+                                    "buttons": [
+                                        {
+                                            "label": "Ignited - End of Turn",
+                                            "style": 4,
+                                            "verb": "takes additional damage",
+                                            "desc": "caster.spellbook.spell_mod",
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{ieffect.desc.split()[-1] [fire]"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Explosive Amplifier, Mk II",
+                            "value": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you deal damage to a creature with this amplifier, it becomes ignited (your techcasting ability modifier) until the start of it’s next turn.\n\nYou can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain all expended uses when you complete a long rest."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Explosive Amplifier, Mk III",
+        "actions": [
+            {
+                "action": {
+                    "name": "Explosive Amplifier, Mk III",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "text",
+                            "text": "When a creature is ignited with a use of your Explosive Amplifier, Mk II and that creature takes any fire damage while ignited, the creature has disadvantage on the next Dexterity saving throw it makes before the start of it’s next turn."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -1969,6 +2382,14 @@
                 "desc": "You know one at-will tech power. Additionally, you know one 4th-level tech power, which you can cast once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
             }
         ]
+    },
+    {
+        "name": "Guardian Offensive Augment",
+        "cvar": {
+            "name": "GuardianOffensiveAugments",
+            "default": 0,
+            "value": 1
+        }
     },
     {
         "name": "Healer",
@@ -3081,6 +3502,18 @@
                         }
                     ]
                 }
+            }
+        ]
+    },
+    {
+        "name": "Technologist's Exploit",
+        "counters": [
+            {
+                "name": "Technologist's Exploit",
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "desc": "You learn and can cast one 1st-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for this power.\n\nYou can select this exploit multiple times. Each time you do so, you must choose a different power."
             }
         ]
     },
