@@ -532,7 +532,7 @@
     "automation": [
       {
         "type": "roll",
-        "dice": "3d6+{caster.spellbook.spell_mod} [healing]",
+        "dice": "2d8+{caster.spellbook.spell_mod} [healing]",
         "name": "healing"
       },
       {
