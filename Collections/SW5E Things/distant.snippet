@@ -1,19 +1,23 @@
 <drac2>
-cc="Force Points"
-c=character()
+cc = "Force Points" if "Force Points" in &ARGS& else "Tech Points"
+ch=character()
 
-v = c.cc_exists(cc) and c.get_cc(cc) >=1
+v = ch.cc_exists(cc) and ch.get_cc(cc) >=1
 output = ""
 
 if v:
-    output+= ''' -f "Distant|When you cast a power that has a range of 5 feet or greater, you can spend 1 additional force point to double the range of the power.\n\nAlternatively, when you cast a power that has a range of touch, you can spend 1 additional force point to make the range of the power 30 feet." '''
-    c.mod_cc(cc,-1)
-    output += f''' -f "{cc}(-1)|{c.cc_str(cc)}" '''
+    if cc == "Force Points":
+        output+= ''' -f "Distant|When you cast a power that has a range of 5 feet or greater, you can spend 1 additional force point to double the range of the power.\n\nAlternatively, when you cast a power that has a range of touch, you can spend 1 additional force point to make the range of the power 30 feet." '''
+    else:
+        out += f''' -f "Distant Subroutine|When you cast a power that has a range of 5 feet or greater, you can spend 1 additional tech point to double the range of the power.\n\nAlternatively, when you cast a power that has a range of touch, you can spend 1 additional tech point to make the range of the power 30 feet.\n\nYou can use only one Subroutine modification on a power when you cast it, unless otherwise noted." '''
+
+    ch.mod_cc(cc,-1)
+    output += f''' -f "{cc}(-1)|{ch.cc_str(cc)}" '''
 else:
-    if not c.cc_exists(cc):
+    if not ch.cc_exists(cc):
         err(f"You do not have this ability")
     else:
-        output += f''' -f "Distant|You don't have enough force points to distant and cast" '''
+        output += f''' -f "Distant|You don't have enough {cc} to distant and cast" '''
 
 return output
 </drac2>

@@ -5,22 +5,6 @@
 # TODO: Source Missing Tune-up
 # TODO: Source Missing Wire Tow
 # TODO: Expanded Missing Judgment
-# TODO: Expanded Missing Chastisement
-# TODO: Expanded Missing Cleanse Mind
-# TODO: Expanded Missing Dark Rejuvenation
-# TODO: Expanded Missing Destructive Blow
-# TODO: Expanded Missing Force Armor
-# TODO: Expanded Missing Force Defense
-# TODO: Expanded Missing Foresight
-# TODO: Expanded Missing Lightning Assault
-# TODO: Expanded Missing Manipulation
-# TODO: Expanded Missing Mind Lash
-# TODO: Expanded Missing Plant Growth
-# TODO: Expanded Missing Retribution
-# TODO: Expanded Missing Seize Life
-# TODO: Expanded Missing Share Memory
-# TODO: Expanded Missing Skill Understanding
-# TODO: Expanded Missing Wrathful Blow
 # TODO: Expanded Missing Channel Pain
 # TODO: Expanded Missing Control Force
 # TODO: Expanded Missing Force Grip
@@ -392,6 +376,8 @@
 # TODO: Carbon Fog
 # TODO: Carbonite
 # TODO: Carbonite Explosion
+# TODO: Chastisement
+# TODO: Cleanse Mind
 # TODO: Cloaking Screen
 # TODO: Coerce Mind
 # TODO: Comprehend Speech
@@ -407,7 +393,9 @@
 # TODO: Cryogenic Volley
 # TODO: Cryogenic Wave
 # TODO: Danger Sense
+# TODO: Dark Rejuvenation
 # TODO: Dark Shear
+# TODO: Dark Transfer
 # TODO: (SW) Darkness
 # TODO: (SW) Darkvision
 # TODO: Death Field
@@ -416,6 +404,7 @@
 # TODO: Defibrillate
 # TODO: Delayed Explosion
 # TODO: Destroy Droid
+# TODO: Destructive Blow
 # TODO: Detect Enhancement
 # TODO: Detect Invisibility
 # TODO: Detect Traps
@@ -443,6 +432,7 @@
 # TODO: Firestorm
 # TODO: Flaming Shots
 # TODO: Flash
+# TODO: Force Armor
 # TODO: Force Blind/Deafen
 # TODO: Force Blinding
 # TODO: Force Blur
@@ -450,11 +440,13 @@
 # TODO: Force Breach
 # TODO: Force Concealment
 # TODO: Force Confusion
+# TODO: Force Defense
 # TODO: Force Enlightenment
 # TODO: Force Focus
 # TODO: Force Immunity
 # TODO: Force Jump
 # TODO: Force Leap
+# TODO: Force Light
 # TODO: Force Link
 # TODO: Force Mask
 # TODO: Force Meld
@@ -467,6 +459,7 @@
 # TODO: Force Vision
 # TODO: Force Weapon
 # TODO: Force Whisper
+# TODO: Foresight
 # TODO: (SW) Freedom of Movement
 # TODO: Frequency Scan
 # TODO: Friendly Fire
@@ -481,6 +474,7 @@
 # TODO: Greater Translation Program
 # TODO: Greater Translocate
 # TODO: Group Hologram
+# TODO: Guiding Technique
 # TODO: Hallucination
 # TODO: Heighten Senses
 # TODO: (SW) Heroism
@@ -503,6 +497,7 @@
 # TODO: Invisibility to Cameras
 # TODO: (SW) Invulnerability
 # TODO: Jet of Flame
+# TODO: Judgement
 # TODO: Jump Jet
 # TODO: Kill
 # TODO: Kolto Cloud
@@ -511,13 +506,16 @@
 # TODO: Kolto Reserve
 # TODO: Kolto Waves
 # TODO: (SW) Light
+# TODO: Lightning Assault
 # TODO: Lightning Charge
 # TODO: (SW) Locate Creature
 # TODO: (SW) Locate Object
 # TODO: Lock
+# TODO: Luminous Technique
 # TODO: (SW) Maddening Darkness
 # TODO: Magnetic Field
 # TODO: Magnetic Hold
+# TODO: Manipulation
 # TODO: Mass Animation
 # TODO: Mass Coerce Mind
 # TODO: Mass Hysteria
@@ -526,8 +524,10 @@
 # TODO: Master Malacia
 # TODO: Master Revitalize
 # TODO: Master Speed
+# TODO: Meditative Technique
 # TODO: (SW) Mending
 # TODO: (SW) Mind Blank
+# TODO: Mind Lash
 # TODO: Mind Prison
 # TODO: (SW) Mind Spike
 # TODO: Mind Trap
@@ -537,6 +537,7 @@
 # TODO: (SW) Mislead
 # TODO: Mobile Lights
 # TODO: Morichro
+# TODO: Nature Trick
 # TODO: Necrotic Charge
 # TODO: Necrotic Touch
 # TODO: Neurotoxin
@@ -548,6 +549,7 @@
 # TODO: Paralyze Creature
 # TODO: Phaseshift
 # TODO: Pheromone Burst
+# TODO: Plant Growth
 # TODO: Plant Surge
 # TODO: Poison Dart
 # TODO: (SW) Poison Spray
@@ -572,22 +574,26 @@
 # TODO: Rescue
 # TODO: (SW) Resistance
 # TODO: Restoration
+# TODO: Retribution
 # TODO: Revitalize
 # TODO: Rewrite Memory
 # TODO: Rime Strike
 # TODO: Ruin
+# TODO: Saber Dance
 # TODO: Scan Area
 # TODO: Scourge
 # TODO: Scramble Interface
 # TODO: Scrambling Barrier
 # TODO: Scrambling Field
 # TODO: Security Protocols
+# TODO: Seize Life
 # TODO: (SW) Sending
 # TODO: Sense Emotion
 # TODO: Sense Force
 # TODO: Sensor Probe
 # TODO: Sever Force
 # TODO: Shadow Sight
+# TODO: Share Memory
 # TODO: Shocking Ray
 # TODO: Shocking Shield
 # TODO: Short Circuit
@@ -596,6 +602,7 @@
 # TODO: Siphon Life
 # TODO: (SW) Skill Empowerment
 # TODO: Skill Protocol
+# TODO: Skill Understanding
 # TODO: (SW) Slow
 # TODO: Slow Descent
 # TODO: Slow-Release Medpac
@@ -608,6 +615,7 @@
 # TODO: Sound Trick
 # TODO: (SW) Spare the Dying
 # TODO: Spot the Weakness
+# TODO: Sprout Flora
 # TODO: Stasis
 # TODO: Stasis Field
 # TODO: Stinger
@@ -622,7 +630,9 @@
 # TODO: Telekinetic Burst
 # TODO: Telekinetic Wave
 # TODO: Telemetry
+# TODO: Telepathic Link
 # TODO: Tonal Translocate
+# TODO: Torment
 # TODO: Toxic Cloud
 # TODO: Toxin Purge
 # TODO: Toxin Scan
@@ -632,25 +642,14 @@
 # TODO: Translocate
 # TODO: True Sight
 # TODO: Truth Serum
+# TODO: Vengeful Charge
 # TODO: Venomous Strike
 # TODO: Vertical Maneuvering
+# TODO: Wakefulness
 # TODO: Wall Run
 # TODO: (SW) Wall of Light
 # TODO: Ward
 # TODO: (SW) Whirlwind
 # TODO: Will of the Force
 # TODO: Wrack
-# TODO: Reveal Shatterpoint
-# TODO: Saber Dance
-# TODO: Telepathic Link
-# TODO: Wakefulness
-# TODO: Dark Transfer
-# TODO: Force Light
-# TODO: Guiding Technique
-# TODO: Judgement
-# TODO: Luminous Technique
-# TODO: Meditative Technique
-# TODO: Nature Trick
-# TODO: Sprout Flora
-# TODO: Torment
-# TODO: Vengeful Charge
+# TODO: Wrathful Blow

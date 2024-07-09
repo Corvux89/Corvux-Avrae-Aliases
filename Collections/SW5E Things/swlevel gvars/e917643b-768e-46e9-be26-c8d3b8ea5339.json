@@ -54,6 +54,17 @@
                     "activation_type": 2,
                     "automation": [
                         {
+                            "type": "variable",
+                            "value": "GuardianOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "8 if augments < 1 else 10 if augments < 2 else 12",
+                            "name": "dieSize"
+                        },
+                        {
                             "type": "counter",
                             "counter": "Force Points",
                             "amount": 1,
@@ -65,13 +76,48 @@
                             "effects": [
                                 {
                                     "type": "damage",
-                                    "damage": "{lastCounterUsedAmount}d8 [energy]"
+                                    "damage": "{lastCounterUsedAmount}d{dieSize} [energy]"
                                 }
                             ]
                         },
                         {
                             "type": "text",
                             "text": "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more additional damage than the amount shown in the Focused Strikes column of the guardian table."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 11,
+                "action": {
+                    "name": "Improved Force-Empowered Strikes",
+                    "_v": 2,
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "GuardianOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "8 if augments < 1 else 10 if augments < 2 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "1d{dieSize} [energy]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You are so in tune with the Force that all your melee weapon strikes carry the power of the Force with them. Whenever you hit a creature with a melee weapon attack, the creature takes an extra 1d8 damage. The damage is the same type as the weapon’s damage."
                         }
                     ]
                 }
@@ -665,6 +711,17 @@
                     "activation_type": 2,
                     "automation": [
                         {
+                            "type": "variable",
+                            "value": "GuardianOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "8 if augments < 1 else 10 if augments < 2 else 12",
+                            "name": "dieSize"
+                        },
+                        {
                             "type": "counter",
                             "counter": "Force Points",
                             "amount": 1,
@@ -676,13 +733,48 @@
                             "effects": [
                                 {
                                     "type": "damage",
-                                    "damage": "{lastCounterUsedAmount}d8 [energy]"
+                                    "damage": "{lastCounterUsedAmount}d{dieSize} [energy]"
                                 }
                             ]
                         },
                         {
                             "type": "text",
                             "text": "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more additional damage than the amount shown in the Focused Strikes column of the guardian table."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 11,
+                "action": {
+                    "name": "Improved Force-Empowered Strikes",
+                    "_v": 2,
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "GuardianOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "8 if augments < 1 else 10 if augments < 2 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "1d{dieSize} [energy]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You are so in tune with the Force that all your melee weapon strikes carry the power of the Force with them. Whenever you hit a creature with a melee weapon attack, the creature takes an extra 1d8 damage. The damage is the same type as the weapon’s damage."
                         }
                     ]
                 }
@@ -3716,6 +3808,81 @@
                 "reset": "long",
                 "display": "bubble"
             }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Blinding Assault",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Blinding Assault",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Force Points",
+                                            "amount": 1,
+                                            "errorBehaviour": "raise"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Blinded",
+                                            "effects": {
+                                                "attack_advantage": -1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Double-Strike Force-Empowered Self option, you can have them make a Constitution saving throw against your Universal Force Save DC. On a failed Save, the creature is blinded until the end of your next turn.\nYou can use this feature twice per long rest, and gain an additional use at 5th, 9th, 13th, and 17th level.\nAlternatively, if you have no uses of this feature remaining you can instead expend 1 force points to use it."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Guided Strikes",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force Point",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "While you are effected by the Blinded Condition, once per turn when a creture misses you with an attack you may spend a force point to make a melee weapon attack against them (no action required)."
+                        }
+                    ]
+                }
+            }
         ]
     },
     {
@@ -4177,6 +4344,81 @@
                 "classLevel": "SentineldarkLevel",
                 "reset": "long",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Blinding Assault",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Blinding Assault",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Force Points",
+                                            "amount": 1,
+                                            "errorBehaviour": "raise"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Blinded",
+                                            "effects": {
+                                                "attack_advantage": -1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Double-Strike Force-Empowered Self option, you can have them make a Constitution saving throw against your Universal Force Save DC. On a failed Save, the creature is blinded until the end of your next turn.\nYou can use this feature twice per long rest, and gain an additional use at 5th, 9th, 13th, and 17th level.\nAlternatively, if you have no uses of this feature remaining you can instead expend 1 force points to use it."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Guided Strikes",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force Point",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "While you are effected by the Blinded Condition, once per turn when a creture misses you with an attack you may spend a force point to make a melee weapon attack against them (no action required)."
+                        }
+                    ]
+                }
             }
         ]
     },

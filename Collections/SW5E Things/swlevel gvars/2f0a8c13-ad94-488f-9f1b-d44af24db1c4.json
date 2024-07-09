@@ -2597,22 +2597,118 @@
         "subclass": "Cybertech",
         "counters": [
             {
-                "name": "Adaptable Applications",
+                "name": "Quickslice",
                 "level": 6,
-                "value": "intelligenceMod",
+                "value": 1,
+                "reset": "short",
                 "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level (rounded down).\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
+                "classLevel": "EngineerLevel"
             },
             {
-                "name": "Perfected Purposing",
+                "name": "Maximum Output",
                 "level": 18,
+                "classLevel": "EngineerLevel",
                 "value": 1,
                 "display": "bubble",
-                "reset": "short",
-                "classLevel": "EngineerLevel",
                 "desc": "When you cast a tech power, you can choose to deal maximum damage or provide maximum healing with that power.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Insightful Casting - Create Tech Points",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Potent Aptitude",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "lastCounterUsedAmount*2",
+                            "name": "restore"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Tech Points",
+                            "amount": "-restore",
+                            "fixedValue": true
+                        },
+                        {
+                            "type": "text",
+                            "text": "You can expend uses of your Potent Aptitude to gain additional tech points, or expend tech points to gain additional Potent Aptitude uses.\n\n*Creating Tech Points.* You can transform a single use of Potent Aptitude into two tech points as a bonus action on your turn. These additional tech points can exceed your maximum. Any tech points you create with this feature vanish when you finish a short rest.\n\n*Creating Potent Aptitude.* As a bonus action on your turn, you can expend two tech points to gain a single use of your Potent Aptitude."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Insightful Casting - Create Potent Aptitude",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Tech Points",
+                            "amount": 2,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "floor(lastCounterUsedAmount/2)",
+                            "name": "restore"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Potent Aptitude",
+                            "amount": "-restore",
+                            "fixedValue": true
+                        },
+                        {
+                            "type": "text",
+                            "text": "You can expend uses of your Potent Aptitude to gain additional tech points, or expend tech points to gain additional Potent Aptitude uses.\n\n*Creating Tech Points.* You can transform a single use of Potent Aptitude into two tech points as a bonus action on your turn. These additional tech points can exceed your maximum. Any tech points you create with this feature vanish when you finish a short rest.\n\n*Creating Potent Aptitude.* As a bonus action on your turn, you can expend two tech points to gain a single use of your Potent Aptitude."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 6,
+                "action": {
+                    "name": "Quickslice",
+                    "_v": 2,
+                    "activation_type": 4,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "check",
+                                    "ability": "intelligence",
+                                    "dc": "10"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Quickslice",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature you can see casts a tech power, you may use your reaction to attempt to download that tech power to your wristpad for later use if it is of a level for which you can cast.\n\nMake an ability check using your techcasting ability with proficiency. The DC equals 10 + two times the power’s level. On a success you store the power for later use. On a failure, the power is not stored. You can cast powers stored in your wristpad as if you had learned them and they do not count against your tech powers known.\n\nOnce you have used this feature on a creature, you cannot do so again on the same creature until you complete a short or long rest.\n\nYou can store an amount of levels worth of tech powers equal to your engineer level at a time. Additionally, you can choose replace or remove one or more tech powers learned by this feature each time you use it."
+                        }
+                    ]
+                }
             }
         ]
     },
