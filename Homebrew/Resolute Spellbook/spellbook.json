@@ -4664,9 +4664,9 @@
                 "damage": "10d6 + 40 [acid]",
                 "overheal": false,
                 "higher": {
-                  "7": "3d6",
-                  "8": "6d6",
-                  "9": "9d6"
+                  "7": "3d6 [acid]",
+                  "8": "6d6 [acid]",
+                  "9": "9d6 [acid]"
                 }
             ],
             "success": []
