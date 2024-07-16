@@ -3318,6 +3318,17 @@
         }
     },
     {
+        "name": "Splashclass - Fighter",
+        "counter": [
+            {
+                "name": "Superiority Dice",
+                "value": "proficiencyBonus",
+                "display": "bubble",
+                "reset": "short"
+            }
+        ]
+    },
+    {
         "name": "Superiority Mastery",
         "modCounter": {
             "name": "Superiority Dice",

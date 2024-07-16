@@ -17,6 +17,7 @@ def processName(name):
                                                                                                      '')
     out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
         "Projector Canister, Incendiary - ", '')
+    out = out.replace("Projector Tank, Corrosive - ", "").replace("Projector Tank, Cryo - ", "").replace("Projector Tank, Incendiary - ", "")
     out = out.replace("Grapple - ", "")
 
     out = out.replace("Cooldown - ", "").replace("Reload - ", "")
@@ -47,6 +48,7 @@ def baseName(name):
                                                                                                      '')
     # out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
     #     "Projector Canister, Incendiary - ", '')
+    out = out.replace("Projector Tank, Corrosive - ", "").replace("Projector Tank, Cryo - ", "").replace("Projector Tank, Incendiary - ", "")
     out = out.replace("Grapple - ", "")
 
     out = out.replace("Cooldown - ", "").replace("Reload - ", "")

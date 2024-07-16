@@ -4,16 +4,7 @@
 # TODO: Source Missing Squad Shield
 # TODO: Source Missing Tune-up
 # TODO: Source Missing Wire Tow
-# TODO: Expanded Missing Judgment
-# TODO: Expanded Missing Channel Pain
-# TODO: Expanded Missing Control Force
-# TODO: Expanded Missing Force Grip
-# TODO: Expanded Missing Force Lift
-# TODO: Expanded Missing Force Listening
 # TODO: Expanded Missing Force Thrust
-# TODO: Expanded Missing Forked Lightning
-# TODO: Expanded Missing Freedom of Will
-# TODO: Expanded Missing Healing Meditation
 # TODO: Expanded Missing Lightning Surge
 # TODO: Expanded Missing Mass Dun Möch
 # TODO: Expanded Missing Mass Mind Trick
@@ -497,7 +488,7 @@
 # TODO: Invisibility to Cameras
 # TODO: (SW) Invulnerability
 # TODO: Jet of Flame
-# TODO: Judgement
+# TODO: Judgment
 # TODO: Jump Jet
 # TODO: Kill
 # TODO: Kolto Cloud
@@ -653,3 +644,8 @@
 # TODO: Will of the Force
 # TODO: Wrack
 # TODO: Wrathful Blow
+# TODO: Channel Pain
+# TODO: Force Grip
+# TODO: Force Lift
+# TODO: Force Listening
+# TODO: Forked Lightning
