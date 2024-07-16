@@ -11748,6 +11748,7 @@
           {
             "type": "damage",
             "damage": "-70 [heal]",
+            "overheal": false,
             "higher": {
               "7": "-10 [heal]",
               "8": "-20 [heal]",
