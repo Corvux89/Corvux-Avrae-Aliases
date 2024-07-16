@@ -11272,6 +11272,26 @@
     "name": "Judgment",
     "level": 0,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "d6 [force]",
+                "overheal": false,
+                "cantripScale": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      }
+    ],
     "classes": "Light",
     "subclasses": "",
     "casttime": "1 action",
