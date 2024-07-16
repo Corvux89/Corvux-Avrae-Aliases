@@ -4650,6 +4650,30 @@
     "name": "(SW) Disintegrate",
     "level": 6,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "10d6 + 40 [acid]",
+                "overheal": false,
+                "higher": {
+                  "7": "3d6",
+                  "8": "6d6",
+                  "9": "9d6"
+                }
+            ],
+            "success": []
+          }
+        ]
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
