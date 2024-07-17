@@ -4650,6 +4650,35 @@
     "name": "(SW) Disintegrate",
     "level": 6,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "10d6 + 40 [acid]",
+                "overheal": false,
+                "higher": {
+                  "7": "3d6 [acid]",
+                  "8": "6d6 [acid]",
+                  "9": "9d6 [acid]"
+                }
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A blast of corrosive energy emits from you. Choose a target within range. \r\n\r\nA creature targeted by this power must make a Dexterity saving throw. On a failed save, the target takes 10d6 + 40 acid damage. If this damage reduces the target to 0 hit points, it is disintegrated.\r\n\r\nA disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.\r\n\r\nThis power automatically disintegrates a Large or smaller object. If the target is a Huge or larger object, this power disintegrates a 10-foot-cube portion of it. \r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 7th level or higher, the damage increases by 3d6 for each slot level above 6th."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
@@ -11272,6 +11301,30 @@
     "name": "Judgment",
     "level": 0,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "d6 [force]",
+                "overheal": false,
+                "cantripScale": true
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You channel righteous Force energy manifested as a streak of light at a creature within range. Make a ranged force attack against the target. On a hit, the target takes 1d6 force damage.\n\nThe power creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam."
+      }
+    ],
     "classes": "Light",
     "subclasses": "",
     "casttime": "1 action",
@@ -11688,6 +11741,28 @@
     "name": "Kolto Infusion",
     "level": 6,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-70 [heal]",
+            "overheal": false,
+            "higher": {
+              "7": "-10 [heal]",
+              "8": "-20 [heal]",
+              "9": "-30 [heal]"
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a creature that you can see within range. A surge of kolto energy washes over the creature, causing it to regain 70 hit points. This power also ends blindness, deafness, and any diseases affecting the target. This power has no effect on droids or constructs.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th."
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 action",
