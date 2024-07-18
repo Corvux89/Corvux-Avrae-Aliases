@@ -6382,6 +6382,109 @@
     "concentration": false
   },
   {
+    "name": "Force Burst",
+    "level": 4,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "4d6 [force]",
+        "name": "damage",
+        "higher": {
+          "5": "1d6",
+          "6": "2d6",
+          "7": "3d6",
+          "8": "4d6",
+          "9": "5d6"
+        }
+      },
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d10 [force]",
+                "higher": {
+                  "5": "1d6",
+                  "6": "2d6",
+                  "7": "3d6",
+                  "8": "4d6",
+                  "9": "5d6"
+                }
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up",
+                    "style": "1"
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2)",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You form a dense sphere of gathered Force energy and hurl it at a target within range at high speed. Make a ranged force attack against one target. On a hit, the target takes 2d10 force damage. Hit or miss, the sphere then explodes and the target and each creature within 5 feet of it must make a Constitution saving throw. On a failed save, a creature takes 4d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn't knocked prone.\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d6 and the explosion's range increases by 5 feet for each slot level above 4th."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "90 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You form a dense sphere of gathered Force energy and hurl it at a target within range at high speed. Make a ranged force attack against one target. On a hit, the target takes 2d10 force damage. Hit or miss, the sphere then explodes and the target and each creature within 5 feet of it must make a Constitution saving throw. On a failed save, a creature takes 4d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn't knocked prone.\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d6 and the explosion's range increases by 5 feet for each slot level above 4th.",
+    "concentration": false
+  },
+  {
     "name": "Force Camouflage",
     "level": 2,
     "school": "Force",

@@ -84,6 +84,66 @@
         "_v": 2
     },
     {
+        "name": "Thermal Detonator",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "roll",
+                        "dice": "2d6 [fire] + 2d10 [kinetic]",
+                        "name": "damage"
+                    },
+                    {
+                        "type": "save",
+                        "stat": "dex",
+                        "dc": 14,
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "({damage}/2)",
+                                "fixedValue": true
+                            }
+                        ],
+                        "fail": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage}",
+                                "fixedValue": true
+                            },
+                            {
+                                "type": "ieffect2",
+                                "name": "Prone",
+                                "duration": "-1",
+                                "effects": {
+                                    "attack_advantage": "-1"
+                                },
+                                "buttons": [
+                                    {
+                                        "automation": [
+                                            {
+                                                "type": "remove_ieffect"
+                                            }
+                                        ],
+                                        "label": "Stand Up",
+                                        "verb": "stands up",
+                                        "style": "1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Thermal detonators are unique grenades that can only be disarmed by whoever armed them. In addition to being thrown or set like a grenade, they can also be paired with a remote detonator.\n\nEach creature within 20 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 fire and 2d10 kinetic damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, the creature is knocked prone."
+            }
+        ],
+        "_v": 2
+    },
+    {
         "name": "Cartridge, Slug - Tranquilizer Rifle",
         "automation": [
             {

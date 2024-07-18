@@ -28,7 +28,6 @@
 # TODO: Expanded Missing Telekinetic Wall
 # TODO: Expanded Missing Center of Being
 # TODO: Expanded Missing Electrocution
-# TODO: Expanded Missing Force Burst
 # TODO: Expanded Missing Greater Battle Precognition
 # TODO: Expanded Missing Greater Force Intuition
 # TODO: Expanded Missing Greater Manipulation
@@ -367,6 +366,7 @@
 # TODO: Carbon Fog
 # TODO: Carbonite
 # TODO: Carbonite Explosion
+# TODO: Channel Pain
 # TODO: Chastisement
 # TODO: Cleanse Mind
 # TODO: Cloaking Screen
@@ -401,7 +401,6 @@
 # TODO: Detect Traps
 # TODO: Diminish Tech
 # TODO: Disable Droid
-# TODO: (SW) Disintegrate
 # TODO: Disperse Energy
 # TODO: (SW) Dominate Beast
 # TODO: Dominate Mind
@@ -434,11 +433,14 @@
 # TODO: Force Defense
 # TODO: Force Enlightenment
 # TODO: Force Focus
+# TODO: Force Grip
 # TODO: Force Immunity
 # TODO: Force Jump
 # TODO: Force Leap
+# TODO: Force Lift
 # TODO: Force Light
 # TODO: Force Link
+# TODO: Force Listening
 # TODO: Force Mask
 # TODO: Force Meld
 # TODO: Force Mend
@@ -451,6 +453,7 @@
 # TODO: Force Weapon
 # TODO: Force Whisper
 # TODO: Foresight
+# TODO: Forked Lightning
 # TODO: (SW) Freedom of Movement
 # TODO: Frequency Scan
 # TODO: Friendly Fire
@@ -488,12 +491,10 @@
 # TODO: Invisibility to Cameras
 # TODO: (SW) Invulnerability
 # TODO: Jet of Flame
-# TODO: Judgment
 # TODO: Jump Jet
 # TODO: Kill
 # TODO: Kolto Cloud
 # TODO: Kolto Dispenser
-# TODO: Kolto Infusion
 # TODO: Kolto Reserve
 # TODO: Kolto Waves
 # TODO: (SW) Light
@@ -644,8 +645,3 @@
 # TODO: Will of the Force
 # TODO: Wrack
 # TODO: Wrathful Blow
-# TODO: Channel Pain
-# TODO: Force Grip
-# TODO: Force Lift
-# TODO: Force Listening
-# TODO: Forked Lightning

@@ -1,0 +1,24 @@
+<drac2>
+ch = character()
+args = &ARGS&
+result = None
+cc = "Force Points"
+v = ch.cc_exists(cc)
+output = ""
+points = 0
+if v:
+    for a in args:
+        if cc in a:
+            try:
+                points += int(a.split('-')[1].split(")")[0])
+            except:
+                pass
+
+    value = floor(int(points)*1.5)
+    output += f'''-f "Forged Ferricite Mastery Channel|When you case a force power of 1st-level or higher that deals damage, you can increase the damage by one and a half times (rounded down) the number of force points spent" '''
+    output += f'''-d {value} '''             
+else:
+    err(f"You do not have this ability")
+
+return output
+</drac2>

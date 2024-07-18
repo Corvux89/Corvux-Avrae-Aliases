@@ -3796,7 +3796,7 @@
             },
             {
                 "type": "text",
-                "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, setting the ground in a 10-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren’t being worn or carried.\n\nWhen a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes 2d8 fire damage on a failed save, or half as much damage on a successful one."
+                "text": "The grenade explodes, setting the ground in a 10-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren't being worn or carried.\n\nWhen a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes 2d8 fire damage on a failed save, or half as much damage on a successful one."
             }
         ],
         "_v": 2
@@ -3834,7 +3834,7 @@
             },
             {
                 "type": "text",
-                "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius are disabled until rebooted."
+                "text": "Each creature within 10 feet must make a DC 14 Dexterity saving throw. On a failed save, a creature takes 2d6 ion damage and any electronic objects being worn or held are disabled until rebooted with an action or bonus action. On a successful save, the creature takes half as much damage and worn or held objects are not disabled.\n\nAdditionally, any minor electronic objects not being held; such as lights, computers, or doors; within the blast radius are disabled until rebooted with an action or bonus action."
             }
         ],
         "_v": 2
@@ -3880,7 +3880,7 @@
                         "type": "ieffect2",
                         "name": "Kolto Cloud - Parent",
                         "duration": 2,
-                        "end": true,,
+                        "end": true,
                         "attacks": [
                             {
                                 "attack": {
@@ -3993,7 +3993,7 @@
             },
             {
                 "type": "text",
-                "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Wisdom saving throw. A creature takes 2d6 psychic damage on a failed save, or half as much as on a successful one.\n\nAdditionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+                "text": "Each creature within 10 feet must make a DC 14 Wisdom saving throw. A creature takes 2d6 psychic damage on a failed save, or half as much as on a successful one.\n\nAdditionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success."
             }
         ],
         "_v": 2
@@ -4031,7 +4031,63 @@
             },
             {
                 "type": "text",
-                "text": "Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 energy damage on a failed save, or half as much as on a successful one."
+                "text": "Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 energy damage on a failed save, or half as much as on a successful one."
+            }
+        ],
+        "_v": 2
+    },
+    {
+        "name": "Grenade, Sleep",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "5d6",
+                "name": "creatureHP",
+                "displayName": "Roll"
+            },
+            {
+                "type": "variable",
+                "name": "runningHP",
+                "value": "creatureHP"
+            },
+            {
+                "type": "target",
+                "target": "all",
+                "sortBy": "hp_asc",
+                "effects": [
+                    {
+                        "type": "condition",
+                        "condition": "target.hp <= runningHP",
+                        "onTrue": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Unconcious",
+                                "duration": 10,
+                                "desc": "An unconscious creature is incapacitated (see the condition), can’t move or speak, and is unaware of its surroundings.\n The creature drops whatever it’s holding and falls prone.\nThe creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\nAttack rolls against the creature have advantage.\nAny attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
+                            },
+                            {
+                                "type": "variable",
+                                "name": "runningHP",
+                                "value": "max(runningHP-target.hp,0)"
+                            }
+                        ],
+                        "onFalse": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Roll 5d6; the total is how many hit points of creatures this grenade can affect. Each creature within 10 feet are affected in ascending order of their current hit points(ignoring unconscious creatures).\n\nStarting with the creature that has the lowest current hit points, each creature affected by this grenade falls unconscious for 1 minute, the sleeper takes damage, or someone uses an action to shake the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected."
+            }
+        ],
+        "_v": 2
+    },
+    {
+        "name": "Grenade, Smoke",
+        "automation": [
+            {
+                "type": "text",
+                "text": "The grenade explodes, filling the air in a 20-foot-radius sphere with smoke for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it."
             }
         ],
         "_v": 2
