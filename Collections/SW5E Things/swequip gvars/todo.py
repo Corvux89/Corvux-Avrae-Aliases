@@ -1,6 +1,5 @@
-# https://www.gmbinder.com/share/-LrbH9XK6HZH_jLVI3sX=
+# https://www.gmbinder.com/share/-LrbH9XK6HZH_jLVI3sX
 # TODO: Byrothiss Adept Lightweapon
 # TODO: Byrothiss Ancient Lightweapon
-# TODO: EE-3 Carbine Rifle
 # TODO: Force-Imbued Blade
 # TODO: Stokhli Spray Stick
