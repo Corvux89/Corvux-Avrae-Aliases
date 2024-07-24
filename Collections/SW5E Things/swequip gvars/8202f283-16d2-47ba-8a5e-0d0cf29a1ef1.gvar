@@ -514,9 +514,14 @@ def byrothsis_lightweapon(attack, args):
     a = load_json(attack)
     dmg_str = sup.get_damage_str(attack)
     dmg_type = sup.get_damage_type(dmg_str)
+    dmg_die = sup.get_damage_die(attack)
+    num_die = dmg_die[:dmg_die.find('d')]
+    die_type = dmg_die[dmg_die.find('d')+1:]
+    d_str = f"{int(num_die)*2 if args.get('byran') else int(num_die)}d{die_type}"
 
-    damage = {"type": "damage", "damage": f"something [{dmg_type}]"}
-    target = {"type": "target", "target": "all", "effects": [{damage}]}
+    damage = {"type": "damage", "damage": f"{d_str} [{dmg_type}]"}
+
+    target = {"type": "target", "target": "all", "effects": [damage]}
 
     if args.get('byran'):
         desc = {"type": "text", "text": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, it deals additional damage equal to twice the damage dice of the weapon.", "title": "Byrothsis Ancient Lightweapon"}

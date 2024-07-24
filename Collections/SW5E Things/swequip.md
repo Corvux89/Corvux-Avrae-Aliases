@@ -57,6 +57,10 @@ __Available Arguments__
 `-gunning` Sets up the weapon for Gunning Mastery
 `-gunmas` - Adds an attack called "Gunning..."for Gunning Mastery. Removes the proficiency bonus from teh attack roll and updates the damage as appropriate
 `-gunstyle` - Adds an attack called "Gunning..."for Gunning Style. 
+
+**Misc**
+`-byrad` - Adds an attack for the Byrothsis Adept Lightweapon
+`-byran` - Adds an attack for the Byrothsis Ancient Lightweapon
  
 **Extras**
 `output` returns the JSON code for the attacks so you can modify it and use `!attack import <code>` to add it manually.

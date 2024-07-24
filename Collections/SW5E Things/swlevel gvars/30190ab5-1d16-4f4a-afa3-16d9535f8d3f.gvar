@@ -1,14 +1,19 @@
 # SWLevel Module
 
 ch = character()
+
 class_gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
 class_gvars += load_json(get_svar("sw5e", "{}")).get('levels', [])
+
 additional_actions = ['8301258f-1c61-4ca7-bf04-11ed10b9d65d']
 additional_actions += load_json(get_svar("sw5e", "{}")).get('actions', [])
+
 race_gvars = ['9277baa7-c2cb-4993-874e-aa19d7b68065']
 race_gvars += load_json(get_svar("sw5e", "{}")).get('race', [])
+
 spell_gvars = ['fa1bf2fe-82cc-4f3e-bf72-119d4ceb0f16']
 spell_gvars += load_json(get_svar("sw5e", "{}")).get('spells', [])
+
 actionTracker = load_json(ch.get_cvar("swActionMods", "{}"))
 stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
 dagger = '†'

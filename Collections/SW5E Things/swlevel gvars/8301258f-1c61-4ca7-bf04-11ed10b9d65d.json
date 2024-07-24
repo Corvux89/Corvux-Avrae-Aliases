@@ -96,6 +96,49 @@
         }
     },
     {
+        "name": "Aura of Presence",
+        "actions": [
+            {
+                "action": {
+                    "name": "Aura of Presence",
+                    "_v": 2,
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Aura of Presence - [name]",
+                                    "effects": {
+                                        "save_bonus": "{wisdomMod}"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "automation": [
+                                                {
+                                                    "type": "remove_ieffect"
+                                                }
+                                            ],
+                                            "label": "Leave Aura of Presence",
+                                            "verb": "Leaves Aura of Presence",
+                                            "style": "3"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "Whenever you or a friendly creature within 5 feet of you must make a saving throw, the creature can add your Wisdom modifier to the saving throw"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Automated Adrenal Package",
         "actions": [
             {

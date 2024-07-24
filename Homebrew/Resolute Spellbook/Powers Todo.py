@@ -13,7 +13,6 @@
 # TODO: Expanded Missing Respite
 # TODO: Expanded Missing Skill Proficiency
 # TODO: Expanded Missing Transfer Force
-# TODO: Expanded Missing Aura of Vitality
 # TODO: Expanded Missing Disruption
 # TODO: Expanded Missing Farseeing
 # TODO: Expanded Missing Force Concurrence
@@ -176,7 +175,6 @@
 # TODO: Expanded Missing Hazardous Terrain
 # TODO: Expanded Missing Holographic Wall
 # TODO: Expanded Missing Holonet Search
-# TODO: Expanded Missing Ignite
 # TODO: Expanded Missing Instant Rations
 # TODO: Expanded Missing Invert Compass
 # TODO: Expanded Missing Kinetic Maneuvering
@@ -479,7 +477,6 @@
 # TODO: Horror
 # TODO: Hysteria
 # TODO: (SW) Illusory Terrain
-# TODO: Immolate
 # TODO: Implant Message
 # TODO: Improved Force Immunity
 # TODO: Improved Restoration
