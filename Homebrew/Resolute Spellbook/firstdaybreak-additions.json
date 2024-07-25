@@ -1,0 +1,203 @@
+[
+    {
+        "name": "Lightning Surge",
+        "level": 2,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "roll",
+                "roll": "2d6",
+                "name": "damage",
+                "higher": {
+                    "3": "1d6",
+                    "4": "1d6",
+                    "5": "1d6",
+                    "6": "1d6",
+                    "7": "1d6",
+                    "8": "1d6",
+                    "9": "1d6"
+                }
+            },
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Residual Electricity",
+                        "duration": 1,
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Residual Electricity - Attack",
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "all",
+                                            "effects": [
+                                                {
+                                                    "type": "ieffect2",
+                                                    "name": "Residual Electricity - Effect",
+                                                    "duration": 1,
+                                                    "desc": "Can't make attacks, no reactions"
+                                                },
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "1d6 [lightning]",
+                                                    "higher": {
+                                                        "3": "1d6",
+                                                        "4": "2d6",
+                                                        "5": "3d6",
+                                                        "6": "4d6",
+                                                        "7": "5d6",
+                                                        "8": "6d6",
+                                                        "9": "7d6"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "activation_type": 2
+                                }
+                            }
+                        ],
+                        "buttons": [
+                            {
+                                "automation": [
+                                    {
+                                        "type": "remove_ieffect",
+                                        "removeParent": "always"
+                                    }
+                                ],
+                                "label": "Residual Electricity - End",
+                                "style": 4
+                            }
+                        ],
+                        "end": true
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage} [lightning]"
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "({damage}/2) [lightning]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You unleash a burst of Force lightning around yourself, causing bolts to leap from you and arc toward each creature of your choice within range. Each target must make a Dexterity saving throw, taking 2d6 lightning damage on a failed save, or half as much damage on a successful one.\n\nIn addition, residual electricity continues crackling around you. The next time a creature hits you with a melee attack before the end of your next turn, that creature takes 1d6 lightning damage, can't make any more attacks for the rest of the turn, and can't take reactions until the start of its next turn. The residual electricity then fades.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage (both initial and subsequent) increases by 1d6 for each slot level above 2nd."
+            }
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Self (20-foot radius)",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You unleash a burst of Force lightning around yourself, causing bolts to leap from you and arc toward each creature of your choice within range. Each target must make a Dexterity saving throw, taking 2d6 lightning damage on a failed save, or half as much damage on a successful one.\n\nIn addition, residual electricity continues crackling around you. The next time a creature hits you with a melee attack before the end of your next turn, that creature takes 1d6 lightning damage, can't make any more attacks for the rest of the turn, and can't take reactions until the start of its next turn. The residual electricity then fades.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage (both initial and subsequent) increases by 1d6 for each slot level above 2nd.",
+        "concentration": false
+    },
+    {
+        "name": "Mass Dun Moch",
+        "level": 2,
+        "school": "Force",
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "30 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 minute",
+        "ritual": false,
+        "description": "You manipulate numerous creatures into fighting you. Creatures of your choice within 30 feet of you that you can see and can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this power.\n\nAn affected creature can't move away from you, and any attack it makes or offensive power it casts must include you as one of the targets. At the end of each of its turns, an affected creature can repeat the saving throw, ending this power on itself on a success. If you choose, you can end this power on your turn (no action required). This power has no effect on droids or constructs.",
+        "concentration": false
+    },
+    {
+        "name": "Mass Mind Trick",
+        "level": 2,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "save",
+                        "save": "wis",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Mind Tricked",
+                                "duration": 10,
+                                "effects": {
+                                    "check_dis": "perception"
+                                }
+                            }
+                        ],
+                        "success": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You manipulate the perception of others with the Force to draw attention to yourself, causing creatures of your choice that you can see within range to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the power ends. The power ends if you are incapacitated."
+            }
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 minute",
+        "ritual": false,
+        "description": "You manipulate the perception of others with the Force to draw attention to yourself, causing creatures of your choice that you can see within range to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the power ends. The power ends if you are incapacitated.",
+        "concentration": false
+    },
+    {
+        "name": "Mind Whip",
+        "level": 2,
+        "school": "Force",
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 round",
+        "ritual": false,
+        "description": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the power's other effects.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them.",
+        "concentration": false
+    }
+]
