@@ -186,6 +186,41 @@
         "name": "Mind Whip",
         "level": 2,
         "school": "Force",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "save": "int",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Mind Whipped",
+                                "duration": 1,
+                                "end": true,
+                                "desc": "Can only take a move, action, or a bonus action."
+                            },
+                            {
+                                "type":"damage",
+                                "damage": "3d6 [psychic]"
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type":"damage",
+                                "damage": "(3d6 / 2) [psychic]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the power's other effects.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them."
+            }
+        ],
         "classes": "Dark",
         "subclasses": "",
         "casttime": "1 action",
@@ -198,6 +233,138 @@
         "duration": "1 round",
         "ritual": false,
         "description": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the power's other effects.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them.",
+        "concentration": false
+    },
+    {
+        "name": "Preservation",
+        "level": 2,
+        "school": "Force",
+        "automation":[
+            {
+                "type": "text",
+                "text": "You touch a corpse or other remains. For the next 10 days, the target is protected from decay and can't become undead.\n\nThe power also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this power don't count against the time limit of powers such as revitalize.\n\nAlternatively, you can touch a living creature when you cast this power. For the next hour, the target can survive within the vacuum of space. If the target breathes, it still requires oxygen to breathe. This power has no effect on dead droids or constructs."
+            }
+        ],
+        "classes": "Light",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Touch",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Special",
+        "ritual": false,
+        "description": "You touch a corpse or other remains. For the next 10 days, the target is protected from decay and can't become undead.\n\nThe power also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this power don't count against the time limit of powers such as revitalize.\n\nAlternatively, you can touch a living creature when you cast this power. For the next hour, the target can survive within the vacuum of space. If the target breathes, it still requires oxygen to breathe. This power has no effect on dead droids or constructs.",
+        "concentration": false
+    },
+    {
+        "name": "Respite",
+        "level": 2,
+        "school": "Force",
+        "classes": "Light",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "60ft",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "Choose one creature that you can see within range. The creature can immediately use its reaction to regain hit points equal to 2d6 + your forcecasting ability modifier. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the healing increases by 1d6 for each slot level above 1st.",
+        "concentration": false
+    },
+    {
+        "name": "Skill Proficiency",
+        "level": 2,
+        "school": "Force",
+        "automation": [
+            {
+                "type":"text",
+                "text": "Through the Force, you gain greater knowledge from those who came before you. Choose one skill in which you lack proficiency. For the power’s duration, you have proficiency in the chosen skill. The power ends early if you cast it again."
+            }
+        ],
+        "classes": "Universal",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 hour",
+        "ritual": false,
+        "description": "Through the Force, you gain greater knowledge from those who came before you. Choose one skill in which you lack proficiency. For the power’s duration, you have proficiency in the chosen skill. The power ends early if you cast it again.",
+        "concentration": false
+    },
+    {
+        "name": "Transfer Force",
+        "level": 2,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "2d6 [necrotic]",
+                "name": "damage",
+                "higher": {
+                    "3": "1d6 [necrotic]",
+                    "4": "2d6 [necrotic]",
+                    "5": "3d6 [necrotic]",
+                    "6": "4d6 [necrotic]",
+                    "7": "5d6 [necrotic]",
+                    "8": "6d6 [necrotic]",
+                    "9": "7d6 [necrotic]"
+                }
+            },
+            {
+                "type": "roll",
+                "dice": "{caster.spellbook.spell_mod} [heal plus hit dice]",
+                "name": "heal",
+                "displayName": "Heal"
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage}"
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "({damage}/2)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type":"text",
+                "text": "You violently rip life-giving Force from a surrounding area to bolster that of a creature. Choose a 10-foot-radius sphere centered on a point within range. Each creature of your choice in that area must make a Constitution saving throw, taking 2d6 necrotic damage on a failed save, or half as much damage on a successful one. Unenhanced vegetation in that area withers.\n\nIn addition, one creature of your choice in that area can spend and roll one of its unspent Hit Dice and regain a number of hit points equal to the roll plus your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd, and the number of Hit Dice that can be spent and added to the healing roll increases by one for each slot above 2nd."
+            }
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You violently rip life-giving Force from a surrounding area to bolster that of a creature. Choose a 10-foot-radius sphere centered on a point within range. Each creature of your choice in that area must make a Constitution saving throw, taking 2d6 necrotic damage on a failed save, or half as much damage on a successful one. Unenhanced vegetation in that area withers.\n\nIn addition, one creature of your choice in that area can spend and roll one of its unspent Hit Dice and regain a number of hit points equal to the roll plus your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd, and the number of Hit Dice that can be spent and added to the healing roll increases by one for each slot above 2nd.",
         "concentration": false
     }
 ]
