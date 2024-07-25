@@ -52,7 +52,7 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
         actions = mon.get('actions', [])
 
         for a in actions:
-            if a.get('description') and any(x in a.get('description').lower() for x in to_automate_keywords):
+            if a.get('description') and any(x in a.get('description').lower() for x in to_automate_keywords) or (a.get('name') and 'recharge' in a.get('name').lower()):
                 try:
                     auto=a.get('automation',{})
                     if isinstance(auto, list):

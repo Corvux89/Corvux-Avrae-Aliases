@@ -1,10 +1,8 @@
-# TODO: Source Missing Lesser Mislead
 # TODO: Source Missing Mutate/Augment
 # TODO: Source Missing Spectrum Discharge
 # TODO: Source Missing Squad Shield
 # TODO: Source Missing Tune-up
 # TODO: Source Missing Wire Tow
-# TODO: Expanded Missing Force Thrust
 # TODO: Expanded Missing Lightning Surge
 # TODO: Expanded Missing Mass Dun Möch
 # TODO: Expanded Missing Mass Mind Trick

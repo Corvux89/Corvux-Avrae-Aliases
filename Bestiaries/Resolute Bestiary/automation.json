@@ -492,6 +492,14 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "ISB Officer",
+    "ability": "Rally Troops (Recharge 5-6)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The Officer rallies his troops, giving all allies within 60 feet advantage on their next attack roll.",
+    "automation": null
+  },
+  {
     "name": "IT-O Interrogation Unit",
     "ability": "Dart",
     "complete": true,
@@ -554,6 +562,12 @@
   {
     "name": "Kolkpravis Baatar",
     "ability": "Leadership (Recharges after a Short or Long Rest)",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Incite Rampage (Recharge 5-6)",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
   },
@@ -724,6 +738,14 @@
     "ability": "Barbs",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Purge Trooper",
+    "ability": "Volley (Recharge 6)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The trooper makes one ranged attack against every enemy within 10 feet of a point it can see.",
+    "automation": null
   },
   {
     "name": "Rakghoul",
@@ -1164,6 +1186,14 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Trooper, Technician",
+    "ability": "Repair (Recharge 5-6)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "As an action, the technician can expend one use of a repair kit to restore 2d4+2 hit points to a droid or construct within 5 feet.",
+    "automation": null
+  },
+  {
     "name": "Trooper, EVO",
     "ability": "Burst",
     "complete": true,
@@ -1507,6 +1537,24 @@
   },
   {
     "name": "Mandalorian Heavy Gunner",
+    "ability": "Rocketpack (1/day)",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Weapons Team, Heavy Laser",
+    "ability": "Mounted Laser Cannon - Rapid",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Weapons Team, Heavy Laser",
+    "ability": "Mounted Laser Cannon - Burst",
+    "complete": true,
+    "source": "Resolute Bestiary - Ground"
+  },
+  {
+    "name": "Mandalorian Pistolero",
     "ability": "Rocketpack (1/day)",
     "complete": true,
     "source": "Resolute Bestiary - Ground"
