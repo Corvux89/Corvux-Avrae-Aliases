@@ -12757,6 +12757,41 @@
     "concentration": true
   },
   {
+    "name": "Lesser Mislead",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Misleading"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "(SW) Light",
     "level": 0,
     "school": "Tech",
@@ -14312,6 +14347,192 @@
     "ritual": false,
     "description": "You imbue a willing droid with heightened speed and maneuverability. Until the power ends, the target\u2019s speed is doubled, it gains a +2 bonus to AC, and it has advantage on Dexterity saving throws.",
     "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you can target one additional droid for each slot level above 2nd.",
+    "concentration": true
+  },
+  {
+    "name": "Mutate/Augment",
+    "level": 3,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "choice and '1' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Flexible Body",
+                    "duration": "100",
+                    "desc": "Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '2' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Additional Appendage",
+                    "duration": "100",
+                    "desc": "This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '3' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Antennae",
+                    "duration": "100",
+                    "desc": "You sprout antennae that give you tremorsense out to a range of 30 feet.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '4' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Extended Limbs",
+                    "duration": "100",
+                    "desc": "You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '5' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Burrow",
+                    "duration": "100",
+                    "desc": "You gain a burrowing speed equal to your walking speed.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '6' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Hardened Flesh",
+                    "duration": "100",
+                    "effects": {
+                      "ac_bonus": "max(0, 16-caster.ac)"
+                    },
+                    "desc": "Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '7' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Alter Self",
+                    "duration": "100",
+                    "desc": "You can gain the benefits of any one option of the alter self power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '8' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Magnetic",
+                    "duration": "100",
+                    "desc": "You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '9' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Force Enlightenment",
+                    "duration": "100",
+                    "desc": "You can gain any one effect of the force enlightenment power.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify which effects are chosen from the list below. Ex: `-choice 1` or `-choice 135`"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You alter your body with tech, temporarily gaining new properties which last for the duration. You can select three of the following properties. You cannot select a property more than once, unless that property says otherwise."
+      },
+      {
+        "type": "text",
+        "text": "1. Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.\n2. You grow one additional appendage. This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).\n3. You sprout antennae that give you tremorsense out to a range of 30 feet.\n4. You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.\n5. You gain a burrowing speed equal to your walking speed.",
+        "title": "Choices"
+      },
+      {
+        "type": "text",
+        "text": "6. Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.\n7. You can gain the benefits of any one option of the *alter self* power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.\n8. You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.\n9. You can gain any one effect of the *force enlightenment* power.",
+        "title": "Choices (Cont'd)"
+      },
+      {
+        "type": "text",
+        "text": "**Overcharge Tech.** When you cast this power using a tech slot of 4th level or higher, you can select an additional property for each slot level above 3rd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 10 minutes",
+    "ritual": false,
+    "description": "You alter your body with tech, temporarily gaining new properties which last for the duration. You can select three of the following properties. You cannot select a property more than once, unless that property says otherwise.\n\n1. Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.\n2. You grow one additional appendage. This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).\n3. You sprout antennae that give you tremorsense out to a range of 30 feet.\n4. You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.\n5. You gain a burrowing speed equal to your walking speed.\n6. Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.\n7. You can gain the benefits of any one option of the *alter self* power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.\n8. You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.\n9. You can gain any one effect of the *force enlightenment* power.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 4th level or higher, you can select an additional property for each slot level above 3rd.",
+    "higherlevels": "",
     "concentration": true
   },
   {
@@ -22376,40 +22597,5 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  },
-  {
-    "name": "Lesser Mislead",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates.",
-    "higherlevels": "",
-    "concentration": false,
-    "automation": [
-        {
-            "type": "target",
-            "target": "self",
-            "effects": [
-                {
-                    "type": "ieffect2",
-                    "name": "Misleading"
-                }
-            ]
-        },
-        {
-            "type": "text",
-            "text": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates."
-        }
-    ]
   }
 ]

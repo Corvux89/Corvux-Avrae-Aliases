@@ -2467,6 +2467,15 @@
         ]
     },
     {
+        "name": "Health Advisor",
+        "cvar": {
+            "name": "SWFeats",
+            "default": "{}",
+            "node": "Discoveries",
+            "append": "HealthAdvisor"
+        }
+    },
+    {
         "name": "Ideal of the Steadfast",
         "cvar": {
             "name": "SWFeats",

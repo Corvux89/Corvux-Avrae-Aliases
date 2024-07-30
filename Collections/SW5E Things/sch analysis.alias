@@ -29,11 +29,17 @@ if v:
     base += f''' -f "Meta|**Mod**: {mod}" '''
     if com and tar:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
-        attacks, effects = [], {}
-        peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, buttons=[{"label": f"Stop Analyzing {tar.name}",
-                                                                                "verb": f"Stops analyzing {tar.name}",
-                                                                                "style": 4, "automation": [
-                {"type": "remove_ieffect"}]}])
+        self_attacks, attacks, effects = [], [], {}
+        if subclass == "Physician" and "HealthAdvisor" in discoveries:
+            self_attacks.append({"attack": {"name": f"Health Advisor - {tar.name}", "_v": 2, "activation_type": "4", "verb": "uses"
+                                  "automation": [{"type": "target", "target": "children", "effects": [
+                                                   {"type": "temphp", "amount": f"{ceil(lvl/4)}+{{proficiencyBonus}}"}]},
+                                                   {"type": "text", "text": "Whenever a creature that is a target of your Critical Analysis feature begins their turn, you can use your reaction to give them temporary hit points equal to one-fourth your scholar level + your proficiency bonus, as shown in the scholar table, which last until the start of their next turn."}]}})            
+
+        peff = com.me.add_effect(f"{eff} - {tar.name}", duration=dur, attacks=self_attacks, 
+                                buttons=[{"label": f"Stop Analyzing {tar.name}",
+                                            "verb": f"Stops analyzing {tar.name}",
+                                            "style": 4, "automation": [{"type": "remove_ieffect"}]}])
 
         if not (tar.monster_name or enemy) or ally:
             buttons = [{"label": "Use Critical Analysis", "verb": f"Uses {name}'s Critical Analysis", "style": 1,

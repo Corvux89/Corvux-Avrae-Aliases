@@ -1,4 +1,3 @@
-# TODO: Source Missing Mutate/Augment
 # TODO: Source Missing Spectrum Discharge
 # TODO: Source Missing Squad Shield
 # TODO: Source Missing Tune-up
