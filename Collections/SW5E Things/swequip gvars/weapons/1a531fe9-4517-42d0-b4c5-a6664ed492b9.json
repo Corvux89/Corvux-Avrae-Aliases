@@ -98,7 +98,7 @@
                     {
                         "type": "save",
                         "stat": "dex",
-                        "dc": 14,
+                        "dc": "14",
                         "success": [
                             {
                                 "type": "damage",
@@ -222,7 +222,7 @@
                                         "overheal": false
                                     }
                                 ],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -288,7 +288,7 @@
                                         "overheal": false
                                     }
                                 ],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -359,7 +359,7 @@
                                         "overheal": false
                                     }
                                 ],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -1818,7 +1818,7 @@
                                                                         "type": "remove_ieffect"
                                                                     }
                                                                 ],
-                                                                "dc": 14
+                                                                "dc": "14"
                                                             }
                                                         ]
                                                     }
@@ -1828,7 +1828,7 @@
                                     }
                                 ],
                                 "success": [],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -1903,7 +1903,7 @@
                                                                         "type": "remove_ieffect"
                                                                     }
                                                                 ],
-                                                                "dc": 14
+                                                                "dc": "14"
                                                             }
                                                         ]
                                                     }
@@ -1913,7 +1913,7 @@
                                     }
                                 ],
                                 "success": [],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -1994,7 +1994,7 @@
                                                                         "type": "remove_ieffect"
                                                                     }
                                                                 ],
-                                                                "dc": 14
+                                                                "dc": "14"
                                                             }
                                                         ]
                                                     }
@@ -2004,7 +2004,7 @@
                                     }
                                 ],
                                 "success": [],
-                                "dc": 14
+                                "dc": "14"
                             },
                             {
                                 "type": "text",
@@ -2146,7 +2146,7 @@
                                                                                 {
                                                                                     "type": "save",
                                                                                     "stat": "dex",
-                                                                                    "dc": 14,
+                                                                                    "dc": "14",
                                                                                     "fail": [
                                                                                         {
                                                                                             "type": "damage",
@@ -2244,7 +2244,7 @@
                                                     {
                                                         "type": "save",
                                                         "stat": "dex",
-                                                        "dc": 14,
+                                                        "dc": "14",
                                                         "fail": [
                                                             {
                                                                 "type": "damage",
@@ -2749,7 +2749,7 @@
                                                                         "type": "remove_ieffect"
                                                                     }
                                                                 ],
-                                                                "dc": 14
+                                                                "dc": "14"
                                                             }
                                                         ]
                                                     }
@@ -2759,7 +2759,7 @@
                                     }
                                 ],
                                 "success": [],
-                                "dc": 14
+                                "dc": "14"
                             }
                         ],
                         "miss": [],
@@ -2840,7 +2840,7 @@
                                                                                 {
                                                                                     "type": "save",
                                                                                     "stat": "dex",
-                                                                                    "dc": 14,
+                                                                                    "dc": "14",
                                                                                     "fail": [
                                                                                         {
                                                                                             "type": "damage",
@@ -2928,7 +2928,7 @@
                                                             {
                                                                 "type": "save",
                                                                 "stat": "dex",
-                                                                "dc": 14,
+                                                                "dc": "14",
                                                                 "fail": [
                                                                     {
                                                                         "type": "damage",
@@ -3161,7 +3161,7 @@
                                                                         "type": "remove_ieffect"
                                                                     }
                                                                 ],
-                                                                "dc": 14
+                                                                "dc": "14"
                                                             }
                                                         ]
                                                     }
@@ -3171,7 +3171,7 @@
                                     }
                                 ],
                                 "success": [],
-                                "dc": 14
+                                "dc": "14"
                             }
                         ],
                         "miss": [],
@@ -3252,7 +3252,7 @@
                                                                                 {
                                                                                     "type": "save",
                                                                                     "stat": "dex",
-                                                                                    "dc": 14,
+                                                                                    "dc": "14",
                                                                                     "fail": [
                                                                                         {
                                                                                             "type": "damage",
@@ -3340,7 +3340,7 @@
                                                             {
                                                                 "type": "save",
                                                                 "stat": "dex",
-                                                                "dc": 14,
+                                                                "dc": "14",
                                                                 "fail": [
                                                                     {
                                                                         "type": "damage",

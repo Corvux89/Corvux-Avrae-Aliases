@@ -928,19 +928,22 @@
                 "name": "Ion Blast",
                 "reset": "none",
                 "level": 1,
-                "display": "bubble"
+                "display": "bubble",
+                "value": 1
             },
             {
                 "name": "Repair Droid",
                 "reset": "long",
                 "level": 3,
-                "display": "bubble"
+                "display": "bubble",
+                "value": 1
             },
             {
                 "name": "Hold Droid",
                 "reset": "long",
                 "level": 5,
-                "display": "bubble"
+                "display": "bubble",
+                "value": 1
             },
             {
                 "name": "Grovel, Cower, Beg",
@@ -1037,13 +1040,15 @@
                 "name": "Curse",
                 "reset": "long",
                 "level": 3,
-                "display": "bubble"
+                "display": "bubble",
+                "value": 1
             },
             {
                 "name": "(SW) Darkness",
                 "reset": "long",
                 "level": 5,
-                "display": "bubble"
+                "display": "bubble",
+                "value": 1
             }
         ],
         "cvars": {
@@ -1295,7 +1300,8 @@
                 "name": "Force Push/Pull",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Force Push/Pull' [-t target]"
+                "use": "racecast 'Force Push/Pull' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {
@@ -1329,19 +1335,22 @@
                 "name": "Minor Hologram",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Minor Hologram'"
+                "use": "racecast 'Minor Hologram'",
+                "value": 1
             },
             {
                 "name": "Repair Droid",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Repair Droid' [-t target]"
+                "use": "racecast 'Repair Droid' [-t target]",
+                "value": 1
             },
             {
                 "name": "Hold Droid",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Hold Droid' [-t target]"
+                "use": "racecast 'Hold Droid' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {
@@ -1780,19 +1789,22 @@
                 "name": "Burst",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'burst' [-t target]"
+                "use": "racecast 'burst' [-t target]",
+                "value": 1
             },
             {
                 "name": "Beast Trick",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Beast Trick' [-t target]"
+                "use": "racecast 'Beast Trick' [-t target]",
+                "value": 1
             },
             {
                 "name": "Plant Surge",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Plant Surge'"
+                "use": "racecast 'Plant Surge'",
+                "value": 1
             }
         ],
         "cvars": {
@@ -1957,7 +1969,8 @@
                 "name": "Temporary Boost",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Temporary Boost' [-t target]"
+                "use": "racecast 'Temporary Boost' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {
@@ -2041,19 +2054,22 @@
                 "name": "Guidance",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast '(SW) Guidance' [-t target]"
+                "use": "racecast '(SW) Guidance' [-t target]",
+                "value": 1
             },
             {
                 "name": "Valor",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Valor' [-t target]"
+                "use": "racecast 'Valor' [-t target]",
+                "value": 1
             },
             {
                 "name": "Force Enlightenment",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Force Enlightenment' [-t target]"
+                "use": "racecast 'Force Enlightenment' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {
@@ -2091,19 +2107,22 @@
                 "name": "Mind Trick",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Mind Trick' [-t target]"
+                "use": "racecast 'Mind Trick' [-t target]",
+                "value": 1
             },
             {
                 "name": "Sanctuary",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast '(SW) Sanctuary' [-t target]"
+                "use": "racecast '(SW) Sanctuary' [-t target]",
+                "value": 1
             },
             {
                 "name": "Force Confusion",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Force Confusion' [-t target]"
+                "use": "racecast 'Force Confusion' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {
@@ -2415,19 +2434,22 @@
                 "name": "Temporary Boost",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Temporary Boost' [-t target]"
+                "use": "racecast 'Temporary Boost' [-t target]",
+                "value": 1
             },
             {
                 "name": "Kolto Pack",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Kolto Pack' [-t target]"
+                "use": "racecast 'Kolto Pack' [-t target]",
+                "value": 1
             },
             {
                 "name": "Kolto Cloud",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Kolto Cloud' [-t target]"
+                "use": "racecast 'Kolto Cloud' [-t target]",
+                "value": 1
             },
             {
                 "name": "Claws",
@@ -2532,19 +2554,22 @@
                 "name": "Mending",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast '(SW) Mending)'"
+                "use": "racecast '(SW) Mending)'",
+                "value": 1
             },
             {
                 "name": "Analyze",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Analyze'"
+                "use": "racecast 'Analyze'",
+                "value": 1
             },
             {
                 "name": "Overheat",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Overheat'"
+                "use": "racecast 'Overheat'",
+                "value": 1
             },
             {
                 "name": "Tinker",
@@ -2570,19 +2595,22 @@
                 "name": "Ward",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Ward'"
+                "use": "racecast 'Ward'",
+                "value": 1
             },
             {
                 "name": "Analyze",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Analyze'"
+                "use": "racecast 'Analyze'",
+                "value": 1
             },
             {
                 "name": "Infiltrate",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Infiltrate' [-t target]"
+                "use": "racecast 'Infiltrate' [-t target]",
+                "value": 1
             }
         ],
         "cvars": {

@@ -1,0 +1,13 @@
+<drac2>
+ch = character()
+cc = "Gauntlets of the Warrior"
+args = &ARGS&
+a = argparse(args)
+points = int(a.last("amt", 1))
+
+if ch.cc_exists(cc) and ch.get_cc(cc) >= points:
+    ch.mod_cc(cc,-points)
+    return f'''-i -f "{cc} (-{points})|{ch.cc_str(cc)}\n\nThis item can hold a number of charges equal to half your guardian level (rounded up). When you complete a long rest, this item regains all missing charges. When you would use your Force-Empowered Strikes feature, you can expend charges instead of force points." '''
+elif ch.cc_exists(cc):
+    return err("Not enough charges remaining")
+</drac2>

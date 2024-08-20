@@ -380,7 +380,6 @@
 # TODO: Cryogenic Wave
 # TODO: Danger Sense
 # TODO: Dark Rejuvenation
-# TODO: Dark Shear
 # TODO: Dark Transfer
 # TODO: (SW) Darkness
 # TODO: (SW) Darkvision
@@ -537,7 +536,6 @@
 # TODO: Pheromone Burst
 # TODO: Plant Growth
 # TODO: Plant Surge
-# TODO: Poison Dart
 # TODO: (SW) Poison Spray
 # TODO: Precognition
 # TODO: Predictive AI
@@ -639,3 +637,134 @@
 # TODO: Will of the Force
 # TODO: Wrack
 # TODO: Wrathful Blow
+# TODO: Critical Fail Automation (SW) Acid Splash
+# TODO: Critical Fail Automation Acid Wind
+# TODO: Critical Fail Automation Affect Mind
+# TODO: Critical Fail Automation Affliction
+# TODO: Critical Fail Automation Agile Defense
+# TODO: Critical Fail Automation Animate Weapon
+# TODO: Critical Fail Automation (SW) Antipathy/Sympathy
+# TODO: Critical Fail Automation Assess the Situation
+# TODO: Critical Fail Automation Barrage
+# TODO: Critical Fail Automation Battle Meditation
+# TODO: Critical Fail Automation Break
+# TODO: Critical Fail Automation Burst
+# TODO: Critical Fail Automation Burst of Flame
+# TODO: Critical Fail Automation (SW) Call Lightning
+# TODO: Critical Fail Automation Choke
+# TODO: Critical Fail Automation Construct Droid
+# TODO: Critical Fail Automation Construct Vehicle
+# TODO: Critical Fail Automation Crush
+# TODO: Critical Fail Automation Cryogenic Blast
+# TODO: Critical Fail Automation Cryogenic Blow
+# TODO: Critical Fail Automation Cryogenic Spray
+# TODO: Critical Fail Automation Cryogenic Suspension
+# TODO: Critical Fail Automation Curse
+# TODO: Critical Fail Automation Dark Side Tendrils
+# TODO: Critical Fail Automation Defensive Technique
+# TODO: Critical Fail Automation Delayed Detonator
+# TODO: Critical Fail Automation Denounce
+# TODO: Critical Fail Automation Destroy Tech
+# TODO: Critical Fail Automation Detonator
+# TODO: Critical Fail Automation Disassemble
+# TODO: Critical Fail Automation (SW) Disintegrate
+# TODO: Critical Fail Automation Drain Life
+# TODO: Critical Fail Automation Drain Vitality
+# TODO: Critical Fail Automation Echo Blast
+# TODO: Critical Fail Automation Electrical Burst
+# TODO: Critical Fail Automation Electromesh
+# TODO: Critical Fail Automation Element of Surprise
+# TODO: Critical Fail Automation Enfeeble
+# TODO: Critical Fail Automation Explosion
+# TODO: Critical Fail Automation Extinguish
+# TODO: Critical Fail Automation Falling Nova
+# TODO: Critical Fail Automation Falling Star
+# TODO: Critical Fail Automation (SW) Fear
+# TODO: Critical Fail Automation Feedback
+# TODO: Critical Fail Automation Flame Sweep
+# TODO: Critical Fail Automation Force Burst
+# TODO: Critical Fail Automation Force Chain Lightning
+# TODO: Critical Fail Automation Force Current
+# TODO: Critical Fail Automation Force Disarm
+# TODO: Critical Fail Automation Force Lightning
+# TODO: Critical Fail Automation Force Lightning Cone
+# TODO: Critical Fail Automation Force Propel
+# TODO: Critical Fail Automation Force Push/Pull
+# TODO: Critical Fail Automation Force Repulse
+# TODO: Critical Fail Automation Force Scream
+# TODO: Critical Fail Automation Force Shunt
+# TODO: Critical Fail Automation Force Storm
+# TODO: Critical Fail Automation Force Throw
+# TODO: Critical Fail Automation Gleaming Outline
+# TODO: Critical Fail Automation Greater Feedback
+# TODO: Critical Fail Automation Greater Kinetite
+# TODO: Critical Fail Automation Greater Pyrokinesis
+# TODO: Critical Fail Automation Greater Saber Throw
+# TODO: Critical Fail Automation Haywire
+# TODO: Critical Fail Automation (SW) Hex
+# TODO: Critical Fail Automation Immolate
+# TODO: Critical Fail Automation Improved Battle Meditation
+# TODO: Critical Fail Automation Improved Feedback
+# TODO: Critical Fail Automation Improved Force Scream
+# TODO: Critical Fail Automation Improved Kinetite
+# TODO: Critical Fail Automation Improved Pyrokinesis
+# TODO: Critical Fail Automation Improved Saber Throw
+# TODO: Critical Fail Automation Ion Blast
+# TODO: Critical Fail Automation Ionic Bond
+# TODO: Critical Fail Automation Irradiate
+# TODO: Critical Fail Automation Jump Pad
+# TODO: Critical Fail Automation Kinetite
+# TODO: Critical Fail Automation Knight Speed
+# TODO: Critical Fail Automation Legendary Battle Meditation - Master Battle Meditation
+# TODO: Critical Fail Automation Malacia
+# TODO: Critical Fail Automation Mass Malacia
+# TODO: Critical Fail Automation Master Battle Meditation
+# TODO: Critical Fail Automation Master Feedback
+# TODO: Critical Fail Automation Master Force Barrier
+# TODO: Critical Fail Automation Master Force Scream
+# TODO: Critical Fail Automation Master Pyrokinesis
+# TODO: Critical Fail Automation Master Saber Throw
+# TODO: Critical Fail Automation Motivator Boost
+# TODO: Critical Fail Automation Oil Slick
+# TODO: Critical Fail Automation Paralyze Humanoid
+# TODO: Critical Fail Automation Plague
+# TODO: Critical Fail Automation Pressure Crush
+# TODO: Critical Fail Automation Probe Mind
+# TODO: Critical Fail Automation Pull Earthward
+# TODO: Critical Fail Automation Pyrokinesis
+# TODO: Critical Fail Automation Radiation
+# TODO: Critical Fail Automation Reveal Shatterpoint
+# TODO: Critical Fail Automation Ring of Fire
+# TODO: Critical Fail Automation Saber Assault
+# TODO: Critical Fail Automation Saber Burst
+# TODO: Critical Fail Automation Saber Onslaught
+# TODO: Critical Fail Automation Saber Slash
+# TODO: Critical Fail Automation Saber Strike
+# TODO: Critical Fail Automation Sabotage Charges
+# TODO: Critical Fail Automation Salvo
+# TODO: Critical Fail Automation (SW) Sanctuary
+# TODO: Critical Fail Automation Self-Destruct
+# TODO: Critical Fail Automation Sense Shatterpoint
+# TODO: Critical Fail Automation Shared Shielding
+# TODO: Critical Fail Automation (SW) Shatter
+# TODO: Critical Fail Automation Stack the Deck
+# TODO: Critical Fail Automation Stun
+# TODO: Critical Fail Automation Stun Droid
+# TODO: Critical Fail Automation Sustained Lightning
+# TODO: Critical Fail Automation Tactical Advantage
+# TODO: Critical Fail Automation Telekinetic Shield
+# TODO: Critical Fail Automation Telekinetic Storm
+# TODO: Critical Fail Automation Temporary Boost
+# TODO: Critical Fail Automation Time Bomb
+# TODO: Critical Fail Automation Transposition
+# TODO: Critical Fail Automation Tremor
+# TODO: Critical Fail Automation Tri-Shot
+# TODO: Critical Fail Automation Turbulence
+# TODO: Critical Fail Automation Turbulent Presence - Improved Battle Meditation
+# TODO: Critical Fail Automation Unbreakable Focus - Battle Meditation
+# TODO: Critical Fail Automation Valor
+# TODO: Critical Fail Automation Vitality Shield
+# TODO: Critical Fail Automation Vortex Shot
+# TODO: Critical Fail Automation Wire Bind
+# TODO: Critical Fail Automation Wound
+# TODO: Critical Fail Automation Poison Dart

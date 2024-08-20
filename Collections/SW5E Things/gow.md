@@ -1,0 +1,1 @@
+Gauntlets of the Warrior

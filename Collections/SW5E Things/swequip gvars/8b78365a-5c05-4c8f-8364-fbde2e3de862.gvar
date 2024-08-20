@@ -167,7 +167,7 @@ def get_counter(attack):
 
 def get_damage_die(attack):
     a = load_json(attack)
-    if 'burst' in a.name.lower():
+    if 'burst' in a.name.lower() or get_first_effect(attack) == "roll":
         dindex = attack.find('"dice": "') + 9
     else:
         dindex = attack.find('"damage": "') + 11
@@ -185,6 +185,14 @@ def get_save_dc(attack):
                     return i.dc
     return None
 
+def get_first_effect(attack):
+    first = load_json(attack)['automation'][0]
+
+    if first['type'] == 'target':
+        return first['effects'][0]['type']
+    
+    return first['type']
+    
 
 def replace_mod(text):
     stats = ch.stats

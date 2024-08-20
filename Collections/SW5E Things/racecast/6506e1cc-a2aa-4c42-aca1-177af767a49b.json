@@ -1,0 +1,68 @@
+[
+    {
+        "name": "jawa",
+        "limitedUse": [
+            "Repair Droid",
+            "Hold Droid"
+        ],
+        "atWill": [
+            "Ion Blast"
+        ],
+        "feature": "Tech Dabbler",
+        "featureDesc": "You know the *ion blast* at-will tech power. When you reach 3rd level, you learn and can cast the *repair droid* tech power once per long rest. When you reach 5th level, you learn and can cast the *hold droid* tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for these powers."
+    },
+    {
+        "name": "sith pureblood",
+        "limitedUse": [
+            "Curse",
+            "(SW) Darkness"
+        ],
+        "atWill": [
+            "Denounce"
+        ],
+        "feature": "Force-Sensitive",
+        "featureDesc": "You know the *denounce* at-will force power. When you reach 3rd level, you learn and can cast the *curse* force power once per long rest. When you reach 5th level, you learn and can cast the *darkness* force power once per long rest. Your forcecasting ability is Charisma for these powers."
+    },
+    {
+        "name": "tusken",
+        "limitedUse": [
+            "(SW) Fear"
+        ],
+        "feature": "Intimidating Roar",
+        "featureDesc": "Once per day, you can cast the *fear* force power. Charisma is your forcecasting ability for this power."
+    },
+    {
+        "name": "human",
+        "limitedUse": [
+            "Defiant"
+        ],
+        "feature": "Defiant",
+        "featureDesc": "Humans are known to be stubborn and often refuse to give up, even against the worst odds. When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a d4 and add it to their roll (no action required). Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+    },
+    {
+        "name": "arkanian",
+        "limitedUse": [
+            "Arkanian Brilliance"
+        ],
+        "feature": "Arkanian Brilliance",
+        "featureDesc": "Whenever you make an ability check, attack roll, or saving throw using Intelligence, you can choose to add 1d4 to the result. You can choose to do this after the check is rolled, but before the DM determines if you’ve passed or failed the check. You cannot do so again until you complete a short or long rest."
+    },
+    {
+        "name": "ithorian",
+        "limitedUse": [
+            "SonicScream"
+        ],
+        "feature": "Sonic Scream",
+        "featureDesc": "As an action, you can violently expel air in a 15-foot cone. When you do so, each creature in the area of the exhalation must make a Wisdom saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). A creature takes 2d6 sonic damage on a failed save, and half as much damage on a successful one. The damage increases to 4d6 at 5th level, 6d6 at 11th level, and 8d6 at 17th level. This ability has no effect on constructs. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest."
+    },
+    {
+        "name": "umbaran",
+        "limitedUse": [
+            "Ward",
+            "Analyze",
+            "Infiltrate"
+        ],
+        "feature": "Tech Dabbler",
+        "featureDesc": "You know the ward at-will tech power. When you reach 3rd level, you learn and can cast the analyze tech power once per day. When you reach 5th level, you can also cast the infiltrate tech power once per day. Intelligence is your techcasting ability for these powers. You do not require use of a wristpad for these powers."
+    }
+]

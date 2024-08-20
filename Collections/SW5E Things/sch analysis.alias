@@ -31,7 +31,7 @@ if v:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
         self_attacks, attacks, effects = [], [], {}
         if subclass == "Physician" and "HealthAdvisor" in discoveries:
-            self_attacks.append({"attack": {"name": f"Health Advisor - {tar.name}", "_v": 2, "activation_type": "4", "verb": "uses"
+            self_attacks.append({"attack": {"name": f"Health Advisor - {tar.name}", "_v": 2, "activation_type": "4", "verb": "uses",
                                   "automation": [{"type": "target", "target": "children", "effects": [
                                                    {"type": "temphp", "amount": f"{ceil(lvl/4)}+{{proficiencyBonus}}"}]},
                                                    {"type": "text", "text": "Whenever a creature that is a target of your Critical Analysis feature begins their turn, you can use your reaction to give them temporary hit points equal to one-fourth your scholar level + your proficiency bonus, as shown in the scholar table, which last until the start of their next turn."}]}})            
