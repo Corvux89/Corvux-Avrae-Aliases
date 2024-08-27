@@ -6,16 +6,16 @@
         "automation": [
             {
                 "type": "roll",
-                "roll": "2d6",
+                "roll": "2d6 [lightning]",
                 "name": "damage",
                 "higher": {
-                    "3": "1d6",
-                    "4": "1d6",
-                    "5": "1d6",
-                    "6": "1d6",
-                    "7": "1d6",
-                    "8": "1d6",
-                    "9": "1d6"
+                    "3": "1d6 [lightning]",
+                    "4": "2d6 [lightning]",
+                    "5": "3d6 [lightning]",
+                    "6": "4d6 [lightning]",
+                    "7": "5d6 [lightning]",
+                    "8": "6d6 [lightning]",
+                    "9": "7d6 [lightning]"
                 }
             },
             {
@@ -46,13 +46,13 @@
                                                     "type": "damage",
                                                     "damage": "1d6 [lightning]",
                                                     "higher": {
-                                                        "3": "1d6",
-                                                        "4": "2d6",
-                                                        "5": "3d6",
-                                                        "6": "4d6",
-                                                        "7": "5d6",
-                                                        "8": "6d6",
-                                                        "9": "7d6"
+                                                        "3": "1d6 [lightning]",
+                                                        "4": "2d6 [lightning]",
+                                                        "5": "3d6 [lightning]",
+                                                        "6": "4d6 [lightning]",
+                                                        "7": "5d6 [lightning]",
+                                                        "8": "6d6 [lightning]",
+                                                        "9": "7d6 [lightning]"
                                                     }
                                                 }
                                             ]
@@ -88,13 +88,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [lightning]"
+                                "damage": "{damage} [lightning]",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage}/2) [lightning]"
+                                "damage": "({damage}/2) [lightning]",
+                                "fixedValue": true
                             }
                         ]
                     }
@@ -336,13 +338,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage}"
+                                "damage": "{damage}",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage}/2)"
+                                "damage": "({damage}/2)",
+                                "fixedValue": true
                             }
                         ]
                     }
