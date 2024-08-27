@@ -26,6 +26,7 @@ out_dict["Force"] = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
 out_dict["Tech"] = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
 out_dict["automated"] = 0
 out_dict["todo"] = []
+out_dict['critical_fail'] = []
 
 for sp in spells:
     try:
@@ -35,6 +36,12 @@ for sp in spells:
 
     if sp.get("automation") and len(sp["automation"]) >=1:
         out_dict["automated"] += 1
+
+        auto = json.dumps(sp["automation"])
+
+        if 'save' in auto and 'CriticalSavingThrow' not in auto:
+            out_dict['critical_fail'].append(sp.get('name'))
+
     else:
         out_dict["todo"].append(sp.get('name'))
 
@@ -62,6 +69,9 @@ with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
 
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")
+
+    for x in out_dict['critical_fail']:
+        outfile.write(f"# TODO: Critical Fail Automation {x}\n")
 
 with open('Homebrew\\Resolute Spellbook\\spellbook.json', encoding='utf-8', mode="w+") as outfile:
     outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))

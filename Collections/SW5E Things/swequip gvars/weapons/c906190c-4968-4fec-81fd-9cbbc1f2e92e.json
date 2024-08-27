@@ -4150,7 +4150,8 @@
             {
                 "type": "roll",
                 "dice": "2d8",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4162,7 +4163,8 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [acid]"
+                                "damage": "{damage} [acid]",
+                                "fixedValue": true
                             },
                             {
                                 "type": "condition",
@@ -4188,7 +4190,8 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [acid]"
+                                "damage": "({damage} / 2) [acid]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4208,7 +4211,8 @@
             {
                 "type": "roll",
                 "dice": "2d6",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4220,7 +4224,8 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [cold]"
+                                "damage": "{damage} [cold]",
+                                "fixedValue": true
                             },
                             {
                                 "type": "ieffect2",
@@ -4259,7 +4264,8 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [cold]"
+                                "damage": "({damage} / 2) [cold]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4279,7 +4285,8 @@
             {
                 "type": "roll",
                 "dice": "2d6",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4291,7 +4298,8 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [sonic]"
+                                "damage": "{damage} [sonic]",
+                                "fixedValue": true
                             },
                             {
                                 "type": "ieffect2",
@@ -4330,7 +4338,8 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [sonic]"
+                                "damage": "({damage} / 2) [sonic]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4350,7 +4359,8 @@
             {
                 "type": "roll",
                 "dice": "2d6",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4362,7 +4372,8 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [lightning]"
+                                "damage": "{damage} [lightning]",
+                                "fixedValue": true
                             },
                             {
                                 "type": "ieffect2",
@@ -4400,7 +4411,8 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [lightning]"
+                                "damage": "({damage} / 2) [lightning]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4477,7 +4489,8 @@
             {
                 "type": "roll",
                 "dice": "2d10",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4489,13 +4502,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [kinetic]"
+                                "damage": "{damage} [kinetic]",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [kinetic]"
+                                "damage": "({damage} / 2) [kinetic]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4515,7 +4530,8 @@
             {
                 "type": "roll",
                 "dice": "2d6 [poison]",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4535,7 +4551,8 @@
                                         {
                                             "type": "roll",
                                             "dice": "2d6 [poison]",
-                                            "name": "damage"
+                                            "name": "damage",
+                                            "fixedValue": true
                                         },
                                         {
                                             "type": "target",
@@ -4548,13 +4565,15 @@
                                                     "success": [
                                                         {
                                                             "type": "damage",
-                                                            "damage": "({damage})/2"
+                                                            "damage": "({damage})/2",
+                                                            "fixedValue": true
                                                         }
                                                     ],
                                                     "fail": [
                                                         {
                                                             "type": "damage",
-                                                            "damage": "{damage}"
+                                                            "damage": "{damage}",
+                                                            "fixedValue": true
                                                         },
                                                         {
                                                             "type": "ieffect2",
@@ -4588,13 +4607,15 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage})/2"
+                                "damage": "({damage})/2",
+                                "fixedValue": true
                             }
                         ],
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage}"
+                                "damage": "{damage}",
+                                "fixedValue": true
                             },
                             {
                                 "type": "ieffect2",
@@ -4623,7 +4644,8 @@
             {
                 "type": "roll",
                 "dice": "2d8",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4635,13 +4657,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [fire]"
+                                "damage": "{damage} [fire]",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [fire]"
+                                "damage": "({damage} / 2) [fire]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4661,7 +4685,8 @@
             {
                 "type": "roll",
                 "dice": "2d6",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4673,13 +4698,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [ion]"
+                                "damage": "{damage} [ion]",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [ion]"
+                                "damage": "({damage} / 2) [ion]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4699,7 +4726,8 @@
             {
                 "type": "roll",
                 "dice": "2d6 [healing]",
-                "name": "healing"
+                "name": "healing",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4707,7 +4735,8 @@
                 "effects": [
                     {
                         "type": "damage",
-                        "damage": "-({healing})"
+                        "damage": "-({healing})",
+                        "fixedValue": true
                     }
                 ]
             },
@@ -4724,7 +4753,8 @@
             {
                 "type": "roll",
                 "dice": "2d6 [healing]",
-                "name": "healing"
+                "name": "healing",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4745,7 +4775,8 @@
                                         {
                                             "type": "roll",
                                             "dice": "2d6 [healing]",
-                                            "name": "healing"
+                                            "name": "healing",
+                                            "fixedValue": true
                                         },
                                         {
                                             "type": "target",
@@ -4753,7 +4784,8 @@
                                             "effects": [
                                                 {
                                                     "type": "damage",
-                                                    "damage": "-({healing})"
+                                                    "damage": "-({healing})",
+                                                    "fixedValue": true
                                                 }
                                             ]
                                         }
@@ -4770,7 +4802,8 @@
                 "effects": [
                     {
                         "type": "damage",
-                        "damage": "-({healing})"
+                        "damage": "-({healing})",
+                        "fixedValue": true
                     }
                 ]
             },
@@ -4787,7 +4820,8 @@
             {
                 "type": "roll",
                 "dice": "2d6",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4799,7 +4833,8 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [psychic]"
+                                "damage": "{damage} [psychic]",
+                                "fixedValue": true
                             },
                             {
                                 "type": "ieffect2",
@@ -4838,7 +4873,8 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [psychic]"
+                                "damage": "({damage} / 2) [psychic]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4858,7 +4894,8 @@
             {
                 "type": "roll",
                 "dice": "2d10",
-                "name": "damage"
+                "name": "damage",
+                "fixedValue": true
             },
             {
                 "type": "target",
@@ -4870,13 +4907,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [energy]"
+                                "damage": "{damage} [energy]",
+                                "fixedValue": true
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "({damage} / 2) [energy]"
+                                "damage": "({damage} / 2) [energy]",
+                                "fixedValue": true
                             }
                         ],
                         "dc": "14"
@@ -4897,7 +4936,8 @@
                 "type": "roll",
                 "dice": "5d6",
                 "name": "creatureHP",
-                "displayName": "Roll"
+                "displayName": "Roll",
+                "fixedValue": true
             },
             {
                 "type": "variable",

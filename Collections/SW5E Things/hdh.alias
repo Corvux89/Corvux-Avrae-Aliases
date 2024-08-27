@@ -8,7 +8,6 @@ mi = a.last('mi')
 i = '-i' in &ARGS&
 t = a.last('t')
 con = '-con' in &ARGS&
-v = (ch.cc_exists(cc) and ch.get_cc(cc)<num) or i
 
 try:
     d_size = str([c.name for c in ch.consumables if  'Hit Dice' in c.name][0]).replace('Hit Dice (','').replace(')','')
@@ -17,6 +16,8 @@ except:
 
 base = f'''embed -thumb {image} -color {color}'''
 cc = f"Hit Dice ({d_size})"
+
+v = (ch.cc_exists(cc) and ch.get_cc(cc)<num) or i
 
 if v:
     if ch.get_cc(cc)<num and not i:

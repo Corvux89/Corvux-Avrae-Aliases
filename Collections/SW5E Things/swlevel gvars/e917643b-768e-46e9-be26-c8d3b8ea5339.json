@@ -3872,7 +3872,7 @@
                     "automation": [
                         {
                             "type": "counter",
-                            "counter": "Force Point",
+                            "counter": "Force Points",
                             "amount": 1,
                             "errorBehaviour": "raise"
                         },
@@ -4409,7 +4409,7 @@
                     "automation": [
                         {
                             "type": "counter",
-                            "counter": "Force Point",
+                            "counter": "Force Points",
                             "amount": 1,
                             "errorBehaviour": "raise"
                         },

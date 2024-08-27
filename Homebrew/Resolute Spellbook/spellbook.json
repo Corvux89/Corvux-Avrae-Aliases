@@ -3959,6 +3959,99 @@
     "name": "Dark Shear",
     "level": 2,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Dark Shear",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Dark Shear",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "2d6+{max(strengthMod, dexterityMod)} [psychic]",
+                              "higher": {
+                                "3": "1d6 [psychic]",
+                                "4": "1d6 [psychic]",
+                                "5": "2d6 [psychic]",
+                                "6": "2d6 [psychic]",
+                                "7": "3d6 [psychic]",
+                                "8": "3d6 [psychic]",
+                                "9": "3d6 [psychic]"
+                              }
+                            }
+                          ],
+                          "miss": [],
+                          "attackBonus": "max(strengthMod, dexterityMod) + proficiencyBonus"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "You create a weapon of imperceptible Force energy that lasts until the power ends. It counts as a simple lightweapon with which you are proficient. It deals 2d6 psychic damage, and has the finesse, light, and thrown properties (range 20/60). When you attack while within dim light or darkness, you have advantage.\n\nIf you drop the weapon or throw it, it disappears at the end of the turn. While the power lasts, you can use a bonus action to make the weapon reappear in your hand."
+                    }
+                  ]
+                },
+                "defaultCastingMod": "spell"
+              }
+            ],
+            "desc": "As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it"
+          }
+        ]
+      },
+      {
+        "type": "condition",
+        "condition": "any(targets)",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "attack",
+                "hit": [
+                  {
+                    "type": "damage",
+                    "damage": "2d6+{max(strengthMod, dexterityMod)} [psychic]",
+                    "higher": {
+                      "3": "1d6 [psychic]",
+                      "4": "1d6 [psychic]",
+                      "5": "2d6 [psychic]",
+                      "6": "2d6 [psychic]",
+                      "7": "3d6 [psychic]",
+                      "8": "3d6 [psychic]",
+                      "9": "3d6 [psychic]"
+                    }
+                  }
+                ],
+                "miss": [],
+                "attackBonus": "max(strengthMod, dexterityMod) + proficiencyBonus"
+              }
+            ]
+          }
+        ],
+        "onFalse": [],
+        "errorBehaviour": "false"
+      },
+      {
+        "type": "text",
+        "text": "You create a weapon of imperceptible Force energy that lasts until the power ends. It counts as a simple lightweapon with which you are proficient. It deals 2d6 psychic damage, and has the finesse, light, and thrown properties (range 20/60). When you attack while within dim light or darkness, you have advantage.\n\nIf you drop the weapon or throw it, it disappears at the end of the turn. While the power lasts, you can use a bonus action to make the weapon reappear in your hand."
+      }
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 bonus action",
@@ -3968,9 +4061,10 @@
       "somatic": false,
       "material": ""
     },
-    "duration": "up to 1 minute",
+    "duration": "1 minute",
     "ritual": false,
-    "description": "You create a weapon of imperceptible Force energy that lasts until the power ends. It counts as a simple lightweapon with which you are proficient. It deals 2d6 psychic damage, and has the finesse, light, and thrown properties (range 20/60). When you attack while within dim light or darkness, you have advantage.\r\n\r\nIf you drop the weapon or throw it, it disappears at the end of the turn. While the power lasts, you can use a bonus action to make the weapon reappear in your hand.\r\n\r\n***Force Potency.*** When you cast this power using a 3rd or 4th level force slot, the damage increases by 1d6 (3d6). At 5th or 6th level, the damage increases by 2d6 (4d6). At 7th level or higher, the damage increases by 3d6 (5d6).",
+    "description": "You create a weapon of imperceptible Force energy that lasts until the power ends. It counts as a simple lightweapon with which you are proficient. It deals 2d6 psychic damage, and has the finesse, light, and thrown properties (range 20/60). When you attack while within dim light or darkness, you have advantage.\n\nIf you drop the weapon or throw it, it disappears at the end of the turn. While the power lasts, you can use a bonus action to make the weapon reappear in your hand.",
+    "higherlevels": "**Force Potency.** When you cast this power using a 3rd or 4th level force slot, the damage increases by 1d6 (3d6). At 5th or 6th level, the damage increases by 2d6 (4d6). At 7th level or higher, the damage increases by 3d6 (5d6).",
     "concentration": true
   },
   {
@@ -12255,7 +12349,7 @@
   },
   {
     "name": "Land Stride",
-    "level": 0,
+    "level": 1,
     "school": "Force",
     "automation": [
       {
@@ -12755,6 +12849,41 @@
     "ritual": false,
     "description": "You exude an aura out to 30 feet that boosts the morale and overall battle prowess you and your allies while simultaneously reducing the opposition\u2019s combat-effectiveness by eroding their will to fight.\n\nWhenever you or a friendly creature within your meditation makes an attack roll or a saving throw, they can roll a d8 and add the number rolled to the attack roll or saving throw.\n\nWhenever a hostile creature enters your meditation or starts its turn there, it must make a Charisma saving throw. On a failed save, it must roll a d8 and subtract the number rolled from each attack roll or saving throw it makes before the end of your next turn. On a successful save, it is immune to this power for 1 day.",
     "concentration": true
+  },
+  {
+    "name": "Lesser Mislead",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Misleading"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates.",
+    "higherlevels": "",
+    "concentration": false
   },
   {
     "name": "(SW) Light",
@@ -14315,6 +14444,192 @@
     "concentration": true
   },
   {
+    "name": "Mutate/Augment",
+    "level": 3,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "condition",
+                "condition": "choice and '1' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Flexible Body",
+                    "duration": "100",
+                    "desc": "Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '2' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Additional Appendage",
+                    "duration": "100",
+                    "desc": "This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '3' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Antennae",
+                    "duration": "100",
+                    "desc": "You sprout antennae that give you tremorsense out to a range of 30 feet.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '4' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Extended Limbs",
+                    "duration": "100",
+                    "desc": "You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '5' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Burrow",
+                    "duration": "100",
+                    "desc": "You gain a burrowing speed equal to your walking speed.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '6' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Hardened Flesh",
+                    "duration": "100",
+                    "effects": {
+                      "ac_bonus": "max(0, 16-caster.ac)"
+                    },
+                    "desc": "Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '7' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Alter Self",
+                    "duration": "100",
+                    "desc": "You can gain the benefits of any one option of the alter self power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '8' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Magnetic",
+                    "duration": "100",
+                    "desc": "You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "condition",
+                "condition": "choice and '9' in choice",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mutate/Augment - Force Enlightenment",
+                    "duration": "100",
+                    "desc": "You can gain any one effect of the force enlightenment power.",
+                    "parent": "ieffect"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Use `-choice` to specify which effects are chosen from the list below. Ex: `-choice 1` or `-choice 135`"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You alter your body with tech, temporarily gaining new properties which last for the duration. You can select three of the following properties. You cannot select a property more than once, unless that property says otherwise."
+      },
+      {
+        "type": "text",
+        "text": "1. Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.\n2. You grow one additional appendage. This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).\n3. You sprout antennae that give you tremorsense out to a range of 30 feet.\n4. You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.\n5. You gain a burrowing speed equal to your walking speed.",
+        "title": "Choices"
+      },
+      {
+        "type": "text",
+        "text": "6. Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.\n7. You can gain the benefits of any one option of the *alter self* power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.\n8. You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.\n9. You can gain any one effect of the *force enlightenment* power.",
+        "title": "Choices (Cont'd)"
+      },
+      {
+        "type": "text",
+        "text": "**Overcharge Tech.** When you cast this power using a tech slot of 4th level or higher, you can select an additional property for each slot level above 3rd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 10 minutes",
+    "ritual": false,
+    "description": "You alter your body with tech, temporarily gaining new properties which last for the duration. You can select three of the following properties. You cannot select a property more than once, unless that property says otherwise.\n\n1. Your body becomes more flexible. You have advantage on ability checks and saving throws against effects that would grapple or restrain you, and your movement is unaffected by difficult terrain or squeezing.\n2. You grow one additional appendage. This appendage serves as an arm and a hand, though it can take the shape of a limb, tentacle, or similar appendage. You can select this property twice to grow a maximum number of two appendages. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms you are benefiting from (no action required).\n3. You sprout antennae that give you tremorsense out to a range of 30 feet.\n4. You extend the length of your limbs. When you make a melee attack or attempt to grapple, shove, or trip a creature on your turn, your reach for it is 5 feet greater than normal.\n5. You gain a burrowing speed equal to your walking speed.\n6. Your flesh hardens. Your AC can\u2019t be less than 16, regardless of what kind of armor you\u2019re wearing.\n7. You can gain the benefits of any one option of the *alter self* power. You can select this property multiple times to gain the benefits of multiple options of the alter self power, choosing a different option each time.\n8. You gain the effect of the magnetic hold power, but you can affix to and move along any surface, instead of only metallic surfaces. You have a climbing speed equal to your walking speed.\n9. You can gain any one effect of the *force enlightenment* power.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 4th level or higher, you can select an additional property for each slot level above 3rd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Nature Trick",
     "level": 0,
     "school": "Force",
@@ -14943,7 +15258,59 @@
     "name": "Poison Dart",
     "level": 1,
     "school": "Tech",
-    "classes": "None",
+    "automation": [
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d8 [poison]",
+                "higher": {
+                  "2": "1d8 [poison]",
+                  "3": "2d8 [poison]",
+                  "4": "3d8 [poison]",
+                  "5": "4d8 [poison]",
+                  "6": "5d8 [poison]",
+                  "7": "6d8 [poison]",
+                  "8": "7d8 [poison]",
+                  "9": "8d8 [poison]"
+                }
+              },
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Poisoned",
+                    "duration": "2",
+                    "effects": {
+                      "attack_advantage": "-1",
+                      "check_dis": [
+                        "all"
+                      ]
+                    },
+                    "end": true,
+                    "tick_on_caster": true
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Make a ranged tech attack against a creature within range. On hit, the target takes 2d8 poison damage and must make a Constitution save. On a failed save, it is also poisoned until the end of your next turn."
+      }
+    ],
+    "classes": "",
     "subclasses": "",
     "casttime": "1 action",
     "range": "60 feet",
@@ -14954,7 +15321,8 @@
     },
     "duration": "Instantaneous",
     "ritual": false,
-    "description": "Make a ranged tech attack against a creature within range. On hit, the target takes 2d8 poison damage and must make a Constitution save. On a failed save, it is also poisoned until the end of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "description": "Make a ranged tech attack against a creature within range. On hit, the target takes 2d8 poison damage and must make a Constitution save. On a failed save, it is also poisoned until the end of your next turn.",
+    "higherlevels": "**Overcharge Tech.** When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -22376,40 +22744,5 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  },
-  {
-    "name": "Lesser Mislead",
-    "level": 2,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates.",
-    "higherlevels": "",
-    "concentration": false,
-    "automation": [
-        {
-            "type": "target",
-            "target": "self",
-            "effects": [
-                {
-                    "type": "ieffect2",
-                    "name": "Misleading"
-                }
-            ]
-        },
-        {
-            "type": "text",
-            "text": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts until the end of your next turn, but the invisibility ends if you attack or cast a power.\n\nYou can use your action to move your illusory double up to your speed and make it gesture, speak, and behave in whatever way you choose.\n\nAs soon as it is attacked or would take damage, the double dissipates."
-        }
-    ]
   }
 ]
