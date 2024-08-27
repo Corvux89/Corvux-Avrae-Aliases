@@ -44,16 +44,7 @@
                                                 },
                                                 {
                                                     "type": "damage",
-                                                    "damage": "1d6 [lightning]",
-                                                    "higher": {
-                                                        "3": "1d6 [lightning]",
-                                                        "4": "2d6 [lightning]",
-                                                        "5": "3d6 [lightning]",
-                                                        "6": "4d6 [lightning]",
-                                                        "7": "5d6 [lightning]",
-                                                        "8": "6d6 [lightning]",
-                                                        "9": "7d6 [lightning]"
-                                                    }
+                                                    "damage": "{ieffect.desc.split()[-1]} [lightning]"
                                                 }
                                             ]
                                         }
@@ -74,7 +65,8 @@
                                 "style": 4
                             }
                         ],
-                        "end": true
+                        "end": true,
+                        "desc": "{'1d6' if spell_level == 2 else '2d6' if spell_level == 3 else '3d6' if spell_level == 4 else '4d6' if spell_level == 5 else '5d6' if spell_level == 6 else '6d6' if spell_level == 7 else '7d6' if spell_level == 8 else '8d6'}"
                     }
                 ]
             },
