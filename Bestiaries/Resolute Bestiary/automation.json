@@ -1560,6 +1560,14 @@
     "source": "Resolute Bestiary - Ground"
   },
   {
+    "name": "Elite Purge Trooper",
+    "ability": "Volley (Recharge 6)",
+    "complete": false,
+    "source": "Resolute Bestiary - Ground",
+    "description": "The trooper makes one ranged attack against every enemy within 10 feet of a point it can see.",
+    "automation": null
+  },
+  {
     "name": "TIE/LN Starfighter",
     "ability": "Twin Laser Cannon - Rapid",
     "complete": true,

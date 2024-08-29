@@ -16,8 +16,12 @@ site_list = [x.get('name') for x in site_spells]
 # https://www.gmbinder.com/share/-MDp2nOeGD6JJLxNM_lT
 # Expanded Force Powers
 # https://www.gmbinder.com/share/-MDosNzOCLn0_ColYfBf
+# New Tech Powers Aziz
 with open("Homebrew\expanded.json", "r") as outfile:
     expanded_list = json.load(outfile)
+
+with open('Homebrew\\aziz.json', "r") as outfile:
+    aziz_list = json.load(outfile)
 
 out_dict = {}
 
@@ -53,11 +57,14 @@ for sp in spells:
     if formatted_name in expanded_list:
         expanded_list.remove(formatted_name)
 
+    if formatted_name in aziz_list:
+        aziz_list.remove(formatted_name)
+
 
 print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
       f"Force Powers: {out_dict['Force']}\n"
       f"Tech Power: {out_dict['Tech']}\n"
-      f"Missing Powers: {len(site_list)+len(expanded_list)}")
+      f"Missing Powers: {len(site_list)+len(expanded_list)+len(aziz_list)}")
 
 
 with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
@@ -66,6 +73,9 @@ with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
 
     for x in expanded_list:
         outfile.write(f"# TODO: Expanded Missing {x}\n")
+    
+    for x in aziz_list:
+        outfile.write(f"# TODO: Aziz Tech Power Missing {x}\n")
 
     for x in out_dict["todo"]:
         outfile.write(f"# TODO: {x}\n")
