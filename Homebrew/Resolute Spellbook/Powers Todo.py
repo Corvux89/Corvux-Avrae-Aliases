@@ -62,7 +62,6 @@
 # TODO: Expanded Missing Force Confluence
 # TODO: Expanded Missing Improved Animate Weapon
 # TODO: Expanded Missing Light Burst
-# TODO: Expanded Missing Master Kinetite
 # TODO: Expanded Missing Control Weather
 # TODO: Expanded Missing Crucitorn
 # TODO: Expanded Missing Drain Knowledge
@@ -648,6 +647,7 @@
 # TODO: Critical Fail Automation Animate Weapon
 # TODO: Critical Fail Automation (SW) Antipathy/Sympathy
 # TODO: Critical Fail Automation Assess the Situation
+# TODO: Critical Fail Automation Avalanche
 # TODO: Critical Fail Automation Barrage
 # TODO: Critical Fail Automation Battle Meditation
 # TODO: Critical Fail Automation Break
@@ -774,4 +774,4 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Avalanche
+# TODO: Critical Fail Automation Master Kinetite

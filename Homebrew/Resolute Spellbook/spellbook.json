@@ -14063,6 +14063,129 @@
     "concentration": false
   },
   {
+    "name": "Master Kinetite",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d10+10 [lightning]",
+        "name": "damage",
+        "higher": {
+          "8": "1d10",
+          "9": "2d10"
+        },
+        "fixedValue": false
+      },
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "roll",
+        "dice": "3d10+10 [sonic]",
+        "name": "damage2",
+        "higher": {
+          "8": "1d10",
+          "9": "2d10"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage2}",
+                "fixedValue": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened",
+                "duration": "10",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Deafness (Master Kinetite)",
+                    "verb": "attempts to resist deafness (Master Kinetite)",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage2})/2",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a 1-foot diameter sphere of compressed lightning and throw it at a creature you can see within range. The creature must make a Dexterity saving throw. On a failed save, it takes 3d10 + 10 lightning damage, or half as much damage on a success. Then, the disc detonates with a shattering crack of thunder, which can be heard up to 1,000 feet away. The target, and each creature within 20 feet of it, must make a Constitution saving throw. On a failed save, a creature takes 3d10 + 10 sonic damage and is deafened for 1 minute. On a successful save, a creature takes half as much damage and is not deafened. At the end of each of its turns, a creature deafened by this power can repeat the saving throw, ending the effect on itself on a success.\n\n***Force Potency.*** When you cast this power with a force slot of 8th level or higher, both damage rolls increase by 1d10 for each slot level above 7th."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "300 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create a 1-foot diameter sphere of compressed lightning and throw it at a creature you can see within range. The creature must make a Dexterity saving throw. On a failed save, it takes 3d10 + 10 lightning damage, or half as much damage on a success. Then, the disc detonates with a shattering crack of thunder, which can be heard up to 1,000 feet away. The target, and each creature within 20 feet of it, must make a Constitution saving throw. On a failed save, a creature takes 3d10 + 10 sonic damage and is deafened for 1 minute. On a successful save, a creature takes half as much damage and is not deafened. At the end of each of its turns, a creature deafened by this power can repeat the saving throw, ending the effect on itself on a success.\n\n***Force Potency.*** When you cast this power with a force slot of 8th level or higher, both damage rolls increase by 1d10 for each slot level above 7th.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Master Malacia",
     "level": 6,
     "school": "Force",
