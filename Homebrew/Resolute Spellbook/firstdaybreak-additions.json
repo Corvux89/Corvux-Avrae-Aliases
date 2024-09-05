@@ -53,6 +53,18 @@
         "school": "Force",
         "automation": [
             {
+                "type": "roll",
+                "dice": "6d10 [lightning]",
+                "name": "damage",
+                "higher": {
+                    "5": "d10",
+                    "6": "2d10",
+                    "7": "3d10",
+                    "8": "4d10",
+                    "9": "5d10"
+                }
+            },
+            {
                 "type": "target",
                 "target": "each",
                 "effects": [
@@ -62,29 +74,15 @@
                         "fail": [
                             {
                                 "type": "damage",
-                                "damage": "6d10 [lightning]",
-                                "higher?": {
-                                    "5": "d10",
-                                    "6": "2d10",
-                                    "7": "3d10",
-                                    "8": "4d10",
-                                    "9": "5d10"
-                                }
+                                "damage": "{damage} [lightning]"
                             }
                         ],
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "(6d10/2) [lightning]",
-                                "higher?": {
-                                    "5": "d10",
-                                    "6": "2d10",
-                                    "7": "3d10",
-                                    "8": "4d10",
-                                    "9": "5d10"
+                                "damage": "{damage} [lightning]"
                                 }
-                            }
-                        ]
+                            ]
                     }
                 ]
             },
