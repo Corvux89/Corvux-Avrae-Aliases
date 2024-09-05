@@ -5,6 +5,21 @@
         "school": "Force",
         "automation": [
             {
+                "type": "variable",
+                "name": "NumDie",
+                "value": 1,
+                "higher":{
+                    "2": 2,
+                    "3": 3,
+                    "4": 4,
+                    "5": 5,
+                    "6": 6,
+                    "7": 7,
+                    "8": 8,
+                    "9": 9
+                }
+            },
+            {
                 "type": "roll",
                 "roll": "2d6 [lightning]",
                 "name": "damage",
@@ -44,7 +59,8 @@
                                                 },
                                                 {
                                                     "type": "damage",
-                                                    "damage": "{ieffect.desc.split()[-1]} [lightning]"
+                                                    "damage": "{NumDie}d6 [lightning]",
+                                                    "fixedValue": true
                                                 }
                                             ]
                                         }
@@ -65,8 +81,7 @@
                                 "style": 4
                             }
                         ],
-                        "end": true,
-                        "desc": "{'1d6' if spell_level == 2 else '2d6' if spell_level == 3 else '3d6' if spell_level == 4 else '4d6' if spell_level == 5 else '5d6' if spell_level == 6 else '6d6' if spell_level == 7 else '7d6' if spell_level == 8 else '8d6'}"
+                        "end": true
                     }
                 ]
             },
@@ -235,6 +250,18 @@
         "school": "Force",
         "automation":[
             {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Preserved",
+                        "duration": 600,
+                        "desc": "For the next hour, the target can survive within the vacuum of space.\n\n- If the target breathes, it still requires oxygen to breathe.\n\n- This power has no effect on dead droids or constructs."
+                    }
+                ]
+            },
+            {
                 "type": "text",
                 "text": "You touch a corpse or other remains. For the next 10 days, the target is protected from decay and can't become undead.\n\nThe power also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this power don't count against the time limit of powers such as revitalize.\n\nAlternatively, you can touch a living creature when you cast this power. For the next hour, the target can survive within the vacuum of space. If the target breathes, it still requires oxygen to breathe. This power has no effect on dead droids or constructs."
             }
@@ -305,18 +332,18 @@
                 "dice": "2d6 [necrotic]",
                 "name": "damage",
                 "higher": {
-                    "3": "1d6 [necrotic]",
-                    "4": "2d6 [necrotic]",
-                    "5": "3d6 [necrotic]",
-                    "6": "4d6 [necrotic]",
-                    "7": "5d6 [necrotic]",
-                    "8": "6d6 [necrotic]",
-                    "9": "7d6 [necrotic]"
+                    "3": "1d6",
+                    "4": "2d6",
+                    "5": "3d6",
+                    "6": "4d6",
+                    "7": "5d6",
+                    "8": "6d6",
+                    "9": "7d6"
                 }
             },
             {
                 "type": "roll",
-                "dice": "{caster.spellbook.spell_mod} [heal plus hit dice]",
+                "dice": "{caster.spellbook.spell_mod}",
                 "name": "heal",
                 "displayName": "Heal"
             },
