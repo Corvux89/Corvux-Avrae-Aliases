@@ -106,5 +106,58 @@
         "ritual": false,
         "description": "You cause an arc of blue lightning to leap from you to a creature you can see within range. The creature must make a Dexterity saving throw. The target takes 6d10 lightning damage on a failed save or half as much damage on a success. The creature has disadvantage on the saving throw if it is made of metal or wearing metal armor.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.",
         "concentration": false
+    },
+    {
+        "name": "Mind Whip",
+        "level": 2,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "save": "int",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Mind Whipped",
+                                "duration": 1,
+                                "end": true,
+                                "desc": "Can only take a move, action, or a bonus action."
+                            },
+                            {
+                                "type":"damage",
+                                "damage": "3d6 [psychic]"
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type":"damage",
+                                "damage": "(3d6 / 2) [psychic]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the power's other effects.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them."
+            }
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 round",
+        "ritual": false,
+        "description": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the power's other effects.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them.",
+        "concentration": false
     }
 ]
