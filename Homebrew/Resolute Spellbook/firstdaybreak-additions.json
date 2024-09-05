@@ -21,6 +21,46 @@
         "name": "Electrocution",
         "level": 4,
         "school": "Force",
+        "automation": [
+            {
+                "type": "roll",
+                "roll": "6d10",
+                "name": "damage",
+                "higher?": {
+                    "5": "d10",
+                    "6": "2d10",
+                    "7": "3d10",
+                    "8": "4d10",
+                    "9": "5d10"
+                }
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage} [lightning]"
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage}/2 [lightning]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You cause an arc of blue lightning to leap from you to a creature you can see within range. The creature must make a Dexterity saving throw. The target takes 6d10 lightning damage on a failed save or half as much damage on a success. The creature has disadvantage on the saving throw if it is made of metal or wearing metal armor.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th."
+            }
+        ],
         "classes": "Dark",
         "subclasses": "",
         "casttime": "1 action",
