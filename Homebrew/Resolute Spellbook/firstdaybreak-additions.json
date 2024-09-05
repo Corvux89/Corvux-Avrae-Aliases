@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Mind Shatter",
+        "level": 4,
+        "school": "Force",
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "120 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You attempt to overwhelm the mind of a thinking creature you can see within range. Alternatively, you can reach out through the Force, and attempt to sense the presence of a thinking creature within range that you are familiar with. If the creature you designate isn't within range, the power fails, and you do not expend any force points.\n\nThe target must succeed on an Intelligence saving throw or take 10d6 psychic damage and be incapacitated until the start of your next turn. Whether the target passes or fails this saving throw, you immediately learn its location. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d6 for each slot level above 4th.",
+        "concentration": false
+    },
+    {
+        "name": "Electrocution",
+        "level": 4,
+        "school": "Force",
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "30 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You cause an arc of blue lightning to leap from you to a creature you can see within range. The creature must make a Dexterity saving throw. The target takes 6d10 lightning damage on a failed save or half as much damage on a success. The creature has disadvantage on the saving throw if it is made of metal or wearing metal armor.\n\n**Force Potency.** When you cast this power using a force slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.",
+        "concentration": false
+    }
+]
