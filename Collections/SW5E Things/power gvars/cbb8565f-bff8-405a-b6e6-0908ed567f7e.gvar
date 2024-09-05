@@ -195,20 +195,23 @@ def processPower(args):
     return f'cast "{spell.name}" {" ".join(out)} {"-i" if spell_level>0 else ""}'
 
 def search(keyword, gvar):
+    c = character()
     sover = f"(sw) {keyword}"
     spell = None
 
     for s in gvar:
         if keyword == s.name.lower() or sover == s.name.lower():
             spell = s
-            break
+            if spell.name in c.spellbook or spell.name.replace("(SW) ", "") in c.spellbook:
+                break
 
     if spell is None:
         for s in gvar:
             if keyword in s.name.lower():
                 spell = s
-                break
-
+                if spell.name in c.spellbook or spell.name.replace("(SW) ", "") in c.spellbook:
+                    break
+                
     return spell
 
 def getWith(spell):

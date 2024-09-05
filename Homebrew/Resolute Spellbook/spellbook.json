@@ -1277,6 +1277,76 @@
     "concentration": false
   },
   {
+    "name": "Avalanche",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8 [kinetic]",
+        "name": "damage",
+        "higher": {
+          "4": "1d8",
+          "5": "2d8",
+          "6": "3d8",
+          "7": "4d8",
+          "8": "5d8",
+          "9": "6d8"
+        },
+        "fixedValue": false
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Stunned (Avalanche)",
+                "duration": "2",
+                "end": true,
+                "desc": "A stunned creature is incapacitated (see the condition), can\u2019t move, and can speak only falteringly.\n- The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save.\n- Attack rolls against the creature have advantage."
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You telekinetically gather debris and cause it to rain down in a 20-foot radius sphere centered on a point you can see within range. Each creature in the area must make a Dexterity saving throw or take 2d8 kinetic damage and be stunned until the end of its next turn. On a success, a creature takes half as much damage and is not stunned.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "150 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You telekinetically gather debris and cause it to rain down in a 20-foot radius sphere centered on a point you can see within range. Each creature in the area must make a Dexterity saving throw or take 2d8 kinetic damage and be stunned until the end of its next turn. On a success, a creature takes half as much damage and is not stunned.\n\n***Force Potency.*** When you cast this power using a force slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Bacta Pack",
     "level": 1,
     "school": "Tech",
@@ -7324,6 +7394,71 @@
     "duration": "1 hour",
     "ritual": false,
     "description": "You touch a creature and stimulate its natural healing ability. The target regains 4d8+15 hit points. For the duration of the power, the target regains 1 hit point at the start of each of its turns (10 hit points each minute).\r\n\r\nIf the creature has a severed part you hold it to the stump, the power instantaneously causes the limb to knit to the stump.\r\n\r\nThis power has no effect on droids or constructs.",
+    "concentration": false
+  },
+  {
+    "name": "Force Mend",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-(4d8 + 15) [heal]"
+          },
+          {
+            "type": "ieffect2",
+            "name": "Force Mending",
+            "duration": "600",
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "-1 [heal]",
+                        "overheal": false,
+                        "cantripScale": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "For the duration of the power, the target regains 1 hit point at the start of each of its turns (10 hit points each minute)."
+                  }
+                ],
+                "label": "Force Mend",
+                "verb": "is Force Mending",
+                "style": "3"
+              }
+            ],
+            "desc": "The target regains 1 hit point at the start of each of its turns"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch a creature and stimulate its natural healing ability. The target regains 4d8+15 hit points. For the duration of the power, the target regains 1 hit point at the start of each of its turns (10 hit points each minute).\n\nIf the creature has a severed part you hold it to the stump, the power instantaneously causes the limb to knit to the stump.\n\nThis power has no effect on droids or constructs."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 minute",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "You touch a creature and stimulate its natural healing ability. The target regains 4d8 + 15 hit points. For the duration of the power, the target regains 1 hit point at the start of each of its turns (10 hit points each minute).\n\nIf the creature has a severed part you hold it to the stump, the power instantaneously causes the limb to knit to the stump.\n\nThis power has no effect on droids or constructs.",
     "concentration": false
   },
   {
@@ -13928,6 +14063,129 @@
     "concentration": false
   },
   {
+    "name": "Master Kinetite",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d10+10 [lightning]",
+        "name": "damage",
+        "higher": {
+          "8": "1d10",
+          "9": "2d10"
+        },
+        "fixedValue": false
+      },
+      {
+        "type": "target",
+        "target": 1,
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage})/2",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "roll",
+        "dice": "3d10+10 [sonic]",
+        "name": "damage2",
+        "higher": {
+          "8": "1d10",
+          "9": "2d10"
+        }
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage2}",
+                "fixedValue": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Deafened",
+                "duration": "10",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "con",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Deafness (Master Kinetite)",
+                    "verb": "attempts to resist deafness (Master Kinetite)",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ]
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage2})/2",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create a 1-foot diameter sphere of compressed lightning and throw it at a creature you can see within range. The creature must make a Dexterity saving throw. On a failed save, it takes 3d10 + 10 lightning damage, or half as much damage on a success. Then, the disc detonates with a shattering crack of thunder, which can be heard up to 1,000 feet away. The target, and each creature within 20 feet of it, must make a Constitution saving throw. On a failed save, a creature takes 3d10 + 10 sonic damage and is deafened for 1 minute. On a successful save, a creature takes half as much damage and is not deafened. At the end of each of its turns, a creature deafened by this power can repeat the saving throw, ending the effect on itself on a success.\n\n***Force Potency.*** When you cast this power with a force slot of 8th level or higher, both damage rolls increase by 1d10 for each slot level above 7th."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "300 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create a 1-foot diameter sphere of compressed lightning and throw it at a creature you can see within range. The creature must make a Dexterity saving throw. On a failed save, it takes 3d10 + 10 lightning damage, or half as much damage on a success. Then, the disc detonates with a shattering crack of thunder, which can be heard up to 1,000 feet away. The target, and each creature within 20 feet of it, must make a Constitution saving throw. On a failed save, a creature takes 3d10 + 10 sonic damage and is deafened for 1 minute. On a successful save, a creature takes half as much damage and is not deafened. At the end of each of its turns, a creature deafened by this power can repeat the saving throw, ending the effect on itself on a success.\n\n***Force Potency.*** When you cast this power with a force slot of 8th level or higher, both damage rolls increase by 1d10 for each slot level above 7th.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Master Malacia",
     "level": 6,
     "school": "Force",
@@ -14157,18 +14415,66 @@
     "name": "Mind Lash",
     "level": 1,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "3d8 [psychic]",
+                "higher": {
+                  "2": "1d8 [psychic]",
+                  "3": "2d8 [psychic]",
+                  "4": "3d8 [psychic]",
+                  "5": "4d8 [psychic]",
+                  "6": "5d8 [psychic]",
+                  "7": "6d8 [psychic]",
+                  "8": "7d8 [psychic]",
+                  "9": "8d8 [psychic]"
+                }
+              },
+              {
+                "type": "save",
+                "stat": "int",
+                "fail": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Mind Lashed",
+                    "duration": "2",
+                    "end": true,
+                    "desc": "You cannot take reactions.",
+                    "tick_on_caster": true
+                  }
+                ],
+                "success": []
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage."
+      }
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "30ft",
+    "range": "30 feet",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "1 round",
+    "duration": "Instantaneous",
     "ritual": false,
-    "description": "You lash out with mental energy against a creature within range. Make a melee force attack against the target. If the attack hits, the creature takes 3d8 psychic damage, and it must make an Intelligence saving throw. On a failed save, it cannot take reactions until the end of your next turn.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "description": "You lash out with mental energy against a creature within range. Make a melee force attack against the target. If the attack hits, the creature takes 3d8 psychic damage, and it must make an Intelligence saving throw. On a failed save, it cannot take reactions until the end of your next turn.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     "concentration": false
   },
   {
@@ -14306,7 +14612,39 @@
     "name": "(SW) Mirror Image",
     "level": 2,
     "school": "Tech",
-    "classes": "None",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Mirror Image One",
+            "duration": "10",
+            "desc": "Roll 1d20 to determine whether an attack instead targets one of your duplicates\n - A duplicate's AC is equal to {{caster.stats.get_mod('dex')+10}}\n - If an attack hits a duplicate, it is destroyed. Duplicates ignore all other damage and effects\n - With 1 duplicate, you need an 11 or higher to change the target",
+            "save_as": "mm1"
+          },
+          {
+            "type": "ieffect2",
+            "name": "Mirror Image Two",
+            "duration": "10",
+            "desc": "With 2 duplicates, you need a 8 or higher to change the target",
+            "save_as": "mm2"
+          },
+          {
+            "type": "ieffect2",
+            "name": "Mirror Image Three",
+            "duration": "10",
+            "desc": "With 3 duplicates, you need a 6 or higher to change the target"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Three illusory duplicates of yourself appear in your space. Until the power ends, the duplicates move with you and mimic your actions, shifting position so it\u2019s impossible to track which image is real. You can use your action to dismiss the illusory duplicates.\n\nEach time a creature targets you with an attack during the power\u2019s duration, roll a d20 to determine whether the attack instead targets one of your duplicates.\n\nIf you have three duplicates, you must roll a 6 or higher to change the attack\u2019s target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.\n\nA duplicate\u2019s AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The power ends when all three duplicates are destroyed.\n\nA creature is unaffected by this power if it can\u2019t see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight."
+      }
+    ],
+    "classes": "",
     "subclasses": "",
     "casttime": "1 action",
     "range": "Self",
@@ -14317,7 +14655,7 @@
     },
     "duration": "1 minute",
     "ritual": false,
-    "description": "Three illusory duplicates of yourself appear in your space. Until the power ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real. You can use your action to dismiss the illusory duplicates.\r\n\r\nEach time a creature targets you with an attack during the power's duration, roll a d20 to determine whether the attack instead targets one of your duplicates.\r\n\r\nIf you have three duplicates, you must roll a 6 or higher to change the attack's target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.\r\n\r\nA duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The power ends when all three duplicates are destroyed.\r\n\r\nA creature is unaffected by this power if it can't see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight.",
+    "description": "Three illusory duplicates of yourself appear in your space. Until the power ends, the duplicates move with you and mimic your actions, shifting position so it\u2019s impossible to track which image is real. You can use your action to dismiss the illusory duplicates.\n\nEach time a creature targets you with an attack during the power\u2019s duration, roll a d20 to determine whether the attack instead targets one of your duplicates.\n\nIf you have three duplicates, you must roll a 6 or higher to change the attack\u2019s target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.\n\nA duplicate\u2019s AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The power ends when all three duplicates are destroyed.\n\nA creature is unaffected by this power if it can\u2019t see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight.",
     "concentration": false
   },
   {
@@ -19712,18 +20050,156 @@
     "name": "Telekinetic Burst",
     "level": 6,
     "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Telekinetic Burst",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Telekinetic Burst",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "all",
+                      "effects": [
+                        {
+                          "type": "condition",
+                          "condition": "target.creature_type and ('undead' in target.creature_type.lower() or 'ooze' in target.creature_type.lower())",
+                          "onTrue": [],
+                          "onFalse": [
+                            {
+                              "type": "save",
+                              "stat": "con",
+                              "fail": [
+                                {
+                                  "type": "damage",
+                                  "damage": "8d6 [force]",
+                                  "higher": {
+                                    "7": "2d6 [force]",
+                                    "8": "4d6 [force]",
+                                    "9": "6d6 [force]"
+                                  }
+                                },
+                                {
+                                  "type": "ieffect2",
+                                  "name": "Prone",
+                                  "buttons": [
+                                    {
+                                      "automation": [
+                                        {
+                                          "type": "remove_ieffect"
+                                        }
+                                      ],
+                                      "label": "Stand Up",
+                                      "verb": "stands up",
+                                      "style": "3"
+                                    }
+                                  ],
+                                  "parent": "startOfCaster"
+                                }
+                              ],
+                              "success": [
+                                {
+                                  "type": "damage",
+                                  "damage": "8d6 [force] / 2"
+                                }
+                              ]
+                            }
+                          ],
+                          "errorBehaviour": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "A beam of Force energy flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 8d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn\u2019t knocked prone.\n\nYou can create a new telekinetic gust as your action on your turn until the power ends."
+                    }
+                  ],
+                  "proper": true
+                }
+              }
+            ],
+            "end": false,
+            "conc": false,
+            "stacking": false
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "all",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "target.creature_type and ('undead' in target.creature_type.lower() or 'ooze' in target.creature_type.lower())",
+            "onTrue": [],
+            "onFalse": [
+              {
+                "type": "save",
+                "stat": "con",
+                "fail": [
+                  {
+                    "type": "damage",
+                    "damage": "8d6 [force]",
+                    "higher": {
+                      "7": "2d6 [force]",
+                      "8": "4d6 [force]",
+                      "9": "6d6 [force]"
+                    }
+                  },
+                  {
+                    "type": "ieffect2",
+                    "name": "Prone",
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Stand Up",
+                        "verb": "stands up",
+                        "style": "4"
+                      }
+                    ]
+                  }
+                ],
+                "success": [
+                  {
+                    "type": "damage",
+                    "damage": "8d6 [force]/2"
+                  }
+                ]
+              }
+            ],
+            "errorBehaviour": "false"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A beam of Force energy flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 8d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn\u2019t knocked prone.\n\nYou can create a new telekinetic gust as your action on your turn until the power ends."
+      }
+    ],
     "classes": "Light",
     "subclasses": "",
     "casttime": "1 action",
-    "range": "Self (60-foot line)",
+    "range": "Self (60 ft. line)",
     "components": {
       "verbal": false,
       "somatic": false,
       "material": ""
     },
-    "duration": "up to 1 minute",
+    "duration": "Concentration, up to 1 minute",
     "ritual": false,
-    "description": "A beam of Force energy flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 8d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn't knocked prone. \r\n\r\nYou can create a new telekinetic gust as your action on your turn until the power ends.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th.",
+    "description": "A beam of Force energy flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 8d6 force damage and is knocked prone. On a successful save, it takes half as much damage and isn't knocked prone. \n\nYou can create a new telekinetic gust as your action on your turn until the power ends.",
+    "higherlevels": "***Force Potency.*** When you cast this power using a force slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th.",
     "concentration": true
   },
   {
@@ -20621,6 +21097,10 @@
     "level": 1,
     "school": "Force",
     "automation": [
+      {
+        "type": "text",
+        "text": "You cause a tremor in the ground within range. Each creature other than you in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. On a failed save, a creature takes 1d8 kinetic damage and is knocked prone. On a successful save, the creature takes half as much damage and isn\u2019t knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared, with each 5-foot-diameter portion requiring at least 1 minute to clear by hand."
+      },
       {
         "type": "target",
         "target": "each",
