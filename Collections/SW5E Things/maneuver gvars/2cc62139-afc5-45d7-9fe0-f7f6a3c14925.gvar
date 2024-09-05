@@ -110,7 +110,7 @@ def maneuver(args):
                                            desc=feature.effect.desc if "desc" in feature.effect else "",
                                            duration=feature.effect.duration if "duration" in feature.effect else -1,
                                            concentration=feature.effect.conc if "conc" in feature.effect else False,
-                                           end=True if "end " in feature.effect else False,
+                                           end=feature.effect.end if "end" in feature.effect else False,
                                            passive_effects=feature.effect.passive_effects if "passive_effects" in feature.effect else None,
                                            parent=peff,
                                            buttons=feature.buttons if "buttons" in feature else None
@@ -136,6 +136,7 @@ def maneuver(args):
                 if "effect" in option:
                     if "parent" in option.effect and not (peff := com.me.get_effect(option.effect.name.replace("#target#", target[0].name))):
                         peff = com.me.add_effect(option.effect.parent.name.replace("#target#", target[0].name),
+                                                 end=True if "end" in option.effect.parent else False,
                                                  desc=option.effect.parent.desc if "desc" in option.effect.parent else "",
                                                  duration=option.effect.parent.duration if "duration" in option.effect.parent else -1,
                                                  concentration=option.effect.parent.conc if "conc" in option.effect.parent else False,
@@ -145,6 +146,7 @@ def maneuver(args):
 
                     eff = target[0].add_effect(option.effect.name.replace("#target#", target[0].name),
                                                desc=option.effect.desc if "desc" in option.effect else "",
+                                               end=option.effect.end if "end" in option.effect else False,
                                                duration=option.effect.duration if "duration" in option.effect else -1,
                                                concentration=option.effect.conc if "conc" in option.effect else False,
                                                passive_effects=option.effect.passive_effects if "passive_effects" in option.effect else None,

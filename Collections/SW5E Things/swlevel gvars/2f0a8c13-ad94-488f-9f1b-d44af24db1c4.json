@@ -497,7 +497,28 @@
             {
                 "name": "Shocking Affinity",
                 "level": 3,
-                "value": "wisdomMod",
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
                 "display": "bubble",
                 "reset": "short",
                 "classLevel": "ConsularlightLevel",
@@ -506,7 +527,28 @@
             {
                 "name": "Blistering Rebuke",
                 "level": 10,
-                "value": "wisdomMod",
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
                 "display": "bubble",
                 "reset": "long",
                 "classLevel": "ConsularlightLevel",
@@ -515,11 +557,75 @@
             {
                 "name": "Unlimited Power",
                 "level": 18,
-                "value": "wisdomMod",
+                "value": "proficiencyBonus",
                 "display": "bubble",
                 "reset": "long",
                 "classLevel": "ConsularlightLevel",
                 "desc": "You can increase the power of your simpler lightning force powers. When you cast a force power of 1st through 6th level that deals lightning damage, you can deal maximum damage with that power.\n\nYou can use this feature with no adverse effects a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). If you use this feature beyond this before you finish a long rest, you take 2d12 true damage for each level of the power, immediately after you cast it. Each time you use this feature again before finishing a long rest, the damage increases by 1d12."
+            }
+        ],
+        "actions": [
+            {
+                "level": 10,
+                "action": {
+                    "name": "Blistering Rebuke",
+                    "_v": 2,
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "clevel",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d10+{clevel} [lightning]",
+                            "name": "damage"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "success": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "({damage}/2)",
+                                            "fixedValue": true
+                                        }
+                                    ],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{damage}",
+                                            "fixedValue": true
+                                        },
+                                        {
+                                            "type": "ieffect",
+                                            "name": "Shocked",
+                                            "duration": "1",
+                                            "effects": "",
+                                            "end": true,
+                                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "counter",
+                                    "counter": "Blistering Rebuke",
+                                    "amount": 1,
+                                    "errorBehaviour": "raise"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw against your universal force save DC. On a failed save, the creature takes 1d10 plus your consular level lightning damage, is pushed back 10 feet, and becomes shocked until the end of their next turn. On a successful save, the creature takes half as much damage and isn’t moved or shocked.\n\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -1342,7 +1448,28 @@
             {
                 "name": "Shocking Affinity",
                 "level": 3,
-                "value": "charismaMod",
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
                 "display": "bubble",
                 "reset": "short",
                 "classLevel": "ConsulardarkLevel",
@@ -1351,7 +1478,28 @@
             {
                 "name": "Blistering Rebuke",
                 "level": 10,
-                "value": "charismaMod",
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
                 "display": "bubble",
                 "reset": "long",
                 "classLevel": "ConsulardarkLevel",
@@ -1365,6 +1513,70 @@
                 "reset": "long",
                 "classLevel": "ConsulardarkLevel",
                 "desc": "You can increase the power of your simpler lightning force powers. When you cast a force power of 1st through 6th level that deals lightning damage, you can deal maximum damage with that power.\n\nYou can use this feature with no adverse effects a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). If you use this feature beyond this before you finish a long rest, you take 2d12 true damage for each level of the power, immediately after you cast it. Each time you use this feature again before finishing a long rest, the damage increases by 1d12."
+            }
+        ],
+        "actions": [
+            {
+                "level": 10,
+                "action": {
+                    "name": "Blistering Rebuke",
+                    "_v": 2,
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "clevel",
+                            "value": "{max(int(caster.levels.get('Consularlight',0)), int(caster.levels.get('Consulardark',0)),0)}"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d10+{clevel} [lightning]",
+                            "name": "damage"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "success": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "({damage}/2)",
+                                            "fixedValue": true
+                                        }
+                                    ],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{damage}",
+                                            "fixedValue": true
+                                        },
+                                        {
+                                            "type": "ieffect",
+                                            "name": "Shocked",
+                                            "duration": "1",
+                                            "effects": "",
+                                            "end": true,
+                                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "counter",
+                                    "counter": "Blistering Rebuke",
+                                    "amount": 1,
+                                    "errorBehaviour": "raise"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw against your universal force save DC. On a failed save, the creature takes 1d10 plus your consular level lightning damage, is pushed back 10 feet, and becomes shocked until the end of their next turn. On a successful save, the creature takes half as much damage and isn’t moved or shocked.\n\nYou can use this feature four times. You gain an additional use at 13th and 17th level. You regain all expended uses when you finish a long rest."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -2791,484 +3003,6 @@
                 "reset": "long",
                 "classLevel": "EngineerLevel",
                 "desc": "Weapon attacks using your modified beam cannon's penetrating property now target all creatures in a line up to its normal range, originating from you.\n\nAdditionally, when you attack your initial target with your modified beam cannon or a tech power that requires an attack roll or Dexterity saving throw to resist damage, you can choose to expend a number of tech points up to your proficiency bonus to cause the effect to split on impact into an equal number of projectiles. The original attack or effect is resolved, and you can then target a number of creatures equal to the number of projectiles within 30 feet of the original target, making subsequent attack rolls with equal bonus to hit or imposing the saving throw DC equal to that of the original target. On a hit or failed saving throw, the secondary target takes half the damage of the original effect. You cannot target the original target creature again with the secondary attack or saving throw.\n\nYou can use this ability twice per long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "hitDie": "d10",
-        "subclassLevel": 3,
-        "counters": [
-            {
-                "name": "Second Wind",
-                "level": 1,
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "display": "bubble",
-                "value": 1,
-                "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level."
-            },
-            {
-                "name": "Action Surge",
-                "level": 2,
-                "value": [
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    2,
-                    2,
-                    2,
-                    2
-                ],
-                "desc": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.",
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "display": "bubble"
-            },
-            {
-                "name": "Superiority Dice",
-                "level": 2,
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "display": "bubble",
-                "value": [
-                    0,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    6,
-                    6
-                ],
-                "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
-            },
-            {
-                "name": "Indomitable",
-                "level": 9,
-                "value": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    2,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3
-                ],
-                "reset": "long",
-                "classLevel": "FighterLevel",
-                "display": "bubble",
-                "desc": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Assault",
-        "counters": []
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Fireteam",
-        "counters": [
-            {
-                "name": "Superiority Dice",
-                "level": 3,
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "display": "bubble",
-                "value": "proficiencyBonus",
-                "modifier": "proficiencyBonus",
-                "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the fighter table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Heavy Weapons",
-        "counters": []
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Shield",
-        "counters": [
-            {
-                "name": "Tech Points",
-                "level": 3,
-                "value": [
-                    0,
-                    0,
-                    2,
-                    2,
-                    3,
-                    3,
-                    4,
-                    4,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    9,
-                    9,
-                    10,
-                    10
-                ],
-                "display": "default",
-                "modifier": "intelligenceMod",
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "desc": "You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Tactical",
-        "counters": [
-            {
-                "name": "Superiority Dice",
-                "level": 2,
-                "classLevel": "FighterLevel",
-                "reset": "short",
-                "display": "bubble",
-                "value": [
-                    2,
-                    2,
-                    4,
-                    4,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    9,
-                    9,
-                    10,
-                    10,
-                    11,
-                    11,
-                    12,
-                    12
-                ],
-                "desc": "You have four superiority dice, instead of two, and you earn more at higher levels, as shown in the Superiority Dice column of the Tactical Specialist Combat Superiority table. This die changes as you gain fighter levels, as shown in the Combat Superiority column of the fighter table. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Adept Dark",
-        "counters": [
-            {
-                "name": "Force Points",
-                "level": 3,
-                "value": "FighterLevel",
-                "modifier": "charismaMod",
-                "reset": "long",
-                "display": "default",
-                "classLevel": "FighterLevel",
-                "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
-            },
-            {
-                "name": "Growing Momentum",
-                "level": 3,
-                "value": "charismaMod",
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "You can cast the burst of speed force power targeting yourself at 1st-level without expending force points. At 10th level, when you do so, your speed increases by an additional 10 feet. At 18th level, when you do so, your speed increases by an additional 10 feet./n/nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain any expended uses when you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Adept Light",
-        "counters": [
-            {
-                "name": "Force Points",
-                "level": 3,
-                "value": "FighterLevel",
-                "modifier": "wisdomMod",
-                "reset": "long",
-                "display": "default",
-                "classLevel": "FighterLevel",
-                "desc": "You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
-            },
-            {
-                "name": "Growing Momentum",
-                "level": 3,
-                "value": "wisdomMod",
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "You can cast the burst of speed force power targeting yourself at 1st-level without expending force points. At 10th level, when you do so, your speed increases by an additional 10 feet. At 18th level, when you do so, your speed increases by an additional 10 feet./n/nYou can use this feature a number of times equal to your Wisdom or Charisma modifier (your choice, a minimum of once). You regain any expended uses when you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Blademaster",
-        "counters": [
-            {
-                "name": "Adaptive Fighting",
-                "level": 3,
-                "value": "proficiencyBonus",
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "You’ve learned to make adaptations to your fighting style on the fly. You have three such effects: Change Up, Draw, and Stow. When you use your Adaptive Fighting, you choose which effect to create.\n\nYou can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest."
-            },
-            {
-                "name": "Bladestorm",
-                "level": 18,
-                "value": 1,
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "You can use your action to make a single melee weapon attack against each creature within your reach. Make a separate attack roll against each target. The first attack gains a +1 bonus to its attack roll, and each attack after the first gains an additional +1 bonus to its attack roll, cumulatively, to a maximum bonus of +6. If you are wielding two light- or vibro-weapons, or a weapon with the double property, you also add this bonus to your damage rolls, and you can use your bonus action to engage in Double- or Two-Weapon Fighting./n/nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Demolitions",
-        "counters": []
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Enhancement",
-        "counters": [
-            {
-                "name": "Amplified Shots",
-                "level": 3,
-                "value": 2,
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "You have two amplified shots, which you use to activate your ammunition enhancements. An amplified shot is expended when you use it. When you fire an amplified shot, your weapon is treated as enhanced for overcoming resistance and immunity to unenhanced attacks and damage. You decide to use the option when the shot hits a creature, unless the option doesn’t involve an attack roll. You regain all of your amplified shots when you finish a short or long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Exhibition",
-        "counters": [
-            {
-                "name": "Spotlight",
-                "level": 3,
-                "value": 1,
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            },
-            {
-                "name": "Showoff",
-                "level": 3,
-                "value": 1,
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            },
-            {
-                "name": "Beauty of Violence",
-                "level": 18,
-                "value": 1,
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Mounted",
-        "counters": [
-            {
-                "name": "Unwavering Mark",
-                "level": 3,
-                "value": "strengthMod",
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            },
-            {
-                "name": "Warding Maneuver",
-                "level": 7,
-                "value": "constitutionMod",
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Praetorian",
-        "counters": [
-            {
-                "name": "Fighting Spirit",
-                "level": 3,
-                "value": 3,
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "Your intensity in battle can shield you and help you strike true. As a bonus action on your turn, you can give yourself advantage on all weapon attack rolls until the end of the current turn. When you do so, you also gain 5 temporary hit points. The number of hit points increases when you reach certain levels in this class, increasing to 10 at 10th level and 15 at 15th level.\n\nYou can use this feature three times. You regain all expended uses when you finish a long rest."
-            },
-            {
-                "name": "Strength Before Weakness",
-                "level": 18,
-                "value": 1,
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel",
-                "desc": "Your fighting spirit can delay the grasp of death. If you take damage that reduces you to 0 hit points, you can use your reaction to delay falling unconscious, and you can immediately take an extra turn. While you have 0 hit points during that extra turn, taking damage causes death saving throw failures as normal, and three death saving throw failures can still kill you. When the extra turn ends, you fall unconscious if you still have 0 hit points.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Totem",
-        "counters": [
-            {
-                "name": "Totemic Might",
-                "level": 3,
-                "value": 2,
-                "reset": "long",
-                "display": "bubble",
-                "classLevel": "FighterLevel"
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Journeyman",
-        "counters": [
-            {
-                "name": "Foe Sense",
-                "level": 3,
-                "classLevel": "Fighterlevel",
-                "reset": "long",
-                "display": "bubble",
-                "value": [
-                    0,
-                    0,
-                    0,
-                    2,
-                    2,
-                    2,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
-                    4
-                ]
-            },
-            {
-                "name": "Bad Feeling",
-                "level": 3,
-                "classLevel": "Fighterlevel",
-                "reset": "long",
-                "display": "bubble",
-                "value": 1,
-                "desc": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Fighter",
-        "subclass": "Covert",
-        "counters": [
-            {
-                "name": "A Knife in the Dark",
-                "level": 7,
-                "classLevel": "Fighterlevel",
-                "reset": "long",
-                "display": "short",
-                "value": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5
-                ],
-                "desc": "When you would roll a critical hit against a creature or would reduce a creature to 0 hit points while hidden, you can choose to turn invisible until the start of your next, or if you attack, cast a power, or otherwise take a hostile action.\n\nYou can use this feature twice per short or long rest. You gain an additional use at 9th, 13th, and 17th level."
-            },
-            {
-                "name": "Vital Strike",
-                "level": 18,
-                "classLevel": "Fighterlevel",
-                "reset": "long",
-                "display": "short",
-                "value": 2,
-                "desc": "When you would roll a critical hit from a creature you are hidden from, you can choose to roll the weapons dice three times instead of twice.\n\nYou can use this feature twice per short or long rest."
             }
         ]
     }

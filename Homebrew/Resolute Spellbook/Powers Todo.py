@@ -62,7 +62,6 @@
 # TODO: Expanded Missing Force Confluence
 # TODO: Expanded Missing Improved Animate Weapon
 # TODO: Expanded Missing Light Burst
-# TODO: Expanded Missing Master Kinetite
 # TODO: Expanded Missing Control Weather
 # TODO: Expanded Missing Crucitorn
 # TODO: Expanded Missing Drain Knowledge
@@ -343,6 +342,12 @@
 # TODO: Expanded Missing Spectrum Barrier
 # TODO: Expanded Missing Spectrum Field
 # TODO: Expanded Missing Toxic Explosion
+# TODO: Aziz Tech Power Missing Blaster Calibration
+# TODO: Aziz Tech Power Missing Boomerang Shot
+# TODO: Aziz Tech Power Missing Spectrum Blaster
+# TODO: Aziz Tech Power Missing Construct Turret
+# TODO: Aziz Tech Power Missing Rebound Shot
+# TODO: Aziz Tech Power Missing Plasma Weapon
 # TODO: (SW) Alter Self
 # TODO: (SW) Aura of Purity
 # TODO: Aura of Vigor
@@ -512,13 +517,11 @@
 # TODO: Meditative Technique
 # TODO: (SW) Mending
 # TODO: (SW) Mind Blank
-# TODO: Mind Lash
 # TODO: Mind Prison
 # TODO: (SW) Mind Spike
 # TODO: Mind Trap
 # TODO: Mind Trick
 # TODO: Minor Hologram
-# TODO: (SW) Mirror Image
 # TODO: (SW) Mislead
 # TODO: Mobile Lights
 # TODO: Morichro
@@ -611,7 +614,6 @@
 # TODO: Targeting Shot
 # TODO: Tech Override
 # TODO: (SW) Telekinesis
-# TODO: Telekinetic Burst
 # TODO: Telekinetic Wave
 # TODO: Telemetry
 # TODO: Telepathic Link
@@ -645,6 +647,7 @@
 # TODO: Critical Fail Automation Animate Weapon
 # TODO: Critical Fail Automation (SW) Antipathy/Sympathy
 # TODO: Critical Fail Automation Assess the Situation
+# TODO: Critical Fail Automation Avalanche
 # TODO: Critical Fail Automation Barrage
 # TODO: Critical Fail Automation Battle Meditation
 # TODO: Critical Fail Automation Break
@@ -724,10 +727,13 @@
 # TODO: Critical Fail Automation Master Force Scream
 # TODO: Critical Fail Automation Master Pyrokinesis
 # TODO: Critical Fail Automation Master Saber Throw
+# TODO: Critical Fail Automation Mind Lash
+# TODO: Critical Fail Automation (SW) Mirror Image
 # TODO: Critical Fail Automation Motivator Boost
 # TODO: Critical Fail Automation Oil Slick
 # TODO: Critical Fail Automation Paralyze Humanoid
 # TODO: Critical Fail Automation Plague
+# TODO: Critical Fail Automation Poison Dart
 # TODO: Critical Fail Automation Pressure Crush
 # TODO: Critical Fail Automation Probe Mind
 # TODO: Critical Fail Automation Pull Earthward
@@ -752,6 +758,7 @@
 # TODO: Critical Fail Automation Stun Droid
 # TODO: Critical Fail Automation Sustained Lightning
 # TODO: Critical Fail Automation Tactical Advantage
+# TODO: Critical Fail Automation Telekinetic Burst
 # TODO: Critical Fail Automation Telekinetic Shield
 # TODO: Critical Fail Automation Telekinetic Storm
 # TODO: Critical Fail Automation Temporary Boost
@@ -767,4 +774,4 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Poison Dart
+# TODO: Critical Fail Automation Master Kinetite
