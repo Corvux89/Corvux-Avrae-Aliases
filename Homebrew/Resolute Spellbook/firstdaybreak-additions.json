@@ -80,7 +80,7 @@
                         "success": [
                             {
                                 "type": "damage",
-                                "damage": "{damage} [lightning]"
+                                "damage": "({damage}/2) [lightning]"
                                 }
                             ]
                     }
