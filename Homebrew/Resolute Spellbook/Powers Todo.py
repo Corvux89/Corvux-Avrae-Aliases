@@ -5,7 +5,6 @@
 # TODO: Expanded Missing Lightning Surge
 # TODO: Expanded Missing Mass Dun Möch
 # TODO: Expanded Missing Mass Mind Trick
-# TODO: Expanded Missing Mind Whip
 # TODO: Expanded Missing Preservation
 # TODO: Expanded Missing Respite
 # TODO: Expanded Missing Skill Proficiency
@@ -23,13 +22,11 @@
 # TODO: Expanded Missing Sustaining Meditation
 # TODO: Expanded Missing Telekinetic Wall
 # TODO: Expanded Missing Center of Being
-# TODO: Expanded Missing Electrocution
 # TODO: Expanded Missing Greater Battle Precognition
 # TODO: Expanded Missing Greater Force Intuition
 # TODO: Expanded Missing Greater Manipulation
 # TODO: Expanded Missing Greater Retribution
 # TODO: Expanded Missing Improved Dark Shear
-# TODO: Expanded Missing Mind Shatter
 # TODO: Expanded Missing Mind Twist
 # TODO: Expanded Missing Pain
 # TODO: Expanded Missing Premonitory Vision
@@ -300,7 +297,6 @@
 # TODO: Expanded Missing Mass Contagion
 # TODO: Expanded Missing Mass Modify Parameters
 # TODO: Expanded Missing Mobile Combat Shield
-# TODO: Expanded Missing Nuclear Explosion
 # TODO: Expanded Missing Reinforce Object
 # TODO: Expanded Missing Resonance
 # TODO: Expanded Missing Scramble Speech
@@ -725,6 +721,7 @@
 # TODO: Critical Fail Automation Master Feedback
 # TODO: Critical Fail Automation Master Force Barrier
 # TODO: Critical Fail Automation Master Force Scream
+# TODO: Critical Fail Automation Master Kinetite
 # TODO: Critical Fail Automation Master Pyrokinesis
 # TODO: Critical Fail Automation Master Saber Throw
 # TODO: Critical Fail Automation Mind Lash
@@ -774,4 +771,7 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Master Kinetite
+# TODO: Critical Fail Automation Nuclear Explosion
+# TODO: Critical Fail Automation Mind Shatter
+# TODO: Critical Fail Automation Electrocution
+# TODO: Critical Fail Automation Mind Whip

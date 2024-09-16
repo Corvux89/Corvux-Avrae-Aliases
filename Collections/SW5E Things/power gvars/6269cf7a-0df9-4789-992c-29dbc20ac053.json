@@ -185,6 +185,11 @@
         "classes": "Universal Power"
     },
     {
+        "name": "Electrocution",
+        "level": 4,
+        "classes": "Dark Side Power"
+    },
+    {
         "name": "Enfeeble",
         "level": 0,
         "classes": "Dark Side Power"
@@ -550,9 +555,19 @@
         "classes": "Dark Side Power"
     },
     {
+        "name": "Mind Shatter",
+        "level": 4,
+        "classes": "Dark Side Power"
+    },
+    {
         "name": "Mind Trick",
         "level": 0,
         "classes": "Universal Power"
+    },
+    {
+        "name": "Mind Whip",
+        "level": 2,
+        "classes": "Dark Side Power"
     },
     {
         "name": "Phaseshift",

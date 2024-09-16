@@ -1,5 +1,4 @@
 # Maneuver Module
-
 c = character()
 com = combat()
 feats = load_json(c.get_cvar("SWFeats", "{}"))
