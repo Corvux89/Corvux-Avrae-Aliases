@@ -1664,5 +1664,81 @@
     "ability": "Bomb Deployer (Proton Bomb)",
     "complete": true,
     "source": "Resolute Bestiary - Space"
+  },
+  {
+    "name": "R4Y Automata",
+    "ability": "Machine Gun Burst",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "R4Y Automata",
+    "ability": "Plasma Cannon",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "R4Y Automata",
+    "ability": "Reduced Threat Plasma Cannon",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "BC-WLF Automata",
+    "ability": "Superheated Dagger Spray (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "CC-WLF Automata",
+    "ability": "Superheated Dagger Spray",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "Jetstream Szam",
+    "ability": "Quickdraw Sword (Recharge 6)",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
+  },
+  {
+    "name": "Jetstream Szam",
+    "ability": "Unarmed Strike",
+    "complete": false,
+    "source": "Resolute Bestiary - Non Canon",
+    "description": "*Melee Weapon Attack:* +12 to hit, reach 5 ft., one creature. *Hit:* 9 (1d8 + 5) kinetic damage. Instead of dealing damage, Jetstream Szam can grapple the target (escape DC 18).",
+    "automation": {
+      "name": "Unarmed Strike",
+      "automation": [
+        {
+          "type": "target",
+          "target": "each",
+          "effects": [
+            {
+              "type": "attack",
+              "hit": [
+                {
+                  "type": "damage",
+                  "damage": "1d8 + 5 [kinetic]"
+                }
+              ],
+              "miss": [],
+              "attackBonus": "12"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "*Melee Weapon Attack:* +12 to hit, reach 5 ft., one creature. *Hit:* 9 (1d8 + 5) kinetic damage. Instead of dealing damage, Jetstream Szam can grapple the target (escape DC 18)."
+        }
+      ],
+      "_v": 2
+    }
+  },
+  {
+    "name": "Jetstream Szam",
+    "ability": "Unarmed Strike (Grapple)",
+    "complete": true,
+    "source": "Resolute Bestiary - Non Canon"
   }
 ]
