@@ -7,4 +7,3 @@
 # TODO [Resolute Bestiary - Space]: TIE/sa Bomber (old) (Missile Launcher - Rapid)
 # TODO [Resolute Bestiary - Space]: TIE/sa Bomber (old) (Missile Launcher - Burst)
 # TODO [Resolute Bestiary - Space]: TIE/sa Bomber (old) (Bomb Deployer)
-# TODO [Resolute Bestiary - Non Canon]: Jetstream Szam (Unarmed Strike)
