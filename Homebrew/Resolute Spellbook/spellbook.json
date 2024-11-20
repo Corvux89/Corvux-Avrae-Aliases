@@ -2503,6 +2503,89 @@
     "name": "Chastisement",
     "level": 1,
     "school": "Force",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "mod",
+        "value": "caster.spellbook.spell_mod"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Chastised by [name]",
+            "duration": "1",
+            "effects": {
+              "to_hit_bonus": "1d6",
+              "damage_bonus": "{spell_level}d6"
+            },
+            "buttons": [
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "temphp",
+                        "amount": "1d6+{ieffect.desc.split()[-1]}"
+                      },
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Attack Hit",
+                "style": "1"
+              },
+              {
+                "automation": [
+                  {
+                    "type": "target",
+                    "target": "self",
+                    "effects": [
+                      {
+                        "type": "damage",
+                        "damage": "{ieffect.desc.split()[0]}d8+{ieffect.desc.split()[-1]} [psychic]"
+                      },
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ]
+                  }
+                ],
+                "label": "Attack Miss",
+                "style": "4"
+              }
+            ],
+            "end": true,
+            "desc": "{numDie}\n{mod}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You berate a creature for its failure. The creature may add 1d6 to the attack roll and damage of its next attack before the end of its next turn. If it does so and hits, the creature gains temporary hit points equal to 1d6 + your forcecasting ability modifier. However, if it does so and misses the attack, it instead takes psychic damage equal to 1d8 + your forcecasting ability modifier. This psychic damage cannot be reduced or prevented in any way. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the damage of the target's attack increases by an additional 1d6 per slot level above 1st if it hits. If it misses, the psychic damage it receives increases by 1d8 per slot level above 1st."
+      }
+    ],
     "classes": "Dark",
     "subclasses": "",
     "casttime": "1 reaction, which you take when a creature you can see and can hear you within range misses an attack",
@@ -6500,6 +6583,31 @@
     "concentration": false
   },
   {
+    "name": "Flow-Walking",
+    "level": 9,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You immerse yourself in the Force and move at impossible speed, effectively stopping the flow of time around you. No time passes, while you gain benefits depending on whether you used an action or a reaction to cast this power:\n\n**Action.** You take 3 extra turns in a row, during which you can use actions and move as normal.\n\n**Reaction.** You get out of harm's way, causing the attack to miss you or for you to succeed the saving throw instead, and immediately take an extra turn.\n\nWhen you take an extra turn granted by this power:\n\n - Your attack rolls are made with advantage.\n - Any attack that hits counts as a critical hit.\n - Creatures other than you automatically fail Strength and Dexterity saving throws.\n - Creatures other than you can't take reactions or legendary actions."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action; or 1 reaction, which you take when when you are hit by an attack or fail a saving throw",
+    "range": "self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You immerse yourself in the Force and move at impossible speed, effectively stopping the flow of time around you. No time passes, while you gain benefits depending on whether you used an action or a reaction to cast this power:\n\n**Action.** You take 3 extra turns in a row, during which you can use actions and move as normal.\n\n**Reaction.** You get out of harm's way, causing the attack to miss you or for you to succeed the saving throw instead, and immediately take an extra turn.\n\nWhen you take an extra turn granted by this power:\n\n - Your attack rolls are made with advantage.\n - Any attack that hits counts as a critical hit.\n - Creatures other than you automatically fail Strength and Dexterity saving throws.\n - Creatures other than you can't take reactions or legendary actions.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Force Armor",
     "level": 1,
     "school": "Force",
@@ -8163,6 +8271,54 @@
     "duration": "1 round",
     "ritual": false,
     "description": "You imbue your weapon with the purifying light of the Force. As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in a glowing barrier of force energy until the start of your next turn. If the target willingly moves before then, it immediately takes 1d8 force damage, and the power ends.\r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d8 force damage to the target, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+    "concentration": false
+  },
+  {
+    "name": "Force Temperance",
+    "level": 5,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Temperance",
+            "duration": "4880",
+            "effects": {
+              "resistances": [
+                "poison"
+              ],
+              "immunities": [
+                "poison",
+                "disease"
+              ],
+              "save_adv": [
+                "constitution"
+              ],
+              "check_adv": [
+                "constitution"
+              ]
+            },
+            "desc": "- You ignore the effects of any levels of exhaustion you have.\n - You do not need to eat, drink, sleep, or breathe. You can\u2019t be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading and keeping watch.\n - You are immune to poison and disease, and have resistance to poison damage. A poison or disease you are already affected by is suspended, but not neutralized.\n - You can survive in the vacuum of space. You have advantage on Constitution checks and saving throws."
+          }
+        ]
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 minute",
+    "range": "self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "8 hours",
+    "ritual": false,
+    "description": "You enter a trance, in which you are in complete command of your body's functions. For the duration, you have the following benefits:\n\n - You ignore the effects of any levels of exhaustion you have.\n - You do not need to eat, drink, sleep, or breathe. You can\u2019t be forced to sleep by any means. To gain the benefits of a long rest, you can spend all 8 hours doing light activity, such as reading and keeping watch.\n - You are immune to poison and disease, and have resistance to poison damage. A poison or disease you are already affected by is suspended, but not neutralized.\n - You can survive in the vacuum of space. You have advantage on Constitution checks and saving throws.",
+    "higherlevels": "",
     "concentration": false
   },
   {
@@ -10255,6 +10411,137 @@
     "duration": "Until dispelled",
     "ritual": false,
     "description": "You implant a message within an object in range, a message that is uttered when a trigger condition is met. Choose an object that you can see and that isn't being worn or carried by another creature. Then speak the message, which must be 25 words or less, though it can be delivered over as long as 10 minutes. Finally, determine the circumstance that will trigger the power to deliver your message.\r\n\r\nWhen that circumstance occurs, the message is recited in your voice and at the same volume you spoke. When you cast this power, you can have the power end after it delivers its message, or it can remain and repeat its message whenever the trigger occurs.\r\n\r\nThe triggering circumstance can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 30 feet of the object. For example, you could instruct the message to play when any creature moves within 30 feet of the object or when a bell rings within 30 feet of it.",
+    "concentration": false
+  },
+  {
+    "name": "Improved Animate Weapon",
+    "level": 7,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Improved Animate Weapon",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Attack - Improved Animate Weapon",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "3d10+{caster.spellbook.spell_mod} [kinetic]"
+                            }
+                          ],
+                          "miss": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "**Attack.** The weapon moves up to 20 feet toward a creature and attacks it, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Guard - Improved Animate Weapon",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Guarded by Improved Animate Weapon",
+                          "effects": {
+                            "ac_bonus": "3"
+                          },
+                          "parent": "ieffect"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "**Guard.** The weapon moves up to 20 feet toward a creature. It grants half cover to the creature while it shares that creature's space as it attempts to deflect incoming attacks. The first time a hostile creature comes within 5 feet of the weapon, it will attack that creature, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. It cannot attack again until you issue another command to it."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spin - Improved Animate Weapon",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "4d10",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}"
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage}/2)"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "**Spin.** The weapon moves up to 20 feet to a point, then spins in a deadly whirl. Each creature that starts its turn within 5 feet of the weapon or enters a space within 5 feet of it for the first time on a turn must make a Dexterity saving throw. A creature takes 4d10 damage on a failed save, or no damage on a successful one.\n\nAt any time, you can end this power to return the animated weapon to your hand."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You select a melee weapon you wield, or one melee weapon within range that is not worn or carried by a conscious creature, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you cast this power, and as a bonus action on subsequent turns, you can move it up to 30 feet, or give the weapon a command:\n\n**Attack.** The weapon moves up to 20 feet toward a creature and attacks it, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\n\n**Guard.** The weapon moves up to 20 feet toward a creature. It grants half cover to the creature while it shares that creature's space as it attempts to deflect incoming attacks. The first time a hostile creature comes within 5 feet of the weapon, it will attack that creature, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. It cannot attack again until you issue another command to it.\n\n**Spin.** The weapon moves up to 20 feet to a point, then spins in a deadly whirl. Each creature that starts its turn within 5 feet of the weapon or enters a space within 5 feet of it for the first time on a turn must make a Dexterity saving throw. A creature takes 4d10 damage on a failed save, or no damage on a successful one.\n\nAt any time, you can end this power to return the animated weapon to your hand."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You select a melee weapon you wield, or one melee weapon within range that is not worn or carried by a conscious creature, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you cast this power, and as a bonus action on subsequent turns, you can move it up to 30 feet, or give the weapon a command:\n\n**Attack.** The weapon moves up to 20 feet toward a creature and attacks it, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon.\n\n**Guard.** The weapon moves up to 20 feet toward a creature. It grants half cover to the creature while it shares that creature's space as it attempts to deflect incoming attacks. The first time a hostile creature comes within 5 feet of the weapon, it will attack that creature, making a melee force attack. On a hit, the target takes 3d10 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. It cannot attack again until you issue another command to it.\n\n**Spin.** The weapon moves up to 20 feet to a point, then spins in a deadly whirl. Each creature that starts its turn within 5 feet of the weapon or enters a space within 5 feet of it for the first time on a turn must make a Dexterity saving throw. A creature takes 4d10 damage on a failed save, or no damage on a successful one.\n\nAt any time, you can end this power to return the animated weapon to your hand.",
+    "higherlevels": "",
     "concentration": false
   },
   {
@@ -13533,6 +13820,86 @@
     "duration": "Up to 1 minute",
     "ritual": false,
     "description": "A shimmering field appears and surrounds up to six creatures of your choice within range, granting each target a +2 bonus to AC for the duration.",
+    "concentration": true
+  },
+  {
+    "name": "Master Animate Weapon",
+    "level": 9,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Master Animate Weapon - Parent",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Master Animated Weapon",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [],
+                          "miss": []
+                        },
+                        {
+                          "type": "condition",
+                          "condition": "lastAttackNaturalRoll >= 17",
+                          "onTrue": [
+                            {
+                              "type": "damage",
+                              "damage": "4d12+8d12 [kinetic]"
+                            }
+                          ],
+                          "onFalse": [
+                            {
+                              "type": "condition",
+                              "condition": "lastAttackDidHit",
+                              "onTrue": [
+                                {
+                                  "type": "damage",
+                                  "damage": "4d12 [kinetic]"
+                                }
+                              ],
+                              "onFalse": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "defaultAttackBonus": "spell_attack_bonus"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You select a melee weapon you wield, or one melee weapon within range that is not worn or carried by a conscious creature, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again.\n\nWhen you cast this power, you can cause the weapon to move up to 30 feet and make up to two melee force attacks, each one against a creature, loose object, or structure within 5 feet of the weapon. On a hit, the target takes 4d12 damage of the weapon's type. The critical hit range for this attack is 3. On a critical hit, instead of rolling the attack's damage dice twice, the weapon deals an extra 8d12 damage (for a total of 12d12 damage).\n\nAs a bonus action on your turn, you can move the weapon up to 30 feet and then make up to two melee force attacks with it again.\n\nWhen this power ends, you can have the animated weapon return to your hand."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "up to 1 minute",
+    "ritual": false,
+    "description": "You select a melee weapon you wield, or one melee weapon within range that is not worn or carried by a conscious creature, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again.\n\nWhen you cast this power, you can cause the weapon to move up to 30 feet and make up to two melee force attacks, each one against a creature, loose object, or structure within 5 feet of the weapon. On a hit, the target takes 4d12 damage of the weapon's type. The critical hit range for this attack is 3. On a critical hit, instead of rolling the attack's damage dice twice, the weapon deals an extra 8d12 damage (for a total of 12d12 damage).\n\nAs a bonus action on your turn, you can move the weapon up to 30 feet and then make up to two melee force attacks with it again.\n\nWhen this power ends, you can have the animated weapon return to your hand.",
     "concentration": true
   },
   {
@@ -20208,6 +20575,51 @@
     "name": "Target Lock",
     "level": 1,
     "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Target Lock",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Move - Target Lock",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Locked on by {caster.name}",
+                          "parent": "ieffect"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "save_as": "peff"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Locked on by {caster.name}",
+            "parent": "peff"
+          }
+        ]
+      }
+    ],
     "classes": "None",
     "subclasses": "",
     "casttime": "1 bonus action",

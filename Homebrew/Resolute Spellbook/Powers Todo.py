@@ -35,7 +35,6 @@
 # TODO: Expanded Missing Thought Shield
 # TODO: Expanded Missing Deadly Sight
 # TODO: Expanded Missing Dream-walking
-# TODO: Expanded Missing Force Temperance
 # TODO: Expanded Missing Greater Forked Lightning
 # TODO: Expanded Missing Greater Plant Surge
 # TODO: Expanded Missing Mass Sanctuary
@@ -57,7 +56,6 @@
 # TODO: Expanded Missing Master Tapas
 # TODO: Expanded Missing Wall of Thorns
 # TODO: Expanded Missing Force Confluence
-# TODO: Expanded Missing Improved Animate Weapon
 # TODO: Expanded Missing Light Burst
 # TODO: Expanded Missing Control Weather
 # TODO: Expanded Missing Crucitorn
@@ -73,7 +71,6 @@
 # TODO: Expanded Missing Force Awakening
 # TODO: Expanded Missing Lesser Thought Bomb
 # TODO: Expanded Missing Maelstrom
-# TODO: Expanded Missing Master Animate Weapon
 # TODO: Expanded Missing Master Darkness
 # TODO: Expanded Missing Master Psychometry
 # TODO: Expanded Missing Accelerate
@@ -363,7 +360,6 @@
 # TODO: Carbonite
 # TODO: Carbonite Explosion
 # TODO: Channel Pain
-# TODO: Chastisement
 # TODO: Cleanse Mind
 # TODO: Cloaking Screen
 # TODO: Coerce Mind
@@ -606,7 +602,6 @@
 # TODO: Superior Translation Program
 # TODO: Synchronicity
 # TODO: Tactical Superiority
-# TODO: Target Lock
 # TODO: Targeting Shot
 # TODO: Tech Override
 # TODO: (SW) Telekinesis
@@ -671,6 +666,7 @@
 # TODO: Critical Fail Automation Drain Vitality
 # TODO: Critical Fail Automation Echo Blast
 # TODO: Critical Fail Automation Electrical Burst
+# TODO: Critical Fail Automation Electrocution
 # TODO: Critical Fail Automation Electromesh
 # TODO: Critical Fail Automation Element of Surprise
 # TODO: Critical Fail Automation Enfeeble
@@ -725,8 +721,11 @@
 # TODO: Critical Fail Automation Master Pyrokinesis
 # TODO: Critical Fail Automation Master Saber Throw
 # TODO: Critical Fail Automation Mind Lash
+# TODO: Critical Fail Automation Mind Shatter
+# TODO: Critical Fail Automation Mind Whip
 # TODO: Critical Fail Automation (SW) Mirror Image
 # TODO: Critical Fail Automation Motivator Boost
+# TODO: Critical Fail Automation Nuclear Explosion
 # TODO: Critical Fail Automation Oil Slick
 # TODO: Critical Fail Automation Paralyze Humanoid
 # TODO: Critical Fail Automation Plague
@@ -755,6 +754,7 @@
 # TODO: Critical Fail Automation Stun Droid
 # TODO: Critical Fail Automation Sustained Lightning
 # TODO: Critical Fail Automation Tactical Advantage
+# TODO: Critical Fail Automation Target Lock
 # TODO: Critical Fail Automation Telekinetic Burst
 # TODO: Critical Fail Automation Telekinetic Shield
 # TODO: Critical Fail Automation Telekinetic Storm
@@ -771,7 +771,5 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Nuclear Explosion
-# TODO: Critical Fail Automation Mind Shatter
-# TODO: Critical Fail Automation Electrocution
-# TODO: Critical Fail Automation Mind Whip
+# TODO: Critical Fail Automation Improved Animate Weapon
+# TODO: Critical Fail Automation Force Temperance

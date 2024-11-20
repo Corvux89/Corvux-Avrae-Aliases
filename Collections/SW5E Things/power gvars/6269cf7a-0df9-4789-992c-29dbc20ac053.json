@@ -220,6 +220,11 @@
         "classes": "Dark Side Power"
     },
     {
+        "name": "Flow-Walking",
+        "level": 9,
+        "classes": "Universal Power"
+    },
+    {
         "name": "Force Barrier",
         "level": 2,
         "classes": "Light Side Power"
@@ -400,6 +405,11 @@
         "classes": "Dark Side Power"
     },
     {
+        "name": "Improved Animate Weapon",
+        "level": 7,
+        "classes": "Universal Power"
+    },
+    {
         "name": "Improved Battle Meditation",
         "level": 5,
         "classes": "Universal Power"
@@ -503,6 +513,11 @@
         "name": "(SW) Maddening Darkness",
         "level": 8,
         "classes": "Dark Side Power"
+    },
+    {
+        "name": "Master Animate Weapon",
+        "level": 9,
+        "classes": "Universal Power"
     },
     {
         "name": "Master Battle Meditation",
@@ -967,7 +982,7 @@
     {
         "name": "Force Blur",
         "level": 2,
-        "classes": "Universal Action"
+        "classes": "Universal Power"
     },
     {
         "name": "Force Concealment",
@@ -1007,6 +1022,11 @@
     {
         "name": "Force Shunt",
         "level": 0,
+        "classes": "Universal Power"
+    },
+    {
+        "name": "Force Temperance",
+        "level": 5,
         "classes": "Universal Power"
     },
     {

@@ -13,5 +13,8 @@ for c in com.combatants:
         value += f'''|inline"'''
         out.append(value)
 
+for cc in character().consumables:
+    cc.set(cc.max)
+
 return f'''embed -title "Combat Cleanup" {' '.join(out)} '''
 </drac2>
