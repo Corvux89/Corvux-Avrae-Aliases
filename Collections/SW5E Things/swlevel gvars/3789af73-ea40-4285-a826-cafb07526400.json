@@ -1235,6 +1235,67 @@
         ]
     },
     {
+        "name": "Splashclass - Guardian",
+        "counters": [
+            {
+                "name": "Splashclass - Guardian",
+                "value": "proficiencyBonus",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Force-Empowered Strikes",
+                    "_v": 2,
+                    "activation_type": 2,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "GuardianOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "8 if augments < 1 else 10 if augments < 2 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Splashclass - Guardian",
+                            "amount": 1,
+                            "errorBehaviour": "raise",
+                            "fixedValue": true
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{lastCounterRequestedAmount}d{dieSize} [weapon]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon’s damage. The additional damage is 1d8 for each point spent in this way. You can’t deal more than 2d8 additional damage per hit in this way.\n\nYou can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest.",
+                            "title": "Splashclass - Guardian"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Superiority Mastery",
         "modCounter": {
             "name": "Superiority Dice",

@@ -33,7 +33,6 @@
 # TODO: Expanded Missing Protection Bubble
 # TODO: Expanded Missing Staggering Blow
 # TODO: Expanded Missing Thought Shield
-# TODO: Expanded Missing Deadly Sight
 # TODO: Expanded Missing Dream-walking
 # TODO: Expanded Missing Greater Forked Lightning
 # TODO: Expanded Missing Greater Plant Surge
@@ -70,7 +69,6 @@
 # TODO: Expanded Missing Flow-walking
 # TODO: Expanded Missing Force Awakening
 # TODO: Expanded Missing Lesser Thought Bomb
-# TODO: Expanded Missing Maelstrom
 # TODO: Expanded Missing Master Darkness
 # TODO: Expanded Missing Master Psychometry
 # TODO: Expanded Missing Accelerate
@@ -689,6 +687,7 @@
 # TODO: Critical Fail Automation Force Scream
 # TODO: Critical Fail Automation Force Shunt
 # TODO: Critical Fail Automation Force Storm
+# TODO: Critical Fail Automation Force Temperance
 # TODO: Critical Fail Automation Force Throw
 # TODO: Critical Fail Automation Gleaming Outline
 # TODO: Critical Fail Automation Greater Feedback
@@ -698,6 +697,7 @@
 # TODO: Critical Fail Automation Haywire
 # TODO: Critical Fail Automation (SW) Hex
 # TODO: Critical Fail Automation Immolate
+# TODO: Critical Fail Automation Improved Animate Weapon
 # TODO: Critical Fail Automation Improved Battle Meditation
 # TODO: Critical Fail Automation Improved Feedback
 # TODO: Critical Fail Automation Improved Force Scream
@@ -771,5 +771,5 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Improved Animate Weapon
-# TODO: Critical Fail Automation Force Temperance
+# TODO: Critical Fail Automation Deadly Sight
+# TODO: Critical Fail Automation (SW) Maelstrom

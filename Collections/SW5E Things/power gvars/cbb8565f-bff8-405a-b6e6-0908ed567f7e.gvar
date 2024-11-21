@@ -180,7 +180,8 @@ def processPower(args):
 
     # Add DC Bonus unless overriden
     if not a.get('dc'):
-        dc_add = c.spellbook.dc - 8 - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.dc else None
+        calc_dc = 8 + c.stats.prof_bonus + c.stats.get_mod(f"{'wisdom' if '-with wis' in out else 'charisma'}")
+        dc_add = c.spellbook.dc - calc_dc
         if dc_add:
             out.append(f''' -dc +{dc_add}''')
 

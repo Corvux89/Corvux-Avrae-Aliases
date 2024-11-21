@@ -780,7 +780,7 @@
             {
                 "name": "The Force Unleashed",
                 "level": 18,
-                "value": "wisdomMod",
+                "value": "6",
                 "reset": "long",
                 "display": "bubble",
                 "classLevel": "ConsularlightLevel",
@@ -838,6 +838,90 @@
                         {
                             "type": "text",
                             "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 18,
+                "action": {
+                    "name": "The Force Unleashed",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "roll",
+                            "dice": "5d10 [force]",
+                            "name": "damage"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "({damage}/2)",
+                                            "fixedValue": "true"
+                                        }
+                                    ],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{damage}",
+                                            "fixedValue": "true"
+                                        },
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Exhaustion (1 level)",
+                                            "effects": {
+                                                "check_dis": [
+                                                    "all"
+                                                ]
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "target",
+                                                            "target": "self",
+                                                            "effects": [
+                                                                {
+                                                                    "type": "save",
+                                                                    "stat": "con",
+                                                                    "fail": [],
+                                                                    "success": [
+                                                                        {
+                                                                            "type": "remove_ieffect"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "label": "Resist Exhaustion",
+                                                    "verb": "attempts to resist exhaustion",
+                                                    "style": "1",
+                                                    "defaultDC": "lastSaveDC"
+                                                }
+                                            ],
+                                            "parent": "ieffect"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "The Force Unleashed",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn.\n\nYou can use this feature six times. You regain all expended uses when you finish a long rest."
                         }
                     ]
                 }
@@ -1731,7 +1815,7 @@
             {
                 "name": "The Force Unleashed",
                 "level": 18,
-                "value": "charismaMod",
+                "value": "6",
                 "reset": "long",
                 "display": "bubble",
                 "classLevel": "ConsulardarkLevel",
@@ -1789,6 +1873,90 @@
                         {
                             "type": "text",
                             "text": "As an action, you can gain resistance to kinetic and energy damage for 1 minute. This effect lasts until you end it as a bonus action, you are incapacitated, or you don armor other than a shield. You can use this feature twice. You regain all expended uses of it when you finish a short or long rest."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 18,
+                "action": {
+                    "name": "The Force Unleashed",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "roll",
+                            "dice": "5d10 [force]",
+                            "name": "damage"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "({damage}/2)",
+                                            "fixedValue": "true"
+                                        }
+                                    ],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{damage}",
+                                            "fixedValue": "true"
+                                        },
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Exhaustion (1 level)",
+                                            "effects": {
+                                                "check_dis": [
+                                                    "all"
+                                                ]
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "target",
+                                                            "target": "self",
+                                                            "effects": [
+                                                                {
+                                                                    "type": "save",
+                                                                    "stat": "con",
+                                                                    "fail": [],
+                                                                    "success": [
+                                                                        {
+                                                                            "type": "remove_ieffect"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "label": "Resist Exhaustion",
+                                                    "verb": "attempts to resist exhaustion",
+                                                    "style": "1",
+                                                    "defaultDC": "lastSaveDC"
+                                                }
+                                            ],
+                                            "parent": "ieffect"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "The Force Unleashed",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can choose a point within 60 feet. Each creature of your choice within 30 feet of that point must make a Constitution saving throw against your universal force save DC. On a failed save, a creature takes 5d10 force damage and suffers 1 level of exhaustion. On a successful save, a creature takes half damage and does not suffer exhaustion.\n\nFor each creature that fails this saving throw, a friendly creature within 30 feet of them can regain hit points equal to the amount of damage dealt. A friendly creature can only gain this benefit once per turn.\n\nYou can use this feature six times. You regain all expended uses when you finish a long rest."
                         }
                     ]
                 }
