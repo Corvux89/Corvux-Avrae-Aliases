@@ -1224,6 +1224,21 @@
         }
     },
     {
+        "name": "Splashclass - Consular",
+        "counters": [
+            {
+                "name": "Splashclass - Consular",
+                "value": "proficiencyBonus",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "cvar": {
+            "name": "SplashConsular",
+            "value": 1
+        }
+    },
+    {
         "name": "Splashclass - Fighter",
         "counters": [
             {

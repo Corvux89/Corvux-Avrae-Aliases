@@ -14,7 +14,6 @@
 # TODO: Expanded Missing Force Concurrence
 # TODO: Expanded Missing Force Stealth
 # TODO: Expanded Missing Greater Tapas
-# TODO: Expanded Missing Hatred
 # TODO: Expanded Missing Lesser Whirlwind
 # TODO: Expanded Missing Lightning Discharge
 # TODO: Expanded Missing Moment Reading
@@ -603,7 +602,6 @@
 # TODO: Targeting Shot
 # TODO: Tech Override
 # TODO: (SW) Telekinesis
-# TODO: Telekinetic Wave
 # TODO: Telemetry
 # TODO: Telepathic Link
 # TODO: Tonal Translocate
@@ -653,6 +651,7 @@
 # TODO: Critical Fail Automation Cryogenic Suspension
 # TODO: Critical Fail Automation Curse
 # TODO: Critical Fail Automation Dark Side Tendrils
+# TODO: Critical Fail Automation Deadly Sight
 # TODO: Critical Fail Automation Defensive Technique
 # TODO: Critical Fail Automation Delayed Detonator
 # TODO: Critical Fail Automation Denounce
@@ -711,6 +710,7 @@
 # TODO: Critical Fail Automation Kinetite
 # TODO: Critical Fail Automation Knight Speed
 # TODO: Critical Fail Automation Legendary Battle Meditation - Master Battle Meditation
+# TODO: Critical Fail Automation (SW) Maelstrom
 # TODO: Critical Fail Automation Malacia
 # TODO: Critical Fail Automation Mass Malacia
 # TODO: Critical Fail Automation Master Battle Meditation
@@ -771,5 +771,5 @@
 # TODO: Critical Fail Automation Vortex Shot
 # TODO: Critical Fail Automation Wire Bind
 # TODO: Critical Fail Automation Wound
-# TODO: Critical Fail Automation Deadly Sight
-# TODO: Critical Fail Automation (SW) Maelstrom
+# TODO: Critical Fail Automation Hatred
+# TODO: Critical Fail Automation Telekinetic Wave

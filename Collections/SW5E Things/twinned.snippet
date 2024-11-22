@@ -3,6 +3,7 @@ ch = character()
 args = &ARGS&
 result = None
 cc = "Force Points"
+splashcc = "Splashclass - Consular"
 v = ch.cc_exists(cc)
 output = ""
 points = 0
@@ -17,6 +18,16 @@ if v:
     value = max(int(points)-1,1)
     if ch.get_cc(cc) >= value:
         output += '''-f "Twinned Power|When you cast a power that can only have one target and doesn’t have a range of self, you can spend a number of additional force points equal to the power’s level to choose a second target in range with the same power (1 force point if the power is at-will)." '''
+
+        if ch.get_cvar("SplashConsular") == "1":
+            if ch.cc_exists(splashcc) and ch.get_cc(splashcc) >= value:
+                output += f''' -f "{splashcc}|You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain one of the Force-Empowered Casting options of your choice from those available to the consular class. You gain an additional option at 11th level.\n\nYou can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest." '''
+                ch.mod_cc(splashcc, -value)
+
+                output += f''' -f "{splashcc}(-{value})|{ch.cc_str(splashcc)}" '''
+            else:
+                return f''' -f "{splashcc}|You don't have enough uses left to twinned and cast" '''
+
         ch.mod_cc(cc,-value)
         output += f''' -f "{cc} (-{value})|{ch.cc_str(cc)}" '''
     else:
