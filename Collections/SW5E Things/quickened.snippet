@@ -9,12 +9,12 @@ output = ""
 if v:
     output+= ''' -f "Quickened|When you cast a power that has a casting time of 1 action, you can spend 2 additional force points to change the casting time to 1 bonus action for this casting." '''
 
-    if ch.get_cvar("SplashConsular") == "1":
-            if ch.cc_exists(splashcc) and ch.get_cc(splashcc) >= 1:
+    if c.get_cvar("SplashConsular") == "1":
+            if c.cc_exists(splashcc) and c.get_cc(splashcc) >= 2:
                 output += f''' -f "{splashcc}|You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain one of the Force-Empowered Casting options of your choice from those available to the consular class. You gain an additional option at 11th level.\n\nYou can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest." '''
-                ch.mod_cc(splashcc, -1)
+                c.mod_cc(splashcc, -2)
 
-                output += f''' -f "{splashcc}(-1)|{ch.cc_str(splashcc)}" '''
+                output += f''' -f "{splashcc}(-2)|{c.cc_str(splashcc)}" '''
             else:
                 return f''' -f "{splashcc}|You don't have enough uses left to careful and cast" '''
 
