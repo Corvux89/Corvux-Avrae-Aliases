@@ -1,6 +1,7 @@
 # SWEQUIP Additional Weapons Module
 
 using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 ch = character()
 
 def biting(attack, args):

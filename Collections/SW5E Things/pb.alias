@@ -1,0 +1,73 @@
+<drac2>
+ch = character()
+sb = ch.spellbook
+using(sup="cbb8565f-bff8-405a-b6e6-0908ed567f7e")
+fp = load_json(get_gvar("6269cf7a-0df9-4789-992c-29dbc20ac053"))
+tp = load_json(get_gvar("e45f68f5-96d4-4f52-96c8-862734dfa7ff"))
+level_name = {
+            "0": {
+                "title": "At Will",
+                "spells": []
+            },
+            "1": {
+                "title": "1st Level",
+                "spells": []
+                },
+            "2": {
+                "title": "2nd Level",
+                "spells": []
+                },
+            "3": {
+                "title": "3rd Level",
+                "spells": []
+                },
+            "4": {
+                "title": "4th Level",
+                "spells": []
+                },
+            "5": {
+                "title": "5th Level",
+                "spells": []
+                },
+            "6": {
+                "title": "6th Level",
+                "spells": []
+                },
+            "7": {
+                "title": "7th Level",
+                "spells": []
+                },
+            "8": {
+                "title": "8th Level",
+                "spells": []
+                },
+            "9": {
+                "title": "9th Level",
+                "spells": []
+                },
+            "unknown": {
+                "title": "Unknown",
+                "spells": []
+            }
+        }
+
+
+embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers" '''
+trouble = []
+
+for s in sb.spells:
+    spell = None
+    if spell := sup.search(s.name.lower(), fp):
+        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+    elif spell := sup.search(s.name.lower(), tp):
+        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+    else:
+        level_name["unknown"].spells.append(s.name)
+
+for node in level_name.keys():
+    if len(level_name[node].spells)> 0:
+        embed += f'''-f "{level_name[node].title}|{', '.join([s for s in level_name[node].spells])}" '''
+
+
+return embed
+</drac2>
