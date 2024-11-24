@@ -54,15 +54,16 @@ level_name = {
 
 embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers" '''
 trouble = []
+spells = {s.name.lower() for s in sb.spells}
 
-for s in sb.spells:
+for s in spells:
     spell = None
-    if spell := sup.search(s.name.lower(), fp):
+    if spell := sup.search(s, fp):
         level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-    elif spell := sup.search(s.name.lower(), tp):
+    elif spell := sup.search(s, tp):
         level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
     else:
-        level_name["unknown"].spells.append(s.name)
+        level_name["unknown"].spells.append(s)
 
 for node in level_name.keys():
     if len(level_name[node].spells)> 0:
