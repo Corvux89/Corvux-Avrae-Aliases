@@ -215,6 +215,22 @@ def search(keyword, gvar):
                 
     return spell
 
+def search2(keyword, gvar):
+    c = character()
+    keyword = keyword.lower()
+    sover = f"(sw) {keyword}"
+    spell = None
+
+    for s in gvar:
+        sname = s.name.lower()
+        if keyword == sname or sover == sname:
+            spell = s
+            if spell.name in c.spellbook or spell.name.replace("(SW) ", "") in c.spellbook:
+                break
+
+    return spell
+
+
 def getWith(spell):
     c = character()
     var = load_json(c.get_cvar("sw5e", get_svar("sw5e", "{}")))

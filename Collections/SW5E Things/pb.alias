@@ -54,16 +54,18 @@ level_name = {
 
 embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers" '''
 trouble = []
-spells = {s.name.lower() for s in sb.spells}
+chunk_size = 5
+chunks = [sb.spells[i:i+chunk_size] for i in range(0, len(sb.spells), chunk_size)]
 
-for s in spells:
-    spell = None
-    if spell := sup.search(s, fp):
-        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-    elif spell := sup.search(s, tp):
-        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-    else:
-        level_name["unknown"].spells.append(s)
+for chunk in chunks:
+    for s in chunk:
+        spell = None
+        if spell := sup.search2(s.name, fp):
+            level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+        elif spell := sup.search2(s.name, tp):
+            level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+        else:
+            level_name["unknown"].spells.append(s.name)
 
 for node in level_name.keys():
     if len(level_name[node].spells)> 0:
