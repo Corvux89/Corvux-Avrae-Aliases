@@ -4,6 +4,8 @@ Add SW5e attacks to your character.
  
 This will create the appropriate counter for weapons with ammunition.
 Adds Burst, Rapid, and Two-Handed Attack variants for those weapons that have them.
+
+A full list of supported weapons and ammo types can be found on the `SWEQUIP` tab of this [sheet](https://docs.google.com/spreadsheets/d/10lZrm9i6YUzuN8oNbJV77aRPeLVxe1pFRP2uqD3q3-Y/edit?usp=sharing)
  
 __Available Arguments__
  

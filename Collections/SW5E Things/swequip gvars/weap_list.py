@@ -23,6 +23,34 @@ def processName(name):
 
     return out
 
+def baseName(name):
+    # What weapon is considered to be the default?
+    out = name
+    out = out.replace("Rapid - ", '').replace("Burst - ", '').replace("Two-Handed ", '').replace(" - Rifle",
+                                                                                                 '').replace(" - Staff",
+                                                                                                             '').replace(
+        "Penetrating - ", '').replace("Corruption - ", "")
+    out = out.replace("Cartridge, Slug - ", "")
+    out = out.replace("Arrow - ", "")
+    out = out.replace("Dart - ", "")
+    out = out.replace("Snare - ", "")
+    out = out.replace("Bolt - ", "")
+    out = out.replace("Cell, Power - ", "")
+    out = out.replace("Acid - ", '').replace("Cold - ", '').replace("Fire - ", '').replace("Lightning - ", '')
+    out = out.replace("Acid, ", '').replace("Cold, ", '').replace("Fire, ", '').replace("Lightning, ", '')
+    out = out.replace("Rocket, Fragmentation - ", '').replace("Rocket, Incendiary - ", '').replace("Rocket, Ion - ", '')
+    out = out.replace("Missile, Fragmentation - ", '').replace("Missile, Incendiary - ", '').replace("Missile, Ion - ",
+                                                                                                     '')
+    # out = out.replace("Projector Canister, Corrosive - ", '').replace("Projector Canister, Cryo - ", '').replace(
+    #     "Projector Canister, Incendiary - ", '')
+    out = out.replace("Projector Tank, Corrosive - ", "").replace("Projector Tank, Cryo - ", "").replace("Projector Tank, Incendiary - ", "")
+    out = out.replace("Grapple - ", "")
+
+    out = out.replace("Cooldown - ", "").replace("Reload - ", "")
+    out = out.replace("Nano - ", "").replace("Ion Pulse - ", "").replace("Homing - ", "")
+
+    return out
+
 def stripAmmo(name):
     out = name
     out = out.replace("Cartridge, Slug - ", '').replace("Cartridge, Corrosive - ", '').replace(
@@ -56,7 +84,8 @@ for file_name in os.listdir(dir):
 
     for weapon in weapons:
         name = processName(weapon['name'])
-        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell, ", "").replace("Bolt, ", "").replace("Dart, ", "").replace("Cartridge, ", "").replace("Arrow, ", "").replace("Rapid", "").replace("Burst", "").replace("Penetrating", "").replace("Two-Handed", "").replace("Grapple", "")
+        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell", "").replace("Bolt", "").replace("Dart", "").replace("Cartridge", "").replace("Arrow", "").replace("Rapid", "").replace("Burst", "").replace("Penetrating", "").replace("Two-Handed ", "").replace("Slug", "")
+        ammo = ammo.replace("Grapple", "").replace("Rifle", "").replace("Staff", "").replace("Corruption", "").replace("Power", "").lstrip(", ")
 
         if name not in filt:
             filt.append(name)
