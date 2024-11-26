@@ -56,7 +56,8 @@ for file_name in os.listdir(dir):
 
     for weapon in weapons:
         name = processName(weapon['name'])
-        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell, ", "").replace("Bolt, ", "").replace("Dart, ", "").replace("Cartridge, ", "").replace("Arrow, ", "")
+        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell, ", "").replace("Bolt, ", "").replace("Dart, ", "").replace("Cartridge, ", "").replace("Arrow, ", "").replace("Rapid", "").replace("Burst", "").replace("Penetrating", "")
+        ammp = ammo.replace("Two-Handed", "").replace("Grapple", "")
 
         if name not in filt:
             filt.append(name)
