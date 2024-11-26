@@ -56,8 +56,7 @@ for file_name in os.listdir(dir):
 
     for weapon in weapons:
         name = processName(weapon['name'])
-        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell, ", "").replace("Bolt, ", "").replace("Dart, ", "").replace("Cartridge, ", "").replace("Arrow, ", "").replace("Rapid", "").replace("Burst", "").replace("Penetrating", "")
-        ammp = ammo.replace("Two-Handed", "").replace("Grapple", "")
+        ammo = weapon['name'].replace(name, '').replace(" - ", "").replace("Cell, ", "").replace("Bolt, ", "").replace("Dart, ", "").replace("Cartridge, ", "").replace("Arrow, ", "").replace("Rapid", "").replace("Burst", "").replace("Penetrating", "").replace("Two-Handed", "").replace("Grapple", "")
 
         if name not in filt:
             filt.append(name)
@@ -65,7 +64,7 @@ for file_name in os.listdir(dir):
         
         weapon = next((w for w in weap_out if w['name'] == name), None)
         
-        if ammo not in weapon['ammo']:
+        if ammo not in weapon['ammo'] and ammo != "":
             weapon['ammo'].append(ammo)
 
 with open('Collections\SW5E Things\swequip gvars\All Weapons.json', mode='w+', encoding='utf-8') as outfile:
