@@ -3297,6 +3297,30 @@
                         }
                     ]
                 }
+            },
+            {
+                "level": 17,
+                "action": {
+                    "name": "Panacea",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "-({target.max_hp - target.hp}) [healing]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You’ve developed the formula to concoct a cure-all miracle solution: a panacea. Over the course of 10 minutes, you can expend rare medical supplies worth 1,000 cr to create your panacea in a simple syringe. The panacea retains its potency for 24 hours. As a bonus action, a creature can use the panacea. Alternatively, as an action, they can administer it to another creature within 5 feet.\n\nThe target has its exhaustion level reduced by one and regains all of its hit points. If the target is diseased, poisoned, paralyzed, or stunned, the condition ends.\n\nOnce you create a panacea, you can’t create another until you finish a long rest."
+                        }
+                    ]
+                }
             }
         ]
     },

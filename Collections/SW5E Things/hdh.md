@@ -10,5 +10,5 @@ __Available Arguments__
 *-b* - Bonus to healing
 *-mi <minimum roll>* - Sets the minimum roll on the dice
 *-i* - Roll a die, but don't spend a resource
-*-t "<target>"* - Sets the target for healing. Default is self. 
-*-con* - Add constitution mod to the healing 
+*-t "<target>"* - Sets the target(s) for healing. Default is self. 
+*con* - Add constitution mod to the healing 

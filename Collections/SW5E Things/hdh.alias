@@ -6,8 +6,9 @@ num = int("&1&") if "&1&" in &ARGS& and "&1&".isdecimal() else 1
 b = a.last('b') if a.last('b') else None
 mi = a.last('mi')
 i = '-i' in &ARGS&
-t = a.last('t')
-con = '-con' in &ARGS&
+targets = a.get('t')
+con = 'con' in &ARGS&
+footer = []
 
 try:
     d_size = str([c.name for c in ch.consumables if  'Hit Dice' in c.name][0]).replace('Hit Dice (','').replace(')','')
@@ -17,7 +18,7 @@ except:
 base = f'''embed -thumb {image} -color {color}'''
 cc = f"Hit Dice ({d_size})"
 
-v = (ch.cc_exists(cc) and ch.get_cc(cc)<num) or i
+v = (ch.cc_exists(cc) and ch.get_cc(cc)>=num) or i
 
 if v:
     if ch.get_cc(cc)<num and not i:
@@ -29,19 +30,26 @@ if v:
     base += f''' -title "{name} uses {num} hit die!" '''
 
     if com:
-        base += f''' -f "{name}|{com.me.damage(roll_str, overheal=False).damage}" '''
-        base += f''' -footer "{name}: {com.me.hp_str()}" '''
+        if targets:   
+            coms  = [com.get_combatant(x) for x in targets] if com else []
+            for t in coms:
+                base += f''' -f "{t.name}|{t.damage(roll_str, overheal=False).damage}" '''
+                footer.append(f"{t.name}: {t.hp_str()}")
+        else:
+            base += f''' -f "{name}|{com.me.damage(roll_str, overheal=False).damage}" '''
+            footer.append(f"{name}: {com.me.hp_str()}")
     else:
         h = vroll(roll_str)
         ch.modify_hp(-h.total, overflow=False)
         base += f''' -f "{name}|**Damage**: {h}" '''
-        base += f''' -footer "{name}: {ch.hp_str()}" '''
+        footer.append(f"{name}: {ch.hp_str()}")
 
 
 
 if not i:
     ch.mod_cc(cc, -num)
     base += f''' -f "{cc}|{ch.cc_str(cc)} (-{num})" '''
-
+footer_str = "\n".join(footer)
+base += f''' -footer "{footer_str}" '''
 return base
 </drac2>

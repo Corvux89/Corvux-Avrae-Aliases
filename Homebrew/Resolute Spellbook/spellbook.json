@@ -14217,7 +14217,8 @@
                           "onTrue": [
                             {
                               "type": "damage",
-                              "damage": "4d12+8d12 [kinetic]"
+                              "damage": "4d12+8d12 [kinetic]",
+                              "fixedValue": true
                             }
                           ],
                           "onFalse": [
@@ -14227,7 +14228,8 @@
                               "onTrue": [
                                 {
                                   "type": "damage",
-                                  "damage": "4d12 [kinetic]"
+                                  "damage": "4d12 [kinetic]",
+                                  "fixedValue": true
                                 }
                               ],
                               "onFalse": []
@@ -24286,5 +24288,74 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
+  },
+  {
+    "name": "Superior Energy Shield",
+    "level": 5,
+    "school": "Tech",
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you are dealt damage",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th.",
+    "concentration": false,
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "ishouldneverexist",
+        "amount": 0,
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "variable",
+        "name": "baseShield",
+        "value": "50",
+        "higher": {
+          "6": 60,
+          "7": 70,
+          "8": 80,
+          "9": 90
+        }
+      },
+      {
+        "type": "variable",
+        "name": "shield",
+        "value": "baseShield - lastCounterRequestedAmount",
+        "onError": "baseShield"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+            "onFalse": [],
+            "onTrue": [
+              {
+                "type": "damage",
+                "damage": "-({lastCounterRequestedAmount}) [healing]",
+                "fixedValue": true
+              }
+            ]
+          },
+          {
+            "type": "temphp",
+            "amount": "{shield}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th."
+      }
+    ]
   }
 ]

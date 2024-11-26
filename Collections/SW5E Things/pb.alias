@@ -1,9 +1,30 @@
 <drac2>
 ch = character()
 sb = ch.spellbook
-using(sup="cbb8565f-bff8-405a-b6e6-0908ed567f7e")
-fp = load_json(get_gvar("6269cf7a-0df9-4789-992c-29dbc20ac053"))
-tp = load_json(get_gvar("e45f68f5-96d4-4f52-96c8-862734dfa7ff"))
+fp = load_json(get_gvar("b3458e30-e3ca-4674-970c-adc8987e5b07"))
+fp_normal = {key.lower(): key for key in fp.keys()}
+tp = load_json(get_gvar("e90cc412-c2ad-4c2f-8e48-8ccc81fb5bf9"))
+tp_normal = {key.lower(): key for key in tp.keys()}
+
+def search(keyword, gvar, normal_gvar):
+    spell = None
+    keyword = keyword.lower()
+    sover = f"(sw) {keyword}"
+
+    normal_key = normal_gvar.get(keyword) or normal_gvar.get(sover)
+
+    if normal_key:
+        s = gvar[normal_key]
+        return {"name": normal_gvar[normal_key.lower()]} | s
+
+    for key in normal_gvar:
+        if keyword in key or sover in key:
+            s = {"name": normal_gvar[key]} | gvar[normal_gvar[key]]
+            if s.name in sb or s.name.replace("(SW) ", "") in sb:
+                return s
+    return None
+    
+
 level_name = {
             "0": {
                 "title": "At Will",
@@ -52,24 +73,21 @@ level_name = {
         }
 
 
-embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers" '''
-trouble = []
-chunk_size = 5
-chunks = [sb.spells[i:i+chunk_size] for i in range(0, len(sb.spells), chunk_size)]
+embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers"'''
+embed += f'''{f' -f "DC|{sb.dc}|inline"' if sb.dc else ''}{f' -f "Power Attack Bonus|{sb.sab}|inline"' if sb.sab else ''}'''
 
-for chunk in chunks:
-    for s in chunk:
-        spell = None
-        if spell := sup.search2(s.name, fp):
-            level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-        elif spell := sup.search2(s.name, tp):
-            level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-        else:
-            level_name["unknown"].spells.append(s.name)
+for s in sb.spells:
+    spell = None
+    if spell := search(s.name, fp, fp_normal):
+        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+    elif spell := search(s.name, tp, tp_normal):
+        level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
+    else:
+        level_name["unknown"].spells.append(s.name)
 
 for node in level_name.keys():
     if len(level_name[node].spells)> 0:
-        embed += f'''-f "{level_name[node].title}|{', '.join([s for s in level_name[node].spells])}" '''
+        embed += f''' -f "{level_name[node].title}|{', '.join([s for s in level_name[node].spells])}" '''
 
 
 return embed
