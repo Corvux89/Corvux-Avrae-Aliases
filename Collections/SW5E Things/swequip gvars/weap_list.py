@@ -56,9 +56,16 @@ for file_name in os.listdir(dir):
 
     for weapon in weapons:
         name = processName(weapon['name'])
+        ammo = weapon['name'].replace(name, '')
+
         if name not in filt:
             filt.append(name)
-            weap_out.append({"name": name})
+            weap_out.append({"name": name, "ammo": []})
+        
+        weapon = next((w for w in weap_out if w['name'] == name), None)
+        
+        if ammo not in weapon['ammo']:
+            weapon['ammo'].append(ammo)
 
 with open('Collections\SW5E Things\swequip gvars\All Weapons.json', mode='w+', encoding='utf-8') as outfile:
     outfile.write(json.dumps(weap_out))
