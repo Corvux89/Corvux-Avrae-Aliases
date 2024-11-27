@@ -2,26 +2,21 @@
 ch = character()
 sb = ch.spellbook
 fp = load_json(get_gvar("b3458e30-e3ca-4674-970c-adc8987e5b07"))
-fp_normal = {key.lower(): key for key in fp.keys()}
 tp = load_json(get_gvar("e90cc412-c2ad-4c2f-8e48-8ccc81fb5bf9"))
-tp_normal = {key.lower(): key for key in tp.keys()}
 
-def search(keyword, gvar, normal_gvar):
+
+def search(keyword, gvar):
     spell = None
     keyword = keyword.lower()
     sover = f"(sw) {keyword}"
 
-    normal_key = normal_gvar.get(keyword) or normal_gvar.get(sover)
-
-    if normal_key:
-        s = gvar[normal_key]
-        return {"name": normal_gvar[normal_key.lower()]} | s
-
-    for key in normal_gvar:
+    if (s:= gvar.get(keyword)) or (s:= gvar.get(sover)):
+        return s
+    
+    for key, s in gvar.items():
         if keyword in key or sover in key:
-            s = {"name": normal_gvar[key]} | gvar[normal_gvar[key]]
-            if s.name in sb or s.name.replace("(SW) ", "") in sb:
-                return s
+            return s
+            
     return None
     
 
@@ -78,9 +73,9 @@ embed += f'''{f' -f "DC|{sb.dc}|inline"' if sb.dc else ''}{f' -f "Power Attack B
 
 for s in sb.spells:
     spell = None
-    if spell := search(s.name, fp, fp_normal):
+    if spell := search(s.name, fp):
         level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
-    elif spell := search(s.name, tp, tp_normal):
+    elif spell := search(s.name, tp):
         level_name[str(spell.level)].spells.append(spell.name.replace("(SW) ", ""))
     else:
         level_name["unknown"].spells.append(s.name)

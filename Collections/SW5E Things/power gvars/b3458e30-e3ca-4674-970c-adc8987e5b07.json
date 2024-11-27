@@ -1,1221 +1,1526 @@
 {
-    "Agile Defense": {
+    "agile defense": {
+        "name": "Agile Defense",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Affect Mind": {
+    "affect mind": {
+        "name": "Affect Mind",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Affliction": {
+    "affliction": {
+        "name": "Affliction",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Animate Weapon": {
+    "animate weapon": {
+        "name": "Animate Weapon",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Animating Charge": {
+    "animating charge": {
+        "name": "Animating Charge",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Art of Movement": {
+    "art of movement": {
+        "name": "Art of Movement",
         "level": 3,
         "classes": "Universal Power"
     },
-    "(SW) Aura of Purity": {
+    "(sw) aura of purity": {
+        "name": "(SW) Aura of Purity",
         "level": 4,
         "classes": "Light Side Power"
     },
-    "Aura of Vigor": {
+    "aura of vigor": {
+        "name": "Aura of Vigor",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Avalanche": {
+    "avalanche": {
+        "name": "Avalanche",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Banishing Charge": {
+    "banishing charge": {
+        "name": "Banishing Charge",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Battlemind": {
+    "battlemind": {
+        "name": "Battlemind",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Battle Meditation": {
+    "battle meditation": {
+        "name": "Battle Meditation",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Battle Precognition": {
+    "battle precognition": {
+        "name": "Battle Precognition",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Beast Trick": {
+    "beast trick": {
+        "name": "Beast Trick",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Breath Control": {
+    "breath control": {
+        "name": "Breath Control",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Break": {
+    "break": {
+        "name": "Break",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Burst": {
+    "burst": {
+        "name": "Burst",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Burst of Speed": {
+    "burst of speed": {
+        "name": "Burst of Speed",
         "level": 1,
         "classes": "Universal Power"
     },
-    "(SW) Calm Emotions": {
+    "(sw) calm emotions": {
+        "name": "(SW) Calm Emotions",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Choke": {
+    "choke": {
+        "name": "Choke",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Cloud Mind": {
+    "cloud mind": {
+        "name": "Cloud Mind",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Coerce Mind": {
+    "coerce mind": {
+        "name": "Coerce Mind",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Convulsion": {
+    "convulsion": {
+        "name": "Convulsion",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Crush": {
+    "crush": {
+        "name": "Crush",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "Curse": {
+    "curse": {
+        "name": "Curse",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "(SW) Darkness": {
+    "(sw) darkness": {
+        "name": "(SW) Darkness",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Denounce": {
+    "denounce": {
+        "name": "Denounce",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Deadly Sight": {
+    "deadly sight": {
+        "name": "Deadly Sight",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "Death Field": {
+    "death field": {
+        "name": "Death Field",
         "level": 8,
         "classes": "Dark Side Power"
     },
-    "Defensive Technique": {
+    "defensive technique": {
+        "name": "Defensive Technique",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Destroy Droid": {
+    "destroy droid": {
+        "name": "Destroy Droid",
         "level": 7,
         "classes": "Light Side Power"
     },
-    "Disable Droid": {
+    "disable droid": {
+        "name": "Disable Droid",
         "level": 4,
         "classes": "Light Side Power"
     },
-    "Disperse Force": {
+    "disperse force": {
+        "name": "Disperse Force",
         "level": 1,
         "classes": "Universal Power"
     },
-    "(SW) Dominate Beast": {
+    "(sw) dominate beast": {
+        "name": "(SW) Dominate Beast",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "(SW) Dominate Monster": {
+    "(sw) dominate monster": {
+        "name": "(SW) Dominate Monster",
         "level": 8,
         "classes": "Universal Power"
     },
-    "Drain Life": {
+    "drain life": {
+        "name": "Drain Life",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Drain Vitality": {
+    "drain vitality": {
+        "name": "Drain Vitality",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "(SW) Earthquake": {
+    "(sw) earthquake": {
+        "name": "(SW) Earthquake",
         "level": 8,
         "classes": "Universal Power"
     },
-    "Electrocution": {
+    "electrocution": {
+        "name": "Electrocution",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Enfeeble": {
+    "enfeeble": {
+        "name": "Enfeeble",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Eruption": {
+    "eruption": {
+        "name": "Eruption",
         "level": 6,
         "classes": "Universal Power"
     },
-    "Falling Nova": {
+    "falling nova": {
+        "name": "Falling Nova",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Falling Star": {
+    "falling star": {
+        "name": "Falling Star",
         "level": 2,
         "classes": "Universal Power"
     },
-    "(SW) Fear": {
+    "(sw) fear": {
+        "name": "(SW) Fear",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Feedback": {
+    "feedback": {
+        "name": "Feedback",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Flow-Walking": {
+    "flow-walking": {
+        "name": "Flow-Walking",
         "level": 9,
         "classes": "Universal Power"
     },
-    "Force Barrier": {
+    "force barrier": {
+        "name": "Force Barrier",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Force Blind/Deafen": {
+    "force blind/deafen": {
+        "name": "Force Blind/Deafen",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Force Body": {
+    "force body": {
+        "name": "Force Body",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Breach": {
+    "force breach": {
+        "name": "Force Breach",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Force Burst": {
+    "force burst": {
+        "name": "Force Burst",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Force Camouflage": {
+    "force camouflage": {
+        "name": "Force Camouflage",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Chain Lightning": {
+    "force chain lightning": {
+        "name": "Force Chain Lightning",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "Force Confusion": {
+    "force confusion": {
+        "name": "Force Confusion",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Current": {
+    "force current": {
+        "name": "Force Current",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Disarm": {
+    "force disarm": {
+        "name": "Force Disarm",
         "level": 0,
         "classes": "Universal"
     },
-    "Force Enlightenment": {
+    "force enlightenment": {
+        "name": "Force Enlightenment",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Force Intuition": {
+    "force intuition": {
+        "name": "Force Intuition",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Immunity": {
+    "force immunity": {
+        "name": "Force Immunity",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Force Jump": {
+    "force jump": {
+        "name": "Force Jump",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Lightning": {
+    "force lightning": {
+        "name": "Force Lightning",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Force Lightning Cone": {
+    "force lightning cone": {
+        "name": "Force Lightning Cone",
         "level": 7,
         "classes": ""
     },
-    "Force Link": {
+    "force link": {
+        "name": "Force Link",
         "level": 8,
         "classes": "Universal Power"
     },
-    "Force Mend": {
+    "force mend": {
+        "name": "Force Mend",
         "level": 7,
         "classes": "Light Side Power"
     },
-    "Force Project": {
+    "force project": {
+        "name": "Force Project",
         "level": 7,
         "classes": "Universal Power"
     },
-    "Force Push/Pull": {
+    "force push/pull": {
+        "name": "Force Push/Pull",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Force Scream": {
+    "force scream": {
+        "name": "Force Scream",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Force Sight": {
+    "force sight": {
+        "name": "Force Sight",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Storm": {
+    "force storm": {
+        "name": "Force Storm",
         "level": 9,
         "classes": "Dark Side Power"
     },
-    "Force Suppression": {
+    "force suppression": {
+        "name": "Force Suppression",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Force Technique": {
+    "force technique": {
+        "name": "Force Technique",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Force Trance": {
+    "force trance": {
+        "name": "Force Trance",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "(SW) Freedom of Movement": {
+    "(sw) freedom of movement": {
+        "name": "(SW) Freedom of Movement",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Give Life": {
+    "give life": {
+        "name": "Give Life",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "(SW) Grasping Vine": {
+    "(sw) grasping vine": {
+        "name": "(SW) Grasping Vine",
         "level": 4,
         "classes": ""
     },
-    "Greater Feedback": {
+    "greater feedback": {
+        "name": "Greater Feedback",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "Greater Kinetite": {
+    "greater kinetite": {
+        "name": "Greater Kinetite",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "(SW) Guidance": {
+    "(sw) guidance": {
+        "name": "(SW) Guidance",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Hatred": {
+    "hatred": {
+        "name": "Hatred",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "(SW) Heal": {
+    "(sw) heal": {
+        "name": "(SW) Heal",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Heighten Senses": {
+    "heighten senses": {
+        "name": "Heighten Senses",
         "level": 1,
         "classes": "Universal Power"
     },
-    "(SW) Hex": {
+    "(sw) hex": {
+        "name": "(SW) Hex",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Horror": {
+    "horror": {
+        "name": "Horror",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Improved Animate Weapon": {
+    "improved animate weapon": {
+        "name": "Improved Animate Weapon",
         "level": 7,
         "classes": "Universal Power"
     },
-    "Improved Battle Meditation": {
+    "improved battle meditation": {
+        "name": "Improved Battle Meditation",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Improved Feedback": {
+    "improved feedback": {
+        "name": "Improved Feedback",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Improved Force Camouflage": {
+    "improved force camouflage": {
+        "name": "Improved Force Camouflage",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Improved Force Immunity": {
+    "improved force immunity": {
+        "name": "Improved Force Immunity",
         "level": 6,
         "classes": "Universal Power"
     },
-    "Improved Force Intuition": {
+    "improved force intuition": {
+        "name": "Improved Force Intuition",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Improved Force Scream": {
+    "improved force scream": {
+        "name": "Improved Force Scream",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "Improved Heal": {
+    "improved heal": {
+        "name": "Improved Heal",
         "level": 5,
         "classes": "Cleric"
     },
-    "Improved Kinetite": {
+    "improved kinetite": {
+        "name": "Improved Kinetite",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Improved Phasestrike": {
+    "improved phasestrike": {
+        "name": "Improved Phasestrike",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Improved Phasewalk": {
+    "improved phasewalk": {
+        "name": "Improved Phasewalk",
         "level": 5,
         "classes": ""
     },
-    "Improved Revitalize": {
+    "improved revitalize": {
+        "name": "Improved Revitalize",
         "level": 7,
         "classes": "Light Side Power"
     },
-    "Insanity": {
+    "insanity": {
+        "name": "Insanity",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Instinctive Movement": {
+    "instinctive movement": {
+        "name": "Instinctive Movement",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Kill": {
+    "kill": {
+        "name": "Kill",
         "level": 9,
         "classes": "Dark Side Power"
     },
-    "Kinetite": {
+    "kinetite": {
+        "name": "Kinetite",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Knight Speed": {
+    "knight speed": {
+        "name": "Knight Speed",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Land Stride": {
+    "land stride": {
+        "name": "Land Stride",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Lightning Charge": {
+    "lightning charge": {
+        "name": "Lightning Charge",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "(SW) Locate Creature": {
+    "(sw) locate creature": {
+        "name": "(SW) Locate Creature",
         "level": 4,
         "classes": "Universal Power"
     },
-    "(SW) Locate Object": {
+    "(sw) locate object": {
+        "name": "(SW) Locate Object",
         "level": 2,
         "classes": "Universal Power"
     },
-    "(SW) Maddening Darkness": {
+    "(sw) maddening darkness": {
+        "name": "(SW) Maddening Darkness",
         "level": 8,
         "classes": "Dark Side Power"
     },
-    "(SW) Maelstrom": {
+    "(sw) maelstrom": {
+        "name": "(SW) Maelstrom",
         "level": 9,
         "classes": "Universal Power"
     },
-    "Master Animate Weapon": {
+    "master animate weapon": {
+        "name": "Master Animate Weapon",
         "level": 9,
         "classes": "Universal Power"
     },
-    "Master Battle Meditation": {
+    "master battle meditation": {
+        "name": "Master Battle Meditation",
         "level": 9,
         "classes": "Universal Power"
     },
-    "Master Feedback": {
+    "master feedback": {
+        "name": "Master Feedback",
         "level": 9,
         "classes": "Dark Side Power"
     },
-    "Master Force Immunity": {
+    "master force immunity": {
+        "name": "Master Force Immunity",
         "level": 8,
         "classes": "Universal Power"
     },
-    "Master Force Scream": {
+    "master force scream": {
+        "name": "Master Force Scream",
         "level": 8,
         "classes": "Dark Side Power"
     },
-    "Master Heal": {
+    "master heal": {
+        "name": "Master Heal",
         "level": 9,
         "classes": "Light Side Power"
     },
-    "Master Kinetite": {
+    "master kinetite": {
+        "name": "Master Kinetite",
         "level": 7,
         "classes": "Dark Side Power"
     },
-    "Master Revitalize": {
+    "master revitalize": {
+        "name": "Master Revitalize",
         "level": 9,
         "classes": "Light Side Power"
     },
-    "Master Speed": {
+    "master speed": {
+        "name": "Master Speed",
         "level": 7,
         "classes": "Universal Power"
     },
-    "(SW) Mind Blank": {
+    "(sw) mind blank": {
+        "name": "(SW) Mind Blank",
         "level": 8,
         "classes": "Universal Power"
     },
-    "(SW) Mind Spike": {
+    "(sw) mind spike": {
+        "name": "(SW) Mind Spike",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Mind Shatter": {
+    "mind shatter": {
+        "name": "Mind Shatter",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Mind Trick": {
+    "mind trick": {
+        "name": "Mind Trick",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Mind Whip": {
+    "mind whip": {
+        "name": "Mind Whip",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Phaseshift": {
+    "phaseshift": {
+        "name": "Phaseshift",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Phasestrike": {
+    "phasestrike": {
+        "name": "Phasestrike",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Phasewalk": {
+    "phasewalk": {
+        "name": "Phasewalk",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Plague": {
+    "plague": {
+        "name": "Plague",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Plant Surge": {
+    "plant surge": {
+        "name": "Plant Surge",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Precognition": {
+    "precognition": {
+        "name": "Precognition",
         "level": 9,
         "classes": "Universal Power"
     },
-    "Project": {
+    "project": {
+        "name": "Project",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Rage": {
+    "rage": {
+        "name": "Rage",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "Rescue": {
+    "rescue": {
+        "name": "Rescue",
         "level": 2,
         "classes": "Universal Power"
     },
-    "(SW) Resistance": {
+    "(sw) resistance": {
+        "name": "(SW) Resistance",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Revitalize": {
+    "revitalize": {
+        "name": "Revitalize",
         "level": 5,
         "classes": "Light Side Power"
     },
-    "Ruin": {
+    "ruin": {
+        "name": "Ruin",
         "level": 7,
         "classes": "Dark Side Power"
     },
-    "Saber Reflect": {
+    "saber reflect": {
+        "name": "Saber Reflect",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Saber Throw": {
+    "saber throw": {
+        "name": "Saber Throw",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Saber Ward": {
+    "saber ward": {
+        "name": "Saber Ward",
         "level": 0,
         "classes": "Universal Power"
     },
-    "(SW) Sanctuary": {
+    "(sw) sanctuary": {
+        "name": "(SW) Sanctuary",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Sap Vitality": {
+    "sap vitality": {
+        "name": "Sap Vitality",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Scourge": {
+    "scourge": {
+        "name": "Scourge",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "(SW) Sense Emotion": {
+    "(sw) sense emotion": {
+        "name": "(SW) Sense Emotion",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Sense Force": {
+    "sense force": {
+        "name": "Sense Force",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Sever Force": {
+    "sever force": {
+        "name": "Sever Force",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Sense Shatterpoint": {
+    "sense shatterpoint": {
+        "name": "Sense Shatterpoint",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Share Life": {
+    "share life": {
+        "name": "Share Life",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Shock": {
+    "shock": {
+        "name": "Shock",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Shocking Shield": {
+    "shocking shield": {
+        "name": "Shocking Shield",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Shroud of Darkness": {
+    "shroud of darkness": {
+        "name": "Shroud of Darkness",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Siphon Life": {
+    "siphon life": {
+        "name": "Siphon Life",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "(SW) Skill Empowerment": {
+    "(sw) skill empowerment": {
+        "name": "(SW) Skill Empowerment",
         "level": 5,
         "classes": "Light Side Power"
     },
-    "(SW) Slow": {
+    "(sw) slow": {
+        "name": "(SW) Slow",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Slow Descent": {
+    "slow descent": {
+        "name": "Slow Descent",
         "level": 1,
         "classes": "Universal Power"
     },
-    "(SW) Spare the Dying": {
+    "(sw) spare the dying": {
+        "name": "(SW) Spare the Dying",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Stasis": {
+    "stasis": {
+        "name": "Stasis",
         "level": 5,
         "classes": "Light Side Power"
     },
-    "Stasis Field": {
+    "stasis field": {
+        "name": "Stasis Field",
         "level": 8,
         "classes": "Light Side Power"
     },
-    "Stun": {
+    "stun": {
+        "name": "Stun",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Stun Droid": {
+    "stun droid": {
+        "name": "Stun Droid",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "(SW) Telekinesis": {
+    "(sw) telekinesis": {
+        "name": "(SW) Telekinesis",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Telekinetic Burst": {
+    "telekinetic burst": {
+        "name": "Telekinetic Burst",
         "level": 6,
         "classes": "Light Side Power"
     },
-    "Telekinetic Wave": {
+    "telekinetic wave": {
+        "name": "Telekinetic Wave",
         "level": 8,
         "classes": "Light Side Power"
     },
-    "Tremor": {
+    "tremor": {
+        "name": "Tremor",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Turbulence": {
+    "turbulence": {
+        "name": "Turbulence",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Valor": {
+    "valor": {
+        "name": "Valor",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "(SW) Wall of Light": {
+    "(sw) wall of light": {
+        "name": "(SW) Wall of Light",
         "level": 6,
         "classes": "Light Side Power"
     },
-    "(SW) Whirlwind": {
+    "(sw) whirlwind": {
+        "name": "(SW) Whirlwind",
         "level": 7,
         "classes": "Universal Power"
     },
-    "Wound": {
+    "wound": {
+        "name": "Wound",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "(SW) Beacon of Hope": {
+    "(sw) beacon of hope": {
+        "name": "(SW) Beacon of Hope",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "(SW) Bestow Curse": {
+    "(sw) bestow curse": {
+        "name": "(SW) Bestow Curse",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Danger Sense": {
+    "danger sense": {
+        "name": "Danger Sense",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Dark Shear": {
+    "dark shear": {
+        "name": "Dark Shear",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Dark Side Tendrils": {
+    "dark side tendrils": {
+        "name": "Dark Side Tendrils",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Force Mask": {
+    "force mask": {
+        "name": "Force Mask",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Repulse": {
+    "force repulse": {
+        "name": "Force Repulse",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Force Throw": {
+    "force throw": {
+        "name": "Force Throw",
         "level": 2,
         "classes": "Universal Power"
     },
-    "(SW) Heroism": {
+    "(sw) heroism": {
+        "name": "(SW) Heroism",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Greater Heal": {
+    "greater heal": {
+        "name": "Greater Heal",
         "level": 6,
         "classes": "Light Side Power"
     },
-    "Hallucination": {
+    "hallucination": {
+        "name": "Hallucination",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Hysteria": {
+    "hysteria": {
+        "name": "Hysteria",
         "level": 4,
         "classes": "Dark Side Power"
     },
-    "Improved Dark Side Tendrils": {
+    "improved dark side tendrils": {
+        "name": "Improved Dark Side Tendrils",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Improved Force Barrier": {
+    "improved force barrier": {
+        "name": "Improved Force Barrier",
         "level": 5,
         "classes": "Light Side Power"
     },
-    "Improved Restoration": {
+    "improved restoration": {
+        "name": "Improved Restoration",
         "level": 5,
         "classes": "Light Side Power"
     },
-    "Mass Animation": {
+    "mass animation": {
+        "name": "Mass Animation",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Mass Hysteria": {
+    "mass hysteria": {
+        "name": "Mass Hysteria",
         "level": 9,
         "classes": "Dark Side Power"
     },
-    "Master Force Barrier": {
+    "master force barrier": {
+        "name": "Master Force Barrier",
         "level": 8,
         "classes": "Light Side Power"
     },
-    "Mind Trap": {
+    "mind trap": {
+        "name": "Mind Trap",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Necrotic Charge": {
+    "necrotic charge": {
+        "name": "Necrotic Charge",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Psychic Charge": {
+    "psychic charge": {
+        "name": "Psychic Charge",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "(SW) Remove Curse": {
+    "(sw) remove curse": {
+        "name": "(SW) Remove Curse",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Restoration": {
+    "restoration": {
+        "name": "Restoration",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Sonic Charge": {
+    "sonic charge": {
+        "name": "Sonic Charge",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Telekinetic Storm": {
+    "telekinetic storm": {
+        "name": "Telekinetic Storm",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "True Sight": {
+    "true sight": {
+        "name": "True Sight",
         "level": 6,
         "classes": "Universal Power"
     },
-    "Wrack": {
+    "wrack": {
+        "name": "Wrack",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "Armor of Abeloth": {
+    "armor of abeloth": {
+        "name": "Armor of Abeloth",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Battle Insight": {
+    "battle insight": {
+        "name": "Battle Insight",
         "level": 0,
         "classes": "Universal Power"
     },
-    "(SW) Call Lightning": {
+    "(sw) call lightning": {
+        "name": "(SW) Call Lightning",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Comprehend Speech": {
+    "comprehend speech": {
+        "name": "Comprehend Speech",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Control Pain": {
+    "control pain": {
+        "name": "Control Pain",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Dark Aura": {
+    "dark aura": {
+        "name": "Dark Aura",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Dominate Mind": {
+    "dominate mind": {
+        "name": "Dominate Mind",
         "level": 5,
         "classes": "Dark Side Power"
     },
-    "Dun Moch": {
+    "dun moch": {
+        "name": "Dun Moch",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Force Blur": {
+    "force blur": {
+        "name": "Force Blur",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Concealment": {
+    "force concealment": {
+        "name": "Force Concealment",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Focus": {
+    "force focus": {
+        "name": "Force Focus",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Force Imbuement": {
+    "force imbuement": {
+        "name": "Force Imbuement",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Force Leap": {
+    "force leap": {
+        "name": "Force Leap",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Force Meld": {
+    "force meld": {
+        "name": "Force Meld",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Force Propel": {
+    "force propel": {
+        "name": "Force Propel",
         "level": 1,
         "classes": ""
     },
-    "Force Reflect": {
+    "force reflect": {
+        "name": "Force Reflect",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Force Shunt": {
+    "force shunt": {
+        "name": "Force Shunt",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Force Temperance": {
+    "force temperance": {
+        "name": "Force Temperance",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Force Vision": {
+    "force vision": {
+        "name": "Force Vision",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Weapon": {
+    "force weapon": {
+        "name": "Force Weapon",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Force Whisper": {
+    "force whisper": {
+        "name": "Force Whisper",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Greater Saber Throw": {
+    "greater saber throw": {
+        "name": "Greater Saber Throw",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Improved Saber Throw": {
+    "improved saber throw": {
+        "name": "Improved Saber Throw",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Malacia": {
+    "malacia": {
+        "name": "Malacia",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Mass Coerce Mind": {
+    "mass coerce mind": {
+        "name": "Mass Coerce Mind",
         "level": 6,
         "classes": "Universal Power"
     },
-    "Mass Malacia": {
+    "mass malacia": {
+        "name": "Mass Malacia",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Master Malacia": {
+    "master malacia": {
+        "name": "Master Malacia",
         "level": 6,
         "classes": "Universal Power"
     },
-    "Master Saber Throw": {
+    "master saber throw": {
+        "name": "Master Saber Throw",
         "level": 7,
         "classes": "Universal Power"
     },
-    "Morichro": {
+    "morichro": {
+        "name": "Morichro",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Necrotic Touch": {
+    "necrotic touch": {
+        "name": "Necrotic Touch",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Probe Mind": {
+    "probe mind": {
+        "name": "Probe Mind",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Psychometry": {
+    "psychometry": {
+        "name": "Psychometry",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Pyrokinesis": {
+    "pyrokinesis": {
+        "name": "Pyrokinesis",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Improved Pyrokinesis": {
+    "improved pyrokinesis": {
+        "name": "Improved Pyrokinesis",
         "level": 2,
         "classes": "Universal Power"
     },
-    " Greater Pyrokinesis": {
+    " greater pyrokinesis": {
+        "name": " Greater Pyrokinesis",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Master Pyrokinesis": {
+    "master pyrokinesis": {
+        "name": "Master Pyrokinesis",
         "level": 7,
         "classes": "Universal Power"
     },
-    "Rebuke": {
+    "rebuke": {
+        "name": "Rebuke",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Saber Burst": {
+    "saber burst": {
+        "name": "Saber Burst",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Saber Onslaught": {
+    "saber onslaught": {
+        "name": "Saber Onslaught",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Saber Slash": {
+    "saber slash": {
+        "name": "Saber Slash",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Saber Strike": {
+    "saber strike": {
+        "name": "Saber Strike",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Seethe": {
+    "seethe": {
+        "name": "Seethe",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Shadow Sight": {
+    "shadow sight": {
+        "name": "Shadow Sight",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Sound Trick": {
+    "sound trick": {
+        "name": "Sound Trick",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Spirit Blade": {
+    "spirit blade": {
+        "name": "Spirit Blade",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Sustained Lightning": {
+    "sustained lightning": {
+        "name": "Sustained Lightning",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Telekinetic Shield": {
+    "telekinetic shield": {
+        "name": "Telekinetic Shield",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Tapas": {
+    "tapas": {
+        "name": "Tapas",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Telemetry": {
+    "telemetry": {
+        "name": "Telemetry",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Vitality Shield": {
+    "vitality shield": {
+        "name": "Vitality Shield",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Will of the Force": {
+    "will of the force": {
+        "name": "Will of the Force",
         "level": 9,
         "classes": "Light Side Power"
     },
-    "Force Blinding": {
+    "force blinding": {
+        "name": "Force Blinding",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Mind Prison": {
+    "mind prison": {
+        "name": "Mind Prison",
         "level": 6,
         "classes": "Dark Side Power"
     },
-    "Saber Assault": {
+    "saber assault": {
+        "name": "Saber Assault",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Wall Run": {
+    "wall run": {
+        "name": "Wall Run",
         "level": 0,
         "classes": "Universal Power"
     },
-    "Pull Earthward": {
+    "pull earthward": {
+        "name": "Pull Earthward",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Reveal Shatterpoint": {
+    "reveal shatterpoint": {
+        "name": "Reveal Shatterpoint",
         "level": 5,
         "classes": "Universal Power"
     },
-    "Saber Dance": {
+    "saber dance": {
+        "name": "Saber Dance",
         "level": 4,
         "classes": "Universal Power"
     },
-    "Telepathic Link": {
+    "telepathic link": {
+        "name": "Telepathic Link",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Wakefulness": {
+    "wakefulness": {
+        "name": "Wakefulness",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Dark Transfer": {
+    "dark transfer": {
+        "name": "Dark Transfer",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Force Light": {
+    "force light": {
+        "name": "Force Light",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Guiding Technique": {
+    "guiding technique": {
+        "name": "Guiding Technique",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Judgment": {
+    "judgment": {
+        "name": "Judgment",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Luminous Technique": {
+    "luminous technique": {
+        "name": "Luminous Technique",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Meditative Technique": {
+    "meditative technique": {
+        "name": "Meditative Technique",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Nature Trick": {
+    "nature trick": {
+        "name": "Nature Trick",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Sprout Flora": {
+    "sprout flora": {
+        "name": "Sprout Flora",
         "level": 0,
         "classes": "Light Side Power"
     },
-    "Torment": {
+    "torment": {
+        "name": "Torment",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Vengeful Charge": {
+    "vengeful charge": {
+        "name": "Vengeful Charge",
         "level": 0,
         "classes": "Dark Side Power"
     },
-    "Chastisement": {
+    "chastisement": {
+        "name": "Chastisement",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Cleanse Mind": {
-        "level": 1,
-        "classes": "Light Side Power"
-    },
-    "Dark Rejuvenation": {
-        "level": 1,
-        "classes": "Dark Side Power"
-    },
-    "Destructive Blow": {
-        "level": 1,
-        "classes": "Dark Side Power"
-    },
-    "Force Armor": {
-        "level": 1,
-        "classes": "Universal Power"
-    },
-    "Force Defense": {
-        "level": 1,
-        "classes": "Universal Power"
-    },
-    "Foresight": {
-        "level": 1,
-        "classes": "Universal Power"
-    },
-    "Lightning Assault": {
-        "level": 1,
-        "classes": "Dark Side Power"
-    },
-    "Manipulation": {
-        "level": 1,
-        "classes": "Universal Power"
-    },
-    "Mind Lash": {
-        "level": 1,
-        "classes": "Dark Side Power"
-    },
-    "Plant Growth": {
+    "cleanse mind": {
+        "name": "Cleanse Mind",
         "level": 1,
         "classes": "Light Side Power"
     },
-    "Retribution": {
+    "dark rejuvenation": {
+        "name": "Dark Rejuvenation",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Seize Life": {
+    "destructive blow": {
+        "name": "Destructive Blow",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Share Memory": {
-        "level": 1,
-        "classes": "Light Side Power"
-    },
-    "Skill Understanding": {
+    "force armor": {
+        "name": "Force Armor",
         "level": 1,
         "classes": "Universal Power"
     },
-    "Wrathful Blow": {
+    "force defense": {
+        "name": "Force Defense",
+        "level": 1,
+        "classes": "Universal Power"
+    },
+    "foresight": {
+        "name": "Foresight",
+        "level": 1,
+        "classes": "Universal Power"
+    },
+    "lightning assault": {
+        "name": "Lightning Assault",
         "level": 1,
         "classes": "Dark Side Power"
     },
-    "Channel Pain": {
+    "manipulation": {
+        "name": "Manipulation",
+        "level": 1,
+        "classes": "Universal Power"
+    },
+    "mind lash": {
+        "name": "Mind Lash",
+        "level": 1,
+        "classes": "Dark Side Power"
+    },
+    "plant growth": {
+        "name": "Plant Growth",
+        "level": 1,
+        "classes": "Light Side Power"
+    },
+    "retribution": {
+        "name": "Retribution",
+        "level": 1,
+        "classes": "Dark Side Power"
+    },
+    "seize life": {
+        "name": "Seize Life",
+        "level": 1,
+        "classes": "Dark Side Power"
+    },
+    "share memory": {
+        "name": "Share Memory",
+        "level": 1,
+        "classes": "Light Side Power"
+    },
+    "skill understanding": {
+        "name": "Skill Understanding",
+        "level": 1,
+        "classes": "Universal Power"
+    },
+    "wrathful blow": {
+        "name": "Wrathful Blow",
+        "level": 1,
+        "classes": "Dark Side Power"
+    },
+    "channel pain": {
+        "name": "Channel Pain",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Control Force": {
+    "control force": {
+        "name": "Control Force",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Force Grip": {
+    "force grip": {
+        "name": "Force Grip",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Force Lift": {
+    "force lift": {
+        "name": "Force Lift",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Listening": {
+    "force listening": {
+        "name": "Force Listening",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Force Thrust": {
+    "force thrust": {
+        "name": "Force Thrust",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Forked Lightning": {
+    "forked lightning": {
+        "name": "Forked Lightning",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Freedom of Will": {
+    "freedom of will": {
+        "name": "Freedom of Will",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Healing Meditation": {
+    "healing meditation": {
+        "name": "Healing Meditation",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Lightning Surge": {
+    "lightning surge": {
+        "name": "Lightning Surge",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Mass Dun Moch": {
+    "mass dun moch": {
+        "name": "Mass Dun Moch",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "Mass Mind Trick": {
+    "mass mind trick": {
+        "name": "Mass Mind Trick",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Preservation": {
+    "preservation": {
+        "name": "Preservation",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Respite": {
+    "respite": {
+        "name": "Respite",
         "level": 2,
         "classes": "Light Side Power"
     },
-    "Skill Proficiency": {
+    "skill proficiency": {
+        "name": "Skill Proficiency",
         "level": 2,
         "classes": "Universal Power"
     },
-    "Transfer Force": {
+    "transfer force": {
+        "name": "Transfer Force",
         "level": 2,
         "classes": "Dark Side Power"
     },
-    "(SW) Aura of Vitality": {
+    "(sw) aura of vitality": {
+        "name": "(SW) Aura of Vitality",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Disruption": {
+    "disruption": {
+        "name": "Disruption",
         "level": 3,
         "classes": "Light Side Power"
     },
-    "Farseeing": {
+    "farseeing": {
+        "name": "Farseeing",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Force Concurrence": {
+    "force concurrence": {
+        "name": "Force Concurrence",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Force Stealth": {
+    "force stealth": {
+        "name": "Force Stealth",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Greater Tapas": {
+    "greater tapas": {
+        "name": "Greater Tapas",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Lesser Whirlwind": {
+    "lesser whirlwind": {
+        "name": "Lesser Whirlwind",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Lightning Discharge": {
+    "lightning discharge": {
+        "name": "Lightning Discharge",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Moment Reading": {
+    "moment reading": {
+        "name": "Moment Reading",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Steal Knowledge": {
+    "steal knowledge": {
+        "name": "Steal Knowledge",
         "level": 3,
         "classes": "Dark Side Power"
     },
-    "Sustaining Meditation": {
+    "sustaining meditation": {
+        "name": "Sustaining Meditation",
         "level": 3,
         "classes": "Universal Power"
     },
-    "Telekinetic Wall": {
+    "telekinetic wall": {
+        "name": "Telekinetic Wall",
         "level": 3,
         "classes": "Universal Power"
     }

@@ -3161,6 +3161,263 @@
     "concentration": true
   },
   {
+    "name": "Construct Greater Vehicle",
+    "level": 5,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "hpBonus",
+        "value": "0",
+        "higher": {
+          "6": "10",
+          "7": "20",
+          "8": "30",
+          "9": "40"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "botAC",
+        "value": "18",
+        "higher": {
+          "6": "19",
+          "7": "20",
+          "8": "21",
+          "9": "22"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Greater Vehicle Constructed",
+            "duration": "600",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Greater Construct Vehicle - Drive Through (Pilot)",
+                  "automation": [
+                    {
+                      "type": "variable",
+                      "name": "spell_level",
+                      "value": "ieffect.desc.split()[-1]"
+                    },
+                    {
+                      "type": "variable",
+                      "name": "vehicleDamage",
+                      "value": "0"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{spell_level}d6 [kinetic]"
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Prone",
+                              "duration": "-1",
+                              "effects": {
+                                "attack_advantage": "-1"
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Stand Up",
+                                  "verb": "stands up",
+                                  "style": "1"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "variable",
+                              "name": "vehicleDamage",
+                              "value": "vehicleDamage+(lastDamage/2)"
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Vehicle Damage: {vehicleDamage}",
+                      "title": "Vehicle Damage"
+                    },
+                    {
+                      "type": "text",
+                      "text": "The greater vehicle moves up to its speed in a straight line. During this move, it can enter another creature's space if it is at least one size smaller than the greater vehicle. A creature whose space the greater vehicle enters must make a Dexterity saving throw against your tech save DC. On a successful save, the creature is pushed 5 feet to the nearest space out of the greater vehicle\u2019s path. On a failed save, the creature falls prone and takes 5d6 kinetic damage plus 1d6 kinetic damage for each slot level above 6th. The greater vehicle also takes kinetic damage equal to half the damage dealt.\n\nIf the greater vehicle ends this movement in the prone creature\u2019s space, the creature is also restrained until it's no longer in the same space as the greater vehicle. While restrained in this way, the creature, or another creature within 5 feet of it, can make a Strength or Dexterity check (its choice) against your tech save DC as an action. On a successful save, the creature is pushed to the nearest unoccupied space."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Greater Construct Vehicle - Repeating Blasters (Gunner)",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "2d6+{dexterityMod} [energy]"
+                            }
+                          ],
+                          "miss": [],
+                          "attackBonus": "proficiencyBonus+dexterityMod"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Gunner's attack bonus (this attack counts as a martial weapon for purpose of proficiency), range 60/180 ft, one target. Hit: 2d6 + gunner's Dexterity bonus energy damage. If the gunner has Extra Attack, they may treat this action as one attack."
+                    }
+                  ]
+                }
+              },
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Greater Construct Vehicle - Cannon. (Gunner)(Tank and Military Airspeeder only)(Recharge 5-6)",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "self",
+                      "effects": [
+                        {
+                          "type": "ieffect2",
+                          "name": "Cannon Used",
+                          "buttons": [
+                            {
+                              "automation": [
+                                {
+                                  "type": "roll",
+                                  "dice": "1d6",
+                                  "name": "recharge"
+                                },
+                                {
+                                  "type": "condition",
+                                  "condition": "lastRoll >= 5",
+                                  "onTrue": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "Cannon Recharged!"
+                                    }
+                                  ],
+                                  "onFalse": [
+                                    {
+                                      "type": "text",
+                                      "text": "Recharge failed."
+                                    }
+                                  ]
+                                }
+                              ],
+                              "label": "Recharge (Cannon)",
+                              "style": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "roll",
+                      "dice": "12d6 [fire]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}",
+                              "fixedValue": true
+                            }
+                          ],
+                          "success": [
+                            {
+                              "type": "damage",
+                              "damage": "({damage}/2)",
+                              "fixedValue": true
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "Target a point you can see within 150 feet. Each creature within a 10-foot radius of that point must make a Dexterity saving throw. A target takes 12d6 fire damage on a failed save, or half as much damage on a successful one. This action may only be used once per round, even if there is more than one gunner."
+                    }
+                  ]
+                }
+              }
+            ],
+            "desc": "{spell_level}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You construct a vehicle in a space of your choice within range, which uses the Greater Vehicle stat block. Only creatures you designate when you cast this power are able to enter this vehicle. A creature not designated must succeed on an Intelligence saving throw in order to enter the vehicle. Once the power ends, the vehicle slows to a stop, then vanishes.\n\nThe construct is a valid target for the tracker droid *interface* power. If that power is cast targeting the greater vehicle, it only takes 1 minute to synchronize with the vehicle. Its senses are the same as yours while linked. The general appearance is based on the tech slot used in casting the power, listed in the below table."
+      },
+      {
+        "type": "text",
+        "text": "``+-------------+---------------------+\n| Power Level | Loot                |\n+=============+=====================+\n| 5th         | Troop Transport     |\n+-------------+---------------------+\n| 6th-7th     | Tank                |\n+-------------+---------------------+\n| 8th-9th     | Military Airspeeder |\n+-------------+---------------------+```",
+        "title": "Table"
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power using a tech slot of 6th level or higher, use the higher level wherever the power\u2019s level appears in the stat block.",
+        "title": "Overcharge Tech"
+      },
+      {
+        "type": "text",
+        "text": "**Constructed Vehicle**\n```!i add 1 \"Constructed Vehicle\" -strength 24 -dexterity 12 -constitution 20 -intelligence 10 -wisdom 14 -charisma 7 -hp {60+hpBonus} -vuln ion -resist necrotic -resist poison -resist psychic -resist energy -resist kinetic -immune disease -immune poisoned -immune blinded -immune deafened -immune frightened -ac {botAC} -note \"{moveSpeed}ft.{', fly 120 ft.' if int(spell_level) >= 8 else ''}\"```",
+        "title": "Commands"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 hour",
+    "range": "10 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "You construct a vehicle in a space of your choice within range, which uses the Greater Vehicle stat block. Only creatures you designate when you cast this power are able to enter this vehicle. A creature not designated must succeed on an Intelligence saving throw in order to enter the vehicle. Once the power ends, the vehicle slows to a stop, then vanishes.\n\nThe construct is a valid target for the tracker droid *interface* power. If that power is cast targeting the greater vehicle, it only takes 1 minute to synchronize with the vehicle. Its senses are the same as yours while linked. The general appearance is based on the tech slot used in casting the power, listed in the below table.\n\n```+-------------+---------------------+\n| Power Level | Loot                |\n+=============+=====================+\n| 5th         | Troop Transport     |\n+-------------+---------------------+\n| 6th-7th     | Tank                |\n+-------------+---------------------+\n| 8th-9th     | Military Airspeeder |\n+-------------+---------------------+```\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, use the higher level wherever the power\u2019s level appears in the stat block.",
+    "higherlevels": ""
+  },
+  {
     "name": "Construct Vehicle",
     "level": 1,
     "school": "Tech",
@@ -20197,6 +20454,108 @@
     "concentration": false
   },
   {
+    "name": "Spectrum Discharge",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice and choice.lower() in 'acidcoldlightningpoisonsonic'",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Spectrum Discharge - Parent",
+                "duration": "10",
+                "save_as": "peff",
+                "parent": "ieffect"
+              }
+            ]
+          },
+          {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "ieffect2",
+                "name": "Spectrum Discharge",
+                "attacks": [
+                  {
+                    "attack": {
+                      "_v": 2,
+                      "name": "Spectrum Discharge",
+                      "automation": [
+                        {
+                          "type": "roll",
+                          "dice": "{ieffect.desc.split()[0]}d6 [{ieffect.desc.split()[-1]}]",
+                          "name": "damage"
+                        },
+                        {
+                          "type": "target",
+                          "target": "each",
+                          "effects": [
+                            {
+                              "type": "save",
+                              "stat": "dex",
+                              "fail": [
+                                {
+                                  "type": "damage",
+                                  "damage": "{damage}",
+                                  "fixedValue": true
+                                }
+                              ],
+                              "success": [
+                                {
+                                  "type": "damage",
+                                  "damage": "({damage}/2)",
+                                  "fixedValue": true
+                                }
+                              ],
+                              "dc": "ieffect.desc.split()[1]"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "desc": "{spell_level}\n{spell_dc}\n{'acid' if choice.lower() in 'acid' else 'cold' if choice.lower() in 'cold' else 'fire' if choice.lower() in 'fire' else 'lightning' if choice.lower() in 'lightning' else 'poison' if choice.lower() in 'poison' else 'sonic'}",
+                "parent": "peff"
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Please choose a damage type with `-choice`"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch a willing creature, granting it an elemental charge. Choose acid, cold, fire, lightning, poison or sonic. For the duration, a creature can use an action to expel energy of the chosen type in a 15-foot cone. Each creature in that area must make a Dexterity saving throw, taking 3d6 damage of the chosen type on a failed save, or half as much damage on a successful one.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "You touch a willing creature, granting it an elemental charge. Choose acid, cold, fire, lightning, poison or sonic. For the duration, a creature can use an action to expel energy of the chosen type in a 15-foot cone. Each creature in that area must make a Dexterity saving throw, taking 3d6 damage of the chosen type on a failed save, or half as much damage on a successful one.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Spectrum Ray",
     "level": 0,
     "school": "Tech",
@@ -20312,6 +20671,56 @@
     "ritual": false,
     "description": "You cause a tangle of thorny vines to sprout in a 5-foot cube on the ground within range. The ground must be capable of supporting plant life, or this power fails. The tangle has an AC equal to your force save DC, 1 hit point, and immunity to all damage not dealt by melee weapons. This power ends if the tangle is reduced to 0 hit points, or if you cast this power again while a tangle is still active, causing the vines to wilt.\n\nThe affected area is considered difficult terrain for the duration. You choose whether the tangle deals kinetic or poison damage. Any creature in the tangle's space when you cast this power must succeed on a Strength saving throw or take 1d6 kinetic or poison damage, depending upon the choice you made for the power. A creature must also make the saving throw when it moves into the tangle's space for the first time on a turn or ends its turn there.\n\nThe tangle's hit points and damage increase by 1d6 when you reach 5th level (2d6 damage), 11th level (3d6 damage), and 17th level (4d6 damage).",
     "concentration": false
+  },
+  {
+    "name": "Squad Shield",
+    "level": 7,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Squad Shield - Parent",
+            "duration": "10",
+            "desc": "Radius = {10 + (spell_level - 7 * 10)} feet",
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Squad Shield",
+            "parent": "peff"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "In the face of danger, you create a barrier that protects you and those around you. A faintly glowing sphere of protection with a radius of 10 feet appears. The sphere lasts for the duration.\n\nAny tech power (or force power that deals energy or lightning damage) of 7th level or lower cast from outside the barrier can\u2019t affect creatures or objects within it, even if the power is cast using a higher level tech slot. Such a power can target creatures and objects within the barrier, but the power has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such powers.\n\nFurthermore, hazards of the following types cannot physically pass through the barrier or affect anything within it.\n\nPhysical or energy projectiles.\nA specific effect, such as a thermal detonator\u2019s explosion.\nAn environmental danger, such as falling rocks or a lava flow.\n**Overcharge Tech.** When you cast this power using a tech slot of 8th level or higher, the maximum radius increases by 10 feet for each slot level above 7th. In addition, the barrier blocks powers of one level higher for each slot level above 7th."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take in response to an incoming threat",
+    "range": "Self (10-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "In the face of danger, you create a barrier that protects you and those around you. A faintly glowing sphere of protection with a radius of 10 feet appears. The sphere lasts for the duration.\n\nAny tech power (or force power that deals energy or lightning damage) of 7th level or lower cast from outside the barrier can\u2019t affect creatures or objects within it, even if the power is cast using a higher level tech slot. Such a power can target creatures and objects within the barrier, but the power has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such powers.\n\nFurthermore, hazards of the following types cannot physically pass through the barrier or affect anything within it.\n\nPhysical or energy projectiles.\nA specific effect, such as a thermal detonator\u2019s explosion.\nAn environmental danger, such as falling rocks or a lava flow.\n**Overcharge Tech.** When you cast this power using a tech slot of 8th level or higher, the maximum radius increases by 10 feet for each slot level above 7th. In addition, the barrier blocks powers of one level higher for each slot level above 7th.",
+    "higherlevels": "",
+    "concentration": true
   },
   {
     "name": "Stack the Deck",
@@ -20656,6 +21065,75 @@
     "description": "Choose a droid or construct that you can see within range. The target must succeed on a Constitution saving throw or be paralyzed for the duration. At the beginning of each of its turns, the target takes energy damage equal to your forcecasting ability modifier. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.",
     "higherlevels": "",
     "concentration": true
+  },
+  {
+    "name": "Superior Energy Shield",
+    "level": 5,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "counter",
+        "counter": "ishouldneverexist",
+        "amount": "0",
+        "errorBehaviour": "ignore"
+      },
+      {
+        "type": "variable",
+        "name": "baseShield",
+        "value": "50",
+        "higher": {
+          "6": "60",
+          "7": "70",
+          "8": "80",
+          "9": "90"
+        }
+      },
+      {
+        "type": "variable",
+        "name": "shield",
+        "value": "baseShield - lastCounterRequestedAmount",
+        "onError": "baseShield"
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "condition",
+            "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
+            "onTrue": [
+              {
+                "type": "damage",
+                "damage": "-({lastCounterRequestedAmount}) [healing]",
+                "fixedValue": true
+              }
+            ],
+            "onFalse": []
+          },
+          {
+            "type": "temphp",
+            "amount": "{shield}"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you are dealt damage",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th.",
+    "concentration": false
   },
   {
     "name": "Superior Translation Program",
@@ -22323,6 +22801,55 @@
     "duration": "10 minutes",
     "ritual": false,
     "description": "You administer a poison to a creature you touched that prevents it from telling lies. The creature touched must make a Constitution saving throw. On a success, nothing happens. On a failure, the creature can't speak a deliberate lie until the power ends.\r\n\r\nAn affected creature is aware of the power and can thus avoid answering questions to which it would normally respond with a lie. Such a creature can be evasive in its answers as long as it remains within the boundaries of the truth.",
+    "concentration": false
+  },
+  {
+    "name": "Tune-up",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d8+{caster.spellbook.spell_mod} [healing]",
+        "name": "healing",
+        "higher": {
+          "3": "1d8",
+          "4": "2d8",
+          "5": "3d8",
+          "6": "4d8",
+          "7": "5d8",
+          "8": "6d8",
+          "9": "7d8"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-({healing})"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Up to six droids or constructs of your choice that you can see within range each regain hit points equal to 2d8 + your techcasting ability modifier.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "10 minutes",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Up to six droids or constructs of your choice that you can see within range each regain hit points equal to 2d8 + your techcasting ability modifier.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd.",
+    "higherlevels": "",
     "concentration": false
   },
   {
@@ -24183,6 +24710,120 @@
     "concentration": false
   },
   {
+    "name": "Wire Tow",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "damage",
+                "damage": "2d10 [kinetic]",
+                "higher": {
+                  "3": "1d10",
+                  "4": "2d10",
+                  "5": "3d10",
+                  "6": "4d10",
+                  "7": "5d10",
+                  "8": "6d10",
+                  "9": "7d10"
+                }
+              },
+              {
+                "type": "condition",
+                "condition": "lastAttackDidCrit",
+                "onTrue": [
+                  {
+                    "type": "ieffect2",
+                    "name": "Prone",
+                    "duration": "-1",
+                    "effects": {
+                      "attack_advantage": "-1"
+                    },
+                    "buttons": [
+                      {
+                        "automation": [
+                          {
+                            "type": "remove_ieffect"
+                          }
+                        ],
+                        "label": "Stand Up",
+                        "verb": "stands up",
+                        "style": "1"
+                      }
+                    ]
+                  }
+                ],
+                "onFalse": []
+              },
+              {
+                "type": "ieffect2",
+                "name": "Grappled by {name}",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "check",
+                            "ability": [
+                              "acrobatics",
+                              "athletics"
+                            ],
+                            "dc": "ieffect.desc.split()[-1]",
+                            "success": [
+                              {
+                                "type": "text",
+                                "text": "Escapes the grapple!"
+                              },
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ],
+                            "fail": []
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Grapple",
+                    "verb": "attempts to resist the grapple",
+                    "style": "1"
+                  }
+                ],
+                "desc": "Speed is reduced to 0\n{spell_dc}"
+              }
+            ],
+            "miss": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You project a length of wire towards a foe to bring them within your grasp. Make a ranged tech attack against the target. On a hit, the target takes 2d10 kinetic damage, and you can pull it up to 25 feet closer to you. If you score a critical hit, the target is also knocked prone. If the target ends this movement within 5 feet of you and is no more than one size larger than you, the target is grappled by you for the duration.\n\nIf a creature you grapple with this power uses its action to escape, it must succeed on a Strength (Athletics) or Dexterity (Acrobatics) check against your tech save DC to do so.\n\nThis power ends if the attack misses or the grapple ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Up to 1 minute",
+    "ritual": false,
+    "description": "You project a length of wire towards a foe to bring them within your grasp. Make a ranged tech attack against the target. On a hit, the target takes 2d10 kinetic damage, and you can pull it up to 25 feet closer to you. If you score a critical hit, the target is also knocked prone. If the target ends this movement within 5 feet of you and is no more than one size larger than you, the target is grappled by you for the duration.\n\nIf a creature you grapple with this power uses its action to escape, it must succeed on a Strength (Athletics) or Dexterity (Acrobatics) check against your tech save DC to do so.\n\nThis power ends if the attack misses or the grapple ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd.",
+    "concentration": true
+  },
+  {
     "name": "Wound",
     "level": 1,
     "school": "Force",
@@ -24288,74 +24929,5 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  },
-  {
-    "name": "Superior Energy Shield",
-    "level": 5,
-    "school": "Tech",
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 reaction, which you take when you are dealt damage",
-    "range": "Self",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "1 round",
-    "ritual": false,
-    "description": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th.",
-    "concentration": false,
-    "automation": [
-      {
-        "type": "counter",
-        "counter": "ishouldneverexist",
-        "amount": 0,
-        "errorBehaviour": "ignore"
-      },
-      {
-        "type": "variable",
-        "name": "baseShield",
-        "value": "50",
-        "higher": {
-          "6": 60,
-          "7": 70,
-          "8": 80,
-          "9": 90
-        }
-      },
-      {
-        "type": "variable",
-        "name": "shield",
-        "value": "baseShield - lastCounterRequestedAmount",
-        "onError": "baseShield"
-      },
-      {
-        "type": "target",
-        "target": "self",
-        "effects": [
-          {
-            "type": "condition",
-            "condition": "lastCounterRequestedAmount and lastCounterRequestedAmount > 0",
-            "onFalse": [],
-            "onTrue": [
-              {
-                "type": "damage",
-                "damage": "-({lastCounterRequestedAmount}) [healing]",
-                "fixedValue": true
-              }
-            ]
-          },
-          {
-            "type": "temphp",
-            "amount": "{shield}"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "A sphere of energy erupts from you, encasing and protecting you. Until the end of your next turn, the shield absorbs up to 50 points of damage that you would take (including from the triggering attack or effect) before fading away. Once the shield has absorbed its maximum amount of damage, you take any remaining damage. Line effects and powers that require a Dexterity saving throw, such as force lightning, stop completely at the shield if the damage is entirely absorbed.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 6th level or higher, the maximum amount of damage the shield can absorb increases by 10 for each slot level above 5th."
-      }
-    ]
   }
 ]

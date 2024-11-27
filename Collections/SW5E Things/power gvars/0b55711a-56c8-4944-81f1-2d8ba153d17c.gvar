@@ -1,4 +1,5 @@
 # Power Module
+# TODO: Support custom powers
 c = character()
 
 def get_subclasses():
@@ -13,9 +14,7 @@ def get_subclasses():
 subclasses = get_subclasses()
 feats = load_json(c.get_cvar("SWFeats", "{}"))
 fp = load_json(get_gvar("b3458e30-e3ca-4674-970c-adc8987e5b07"))
-fp_normal = fp_normal = {key.lower(): key for key in fp.keys()}
 tp = load_json(get_gvar("e90cc412-c2ad-4c2f-8e48-8ccc81fb5bf9"))
-tp_normal = tp_normal = {key.lower(): key for key in tp.keys()}
 
 def processPower(args):
     a = argparse(args)
@@ -96,21 +95,17 @@ def processPower(args):
     # Send it!
     return f'cast "{spell.name}" {" ".join(out)} {"-i" if spell_level>0 else ""}'
 
-def search(keyword, gvar, normal_gvar, a = None):
+def search(keyword, gvar, a = None):
     keyword = keyword.lower()
     sover = f"(sw) {keyword}"
 
-    normal_key = normal_gvar.get(keyword) or normal_gvar.get(sover)
-
-    if normal_key:
-        s = gvar[normal_key]
-        return {"name": normal_gvar[normal_key.lower()]} | s
-
-    for key in normal_gvar:
-        if keyword in key or sover in key:
-            s = {"name": normal_gvar[key]} | gvar[normal_gvar[key]]
-            if s.name in c.spellbook or s.name.replace("(SW) ", "") in c.spellbook:
-                return s
+    if (s := gvar.get(keyword)) or (s := gvar.get(sover)):
+        return s
+    
+    for key, s in gvar.items():
+        if (keyword in key or sover in key) and (s.name in c.spellbook or s.name.replace("(SW) ", "") in c.spellbook):
+            return s
+            
     return None
    
 
@@ -135,42 +130,42 @@ def get_spell(keyword, out, a):
     cc = None
 
     if c.cc_exists('Force Points') and not c.cc_exists("Tech Points") and not ignore:
-        if spell := search(keyword, fp, fp_normal):
+        if spell := search(keyword, fp):
             cc = "Force Points"
             if not wi:
                 out.append(getWith(spell))
 
         # Subclasses that allow Tech powers as Force Powers
         elif bool(set(subclasses) & {"Synthesis", "Technology", "Aqinos"}):
-            if spell := search(keyword, tp, tp_normal):
+            if spell := search(keyword, tp):
                 cc = "Force Points"
                 spell["classes"] = "Universal"
                 if not wi:
                     out.append(getWith(spell))
         elif feats.get("TechDabbler") or c.cc_exists("Technologist's Exploit"):
-            if spell := search(keyword, tp, tp_normal):
+            if spell := search(keyword, tp):
                 cc = "Tech Points"
         else:
             spell = None
     elif c.cc_exists("Tech Points") and not c.cc_exists("Force Points") and not ignore:
-        if spell := search(keyword, tp, tp_normal):
+        if spell := search(keyword, tp):
             cc = "Tech Points"
 
         # Subclasses that allow Force powers as Tech Powers
         elif bool(set(subclasses) & {"Artificer", "Inquisitor"}):
-            if spell := search(keyword, fp, fp_normal):
+            if spell := search(keyword, fp):
                 cc = "Tech Points"
         elif feats.get("ForceSensitive"):
-            if spell := search(keyword, fp, fp_normal):
+            if spell := search(keyword, fp):
                 cc = "Force Points"
         else:
             spell = None
     else:
-        if spell := search(keyword, fp, fp_normal, a):
+        if spell := search(keyword, fp, a):
             cc = "Force Points"
             if not wi:
                 out.append(getWith(spell))
-        elif spell := search(keyword, tp, tp_normal, a):
+        elif spell := search(keyword, tp, a):
             cc = "Tech Points"
         else:
             spell = None
