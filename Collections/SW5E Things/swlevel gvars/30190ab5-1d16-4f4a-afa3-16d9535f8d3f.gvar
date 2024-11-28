@@ -591,6 +591,7 @@ def getRaceInfo(actions = [], updateOnly=False):
                 act_str = '\n'.join([x for x in {x for x in out}])
                 base += f''' -f  "Counter{'s' if len(counters) > 1 else ''}|{c_str}"''' if len(counters) > 0 else ""
                 base += f''' -f "Action{'s' if len(actions) > 1 else ''}|{act_str}"''' if len(out) > 0 else ""
+                break
     return base
 
 def format_cvar_name(name):

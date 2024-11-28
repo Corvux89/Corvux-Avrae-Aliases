@@ -15,6 +15,26 @@
         }
     },
     {
+        "name": "advose",
+        "cvars": {
+            "race": "Advozse",
+            "size": "Medium",
+            "speed": "30 ft.",
+            "creatureType": "Humanoid",
+            "languages": "Galactic Basic, Advb",
+            "senses": "Darkvision 60 ft.",
+            "resist": "Fire"
+        },
+        "counter": [
+            {
+                "name": "Vigilant",
+                "value": 1,
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
         "name": "bith",
         "counters": [],
         "cvars": {
@@ -1282,7 +1302,8 @@
         "cvars": {
             "race": "Zabrak",
             "senses": "Darkvision 60 ft.",
-            "languages": "Galactic Basic, Zabraki"
+            "languages": "Galactic Basic, Zabraki",
+            "speed": "30 ft."
         }
     },
     {
@@ -1290,7 +1311,8 @@
         "counters": [],
         "cvars": {
             "race": "Abyssin",
-            "languages": "Galactic Basic, Abyissin"
+            "languages": "Galactic Basic, Abyissin",
+            "speed": "30 ft."
         }
     },
     {
