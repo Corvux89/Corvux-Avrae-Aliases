@@ -286,6 +286,14 @@ def processAttacks(attacks, args):
             if bs:
                 out.append(load_json(bs))
 
+        elif "Forceblade" in subclasses:
+            level = max(int(c.levels.get("Sentinellight",0)), int(c.levels.get("Sentineldark",0)),0)
+
+            if level >= 18:
+                fbm = weap.forceblade_mastery(attack, level, args)
+                if fbm:
+                    out.append(load_json(fbm))
+
         if args.get('dev'):
             character().set_cvar("dev", attack)
             return

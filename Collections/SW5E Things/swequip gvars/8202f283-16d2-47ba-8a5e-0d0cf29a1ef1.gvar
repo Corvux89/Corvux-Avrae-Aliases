@@ -535,3 +535,36 @@ def byrothsis_lightweapon(attack, args):
     base_attack = {"name": f"Byrothsis {'Ancient' if args.get('byran') else 'Adept'} Lightweapon - {a.name}", "_v": 2, "automation": [target, desc, text]}
 
     return dump_json(base_attack)
+
+def forceblade_mastery(attack, level, args):
+    a = load_json(attack)
+    a_bonus = sup.get_attack_bonus(attack) or 0
+    k_die = "1d12"
+
+    prone = {"type": "ieffect2", "name": "Prone", "duration": "-1",
+             "buttons": [
+                 {
+                     "label": "Stand Up",
+                     "verb": "stands up",
+                     "style": 1,
+                     "automation": [
+                         {
+                             "type": "remove_ieffect"
+                         }
+                     ]
+                 }
+             ]}
+    
+    damage = {"type": "damage", "damage": f"1d12+{level//2} [kinetic]"}
+
+    save = {"type": "save", "stat": "dex", "dc": f"8+{a_bonus}", "success": [], "fail": [damage, prone]}
+
+    counter = {"type": "counter", "counter": "Force Points", "amount": 1, "errorBehaviour": "raise"}
+
+    target = {"type": "target", "target": "each", "effects": [save, counter]}
+
+    text = {"type": "text", "text": "You’ve mastered controlling your forceblade with your mind, using it to keep your enemies at bay. As an action, you can telekinetically control your forceblade and have it strike any number of creatures within 10 feet of you, spending 1 force point per target. Each target must make a Dexterity saving throw (DC = 8 + your bonus to weapon attack rolls with that weapon). On a failed save, it takes damage using your Kinetic Combat die + half your sentinel level, is pushed back 10 feet and knocked prone."}
+
+    base_attack = {"name": f"Forceblade Master - {a.name}", "_v": 2, "automation": [target, text]}
+
+    return dump_json(base_attack)
