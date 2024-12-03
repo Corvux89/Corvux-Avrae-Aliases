@@ -93,15 +93,25 @@ def updateName(attack, prefix, cupdate=True):
 
 def getProperties(attack, lower: int|None =1):
     a = load_json(attack)
-    if lower:
-        return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
-    else:
-        return str(a.automation[len(a.automation) - 2].get("text")) if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text"))
+    try:
+        if lower:
+            return str(a.automation[len(a.automation) - 2].get("text")).lower() if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text")).lower()
+        else:
+            return str(a.automation[len(a.automation) - 2].get("text")) if not a.automation[len(a.automation) - 1].get("text") else str(a.automation[len(a.automation) - 1].get("text"))
+    except:
+        return ""
 
 
 def replaceProperties(attack, str):
     prop = getProperties(attack, None)
-    attack = attack.replace(f"{prop}", f"{str}")
+    if prop != "":
+        attack = attack.replace(f"{prop}", f"{str}")
+    else:
+        a = load_json(attack)
+        text = {"type": "text", "text": f"{str}"}
+        a.automation.append(text)
+        attack = json.dumps(a)
+
     return attack
 
 
@@ -172,7 +182,12 @@ def get_damage_die(attack):
     else:
         dindex = attack.find('"damage": "') + 11
 
-    damage_str = str(attack[dindex:attack[dindex:].find('+') + dindex])
+    plus_index = attack[dindex:].find('+')
+    endquote_index = attack[dindex:].find('"')
+
+    end_index = plus_index if endquote_index == -1 else endquote_index if plus_index == -1 else min(plus_index, endquote_index)
+
+    damage_str = str(attack[dindex:end_index + dindex])
     return damage_str
 
 def get_save_dc(attack):
@@ -192,7 +207,24 @@ def get_first_effect(attack):
         return first['effects'][0]['type']
     
     return first['type']
-    
+
+def replace_dc(attack, new_dc, start = 0):
+    search_key = '"dc": '
+    index = attack.find(search_key, start)
+
+    if index == -1:
+        return attack, -1
+    index = index + len(search_key)
+    comma_index = attack[index:].find(',')
+    brace_index = attack[index:].find('}')
+
+    end_index = brace_index if comma_index == -1 else comma_index if brace_index == -1 else min(comma_index, brace_index)
+
+    dc = str(attack[index:end_index + index])
+        
+    attack = attack.replace(f'"dc": {dc}', f'"dc": {new_dc}', 1)
+
+    return attack, index
 
 def replace_mod(text):
     stats = ch.stats
@@ -207,7 +239,7 @@ def replace_mod(text):
 
     if 'max' in text or 'min' in text or '+' in text or '-' in text:
         if "-" in text:
-            parts = test.split("-")
+            parts = text.split("-")
             result = parse_part(parts[0])
             for part in parts[1:]:
                 result -= parse_part(parse_part)

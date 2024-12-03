@@ -24,6 +24,7 @@ def processAttacks(attacks, args):
                 old_reload = str(attack[index:attack[index:].find(str(reload))+index+len(str(reload))])
                 attack = attack.replace(f"{old_reload}", f"reload {new_reload}")
 
+
         prop = sup.getProperties(attack)
 
         if not(sup.processName(a.name) == sup.baseName(a.name) or args.get('ammo')):
@@ -92,9 +93,11 @@ def processAttacks(attacks, args):
             attack = attack.replace(sup.get_damage_str(attack), f'{sup.get_damage_str(attack)}+{args.last("ad")}')
 
         if args.get('dc'):
-            index = attack.find('"dc": ')+6
-            dc = str(attack[index:attack[index:].find(',') + index])
-            attack = attack.replace(f'"dc": {dc}', f'"dc": {args.last("dc")}')
+            index = 0
+            for _ in range(3):
+                attack, index = sup.replace_dc(attack, args.last('dc'), index)
+                if index == -1:
+                    break
 
         if args.get('criton'):
             if "criton" in attack:

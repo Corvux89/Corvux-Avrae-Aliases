@@ -17,6 +17,7 @@ __Available Arguments__
 `-offhand` - Removes the ability mod from the damage roll and adds an attack called "Offhand ..." for Two-Weapon Fighting
 `-double` - Removes the ability mod from the damage roll and adds an attack called "Double ..." for Double-Weapon Fighting
 `-f` - Adds a description field. If the weapon has a property text, all fields defined here will be added before
+`-dc` - Override the DC of saves/checks in the automation
  
 **To Hit**
 `-b` - Add a bonus to the to-hit roll
