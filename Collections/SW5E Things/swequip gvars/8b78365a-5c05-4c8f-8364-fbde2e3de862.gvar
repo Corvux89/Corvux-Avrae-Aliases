@@ -104,14 +104,7 @@ def getProperties(attack, lower: int|None =1):
 
 def replaceProperties(attack, str):
     prop = getProperties(attack, None)
-    if prop != "":
-        attack = attack.replace(f"{prop}", f"{str}")
-    else:
-        a = load_json(attack)
-        text = {"type": "text", "text": f"{str}"}
-        a.automation.append(text)
-        attack = json.dumps(a)
-
+    attack = attack.replace(f"{prop}", f"{str}")
     return attack
 
 

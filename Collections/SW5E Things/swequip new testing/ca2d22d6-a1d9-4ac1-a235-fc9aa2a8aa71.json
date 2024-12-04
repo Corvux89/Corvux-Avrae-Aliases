@@ -1,0 +1,17 @@
+{
+    "vibrodagger": {
+        "name": "Vibrodagger",
+        "type": "melee",
+        "damage_die": "1d4",
+        "damage_type": "kinetic",
+        "properties": ["Finesse", "Light", "Thrown (range (20/60)"]
+    },
+    "revolver": {
+        "name": "Revolver",
+        "type": "range",
+        "damage_die": "2d4",
+        "damage_type": "kinetic",
+        "ammo": "slug",
+        "properties": ["Slug Cartridge (range 60/240)", "Rapid 4", "Reload 4", "Strength 11"]
+    }
+}

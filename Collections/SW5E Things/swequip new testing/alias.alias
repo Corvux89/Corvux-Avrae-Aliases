@@ -1,0 +1,53 @@
+<drac2>
+args = &ARGS&
+using(sup='d54e3317-b931-486e-9a7a-c2fa199d5df7', help='8b78365a-5c05-4c8f-8364-fbde2e3de862')
+output = "output" in args
+variable = load_json(get_gvar('ca2d22d6-a1d9-4ac1-a235-fc9aa2a8aa71'))
+counter = ""
+
+if output:
+    args.remove("output")
+
+try:
+    if len(args)>1 and "-" not in args[1] and args[1] not in "offhandnoprofdouble":
+        weapon = " ".join([args[0], args[1]])
+    else:
+        weapon = args[0].lower()
+except:
+    return f'''help {ctx.alias} -here'''
+
+args = argparse(args)
+attacks = []
+
+# gvar_list = variable[0].get(weapon[0].lower())
+# for gvar_str in gvar_list:
+#     gvar = load_json(get_gvar(gvar_str))
+
+#     for x in gvar:
+#         if help.processName(x.name).lower() == weapon.lower():
+#             attacks.append(x)
+
+if (w := variable.get(weapon)):
+    attacks.append(w)
+
+if len(attacks) == 0:
+    for key, w in variable.items():
+        if weapon in key:
+            if w not in attacks:
+                attacks.append(w)
+                break;
+
+if not attacks:
+    return err(f"I can't find a weapon named `{weapon}`.")
+
+attacks, counter = sup.processAttacks(attacks, args)
+
+if output:
+    n = '\n'
+    if counter:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' -f "The following counter was created for **{name}**:" -f "{counter}|{character().cc_str(counter)}"'''
+    else:
+        return f'''embed -title "Use `{ctx.prefix}attack import` and the following code(s) to add a {weapon} to your attacks." -desc '```{dump_json(attacks)}```' '''
+else:
+    return f'attack import {dump_json(attacks)}'
+</drac2>

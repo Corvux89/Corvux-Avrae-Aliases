@@ -46,8 +46,6 @@ def processAttacks(attacks, args):
                 die_str = f"{numDie}{die_str[die_str.find('d'):]}"
                 attack = attack.replace(sup.get_damage_die(attack), die_str)
             else:
-                if args.get('dev'):
-                    return err(sup.get_damage_die(attack))
                 attack = attack.replace(sup.get_damage_die(attack), args.last("dmg"))
 
         if args.get('bstat'):
