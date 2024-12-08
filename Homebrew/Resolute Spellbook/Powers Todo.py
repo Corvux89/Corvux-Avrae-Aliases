@@ -171,7 +171,6 @@
 # TODO: Expanded Missing Object Invisibility
 # TODO: Expanded Missing Overcharge Blaster
 # TODO: Expanded Missing Overcharge Droid
-# TODO: Expanded Missing Overwatch
 # TODO: Expanded Missing Restore Functionality
 # TODO: Expanded Missing Scattershot
 # TODO: Expanded Missing See Through Cameras

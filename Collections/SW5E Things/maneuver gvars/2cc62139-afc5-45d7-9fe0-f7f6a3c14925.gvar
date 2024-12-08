@@ -18,6 +18,7 @@ def maneuver(args):
     sm = a.get("sm")
     mm = a.get('mm')
     fs = a.get('fs')
+    ku = a.get('ku')
 
     if sm:
         c.create_cc_nx("Superiority Mastery", 0, c.stats.prof_bonus, "long", "square")
@@ -26,11 +27,11 @@ def maneuver(args):
     feature = get_maneuver(args)
 
     # Param Parsing
-    i = '-i' in args
+    i = '-i' in args or ku
     crit = 'crit' in args
     fail = 'fail' in args
     pss = 'pass' in args
-    superiorityDice = '1d4' if lvl < 5 or sm else '1d6' if lvl < 9 else '1d8' if lvl < 13 else '1d10' if lvl < 16 else '1d12'
+    superiorityDice = '1d4' if lvl < 5 or sm or ku else '1d6' if lvl < 9 else '1d8' if lvl < 13 else '1d10' if lvl < 16 else '1d12'
     superiorityDice += f"mi{a.last('mi')}" if a.last('mi') else f"mi{2 if 'd4' in superiorityDice or 'd6' in superiorityDice else 3 if 'd8' in superiorityDice else 4 if 'd10' in superiorityDice else 5}" if "PerfectManeuver" in feats.get("Discoveries",[]) else ""
     superiorityDice = superiorityDice.replace('1d', '2d') + "kh1" if a.last('savage') or 'adv' in args else superiorityDice
 
@@ -204,6 +205,9 @@ def maneuver(args):
 
         if fs:
             out += f''' -f "Field Surgeon ({"-1" if not i else ""})|{c.cc_str("Field Surgeon")}\nWhenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, if the creature is the target of your Critical Analysis, you can instead choose the maximum on both dice. Once you’ve used this feature, you must finish a short or long rest before you can use it again. Starting at 11th level, you can use it twice before a rest, but only once on the same turn."'''
+        
+        if ku:
+            out += f''' -f "Knowledge Unbound|You are the pinnacle of your pursuit. Your Intelligence score increases by 4. Your maximum for that score increases by 4. Additionally, you can use any maneuver you know without expending a superiority die, rolling a d4 instead." '''
 
 
     return out

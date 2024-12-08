@@ -16465,6 +16465,93 @@
     "concentration": true
   },
   {
+    "name": "Overwatch",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "special_reactions",
+        "value": "0 if spell_level == 2 else spell_level / 2"
+      },
+      {
+        "type": "variable",
+        "name": "numDie",
+        "value": "1",
+        "higher": {
+          "3": "1",
+          "4": "2",
+          "5": "2",
+          "6": "3",
+          "7": "3",
+          "8": "4",
+          "9": "4"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Overwatch - Parent",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Overwatch - Attack",
+                  "automation": [
+                    {
+                      "type": "attack",
+                      "hit": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc.split()[-1]}d8 [energy]"
+                        }
+                      ],
+                      "miss": []
+                    },
+                    {
+                      "type": "text",
+                      "text": "Make a ranged tech attack. On a hit, the target takes {ieffect.desc.split()[01]}d8 energy damage, and has disadvantage on the triggering attack."
+                    }
+                  ],
+                  "activation_type": 4
+                }
+              }
+            ],
+            "desc": "{numDie}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power, you create numerous tiny sentry turrets which float in your space, waiting for the right moment to protect. For the duration, whenever a creature you can see within 120 feet of you makes an attack, you may use your reaction to direct your turrets to fire on the creature, providing cover fire. Make a ranged tech attack. On a hit, the target takes 1d8 energy damage, and has disadvantage on the triggering attack.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, you gain a number of special reactions equal to half the level of the tech slot used, that you can only use to make a ranged tech attack with this power. You can only take one reaction per turn. When you cast this power using a tech slot of 4th level or higher, the damage increases by 1d8 for every two slot levels above 2nd."
+      },
+      {
+        "type": "text",
+        "text": "{special_reactions}",
+        "title": "Special Reactions"
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "When you cast this power, you create numerous tiny sentry turrets which float in your space, waiting for the right moment to protect. For the duration, whenever a creature you can see within 120 feet of you makes an attack, you may use your reaction to direct your turrets to fire on the creature, providing cover fire. Make a ranged tech attack. On a hit, the target takes 1d8 energy damage, and has disadvantage on the triggering attack.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, you gain a number of special reactions equal to half the level of the tech slot used, that you can only use to make a ranged tech attack with this power. You can only take one reaction per turn. When you cast this power using a tech slot of 4th level or higher, the damage increases by 1d8 for every two slot levels above 2nd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Paralyze Creature",
     "level": 5,
     "school": "Tech",
@@ -22649,7 +22736,7 @@
         "effects": [
           {
             "type": "roll",
-            "dice": "1d8",
+            "dice": "1d8 [kinetic]",
             "name": "damage",
             "higher": {
               "2": "1d8",
@@ -22668,7 +22755,7 @@
             "fail": [
               {
                 "type": "damage",
-                "damage": "{damage} [kinetic]"
+                "damage": "{damage}"
               },
               {
                 "type": "ieffect2",
@@ -22694,7 +22781,7 @@
             "success": [
               {
                 "type": "damage",
-                "damage": "({damage}/2}) [kinetic]"
+                "damage": "({damage}/2)"
               }
             ]
           }

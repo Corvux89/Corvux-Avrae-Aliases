@@ -1,0 +1,13 @@
+<drac2>
+effect_name = "Reaction Used"
+stack = None
+parent = "Not available outside combat"
+if com := combat():
+    if com.me:
+        if parent := com.me.get_effect(effect_name):
+            stack = com.me.add_effect(f"{effect_name} (x{len(parent.children)+2})", parent=parent)
+        else:
+            parent = com.me.add_effect(effect_name, duration=1)
+
+return f'''embed -title "Reaction Used" -f "{name}|{stack or parent}" '''
+</drac2>
