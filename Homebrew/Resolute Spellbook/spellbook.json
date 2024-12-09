@@ -16503,18 +16503,24 @@
                   "name": "Overwatch - Attack",
                   "automation": [
                     {
-                      "type": "attack",
-                      "hit": [
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
                         {
-                          "type": "damage",
-                          "damage": "{ieffect.desc.split()[-1]}d8 [energy]"
+                          "type": "attack",
+                          "hit": [
+                            {
+                              "type": "damage",
+                              "damage": "{ieffect.desc.split()[-1]}d8 [energy]"
+                            }
+                          ],
+                          "miss": []
                         }
-                      ],
-                      "miss": []
+                      ]
                     },
                     {
                       "type": "text",
-                      "text": "Make a ranged tech attack. On a hit, the target takes {ieffect.desc.split()[01]}d8 energy damage, and has disadvantage on the triggering attack."
+                      "text": "Make a ranged tech attack. On a hit, the target takes {ieffect.desc.split()[-1]}d8 energy damage, and has disadvantage on the triggering attack."
                     }
                   ],
                   "activation_type": 4
