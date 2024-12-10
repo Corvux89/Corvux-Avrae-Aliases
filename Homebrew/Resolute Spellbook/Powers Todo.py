@@ -1,6 +1,3 @@
-# TODO: Expanded Missing Lightning Surge
-# TODO: Expanded Missing Mass Dun Möch
-# TODO: Expanded Missing Mass Mind Trick
 # TODO: Expanded Missing Preservation
 # TODO: Expanded Missing Respite
 # TODO: Expanded Missing Skill Proficiency

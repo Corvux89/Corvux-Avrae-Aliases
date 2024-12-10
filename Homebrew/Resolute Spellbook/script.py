@@ -17,6 +17,7 @@ site_list = [x.get('name') for x in site_spells]
 # Expanded Force Powers
 # https://www.gmbinder.com/share/-MDosNzOCLn0_ColYfBf
 # New Tech Powers Aziz
+# https://www.gmbinder.com/share/-My-EnFn7t2vE3kxawC0
 with open("Homebrew\expanded.json", "r") as outfile:
     expanded_list = json.load(outfile)
 

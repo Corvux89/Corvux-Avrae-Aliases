@@ -13810,6 +13810,107 @@
     "concentration": false
   },
   {
+    "name": "Lightning Surge",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6 [lightning]",
+        "name": "damage",
+        "higher": {
+          "3": "1d6",
+          "4": "2d6",
+          "5": "3d6",
+          "6": "4d6",
+          "7": "6d6",
+          "8": "7d6",
+          "9": "8d6"
+        }
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Lightning Surge",
+            "duration": "2",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Lightning Surge - Retaliate",
+                  "automation": [
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "damage",
+                          "damage": "{ieffect.desc.split()[-1]} [lightning]"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": "The next time a creature hits you with a melee attack before the end of your next turn, that creature takes 1d6 lightning damage, can't make any more attacks for the rest of the turn, and can't take reactions until the start of its next turn. The residual electricity then fades."
+                    }
+                  ],
+                  "activation_type": 2
+                }
+              }
+            ],
+            "end": true,
+            "desc": "{spell_level-1}"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2)",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You unleash a burst of Force lightning around yourself, causing bolts to leap from you and arc toward each creature of your choice within range. Each target must make a Dexterity saving throw, taking 2d6 lightning damage on a failed save, or half as much damage on a successful one.\n\nIn addition, residual electricity continues crackling around you. The next time a creature hits you with a melee attack before the end of your next turn, that creature takes 1d6 lightning damage, can't make any more attacks for the rest of the turn, and can't take reactions until the start of its next turn. The residual electricity then fades.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage (both initial and subsequent) increases by 1d6 for each slot level above 2nd."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self (20-foot radius)",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You unleash a burst of Force lightning around yourself, causing bolts to leap from you and arc toward each creature of your choice within range. Each target must make a Dexterity saving throw, taking 2d6 lightning damage on a failed save, or half as much damage on a successful one.\n\nIn addition, residual electricity continues crackling around you. The next time a creature hits you with a melee attack before the end of your next turn, that creature takes 1d6 lightning damage, can't make any more attacks for the rest of the turn, and can't take reactions until the start of its next turn. The residual electricity then fades.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage (both initial and subsequent) increases by 1d6 for each slot level above 2nd.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "(SW) Locate Creature",
     "level": 4,
     "school": "Force",
@@ -14316,6 +14417,75 @@
     "concentration": false
   },
   {
+    "name": "Mass Dun Moch",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Mass Dun Moch - Charmed by {caster.name}",
+                "duration": "10",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Charm",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "An affected creature can't move away from you, and any attack it makes or offensive power it casts must include you as one of the targets. At the end of each of its turns, an affected creature can repeat the saving throw, ending this power on itself on a success."
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You manipulate numerous creatures into fighting you. Creatures of your choice within 30 feet of you that you can see and can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this power.\n\nAn affected creature can't move away from you, and any attack it makes or offensive power it casts must include you as one of the targets. At the end of each of its turns, an affected creature can repeat the saving throw, ending this power on itself on a success. If you choose, you can end this power on your turn (no action required). This power has no effect on droids or constructs."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You manipulate numerous creatures into fighting you. Creatures of your choice within 30 feet of you that you can see and can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this power.\n\nAn affected creature can't move away from you, and any attack it makes or offensive power it casts must include you as one of the targets. At the end of each of its turns, an affected creature can repeat the saving throw, ending this power on itself on a success. If you choose, you can end this power on your turn (no action required). This power has no effect on droids or constructs.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Mass Hysteria",
     "level": 9,
     "school": "Force",
@@ -14383,6 +14553,50 @@
     "ritual": false,
     "description": "Each creature in a 30-foot cube within range must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this power, the creature is incapacitated and has a speed of 0.\r\n\r\nThe power ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor. This power has no effect on droids or constructs.",
     "concentration": true
+  },
+  {
+    "name": "Mass Mind Trick",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Mass Mind Trick - Charmed by {caster.name}",
+                "duration": "10",
+                "desc": "Has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the power ends"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You manipulate the perception of others with theForce to draw attention to yourself, causing creatures of your choice that you can see within range to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the power ends. The power ends if you are incapacitated."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "You manipulate the perception of others with theForce to draw attention to yourself, causing creatures of your choice that you can see within range to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the power ends. The power ends if you are incapacitated.",
+    "higherlevels": "",
+    "concentration": false
   },
   {
     "name": "Mass Repair Droid",
@@ -14475,7 +14689,7 @@
                             {
                               "type": "damage",
                               "damage": "4d12+8d12 [kinetic]",
-                              "fixedValue": true
+                              "fixedValue": false
                             }
                           ],
                           "onFalse": [
@@ -14486,7 +14700,7 @@
                                 {
                                   "type": "damage",
                                   "damage": "4d12 [kinetic]",
-                                  "fixedValue": true
+                                  "fixedValue": false
                                 }
                               ],
                               "onFalse": []

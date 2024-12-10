@@ -8,7 +8,10 @@ cover to a target using `!cover -cover [type] -t [target]`
 `-t [target]` - The target of the cover. If not provided will apply to the player running the command
 
 **Types of Cover**
-1/4 Cover = 'quarter', '1/4'
-1/2 Cover = 'half', '1/2'
-3/4 Cover = 'three', '3', '3/4'
-Full Cover = 'total', 'complete', 'full'
+|Cover Type | Keyword | Effect |
+|-----------|---------|--------|
+| One-Quarter| 'quarter', '1/4'| +2 AC |
+| One-half | 'half', '1/2' | +3 AC|
+| Three-Quarter | 'three', '3/4' | +5 AC|
+| Full | 'total', 'complete', 'full', | |
+| None | 'none', 'clear' | Clears effects |

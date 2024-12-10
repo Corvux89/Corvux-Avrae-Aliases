@@ -7,7 +7,7 @@ cover = &ARGS&[0]
 dur = 1
 
 if not cover:
-    err(f"Specify the type of cover")
+    return f'''help {ctx.alias} -here'''
 
 base = f'''embed -thumb {image} -color {color}'''
 
@@ -36,7 +36,7 @@ elif cover.lower() in ['total', 'complete', 'full', 'f']:
 elif cover.lower() in ['none', 'clear']:
     effect = None
 else:
-    err(f"{cover} is not a valid option")
+    return f'''help {ctx.alias} -here'''
 
 if com:
     if targ:

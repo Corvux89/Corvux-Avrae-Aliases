@@ -16,3 +16,24 @@ After importing run `!swlevel` to setup your levels, and hit die, and any custom
  
 [Spell Tome](https://avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc)
 [Racecast Tome](https://avrae.io/homebrew/spells/63f6250d10480b313f4ee666)
+
+__Server Customization Options__
+# Server Variable: sw5e
+`!svar sw5e {}`
+
+Example:
+`!svar sw5e {"castMod": "wis"}`
+
+## castMod
+Can be set using `!swconfig castStat` to override the casting stat used in `power`. This will set all powers to be cast using this stat.
+This would be a `str` of the casting abbreviation.
+##  levels
+An array of GVAR's for custom class GVARs
+## actions
+An array of GVAR's for custom additional actions
+## race
+An array of GVAR's for custom species
+## spells
+An array of GVAR's for custom spell overrides. This is used if an archetype has modified version of a spell
+
+

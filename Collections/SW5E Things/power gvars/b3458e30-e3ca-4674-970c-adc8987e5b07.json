@@ -509,6 +509,11 @@
         "level": 0,
         "classes": "Dark Side Power"
     },
+    "lightning surge": {
+        "name": "Lightning Surge",
+        "level": 2,
+        "classes": "Dark Side Power"
+    },
     "(sw) locate creature": {
         "name": "(SW) Locate Creature",
         "level": 4,
@@ -1428,11 +1433,6 @@
         "name": "Healing Meditation",
         "level": 2,
         "classes": "Light Side Power"
-    },
-    "lightning surge": {
-        "name": "Lightning Surge",
-        "level": 2,
-        "classes": "Dark Side Power"
     },
     "mass dun moch": {
         "name": "Mass Dun Moch",

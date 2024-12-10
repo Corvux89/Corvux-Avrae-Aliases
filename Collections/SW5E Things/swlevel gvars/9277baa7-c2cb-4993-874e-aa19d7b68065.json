@@ -844,7 +844,8 @@
                         {
                             "type": "roll",
                             "dice": "1d4",
-                            "name": "Bonus"
+                            "name": "Bonus",
+                            "fixedValue": true
                         },
                         {
                             "type": "counter",

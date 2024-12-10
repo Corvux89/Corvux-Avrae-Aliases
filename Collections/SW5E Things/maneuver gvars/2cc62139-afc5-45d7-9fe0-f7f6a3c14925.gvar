@@ -37,7 +37,7 @@ def maneuver(args):
 
     type = a.last('type') if a.last('type') else feature.sub
     maneuverMod = get_mod(type)
-    cc = "Superiority Mastery" if sm else "Channel the Force" if mm else "Superiority Dice"
+    cc = "Superiority Mastery" if sm else "Channel the Force" if mm else None if ku else "Superiority Dice"
     superiorityDice += f"+{ceil(maneuverMod/2)}" if mm else ''
     ccNum = 0 if i else feature.ccnum if feature and "ccnum" in feature else -1
     cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
@@ -169,7 +169,7 @@ def maneuver(args):
 
         r = ["uses",
              feature.validUse,
-             f'{cc}{" ("+("+" if ccNum>0 else "")+str(ccNum)+")" if ccNum else ""}|{c.cc_str(cc)}' if cc and c.cc_exists(cc) else "*None*",
+             f'{cc}{" ("+("+" if ccNum>0 else "")+str(ccNum)+")" if ccNum else ""}|{c.cc_str(cc)}' if cc and c.cc_exists(cc) else "",
              color,
              image,
              dice,
@@ -238,14 +238,15 @@ def do_roll(feature, superiorityDice, maneuverMod, args):
 
 def get_level():
     lvl = 0
+    subclasses = load_json(c.get_cvar("subclass", "{}"))
 
-    if load_json(c.get_cvar("subclass","{}")).get("BerserkerLevel","") == "Champion":
+    if subclasses.get("BerserkerLevel","") == "Champion":
         lvl = max(int(c.levels.get("Berserker", 0)), lvl)
 
-    if load_json(c.get_cvar("subclass", "{}")).get("ScoutLevel", "") == "Deadeye":
+    if subclasses.get("ScoutLevel", "") == "Deadeye":
         lvl = max(int(c.levels.get("Scout", 0)),lvl)
 
-    if load_json(c.get_cvar("subclass", "{}")).get("ConsularlightLevel", "") == "Tutelage (Companionless)":
+    if subclasses.get("ConsularlightLevel", "") == "Tutelage (Companionless)":
         lvl = max(int(c.levels.get('Consularlight', 0)),lvl)
 
     lvl = max(int(c.levels.get("Fighter",0)), int(c.levels.get("Scholar",0)), lvl)
