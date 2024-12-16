@@ -1,6 +1,8 @@
 import json
 import urllib.request
 
+print("starting")
+
 to_automate_keywords = ["saving throw", "dc", "shocked until"]
 
 automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
@@ -112,6 +114,6 @@ def get_type(object, type_list):
         for child in object["hit"]:
             get_type(child,type_list)
 
-processBestiaryBuilderAPI("65a99d77e03abba02d8599c1", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w")
+processBestiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w")
 processBestiaryBuilderAPI("65a9a0e2b4f2853f0d4cbba4", 'Bestiaries\\Resolute Bestiary\\KFC Space.json', "a")
 processBestiaryBuilderAPI("65e4a5606c27b3711b8a9bd1", None, "a")
