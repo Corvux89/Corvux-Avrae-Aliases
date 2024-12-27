@@ -1364,6 +1364,11 @@
         "level": 1,
         "classes": "Light Side Power"
     },
+    "preservation": {
+        "name": "Preservation",
+        "level": 2,
+        "classes": "Light Side Power"
+    },
     "retribution": {
         "name": "Retribution",
         "level": 1,
@@ -1443,11 +1448,6 @@
         "name": "Mass Mind Trick",
         "level": 2,
         "classes": "Universal Power"
-    },
-    "preservation": {
-        "name": "Preservation",
-        "level": 2,
-        "classes": "Light Side Power"
     },
     "respite": {
         "name": "Respite",

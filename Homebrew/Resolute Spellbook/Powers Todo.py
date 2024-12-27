@@ -1,4 +1,3 @@
-# TODO: Expanded Missing Preservation
 # TODO: Expanded Missing Respite
 # TODO: Expanded Missing Skill Proficiency
 # TODO: Expanded Missing Transfer Force

@@ -9,8 +9,8 @@ __Available Arguments__
 `enemy` - Specify if the target is an enemy or not (not required if the target is a monster)
  
 __Variations__
-                -> `Rancor's Discipline` will work if setup via `!feats rancorsdisc`
+                -> `Rancor's Discipline` will work if setup via automated actions
 **Geneticist**  -> Will account for Mutagenic Transformation
-                -> `Adapted Hide` will work as well if setup in `!sch discovery`
+                -> `Adapted Hide` will work as well if setup via automated actions
 **Politician**  -> Weill setup Motivating Diplomat
-                -> `Charming Feint` will work as well if setup in `!sch discovery`
+                -> `Charming Feint` will work as well if setup via automated actions

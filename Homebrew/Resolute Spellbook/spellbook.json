@@ -17260,6 +17260,31 @@
     "concentration": false
   },
   {
+    "name": "Preservation",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You touch a corpse or other remains. For the next 10 days, the target is protected from decay and can't become undead.\n\nThe power also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this power don't count against the time limit of powers such as revitalize.\n\nAlternatively, you can touch a living creature when you cast this power. For the next hour, the target can survive within the vacuum of space. If the target breathes, it still requires oxygen to breathe. This power has no effect on dead droids or constructs."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Special",
+    "ritual": false,
+    "description": "You touch a corpse or other remains. For the next 10 days, the target is protected from decay and can't become undead.\n\nThe power also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this power don't count against the time limit of powers such as revitalize.\n\nAlternatively, you can touch a living creature when you cast this power. For the next hour, the target can survive within the vacuum of space. If the target breathes, it still requires oxygen to breathe. This power has no effect on dead droids or constructs.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Pressure Crush",
     "level": 0,
     "school": "Tech",
