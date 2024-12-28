@@ -1,6 +1,3 @@
-# TODO: Expanded Missing Respite
-# TODO: Expanded Missing Skill Proficiency
-# TODO: Expanded Missing Transfer Force
 # TODO: Expanded Missing Disruption
 # TODO: Expanded Missing Farseeing
 # TODO: Expanded Missing Force Concurrence

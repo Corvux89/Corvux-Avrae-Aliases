@@ -18221,6 +18221,50 @@
     "concentration": true
   },
   {
+    "name": "Respite",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "-(2d6+{caster.spellbook.spell_mod}) [healing]",
+            "higher": {
+              "3": "-1d6",
+              "4": "-2d6",
+              "5": "-3d6",
+              "6": "-4d6",
+              "7": "-5d6",
+              "8": "-6d6",
+              "9": "-7d6"
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You touch one willing creature. Once before the power ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after the saving throw. The power then ends.\r\n\r\nThis power's die increases at higher levels: to a d6 at 5th level, a d8 at 11th level, and a d10 at 17th level."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 bonus action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "Choose one creature that you can see within range. The creature can immediately use its reaction to regain hit points equal to 2d6 + your forcecasting ability modifier. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the healing increases by 1d6 for each slot level above 1st.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "Restoration",
     "level": 2,
     "school": "Force",
@@ -20494,6 +20538,31 @@
     "ritual": false,
     "description": "Your power with the Force deepens a creature's understanding of its own talent. You touch one willing creature and give it expertise in one skill of your choice; until the power ends, the creature doubles its proficiency bonus for ability checks it makes that use the chosen skill. \r\n\r\nYou must choose a skill in which the target is proficient and that isn't already benefiting from an effect, such as Expertise, that doubles its proficiency bonus.",
     "concentration": true
+  },
+  {
+    "name": "Skill Proficiency",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "Through the Force, you gain greater knowledge from those who came before you. Choose one skill in which you lack proficiency. For the power\u2019s duration, you have proficiency in the chosen skill. The power ends early if you cast it again."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "Through the Force, you gain greater knowledge from those who came before you. Choose one skill in which you lack proficiency. For the power\u2019s duration, you have proficiency in the chosen skill. The power ends early if you cast it again.",
+    "higherlevels": "",
+    "concentration": false
   },
   {
     "name": "Skill Protocol",
@@ -22891,6 +22960,69 @@
     "duration": "1 minute",
     "ritual": false,
     "description": "You emit a tranquilizing dart that knocks a creature unconscious. Roll 5d8; if the creature's remaining hit points are less than the total, the creature falls unconscious until the power ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. This power has no effect on droids or constructs.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, you can target an additional creature for each slot level above 1st. For each target, roll 5d8 separately.",
+    "concentration": false
+  },
+  {
+    "name": "Transfer Force",
+    "level": 2,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "2d6 [necrotic]",
+        "name": "damage",
+        "higher": {
+          "3": "1d6",
+          "4": "2d6",
+          "5": "3d6",
+          "6": "4d6",
+          "7": "5d6",
+          "8": "6d6",
+          "9": "7d6"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "con",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              }
+            ],
+            "success": [
+              {
+                "type": "damage",
+                "damage": "({damage}/2)",
+                "fixedValue": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You violently rip life-giving Force from a surrounding area to bolster that of a creature. Choose a 10-foot-radius sphere centered on a point within range. Each creature of your choice in that area must make a Constitution saving throw, taking 2d6 necrotic damage on a failed save, or half as much damage on a successful one. Unenhanced vegetation in that area withers.\n\nIn addition, one creature of your choice in that area can spend and roll one of its unspent Hit Dice and regain a number of hit points equal to the roll plus your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd, and the number of Hit Dice that can be spent and added to the healing roll increases by one for each slot above 2nd."
+      }
+    ],
+    "classes": "Dark",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You violently rip life-giving Force from a surrounding area to bolster that of a creature. Choose a 10-foot-radius sphere centered on a point within range. Each creature of your choice in that area must make a Constitution saving throw, taking 2d6 necrotic damage on a failed save, or half as much damage on a successful one. Unenhanced vegetation in that area withers.\n\nIn addition, one creature of your choice in that area can spend and roll one of its unspent Hit Dice and regain a number of hit points equal to the roll plus your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot above 2nd, and the number of Hit Dice that can be spent and added to the healing roll increases by one for each slot above 2nd.",
+    "higherlevels": "",
     "concentration": false
   },
   {
