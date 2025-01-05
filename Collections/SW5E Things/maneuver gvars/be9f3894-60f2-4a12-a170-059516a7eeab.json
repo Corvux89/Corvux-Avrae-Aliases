@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Acid Burst",
+        "sub": "",
+        "roll": "#superiorityDice# [acid]",
+        "desc": "-title \"#name# #uses# Acid Burst!\" #desc# -footer \"#combatantFooter#\"",
+        "validUse": "-f \"Meta|**Damage**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you take the Attack action on your turn, you can replace one of your attacks with a sudden and violent expulsion of acidic fluid. You expend a superiority die, and cause all creatures within a 15-foot cone originating from you to make a Dexterity saving throw. On a failed save, they take damage equal to the number rolled on your superiority die plus your maneuver modifier.\"",
+        "save": {
+            "dc": "8+#prof_bonus#+#maneuverMod#",
+            "type": "dex",
+            "fail": {
+                "damage": "#diceTotal#"
+            },
+            "success": {
+                "damage": "(#diceTotal#/2)"
+            }
+        }
+    },
+    {
+        "name": "All In",
+        "sub": "",
+        "desc": "-title \"#name# is All In!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you make an attack roll, and the result is less than 20, you can expend a superiority die and roll it, adding it to the roll. If the resulting sum is 20 or 23, the attack is considered a critical hit.\""
+    },
+    {
+       "name": "Blind Luck",
+        "sub": "",
+        "desc": "-title \"#name# uses their Blind Luck!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you fail an ability check, you can expend a superiority die. If the result of your ability check plus the superiority die is within a range equal to half your proficiency bonus (rounded down) above or below the check’s DC, you pass the check instead.\""
+    },
+    {
+        "name": "Double Bluff",
+         "sub": "",
+         "desc": "-title \"#name# uses Double Bluff!\" #desc#",
+         "roll": "#superiorityDice#",
+         "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|If on the same round of combat that you have missed a weapon attack, an enemy also misses you with a weapon attack, you can expend a superiority die and make a single weapon attack, adding the results of your superiority die to both the attack and damage rolls.\""
+     }
+]

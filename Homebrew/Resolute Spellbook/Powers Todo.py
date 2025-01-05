@@ -1,4 +1,3 @@
-# TODO: Expanded Missing Disruption
 # TODO: Expanded Missing Farseeing
 # TODO: Expanded Missing Force Concurrence
 # TODO: Expanded Missing Force Stealth

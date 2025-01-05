@@ -3046,7 +3046,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     }
                 ]
             },
@@ -3176,7 +3176,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3262,7 +3262,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3296,7 +3296,7 @@
                         "hit": [
                             {
                                 "type": "damage",
-                                "damage": "1d6+{max(strengthMod,dexterityMod)} [sonic]",
+                                "damage": "1d6+max(strengthMod,dexterityMod) [sonic]",
                                 "overheal": false
                             },
                             {
@@ -3346,7 +3346,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3545,7 +3545,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3584,7 +3584,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3670,7 +3670,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3754,7 +3754,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",
@@ -3953,7 +3953,7 @@
                             }
                         ],
                         "miss": [],
-                        "attackBonus": "proficiencyBonus+{max(strengthMod,dexterityMod)}"
+                        "attackBonus": "proficiencyBonus+max(strengthMod,dexterityMod)"
                     },
                     {
                         "type": "counter",

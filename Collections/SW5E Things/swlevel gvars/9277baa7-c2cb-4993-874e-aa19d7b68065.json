@@ -1038,7 +1038,7 @@
             "languages": "Galactic Basic, Nautila",
             "size": "Medium",
             "creatureType": "Humanoid",
-            "speed": "35 ft., Swim 30 ft.",
+            "speed": "30 ft., Swim 30 ft.",
             "senses": "Darkvision 60 ft."
         }
     },
@@ -1302,7 +1302,6 @@
         ],
         "cvars": {
             "race": "Zabrak",
-            "senses": "Darkvision 60 ft.",
             "languages": "Galactic Basic, Zabraki",
             "speed": "30 ft."
         }

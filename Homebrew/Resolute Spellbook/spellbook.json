@@ -5444,6 +5444,75 @@
     "concentration": false
   },
   {
+    "name": "Disruption",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Disrupted by {caster.name}",
+                "duration": "10",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Disruption (End of Turn)",
+                    "style": "1",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "desc": "Unable to maintain concentration on powers."
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Through gentle use of the Force, you disrupt the focus of a creature you can see within range without harming it. The creature must make a Wisdom saving throw. On a success, it suffers no effect, and this power ends. On a failed save, the creature becomes unable to maintain concentration on powers for the duration of this power. Any ongoing power cast by the creature with a duration of concentration ends immediately, and it can't cast powers requiring concentration. The creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success. This power has no effect on droids or constructs."
+      }
+    ],
+    "classes": "Light",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 minute",
+    "ritual": false,
+    "description": "Through gentle use of the Force, you disrupt the focus of a creature you can see within range without harming it. The creature must make a Wisdom saving throw. On a success, it suffers no effect, and this power ends. On a failed save, the creature becomes unable to maintain concentration on powers for the duration of this power. Any ongoing power cast by the creature with a duration of concentration ends immediately, and it can't cast powers requiring concentration. The creature can repeat the Wisdom saving throw at the end of each of its turns, ending the effect on itself on a success. This power has no effect on droids or constructs.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "(SW) Dominate Beast",
     "level": 4,
     "school": "Force",

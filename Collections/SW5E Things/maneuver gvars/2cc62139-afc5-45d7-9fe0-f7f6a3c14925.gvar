@@ -84,7 +84,7 @@ def maneuver(args):
             damage.consolidated() + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage + (
                             "" if (target[0].set_hp(target[0].max_hp) if target[0].hp > target[0].max_hp else "") or (
                                 combatantFooter := combatantFooter + [
-                                    f' {str(target[0])}']) else "") if "damage" in feature else "" for target in targets]
+                                    f'{str(target[0])}']) else "") if "damage" in feature else "" for target in targets]
 
         # Temp HP
         targetTHP = [("" if (target[0].set_temp_hp(thp.total) if target[0].temp_hp < thp.total else "") or (
@@ -131,7 +131,7 @@ def maneuver(args):
                 if "damage" in option:
                     dmg = target[0].damage(option.damage + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage
                     s_str += f"{dmg}\n"
-                    combatantFooter += combatantFooter + [f' {str(target[0])}\n']
+                    combatantFooter = combatantFooter + [f'{str(target[0])}']
 
                 if "effect" in option:
                     if "parent" in option.effect and not (peff := com.me.get_effect(option.effect.name.replace("#target#", target[0].name))):
@@ -160,7 +160,7 @@ def maneuver(args):
         # Close off the fields
         targetCloser = ['"' for target in targets]
 
-        _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp<thp.total else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp>hp else "") or (combatantFooter:=combatantFooter+[f' {name}: {c.hp_str()}']) else "") if "damage" in feature else "") if not com and "self" in feature and feature.self else ""
+        _ = (("" if (c.set_temp_hp(thp.total) if c.temp_hp<thp.total else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") or f'**Temporary Hit Points:** {thp.total}' if "thp" in feature else "") or (c.modify_hp(-damage.total) or ("" if (c.set_hp(hp) if c.hp>hp else "") or (combatantFooter:=combatantFooter+[f'{name}: {c.hp_str()}']) else "") if "damage" in feature else "") if not com and "self" in feature and feature.self else ""
 
         save_results = ' '.join(["\n".join([get(x)[i] for x in
                                             ["targetHeader", "targetDamage", "targetTHP", "targetEffect", "targetText",
@@ -214,10 +214,15 @@ def maneuver(args):
 
 
 def get_maneuver(args):
-    gvar = load_json(get_gvar("9b5b0cde-2e3c-4a8a-a662-eb843f6e85a8"))
+    maneuver_gvar = ["9b5b0cde-2e3c-4a8a-a662-eb843f6e85a8"]
+    maneuver_gvar += load_json(get_svar("sw5e", "{}")).get('maneuvers', [])
+
     hlp = not args or ('?' in args or 'help' in args)
 
-    maneuver = [x for x in gvar if not hlp and args[0].lower() in x.name.lower()+(x.syn.lower() if "syn" in x else "")]
+    for g in maneuver_gvar:
+        maneuvers = load_json(get_gvar(g))
+        if (maneuver := [x for x in maneuvers if not hlp and args[0].lower() in x.name.lower()+(x.syn.lower() if "syn" in x else "")]) and len(maneuver) > 0:
+            break
 
     if len(maneuver) == 0:
         return err("Maneuver not found.")
