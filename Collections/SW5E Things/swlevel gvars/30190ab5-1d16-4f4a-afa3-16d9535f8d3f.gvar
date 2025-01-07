@@ -432,13 +432,11 @@ def additionalActions(actions=[], counters=[], stat=None):
     for a in ch.attacks:
         if a.name == "zCustomImport":
             try:
-                if 'unarmed melee attack' in a.raw['automation'][1]['text'].lower():
-                    action_str = a.raw['automation'][1]['text'].lower().split('\n')[1].split(', ')
-                else:
-                    action_str = a.raw['automation'][1]['text'].lower().split('\n')[0].split(', ')
+                action_str = a.raw['automation'][1]['text'].lower().split('\n')[1].split(', ')
             except:
                 break
             break
+
     if action_str != "":
         for g in additional_actions:
             add_actions = load_json(get_gvar(g))

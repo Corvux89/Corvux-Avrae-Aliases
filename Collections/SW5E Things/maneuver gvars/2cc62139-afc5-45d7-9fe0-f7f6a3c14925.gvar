@@ -43,7 +43,6 @@ def maneuver(args):
     cc_valid = (c.cc_exists(cc) and c.get_cc(cc) or i)
     cc_valid = False if (fs and not (c.cc_exists("Field Surgeon") and c.get_cc("Field Surgeon")) and not i) else cc_valid
     dmgType = a.last("dtype") if a.last("dtype") else feature.dmgType if "dmgType" in feature else "none"
-    targetDamage = []
 
     v = bool(lvl>=0 and cc_valid and feature)
     if v:
@@ -81,11 +80,8 @@ def maneuver(args):
         targetHeader = [f'-f "{target[0].name}|' for target in targets]
 
         # Damage
-        if "damage" in feature:
-            for target in targets:
-                dmg = target[0].damage(damage.consolidated() + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else ""))
-                targetDamage.append()
-        targetDamage = [dmg.damage + (
+        targetDamage = [target[0].damage(
+            damage.consolidated() + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else "")).damage + (
                             "" if (target[0].set_hp(target[0].max_hp) if target[0].hp > target[0].max_hp else "") or (
                                 combatantFooter := combatantFooter + [
                                     f'{str(target[0])}']) else "") if "damage" in feature else "" for target in targets]
@@ -160,18 +156,6 @@ def maneuver(args):
 
                 targetSave.append(f"{s_str}")
 
-        # Check
-        targetCheck = []
-        if "check" in feature:
-            for target in targets:
-                skill = [x for x,y in target[0].skills if feature.check.type.lower() in x.lower()][0]
-                adv = target[1].adv(False, True) if 'adv' in target[1] or 'dis' in target[1] else a.adv(False, True)
-                check_roll = vroll(target[0].skills[skill].d20(adv))
-                option = feature.check.fail if (check_roll.total < dc or fail) and not pss and "fail" in feature.check else feature.check.success if (check_roll.total >= dc or pss) and "success" in feature.check else {}
-                s_str = f"**{feature.check.type.title()} Check**: {check_roll}; {'Automatic Failure!' if fail else 'Automatic Pass!' if pss else 'Failure!' if check_roll.total < dc else 'Success!'}\n"
-                combatantFooter, s_str = resolve_options(target, option, combatantFooter, s_str)
-                targetCheck.append(f"{s_str}")
-
 
         # Close off the fields
         targetCloser = ['"' for target in targets]
@@ -180,7 +164,7 @@ def maneuver(args):
 
         save_results = ' '.join(["\n".join([get(x)[i] for x in
                                             ["targetHeader", "targetDamage", "targetTHP", "targetEffect", "targetText",
-                                             "targetSave", "targetCheck", "targetCloser"] if get(x) and get(x)[i]]) for i in
+                                             "targetSave", "targetCloser"] if get(x) and get(x)[i]]) for i in
                                  range(len(targets))])
 
         r = ["uses",
@@ -342,34 +326,3 @@ def get_max_roll(dmg_str):
         else:
             total_damage += f"+{part}"
     return total_damage
-
-def resolve_options(target, option, footer, s_str):
-    if "damage" in option:
-                    d_dict = target[0].damage(option.damage + ((f'+{target[1].join("d", "+")}') if target[1].get("d") else ""))
-                    dmg = d_dict.damage
-                    s_str += f"{dmg}\n"
-                    footer = footer + [f'{str(target[0])} ({"-" if d_dict.total > 0 else "+"}{d_dict.total} HP)']
-
-    if "effect" in option:
-        if "parent" in option.effect and not (peff := com.me.get_effect(option.effect.name.replace("#target#", target[0].name))):
-            peff = com.me.add_effect(option.effect.parent.name.replace("#target#", target[0].name),
-                                        end=True if "end" in option.effect.parent else False,
-                                        desc=option.effect.parent.desc if "desc" in option.effect.parent else "",
-                                        duration=option.effect.parent.duration if "duration" in option.effect.parent else -1,
-                                        concentration=option.effect.parent.conc if "conc" in option.effect.parent else False,
-                                        end=option.effect.parent.end if "end" in option.effect.parent else False)
-        else:
-            peff = get("peff")
-
-        eff = target[0].add_effect(option.effect.name.replace("#target#", target[0].name),
-                                    desc=option.effect.desc if "desc" in option.effect else "",
-                                    end=option.effect.end if "end" in option.effect else False,
-                                    duration=option.effect.duration if "duration" in option.effect else -1,
-                                    concentration=option.effect.conc if "conc" in option.effect else False,
-                                    passive_effects=option.effect.passive_effects if "passive_effects" in option.effect else None,
-                                    parent=peff,
-                                    buttons=option.effect.buttons if "buttons" in option.effect else None,
-                                    tick_on_combatant_id=com.me.id if 'tick_on_caster' in option.effect else False)
-        s_str+=f"{eff}\n"
-
-    return footer, s_str

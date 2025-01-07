@@ -1,4 +1,5 @@
 import json, os, requests
+import urllib.request as rq
 
 url = 'https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc'
 header = {"Authorization": os.environ.get('AVRAE_TOKEN')}
