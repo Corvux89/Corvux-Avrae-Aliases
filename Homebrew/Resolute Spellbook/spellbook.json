@@ -18090,6 +18090,41 @@
     "concentration": false
   },
   {
+    "name": "Rebound Shot",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "damage",
+            "damage": "1d8 [kinetic]",
+            "cantripScale": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "As part of the action used to cast this power, you choose a point you can see within your weapon's range, and attack with your weapon at that point. When the projectile arrives at the point, you momentarily gain sight from its location. Immediately after, you can redirect the projectile to make a ranged weapon attack against a target you can see from the projectile\u2019s location, as if you had made the attack with the weapon. You do not have advantage on the attack roll due to the target not being able to see you.\n\nThe attack deals an extra 1d8 damage of the weapon's type when you reach 5th level (1d8), 11th level (2d8), and 17th level (3d8)."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Varies",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "As part of the action used to cast this power, you choose a point you can see within your weapon's range, and attack with your weapon at that point. When the projectile arrives at the point, you momentarily gain sight from its location. Immediately after, you can redirect the projectile to make a ranged weapon attack against a target you can see from the projectile\u2019s location, as if you had made the attack with the weapon. You do not have advantage on the attack roll due to the target not being able to see you.\n\nThe attack deals an extra 1d8 damage of the weapon's type when you reach 5th level (1d8), 11th level (2d8), and 17th level (3d8).",
+    "concentration": false
+  },
+  {
     "name": "Rebuke",
     "level": 0,
     "school": "Force",
@@ -25462,5 +25497,109 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  }
+  },
+  {
+    "name": "Pummel",
+    "level": 1,
+    "school": "Force",
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+        "verbal": false,
+        "somatic": false,
+        "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "You continually pummel a creature you can see within range with debris. Make a ranged force attack against that creature. On a hit, the target takes 1d6 kinetic damage, and on each of your subsequent turns for the duration, you can use a bonus action to deal 1d6 kinetic damage to the target automatically. The power ends if the target is ever outside the power’s range or if it has total cover from you.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the initial damage increases by 1d6 and you can target an additional creature for each slot level above 1st. The creatures must be within 10 feet of each other when you target them.",
+    "concentration": true,
+    "automation": [
+        {
+            "type": "target",
+            "target": "self",
+            "effects": [
+                {
+                    "type": "ieffect2",
+                    "name": "Pummel - Parent",
+                    "duration": 10,
+                    "parent": "ieffect",
+                    "save_as": "peff",
+                    "buttons": [
+                        {
+                            "label": "Bonus Action - Pummel",
+                            "style": 1,
+                            "automation": [
+                                {
+                                    "type": "target",
+                                    "target": "children",
+                                    "effects": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "1d6 [kinetic]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "target",
+            "target": "each",
+            "effects": [
+              {
+                "type": "attack",
+                "hit": [
+                    {
+                        "type": "damage",
+                        "damage": "1d6 [kinetic]",
+                        "higher": {
+                            "2": "1d6",
+                            "3": "2d6",
+                            "4": "3d6",
+                            "5": "4d6",
+                            "6": "5d6",
+                            "7": "6d6",
+                            "8": "7d6",
+                            "9": "8d6"
+                        }
+
+                    },
+                    {
+                        "type": "ieffect2",
+                        "name": "Pummeled",
+                        "parent": "peff",
+                        "buttons": [
+                            {
+                                "label": "Remove Pummel",
+                                "style": "4",
+                                "automation": [
+                                    {
+                                        "type": "target",
+                                        "target": "self",
+                                        "effects": [
+                                            {
+                                                "type": "remove_ieffect"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "miss": []
+              }
+            ]
+        },
+        {
+            "type": "text",
+            "text": "You continually pummel a creature you can see within range with debris. Make a ranged force attack against that creature. On a hit, the target takes 1d6 kinetic damage, and on each of your subsequent turns for the duration, you can use a bonus action to deal 1d6 kinetic damage to the target automatically. The power ends if the target is ever outside the power’s range or if it has total cover from you.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the initial damage increases by 1d6 and you can target an additional creature for each slot level above 1st. The creatures must be within 10 feet of each other when you target them."
+        }
+    ]
+}
 ]

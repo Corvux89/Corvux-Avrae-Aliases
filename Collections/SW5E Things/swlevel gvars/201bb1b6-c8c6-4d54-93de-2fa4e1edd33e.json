@@ -1,0 +1,38 @@
+[
+    {
+        "Class": "Monk",
+        "subclass": "Kov'nyn",
+        "counters": [
+            {
+                "name": "Customized Gauntlet",
+                "level": 6,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "reset": "long",
+                "classLevel": "Monk",
+                "display": "bubble"
+            }
+        ],
+        "actions": []
+    }
+]

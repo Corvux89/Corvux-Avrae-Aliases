@@ -319,7 +319,6 @@
 # TODO: Aziz Tech Power Missing Boomerang Shot
 # TODO: Aziz Tech Power Missing Spectrum Blaster
 # TODO: Aziz Tech Power Missing Construct Turret
-# TODO: Aziz Tech Power Missing Rebound Shot
 # TODO: Aziz Tech Power Missing Plasma Weapon
 # TODO: (SW) Alter Self
 # TODO: (SW) Aura of Purity
