@@ -65,12 +65,10 @@
 # TODO: Expanded Missing Encode Data
 # TODO: Expanded Missing Encrypt
 # TODO: Expanded Missing Energized Strike
-# TODO: Expanded Missing Energized Web
 # TODO: Expanded Missing Enhance Ammunition
 # TODO: Expanded Missing Ferment
 # TODO: Expanded Missing Flare Strike
 # TODO: Expanded Missing Fluctuate Gravity
-# TODO: Expanded Missing Gravity Flush
 # TODO: Expanded Missing Jury-Rig
 # TODO: Expanded Missing Minor Slice
 # TODO: Expanded Missing Minor Tranquilizer
@@ -503,7 +501,6 @@
 # TODO: Oil Slick
 # TODO: On/Off
 # TODO: Overheat
-# TODO: Overload
 # TODO: Override Interface
 # TODO: Paralyze Creature
 # TODO: Phaseshift

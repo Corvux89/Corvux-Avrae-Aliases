@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Acid Burst",
+        "sub": "General",
+        "roll": "#superiorityDice# [acid]",
+        "desc": "-title \"#name# #uses# Acid Burst!\" #desc# -footer \"#combatantFooter#\"",
+        "validUse": "-f \"Meta|**Damage**: #dice#\n**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you take the Attack action on your turn, you can replace one of your attacks with a sudden and violent expulsion of acidic fluid. You expend a superiority die, and cause all creatures within a 15-foot cone originating from you to make a Dexterity saving throw. On a failed save, they take damage equal to the number rolled on your superiority die plus your maneuver modifier.\"",
+        "save": {
+            "dc": "8+#prof_bonus#+#maneuverMod#",
+            "type": "dex",
+            "fail": {
+                "damage": "#diceTotal#"
+            },
+            "success": {
+                "damage": "(#diceTotal#/2)"
+            }
+        }
+    },
+    {
+        "name": "All In",
+        "sub": "General",
+        "desc": "-title \"#name# is All In!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you make an attack roll, and the result is less than 20, you can expend a superiority die and roll it, adding it to the roll. If the resulting sum is 20 or 23, the attack is considered a critical hit.\""
+    },
+    {
+        "name": "Blind Luck",
+        "sub": "General",
+        "desc": "-title \"#name# uses their Blind Luck!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you fail an ability check, you can expend a superiority die. If the result of your ability check plus the superiority die is within a range equal to half your proficiency bonus (rounded down) above or below the check’s DC, you pass the check instead.\""
+    },
+    {
+        "name": "Double Bluff",
+        "sub": "General",
+        "desc": "-title \"#name# uses Double Bluff!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|If on the same round of combat that you have missed a weapon attack, an enemy also misses you with a weapon attack, you can expend a superiority die and make a single weapon attack, adding the results of your superiority die to both the attack and damage rolls.\""
+    },
+    {
+        "name": "Electrical Discharge",
+        "sub": "General",
+        "desc": "-title \"#name# uses Electrical Discharge!\" #desc# -footer \"#combatantFooter#\"",
+        "damage": "#superiorityDice#",
+        "dmgType": "lightning",
+        "validUse": "-f \"Meta|**Damage**: #damageText#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|When you succeed on a check to initiate or maintain a grapple, you can expend a superiority die. The creature takes lightning damage equal to the amount rolled on the die.\""
+    },
+    {
+        "name": "Idiot's Array",
+        "sub": "General",
+        "desc": "-title \"#name# uses Idiot's Array!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When a creature hits you with a weapon attack roll, you can expend a superiority die and roll it. On a roll of 4 or higher, you take minimum damage on the damage roll and subtract the value of the superiority die. On a roll of 3 or lower, you instead take the maximum.\""
+    },
+    {
+        "name": "Raise the Stakes",
+        "sub": "General",
+        "desc": "-title \"#name# raises the stakes!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When the target of your Critical Analysis feature makes an attack roll against you, you can use your reaction to expend a superiority die. Roll the die and subtract the result from the enemy’s attack roll, but add the result to their damage roll on a hit.\""
+    },
+    {
+        "name": "Snare Traps",
+        "sub": "General",
+        "desc": "-title \"#name# triggers some Snare Traps!\" #desc# -footer \"#combatantFooter#\"",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**DC**: #dc#\" #targetOutput# -f \"#counterChange#\" -f \"Effect|You can use an action and expend a superiority die to trigger painful snare traps. When you do, one creature within 60 feet of you or all creatures that are targeted by your Critical Analysis must make a Dexterity (Acrobatics) check against your maneuver save DC.\n\nOn a failure, they take damage equal to the roll and their movement speed becomes 0 until the end of your next turn.\"",
+        "check": {
+            "type": "acrobatics",
+            "dc": "8+#prof_bonus#+#maneuverMod#",
+            "fail": {
+                "damage": "#diceTotal#",
+                "effect": {
+                    "name": "Snared",
+                    "desc": "Movement is 0 until the end of next turn",
+                    "end": true,
+                    "tick_on_caster": true,
+                    "duration": 2
+                }
+            }
+        }
+    },
+    {
+        "name": "Superior Counterattack",
+        "sub": "General",
+        "desc": "-title \"#name# becomes superior!!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|Whenever an opportunity attack targets a friendly creature other than you that is in an area targeted by your Critical Analysis feature, you can expend a superiority die. The creature can use its reaction to make a single weapon attack, adding the superiority die roll to the attack roll.\""
+    },
+    {
+        "name": "Venomous Slash",
+        "sub": "General",
+        "desc": "-title \"#name# uses Venomous Slash!!\" #desc#",
+        "roll": "#superiorityDice#",
+        "validUse": "-f \"Meta|**Roll**: #dice#\" -f \"#counterChange#\" -f \"Effect|When you hit a creature with a melee attack, you may expend a superiority die to force it to make a Constitution saving throw. On a failed save, it takes poison damage equal to the result of the die and is poisoned until the start of your next turn.\"",
+        "save": {
+            "dc": "8+#prof_bonus#+#maneuverMod#",
+            "type": "con",
+            "fail": {
+                "damage": "#diceTotal#",
+                "effect": {
+                    "name": "Poisoned",
+                    "desc": "Disadvantage on attack rolls and ability checks",
+                    "passive_effects": {
+                        "check_dis": "all",
+                        "attack_advantage": -1
+                    },
+                    "tick_on_caster": true,
+                    "duration": 2
+                }
+            }
+        }
+    }
+]

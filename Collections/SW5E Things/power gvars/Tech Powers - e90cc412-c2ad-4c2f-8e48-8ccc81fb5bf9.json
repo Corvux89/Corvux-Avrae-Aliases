@@ -3,6 +3,10 @@
         "name": "Absorb Energy",
         "level": 1
     },
+    "accelerate": {
+        "name": "Accelerate",
+        "level": 0
+    },
     "acid dart": {
         "name": "Acid Dart",
         "level": 2
@@ -34,6 +38,10 @@
     "ballistic shield": {
         "name": "Ballistic Shield",
         "level": 4
+    },
+    "barrage": {
+        "name": "Barrage",
+        "level": 1
     },
     "burst of flame": {
         "name": "Burst of Flame",
@@ -171,12 +179,20 @@
         "name": "Encrypted Message",
         "level": 0
     },
+    "energized web": {
+        "name": "Energized Web",
+        "level": 0
+    },
     "energizing aura": {
         "name": "Energizing Aura",
         "level": 8
     },
     "energy shield": {
         "name": "Energy Shield",
+        "level": 1
+    },
+    "enhance greande/mine": {
+        "name": "Enhance Grenade/Mine",
         "level": 1
     },
     "enhance weapon": {
@@ -222,6 +238,10 @@
     "gleaming outline": {
         "name": "Gleaming Outline",
         "level": 1
+    },
+    "gravity flush": {
+        "name": "Gravity Flush",
+        "level": 0
     },
     "greater accelerate": {
         "name": "Greater Accelerate",
@@ -398,6 +418,10 @@
     "overload": {
         "name": "Overload",
         "level": 1
+    },
+    "overwatch": {
+        "name": "Overwatch",
+        "level": 2
     },
     "paralyze creature": {
         "name": "Paralyze Creature",
@@ -815,6 +839,10 @@
         "name": "Reboot",
         "level": 0
     },
+    "rebound shot": {
+        "name": "Rebound Shot",
+        "level": 0
+    },
     "remove virus": {
         "name": "Remove Virus",
         "level": 3
@@ -879,9 +907,17 @@
         "name": "Spectrum Bolt",
         "level": 1
     },
+    "spectrum discharge": {
+        "name": "Spectrum Discharge",
+        "level": 2
+    },
     "spectrum ray": {
         "name": "Spectrum Ray",
         "level": 0
+    },
+    "squad shield": {
+        "name": "Squad Shield",
+        "level": 7
     },
     "superior translation program": {
         "name": "Superior Translation Program",
@@ -909,6 +945,10 @@
     },
     "truth serum": {
         "name": "Truth Serum",
+        "level": 2
+    },
+    "tune-up": {
+        "name": "Tune-Up",
         "level": 2
     },
     "venomous strike": {
@@ -942,6 +982,10 @@
     "wire line": {
         "name": "Wire Line",
         "level": 0
+    },
+    "wire tow": {
+        "name": "Wire Tow",
+        "level": 2
     },
     "ionic strike": {
         "name": "Ionic Strike",

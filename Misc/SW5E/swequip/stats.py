@@ -79,8 +79,10 @@ def stripAmmo(name):
 total_count = 0
 w_list = []
 
-for filename in os.listdir('../../../Collections/SW5E Things (Old)/swequip/weapons'):
-    f=open(os.path.join('../../../Collections/SW5E Things (Old)/swequip/weapons', filename), encoding='utf-8')
+# Collections\SW5E Things\swequip gvars\weapons
+
+for filename in os.listdir('C:/Users/bryce/VSCode Projects/Corvux-Avrae-Aliases/Collections/SW5E Things/swequip gvars/weapons'):
+    f=open(os.path.join('C:/Users/bryce/VSCode Projects/Corvux-Avrae-Aliases/Collections/SW5E Things/swequip gvars/weapons', filename), encoding='utf-8')
     weapons = json.load(f)
     total_count += len(weapons)
     for w in weapons:
@@ -88,8 +90,8 @@ for filename in os.listdir('../../../Collections/SW5E Things (Old)/swequip/weapo
         w_list.append(weap) if weap not in w_list else ""
 
 
-with open("../../../Collections/SW5E Things (Old)/swequip/all weapons.json", "w") as outfile:
-    json.dump(w_list, outfile)
+# with open("../../../Collections/SW5E Things (Old)/swequip/all weapons.json", "w") as outfile:
+#     json.dump(w_list, outfile)
 
 
 print(f"Total Weapons: {total_count}")
