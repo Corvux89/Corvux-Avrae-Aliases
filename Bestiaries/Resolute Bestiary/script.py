@@ -3,7 +3,7 @@ import urllib.request
 
 print("starting")
 
-to_automate_keywords = ["saving throw", "dc", "shocked until"]
+to_automate_keywords = ["saving throw", "dc", "shocked until", 'to hit']
 
 automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
 todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
@@ -68,8 +68,19 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                     get_type(obj, auto_type)
 
                 s = {"name": mon.get('name'), 'ability': a.get('name'),
-                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp", "condition"]) else False,
+                     'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp", "condition", 'attack']) else False,
                      'source': name}
+                
+                # atk = json.dumps(a)
+
+                # if 'to hit' in atk and 'attack' not in auto_type:
+                #     s = {"name": mon.get('name'), 'ability': f"{a.get('name')} missing attack",
+                #     'complete': False,
+                #     'source': name,
+                #     'description': a.get('description'),
+                #     'automation': a.get('automation', {})
+                #     }
+                #     saveAuto.append(s)
 
                 if not s['complete']:
                     s['description'] = a.get('description')

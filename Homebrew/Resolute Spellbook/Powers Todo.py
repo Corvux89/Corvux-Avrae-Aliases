@@ -58,7 +58,6 @@
 # TODO: Expanded Missing Lesser Thought Bomb
 # TODO: Expanded Missing Master Darkness
 # TODO: Expanded Missing Master Psychometry
-# TODO: Expanded Missing Accelerate
 # TODO: Expanded Missing Analyzing Strike
 # TODO: Expanded Missing Chemical Shot
 # TODO: Expanded Missing Electromagnetic Pull
@@ -135,7 +134,6 @@
 # TODO: Expanded Missing Carbon Blast
 # TODO: Expanded Missing Chemical Spill
 # TODO: Expanded Missing Climbing Aid
-# TODO: Expanded Missing Cold Snap
 # TODO: Expanded Missing Conserve Air
 # TODO: Expanded Missing Continual Light
 # TODO: Expanded Missing Courser's Defense
@@ -170,7 +168,6 @@
 # TODO: Expanded Missing Smothering Cloud
 # TODO: Expanded Missing Spiked Armor
 # TODO: Expanded Missing Static Charge
-# TODO: Expanded Missing Subzero
 # TODO: Expanded Missing Suppress Gravity
 # TODO: Expanded Missing Tracing Blow
 # TODO: Expanded Missing Transfer Power
