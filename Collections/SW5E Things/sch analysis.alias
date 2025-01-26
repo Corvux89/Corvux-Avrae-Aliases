@@ -30,6 +30,7 @@ if v:
     if com and tar:
         base += f''' -title "{name} uses {eff} on {tar.name}" '''
         self_attacks, attacks, effects = [], [], {}
+
         if subclass == "Physician" and "HealthAdvisor" in discoveries:
             self_attacks.append({"attack": {"name": f"Health Advisor - {tar.name}", "_v": 2, "activation_type": "4", "verb": "uses",
                                   "automation": [{"type": "target", "target": "children", "effects": [
@@ -75,14 +76,16 @@ if v:
                 elif subclass == "Politician":
                     amt = ceil(mod/2)
                     effects["ac_bonus"] = amt
+                    tarEffects = effects
+
                     if "CharmingFeint" in discoveries:
-                        effects["damage_bonus"] = amt
+                        tarEffects["damage_bonus"] = amt
 
                     f_str.append("Motivating Diplomat|When you are the target of your Critical Analysis feature, you and all allies within 10 feet of you gain a bonus to their AC equal to half your Critical Analysis ability modifier.")
                     attacks.append({"attack": {"name": "Spread - Motivating Diplomat","_v": 2, "automation": [
                         {"type": "target", "target": "each", "effects": [
                             {"type": "ieffect2", "name": "Motivating Diplomat", "desc": f"While in range you gain a {amt} bonus to AC{f' ,and a {amt} bonus to damage' if 'CharmingFeint' in discoveries else '.'}",
-                             "parent": "ieffect", "effects": effects}
+                             "parent": "ieffect", "effects": tarEffects}
                         ]}
                     ]}})
 
