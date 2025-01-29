@@ -1,4 +1,3 @@
-# TODO [Resolute 2.0 Bestiary]: Gonk Droid (Kick)
 # TODO [Resolute 2.0 Bestiary]: Hutt Crime Lord (Hold-Out Blaster)
 # TODO [Resolute 2.0 Bestiary]: ISB Officer (Rally Troops (Recharge 5-6))
 # TODO [Resolute 2.0 Bestiary]: Jawa Shaman (Vibrostaff)
