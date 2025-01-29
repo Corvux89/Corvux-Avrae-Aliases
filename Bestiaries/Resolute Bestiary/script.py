@@ -70,17 +70,6 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
                 s = {"name": mon.get('name'), 'ability': a.get('name'),
                      'complete': True if any(x in auto_type for x in ["roll", "ieffect2", "save", "variable", "check", "temphp", "condition", 'attack']) else False,
                      'source': name}
-                
-                # atk = json.dumps(a)
-
-                # if 'to hit' in atk and 'attack' not in auto_type:
-                #     s = {"name": mon.get('name'), 'ability': f"{a.get('name')} missing attack",
-                #     'complete': False,
-                #     'source': name,
-                #     'description': a.get('description'),
-                #     'automation': a.get('automation', {})
-                #     }
-                #     saveAuto.append(s)
 
                 if not s['complete']:
                     s['description'] = a.get('description')
@@ -126,5 +115,3 @@ def get_type(object, type_list):
             get_type(child,type_list)
 
 processBestiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w")
-# processBestiaryBuilderAPI("65a9a0e2b4f2853f0d4cbba4", 'Bestiaries\\Resolute Bestiary\\KFC Space.json', "a")
-# processBestiaryBuilderAPI("65e4a5606c27b3711b8a9bd1", None, "a")
