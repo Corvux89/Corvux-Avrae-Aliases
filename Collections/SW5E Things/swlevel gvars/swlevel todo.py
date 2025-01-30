@@ -1,5 +1,3 @@
-# TODO: Race - Aing-Tii
-# TODO: Race - Aleena
 # TODO: Race - Anomid
 # TODO: Race - Anx
 # TODO: Race - Anzellan

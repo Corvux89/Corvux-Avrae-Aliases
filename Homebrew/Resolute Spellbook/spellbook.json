@@ -7082,6 +7082,43 @@
     "concentration": false
   },
   {
+    "name": "Farseeing",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You gain a vague, momentary impression of events happening around a particular creature in some distant place. The target must make a Wisdom saving throw, which is modified by how well you know the target. A dead target automatically fails this saving throw. If a target knows you're casting this power, it can fail the saving throw voluntarily if it wants to be observed.\n\n```+-------------------------------------------+---------------+\n| Knowledge                                 | Save Modifier |\n+===========================================+===============+\n| Secondhand (you have heard of the target) | +5            |\n+-------------------------------------------+---------------+\n| Firsthand (you have met the target)       | 0             |\n+-------------------------------------------+---------------+\n| Familiar (you know the target well)       | \n5            |\n+-------------------------------------------+---------------+```\n\nOn a failed save, you learn the target's location if it is on the same planet as you. Otherwise, you gain a vague sense of its surroundings. You also learn its general state of health--unharmed, wounded (has more than half of its maximum hit points), badly wounded (has 25 to 50 percent of its maximum hit points), near death (has less than 25 percent of its maximum hit points), dying (has 0 hit points), or dead. Finally, you learn what it's currently doing, and any strong emotions it is presently feeling. You can also impart a message of 10 words or less to it."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 minute",
+    "range": "Unlimited",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 round",
+    "ritual": false,
+    "description": "You gain a vague, momentary impression of events happening around a particular creature in some distant place. The target must make a Wisdom saving throw, which is modified by how well you know the target. A dead target automatically fails this saving throw. If a target knows you're casting this power, it can fail the saving throw voluntarily if it wants to be observed.\n\n```+-------------------------------------------+---------------+\n| Knowledge                                 | Save Modifier |\n+===========================================+===============+\n| Secondhand (you have heard of the target) | +5            |\n+-------------------------------------------+---------------+\n| Firsthand (you have met the target)       | 0             |\n+-------------------------------------------+---------------+\n| Familiar (you know the target well)       | \n5            |\n+-------------------------------------------+---------------+```\n\nOn a failed save, you learn the target's location if it is on the same planet as you. Otherwise, you gain a vague sense of its surroundings. You also learn its general state of health--unharmed, wounded (has more than half of its maximum hit points), badly wounded (has 25 to 50 percent of its maximum hit points), near death (has less than 25 percent of its maximum hit points), dying (has 0 hit points), or dead. Finally, you learn what it's currently doing, and any strong emotions it is presently feeling. You can also impart a message of 10 words or less to it.",
+    "higherlevels": "",
+    "concentration": false
+  },
+  {
     "name": "(SW) Fear",
     "level": 1,
     "school": "Force",
@@ -7692,6 +7729,31 @@
     "duration": "24 hours",
     "ritual": false,
     "description": "You shroud or alter the aura of a creature or object you touch so that Force powers reveal false information about it. The target can be a willing creature or an object that isn't being carried or worn by another creature.\r\n\r\nWhen you cast the power, choose one or both of the following effects. The effect lasts for the duration. If you cast this power on the same creature or object every day for 30 days, placing the same effect on it each time, the effect lasts until it is dispelled.\r\n\r\n***False Aura.*** You change the way the target appears to powers and Force-based enhanced effects, such as *sense force*, that detects the presence of the Force. You can make a Force-based unenhanced object or creature appear enhanced and to radiate a Force aura, or a Force-based enhanced object or creature appear unenhanced and to radiate no Force aura. When you use this effect on an object, you can make the false aura apparent to any creature that handles the item.\r\n\r\n***Cloak.*** You can change the way the target's affinity in the Force appears to the *force sight* power. For example, a Sith Lord with great power in the dark side of the Force can appear instead to have very little strength in the Force, with an affinity towards the light side.",
+    "concentration": false
+  },
+  {
+    "name": "Force Concurrence",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You lend a willing allied creature your strength in the Force as it casts a force power. The power is treated as being cast at one slot level higher. The duration of this power matches that of the target power. If the target power has a duration of concentration, you must also maintain concentration as though you had cast it. If you lose concentration, both this power and the target power end.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, you increase the target power's level by a number of levels equal to half the level of the force slot you used (rounded down), to a maximum of 9th level."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 reaction, which you take when you see an ally within 30 feet of you casting a force power of 1st level or higher",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Special",
+    "ritual": false,
+    "description": "You lend a willing allied creature your strength in the Force as it casts a force power. The power is treated as being cast at one slot level higher. The duration of this power matches that of the target power. If the target power has a duration of concentration, you must also maintain concentration as though you had cast it. If you lose concentration, both this power and the target power end.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, you increase the target power's level by a number of levels equal to half the level of the force slot you used (rounded down), to a maximum of 9th level.",
+    "higherlevels": "",
     "concentration": false
   },
   {

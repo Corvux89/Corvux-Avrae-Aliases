@@ -1,5 +1,3 @@
-# TODO: Expanded Missing Farseeing
-# TODO: Expanded Missing Force Concurrence
 # TODO: Expanded Missing Force Stealth
 # TODO: Expanded Missing Greater Tapas
 # TODO: Expanded Missing Lesser Whirlwind

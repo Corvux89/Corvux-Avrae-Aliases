@@ -1987,13 +1987,19 @@
                             "errorBehaviour": "raise"
                         },
                         {
+                            "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
                             "type": "target",
                             "target": "each",
                             "effects": [
                                 {
                                     "type": "save",
                                     "stat": "con",
-                                    "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)",
+                                    "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod);+VowOfTheFocused",
                                     "success": [],
                                     "fail": [
                                         {
@@ -2436,13 +2442,19 @@
                                                 "activation_type": 2,
                                                 "automation": [
                                                     {
+                                                        "type": "variable",
+                                                        "name": "VowOfTheFocused",
+                                                        "value": "VowOfTheFocused",
+                                                        "onError": 0
+                                                    },
+                                                    {
                                                         "type": "target",
                                                         "target": "each",
                                                         "effects": [
                                                             {
                                                                 "type": "save",
                                                                 "stat": "con",
-                                                                "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)",
+                                                                "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)+VowOfTheFocused",
                                                                 "success": [],
                                                                 "fail": []
                                                             }
@@ -2529,6 +2541,12 @@
                                                     },
                                                     {
                                                         "type": "variable",
+                                                        "name": "VowOfTheFocused",
+                                                        "value": "VowOfTheFocused",
+                                                        "onError": 0
+                                                    },
+                                                    {
+                                                        "type": "variable",
                                                         "name": "monkLevel",
                                                         "value": "caster.levels.get('Monk')"
                                                     },
@@ -2542,7 +2560,7 @@
                                                                 "effects": [
                                                                     {
                                                                         "type": "damage",
-                                                                        "damage": "-(1d10+{max(wisdomMod,charismaMod)}+{monkLevel}, {lastCounterRequestedAmount})kl1 [reduce]"
+                                                                        "damage": "-(1d10+{max(wisdomMod,charismaMod)+VowOfTheFocused}+{monkLevel}, {lastCounterRequestedAmount})kl1 [reduce]"
                                                                     }
                                                                 ]
                                                             }

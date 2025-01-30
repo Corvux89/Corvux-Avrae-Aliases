@@ -1317,27 +1317,76 @@
     },
     {
         "name": "aing-tii",
-        "counters": [
-            {
-                "name": "Force Push/Pull",
-                "reset": "none",
-                "level": 1,
-                "use": "racecast 'Force Push/Pull' [-t target]",
-                "value": 1
-            }
-        ],
+        "counters": [],
         "cvars": {
             "race": "Aing-Tii",
             "languages": "Galactic Basic, Aing-Tii"
-        }
+        },
+        "actions": [
+            {
+                "action": {
+                    "name": "Aing-Tii - Force Push/Pull",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "roll",
+                            "dice": "1d4 [kinetic]",
+                            "name": "damage",
+                            "cantripScale": true
+                        },
+                        {
+                            "type": "target",
+                            "target": "all",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "fail": [
+                                        {
+                                            "type": "condition",
+                                            "condition": "choice and choice in \"obstacle\"",
+                                            "onTrue": [
+                                                {
+                                                    "type": "save",
+                                                    "stat": "dex",
+                                                    "fail": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{damage}"
+                                                        }
+                                                    ],
+                                                    "success": []
+                                                }
+                                            ],
+                                            "onFalse": [],
+                                            "errorBehaviour": "false"
+                                        }
+                                    ],
+                                    "success": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You gain the minor ability to move or manipulate creatures and objects with the Force. You can exert fine control on objects with your telekinetic grip, such as manipulating a simple tool, opening a door or a container, stowing or retrieving an item from an open container, or pouring the contents from a vial. Alternatively, you can push or pull a creature or object you can see.\n\nYou use the Force to move a Medium or smaller creature or object not being worn or carried within range. The target must make a Strength saving throw. An object automatically fails this saving throw. On a failed save, the creature or object moves a number of feet in a direction of your choice based on its size. A Tiny creature or object can be moved up to 20 feet, a Small creature or object can be moved up to 10 feet, and a Medium creature or object can be moved up to 5 feet. If at the end of this movement the creature or object strikes another creature or object, it must make a Dexterity saving throw. An object automatically fails this saving throw. On a failed save, they both take 1d4 kinetic damage.\n\nThis power improves when you reach higher levels. At 5th level, you can move a Tiny creature or object up to 30 feet, a Small creature or object up to 20 feet, a Medium creature or object up to 10 feet, and the power’s damage increases to 2d4 kinetic damage. At 11th level, you can move a Small creature or object up to 30 feet, a Medium creature up to 20 feet, and the power’s damage increases to 3d4 kinetic damage. At 17th level, you can move a Medium creature to up 30 feet, and the power’s damage increases to 4d4 kinetic damage."
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "name": "aleena",
         "counters": [
             {
+                "name": "Bite",
+                "reset": "short",
+                "value": 1,
+                "level": 1
+            },
+            {
                 "name": "Racer's Reflexes",
                 "reset": "short",
-                "use": "snippet `racersreflex`",
                 "level": 1,
                 "value": 1
             }
@@ -1348,7 +1397,49 @@
             "senses": "Darkvision 60 ft.",
             "languages": "Galactic Basic, Allena",
             "size": "Small"
-        }
+        },
+        "actions": [
+            {
+                "action": "Bite",
+                "_v": 2,
+                "activation_type": 3,
+                "automation": [
+                    {
+                        "type": "counter",
+                        "counter": "bite",
+                        "amount": 1,
+                        "errorBehaviour": "raise"
+                    },
+                    {
+                        "type": "target",
+                        "target": "each",
+                        "effects": [
+                            {
+                                "type": "attack",
+                                "attackBonus": "8+proficiencyBonus+strengthMod",
+                                "miss": [],
+                                "hit": [
+                                    {
+                                        "type": "damage",
+                                        "damage": "1d4 [kinetic]"
+                                    },
+                                    {
+                                        "type": "target",
+                                        "target": "self",
+                                        "effects": [
+                                            {
+                                                "type": "temphp",
+                                                "amount": "min(constitutionMod, 1)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "anomid",
@@ -1357,27 +1448,24 @@
                 "name": "Minor Hologram",
                 "reset": "none",
                 "level": 1,
-                "use": "racecast 'Minor Hologram'",
                 "value": 1
             },
             {
                 "name": "Repair Droid",
                 "reset": "long",
                 "level": 3,
-                "use": "racecast 'Repair Droid' [-t target]",
                 "value": 1
             },
             {
                 "name": "Hold Droid",
                 "reset": "long",
                 "level": 5,
-                "use": "racecast 'Hold Droid' [-t target]",
                 "value": 1
             }
         ],
         "cvars": {
             "race": "Anomid",
-            "languages": "Galactic Basic, Anomid Sign"
+            "languages": "Galactic Basic, Anomid Sign Language"
         }
     },
     {

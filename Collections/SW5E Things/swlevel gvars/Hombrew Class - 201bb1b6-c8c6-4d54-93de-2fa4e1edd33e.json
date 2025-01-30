@@ -31,8 +31,131 @@
                 "reset": "long",
                 "classLevel": "Monk",
                 "display": "bubble"
+            },
+            {
+                "name": "Merciless Fire",
+                "level": 17,
+                "value": 1,
+                "reset": "long",
+                "classLevel": "Monk",
+                "display": "bubble"
             }
         ],
-        "actions": []
+        "actions": [
+            {
+                "level": 11,
+                "action": {
+                    "name": "Keldabe Kiss",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Focus Points",
+                                    "amount": 1,
+                                    "errorBehaviour": "raise"
+                                },
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Keldabe Kiss - Unconcious",
+                                    "duration": 10,
+                                    "buttons": [
+                                        {
+                                            "label": "Resist the Kiss",
+                                            "defaultDC": "8+proficiencyBonus+max(charismaMod,wisdomMod)+VowOfTheFocused",
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "save",
+                                                            "stat": "con",
+                                                            "fail": [],
+                                                            "success": [
+                                                                {
+                                                                    "type": "remove_ieffect"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "Whenever a creature fails their save against your stunning strike feature, you can spend one ki point to have that creature become unconscious for 1 minute, until it takes damage, or until someone uses an action to awaken the creature. At the end of an affected creature’s turn, it can repeat this save, ending the effect on a success."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 17,
+                "action": {
+                    "name": "Merciless Fire",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "8d12 [fire]",
+                            "name": "damage"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Merciless Fire",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)+VowOfTheFocused",
+                                    "success": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "({damage}/2)"
+                                        }
+                                    ],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{damage}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "Once per As an action, you can choose any number of creatures you can see within 10 feet of you. Each of those creatures must succeed on a Dexterity saving throw against your focus save DC or take 8d12 fire damage, or half as much damage on a successful one. You can use this feature once per long rest."
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]

@@ -5,6 +5,11 @@
     "desc": "You gain a +2 bonus to attack and damage rolls with this enhanced weapon. While looking through the scope at a spot you can see within 120 feet, you can both see and hear as if you were standing at that location.\n\nAdditionally, when you use this rifle as an\nimprovised weapon, you are considered proficient\nin it, it deals 1d6 kinetic damage on a hit, and it has\nthe shocking property with a DC of 16 and deals 1d8 lightning damage.\n\n*The rifle shoots solid slugs that will disintegrate a target on contact. The front of the rifle is double-pronged, and will act as a taser if necessary,\ndelivering a strong shock to opponents.*"
   },
   {
+    "name": "Bombadier's Belt",
+    "meta": "Adventuring Gear (waist), premium (Requires Attunement)",
+    "desc": "This belt is lined with a series of smart bombs with quick-release magnets. The belt has three charges, and it regains 1d3 expended charges after a long rest. While wearing it, you can expend 1 charge to cast element of surprise with a DC of 13.\n\n**Cartel Enforcer's Stash.** While you are attuned to and wearing two or more enhanced items that have this named property, you gain additional properties as shown on the Set Items page of this document.\n\n*The bombs on this belt are volatile and highly unstable, but their pleasing spheroid shape begs to be thrown at anybody who's shot you.*"
+  },
+  {
     "name": "Byrothsis Lightweapon",
     "meta": "*Weapon (any lightweapon), varies*",
     "desc": "**Adept (Prototype):** When this weapon is levitated by the Force to deal damage through a class feature or force power you use, it deals additional damage equal to the damage dice of the weapon.\n\n**Ancient (Legendary):** When this weapon is levitated by the Force to deal damage through a class feature or force power you use, it deals additional damage equal to twice the damage dice of the weapon."
@@ -13,6 +18,31 @@
     "name": "Byrothsis Novice Lightweapon",
     "meta": "Weapon (any lightweapon), standard (Requires Attunement)",
     "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, it deals 1d4 additional damage of the same damage type as the feature levitating it."
+  },
+  {
+    "name": "Byrothsis Apprentice Lightweapon",
+    "meta": "Weapon (any lightweapon), premium",
+    "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, it deals 1d4 additional damage of the same damage type as the feature levitating it."
+  },
+  {
+    "name": "Byrothsis Journeyman Lightweapon",
+    "meta": "Weapon (any lightweapon), prototype (Requires Attunement)",
+    "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, the damage from the hovered weapon increases by an additional damage die."
+  },
+  {
+    "name": "Byrothsis Adept Lightweapon",
+    "meta": "Weapon (any lightweapon), advanced",
+    "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, the damage from the hovered weapon increases by an additional damage die."
+  },
+  {
+    "name": "Byrothsis Master Lightweapon",
+    "meta": "Weapon (any lightweapon), legendary (Requires Attunement)",
+    "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, the damage from the hovered weapon increases by two additional damage dice."
+  },
+  {
+    "name": "Byrothsis Ancient Lightweapon",
+    "meta": "Weapon (any lightweapon), artifact",
+    "desc": "When this weapon is levitated by the Force to deal damage through a class feature or force power you use, the damage from the hovered weapon increases by two additional damage dice."
   },
   {
     "name": "Chain Codes",

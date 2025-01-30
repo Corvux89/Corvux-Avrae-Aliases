@@ -380,13 +380,14 @@ def multiclass(counters, inLevel):
 
 
 def translate_str(val, class_str, level):
-    val = val.replace(f"{class_str}", f"{level}").replace("strengthMod", f"{ch.stats.get_mod('str')}").replace(
+    val = val.replace(f"{class_str}", f"{level}").replace("max(wisdomMod,charismaMod)", f"{int(ch.stats.get_mod('wis')) if int(ch.stats.get_mod('wis')) > int(ch.stats.get_mod('cha')) else int(ch.stats.get_mod('cha'))}")
+    val = val.replace("strengthMod", f"{ch.stats.get_mod('str')}").replace(
         "dexterityMod", f"{ch.stats.get_mod('dex')}")
     val = val.replace("constitutionMod", f"{ch.stats.get_mod('con')}").replace("intelligenceMod",
                                                                                f"{ch.stats.get_mod('int')}")
     val = val.replace('wisdomMod', f"{ch.stats.get_mod('wis')}").replace("charismaMod", f"{ch.stats.get_mod('cha')}")
-    val = val.replace('proficiencyBonus', f"{ch.stats.prof_bonus}")
-    return int(val)
+    val = val.replace('proficiencyBonus', f"{ch.stats.prof_bonus}")    
+    return int(roll(val))
 
 
 def getActions(playerClass, playerArchetype, inLevel, stat=None):
@@ -481,7 +482,8 @@ def additionalActions(actions=[], counters=[], stat=None):
 
                     # Update/Set a CVAR
                     if a.get('cvar') and a.name not in modVars:
-                        modVars.append(a.name)
+                        if a.cvar.get('update', False) == False:
+                            modVars.append(a.name)
                         modCVAR(a.cvar)
                         out.append(a.name)
 
@@ -543,7 +545,10 @@ def modCVAR(cvar_ref):
         base_val = [] if 'append' in cvar_ref else 0 if 'modifier' in cvar_ref else ""
 
     if 'value' in cvar_ref:
-        base_val = cvar_ref.value
+        try:
+            base_val = translate_str(cvar_ref.value, "", "")
+        except: 
+            base_val = cvar_ref.value
     elif 'modifier' in cvar_ref:
         base_val += int(cvar_ref.modifier)
     elif 'append' in cvar_ref and cvar_ref.append not in base_val:

@@ -39,7 +39,33 @@
     {
         "Class": "Berserker",
         "subclass": "Armored",
-        "counters": []
+        "counters": [],
+        "actions": [
+            {
+                "level": 14,
+                "action": {
+                    "name": "Spiked Retribution",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{strengthMod}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature within 5 feet of you hits you with a melee attack, the attacker takes kinetic damage equal to your Strength modifier, as long as you are wearing your spiked armor and you aren’t incapacitated.\n\nIf you are raging, you add your rage damage bonus to this damage."
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "Class": "Berserker",
