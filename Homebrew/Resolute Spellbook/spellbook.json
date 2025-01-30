@@ -8762,6 +8762,86 @@
     "concentration": true
   },
   {
+    "name": "Force Stealth",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Force Stealth - Stealth",
+            "duration": "10 if spell_level < 5 else 100 if spell_level < 7 else 600",
+            "save_as": "peff",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "wis",
+            "fail": [
+              {
+                "type": "ieffect2",
+                "name": "Can't see {caster.name}",
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "target",
+                        "target": "self",
+                        "effects": [
+                          {
+                            "type": "save",
+                            "stat": "wis",
+                            "fail": [],
+                            "success": [
+                              {
+                                "type": "remove_ieffect"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "label": "Resist Force Stealth",
+                    "defaultDC": "lastSaveDC"
+                  }
+                ],
+                "parent": "peff"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Choose a creature you can see within range. The target must make a Wisdom saving throw. On a failed save, you disappear before the target's eyes, appearing to fade from existence. For the duration of the power, the target cannot see you, hear you, or perceive you in any way, and it doesn't know where you are, even if explicitly told. At the end of each of the target's turns, if you damaged it or targeted it with a power or other hostile action since its last turn, it can repeat the saving throw, ending the effect on itself on a success. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, you can target an additional creature for each slot level above 3rd. If you cast this power using a tech slot of 5th level or higher, the duration is concentration, up to 10 minutes. If you cast this power using a tech slot of 7th level or higher, the duration is concentration, up to 1 hour."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "Choose a creature you can see within range. The target must make a Wisdom saving throw. On a failed save, you disappear before the target's eyes, appearing to fade from existence. For the duration of the power, the target cannot see you, hear you, or perceive you in any way, and it doesn't know where you are, even if explicitly told. At the end of each of the target's turns, if you damaged it or targeted it with a power or other hostile action since its last turn, it can repeat the saving throw, ending the effect on itself on a success. This power has no effect on droids or constructs.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, you can target an additional creature for each slot level above 3rd. If you cast this power using a tech slot of 5th level or higher, the duration is concentration, up to 10 minutes. If you cast this power using a tech slot of 7th level or higher, the duration is concentration, up to 1 hour.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Force Storm",
     "level": 9,
     "school": "Force",
