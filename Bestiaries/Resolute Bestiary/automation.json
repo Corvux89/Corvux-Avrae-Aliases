@@ -1304,32 +1304,8 @@
   {
     "name": "Hutt Crime Lord",
     "ability": "Hold-Out Blaster",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Ranged Weapon Attack +3 to hit, range 30/120, one target. Hit 1 (1d4 - 1) energy damage",
-    "automation": {
-      "name": "Hold-Out Blaster",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d4 - 1[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "Ranged Weapon Attack +3 to hit, range 30/120, one target. Hit 1 (1d4 - 1) energy damage",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Hutt Crime Lord",
@@ -1466,10 +1442,8 @@
   {
     "name": "ISB Officer",
     "ability": "Rally Troops (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Officer rallies his troops, giving all allies within 60 feet advantage on their next attack roll.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "IT-O Interrogation Unit",
@@ -1582,32 +1556,8 @@
   {
     "name": "Jawa Shaman",
     "ability": "Vibrostaff",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* +2 to hit, reach 5 ft., one target. *Hit:*  5 (2d4) kinetic damage.",
-    "automation": {
-      "name": "Vibrostaff",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "2d4[kinetic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +2 to hit, reach 5 ft., one target. *Hit:*  5 (2d4) kinetic damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Jubba Bird",
@@ -2038,32 +1988,8 @@
   {
     "name": "Mistryl Prime",
     "ability": "Holdout Blaster",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* +7 to hit, range 30/120 ft., one target. *Hit:*  6 (1d4 + 4) energy damage.",
-    "automation": {
-      "name": "Holdout Blaster",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d4 + 4[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +7 to hit, range 30/120 ft., one target. *Hit:*  6 (1d4 + 4) energy damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Mistryl Prime",
@@ -2134,32 +2060,8 @@
   {
     "name": "Mynock",
     "ability": "Energy Drain",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* +-1 to hit, reach 5 ft., one target. *Hit:* -1 (1d4 + -3) kinetic damage and the mynock attaches to the target. If attached to a droid or construct, at the start of each of the mynock\u00e2\u20ac\u2122s turns, the target loses 5 (1d4 + 3) hit points due to energy being drained.\nThe mynock can detach itself by spending 5 feet of its Movement. It does so after it drains 10 Hit Points of energy from the target or the target dies. A creature, including the target, can use its action to detach the Mynock.",
-    "automation": {
-      "name": "Energy Drain",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d4 + -3[kinetic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +-1 to hit, reach 5 ft., one target. *Hit:* -1 (1d4 + -3) kinetic damage and the mynock attaches to the target. If attached to a droid or construct, at the start of each of the mynock\u00e2\u20ac\u2122s turns, the target loses 5 (1d4 + 3) hit points due to energy being drained.\nThe mynock can detach itself by spending 5 feet of its Movement. It does so after it drains 10 Hit Points of energy from the target or the target dies. A creature, including the target, can use its action to detach the Mynock.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Mynock Swarm",
@@ -2326,10 +2228,8 @@
   {
     "name": "Purge Trooper",
     "ability": "Volley (Recharge 6)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The trooper makes one ranged attack against every enemy within 10 feet of a point it can see.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Rakghoul",
@@ -2724,62 +2624,8 @@
   {
     "name": "Swarm of Monkey-Lizards",
     "ability": "Bite",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* + to hit, reach 5 ft., one target. *Hit:* 1 (2d6) kinetic damage if above 50% hit points.",
-    "automation": {
-      "name": "Bite",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "2d6[kinetic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* + to hit, reach 5 ft., one target. *Hit:* 1 (2d6) kinetic damage if above 50% hit points.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
-  },
-  {
-    "name": "Swarm of Monkey-Lizards",
-    "ability": "Bite-50",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* + to hit, reach 5 ft., one target. *Hit:* 1 (1d6) kinetic damage if below 50% hit points.",
-    "automation": {
-      "name": "Bite-50",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d6[kinetic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* + to hit, reach 5 ft., one target. *Hit:* 1 (1d6) kinetic damage if below 50% hit points.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Swarm of Porgs",
@@ -3036,32 +2882,8 @@
   {
     "name": "Trooper, Flame",
     "ability": "Blaster Pistol",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Ranged Weapon Attack.* +5 to hit, range 40/160 ft., one target. *Hit:* 6 (1d6 + 3) energy damage.",
-    "automation": {
-      "name": "Blaster Pistol",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d6 + 3[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack.* +5 to hit, range 40/160 ft., one target. *Hit:* 6 (1d6 + 3) energy damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Trooper, Flame",
@@ -3090,32 +2912,8 @@
   {
     "name": "Trooper, Mounted",
     "ability": "Assault Cannon",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Ranged Weapon Attack.* +3 to hit, range 80/320 ft., one target. *Hit:* 6 (1d10 + 1) energy damage.",
-    "automation": {
-      "name": "Assault Cannon",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d10 + 1[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack.* +3 to hit, range 80/320 ft., one target. *Hit:* 6 (1d10 + 1) energy damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Trooper, Mounted",
@@ -3384,62 +3182,14 @@
   {
     "name": "Weaponized Gonk Droid",
     "ability": "Kick",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Melee Weapon Attack:* +2 to hit, reach 5 ft., one target. *Hit:* Hit 2 (1d4 + 0) kinetic damage",
-    "automation": {
-      "name": "Kick",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d4 + 0[kinetic]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Melee Weapon Attack:* +2 to hit, reach 5 ft., one target. *Hit:* Hit 2 (1d4 + 0) kinetic damage",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Weaponized Gonk Droid",
     "ability": "Blaster Rifle",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Ranged Weapon Attack:* +4 to hit, range 100/400 ft., one target. *Hit:* Hit 6 (1d8 + 2) energy damage.",
-    "automation": {
-      "name": "Blaster Rifle",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d8 + 2[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack:* +4 to hit, range 100/400 ft., one target. *Hit:* Hit 6 (1d8 + 2) energy damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Whisper Bird",
@@ -3714,10 +3464,8 @@
   {
     "name": "Trooper, Technician",
     "ability": "Repair (Recharge 5-6)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "As an action, the technician can expend one use of a repair kit to restore 2d4+2 hit points to a droid or construct within 5 feet.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Trooper, EVO",
@@ -4052,32 +3800,8 @@
   {
     "name": "Trooper, Demolitions",
     "ability": "Blaster Carbine",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "*Ranged Weapon Attack.* +4 to hit, range 70/280 ft., one target. *Hit:* 5 (1d6+2) energy damage.",
-    "automation": {
-      "name": "Blaster Carbine",
-      "automation": [
-        {
-          "type": "target",
-          "target": "each",
-          "effects": [
-            {
-              "type": "damage",
-              "damage": "1d6+2[energy]",
-              "overheal": false
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "*Ranged Weapon Attack.* +4 to hit, range 70/280 ft., one target. *Hit:* 5 (1d6+2) energy damage.",
-          "title": "Effect"
-        }
-      ],
-      "_v": 2,
-      "activation_type": 1
-    }
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Squad: Trooper, Demolitions",
@@ -4658,10 +4382,8 @@
   {
     "name": "Elite Purge Trooper",
     "ability": "Volley (Recharge 6)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The trooper makes one ranged attack against every enemy within 10 feet of a point it can see.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Elite Purge Trooper, Electrovoulge",

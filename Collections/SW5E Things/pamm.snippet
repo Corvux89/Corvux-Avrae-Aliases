@@ -1,0 +1,15 @@
+<drac2>
+ch = character()
+cc = "Potent Aptitude"
+out = ""
+level = int(get("EngineerLevel",0))
+pad = "1d4" if level < 5 else "1d6" if level < 9 else "1d8" if level < 13 else "1d10" if level < 17 else "1d12"
+if ch.get_cc(cc):
+    ch.mod_cc(cc,-1)
+    out = f''' -f "Potent Ammunition|When an ammunition you control would cause a creature to make a saving throw, you can expend one use of your Potent Aptitude to make it more susceptible to your ammunition. Roll the die, subtract the result from the creature's saving throw, and add the result to the damage roll for the ammunition against that creature (if applicable)." '''
+    out += f''' -f "{cc} (-1)|{ch.cc_str(cc)}"'''
+    out += f''' -d {pad} -sb "-{pad}" '''
+else:
+    out = f''' -f "{cc}|Not enough charges left" '''
+return out
+</drac2>

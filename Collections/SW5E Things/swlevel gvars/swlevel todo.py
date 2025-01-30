@@ -178,7 +178,6 @@
 # TODO: Engineer - Max Power Level
 # TODO: Engineer - Techcasting Ability
 # TODO: Engineer - Techcasting Focus
-# TODO: Engineer - Potent Aptitude
 # TODO: Engineer - Infuse Item
 # TODO: Engineer - Tool Expertise
 # TODO: Engineer - Engineering Discipline

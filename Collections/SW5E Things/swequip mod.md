@@ -3,7 +3,7 @@ Modify an existing weapon
 `!swequip mod <weapon name> [args]`
  
 This will create the appropriate counter for weapons with ammunition.
-  
+
 __Available Arguments__
  
 **General**

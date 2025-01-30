@@ -3138,7 +3138,112 @@
     {
         "Class": "Operative",
         "subclass": "Grenadier",
-        "counters": []
+        "counters": [],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Flashbang Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Deafened",
+                                            "duration": 1,
+                                            "tick_on_caster": true,
+                                            "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                                            "effects": {
+                                                "ckeck_dis": [
+                                                    "perception",
+                                                    "investigation"
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a disorienting explosion. The target must make a Constitution saving throw. On a failed save the target becomes deafened until the start of your next turn, and has disadvantage on all Wisdom(Perception) and Intelligence(Investigation) checks until the start of your next turn."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Impactful Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a powerful kinetic explosion. The target must make a Strength saving throw. On a failed save, the target is pushed up to 15 feet in a direction of your choice."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Sundering Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Sundering Blast",
+                                            "duration": 1,
+                                            "tick_on_caster": true,
+                                            "desc": "Disadvantage on the first waeapon attack roll"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a corrosive explosion. The target must make a Dexterity saving throw. On a failed save, the target has disadvantage on the first weapon attack roll it makes before the start of your next turn."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            }
+        ]
     },
     {
         "Class": "Scholar",

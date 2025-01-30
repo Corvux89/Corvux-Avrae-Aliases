@@ -15,8 +15,10 @@ def updateBestiary(bestiaryID, sourceFile):
     session = requests.Session()
     session.cookies.update(header)
 
+    payload = json.loads(json.dumps({"data": bestiary}))
+    print(payload)
 
-    out = session.post(f"https://bestiarybuilder.com/api/bestiary/{bestiaryID}/update", headers=header, data=json.dumps({"data": bestiary}))
+    out = session.post(f"https://bestiarybuilder.com/api/bestiary/{bestiaryID}/update", headers=header, data=payload)
 
     if out.status_code != 200:
         print(out.text)

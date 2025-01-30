@@ -6,7 +6,6 @@
         "maneuver": "63e06c7a08217259946dc4c6",
         "sch": "63e1053fd6596a5e18f16094",
         "sch analysis": "63e147b4d6596a5e18f160c6",
-        "sch discovery": "64c2cfc9909bfc38f5b3a43f",
         "eng": "63e10e07d6596a5e18f16095",
         "eng armor": "643c8833e3f6ba9e95a256c6",
         "eng armor shieldamp": "643c8852e3f6ba9e95a256c7",
@@ -102,6 +101,7 @@
         "ffmc": "66998a7564b0e862999dd775",
         "gow": "66c36d2dd5e6d47860f7339e",
         "tl": "673d0570dd79d70e3f145bbe",
-        "hate": "673fa33f328cb87fd2a74132"
+        "hate": "673fa33f328cb87fd2a74132",
+        "pamm": "679a9674dccd9460df6b857b"
     }
 }

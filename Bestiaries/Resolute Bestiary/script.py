@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-print("starting")
+print("Starting")
 
 to_automate_keywords = ["saving throw", "dc", "shocked until", 'to hit']
 
@@ -9,10 +9,12 @@ automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
 todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
 
 
-def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
+def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
     url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
     r = urllib.request.urlopen(url)
     data = json.load(r)
+
+    print(f"Data Loaded from {url}")
 
     count = 0
     saveAuto = []
@@ -79,6 +81,10 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode):
         with open(fileName, "w") as outfile:
             json.dump(kfcdb, outfile)
 
+    if creatureFile:
+        with open(creatureFile, "w") as outfile:
+            outfile.write(json.dumps(creatures, indent=2))
+
     if autoMode == "a":
         mf = open(automation_file, encoding='utf-8')
         autoMon = json.load(mf)
@@ -114,4 +120,4 @@ def get_type(object, type_list):
         for child in object["hit"]:
             get_type(child,type_list)
 
-processBestiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w")
+processBestiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w", 'Bestiaries\\Resolute Bestiary\\Resolute Ground.json')

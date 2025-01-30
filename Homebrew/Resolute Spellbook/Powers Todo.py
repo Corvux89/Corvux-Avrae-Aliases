@@ -69,9 +69,7 @@
 # TODO: Expanded Missing Flare Strike
 # TODO: Expanded Missing Fluctuate Gravity
 # TODO: Expanded Missing Jury-Rig
-# TODO: Expanded Missing Minor Slice
 # TODO: Expanded Missing Minor Tranquilizer
-# TODO: Expanded Missing Remote Access
 # TODO: Expanded Missing Shred
 # TODO: Expanded Missing Smart Shot
 # TODO: Expanded Missing Sonic Burst
@@ -97,7 +95,6 @@
 # TODO: Expanded Missing Energy Alteration
 # TODO: Expanded Missing Enhance Oration
 # TODO: Expanded Missing Ensnaring Blow
-# TODO: Expanded Missing Erratic Rockets
 # TODO: Expanded Missing Expand Ward
 # TODO: Expanded Missing Filter Air
 # TODO: Expanded Missing Healing Factor

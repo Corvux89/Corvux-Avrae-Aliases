@@ -19,9 +19,7 @@ __Valid Arguments__
 `-type [Maneuver Type]` - Used to override the maneuver type
 `-dc` - Override the default maneuver DC
 `-dtype` - Set the damage type if applicable
-
 `sm` - Superiority Mastery indicator (forces the dice to be 1d4 and switches the counter)
 `mm` - Maneuver Master (Adds a bonus to any superiority dice rolls, and switches the counter)
 `fs` - Field Surgeon indicator. Forces the dice to max roll and then updates the counter
 `max` - Will make the dice rolls be max value
-`ku` - Knowledge Unbound. This will switch the die to a d4 and not alter the counter.

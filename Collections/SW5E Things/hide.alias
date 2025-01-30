@@ -14,7 +14,6 @@ if combat() and combat().me:  # add an effect to track our roll
     combatTarget = combat().me
     combatTarget.remove_effect("stealth")
     effect = combatTarget.add_effect(f"Stealth {stroll.total}")  # this now returns the effect so save it for later
-    
 output = f'''-title "{name} makes {cType} (Stealth) check to Hide!" -desc "{stroll}" -f "Hide Action|When you take the Hide action, you make {cType} (Stealth) check in an attempt to hide, following the rules for Hiding. If you succeed, you gain certain benefits, as described in the Unseen Attackers and Targets section.\n\nYou can't hide from a creature that can see you. You must have total cover, be in a heavily obscured area, be invisible, or otherwise block the enemy's vision." -f "Unseen Attackers and Targets|When a creature can't see you, you have advantage on attack rolls against it. If you are hidden—both unseen and unheard—when you make an attack, you give away your location when the attack hits or misses." -footer "{ctx.prefix+ctx.alias}" -color {color}'''+(f''' -f "{combatTarget.name}|**Effect**: {effect}"'''  if combatTarget else "")
 
 return output

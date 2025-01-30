@@ -151,7 +151,7 @@ def neuralizing(attack, args):
     effect = {"type": "ieffect2", "name": "Frightened",
               "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}",
               "duration": 1}
-    damage = {"type": "damage", "damage": "1d4 [psychic]"}
+    damage = {"type": "damage", "damage": "1d4 [psychic]", "fixedValue": True}
 
     save = {"type": "save", "stat": "wis", "dc": f"{dc}", "fail": [damage, effect], "success": []}
 
@@ -178,7 +178,7 @@ def shocking(attack, args):
               "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both.",
               "duration": 1,
               "end": True}
-    damage = {"type": "damage", "damage": "1d4 [lightning]"}
+    damage = {"type": "damage", "damage": "1d4 [lightning]", "fixedValue": True}
 
     save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": [damage, effect], "success": []}
 
@@ -205,7 +205,7 @@ def sonorous(attack, args):
               "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
               "duration": 1,
               "end": True}
-    damage = {"type": "damage", "damage": "1d4 [sonic]"}
+    damage = {"type": "damage", "damage": "1d4 [sonic]", "fixedValue": True}
 
     save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": [damage, effect], "success": []}
 
@@ -232,6 +232,8 @@ def burst(attack, args):
     for e in on_hit:
         if e.type=="damage":
             e["damage"] = "{damage}"
+            if not e.get('fixedValue'):
+                e['fixedValue'] = True
             break
     save = {"type": "save", "stat": "dex", "fail": on_hit, "success": [], "dc": f"{dc}"}
     target = {"type": "target", "target": "all", "effects": [save]}
@@ -263,6 +265,8 @@ def rapid(attack, args):
     for e in on_hit:
         if e.type=="damage":
             e["damage"] = d_str
+            if not e.get('fixedValue'):
+                e['fixedValue'] = True
             break
     counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{rNum}", "allowOverflow": False,
                "errorBehaviour": "raise"}
@@ -309,7 +313,7 @@ def staggering(attack, args):
 def igniting(attack, args):
     a = load_json(attack)
     ignite = "1d4" if args.last('igniting') == 'True' else args.last('igniting')
-    damage = {"type": "damage", "damage": f"{ignite} [fire]"}
+    damage = {"type": "damage", "damage": f"{ignite} [fire]", "fixedValue": True}
     tdamage = {"type": "target", "target": "self", "effects": [damage]}
     eot = {"label": "Ignited - End of Turn", "verb": "burns!", "style": 4, "automation": [tdamage]}
 
@@ -374,7 +378,7 @@ def vicious(attack, args):
     vNum = 1 if args.last('vicious') == 'True' else int(args.last('vicious'))
     dtype = sup.get_damage_type(damage)
 
-    dmg = {"type": "damage", "damage": f"{vNum} [{dtype}]"}
+    dmg = {"type": "damage", "damage": f"{vNum} [{dtype}]", "fixedValue": True}
     target = {"type": "target", "target": "each", "effects": [dmg]}
 
     vicious = {"name": f"Vicious - {a.name}", "_v": 2, "automation": [target]}

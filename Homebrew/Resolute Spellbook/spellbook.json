@@ -6618,6 +6618,90 @@
     "concentration": true
   },
   {
+    "name": "Erratic Rockets",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "5d4 [fire]",
+        "name": "critDamage",
+        "displayName": "Critical Rocket Damage"
+      },
+      {
+        "type": "variable",
+        "name": "stopAutomation",
+        "value": "0"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "attack",
+            "hit": [
+              {
+                "type": "condition",
+                "condition": "stopAutomation and stopAutomation == 1",
+                "onTrue": [],
+                "onFalse": [
+                  {
+                    "type": "condition",
+                    "condition": "lastAttackDidCrit",
+                    "onTrue": [
+                      {
+                        "type": "damage",
+                        "damage": "{critDamage}"
+                      }
+                    ],
+                    "onFalse": [
+                      {
+                        "type": "damage",
+                        "damage": "2d4 [fire]"
+                      }
+                    ]
+                  }
+                ],
+                "errorBehaviour": "false"
+              }
+            ],
+            "miss": [
+              {
+                "type": "condition",
+                "condition": "lastAttackNaturalRoll == 1",
+                "onTrue": [
+                  {
+                    "type": "variable",
+                    "name": "stopAutomation",
+                    "value": "1"
+                  }
+                ],
+                "onFalse": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
+    "concentration": false
+  },
+  {
     "name": "Eruption",
     "level": 6,
     "school": "Force",
@@ -16325,6 +16409,30 @@
     "concentration": false
   },
   {
+    "name": "Minor Slice",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "By connecting with nearby technology, you create one of the following effects within range.\n\nYou cause a display device you can see, such as a hologram emitter or computer monitor, to show an image or video of your choice for up to 1 hour, which can include audio. A creature with access to the device can use an action to close the image or video.\nYou cause an audio device you can see, such as a commlink or speaker, to play sounds of your choice for up to 1 hour.\nYou can activate or deactivate an electronic device with a clearly defined on or off function that can be easily accessed from the outside of the device. If a creature is currently using the device, they may attempt an Intelligence saving throw. On a success, the device does not turn off.\nIf you cast this power multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "30 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "1 hour",
+    "ritual": false,
+    "description": "By connecting with nearby technology, you create one of the following effects within range.\n\nYou cause a display device you can see, such as a hologram emitter or computer monitor, to show an image or video of your choice for up to 1 hour, which can include audio. A creature with access to the device can use an action to close the image or video.\nYou cause an audio device you can see, such as a commlink or speaker, to play sounds of your choice for up to 1 hour.\nYou can activate or deactivate an electronic device with a clearly defined on or off function that can be easily accessed from the outside of the device. If a creature is currently using the device, they may attempt an Intelligence saving throw. On a success, the device does not turn off.\nIf you cast this power multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
+    "concentration": false
+  },
+  {
     "name": "(SW) Mirror Image",
     "level": 2,
     "school": "Tech",
@@ -18644,6 +18752,30 @@
     "duration": "Instantaneous",
     "ritual": false,
     "description": "Choose an object that you can see within range. The object can be a door, a box, a chest, a set of binders, a lock, or another object that contains a mundane or enhanced means that prevents access.\r\n\r\nA target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked.\r\n\r\nIf you choose a target that is held shut with *lock*, that power is suppressed for 10 minutes, during which time the target can be opened and shut normally.",
+    "concentration": false
+  },
+  {
+    "name": "Remote Access",
+    "level": 0,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "text",
+        "text": "You can use any electronic object you can see within range as if it were in your hands. You are only able to access functions that a person using the device manually would be able to access. You can use remote access with only one device at a time, and you cannot use devices that other creatures are using."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "10 minutes",
+    "ritual": false,
+    "description": "You can use any electronic object you can see within range as if it were in your hands. You are only able to access functions that a person using the device manually would be able to access. You can use remote access with only one device at a time, and you cannot use devices that other creatures are using.",
     "concentration": false
   },
   {

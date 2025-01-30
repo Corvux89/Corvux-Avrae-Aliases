@@ -1,33 +1,34 @@
 <drac2>
-c = character()
-com = combat()
-a = argparse(&ARGS&)
-gvar = load_json(get_gvar("874901ba-d611-4418-b1c8-8ef43be23764"))
+return err("This is now handled in Additional Actions. Please check that spreadsheet and `swlevel` for your forms now.")
+# c = character()
+# com = combat()
+# a = argparse(&ARGS&)
+# gvar = load_json(get_gvar("874901ba-d611-4418-b1c8-8ef43be23764"))
 
-base = f'''embed -thumb {image} -color {color}'''
+# base = f'''embed -thumb {image} -color {color}'''
 
-output = None
-m = None
-for g in gvar:
-    if &ARGS&[0].lower() == g.name.lower() or &ARGS&[0].lower() in g.name.lower():
-        m=g
-        break
+# output = None
+# m = None
+# for g in gvar:
+#     if &ARGS&[0].lower() == g.name.lower() or &ARGS&[0].lower() in g.name.lower():
+#         m=g
+#         break
 
-if m is None or m == "":
-    return err(f"{m} is not found/supported")
+# if m is None or m == "":
+#     return err(f"{m} is not found/supported")
 
-if com:
-    if com.me:
-        eff = com.me.add_effect(m.name, duration=2 if  m.get('end') else 1, end=m.get('end', False))
-        base += f''' -f "{com.me.name}|{eff}" '''
-    else:
-        return err("You're not on the right sheet for this combat. Try again.")
+# if com:
+#     if com.me:
+#         eff = com.me.add_effect(m.name, duration=2 if  m.get('end') else 1, end=m.get('end', False))
+#         base += f''' -f "{com.me.name}|{eff}" '''
+#     else:
+#         return err("You're not on the right sheet for this combat. Try again.")
 
 
-base += f''' -title "{name} assumes {m.name} lightsaber form" '''
-base += f''' -f "Effect|{m.description}" '''
-if output != "":
-    base += output
+# base += f''' -title "{name} assumes {m.name} lightsaber form" '''
+# base += f''' -f "Effect|{m.description}" '''
+# if output != "":
+#     base += output
 
-return base
+# return base
 </drac2>
