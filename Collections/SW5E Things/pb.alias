@@ -70,6 +70,8 @@ level_name = {
 
 embed = f'''embed -desc "{ch.name} knows {len(sb.spells)} powers"'''
 embed += f'''{f' -f "DC|{sb.dc}|inline"' if sb.dc else ''}{f' -f "Power Attack Bonus|{sb.sab}|inline"' if sb.sab else ''}'''
+embed += f''' {f' -f "Tech Points|{ch.cc_str("Tech Points")}|inline"' if ch.cc_exists("Tech Points") else ''} '''
+embed += f''' {f' -f "Force Points|{ch.cc_str("Force Points")}|inline"' if ch.cc_exists("Force Points") else ''} '''
 
 for s in sb.spells:
     spell = None
