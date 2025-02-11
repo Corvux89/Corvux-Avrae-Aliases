@@ -9,6 +9,9 @@ spells = spell_data['data']['spells']
 
 r = rq.urlopen(url)
 
+# Get this script out of my todolist
+key = "TODO"
+
 site_spells = json.load(r)
 site_list = [x.get('name') for x in site_spells]
 
@@ -67,16 +70,16 @@ print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
 
 with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
     for x in site_list:
-        outfile.write(f"# TODO: Source Missing {x}\n")
+        outfile.write(f"# {key}: Source Missing {x}\n")
 
     for x in expanded_list:
-        outfile.write(f"# TODO: Expanded Missing {x}\n")
+        outfile.write(f"# {key}: Expanded Missing {x}\n")
     
     for x in aziz_list:
-        outfile.write(f"# TODO: Aziz Tech Power Missing {x}\n")
+        outfile.write(f"# {key}: Aziz Tech Power Missing {x}\n")
 
     for x in out_dict["todo"]:
-        outfile.write(f"# TODO: {x}\n")
+        outfile.write(f"# {key}: {x}\n")
 
 with open('Homebrew\\Resolute Spellbook\\spellbook.json', encoding='utf-8', mode="w+") as outfile:
     outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))

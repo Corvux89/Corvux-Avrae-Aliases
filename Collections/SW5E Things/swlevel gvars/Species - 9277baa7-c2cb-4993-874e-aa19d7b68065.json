@@ -2583,7 +2583,114 @@
             "race": "Shistavanen",
             "senses": "Darkvision 60 ft.",
             "languages": "Galactic Basic, Shistavanen"
-        }
+        },
+        "actions": [
+            {
+                "action": {
+                    "name": "Regenerative",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Hit Dice (d12)",
+                            "amount": "1",
+                            "errorBehaviour": "ignore"
+                        },
+                        {
+                            "type": "condition",
+                            "condition": "lastCounterUsedAmount",
+                            "onTrue": [
+                                {
+                                    "type": "target",
+                                    "target": "self",
+                                    "effects": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "-(1d12) [healing]"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Hit Dice (d10)",
+                                    "amount": "1",
+                                    "errorBehaviour": "ignore"
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [
+                                        {
+                                            "type": "target",
+                                            "target": "self",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "-(1d10) [healing]"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Hit Dice (d8)",
+                                            "amount": "1",
+                                            "errorBehaviour": "ignore"
+                                        },
+                                        {
+                                            "type": "condition",
+                                            "condition": "lastCounterUsedAmount",
+                                            "onTrue": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "-(1d8) [healing]"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "onFalse": [
+                                                {
+                                                    "type": "counter",
+                                                    "counter": "Hit Dice (d6)",
+                                                    "amount": "1",
+                                                    "errorBehaviour": "raise"
+                                                },
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "-(1d6) [healing]"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "errorBehaviour": "false"
+                                        }
+                                    ],
+                                    "errorBehaviour": "false"
+                                }
+                            ],
+                            "errorBehaviour": "false"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you take damage, you can use your reaction and expend a Hit Die to regain hit points as long as the damage would not reduce your hit points to 0."
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "name": "squib",

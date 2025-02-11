@@ -1,4 +1,3 @@
-# TODO: Expanded Missing Greater Tapas
 # TODO: Expanded Missing Lesser Whirlwind
 # TODO: Expanded Missing Lightning Discharge
 # TODO: Expanded Missing Moment Reading

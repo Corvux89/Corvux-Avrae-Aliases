@@ -10382,6 +10382,71 @@
     "concentration": false
   },
   {
+    "name": "Greater Tapas",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "condition",
+        "condition": "choice and choice.lower() in 'firecold'",
+        "onTrue": [
+          {
+            "type": "target",
+            "target": "self",
+            "effects": [
+              {
+                "type": "temphp",
+                "amount": "20",
+                "higher": {
+                  "4": "5",
+                  "5": "10",
+                  "6": "15",
+                  "7": "20",
+                  "8": "25",
+                  "9": "30"
+                }
+              },
+              {
+                "type": "ieffect2",
+                "name": "Greater Tapas",
+                "duration": "4800",
+                "effects": {
+                  "resistances": [
+                    "{choice}"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "onFalse": [
+          {
+            "type": "text",
+            "text": "Invalid choice. Please specify `fire` or `cold`"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "When you cast this power, you gain 20 temporary hit points, and have resistance to your choice of either cold or fire damage for the duration.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, you gain 5 more temporary hit points for each slot level above 3rd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Self",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "8 hours",
+    "ritual": false,
+    "description": "When you cast this power, you gain 20 temporary hit points, and have resistance to your choice of either cold or fire damage for the duration.\n\n**Force Potency.** When you cast this power using a force slot of 4th level or higher, you gain 5 more temporary hit points for each slot level above 3rd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "Greater Translation Program",
     "level": 3,
     "school": "Tech",
