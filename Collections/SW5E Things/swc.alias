@@ -65,6 +65,14 @@ elif args[0].lower() in "religion":
         args.append(f'-title "[name] makes a Piloting check!"')
 
 a = argparse(" ".join(args))
+b = argparse(args)
+
+if b.get('phrase'):
+    phrase = b.last('phrase')
+    args.remove('-phrase')
+    args.remove(phrase)
+    args.append(f'-phrase "{phrase}"')
+
 if a.get('eadv'):
     try:
         for n, s in ch.skills:
