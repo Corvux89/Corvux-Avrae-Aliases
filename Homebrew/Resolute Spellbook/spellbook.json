@@ -1930,7 +1930,7 @@
             "effects": [
               {
                 "type": "ieffect2",
-                "name": "Mage Armor",
+                "name": "Battle Precognition",
                 "duration": "4800",
                 "effects": {
                   "ac_bonus": "3"
@@ -14398,6 +14398,150 @@
     "concentration": false
   },
   {
+    "name": "Lesser Whirlwind",
+    "level": 3,
+    "school": "Force",
+    "automation": [
+      {
+        "type": "roll",
+        "dice": "3d6 [kinetic]",
+        "name": "damage",
+        "higher": {
+          "4": "1d6 [kinetic]",
+          "5": "2d6 [kinetic]",
+          "6": "3d6 [kinetic]",
+          "7": "4d6 [kinetic]",
+          "8": "5d6 [kinetic]",
+          "9": "6d6 [kinetic]"
+        }
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "save",
+            "stat": "dex",
+            "fail": [
+              {
+                "type": "damage",
+                "damage": "{damage}",
+                "fixedValue": true
+              },
+              {
+                "type": "ieffect2",
+                "name": "Prone",
+                "duration": "-1",
+                "effects": {
+                  "attack_advantage": "-1"
+                },
+                "buttons": [
+                  {
+                    "automation": [
+                      {
+                        "type": "remove_ieffect"
+                      }
+                    ],
+                    "label": "Stand Up",
+                    "verb": "stands up",
+                    "style": "1"
+                  }
+                ],
+                "parent": "None"
+              }
+            ],
+            "success": []
+          }
+        ]
+      },
+      {
+        "type": "target",
+        "target": "self",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Lesser Whirlwind - Parent",
+            "duration": "10",
+            "attacks": [
+              {
+                "attack": {
+                  "_v": 2,
+                  "name": "Spread Lesser Whirlwind",
+                  "automation": [
+                    {
+                      "type": "roll",
+                      "dice": "{ieffect.desc.split()[-1]}d6 [kinetic]",
+                      "name": "damage"
+                    },
+                    {
+                      "type": "target",
+                      "target": "each",
+                      "effects": [
+                        {
+                          "type": "save",
+                          "stat": "dex",
+                          "fail": [
+                            {
+                              "type": "damage",
+                              "damage": "{damage}",
+                              "fixedValue": true
+                            },
+                            {
+                              "type": "ieffect2",
+                              "name": "Prone",
+                              "duration": "-1",
+                              "effects": {
+                                "attack_advantage": "-1"
+                              },
+                              "buttons": [
+                                {
+                                  "automation": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ],
+                                  "label": "Stand Up",
+                                  "verb": "stands up",
+                                  "style": "1"
+                                }
+                              ]
+                            }
+                          ],
+                          "success": []
+                        }
+                      ]
+                    }
+                  ],
+                  "activation_type": 8
+                }
+              }
+            ],
+            "desc": "{spell_level}",
+            "parent": "ieffect"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A swirling whirlwind, stirred up by the Force, appears in a 5-foot radius sphere centered on a point you can see within range. The area is difficult terrain for the duration. Whenever a creature ends its turn within 15 feet of the whirlwind, it is pulled up to 10 feet toward the center. If it ends this movement within the whirlwind, it must make a successful Dexterity saving throw or take 3d6 kinetic damage and fall prone. As a bonus action on each of your turns for the duration, you may move the whirlwind up to 15 feet in any direction. If it enters the space of a creature for the first time on a turn, that creature must make a successful Dexterity saving throw or take 2d6 kinetic damage. The whirlwind sucks up any Small or smaller objects that aren\u2019t secured to anything and that aren\u2019t worn or carried by anyone.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+      }
+    ],
+    "classes": "Universal",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "60 feet",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "ritual": false,
+    "description": "A swirling whirlwind, stirred up by the Force, appears in a 5-foot radius sphere centered on a point you can see within range. The area is difficult terrain for the duration. Whenever a creature ends its turn within 15 feet of the whirlwind, it is pulled up to 10 feet toward the center. If it ends this movement within the whirlwind, it must make a successful Dexterity saving throw or take 3d6 kinetic damage and fall prone. As a bonus action on each of your turns for the duration, you may move the whirlwind up to 15 feet in any direction. If it enters the space of a creature for the first time on a turn, that creature must make a successful Dexterity saving throw or take 2d6 kinetic damage. The whirlwind sucks up any Small or smaller objects that aren\u2019t secured to anything and that aren\u2019t worn or carried by anyone.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+    "higherlevels": "",
+    "concentration": true
+  },
+  {
     "name": "(SW) Light",
     "level": 0,
     "school": "Tech",
@@ -26337,148 +26481,5 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  },
-  {
-    "name": "Lesser Whirlwind",
-    "level": 3,
-    "school": "Force",
-    "automation": [
-        {
-            "type": "roll",
-            "dice": "3d6 [kinetic]",
-            "name": "damage",
-            "higher": {
-                "4": "1d6 [kinetic]",
-                "5": "2d6 [kinetic]",
-                "6": "3d6 [kinetic]",
-                "7": "4d6 [kinetic]",
-                "8": "5d6 [kinetic]",
-                "9": "6d6 [kinetic]"
-            }
-        },
-        {
-            "type": "target",
-            "target": "each",
-            "effects": [
-                {
-                    "type": "save",
-                    "stat": "dex",
-                    "fail": [
-                        {
-                            "type": "damage",
-                            "damage": "{damage}",
-                            "fixedValue": true
-                        },
-                        {
-                            "type": "ieffect2",
-                            "name": "Prone",
-                            "duration": "-1",
-                            "effects": {
-                                "attack_advantage": "-1"
-                            },
-                            "buttons": [
-                                {
-                                    "automation": [
-                                        {
-                                            "type": "remove_ieffect"
-                                        }
-                                    ],
-                                    "label": "Stand Up",
-                                    "verb": "stands up",
-                                    "style": "1"
-                                }
-                            ]
-                        }
-                    ],
-                    "success": []
-                }
-            ]
-        },
-        {
-            "type": "target",
-            "target": "self",
-            "effects": [
-                {
-                    "type": "ieffect2",
-                    "name": "Lesser Whirlwind - Parent",
-                    "duration": "10",
-                    "attacks": [
-                        {
-                            "attack": {
-                                "_v": 2,
-                                "name": "Spread Lesser Whirlwind",
-                                "automation": [
-                                    {
-                                        "type": "roll",
-                                        "dice": "{ieffect.desc.split()[-1]}d6 [kinetic]",
-                                        "name": "damage"
-                                    },
-                                    {
-                                        "type": "target",
-                                        "target": "each",
-                                        "effects": [
-                                            {
-                                                "type": "save",
-                                                "stat": "dex",
-                                                "fail": [
-                                                    {
-                                                        "type": "damage",
-                                                        "damage": "{damage}",
-                                                        "fixedValue": true
-                                                    },
-                                                    {
-                                                        "type": "ieffect2",
-                                                        "name": "Prone",
-                                                        "duration": "-1",
-                                                        "effects": {
-                                                            "attack_advantage": "-1"
-                                                        },
-                                                        "buttons": [
-                                                            {
-                                                                "automation": [
-                                                                    {
-                                                                        "type": "remove_ieffect"
-                                                                    }
-                                                                ],
-                                                                "label": "Stand Up",
-                                                                "verb": "stands up",
-                                                                "style": "1"
-                                                            }
-                                                        ]
-                                                    }
-                                                ],
-                                                "success": []
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "activation_type": 8
-                            }
-                        }
-                    ],
-                    "desc": "{spell_level}",
-                    "parent": "ieffect"
-                }
-            ]
-        },
-        {
-            "type": "text",
-            "text": "A swirling whirlwind, stirred up by the Force, appears in a 5-foot radius sphere centered on a point you can see within range. The area is difficult terrain for the duration. Whenever a creature ends its turn within 15 feet of the whirlwind, it is pulled up to 10 feet toward the center. If it ends this movement within the whirlwind, it must make a successful Dexterity saving throw or take 3d6 kinetic damage and fall prone. As a bonus action on each of your turns for the duration, you may move the whirlwind up to 15 feet in any direction. If it enters the space of a creature for the first time on a turn, that creature must make a successful Dexterity saving throw or take 2d6 kinetic damage. The whirlwind sucks up any Small or smaller objects that aren’t secured to anything and that aren’t worn or carried by anyone.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
-        }
-    ],
-    "classes": "Universal",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "60 feet",
-    "components": {
-        "verbal": false,
-        "somatic": false,
-        "material": ""
-    },
-    "duration": "Concentration, up to 1 minute",
-    "ritual": false,
-    "description": "A swirling whirlwind, stirred up by the Force, appears in a 5-foot radius sphere centered on a point you can see within range. The area is difficult terrain for the duration. Whenever a creature ends its turn within 15 feet of the whirlwind, it is pulled up to 10 feet toward the center. If it ends this movement within the whirlwind, it must make a successful Dexterity saving throw or take 3d6 kinetic damage and fall prone. As a bonus action on each of your turns for the duration, you may move the whirlwind up to 15 feet in any direction. If it enters the space of a creature for the first time on a turn, that creature must make a successful Dexterity saving throw or take 2d6 kinetic damage. The whirlwind sucks up any Small or smaller objects that aren’t secured to anything and that aren’t worn or carried by anyone.\n\n**Force Potency.** When you cast this power with a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
-    "higherlevels": "",
-    "concentration": true
-}
+  }
 ]

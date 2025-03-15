@@ -83,3 +83,6 @@ with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
 
 with open('Homebrew\\Resolute Spellbook\\spellbook.json', encoding='utf-8', mode="w+") as outfile:
     outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))
+
+with open('Homebrew\\Resolute Spellbook\\tome.json', "w") as outfile:
+    outfile.write(json.dumps(spell_data["data"]))
