@@ -545,10 +545,14 @@ def modCVAR(cvar_ref):
         base_val = [] if 'append' in cvar_ref else 0 if 'modifier' in cvar_ref else ""
 
     if 'value' in cvar_ref:
-        try:
-            base_val = translate_str(cvar_ref.value, "", "")
-        except: 
+        if cvar_ref.get('string', False) == False:
+            try:
+                base_val = translate_str(cvar_ref.value, "", "")
+            except: 
+                base_val = cvar_ref.value
+        else:
             base_val = cvar_ref.value
+
     elif 'modifier' in cvar_ref:
         base_val += int(cvar_ref.modifier)
     elif 'append' in cvar_ref and cvar_ref.append not in base_val:

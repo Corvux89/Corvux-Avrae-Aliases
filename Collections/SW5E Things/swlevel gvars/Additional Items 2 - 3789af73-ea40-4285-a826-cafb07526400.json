@@ -954,7 +954,8 @@
             "name": "SWFeats",
             "default": "{}",
             "node": "RancorsDiscipline",
-            "value": "Charisma"
+            "value": "Charisma",
+            "string": true
         }
     },
     {
@@ -963,7 +964,8 @@
             "name": "SWFeats",
             "default": "{}",
             "node": "RancorsDiscipline",
-            "value": "Wisdom"
+            "value": "Wisdom",
+            "string": true
         }
     },
     {
