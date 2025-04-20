@@ -274,7 +274,6 @@
 # TODO: Operative - Sneak Attack
 # TODO: Operative - Cunning Action
 # TODO: Operative - Operative Exploits
-# TODO: Operative - Bad Feeling
 # TODO: Operative - Operative Practice
 # TODO: Operative - Ability Score Improvement
 # TODO: Operative - Uncanny Dodge

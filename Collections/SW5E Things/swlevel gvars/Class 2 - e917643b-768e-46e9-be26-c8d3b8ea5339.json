@@ -2699,6 +2699,28 @@
         "Class": "Operative",
         "hitDie": "d8",
         "subclassLevel": 3,
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Bad Feeling",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Bad Feeling",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+                        }
+                    ]
+                }
+            }
+        ],
         "counters": [
             {
                 "name": "Bad Feeling",
@@ -2837,7 +2859,104 @@
     {
         "Class": "Operative",
         "subclass": "Sharpshooter",
-        "counters": []
+        "counters": [],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Disarming Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "dc": "8+proficiencyBonus+dexterityMod",
+                                    "success": [],
+                                    "fail": []
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "You attempt to disarm a creature with your attack. The target must succeed on a Strength saving throw or be forced to drop one item of your choice that it’s holding. The object lands at its feet."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Penetrating Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "operativeLevel",
+                            "value": "caster.levels.get('Operative')"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "dieSize",
+                            "value": "ceil(operativeLevel/2)"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "attack",
+                                    "attackBonus": "0",
+                                    "miss": [],
+                                    "hit": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "2d{dieSize} [kinetic]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You attempt to damage another target with the same attack. Choose a second target within 15 feet of and directly behind your initial target. If the original attack roll would hit the second target, it takes two dice worth of Sneak Attack damage.\n\nThe damage is of the same type dealt by the original attack.\n\n**NOTE** Use the `-attackroll` param with this automation to run it with the same to-hit roll from the original attack to see if it will hit the new target, or use the `hit` keyword if you know if will hit."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Suppressive Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "wis",
+                                    "dc": "8+proficiencyBonus+dexterityMod",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You attempt to pin the target to its location. The target must succeed on a Wisdom saving throw or be frightened of you until the end of its next turn."
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "Class": "Operative",

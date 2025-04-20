@@ -1531,14 +1531,14 @@
         "dice": "4d6",
         "name": "numberOfProjectiles",
         "higher": {
-          "2": "5d6",
-          "3": "6d6",
-          "4": "7d6",
-          "5": "8d6",
-          "6": "9d6",
-          "7": "10d6",
-          "8": "11d6",
-          "9": "12d6"
+          "2": "1d6",
+          "3": "2d6",
+          "4": "3d6",
+          "5": "4d6",
+          "6": "5d6",
+          "7": "6d6",
+          "8": "7d6",
+          "9": "8d6"
         },
         "displayName": "Number of Projectiles"
       },
@@ -22230,6 +22230,56 @@
     "ritual": false,
     "description": "Choose a point that you can see within range. Each creature within range of that point must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of a target's turns, it can make another Wisdom saving throw. On a success, the power ends on the target. This power has no effect on droids or constructs. \r\n\r\n***Force Potency.*** When you cast this power using a force slot of 9th level, the size of the cube increases to 40 feet.",
     "concentration": true
+  },
+  {
+    "name": "Static Charge",
+    "level": 2,
+    "school": "Tech",
+    "automation": [
+      {
+        "type": "variable",
+        "name": "numAttacks",
+        "value": "6+(2*(spell_level-2))"
+      },
+      {
+        "type": "target",
+        "target": "each",
+        "effects": [
+          {
+            "type": "ieffect2",
+            "name": "Charged Up",
+            "duration": "100",
+            "effects": {
+              "damage_bonus": "1d6 [lightning]"
+            },
+            "desc": "Deals bonus damage for a total of {{numAttacks}} times"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "{{numAttacks}}",
+        "title": "Number of Attacks"
+      },
+      {
+        "type": "text",
+        "text": "You channel lightning energy into a creature. The energy is harmless to the creature, but escapes in dangerous bursts to other nearby creatures. Every time that creature hits another creature with a melee attack, is hit by another creature with a melee attack, or ends its turn while grappling or being grappled by another creature, it deals 1d6 lightning damage to that creature. Once this power has discharged 6 times (dealing up to 6d6 damage), the power ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the total number of discharges this power can make before ending increases by two (dealing 2d6 more total damage) for each slot level above 2nd."
+      }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "Touch",
+    "components": {
+      "verbal": false,
+      "somatic": false,
+      "material": ""
+    },
+    "duration": "10 minutes",
+    "ritual": false,
+    "description": "You channel lightning energy into a creature. The energy is harmless to the creature, but escapes in dangerous bursts to other nearby creatures. Every time that creature hits another creature with a melee attack, is hit by another creature with a melee attack, or ends its turn while grappling or being grappled by another creature, it deals 1d6 lightning damage to that creature. Once this power has discharged 6 times (dealing up to 6d6 damage), the power ends.\n\n**Overcharge Tech.** When you cast this power using a tech slot of 3rd level or higher, the total number of discharges this power can make before ending increases by two (dealing 2d6 more total damage) for each slot level above 2nd.",
+    "higherlevels": "",
+    "concentration": false
   },
   {
     "name": "Stinger",

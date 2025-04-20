@@ -159,7 +159,6 @@
 # TODO: Expanded Missing Shockwave
 # TODO: Expanded Missing Smothering Cloud
 # TODO: Expanded Missing Spiked Armor
-# TODO: Expanded Missing Static Charge
 # TODO: Expanded Missing Suppress Gravity
 # TODO: Expanded Missing Tracing Blow
 # TODO: Expanded Missing Transfer Power
