@@ -1,5 +1,5 @@
 <drac2>
-cc="Force Points"
+cc = "Force Points" if any("Force Points" in e for e in &ARGS&) else "Tech Points"
 splashcc = "Splashclass - Consular"
 c=character()
 
@@ -7,16 +7,19 @@ v = c.cc_exists(cc) and c.get_cc(cc) >=2
 output = ""
 
 if v:
-    output+= ''' -f "Quickened|When you cast a power that has a casting time of 1 action, you can spend 2 additional force points to change the casting time to 1 bonus action for this casting." '''
+    if cc == "Force Points":
+        output+= ''' -f "Quickened|When you cast a power that has a casting time of 1 action, you can spend 2 additional force points to change the casting time to 1 bonus action for this casting." '''
 
-    if c.get_cvar("SplashConsular") == "1":
-            if c.cc_exists(splashcc) and c.get_cc(splashcc) >= 2:
-                output += f''' -f "{splashcc}|You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain one of the Force-Empowered Casting options of your choice from those available to the consular class. You gain an additional option at 11th level.\n\nYou can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest." '''
-                c.mod_cc(splashcc, -2)
+        if c.get_cvar("SplashConsular") == "1":
+                if c.cc_exists(splashcc) and c.get_cc(splashcc) >= 2:
+                    output += f''' -f "{splashcc}|You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain one of the Force-Empowered Casting options of your choice from those available to the consular class. You gain an additional option at 11th level.\n\nYou can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest." '''
+                    c.mod_cc(splashcc, -2)
 
-                output += f''' -f "{splashcc}(-2)|{c.cc_str(splashcc)}" '''
-            else:
-                return f''' -f "{splashcc}|You don't have enough uses left to careful and cast" '''
+                    output += f''' -f "{splashcc}(-2)|{c.cc_str(splashcc)}" '''
+                else:
+                    return f''' -f "{splashcc}|You don't have enough uses left to careful and cast" '''
+    else:
+        output += ''' -f "Quickened Subroutine|When you cast a power that has a casting time of 1 action, you can spend 2 additional tech points to change the casting time to 1 bonus action for this casting.\n\nYou can use only one Subroutine modification on a power when you cast it, unless otherwise noted." '''
 
     c.mod_cc(cc,-2)
     output += f''' -f "{cc}(-2)|{c.cc_str(cc)}" '''

@@ -2902,8 +2902,14 @@
                         },
                         {
                             "type": "variable",
+                            "name": "OperativeOffensiveAugment",
+                            "value": "OperativeOffensiveAugment",
+                            "onError": 0
+                        },
+                        {
+                            "type": "variable",
                             "name": "dieSize",
-                            "value": "ceil(operativeLevel/2)"
+                            "value": "6 + (2*OperativeOffensiveAugment)"
                         },
                         {
                             "type": "target",

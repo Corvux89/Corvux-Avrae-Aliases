@@ -1,11 +1,8 @@
 <drac2>
 ch = character()
-item_dict = load_json(ch.get_cvar("SWItems", "{}"))
-num = &ARGS&[0] if &ARGS& else item_dict.get("OperativeOffensiveAugment",0)+1
+num = &ARGS&[0] if &ARGS& else int(ch.get_cvar("OperativeOffensiveAugment", 0))+1
 
-item_dict["OperativeOffensiveAugment"] = num
-
-ch.set_cvar("SWItems", dump_json(item_dict))
+ch.set_cvar("OperativeOffensiveAugment", num)
 
 base = f'''embed -thumb {image} -color {color} -title "Operative Offensive Augment!" -desc "\n**\# of Operative Offensive Autments**: {num}" '''
 

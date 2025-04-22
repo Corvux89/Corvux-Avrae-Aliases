@@ -3,7 +3,6 @@ embed
 c = character()
 com = combat()
 args = argparse(&ARGS&)
-SWItems = load_json(c.get_cvar("SWItems", "{}"))
 out = ""
 wildshape = None
 ff  = "Fanatical Focus"
@@ -23,7 +22,7 @@ t   = com.get_combatant(r) if com else ""
 v   = (c.cc_exists(cc) and c.get_cc(cc)>0) or i or lvl >= 20
 
 dmg = not (get('dexBers') or args.last('dex') or args.last('nodmg'))
-dmgBonus = args.last('d', 2+(lvl>8)+(lvl>12)+(lvl>16)+int(SWItems.get("BerserkerOffensiveAugment",0)))
+dmgBonus = args.last('d', 2+(lvl>8)+(lvl>12)+(lvl>16)+int(c.get_cvar("BerserkerOffensiveAugment",0)))
 
 tname = t.name if t else r
 c.mod_cc(cc,-1) if v and not i and lvl<20 else ""

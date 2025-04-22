@@ -315,7 +315,7 @@ def createCounters(counters, inLevel):
 
         # Create the counters
         ch.create_cc(counter.name, 0, f"{max_value}+{modifier}", reset, counter.display,
-                     counter.get('reset_to'), None, None, counter.get('desc'))
+                     counter.get('reset_to'),counter.get('reset_by'), None, counter.get('desc'))
 
 
 def setupHD(playerClass, inLevel):

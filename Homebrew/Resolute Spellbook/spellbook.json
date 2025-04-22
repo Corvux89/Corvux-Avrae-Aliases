@@ -6618,90 +6618,6 @@
     "concentration": true
   },
   {
-    "name": "Erratic Rockets",
-    "level": 1,
-    "school": "Tech",
-    "automation": [
-      {
-        "type": "roll",
-        "dice": "5d4 [fire]",
-        "name": "critDamage",
-        "displayName": "Critical Rocket Damage"
-      },
-      {
-        "type": "variable",
-        "name": "stopAutomation",
-        "value": "0"
-      },
-      {
-        "type": "target",
-        "target": "each",
-        "effects": [
-          {
-            "type": "attack",
-            "hit": [
-              {
-                "type": "condition",
-                "condition": "stopAutomation and stopAutomation == 1",
-                "onTrue": [],
-                "onFalse": [
-                  {
-                    "type": "condition",
-                    "condition": "lastAttackDidCrit",
-                    "onTrue": [
-                      {
-                        "type": "damage",
-                        "damage": "{critDamage}"
-                      }
-                    ],
-                    "onFalse": [
-                      {
-                        "type": "damage",
-                        "damage": "2d4 [fire]"
-                      }
-                    ]
-                  }
-                ],
-                "errorBehaviour": "false"
-              }
-            ],
-            "miss": [
-              {
-                "type": "condition",
-                "condition": "lastAttackNaturalRoll == 1",
-                "onTrue": [
-                  {
-                    "type": "variable",
-                    "name": "stopAutomation",
-                    "value": "1"
-                  }
-                ],
-                "onFalse": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "text": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st."
-      }
-    ],
-    "classes": "None",
-    "subclasses": "",
-    "casttime": "1 action",
-    "range": "120 feet",
-    "components": {
-      "verbal": false,
-      "somatic": false,
-      "material": ""
-    },
-    "duration": "Instantaneous",
-    "ritual": false,
-    "description": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
-    "concentration": false
-  },
-  {
     "name": "Eruption",
     "level": 6,
     "school": "Force",
@@ -26531,5 +26447,69 @@
     "ritual": false,
     "description": "The next time you hit with a melee weapon attack during this power\u2019s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
     "concentration": true
-  }
+  },
+  {
+    "name": "Erratic Rockets",
+    "level": 1,
+    "school": "Tech",
+    "automation": [
+        {
+            "type": "roll",
+            "dice": "2d4 [fire]",
+            "name": "damage",
+            "displayName": "Rocket Damage"
+        },
+        {
+            "type": "roll",
+            "dice": "5d4 [fire]",
+            "name": "critDamage",
+            "displayName": "Critical Rocket Damage"
+        },
+        {
+            "type": "target",
+            "target": "each",
+            "effects": [
+                {
+                    "type": "attack",
+                    "hit": [
+                        {
+                            "type": "condition",
+                            "condition": "lastAttackDidCrit",
+                            "onTrue": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{critDamage}"
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "damage",
+                                    "damage": "{damage}"
+                                }
+                            ]
+                        }
+                    ],
+                    "miss": []
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "text": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st."
+        }
+    ],
+    "classes": "None",
+    "subclasses": "",
+    "casttime": "1 action",
+    "range": "120 feet",
+    "components": {
+        "verbal": false,
+        "somatic": false,
+        "material": ""
+    },
+    "duration": "Instantaneous",
+    "ritual": false,
+    "description": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
+    "concentration": false
+}
 ]

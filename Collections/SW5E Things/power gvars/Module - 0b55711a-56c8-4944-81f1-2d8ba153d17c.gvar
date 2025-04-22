@@ -48,26 +48,30 @@ def processPower(args):
     spell_level = max(a.last('l', default=0, type_=int), spell.level)
     points = point_list[spell_level]
 
-    if a.get('p'):
-        points += int(str(a.last('p')).replace('{spell_level}',str(spell_level)))
-
     # --------------------
     # Pre Cost Processing
     # --------------------
 
     cc, points, ignore = pre_cost_processing(out, spell, spell_level, cc, points, ignore, args)
 
+    # Manual overrides
+    if a.get('p'):
+        points += int(vroll(str(a.last('p')).replace('{spell_level}',str(spell_level))).total)
+    
+    if a.get('cc'):
+        cc = str(a.last('cc')).replace('{spell_level}', str(spell_level))
+
     # --------------------
     # Pay the cost
     # --------------------
     if not ignore and not c.cc_exists(cc):
-        return err(f"No counter named {cc} found. Either cast with `-i` or run `!swlevel`")
+        return err(f"No counter named {cc} found. Either cast with `-i` or run `!swlevel` or specify the correct counter with `-cc <counter name>`")
     elif not ignore and c.get_cc(cc) < points:
         return err(f"You don't have enough {cc} to cast that power")
     c.mod_cc(cc, -points) if not ignore else ''
     args.remove(args[0])
     out.append(" ".join(args))
-    out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('-h') else ''
+    out.append(f''' -f "{cc} (-{points})|{c.cc_str(cc)}" ''') if not ignore and not a.get('h') else ''
 
     # --------------------
     # Post Cost Processing
@@ -220,7 +224,7 @@ def pre_cost_processing(out, spell, spell_level, cc, points, ignore, args):
         if spell_level == 0:
             ignore = True
             out.append('-with int')
-        elif c.cc_exists(f"Tech Dabbler - {spell_level}"):
+        elif c.cc_exists(f"Tech Dabbler - {spell_level}") and c.get_cc(f"Tech Dabbler - {spell_level}"):
             out.append('-with int')
             points = 1
             cc = f"Tech Dabbler - {spell_level}"
@@ -229,7 +233,7 @@ def pre_cost_processing(out, spell, spell_level, cc, points, ignore, args):
     elif feats.get("ForceSensitive") and cc == "Force Points":
         if spell_level == 0:
             ignore = True
-        elif c.cc_exists(f"Force-Sensitive - {spell_level}"):
+        elif c.cc_exists(f"Force-Sensitive - {spell_level}") and c.get_cc(f"Force-Sensitive - {spell_level}"):
             points = 1
             cc = f"Force-Sensitive - {spell_level}"
 

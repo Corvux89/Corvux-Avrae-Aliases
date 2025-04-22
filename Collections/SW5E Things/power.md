@@ -2,7 +2,16 @@
 
 Use `!power "Power Name"` to cast a power using either Force or Tech Points. This requires a counter named "Force Points" or "Tech Points" and the power must be in your spellbook (or use `-i` to ignore requirements). This uses `!cast` as a base command, so it accepts any argument that `!help cast` lists as available.  You may modify the points cost without changing the level of the power by using `-p #`.
 
+__Available Arguments__
+All arguments for `!cast` work with `!power`, but here are some specific ones we also will use:
+
+`-i` - Ignore the power costs
+`with <stat>` - Use a different casting stat
+`-p #` - Override the cost amount
+`-cc <counter name` - Manually override the custom counter to use
+
 ## Class/Subclass Support
+If you want to use the spellbook version of a spell below and not the class version use the `base` argument and it will ignore the class specific versions. 
 
 #### Fighter
 `Adept Specialist` - Support for Growing Momentum
@@ -21,6 +30,7 @@ Use `!power "Power Name"` to cast a power using either Force or Tech Points. Thi
 
 
 ## Feature Support
+If you are a Tech/Force caster and want to use your Tech/Force points instead of the feat counters, use the `` argument and it will ignore the feat counters.
 
 `Tech Dabbler`
 `Force Sensitive`

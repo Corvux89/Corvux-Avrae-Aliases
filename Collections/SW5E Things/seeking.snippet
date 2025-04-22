@@ -1,0 +1,19 @@
+<drac2>
+cc="Tech Points"
+c=character()
+
+v = c.cc_exists(cc) and c.get_cc(cc) >=2
+output = ""
+
+if v:
+    output+= ''' -f "Seeking Subroutine|If you miss with a tech power that calls for an attack roll, you can spend 2 tech points to reroll the attack. You must use the new roll.\n\nYou can use Seeking Subroutine even if you have already used a different Subroutine modification during the casting of the power." '''
+    c.mod_cc(cc,-2)
+    output += f''' -f "{cc}(-2)|{c.cc_str(cc)}" '''
+else:
+    if not c.cc_exists(cc):
+        err(f"You do not have this ability")
+    else:
+        output += f''' -f "Seeking Subroutine|You don't have enough tech points to quicken and cast" '''
+
+return output
+</drac2>
