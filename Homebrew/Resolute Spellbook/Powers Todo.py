@@ -1,3 +1,18 @@
+# TODO: Mapping Missing Greater Pyrokinesis
+# TODO: Mapping Missing Growing Momentum - Burst of Speed
+# TODO: Mapping Missing Haywire
+# TODO: Mapping Missing Infiltrate
+# TODO: Mapping Missing Legendary Battle Meditation - Master Battle Meditation
+# TODO: Mapping Missing Minor Defibrillation
+# TODO: Mapping Missing On/Off
+# TODO: Mapping Missing (SW) Sage Counsel - Guidance
+# TODO: Mapping Missing Sense Emotion
+# TODO: Mapping Missing Shutdown
+# TODO: Mapping Missing Stinger
+# TODO: Mapping Missing Synchronicity
+# TODO: Mapping Missing Turbulent Presence - Improved Battle Meditation
+# TODO: Mapping Missing Unbreakable Focus - Battle Meditation
+# TODO: Mapping Missing Bacta Well
 # TODO: Expanded Missing Lightning Discharge
 # TODO: Expanded Missing Moment Reading
 # TODO: Expanded Missing Steal Knowledge
@@ -118,7 +133,6 @@
 # TODO: Expanded Missing Tech Armor
 # TODO: Expanded Missing Tracker Beacon
 # TODO: Expanded Missing Venomous Blow
-# TODO: Expanded Missing Bacta Well
 # TODO: Expanded Missing Blinding Spatter
 # TODO: Expanded Missing Boiling Oil
 # TODO: Expanded Missing Bolster Security
@@ -314,7 +328,7 @@
 # TODO: Ballistic Shield
 # TODO: (SW) Beacon of Hope
 # TODO: Beast Trick
-# TODO: Bestow Curse
+# TODO: (SW) Bestow Curse
 # TODO: Bestow Virus
 # TODO: Breath Control
 # TODO: Buffer
@@ -375,7 +389,7 @@
 # TODO: Fabricate Minor Trap
 # TODO: Fabricate Trap
 # TODO: (SW) Find the Path
-# TODO: Firestorm
+# TODO: (SW) Firestorm
 # TODO: Flaming Shots
 # TODO: Flash
 # TODO: Force Armor
@@ -399,7 +413,6 @@
 # TODO: Force Listening
 # TODO: Force Mask
 # TODO: Force Meld
-# TODO: Force Mend
 # TODO: Force Project
 # TODO: Force Reflect
 # TODO: Force Sight
@@ -466,7 +479,6 @@
 # TODO: Mass Animation
 # TODO: Mass Coerce Mind
 # TODO: Mass Hysteria
-# TODO: Mass Repair Droid
 # TODO: Master Force Immunity
 # TODO: Master Malacia
 # TODO: Master Revitalize
@@ -512,7 +524,6 @@
 # TODO: Release
 # TODO: (SW) Remove Curse
 # TODO: Remove Virus
-# TODO: Repair Droid
 # TODO: Reprogram Droid
 # TODO: Rescue
 # TODO: (SW) Resistance

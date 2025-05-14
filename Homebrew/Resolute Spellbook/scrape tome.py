@@ -2,10 +2,18 @@ import json
 import urllib.request as rq
 
 url = "https://sw5eapi.azurewebsites.net/api/power"
-request = rq.urlopen('https://api.avrae.io/homebrew/spells/60f243f60dc83c7c1d3a37cc')
-spell_data = json.load(request)
+spell_map = {}
 
-spells = spell_data['data']['spells']
+with open('Homebrew\Resolute Spellbook\\60f243f60dc83c7c1d3a37cc.spell', encoding='utf-8', mode='r') as outfile:
+    spells = json.load(outfile)
+
+with open('Collections\SW5E Things\power gvars\Force Powers - b3458e30-e3ca-4674-970c-adc8987e5b07.json', encoding='utf-8', mode='r') as outfile:
+    spell_map = json.load(outfile)
+
+with open('Collections\SW5E Things\power gvars\Tech Powers - e90cc412-c2ad-4c2f-8e48-8ccc81fb5bf9.json', encoding='utf-8', mode='r') as outfile:
+    spell_map.update(json.load(outfile))
+
+spell_map = list(spell_map.keys())
 
 r = rq.urlopen(url)
 
@@ -21,6 +29,7 @@ site_list = [x.get('name') for x in site_spells]
 # https://www.gmbinder.com/share/-MDosNzOCLn0_ColYfBf
 # New Tech Powers Aziz
 # https://www.gmbinder.com/share/-My-EnFn7t2vE3kxawC0
+
 with open("Homebrew\expanded.json", "r") as outfile:
     expanded_list = json.load(outfile)
 
@@ -28,6 +37,7 @@ with open('Homebrew\\aziz.json', "r") as outfile:
     aziz_list = json.load(outfile)
 
 out_dict = {}
+mapping_list = []
 
 out_dict["total"] = len(spells)
 out_dict["Force"] = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
@@ -52,23 +62,34 @@ for sp in spells:
     formatted_name = sp.get('name').replace('(SW) ', '')
 
     if formatted_name in site_list:
+        found = True
         site_list.remove(formatted_name)
 
     if formatted_name in expanded_list:
+        found = True
         expanded_list.remove(formatted_name)
 
     if formatted_name in aziz_list:
+        found = True
         aziz_list.remove(formatted_name)
+
+    if found and sp.get('name').lower() not in spell_map and formatted_name.lower() not in spell_map:
+        mapping_list.append(sp.get('name'))
+
 
 
 print(f"Total Spells: {out_dict['total']} ({out_dict['automated']} automated)\n"
       f"Force Powers: {out_dict['Force']}\n"
       f"Tech Power: {out_dict['Tech']}\n"
       f"Missing Powers: {len(site_list)+len(expanded_list)+len(aziz_list)}\n"
-      f"Total TODO: {len(site_list)+len(expanded_list)+len(aziz_list)+len(out_dict['todo'])}")
+      f"Missing Mappings: {len(mapping_list)}\n"
+      f"Total TODO: {len(site_list)+len(expanded_list)+len(aziz_list)+len(out_dict['todo'])+len(mapping_list)}")
 
 
 with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
+    for x in mapping_list:
+        outfile.write(f'# {key}: Mapping Missing {x}\n')
+
     for x in site_list:
         outfile.write(f"# {key}: Source Missing {x}\n")
 
@@ -80,9 +101,3 @@ with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
 
     for x in out_dict["todo"]:
         outfile.write(f"# {key}: {x}\n")
-
-with open('Homebrew\\Resolute Spellbook\\spellbook.json', encoding='utf-8', mode="w+") as outfile:
-    outfile.write(json.dumps(sorted(spells, key=lambda spell: spell['name'].replace('(SW) ', '')), indent=2))
-
-with open('Homebrew\\Resolute Spellbook\\tome.json', "w") as outfile:
-    outfile.write(json.dumps(spell_data["data"]))

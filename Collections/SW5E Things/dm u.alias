@@ -1,0 +1,91 @@
+<drac2>
+c = combat()
+args = &ARGS&
+a = argparse(args)
+
+attack_type = args[0]
+
+if attack_type.lower() not in "attacksave":
+    return err(f"Unable to determin attack type from `{attack_type}`. Specify either `hit` or `save`.")
+
+cr = a.last('cr', type_=int, default=0)
+dtype = a.last('dtype', default="energy")
+
+targets = a.get('t', default=[])
+combatants = []
+for t in targets:
+    t_name = t.split("|", 1)[0]
+    t_args = argparse(t.split("|", 1)[1] if "|" in t else "")
+
+    com_target = c.get_combatant(t_name)
+
+    if not com_target:
+        return err(f"Invalid target `{t_name}`")
+    elif "c" not in com_target.type:
+        for c in com_target.combatants:
+            combatants.append([c, t_args])
+    else:
+        combatants.append([com_target, t_args])
+
+results_body = []
+results_footer = []
+total_damage = 0
+
+if 'save' in attack_type.lower():
+    stat = a.last('stat', default=a.last('s', default="dex")).lower()[:3]
+    dc = a.last('dc', default=f"{round(cr/2)}+8", type_=int)
+    results_body.append(f'''-f "Meta|**DC:** {dc}\n{stat.upper()} save" ''')
+
+for com in combatants:
+    f_str = f'-f "{com[0].name}|'
+    f_body = []
+
+    if 'attack' in attack_type.lower():
+        to_hit_str = a.last('hit', default=round(cr/2))
+        to_hit = vroll(to_hit_str)
+        damage = a.last('dmg', default=f"{round(cr/5)}d8+{round(cr/4)}")
+        hit = to_hit.total >= com[0].ac or 'hit' in args or 'hit' in com[1]
+        crit = to_hit.result.crit=="CRIT" or 'crit' in args or 'crit' in com[1]
+        details = f"**To Hit:** {'Automatic hit!' if 'hit' in args or 'hit' in com[1] else to_hit}\n"
+        
+        if hit:    
+            d=com[0].damage(f"{damage} [{dtype}]", crit=crit)
+            details += d.damage
+            results_footer.append(f'{str(com[0])}')
+            total_damage += d.total
+        else:
+            details += f"**Miss!**"
+
+    elif 'save' in attack_type.lower():
+        damage = a.last('dmg', default=f"{round(cr/4)}d8")
+        s_str = []
+        save = com[0].save(stat, com[1].adv(False, True) if 'adv' in com[1] or 'dis' in com[1] else a.adv(False,True))
+        auto_fail = 'fail' in args or 'fail' in com[1]
+        auto_success = 'pass' in args or 'pass' in com[1]
+        success = save.total < dc
+        s_str.append(f"**{stat.upper()} Save:** {save}; {'Automatic Failure!' if auto_fail else 'Automatic Pass!' if auto_success else 'Failure!' if not success else 'Success!'}")
+
+        if success or auto_success:
+            d = com[0].damage(f"{damage} [{dtype}]")
+            s_str.append(d.damage)
+            results_footer.append(f"{str(com[0])}")
+            total_damage += d.total 
+        
+        details = "\n".join(s_str)
+
+    f_str+=details + '"'
+    results_body.append(f_str)
+    
+    if len(combatants)>1 and total_damage != 0:
+        results_body.append(f''' -f "**__Total {'Damage' if total_damage > 0 else 'Healing'}__**: {total_damage}" ''')
+
+footer = "\n".join(results_footer)
+body = "\n".join(results_body)
+embed_args = " ".join(a for a in [
+    f'''-title "{a.last('title')}"''' if a.last('title', default="Generic Automation") else None,
+    f'''-image "{a.last('image')}"''' if a.last('image') else None,
+    f'''-color "{a.last('color')}"''' if a.last('color') else None
+    ] if a is not None)
+
+return f'''embed -footer "{footer}" {body} -title "{a.last('title')}" {embed_args}'''
+</drac2>

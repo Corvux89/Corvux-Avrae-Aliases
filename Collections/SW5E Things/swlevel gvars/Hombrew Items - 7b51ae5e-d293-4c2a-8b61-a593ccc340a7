@@ -1,1 +1,79 @@
-[{"name":"Bombardier's Belt","counters":[{"name":"Bombardier's Belt","value":3,"reset_by":"1d3","reset":"long"}],"actions":[{"action":{"name":"Bombardier's Belt","_v":2,"activation_type":"4","automation":[{"type":"counter","counter":"Bombardier's Belt","amount":1,"errorBehaviour":"raise"},{"type":"text","text":"This belt is lined with a series of smart bombs with quick-release magnets. The belt has three charges, and it regains 1d3 expended charges after a long rest. While wearing it, you can expend 1 charge to cast element of surprise with a DC of 13."}]}}]}]
+[
+    {
+        "name": "Bombardier's Belt",
+        "counters": [
+            {
+                "name": "Bombardier's Belt",
+                "value": 3,
+                "reset_by": "1d3",
+                "reset": "long"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Bombardier's Belt",
+                    "_v": 2,
+                    "activation_type": "4",
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Bombardier's Belt",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "This belt is lined with a series of smart bombs with quick-release magnets. The belt has three charges, and it regains 1d3 expended charges after a long rest. While wearing it, you can expend 1 charge to cast element of surprise with a DC of 13.\n\n**Cartel Enforcer’s Stash.** While you are attuned to and wearing two or more enhanced items that have this named property, you gain additional properties as shown on the Set Items page of this document.\n\n```The bombs on this belt are volatile and highly unstable, but their pleasing spheroid shape begs to be thrown at anybody who’s shot you.```"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Sienar Hellfire-Z9 (PM)",
+        "counters": [
+            {
+                "name": "Sienar Hellfire-Z9 (PM)",
+                "value": 7,
+                "display": "bubble",
+                "reset": "long",
+                "reset_by": "1d6+1"
+            }
+        ],
+        "actions": [
+            {
+                "action": {
+                    "name": "Sienar Hellfire-Z9 (PM)",
+                    "_v": 2,
+                    "activation_type": 1,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Sienar Hellfire-Z9 (PM)",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "condition",
+                            "condition": "lastCounterName and lastCounterRemaining == 0",
+                            "onTrue": [
+                                {
+                                    "type": "roll",
+                                    "dice": "1d20",
+                                    "name": "Does the backpack explode?"
+                                }
+                            ],
+                            "onFalse": []
+                        },
+                        {
+                            "type": "text",
+                            "text": "This special backpack cannot carry items, but has 7 charges. While wearing it, you can use an Action to expend no more than 3 charges to cast Explosion (save DC 15) from it. For 1 charge, you cast the level 3 version of the power. You can increase the power’s level by 1 for each additional charge you expend.\n\n**Regaining Charges.** The backpack regains 1d6+1 expended charges after a long rest. If you expend the backpack’s last charge, roll 1d20. On a 1, the backpack explodes as if you cast Explosion at fifth level at your feet.\n\n**Cartel Enforcer’s Stash.** While you are attuned to and wearing two or more enhanced items that have this named property, you gain additional properties as shown on the Set Items page of this document.\n\n```This backpack is constantly humming, as if right on the edge of self-destructing. It probably is.```"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

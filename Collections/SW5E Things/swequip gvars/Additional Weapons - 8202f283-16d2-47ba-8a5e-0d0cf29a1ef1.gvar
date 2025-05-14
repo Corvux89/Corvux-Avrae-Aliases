@@ -427,7 +427,7 @@ def gunning_style(attack, args):
     dieType = int(die[die.find('d')+1:])
     counter = sup.get_counter(attack)
     dc = sup.get_save_dc(attack)
-    gun_str = dmg_str.replace(f'{die}', f"({numDie}d{dieType}, {numDie}d{dieType})kh1")
+    gun_str = dmg_str.replace(f'{die}', f"({numDie}d{dieType}, ({numDie}d{dieType})kh1)*2")
     max_str = dmg_str.replace(f'{dieType}', f'{dieType}mi{dieType}')
     fail, save = sup.get_on_save_effects(attack)
     con_fail, con_save = sup.get_on_save_effects(attack)

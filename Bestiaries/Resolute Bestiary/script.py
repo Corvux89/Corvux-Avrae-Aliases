@@ -53,7 +53,15 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
         kfcdb['monsters'].append(monster)
         count += 1
 
-        actions = mon.get('actions', [])
+        actions = (mon.get('actions', []) + 
+                   mon.get('traits', []) + 
+                   mon.get('bonus_actions', []) + 
+                   mon.get('reactions', []) + 
+                   mon.get('legactions', []) + 
+                   mon.get('mythic', []) + 
+                   mon.get('lair', []) + 
+                   mon.get('regional', [])
+                   )
 
         for a in actions:
             if a.get('description') and any(x in a.get('description').lower() for x in to_automate_keywords) or (a.get('name') and 'recharge' in a.get('name').lower()):

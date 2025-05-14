@@ -253,6 +253,53 @@
         ]
     },
     {
+        "name": "Bansche Advanced 2ZBc",
+        "actions": [
+            {
+                "action": {
+                    "name": "Bansche Advanced 2ZBc",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "list_display_override": "Deal damage based off of `-amt`",
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "BanscheAdvanced2ZBc",
+                            "amount": 0,
+                            "errorBehaviour": "ignore"
+                        },
+                        {
+                            "type": "condition",
+                            "condition": "lastCounterRequestedAmount > 0",
+                            "onTrue": [
+                                {
+                                    "type": "target",
+                                    "target": "each",
+                                    "effects": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{lastCounterRequestedAmount} [force]"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "text",
+                                    "text": "Use `-amt` to specify the amount of points used, and `-dtype` to change the damage type. Default is `[force]` damage."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you spend tech points and deal damage with a tech power cast through this wristpad, you deal additional damage equal to the number of tech points spent."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Bansche Purifier MENAD Pro Mk I",
         "actions": [
             {

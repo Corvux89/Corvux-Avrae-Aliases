@@ -2,7 +2,7 @@
   {
     "name": "000 Series Protocol Droid",
     "proper": true,
-    "image_url": "https://static.wikia.nocookie.net/star-wars-canon/images/3/35/000-Doctor_Aphra_1-Rod_Reis.png",
+    "image_url": "https://static.wikia.nocookie.net/starwars/images/3/35/000-Doctor_Aphra_1-Rod_Reis.png",
     "languages": [
       "All registered languages"
     ],
@@ -305,7 +305,7 @@
   {
     "name": "1.4 FD P-Tower Turret",
     "proper": false,
-    "image_url": "https://static.wikia.nocookie.net/starwars/images/d/db/AntivehicleArtillery-NEGWT.png",
+    "image_url": "https://static.wikia.nocookie.net/starwars/images/e/e3/Antivehix-artillery_negwt.jpg",
     "languages": [],
     "cr": "5",
     "xp": 1800,
@@ -318,7 +318,7 @@
     "hitdice": "10d10 + 10",
     "speed": "0ft.",
     "ability_scores": {
-      "prof_bonus": 3,
+      "prof_bonus": 4,
       "strength": 16,
       "dexterity": 4,
       "constitution": 13,
@@ -468,7 +468,7 @@
         "adv": null
       },
       "perception": {
-        "value": 3,
+        "value": 4,
         "prof": 1,
         "bonus": 0,
         "adv": null
@@ -652,14 +652,14 @@
           "3": []
         }
       },
-      "caster_dc": 11,
-      "caster_sab": 3,
+      "caster_dc": 12,
+      "caster_sab": 4,
       "caster_mod": 0,
-      "innate_dc": 11,
-      "innate_sab": 3,
+      "innate_dc": 12,
+      "innate_sab": 4,
       "innate_mod": 0
     },
-    "passiveperc": 13
+    "passiveperc": 14
   },
   {
     "name": "3PO Protocol Droid",
@@ -18224,7 +18224,7 @@
     "hitdice": "8d10 + 16",
     "speed": "30ft.",
     "ability_scores": {
-      "prof_bonus": 1,
+      "prof_bonus": 2,
       "strength": 20,
       "dexterity": 6,
       "constitution": 15,
@@ -18272,7 +18272,7 @@
     },
     "skills": {
       "athletics": {
-        "value": 6,
+        "value": 7,
         "prof": 1,
         "bonus": 0,
         "adv": null
@@ -18440,7 +18440,7 @@
       },
       {
         "name": "Beast of Burden",
-        "description": "the blurrg is considered to be a Large animal for the purpose of determining its carrying capacity.",
+        "description": "the blurrg is considered to be a Huge animal for the purpose of determining its carrying capacity.",
         "automation": null
       }
     ],
@@ -18499,11 +18499,11 @@
           "3": []
         }
       },
-      "caster_dc": 9,
-      "caster_sab": 1,
+      "caster_dc": 10,
+      "caster_sab": 2,
       "caster_mod": 0,
-      "innate_dc": 9,
-      "innate_sab": 1,
+      "innate_dc": 10,
+      "innate_sab": 2,
       "innate_mod": 0
     },
     "passiveperc": 8
