@@ -2499,6 +2499,12 @@
                         },
                         {
                             "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
+                            "type": "variable",
                             "name": "dieSize",
                             "value": "4 if monkLevel < 5 else 6 if monkLevel < 9 else 8 if monkLevel < 13 else 10 if monkLevel < 17 else 12"
                         },
@@ -2515,7 +2521,7 @@
                                 {
                                     "type": "save",
                                     "stat": "str",
-                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)",
+                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)+VowOfTheFocused",
                                     "success": [],
                                     "fail": [
                                         {
@@ -2548,6 +2554,12 @@
                             "type": "variable",
                             "name": "monkLevel",
                             "value": "caster.levels.get('Monk')"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
                         },
                         {
                             "type": "variable",
@@ -2595,6 +2607,12 @@
                         },
                         {
                             "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
+                            "type": "variable",
                             "name": "dieSize",
                             "value": "4 if monkLevel < 5 else 6 if monkLevel < 9 else 8 if monkLevel < 13 else 10 if monkLevel < 17 else 12"
                         },
@@ -2611,7 +2629,7 @@
                                 {
                                     "type": "save",
                                     "stat": "str",
-                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)",
+                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)+VowOftheFocused",
                                     "success": [],
                                     "fail": [
                                         {
@@ -2647,6 +2665,12 @@
                         },
                         {
                             "type": "variable",
+                            "name": "VowOfTheFocused",
+                            "value": "VowOfTheFocused",
+                            "onError": 0
+                        },
+                        {
+                            "type": "variable",
                             "name": "dieSize",
                             "value": "4 if monkLevel < 5 else 6 if monkLevel < 9 else 8 if monkLevel < 13 else 10 if monkLevel < 17 else 12"
                         },
@@ -2668,7 +2692,7 @@
                                 {
                                     "type": "save",
                                     "stat": "dex",
-                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)",
+                                    "dc": "8+proficiencyBonus+max(charismaMod,wisdomMod)+VowOfTheFocused",
                                     "success": [
                                         {
                                             "type": "damage",

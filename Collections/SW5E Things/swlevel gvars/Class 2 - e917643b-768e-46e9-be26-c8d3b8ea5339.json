@@ -398,7 +398,7 @@
                 "level": 3,
                 "action": {
                     "name": "Show Off",
-                    "_v": "2",
+                    "_v": 2,
                     "activation_type": 8,
                     "automation": [
                         {
@@ -2182,7 +2182,7 @@
                                 {
                                     "type": "save",
                                     "stat": "con",
-                                    "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod);+VowOfTheFocused",
+                                    "dc": "8+proficiencyBonus+max(wisdomMod,charismaMod)+VowOfTheFocused",
                                     "success": [],
                                     "fail": [
                                         {
