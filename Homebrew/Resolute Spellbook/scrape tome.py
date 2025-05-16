@@ -101,3 +101,12 @@ with open("Homebrew\\Resolute Spellbook\\Powers Todo.py", "w") as outfile:
 
     for x in out_dict["todo"]:
         outfile.write(f"# {key}: {x}\n")
+
+# Sort spells by name, ignoring '(SW) '
+spells = sorted(
+    spells,
+    key=lambda obj: obj.get('name', '').replace('(SW) ', '').lower()
+)
+
+with open('Homebrew\Resolute Spellbook\\60f243f60dc83c7c1d3a37cc.spell', encoding='utf-8', mode='w') as outfile:
+    outfile.write(json.dumps(spells))

@@ -326,6 +326,189 @@
                 "display": "bubble",
                 "classLevel": "FighterLevel"
             }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "In the Spotlight",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Shining a Spotlight",
+                                    "duration": 10,
+                                    "save_as": "peff",
+                                    "desc": "You can add half your Charisma modifier (minimum of one) to any weapon damage roll you make against the marked target that doesn’t already include that modifier.\n - Your critical hit range against the marked target increases by 1.",
+                                    "attacks": [
+                                        {
+                                            "attack": {
+                                                "name": "In the Spotlight - Regain Health",
+                                                "_v": 2,
+                                                "activation_type": 8,
+                                                "automation": [
+                                                    {
+                                                        "type": "variable",
+                                                        "value": "{caster.levels.get('Fighter')}",
+                                                        "name": "level"
+                                                    },
+                                                    {
+                                                        "type": "target",
+                                                        "target": "self",
+                                                        "effects": [
+                                                            {
+                                                                "type": "damage",
+                                                                "damage": "-({level}+{max(charismaMod,1)}) [healing]"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "counter",
+                                    "counter": "Spotlight",
+                                    "amount": 1,
+                                    "errorBehaviour": "raise"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "In the Spotlight",
+                                    "parent": "peff"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Show Off",
+                    "_v": "2",
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{caster.levels.get('Fighter')}",
+                            "name": "level"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d{4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17}",
+                            "name": "Check Bonus"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "wis",
+                                    "dc": "8+proficiencyBonus+charismaMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Charmed by {caster.name}",
+                                            "duration": 10,
+                                            "desc": "A charmed creature can't attack the charmer or target the charmer with harmful abilities or enhanced effects.\r\n- The charmer has advantage on any ability check to interact socially with the creature."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Showoff",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You’re a master at dazzling your friends and enemies alike. When you would make a Strength, Dexterity, Constitution, or Charisma check, you can roll a d4 and add it to the roll. On a success, you can immediately choose a number of creatures within 30 feet of you that can see you up to your Charisma modifier `{max(charismaMod,1)}` (no action required, minimum of one). Each creature must succeed on a Wisdom saving throw (DC = 8 + your proficiency bonus + your Charisma modifier) or be charmed by you. This effects ends on a target after 1 minute, if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies. If a target succeeds on this saving throw, the target has no hint you tried to charm it.\n\nThis die increases to 1d6 at 5th level, 1d8 at 9th level, 1d10 at 13th level, and 1d12 at 17th level.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Glory Kill - THP",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "temphp",
+                                    "amount": "1d6+{max(charismaMod,1)}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "As you defeat your enemies in combat, you can weaken the morale of other foes or bolster the resolve of your allies alike. When you score a critical hit or reduce a creature to 0 hit points, you can choose one or more creatures that you can see within 30 feet of you, up to a number equal to your Charisma modifier (minimum of one creature) `{max(charismaMod,1)}`. Each of the chosen creatures are affected by one of the following effects of your choice:\n\n - The creature gains temporary hit points equal to 1d6 + your Charisma modifier (minimum of 1 temporary hit point).\n\n - The creature must succeed on a Wisdom saving throw (DC = 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the start of your next turn."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Glory Kill - Scare",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "wis",
+                                    "dc": "8+proficiencyBonus+charismaMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Frightened",
+                                            "duration": 1,
+                                            "tick_on_caster": true,
+                                            "effects": {
+                                                "attack_advantage": -1,
+                                                "check_dis": [
+                                                    "all"
+                                                ]
+                                            },
+                                            "desc": "A frightened creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.\n - The creature can’t willingly move closer to the source of its fear.\n - Source: {name}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "As you defeat your enemies in combat, you can weaken the morale of other foes or bolster the resolve of your allies alike. When you score a critical hit or reduce a creature to 0 hit points, you can choose one or more creatures that you can see within 30 feet of you, up to a number equal to your Charisma modifier (minimum of one creature) `{max(charismaMod,1)}`. Each of the chosen creatures are affected by one of the following effects of your choice:\n\n - The creature gains temporary hit points equal to 1d6 + your Charisma modifier (minimum of 1 temporary hit point).\n\n - The creature must succeed on a Wisdom saving throw (DC = 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the start of your next turn."
+                        }
+                    ]
+                }
+            }
         ]
     },
     {

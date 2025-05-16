@@ -139,6 +139,89 @@
         ]
     },
     {
+        "name": "Aura of Hatred",
+        "actions": [
+            {
+                "action": {
+                    "name": "Aura of Hatred - Start",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Aura of Hatred - Parent",
+                                    "save_as": "peff",
+                                    "desc": "You gain a bonus to the first melee weapon damage rolls you make each round equal to {max(charismaMod,1)}",
+                                    "attacks": [
+                                        {
+                                            "attack": {
+                                                "name": "Aura of Hatred - Spread",
+                                                "_v": 2,
+                                                "activation_type": 8,
+                                                "automation": [
+                                                    {
+                                                        "type": "target",
+                                                        "target": "each",
+                                                        "effects": [
+                                                            {
+                                                                "type": "ieffect2",
+                                                                "name": "{caster.name}'s Aura of Hatred",
+                                                                "parent": "ieffect",
+                                                                "desc": "You gain a bonus to the first melee weapon damage rolls you make each round equal to {max(charismaMod,1)}",
+                                                                "buttons": [
+                                                                    {
+                                                                        "label": "Leave Aura of Hatred",
+                                                                        "style": 4,
+                                                                        "automation": [
+                                                                            {
+                                                                                "type": "remove_ieffect"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "{caster.name}'s Aura of Hatred",
+                                    "parent": "peff",
+                                    "desc": "You gain a bonus to the first melee weapon damage rolls you make each round equal to {max(charismaMod,1)}",
+                                    "buttons": [
+                                        {
+                                            "label": "Leave Aura of Hatred",
+                                            "style": 4,
+                                            "automation": [
+                                                {
+                                                    "type": "remove_ieffect"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Automated Adrenal Package",
         "actions": [
             {

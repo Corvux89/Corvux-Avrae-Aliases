@@ -37,6 +37,7 @@ def maneuver(args):
     cc_valid = False if (fs and not (c.cc_exists("Field Surgeon") and c.get_cc("Field Surgeon")) and not i) else cc_valid
 
     v = bool(lvl>=0 and cc_valid and feature)
+    out = f"embed -thumb {c.image} {feature.desc}"
 
     if v:
         targets = get_targets(feature, args)
@@ -183,8 +184,6 @@ def maneuver(args):
             "superiorityDice": superiorityDice,
             "dc": dc
         }
-
-        out = f"embed -thumb {c.image} {feature.desc}"
 
         for key, value in formatting.items():
             out = out.replace(f"#{key}#", str(value))
