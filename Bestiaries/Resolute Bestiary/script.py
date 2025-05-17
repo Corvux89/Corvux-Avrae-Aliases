@@ -1,13 +1,15 @@
 import json
 import re
 import urllib.request
+import os
 
 print("Starting")
 
 to_automate_keywords = ["saving throw", "dc", "shocked until", 'to hit']
 
 automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
-todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
+todo_file = r"Bestiaries/Resolute Bestiary/Critter Todo.py"
+os.makedirs(os.path.dirname(todo_file), exist_ok=True)
 
 
 def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
@@ -65,10 +67,11 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
                    )
 
         for a in actions:
-            if a.get('description') and any(
+            # TODO: This is allowing things like circuitry past it 
+            if (a.get('description') and any(
                 re.search(rf'\b{x}\b', a.get('description').lower())
                 for x in to_automate_keywords
-                ) or (a.get('name') and 'recharge' in a.get('name').lower()):
+            )) or (a.get('name') and 'recharge' in a.get('name').lower()):
                 try:
                     auto=a.get('automation',{})
                     if isinstance(auto, list):
@@ -110,6 +113,7 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
     with open(todo_file, "w") as outfile:
         for x in autoMon:
             if x['complete'] == False:
+                print("writing")
                 outfile.write(f"# TODO [{x.get('source')}]: {x.get('name')} ({x.get('ability')})\n")
 
     print(f'Complete! {count} monsters processed for {name}.\nMonster actions to automate: {sum(x["complete"] == False for x in saveAuto)} out of {len(saveAuto)}\n')
