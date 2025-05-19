@@ -82,15 +82,16 @@ def processPower(args):
         c.mod_cc("Personal Barrier", +points)
         out.append(f''' -f "Personal Barrier ({points})|{c.cc_str("Personal Barrier")}" ''')
 
-    # Add DC Bonus unless overriden
-    if not a.get('dc') and '-with' in out:
-        calc_dc = 8 + c.stats.prof_bonus + c.stats.get_mod(f"{'wisdom' if '-with wis' in out else 'charisma' if '-with cha' in out else 'intelligence'}")
-        dc_add = c.spellbook.dc - calc_dc if c.spellbook.dc else None
-        if dc_add:
-            out.append(f''' -dc +{dc_add}''')
+    # I'm pretty sure I don't need these anymore.
+    # # Add DC Bonus unless overriden
+    # if not a.get('dc') and '-with' in out:
+    #     calc_dc = 8 + c.stats.prof_bonus + c.stats.get_mod(f"{'wisdom' if '-with wis' in out else 'charisma' if '-with cha' in out else 'intelligence'}")
+    #     dc_add = c.spellbook.dc - calc_dc if c.spellbook.dc else None
+    #     if dc_add:
+    #         out.append(f''' -dc +{dc_add}''')
 
-    # Add spell attack bonus
-    out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.sab else ''}''')
+    # # Add spell attack bonus
+    # out.append(f''' -b {c.spellbook.sab - c.spellbook.spell_mod - c.stats.prof_bonus if c.spellbook.sab else ''}''')
 
     # Troubleshooting
     if a.get('dev'):

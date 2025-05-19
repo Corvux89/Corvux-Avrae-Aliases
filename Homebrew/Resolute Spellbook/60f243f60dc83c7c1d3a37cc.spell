@@ -1470,6 +1470,101 @@
         "concentration": false
     },
     {
+        "name": "Bacta Well",
+        "level": 2,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Filling Bacta Well",
+                        "duration": "1",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Bacta Well",
+                                    "automation": [
+                                        {
+                                            "type": "roll",
+                                            "dice": "-2d6-{spell}",
+                                            "name": "heal",
+                                            "higher": {
+                                                "3": "",
+                                                "4": "",
+                                                "5": "",
+                                                "6": "",
+                                                "7": "",
+                                                "8": "",
+                                                "9": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "target",
+                                            "target": "all",
+                                            "effects": [
+                                                {
+                                                    "type": "condition",
+                                                    "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
+                                                    "onTrue": [
+                                                        {
+                                                            "type": "text",
+                                                            "text": "",
+                                                            "title": "{{target.name}} is unaffected."
+                                                        }
+                                                    ],
+                                                    "onFalse": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{heal} [healing]",
+                                                            "higher": {
+                                                                "3": "-2d6 [healing]",
+                                                                "4": "-4d6 [healing]",
+                                                                "5": "-6d6 [healing]",
+                                                                "6": "-8d6 [healing]",
+                                                                "7": "-10d6 [healing]",
+                                                                "8": "-12d6 [healing]",
+                                                                "9": "-14d6 [healing]"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "verb": "empties their",
+                                    "proper": true
+                                }
+                            }
+                        ],
+                        "end": true
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You produce a font of healing bacta fluid at a point you can see, with a radius of 5 feet. At the start of your next turn, up to four creatures you designate in the affected area regain hit points equal to 2d6 + your techcasting modifier. This power has no effect on droids or constructs."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 round",
+        "ritual": false,
+        "description": "You produce a font of healing bacta fluid at a point you can see, with a radius of 5 feet. At the start of your next turn, up to four creatures you designate in the affected area regain hit points equal to 2d6 + your techcasting modifier. This power has no effect on droids or constructs.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd level or higher, the healing increases by 2d6 for each slot level above 2nd. When you cast this power using a tech slot of 6th level or higher, the affected radius increases to 10 feet, and this power can affect any number of creatures within the radius.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
         "name": "Ballistic Shield",
         "level": 4,
         "school": "Tech",
@@ -6618,6 +6713,70 @@
         "concentration": true
     },
     {
+        "name": "Erratic Rockets",
+        "level": 1,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "2d4 [fire]",
+                "name": "damage",
+                "displayName": "Rocket Damage"
+            },
+            {
+                "type": "roll",
+                "dice": "5d4 [fire]",
+                "name": "critDamage",
+                "displayName": "Critical Rocket Damage"
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "hit": [
+                            {
+                                "type": "condition",
+                                "condition": "lastAttackDidCrit",
+                                "onTrue": [
+                                    {
+                                        "type": "damage",
+                                        "damage": "{critDamage}"
+                                    }
+                                ],
+                                "onFalse": [
+                                    {
+                                        "type": "damage",
+                                        "damage": "{damage}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "miss": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "120 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
+        "concentration": false
+    },
+    {
         "name": "Eruption",
         "level": 6,
         "school": "Force",
@@ -6732,6 +6891,99 @@
         "description": "You create an explosion at a point within range. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
         "higherlevels": "Overcharge Tech. When you cast this power using a tech slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
         "concentration": false
+    },
+    {
+        "name": "Explosive Cloud",
+        "level": 3,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "variable",
+                "name": "numDie",
+                "value": "8",
+                "higher": {
+                    "4": "9",
+                    "5": "10",
+                    "6": "11",
+                    "7": "12",
+                    "8": "13",
+                    "9": "14"
+                }
+            },
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Explosive Cloud - Parent",
+                        "duration": "10",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Explosive Cloud - Explode",
+                                    "automation": [
+                                        {
+                                            "type": "roll",
+                                            "dice": "{ieffect.desc.split()[-1]}d6 [fire]",
+                                            "name": "damage"
+                                        },
+                                        {
+                                            "type": "target",
+                                            "target": "each",
+                                            "effects": [
+                                                {
+                                                    "type": "save",
+                                                    "stat": "dex",
+                                                    "fail": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{damage}",
+                                                            "fixedValue": true
+                                                        }
+                                                    ],
+                                                    "success": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "({damage}/2)",
+                                                            "fixedValue": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "If a source of heat--fire, sparks, or a blaster bolt, for example--is brought into contact with the cloud, the gas ignites. Each creature within the cloud's area must make a  Dexterity saving throw. On a failed save, a creature takes {ieffect.desc.split()[-1]}d6 fire damage, or half as much damage on a successful one. Once the cloud explodes, this power ends"
+                                        }
+                                    ],
+                                    "activation_type": 8
+                                }
+                            }
+                        ],
+                        "desc": "{numDie}"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You create a cloud of invisible, explosive gas that spreads out into a 20-foot-radius sphere centered on a point you can see. If a source of heat--fire, sparks, or a blaster bolt, for example--is brought into contact with the cloud, the gas ignites. Each creature within the cloud's area must make a  Dexterity saving throw. On a failed save, a creature takes 8d6 fire damage, or half as much damage on a successful one. Once the cloud explodes, this power ends. \n\nThe cloud of gas can be noticed only with a successful Wisdom (Perception) check against your tech save DC.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+            }
+        ],
+        "classes": "None",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "120 feet",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Concentration, up to 1 minute",
+        "ritual": false,
+        "description": "You create a cloud of invisible, explosive gas that spreads out into a 20-foot-radius sphere centered on a point you can see. If a source of heat--fire, sparks, or a blaster bolt, for example--is brought into contact with the cloud, the gas ignites. Each creature within the cloud's area must make a  Dexterity saving throw. On a failed save, a creature takes 8d6 fire damage, or half as much damage on a successful one. Once the cloud explodes, this power ends. \n\nThe cloud of gas can be noticed only with a successful Wisdom (Perception) check against your tech save DC.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+        "concentration": true
     },
     {
         "name": "Extinguish",
@@ -10898,6 +11150,65 @@
         "name": "Hold Droid",
         "level": 2,
         "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Hold Droid - Parent",
+                        "duration": "10",
+                        "save_as": "peff"
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Hold Droid - Paralyzed",
+                                "buttons": [
+                                    {
+                                        "automation": [
+                                            {
+                                                "type": "target",
+                                                "target": "self",
+                                                "effects": [
+                                                    {
+                                                        "type": "save",
+                                                        "stat": "con",
+                                                        "fail": [],
+                                                        "success": [
+                                                            {
+                                                                "type": "remove_ieffect"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "label": "Resist Paralysis - End of Turn",
+                                        "verb": "attempts to resist paralysis",
+                                        "style": "1",
+                                        "defaultDC": "lastSaveDC"
+                                    }
+                                ],
+                                "desc": "Incapacitated\n - The creature automatically fails Strength and Dexterity saving throws, as if it had rolled a 1 on the save. Attack rolls against the creature have advantage.\n - Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+                                "parent": "peff"
+                            }
+                        ],
+                        "success": []
+                    }
+                ]
+            }
+        ],
         "classes": "None",
         "subclasses": "",
         "casttime": "1 action",
@@ -13010,7 +13321,7 @@
                 "effects": [
                     {
                         "type": "condition",
-                        "condition": "level > 5",
+                        "condition": "level >= 5",
                         "onTrue": [
                             {
                                 "type": "damage",
@@ -15283,6 +15594,52 @@
         "concentration": false
     },
     {
+        "name": "Mass Repair Droid",
+        "level": 5,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "-(6d8+{spell}) [heal]",
+                "name": "heal",
+                "higher": {
+                    "6": "-(2d8) [heal]",
+                    "7": "-(4d8) [heal]",
+                    "8": "-(6d8) [heal]",
+                    "9": "-(8d8) [heal]"
+                }
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "damage",
+                        "damage": "{heal}"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet (30 ft. sphere)",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
         "name": "Mass Tactical Barrier",
         "level": 4,
         "school": "Tech",
@@ -17318,6 +17675,148 @@
         "name": "Overheat",
         "level": 2,
         "school": "Tech",
+        "automation": [
+            {
+                "type": "variable",
+                "name": "numDie",
+                "value": "2",
+                "higher": {
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9"
+                }
+            },
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Overheat - Parent",
+                        "duration": "10",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Overheat Damage",
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "children",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "{ieffect.desc.split()[-1]}d8 [fire]"
+                                                },
+                                                {
+                                                    "type": "ieffect2",
+                                                    "name": "Overheat - Touching Object",
+                                                    "desc": "If an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn’t, or can’t, drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.",
+                                                    "save_as": "over",
+                                                    "parent": "ieffect"
+                                                },
+                                                {
+                                                    "type": "save",
+                                                    "stat": "con",
+                                                    "fail": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Overheat - Burned",
+                                                            "duration": "1",
+                                                            "effects": {
+                                                                "attack_advantage": "-1",
+                                                                "check_dis": [
+                                                                    "all"
+                                                                ]
+                                                            },
+                                                            "buttons": [
+                                                                {
+                                                                    "automation": [
+                                                                        {
+                                                                            "type": "remove_ieffect",
+                                                                            "removeParent": "always"
+                                                                        }
+                                                                    ],
+                                                                    "label": "Drop Object",
+                                                                    "style": "4"
+                                                                }
+                                                            ],
+                                                            "parent": "over",
+                                                            "tick_on_caster": true
+                                                        }
+                                                    ],
+                                                    "success": []
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "activation_type": 3
+                                }
+                            }
+                        ],
+                        "desc": "{numDie}",
+                        "save_as": "peff"
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "damage",
+                        "damage": "{numDie}d8 [fire]"
+                    },
+                    {
+                        "type": "ieffect2",
+                        "name": "Overheat - Touching Object",
+                        "desc": "If an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn’t, or can’t, drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.",
+                        "save_as": "over",
+                        "parent": "peff"
+                    },
+                    {
+                        "type": "save",
+                        "stat": "con",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Overheat - Burned",
+                                "duration": "1",
+                                "effects": {
+                                    "attack_advantage": "-1",
+                                    "check_dis": [
+                                        "all"
+                                    ]
+                                },
+                                "buttons": [
+                                    {
+                                        "automation": [
+                                            {
+                                                "type": "remove_ieffect",
+                                                "removeParent": "always"
+                                            }
+                                        ],
+                                        "label": "Drop Object",
+                                        "style": "4"
+                                    }
+                                ],
+                                "parent": "over",
+                                "tick_on_caster": true
+                            }
+                        ],
+                        "success": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Choose a manufactured metal object, such as a blaster or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the power. Until the power ends, you can use a bonus action on each of your subsequent turns to cause this damage again.\r\n\r\nIf an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't, or can't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
+            }
+        ],
         "classes": "None",
         "subclasses": "",
         "casttime": "1 action",
@@ -17329,7 +17828,7 @@
         },
         "duration": "up to 1 minute",
         "ritual": false,
-        "description": "Choose a manufactured metal object, such as a blaster or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the power. Until the power ends, you can use a bonus action on each of your subsequent turns to cause this damage again.\r\n\r\nIf an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't\ufffdor can't\ufffddrop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+        "description": "Choose a manufactured metal object, such as a blaster or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the power. Until the power ends, you can use a bonus action on each of your subsequent turns to cause this damage again.\r\n\r\nIf an object is held, worn, or integrated, and a creature takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't, or can't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
         "concentration": true
     },
     {
@@ -19043,6 +19542,64 @@
         "duration": "Instantaneous",
         "ritual": false,
         "description": "At your touch, all tech-based curses affecting one creature or object end. If the object is a cursed enhanced item, its curse remains, but the power breaks its owner's attunement to the object so it can be removed or discarded.",
+        "concentration": false
+    },
+    {
+        "name": "Repair Droid",
+        "level": 1,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "condition",
+                        "condition": "target.creature_type and ('droid' in target.creature_type.higher() or 'construct' in target.creature_type.higher())",
+                        "onTrue": [
+                            {
+                                "type": "damage",
+                                "damage": "-(2d8 + {spell}) [heal]",
+                                "higher": {
+                                    "2": "-(4d8 [heal])",
+                                    "3": "-(6d8 [heal])",
+                                    "4": "-(8d8 [heal])",
+                                    "5": "-(10d8 [heal])",
+                                    "6": "-(12d8 [heal])",
+                                    "7": "-(14d8 [heal])",
+                                    "8": "-(16d8 [heal])",
+                                    "9": "-(18d8 [heal])"
+                                }
+                            }
+                        ],
+                        "onFalse": [
+                            {
+                                "type": "text",
+                                "text": "{{target.name}} is unaffected."
+                            }
+                        ],
+                        "errorBehaviour": "true"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "A droid or construct you touch regains a number of hit points equal to 2d8 + your techcasting ability modifier."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Touch",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "A droid or construct you touch regains a number of hit points equal to 1d8 + your techcasting ability modifier.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+        "higherlevels": "",
         "concentration": false
     },
     {
@@ -21295,6 +21852,28 @@
         "name": "Shocking Ray",
         "level": 2,
         "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "2d4 [ion]"
+                            }
+                        ],
+                        "miss": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You create three ionic rays and hurl them at targets within range. You can hurl them at one target or several. Make a ranged tech attack for each ray. On a hit, the target takes 2d4 ion damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, you create one additional ray for each slot level above 2nd."
+            }
+        ],
         "classes": "None",
         "subclasses": "",
         "casttime": "1 action",
@@ -25861,24 +26440,6 @@
         "concentration": true
     },
     {
-        "name": "Wall Run",
-        "level": 0,
-        "school": "Force",
-        "classes": "Universal",
-        "subclasses": "",
-        "casttime": "1 bonus action",
-        "range": "self",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "1 turn",
-        "ritual": false,
-        "description": "Until the end of the turn, you have a climbing speed equal to your walking speed and you have advantage on Dexterity (Acrobatics) and Strength (Athletics) checks that involve movement. For the same duration, you can move up, down, and across vertical surfaces while leaving your hands free. This does not allow you to move upside down along ceilings. If you are on a vertical surface when you no longer have a climbing speed, you immediately fall unless you have some other means of remaining there.",
-        "concentration": false
-    },
-    {
         "name": "(SW) Wall of Light",
         "level": 6,
         "school": "Force",
@@ -25895,6 +26456,24 @@
         "ritual": false,
         "description": "You conjure an immense manifestation of destructive light side Force energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover and its space is difficult terrain.\r\n\r\nWhen a creature enters the wall's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, the creature takes 6d10 force damage, or half as much on a success.",
         "concentration": true
+    },
+    {
+        "name": "Wall Run",
+        "level": 0,
+        "school": "Force",
+        "classes": "Universal",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 turn",
+        "ritual": false,
+        "description": "Until the end of the turn, you have a climbing speed equal to your walking speed and you have advantage on Dexterity (Acrobatics) and Strength (Athletics) checks that involve movement. For the same duration, you can move up, down, and across vertical surfaces while leaving your hands free. This does not allow you to move upside down along ceilings. If you are on a vertical surface when you no longer have a climbing speed, you immediately fall unless you have some other means of remaining there.",
+        "concentration": false
     },
     {
         "name": "Ward",
@@ -26395,268 +26974,5 @@
         "ritual": false,
         "description": "The next time you hit with a melee weapon attack during this power’s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
         "concentration": true
-    },
-    {
-        "name": "Erratic Rockets",
-        "level": 1,
-        "school": "Tech",
-        "automation": [
-            {
-                "type": "roll",
-                "dice": "2d4 [fire]",
-                "name": "damage",
-                "displayName": "Rocket Damage"
-            },
-            {
-                "type": "roll",
-                "dice": "5d4 [fire]",
-                "name": "critDamage",
-                "displayName": "Critical Rocket Damage"
-            },
-            {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                    {
-                        "type": "attack",
-                        "hit": [
-                            {
-                                "type": "condition",
-                                "condition": "lastAttackDidCrit",
-                                "onTrue": [
-                                    {
-                                        "type": "damage",
-                                        "damage": "{critDamage}"
-                                    }
-                                ],
-                                "onFalse": [
-                                    {
-                                        "type": "damage",
-                                        "damage": "{damage}"
-                                    }
-                                ]
-                            }
-                        ],
-                        "miss": []
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st."
-            }
-        ],
-        "classes": "",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "120 feet",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Instantaneous",
-        "ritual": false,
-        "description": "You create three manually-guided explosives. Each explosive targets a creature of your choice that you can see within range. Make a ranged tech attack for each explosive. On a hit, an explosive deals 2d4 fire damage to its target.\n\nIf the attack roll scores a critical hit, the target of that explosive takes 5d4 fire damage instead of you rolling damage twice for a critical hit. If the attack roll for any explosive is a 1, all explosives miss their targets and detonate prematurely, dealing 1 fire damage per explosive to you.\n\n**Overcharge Tech.** If you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.",
-        "concentration": false
-    },
-    {
-        "name": "Bacta Well",
-        "level": 2,
-        "school": "Tech",
-        "automation": [
-            {
-                "type": "target",
-                "target": "self",
-                "effects": [
-                    {
-                        "type": "ieffect2",
-                        "name": "Filling Bacta Well",
-                        "duration": "1",
-                        "attacks": [
-                            {
-                                "attack": {
-                                    "_v": 2,
-                                    "name": "Bacta Well",
-                                    "automation": [
-                                        {
-                                            "type": "roll",
-                                            "dice": "-2d6-{spell}",
-                                            "name": "heal",
-                                            "higher": {
-                                                "3": "",
-                                                "4": "",
-                                                "5": "",
-                                                "6": "",
-                                                "7": "",
-                                                "8": "",
-                                                "9": ""
-                                            }
-                                        },
-                                        {
-                                            "type": "target",
-                                            "target": "all",
-                                            "effects": [
-                                                {
-                                                    "type": "condition",
-                                                    "condition": "target.creature_type and ('droid' in target.creature_type.lower() or 'construct' in target.creature_type.lower())",
-                                                    "onTrue": [
-                                                        {
-                                                            "type": "text",
-                                                            "text": "",
-                                                            "title": "{{target.name}} is unaffected."
-                                                        }
-                                                    ],
-                                                    "onFalse": [
-                                                        {
-                                                            "type": "damage",
-                                                            "damage": "{heal} [healing]",
-                                                            "higher": {
-                                                                "3": "-2d6 [healing]",
-                                                                "4": "-4d6 [healing]",
-                                                                "5": "-6d6 [healing]",
-                                                                "6": "-8d6 [healing]",
-                                                                "7": "-10d6 [healing]",
-                                                                "8": "-12d6 [healing]",
-                                                                "9": "-14d6 [healing]"
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "verb": "empties their",
-                                    "proper": true
-                                }
-                            }
-                        ],
-                        "end": true
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "You produce a font of healing bacta fluid at a point you can see, with a radius of 5 feet. At the start of your next turn, up to four creatures you designate in the affected area regain hit points equal to 2d6 + your techcasting modifier. This power has no effect on droids or constructs."
-            }
-        ],
-        "classes": "",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "60 feet",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "1 round",
-        "ritual": false,
-        "description": "You produce a font of healing bacta fluid at a point you can see, with a radius of 5 feet. At the start of your next turn, up to four creatures you designate in the affected area regain hit points equal to 2d6 + your techcasting modifier. This power has no effect on droids or constructs.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd level or higher, the healing increases by 2d6 for each slot level above 2nd. When you cast this power using a tech slot of 6th level or higher, the affected radius increases to 10 feet, and this power can affect any number of creatures within the radius.",
-        "higherlevels": "",
-        "concentration": false
-    },
-    {
-        "name": "Repair Droid",
-        "level": 1,
-        "school": "Tech",
-        "automation": [
-            {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                    {
-                        "type": "condition",
-                        "condition": "target.creature_type and ('droid' in target.creature_type.higher() or 'construct' in target.creature_type.higher())",
-                        "onTrue": [
-                            {
-                                "type": "damage",
-                                "damage": "-(2d8 + {spell}) [heal]",
-                                "higher": {
-                                    "2": "-(4d8 [heal])",
-                                    "3": "-(6d8 [heal])",
-                                    "4": "-(8d8 [heal])",
-                                    "5": "-(10d8 [heal])",
-                                    "6": "-(12d8 [heal])",
-                                    "7": "-(14d8 [heal])",
-                                    "8": "-(16d8 [heal])",
-                                    "9": "-(18d8 [heal])"
-                                }
-                            }
-                        ],
-                        "onFalse": [
-                            {
-                                "type": "text",
-                                "text": "{{target.name}} is unaffected."
-                            }
-                        ],
-                        "errorBehaviour": "true"
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "A droid or construct you touch regains a number of hit points equal to 2d8 + your techcasting ability modifier."
-            }
-        ],
-        "classes": "",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "Touch",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Instantaneous",
-        "ritual": false,
-        "description": "A droid or construct you touch regains a number of hit points equal to 1d8 + your techcasting ability modifier.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
-        "higherlevels": "",
-        "concentration": false
-    },
-    {
-        "name": "Mass Repair Droid",
-        "level": 5,
-        "school": "Tech",
-        "automation": [
-            {
-                "type": "roll",
-                "dice": "-(6d8+{spell}) [heal]",
-                "name": "heal",
-                "higher": {
-                    "6": "-(2d8) [heal]",
-                    "7": "-(4d8) [heal]",
-                    "8": "-(6d8) [heal]",
-                    "9": "-(8d8) [heal]"
-                }
-            },
-            {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                    {
-                        "type": "damage",
-                        "damage": "{heal}"
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs."
-            }
-        ],
-        "classes": "",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "60 feet (30 ft. sphere)",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Instantaneous",
-        "ritual": false,
-        "description": "Choose up to six droids or constructs in a 30-foot-radius sphere centered on a point. Each target regains hit points equal to 3d8 + your techcasting ability modifier. This power only effects droids and constructs.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th.",
-        "higherlevels": "",
-        "concentration": false
     }
 ]

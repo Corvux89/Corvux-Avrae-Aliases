@@ -1,0 +1,1076 @@
+[
+    {
+        "Class": "Sentinellight",
+        "hitDie": "d8",
+        "subclassLevel": 3,
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 1,
+                "value": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30,
+                    33,
+                    36,
+                    39,
+                    42,
+                    45,
+                    48,
+                    51,
+                    54,
+                    57,
+                    60
+                ],
+                "modifier": "wisdomMod",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "default",
+                "desc": "You have a number of force points equal to your sentinel level x 3, as shown in the Force Points column of the sentinel table, + your Wisdom or Charisma modifier (your choice). You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+            },
+            {
+                "name": "Sentinel Ideals",
+                "level": 2,
+                "value": [
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "default",
+                "desc": "You adopt ideals that exemplify your bond with the Force. You adopt two ideals of your choice, as detailed at the end of the class description. You adopt an additional ideal at 6th and 11th level."
+            }
+        ],
+        "actions": [
+            {
+                "level": 2,
+                "action": {
+                    "name": "Deflection - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d{dieSize}",
+                            "name": "bonus",
+                            "displayName": "AC Bonus"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 2,
+                "action": {
+                    "name": "Double Strike - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "1d{dieSize} [kinetic]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 2,
+                "action": {
+                    "name": "Slow Time - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d{dieSize}*5",
+                            "name": "bonus",
+                            "displayName": "Move Speed Increase"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Aggression",
+        "counters": [
+            {
+                "name": "Living Current",
+                "level": 13,
+                "value": "wisdomMod",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Focus",
+        "counters": []
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Shadows",
+        "counters": []
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Forceblade",
+        "counters": [
+            {
+                "name": "Twin Saber Throw",
+                "level": 7,
+                "value": "proficiencyBonus",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Communion",
+        "counters": [
+            {
+                "name": "Twin Saber Throw",
+                "level": 3,
+                "value": "wisdomMod",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Invasive Presence",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Ethereality",
+        "counters": [
+            {
+                "name": "Out of Touch",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Meditation",
+        "counters": [
+            {
+                "name": "Unbreakable Focus",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Turbulent Presence",
+                "level": 13,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Legendary Battle Meditation",
+                "level": 18,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Synthesis",
+        "counters": [
+            {
+                "name": "Force-Empowered Tech",
+                "level": 7,
+                "value": "wisdomMod",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Tenacity",
+        "counters": [
+            {
+                "name": "Kinetic Bastion",
+                "level": 18,
+                "value": "wisdomMod",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Witchcraft",
+        "counters": [
+            {
+                "name": "Nature's Vigor",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Stormcaller",
+                "level": 18,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Corsair",
+        "counters": [
+            {
+                "name": "Force-Empowered Detonators",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Iron",
+        "counters": [
+            {
+                "name": "Force-Empowered Self",
+                "level": 7,
+                "value": "proficiencyBonus",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Kinetic Mastery",
+                "level": 18,
+                "value": "6",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Sightless",
+        "counters": [
+            {
+                "name": "Blinding Assault",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Farsight",
+                "level": 13,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Blinding Assault",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Blinding Assault",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Force Points",
+                                            "amount": 1,
+                                            "errorBehaviour": "raise"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Blinded",
+                                            "effects": {
+                                                "attack_advantage": -1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Double-Strike Force-Empowered Self option, you can have them make a Constitution saving throw against your Universal Force Save DC. On a failed Save, the creature is blinded until the end of your next turn.\nYou can use this feature twice per long rest, and gain an additional use at 5th, 9th, 13th, and 17th level.\nAlternatively, if you have no uses of this feature remaining you can instead expend 1 force points to use it."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Guided Strikes",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "While you are effected by the Blinded Condition, once per turn when a creture misses you with an attack you may spend a force point to make a melee weapon attack against them (no action required)."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Archivist",
+        "counters": [
+            {
+                "name": "Carefully Curated",
+                "level": 13,
+                "value": 1,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Carefully Curated",
+                "level": 18,
+                "value": 3,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentinellight",
+        "subclass": "Lifeweaver",
+        "counters": [
+            {
+                "name": "Touch of Life",
+                "level": 3,
+                "value": "(SentinellightLevel*3)+max(wisdomMod,charismaMod)",
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "default"
+            },
+            {
+                "name": "Font of Life",
+                "level": 18,
+                "value": 2,
+                "classLevel": "SentinellightLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "hitDie": "d8",
+        "subclassLevel": 3,
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 1,
+                "value": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30,
+                    33,
+                    36,
+                    39,
+                    42,
+                    45,
+                    48,
+                    51,
+                    54,
+                    57,
+                    60
+                ],
+                "modifier": "charismaMod",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "default",
+                "desc": "You have a number of force points equal to your sentinel level x 3, as shown in the Force Points column of the sentinel table, + your Wisdom or Charisma modifier (your choice). You use these force points to cast force powers. You regain all expended force points when you finish a long rest."
+            },
+            {
+                "name": "Sentinel Ideals",
+                "level": 2,
+                "value": [
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "default",
+                "desc": "You adopt ideals that exemplify your bond with the Force. You adopt two ideals of your choice, as detailed at the end of the class description. You adopt an additional ideal at 6th and 11th level."
+            }
+        ],
+        "actions": [
+            {
+                "level": 2,
+                "action": {
+                    "name": "Deflection - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d{dieSize}",
+                            "name": "bonus",
+                            "displayName": "AC Bonus"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 2,
+                "action": {
+                    "name": "Double Strike - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "1d{dieSize} [kinetic]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 2,
+                "action": {
+                    "name": "Slow Time - Force-Empowered Self",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "value": "{max(int(caster.levels.get('Sentinellight',0)),int(caster.levels.get('Sentineldark',0)),0)}",
+                            "name": "slevel"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "4 if slevel < 5 else 6 if slevel < 9 else 8 if slevel < 13 else 10 if slevel < 17 else 12",
+                            "name": "dieSize"
+                        },
+                        {
+                            "type": "roll",
+                            "dice": "1d{dieSize}*5",
+                            "name": "bonus",
+                            "displayName": "Move Speed Increase"
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Aggression",
+        "counters": [
+            {
+                "name": "Living Current",
+                "level": 13,
+                "value": "charismaMod",
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Focus",
+        "counters": []
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Shadows",
+        "counters": []
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Forceblade",
+        "counters": [
+            {
+                "name": "Twin Saber Throw",
+                "level": 7,
+                "value": "proficiencyBonus",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Communion",
+        "counters": [
+            {
+                "name": "Twin Saber Throw",
+                "level": 3,
+                "value": "charismaMod",
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Invasive Presence",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Ethereality",
+        "counters": [
+            {
+                "name": "Out of Touch",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Meditation",
+        "counters": [
+            {
+                "name": "Unbreakable Focus",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Turbulent Presence",
+                "level": 13,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Legendary Battle Meditation",
+                "level": 18,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Synthesis",
+        "counters": [
+            {
+                "name": "Force-Empowered Tech",
+                "level": 7,
+                "value": "charismaMod",
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Tenacity",
+        "counters": [
+            {
+                "name": "Kinetic Bastion",
+                "level": 18,
+                "value": "charismaMod",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Withcraft",
+        "counters": [
+            {
+                "name": "Nature's Vigor",
+                "level": 7,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Stormcaller",
+                "level": 18,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Corsair",
+        "counters": [
+            {
+                "name": "Force-Empowered Detonators",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "classLevel": "SentinellightLevel",
+                "reset": "short",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Iron",
+        "counters": [
+            {
+                "name": "Force-Empowered Self",
+                "level": 7,
+                "value": "proficiencyBonus",
+                "classLevel": "SentineldarkLevel",
+                "reset": "short",
+                "display": "bubble"
+            },
+            {
+                "name": "Kinetic Mastery",
+                "level": 18,
+                "value": "6",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Sightless",
+        "counters": [
+            {
+                "name": "Blinding Assault",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Farsight",
+                "level": 13,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Blinding Assault",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "counter",
+                                    "counter": "Blinding Assault",
+                                    "amount": 1
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "lastCounterUsedAmount",
+                                    "onTrue": [],
+                                    "onFalse": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "Force Points",
+                                            "amount": 1,
+                                            "errorBehaviour": "raise"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Blinded",
+                                            "effects": {
+                                                "attack_advantage": -1
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Double-Strike Force-Empowered Self option, you can have them make a Constitution saving throw against your Universal Force Save DC. On a failed Save, the creature is blinded until the end of your next turn.\nYou can use this feature twice per long rest, and gain an additional use at 5th, 9th, 13th, and 17th level.\nAlternatively, if you have no uses of this feature remaining you can instead expend 1 force points to use it."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Guided Strikes",
+                    "_v": 2,
+                    "verb": "uses",
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force Points",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "While you are effected by the Blinded Condition, once per turn when a creture misses you with an attack you may spend a force point to make a melee weapon attack against them (no action required)."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Archivist",
+        "counters": [
+            {
+                "name": "Carefully Curated",
+                "level": 13,
+                "value": 1,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            },
+            {
+                "name": "Carefully Curated",
+                "level": 18,
+                "value": 3,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    },
+    {
+        "Class": "Sentineldark",
+        "subclass": "Lifeweaver",
+        "counters": [
+            {
+                "name": "Touch of Life",
+                "level": 3,
+                "value": "(SentineldarkLevel*3)+max(wisdomMod,charismaMod)",
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "default"
+            },
+            {
+                "name": "Font of Life",
+                "level": 18,
+                "value": 2,
+                "classLevel": "SentineldarkLevel",
+                "reset": "long",
+                "display": "bubble"
+            }
+        ]
+    }
+]

@@ -1,3 +1,4 @@
+# TODO: Mapping Missing Bacta Well
 # TODO: Mapping Missing Greater Pyrokinesis
 # TODO: Mapping Missing Growing Momentum - Burst of Speed
 # TODO: Mapping Missing Haywire
@@ -12,7 +13,6 @@
 # TODO: Mapping Missing Synchronicity
 # TODO: Mapping Missing Turbulent Presence - Improved Battle Meditation
 # TODO: Mapping Missing Unbreakable Focus - Battle Meditation
-# TODO: Mapping Missing Bacta Well
 # TODO: Expanded Missing Lightning Discharge
 # TODO: Expanded Missing Moment Reading
 # TODO: Expanded Missing Steal Knowledge
@@ -191,7 +191,6 @@
 # TODO: Expanded Missing Duplicate Tech
 # TODO: Expanded Missing Environmental Shield
 # TODO: Expanded Missing Erode
-# TODO: Expanded Missing Explosive Cloud
 # TODO: Expanded Missing Flash Freeze
 # TODO: Expanded Missing Gravitic Beam
 # TODO: Expanded Missing Greater Enhance Armor
@@ -441,7 +440,6 @@
 # TODO: Hallucination
 # TODO: Heighten Senses
 # TODO: (SW) Heroism
-# TODO: Hold Droid
 # TODO: Holding Cell
 # TODO: Hologram
 # TODO: Holographic Disguise
@@ -500,7 +498,6 @@
 # TODO: Neurotoxin
 # TODO: Oil Slick
 # TODO: On/Off
-# TODO: Overheat
 # TODO: Override Interface
 # TODO: Paralyze Creature
 # TODO: Phaseshift
@@ -548,7 +545,6 @@
 # TODO: Sever Force
 # TODO: Shadow Sight
 # TODO: Share Memory
-# TODO: Shocking Ray
 # TODO: Shocking Shield
 # TODO: Short Circuit
 # TODO: Shroud of Darkness
@@ -597,8 +593,8 @@
 # TODO: Venomous Strike
 # TODO: Vertical Maneuvering
 # TODO: Wakefulness
-# TODO: Wall Run
 # TODO: (SW) Wall of Light
+# TODO: Wall Run
 # TODO: Ward
 # TODO: (SW) Whirlwind
 # TODO: Will of the Force

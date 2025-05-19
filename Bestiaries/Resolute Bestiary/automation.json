@@ -12,14 +12,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "1.4 FD P-Tower Turret",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The turret has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "3PO Protocol Droid",
     "ability": "Strike",
     "complete": true,
@@ -30,14 +22,6 @@
     "ability": "Blaster Cannon",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "74-Z Speeder Bike",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "AT-AT",
@@ -64,22 +48,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "AT-AT",
-    "ability": "Vulnerable Interior",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The AT-AT's interior is vulnerable to damage done by grenades, mines and charges, unless it is immune to that damage. It also automatically fails all Dexterity saving throws from such effects that occur in its interior.",
-    "automation": null
-  },
-  {
-    "name": "AT-AT",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "AT-RT",
     "ability": "Repeating Blaster Cannon",
     "complete": true,
@@ -90,14 +58,6 @@
     "ability": "Mortar Launcher",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "AT-RT",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "AT-ST",
@@ -124,22 +84,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "AT-ST",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "AT-ST",
-    "ability": "Vulnerable Interior",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The AT-ST\u00e2\u20ac\u2122s interior is vulnerable to damage done by grenades, mines and charges, unless it is immune to that damage. It also automatically fails all Dexterity saving throws from such effects that occur in its interior.",
-    "automation": null
-  },
-  {
     "name": "AT-TE",
     "ability": "Laser Cannon Volley",
     "complete": true,
@@ -150,22 +94,6 @@
     "ability": "Medium Repeaters",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "AT-TE",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "AT-TE",
-    "ability": "Vulnerable Interior",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The AT-TE\u00e2\u20ac\u2122s interior is vulnerable to damage done by grenades, mines and charges, unless it is immune to that damage. It also automatically fails all Dexterity saving throws from such effects that occur in its interior.",
-    "automation": null
   },
   {
     "name": "Adolescent Acklay",
@@ -192,14 +120,6 @@
     "ability": "Repeating Blaster Burst",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "AX-108 Sentry Gun",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Force Acolyte",
@@ -551,14 +471,6 @@
   },
   {
     "name": "Apprentice",
-    "ability": "Devotion",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The apprentice has advantage on saving throws against being charmed of frightened.",
-    "automation": null
-  },
-  {
-    "name": "Apprentice",
     "ability": "Forcecasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -588,22 +500,6 @@
     "ability": "Plasma Cannon",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Armored Assault Tank (AAT)",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "Armored Assault Tank (AAT)",
-    "ability": "Vulnerable Interior",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The AAT\u00e2\u20ac\u2122s interior is vulnerable to damage done by grenades, mines and charges, unless it is immune to that damage. It also automatically fails all Dexterity saving throws from such effects that occur in its interior.",
-    "automation": null
   },
   {
     "name": "Aqualish Enforcer",
@@ -662,14 +558,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Auto-Turret",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "B'Omarr Brain Walker",
     "ability": "Mind Thrust",
     "complete": true,
@@ -706,14 +594,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Squad: B1-A Series Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "B1-A Battle Droid",
     "ability": "Blaster Rifle",
     "complete": true,
@@ -726,14 +606,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "B1-A Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "B1-X Battle Droid",
     "ability": "Blaster Pistol",
     "complete": true,
@@ -744,14 +616,6 @@
     "ability": "Stock Strike",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "B1-X Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "B2-A Super Battle Droid",
@@ -770,14 +634,6 @@
     "ability": "Wrist Blaster Volley (Recharge 6)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "B2-A Super Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "B2-HA Series Super Battle Droid",
@@ -804,26 +660,10 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "B2-HA Series Super Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "BB Series Astromech Droid",
     "ability": "Shockprod",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "BB Series Astromech Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "BB Series Astromech Droid",
@@ -858,14 +698,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "BX-A Series Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Battle Hydra",
     "ability": "Bite",
     "complete": true,
@@ -882,14 +714,6 @@
     "ability": "Stinger",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Battle Hydra",
-    "ability": "Two Heads",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The battle hydra has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious.",
-    "automation": null
   },
   {
     "name": "Beggar's Canyon Womp Rat",
@@ -920,14 +744,6 @@
     "ability": "Rocket Barrage (2/Day)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Blastromech Series, BT-1",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Blastromech Series, BT-1",
@@ -966,14 +782,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Blurrg",
-    "ability": "Sure-Footed",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "the blurrg has advantage on Strength and Dexterity saving throws made against effects that would shove it or knock it prone.",
-    "automation": null
-  },
-  {
     "name": "Bor Gullet",
     "ability": "Tentacle",
     "complete": true,
@@ -984,14 +792,6 @@
     "ability": "Mind Blast",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Bor Gullet",
-    "ability": "Fortified Mind",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The bor gullet has advantage on saving throws against being charmed and frightened, and it can\u00e2\u20ac\u2122t be put to sleep.",
-    "automation": null
   },
   {
     "name": "Bor Gullet",
@@ -1007,14 +807,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "The bor gullet can establish a psychic link with any creature that it successfully grapples with its tentacles. Until the psychic link ends, the bor gullet can perceive everything the target senses. The target is aware that its mind is linked, and the bor gullet can terminate the link at any time (no action required). The target can use an action on its turn to attempt to break the psychic link, doing so with a successful DC 18 Intelligence saving throw. On a successful save, the target takes 10 (3d6) psychic damage. The psychic link also ends if the target and the bor gullet are more than 1 mile apart, with no consequences to the target. The bor gullet can form psychic links with up to ten creatures at a time.",
-    "automation": null
-  },
-  {
-    "name": "Bor Gullet",
-    "ability": "Sever Psychic Link",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The bor gullet targets a creature within 120 feet of it with which it has a psychic link. The bor gullet ends the link, causing the creature to have disadvantage on all ability checks, attack rolls, and saving throws until the end of the creature's next turn.",
     "automation": null
   },
   {
@@ -1040,14 +832,6 @@
     "ability": "Shockprod",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "C-1 Series Astromech Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Cantina Brawl",
@@ -1167,34 +951,10 @@
   },
   {
     "name": "Cyborg Khagan",
-    "ability": "More Machine than Man",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Cyborg Khagan has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "Cyborg Khagan",
-    "ability": "Wrathful Combatant",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The cyborg khagan's melee attacks deal +2 damage (included). Additionally, the cyborg khagan has advantage on all Strength checks and saving throws as long as it is not incapacitated.",
-    "automation": null
-  },
-  {
-    "name": "Cyborg Khagan",
     "ability": "Legendary Resistance (3/Day)",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If Cyborg Khagan fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Cyborg Khagan",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The cyborg khagan has advantage on saving throws against force powers and other force effects.",
     "automation": null
   },
   {
@@ -1212,26 +972,10 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "DF.9 Anti-Infantry Turret",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The turret has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "DRK-1 Tracker Droid",
     "ability": "Shockprod",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "DRK-1 Tracker Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "DSD1 Dwarf Spider Droid",
@@ -1258,40 +1002,16 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "DSD1 Dwarf Spider Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The spider droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "DUM-Series Pit Droid",
     "ability": "Kick",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "DUM-Series Pit Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Dark Lord",
     "ability": "Lightfoil",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Dark Lord",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The dark lord has advantage on saving throws against force powers.",
-    "automation": null
   },
   {
     "name": "Dark Lord",
@@ -1313,14 +1033,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the dark lord spirit fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Dark Lord Spirit",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The spirit has advantage on saving throws against tech powers.",
     "automation": null
   },
   {
@@ -1396,14 +1108,6 @@
     "ability": "Blaster Volley",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Destroyer Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Emperor's Hand",
@@ -1644,20 +1348,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "GH-7 Medical Analysis Unit",
-    "ability": "Administer Antidote (1/rest)",
-    "complete": true,
-    "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "GH-7 Medical Analysis Unit",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Gamorrean Guard",
     "ability": "Vibroaxe",
     "complete": true,
@@ -1730,14 +1420,6 @@
     "ability": "Are You Not Entertained?",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Pit Gladiator",
-    "ability": "Brave",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The gladiator has advantage on saving throws against being frightened.",
-    "automation": null
   },
   {
     "name": "Gonk Droid",
@@ -1827,14 +1509,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the grand admiral fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Grand Admiral",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Grand Admiral has advantage on saving throws against tech powers.",
     "automation": null
   },
   {
@@ -2110,26 +1784,10 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Hyena-Class Bomber",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The bomber has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "ID9 Seeker Droid",
     "ability": "Shockprod",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "ID9 Seeker Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "IG-100 Series",
@@ -2160,14 +1818,6 @@
     "ability": "Missile Launchers (10/Day)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "IG-227 Hailfire-Class Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid tank has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "IG-86 Assassin Droid",
@@ -2314,14 +1964,6 @@
     "automation": null
   },
   {
-    "name": "Inquisitor, Grand",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor has advantage on saving throws against force powers.",
-    "automation": null
-  },
-  {
     "name": "Inquisitor, Knight",
     "ability": "Spinning Double Saber",
     "complete": true,
@@ -2339,14 +1981,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "The inquisitor is a 5th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 13, +5 to hit with force attacks). The inquisitor has 18 force points and knows the following force powers:\nAt-Will: denounce, force disarm, saber throw, slow\n1st level: dark side tendrils, fear, force jump, hex, sense force\n2nd level: force sight, stun",
-    "automation": null
-  },
-  {
-    "name": "Inquisitor, Knight",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor has advantage on saving throws against force powers.",
     "automation": null
   },
   {
@@ -2376,14 +2010,6 @@
     "automation": null
   },
   {
-    "name": "Inquisitor, Master",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor has advantage on saving throws against force powers.",
-    "automation": null
-  },
-  {
     "name": "JK-13 Security Droid",
     "ability": "Stunning Tentacle",
     "complete": true,
@@ -2394,22 +2020,6 @@
     "ability": "Slicing Tentacle",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "JK-13 Security Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The JK-13 has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "JK-13 Security Droid",
-    "ability": "Jedi Slayer",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "JK-13 Security Droid has advantage on saving throws versus force powers used by creatures within 15 feet of it. When an enemy within 15 feet casts a force power, JK-13 Security Droid can make a melee attack against that character as a reaction. When JK-13 Security Droid damages an enemy, they have disadvantage on concentration saving throws to maintain their force powers.",
-    "automation": null
   },
   {
     "name": "Jakrab",
@@ -2485,14 +2095,6 @@
   },
   {
     "name": "Juggernaut",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The juggernaut has advantage on saving throws against force powers.",
-    "automation": null
-  },
-  {
-    "name": "Juggernaut",
     "ability": "Forcecasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -2512,14 +2114,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Junk Behemoth",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Junk Droid",
     "ability": "Blaster Carbine",
     "complete": true,
@@ -2530,14 +2124,6 @@
     "ability": "Vibroblade",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Junk Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Juvenile Rancor",
@@ -2564,26 +2150,10 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "KX-Series Security Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Kaadu",
     "ability": "Hooves",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Kaadu",
-    "ability": "Sure-Footed",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The kaadu has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
-    "automation": null
   },
   {
     "name": "Katarn",
@@ -2870,14 +2440,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "LR1K Sonic Cannon",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The construct has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Lesser Bogwing",
     "ability": "Claws",
     "complete": true,
@@ -2951,22 +2513,6 @@
   },
   {
     "name": "Manifestation of Abeloth",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Abeloth has advantage on saving throws against force powers and effects.",
-    "automation": null
-  },
-  {
-    "name": "Manifestation of Abeloth",
-    "ability": "One with the Force",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Abeloth has advantage on saving throws against being blinded, deafened, stunned, or knocked unconscious.",
-    "automation": null
-  },
-  {
-    "name": "Manifestation of Abeloth",
     "ability": "Draining Lightning",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
@@ -2984,14 +2530,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Marksman-H Remote",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Melee Destroyer Droid",
     "ability": "Claws",
     "complete": true,
@@ -3002,14 +2540,6 @@
     "ability": "Rend",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Melee Destroyer Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Mistryl Apprentice",
@@ -3162,14 +2692,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Narglatch",
-    "ability": "Sure-Footed",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The narglatch has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
-    "automation": null
-  },
-  {
     "name": "NR-N99 Persuader-Class Enforcer",
     "ability": "Ion Cannons",
     "complete": true,
@@ -3192,14 +2714,6 @@
     "ability": "Ram",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "NR-N99 Persuader-Class Enforcer",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid tank has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Navy Pilot",
@@ -3316,14 +2830,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Pistoeka Sabotage Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Porg",
     "ability": "Bite",
     "complete": true,
@@ -3352,14 +2858,6 @@
     "ability": "Volley (Recharge 6)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Purge Trooper",
-    "ability": "Force Combat Training",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The trooper has advantage on saving throws against Force powers.",
-    "automation": null
   },
   {
     "name": "Rakghoul",
@@ -3470,14 +2968,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Riot",
-    "ability": "Strength in Numbers",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The swarm has advantage on Strength and Constitution checks and saving throws.",
-    "automation": null
-  },
-  {
     "name": "Ronto",
     "ability": "Slam",
     "complete": true,
@@ -3508,14 +2998,6 @@
     "ability": "Leg Slash",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "SD-K4 Assassin Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "STAP",
@@ -3736,14 +3218,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Sith Probe Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Sketto",
     "ability": "Blood Drain",
     "complete": true,
@@ -3811,14 +3285,6 @@
   },
   {
     "name": "Starweird",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The starweird has advantage on saving throws against force powers.",
-    "automation": null
-  },
-  {
-    "name": "Starweird",
     "ability": "Forcecasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -3861,22 +3327,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the super tactical droid fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Super Tactical Droid",
-    "ability": "Master of the Droid",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "While within 30 feet of the tactical droid, any droid ally of the tactical droid makes saving throws with advantage, and that ally regains 1d6 hit points whenever it starts its turn there.",
-    "automation": null
-  },
-  {
-    "name": "Super Tactical Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
     "automation": null
   },
   {
@@ -3973,14 +3423,6 @@
   },
   {
     "name": "T3-Series Utility Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "T3-Series Utility Droid",
     "ability": "Techcasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -3995,26 +3437,10 @@
   },
   {
     "name": "T-Series Tactical Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "T-Series Tactical Droid",
     "ability": "Innate Tech-casting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "Innate Tech-casting. The T-series Tactical droid can innately cast the following tech powers (tech save DC 14): assess the situation, encrypted message, on/off, alarm, element of surprise (3/day), repair droid, stack the deck",
-    "automation": null
-  },
-  {
-    "name": "T-Series Tactical Droid",
-    "ability": "Predictive AI",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The tactical droid can enter a state of higher programming as an action. While concentrating, the droid can\u00e2\u20ac\u2122t be surprised and has advantage on attack rolls, ability checks, and saving throws. Additionally, other creatures have disadvantage on attack rolls against the target. This lasts for 1 hour.",
     "automation": null
   },
   {
@@ -4042,22 +3468,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "TX-225 Occupier Tank",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The tank has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "TX-225 Occupier Tank",
-    "ability": "Vulnerable Interior",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The tank\u00e2\u20ac\u2122s interior is vulnerable to damage done by grenades, mines and charges, unless it is immune to that damage. It also automatically fails all Dexterity saving throws from such effects that occur in its interior.",
-    "automation": null
-  },
-  {
     "name": "Terentatek",
     "ability": "Tusks",
     "complete": true,
@@ -4074,14 +3484,6 @@
     "ability": "Rock",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Terentatek",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Terentatek has advantage on saving throws against force powers and resistance to damage dealt by force powers.",
-    "automation": null
   },
   {
     "name": "Mercenary Thug",
@@ -4234,14 +3636,6 @@
     "ability": "Stock Strike",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Trooper, Captain",
-    "ability": "Brave",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The captain has advantage on saving throws against being frightened.",
-    "automation": null
   },
   {
     "name": "Trooper, Captain",
@@ -4482,14 +3876,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Uprising",
-    "ability": "Strength in Numbers",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The swarm has advantage on Strength and Constitution checks and saving throws.",
-    "automation": null
-  },
-  {
     "name": "Veermok",
     "ability": "Bite",
     "complete": true,
@@ -4519,14 +3905,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the vessel of abeloth fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Vessel of Abeloth",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Abeloth has advantage on saving throws against Force Powers.",
     "automation": null
   },
   {
@@ -4608,14 +3986,6 @@
     "ability": "Slam (melee)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Vulture-Class Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The starfighter has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "War Wyrm",
@@ -4811,14 +4181,6 @@
   },
   {
     "name": "Purge Trooper, Electrovoulge",
-    "ability": "Immovable",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Purge Trooper, Electrostaff has advantage on all saving throws against effects that would move it against its will.",
-    "automation": null
-  },
-  {
-    "name": "Purge Trooper, Electrovoulge",
     "ability": "Innate Spellcasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -4943,22 +4305,6 @@
   },
   {
     "name": "AT-ED",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "AT-ED",
-    "ability": "Sure-Footed",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "the AT-ED has advantage on Strength and Dexterity saving throws made against effects that would shove it or knock it prone.",
-    "automation": null
-  },
-  {
-    "name": "AT-ED",
     "ability": "Tech Casting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -4983,14 +4329,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the droid is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
-    "automation": null
-  },
-  {
-    "name": "E-XD-Series Infiltrator Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
     "automation": null
   },
   {
@@ -5153,14 +4491,6 @@
   },
   {
     "name": "Dark Trooper, Phase 0",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Phase Zero Dark Trooper has disadvantage on saving throws against effects that would deal Ion or lightning damage.",
-    "automation": null
-  },
-  {
-    "name": "Dark Trooper, Phase 0",
     "ability": "Jump Pack (Recharge 5-6)",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -5180,14 +4510,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Dark Trooper, Phase I",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "When the droid drops below half its hit points (52), the droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Dark Trooper, Phase II",
     "ability": "Assault Cannon",
     "complete": true,
@@ -5204,14 +4526,6 @@
     "ability": "Underslung Missile Launcher",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Dark Trooper, Phase II",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "When the droid drops below half its hit points (65), the droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Dark Trooper, Phase III",
@@ -5248,14 +4562,6 @@
     "ability": "Frag Grenade (5/day)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Dark Trooper, Phase III",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "When the droid drops below half its hit points (85), the droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Cultist, Saber",
@@ -5330,14 +4636,6 @@
     "ability": "Crushing Grasp",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Cultist, Bonebreaker",
-    "ability": "Buffeting Wind",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The area within 30 feet of the cultist is difficult terrain for hostile creatures, and any hostile creature that starts its turn in the aura while concentrating on an effect must make a DC16 concentration check or lose concentration.",
-    "automation": null
   },
   {
     "name": "Cultist, Bonebreaker",
@@ -5454,14 +4752,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Fireteam: B1-A Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The fireteam has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Fireteam: B2-A Super Battle Droid",
     "ability": "Wrist Blaster",
     "complete": true,
@@ -5480,14 +4770,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Fireteam: B2-A Super Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The fireteam has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
-  },
-  {
     "name": "Squad: B2-A Super Battle Droid",
     "ability": "Wrist Blaster",
     "complete": true,
@@ -5498,14 +4780,6 @@
     "ability": "Droid Assault",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Squad: B2-A Super Battle Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Fireteam: Trooper",
@@ -5721,14 +4995,6 @@
   },
   {
     "name": "Spirit of Marka Ragnos",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The spirit has advantage on saving throws against tech powers.",
-    "automation": null
-  },
-  {
-    "name": "Spirit of Marka Ragnos",
     "ability": "Innate Spellcasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -5795,14 +5061,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the Jedi Redeemer fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Jedi Redeemer",
-    "ability": "Force Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Jedi Redeemer has advantage on saving throws force powers.",
     "automation": null
   },
   {
@@ -6367,14 +5625,6 @@
   },
   {
     "name": "Engineer, Cryotech",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The engineer has advantage on saving throws against spells and other magical effects.",
-    "automation": null
-  },
-  {
-    "name": "Engineer, Cryotech",
     "ability": "Innate Spellcasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -6386,14 +5636,6 @@
     "ability": "Pyrorifle",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Engineer, Pyrotech",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The engineer has advantage on saving throws against spells and other magical effects.",
-    "automation": null
   },
   {
     "name": "Engineer, Pyrotech",
@@ -6420,14 +5662,6 @@
     "ability": "Electrorifle",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Engineer, Electrotech",
-    "ability": "Tech Resistance",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The engineer has advantage on saving throws against spells and other magical effects.",
-    "automation": null
   },
   {
     "name": "Engineer, Electrotech",
@@ -6506,34 +5740,10 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Elite Purge Trooper",
-    "ability": "Force Combat Training",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The trooper has advantage on saving throws against Force powers.",
-    "automation": null
-  },
-  {
     "name": "Elite Purge Trooper, Electrovoulge",
     "ability": "Electrovoulge",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Elite Purge Trooper, Electrovoulge",
-    "ability": "Immovable",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Elite Purge Trooper, Electrostaff has advantage on all saving throws against effects that would move it against its will.",
-    "automation": null
-  },
-  {
-    "name": "Elite Purge Trooper, Electrovoulge",
-    "ability": "Strong Willed",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Elite Purge Trooper has advantage on saving throws against force powers and effects that would cause it to be frightened.",
-    "automation": null
   },
   {
     "name": "Elite Purge Trooper, Electrovoulge",
@@ -6565,14 +5775,6 @@
   },
   {
     "name": "Imperial Knight",
-    "ability": "Iron Mind",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Imperial Knight has advantage on saving throws against frightened and other mind-altering effects.",
-    "automation": null
-  },
-  {
-    "name": "Imperial Knight",
     "ability": "Innate Spellcasting",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -6584,14 +5786,6 @@
     "ability": "Great-saber",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Imperial Knight Master",
-    "ability": "Iron Mind",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Imperial Knight Master has advantage on saving throws against frightened and other mind-altering effects.",
-    "automation": null
   },
   {
     "name": "Imperial Knight Master",
@@ -6624,14 +5818,6 @@
     "ability": "Shockwave Generator Rods (Recharge 5-6)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Phrik-Armored Basilisk War Droid",
-    "ability": "Circuitry",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "When the droid drops below half its hit points, the droid has disadvantage on saving throws against effects that would deal ion or lightning damage.",
-    "automation": null
   },
   {
     "name": "Phrik-Armored Basilisk War Droid",

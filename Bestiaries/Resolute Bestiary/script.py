@@ -1,5 +1,6 @@
 import json
 import urllib.request
+import re
 
 print("Starting")
 
@@ -64,7 +65,10 @@ def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
                    )
 
         for a in actions:
-            if a.get('description') and any(x in a.get('description').lower() for x in to_automate_keywords) or (a.get('name') and 'recharge' in a.get('name').lower()):
+            if (a.get('description') and any(
+                re.search(rf'\b{x}\b', a.get('description').lower())
+                for x in to_automate_keywords
+            )) or (a.get('name') and 'recharge' in a.get('name').lower()):
                 try:
                     auto=a.get('automation',{})
                     if isinstance(auto, list):

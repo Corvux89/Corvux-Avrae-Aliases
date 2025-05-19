@@ -2,7 +2,7 @@
 
 ch = character()
 
-class_gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339"]
+class_gvars = ["2f0a8c13-ad94-488f-9f1b-d44af24db1c4", "e917643b-768e-46e9-be26-c8d3b8ea5339", "a407aca0-06d0-414f-afa4-afbd5e232688"]
 class_gvars += load_json(get_svar("sw5e", "{}")).get('levels', [])
 
 additional_actions = ['8301258f-1c61-4ca7-bf04-11ed10b9d65d', '3789af73-ea40-4285-a826-cafb07526400']
@@ -129,7 +129,8 @@ def level(args):
             out.append(f'{ctx.prefix}{raceBase}')
         if len(actions) > 0:
             if dev:
-                out.append(f'{ctx.prefix}a import {dump_json(actions)}')
+                set_uvar_nx("DEBUG", dump_json(actions))
+                # out.append(f'{ctx.prefix}a import {dump_json(actions)}')
             else:
                 out.append(f'{ctx.prefix}a import {dump_json(actions)}')
             
