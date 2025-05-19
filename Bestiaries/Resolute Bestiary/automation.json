@@ -1,0 +1,5852 @@
+[
+  {
+    "name": "000 Series Protocol Droid",
+    "ability": "Torturous Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "1.4 FD P-Tower Turret",
+    "ability": "Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "3PO Protocol Droid",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "74-Z Speeder Bike",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-AT",
+    "ability": "Laser Cannon Volley",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-AT",
+    "ability": "Medium Repeaters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-AT",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-AT",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-RT",
+    "ability": "Repeating Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-RT",
+    "ability": "Mortar Launcher",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-ST",
+    "ability": "Medium Repeating Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-ST",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-ST",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-ST",
+    "ability": "Low-Threat Medium Repeating Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-TE",
+    "ability": "Laser Cannon Volley",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-TE",
+    "ability": "Medium Repeaters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Acklay",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Acklay",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Acklay",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "AX-108 Sentry Gun",
+    "ability": "Repeating Blaster Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Acolyte",
+    "ability": "Shotosaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Acolyte",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The acolyte is a 1st-level Forcecaster. Its Forcecasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks) and it has 6 force points. The acolyte knows the following force powers:\n\nAt-will: *denounce*, *force push/pull*, *saber ward*\n1st level: *cloud mind*, *saber reflect*, *slow*",
+    "automation": null
+  },
+  {
+    "name": "Adolescent Bantha",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Bantha",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Bantha",
+    "ability": "Trampling Charge",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Dewback",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Dewback",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Dianoga",
+    "ability": "Tentacles",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Dianoga",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Exogorth",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Exogorth",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Exogorth",
+    "ability": "Legendary Resistance (1/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the adolescent exogorth fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Adolescent Rancor",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Rancor",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Rancor",
+    "ability": "Throw Boulder",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Acklay",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Acklay",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Acklay",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action",
+    "automation": null
+  },
+  {
+    "name": "Adult Acklay",
+    "ability": "Pin",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The acklay can forgo a Claw attack in an attempt to pin a target, making the target make a DC 19 Strength saving throw or be restrained. The target can attempt to make the saving throw again as an action on their turn to escape.",
+    "automation": null
+  },
+  {
+    "name": "Adolescent Reek",
+    "ability": "Gore",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Reek",
+    "ability": "Trample",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Reek",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Adolescent Varactyl",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adolescent Varactyl",
+    "ability": "Trampling Charge (Gorgon)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Adult Bantha",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Bantha",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Bantha",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the bantha moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the bantha can make one stomp attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Adult Dewback",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Dewback",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Dianoga",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Dianoga",
+    "ability": "Tentacles",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Dianoga",
+    "ability": "Tentacle Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Dianoga",
+    "ability": "Grasping Tendrils",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The dianoga can have up to seven at a time. Each tentacle can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tentacle deals no damage to the dianoga, which can extrude a replacement tentacle on its next turn. A tentacle can also be broken if a creature takes an action and succeeds on a DC 16 Strength check against it.",
+    "automation": null
+  },
+  {
+    "name": "Adult Exogorth",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Exogorth",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Exogorth",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the adult exogorth fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Adult Rancor",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Rancor",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Rancor",
+    "ability": "Throw Boulder",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Rancor",
+    "ability": "Swallow",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Reek",
+    "ability": "Gore",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Reek",
+    "ability": "Trample",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Reek",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 18 (4d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Adult Varactyl",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Adult Varactyl",
+    "ability": "Trampling Charge (Gorgon)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Throw Boulder",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Frightful Roar",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Swallow",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ancient Rancor",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the rancor fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Aiwha",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Anooba",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Apprentice",
+    "ability": "Doublesaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Apprentice",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The apprentice is a 4th-level forcelcaster. Its forcecasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks) and it has 12 force points. The apprentice knows the following force powers:\n\nAt-will: *denounce*, *overcharge saber*, *saber ward*\n1st level (4 slots): *curse*, *saber reflect*, *sap vitality*\n2nd level (3 slots): *drain vitality*, *force camouflage*",
+    "automation": null
+  },
+  {
+    "name": "Armored Assault Tank (AAT)",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Armored Assault Tank (AAT)",
+    "ability": "Rocket Launchers",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Armored Assault Tank (AAT)",
+    "ability": "Medium Repeating Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Armored Assault Tank (AAT)",
+    "ability": "Plasma Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Aqualish Enforcer",
+    "ability": "Vibroaxe",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Aqualish Enforcer",
+    "ability": "Slugthrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Aqualish Enforcer",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Aryx",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Aryx",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Assassin",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Assassin",
+    "ability": "Hold-out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Assassin",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Auto-Turret",
+    "ability": "Repeating Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B'Omarr Brain Walker",
+    "ability": "Mind Thrust",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B'Omarr Brain Walker",
+    "ability": "Daze (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B'Omarr Monk Initiate",
+    "ability": "Hold-Out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: B1-A Series Battle Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: B1-A Series Battle Droid",
+    "ability": "Massed Fire",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: B1-A Series Battle Droid",
+    "ability": "Droid Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B1-A Battle Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B1-A Battle Droid",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B1-X Battle Droid",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B1-X Battle Droid",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-A Super Battle Droid",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-A Super Battle Droid",
+    "ability": "Wrist Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-A Super Battle Droid",
+    "ability": "Wrist Blaster Volley (Recharge 6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-HA Series Super Battle Droid",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-HA Series Super Battle Droid",
+    "ability": "Wrist Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-HA Series Super Battle Droid",
+    "ability": "Wrist Blaster Volley (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "B2-HA Series Super Battle Droid",
+    "ability": "Rocket Launcher (1/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "BB Series Astromech Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "BB Series Astromech Droid",
+    "ability": "Techcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The astromech is a 3rd level tech caster (tech save DC 13, +5 to hit with power attacks, 15 tech points). The astromech knows the following powers.\n\nCantrip (at will): *jet of flame*, *mending*, *minor hologram*, *on/off*\n1st level (4 slots): *decryption program*, *expeditious retreat*, *hologram*, *repair droid*, *target lock*\n2nd level (2 slots): *translocate*, *motivator boost*",
+    "automation": null
+  },
+  {
+    "name": "BX-5C Series Supercommando Droid",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "BX-5C Series Supercommando Droid",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "BX-A Series Droid",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "BX-A Series Droid",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Battle Hydra",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Battle Hydra",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Battle Hydra",
+    "ability": "Stinger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Beggar's Canyon Womp Rat",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mercenary Berserker",
+    "ability": "Vibroaxe",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Blastromech Series, BT-1",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Blastromech Series, BT-1",
+    "ability": "Flamethrower (2/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Blastromech Series, BT-1",
+    "ability": "Rocket Barrage (2/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Blastromech Series, BT-1",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the assassin droid fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Boar-wolf",
+    "ability": "Tusk",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Boar-wolf",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the boar-wolf moves at least 20 feet toward a target and hits it with a tusk attack on that turn, the target takes an extra 7 (2d6) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Boar-wolf",
+    "ability": "Relentless (Recharges after a Short or Long Rest)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the boar-wolf takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
+    "automation": null
+  },
+  {
+    "name": "Blurrg",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Bor Gullet",
+    "ability": "Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Bor Gullet",
+    "ability": "Mind Blast",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Bor Gullet",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the bor gullet fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Bor Gullet",
+    "ability": "Psychic Link",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The bor gullet can establish a psychic link with any creature that it successfully grapples with its tentacles. Until the psychic link ends, the bor gullet can perceive everything the target senses. The target is aware that its mind is linked, and the bor gullet can terminate the link at any time (no action required). The target can use an action on its turn to attempt to break the psychic link, doing so with a successful DC 18 Intelligence saving throw. On a successful save, the target takes 10 (3d6) psychic damage. The psychic link also ends if the target and the bor gullet are more than 1 mile apart, with no consequences to the target. The bor gullet can form psychic links with up to ten creatures at a time.",
+    "automation": null
+  },
+  {
+    "name": "Brain Worm",
+    "ability": "Enter Orifice",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Brain Worm",
+    "ability": "Consume Mind",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Brain Worm",
+    "ability": "Body Thief",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "C-1 Series Astromech Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cantina Brawl",
+    "ability": "Stool",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cantina Brawl",
+    "ability": "Broken Bottles",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cantina Brawl",
+    "ability": "Darts",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cantina Brawl",
+    "ability": "Liquid Courage (Recharge 5-6)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the cantina brawl imbibes nearby alcohol to gain access to a hidden reservoir of audacity and grit. The cantina brawl gains 7 (2d6) temporary hp for 1 minute.",
+    "automation": null
+  },
+  {
+    "name": "Captain",
+    "ability": "Hold-out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Captain",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Captain",
+    "ability": "Leadership (Recharges after a Short or Long Rest).",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Carnivorous Plant",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cliff Wampa",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cliff Wampa",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cliff Wampa",
+    "ability": "Throw Boulder",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Clodhopper",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Condor Dragon",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Condor Dragon",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Lightsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Unarmed Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Heavy Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Whirling Advance",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If Cyborg Khagan fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Cyborg Khagan",
+    "ability": "Disruptive",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from the cyborg khagan, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.",
+    "automation": null
+  },
+  {
+    "name": "DF.9 Anti-Infantry Turret",
+    "ability": "Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DRK-1 Tracker Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DSD1 Dwarf Spider Droid",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DSD1 Dwarf Spider Droid",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DSD1 Dwarf Spider Droid",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DSD1 Dwarf Spider Droid",
+    "ability": "Self-Destruct",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "DUM-Series Pit Droid",
+    "ability": "Kick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Lord",
+    "ability": "Lightfoil",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Lord",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The dark lord is a 18th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks) and it has 72 force points. The dark lord knows the following force powers:\n\nAt-will: *affect mind*, *denounce*, *force push/pull*, *mind trick*, *saber ward*, *shocking grasp*, *saber reflect*\n1st level: *battle precognition*, *force body*, *hex*, *force reflect*\n2nd level: *battle meditation*, *darkness*, *phasewalk*\n3rd level: *force lightning*, *force suppression*, *sever force*\n4th level: *dominate beast*, *force immunity*, *shocking shield*\n5th level: *improved battle meditation*, *improved phasewalk*, *telekinesis*  \n6th level: *force chain lightning*, *improved force immunity*  \n7th level: *force lightning cone*  \n8th level: *force storm*",
+    "automation": null
+  },
+  {
+    "name": "Dark Lord Spirit",
+    "ability": "Force Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Lord Spirit",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark lord spirit fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Dark Lord Spirit",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The dark lord spirit's spellcasting ability is Charisma (spell save DC 23, +15 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *coerce mind*, *fear*, *improved feedback*, *sense force*, *sever force*\n1/day each: *dominate monster*, *improved force camouflage*, *mass animation*\n3/day each: *darkness*, *dominate mind*, *force project*, *force suppression*, *sanctuary*, *telekinesis*",
+    "automation": null
+  },
+  {
+    "name": "Dark Lord Spirit",
+    "ability": "Dark Lightning",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Side Spirit",
+    "ability": "Maddening Touch",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Side Spirit",
+    "ability": "Whispers of Madness",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Side Spirit",
+    "ability": "Howling Babble",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Death Trooper",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Death Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Death Trooper",
+    "ability": "Volley",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dragonsnake",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dragonsnake",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Destroyer Droid",
+    "ability": "Blaster Cannons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Destroyer Droid",
+    "ability": "Blaster Volley",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Emperor's Hand",
+    "ability": "Lightfoil",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Emperor's Hand",
+    "ability": "Heavy Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Emperor's Hand",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the emperor's hand fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Emperor's Hand",
+    "ability": "Techcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The emperor's hand is a 5th-level techcaster (spell save DC 15, +7 to hit with power attacks, 22 tech points). The emperor's hand knows the following powers:\n\nCantrip (at will): *light*, *poison spray*, *venomous strike*\n1st level (4 slots): *alarm*, *holographic disguise*, *poison dart*, *tranquilizer*\n2nd level (3 slots): *darkvision*, *infiltrate*, *paralyze humanoid*, *smuggle*, *truth serum*\n3rd level (2 slots): *invisibility to cameras*, *tech override*",
+    "automation": null
+  },
+  {
+    "name": "Emperor's Hand",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The emperor's hand is a 5th-level forcecaster (spell save DC 17, +9 to hit with spell attacks, 24 force points). The emperor's hand knows the following powers:\n\nCantrip (at will): *affect mind*, *force disarm*, *mind trick*\n1st level (4 slots): *breath control*, *force body*, *force jump*, *sense emotion*, *slow descent*\n2nd level (3 slots): *coerce mind*, *dark shaer*, *force confusion*\n3rd level (2 slots): *knight speed*, *force repulse*",
+    "automation": null
+  },
+  {
+    "name": "Energy Spider",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Energy Spider",
+    "ability": "Web",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Eopie",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ewok Pony",
+    "ability": "Hooves",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fambaa",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fambaa",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fathier",
+    "ability": "Hooves",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fathier",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the fathier moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the fathier can make another attack with its hooves against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Fambaa Howdah",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fambaa Howdah",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fexian Skullborer",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fexian Skullborer",
+    "ability": "Extract Brain",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fexian Skullborer",
+    "ability": "Poisonous Skin",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Any creature that grapples the skullborer or otherwise comes into direct contact with the skullborer\u00e2\u20ac\u2122s skin must succeed on a DC 14 Constitution saving throw or be stunned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
+    "automation": null
+  },
+  {
+    "name": "Flesh Raider",
+    "ability": "Blade Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flesh Raider",
+    "ability": "Feasting Bite (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flesh Raider Apprentice",
+    "ability": "Lightsaber Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flesh Raider Apprentice",
+    "ability": "Feasting Bite (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flesh Raider Apprentice",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Flesh Raider Apprentice is a 4th-level forcecaster. Its forcecasting ability is Charisma (Power save DC 12, +3 to hit with force attacks) and it has 13 force points. The Flesh Raider Apprentice knows the following force powers: \n\nCantrip (at will): *denounce*, *lightning charge*, *saber reflect*, *saber ward*\n1st level (4 slots): *curse*, *sap vitality*\n2nd level (3 slots): *drain vitality*, *force camouflage*",
+    "automation": null
+  },
+  {
+    "name": "Flesh Raider Berserker",
+    "ability": "Blade Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flesh Raider Berserker",
+    "ability": "Feasting Bite (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Flutterplume",
+    "ability": "Beak",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Storm Eye",
+    "ability": "Thunder Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Storm Eye",
+    "ability": "Lightning Storm",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Storm Eye",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the force storm eye fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Force Storm Eye",
+    "ability": "Lightning Strike",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "(Costs 2 Actions). The eye can cause a bolt of lightning to strike a point anywhere under its storm. Each creature within 5 feet of that point must make a DC 20 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much sonic damage on a successful one.",
+    "automation": null
+  },
+  {
+    "name": "Force Storm Eye",
+    "ability": "Screaming Gale",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "(Costs 3 Actions). The eye releases a blast of thunder and wind in a line that is 1 mile long and 20 feet wide. Objects in that area take 22 (4d10) sonic damage. Each creature there must succeed on a DC 21 Dexterity saving throw or take 22 (4d10) sonic damage and be flung up to 60 feet in a direction away from the line. If a thrown target collides with immovable object, such as a wall or floor, the target takes 3 (1d6) kinetic damage for every 10 feet it was thrown before impact. If the target would collide with another creature instead, that other creature must succeed on a DC19 Dexterity saving throw or take the same damage and be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Forest Nexu, Adult",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Forest Nexu, Adult",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Forest Nexu, Adult",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the nexu is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Forest Nexu, Adult",
+    "ability": "Pounce",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the nexu moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 15 Strength saving throw or be knocked prone. If the target is prone, the nexu can make one bite attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Fyrnock",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gamorrean Guard",
+    "ability": "Vibroaxe",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Geejaw",
+    "ability": "Beak",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Geejaw",
+    "ability": "Mimicry",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The geejaw can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.",
+    "automation": null
+  },
+  {
+    "name": "Ghest",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ghest",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ghest",
+    "ability": "Swallow",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gizka",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Giant Worrt",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gizka Swarm",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Pit Gladiator",
+    "ability": "Vibroblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Pit Gladiator",
+    "ability": "Shield Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Pit Gladiator",
+    "ability": "Are You Not Entertained?",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gonk Droid",
+    "ability": "Kick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gonk Droid",
+    "ability": "Explosive Destruction",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Gonk droid is reduced to zero hit points, it explodes. Each creature within 20 feet of it must make a DC 13 Dexterity saving throw, taking 6d6 fire damage on a failed save, or half as much on a successful one.",
+    "automation": null
+  },
+  {
+    "name": "Gorax",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gorax",
+    "ability": "Greatclub",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gorax",
+    "ability": "Rock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gorax",
+    "ability": "Stench",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Any creature other than a gorax that starts its turn within 10 feet of the gorax must succeed on a DC 15 Constitution saving throw or be poisoned until the start of the creature\u00e2\u20ac\u2122s next turn. On a successful saving throw, the creature is immune to the stench of any gorax for 1 hour.",
+    "automation": null
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Heavy Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Hardened Mind",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Grand Admiral makes a saving throw against illusions or to resist charm and fear effects, it may add its Intelligence modifier (8) to the roll.",
+    "automation": null
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Hyper Intelligence",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Grand Admiral's techcasting ability is Intelligence (tech save DC 23, +15 to hit with techattacks). The Grand Admiral innately knows the followingtech powers:\nAt-will: assess the situation, analyze, decryption program, detect enhancement, spot the weakness, detect invisibility, detect traps\n3/day each: element of surprise, explosion, tactical advantage, ballistic shield, salvo, friendly fire, greater analyze\n1/day each: contingency, find the path, tactical superiority, stun, predictive AI",
+    "automation": null
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Leadership (1/rest)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "For 1 minute, the Grand Admiral can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the Grand Admiral. A creature can benefit from only one Leadership die at a time. This effect ends if the Grand Admiral is incapacitated.",
+    "automation": null
+  },
+  {
+    "name": "Grand Admiral",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the grand admiral fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Greater Bogwing",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Greysor",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Adolescent",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Adult",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Adult",
+    "ability": "Gigantic Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Alpha",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Alpha",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gutkurr",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Matriarch",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Gundark, Matriarch",
+    "ability": "Gigantic Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "HK-47 Assassin Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "HK-47 Assassin Droid",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "HK-47 Assassin Droid",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the assassin droid fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Hawk-Bat",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hawk-Bat Swarm",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Headhunter",
+    "ability": "Sniper Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Headhunter",
+    "ability": "Vibrodagger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hidden Turret",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Heavy Assault",
+    "ability": "Rotary Cannon (Burst)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Heavy Assault",
+    "ability": "Rotary Cannon (Rapid)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Heavy Assault",
+    "ability": "Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Heavy Assault",
+    "ability": "Gunning Fighting Style",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When a target creature rolls a 1 on the saving throw against the rotary cannon's burst or rapid attack, they instead take full damage (12 and 22, respectively).",
+    "automation": null
+  },
+  {
+    "name": "Hive Rat",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Horned Kath Hound",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Horned Kath Hound",
+    "ability": "Tusk",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Horned Kath Hound",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the hound moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the hound can make another attack with its tusks against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Hrumph",
+    "ability": "Gore",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hrumph",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the hrumph moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Hssiss",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hssiss",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Hold-Out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Dominating Presence (1/rest)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "During this time Hutt Crime Lord can use its reaction to force the creature to use the creature\u00e2\u20ac\u2122s reaction. As a bonus action, Hutt Crime Lord can call out to a humanoid who can understand it that is charmed by it or frightened of it to direct their next action. The target must succeed on a Wisdom saving throw (DC 16). On a failed save, until the end of Hutt Crime Lord\u00e2\u20ac\u2122s next turn, the creature takes only the actions Hutt Crime Lord chooses, and doesn\u00e2\u20ac\u2122t do anything that it doesn\u00e2\u20ac\u2122t allow it to do.",
+    "automation": null
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Innate Tech Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Hutt\u00e2\u20ac\u2122s innate tech casting ability is intelligence (tech save DC 16). It can innately cast the following powers:\nAt will: assess the situation\n3/day: absorb energy, element of surprise, fabricate trap, oil slick, smuggle, spot the weakness, stack the deck, tactical barrier\n1/day: kolto cloud, tactical advantage",
+    "automation": null
+  },
+  {
+    "name": "Hutt Crime Lord",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When Hutt Crime Lord fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Hutt Wrestler",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Wrestler",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hutt Wrestler",
+    "ability": "Crush",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hyena-Class Bomber",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hyena-Class Bomber",
+    "ability": "Light Laser Cannons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hyena-Class Bomber",
+    "ability": "Concussion Missile (4/maintenance)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Hyena-Class Bomber",
+    "ability": "Proton Torpedo (4/maintenance)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "ID9 Seeker Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-100 Series",
+    "ability": "Electrostaff",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-100 Series",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-227 Hailfire-Class Droid",
+    "ability": "Crushing Stride",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-227 Hailfire-Class Droid",
+    "ability": "Medium Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-227 Hailfire-Class Droid",
+    "ability": "Missile Launchers (10/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-86 Assassin Droid",
+    "ability": "Sniper Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-86 Assassin Droid",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-88 Assassin Droid",
+    "ability": "Sniper Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-88 Assassin Droid",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IG-88 Assassin Droid",
+    "ability": "Self-Destruct",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The assassin droid cannot allow itself to be captured. When bloodied, it can choose to self-destruct with an implanted thermal detonator. Each creature within 20 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 fire and 2d10 kinetic damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, the creature is knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "ISB Infiltrator",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "ISB Infiltrator",
+    "ability": "Techstaff",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "ISB Infiltrator",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the ISB Infiltrator is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the ISB Infiltrator instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "ISB Infiltrator",
+    "ability": "Techcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The infiltrator is a 3rd-level techcaster. Its techcasting ability is Intelligence (tech save DC 13, +5 to hit with tech powers). It has 15 tech points and knows the following tech powers:\nAt will: electrical burst, encrypted message, on/off\n1st-level: holographic disguise, smoke cloud, tranquilizer\n2nd-level: infiltrate, shocking ray",
+    "automation": null
+  },
+  {
+    "name": "ISB Officer",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "ISB Officer",
+    "ability": "Rally Troops (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "IT-O Interrogation Unit",
+    "ability": "Dart",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Guard Champion",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Guard Champion",
+    "ability": "Doublesword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Guard Champion",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Royal Guard Champion\u00e2\u20ac\u2122s innate forcecasting ability is Wisdom (force save DC 16, +8 to hit with force powers). It can innately cast the following Force Powers:\nAt will: enfeeble\n2/day each: battle meditation, fear, battle precognition",
+    "automation": null
+  },
+  {
+    "name": "Imperial Guard Sentinel",
+    "ability": "Force Pike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Royal Guard",
+    "ability": "Vibroblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Royal Guard",
+    "ability": "Force Pike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Royal Guard",
+    "ability": "Tripping Sweep (3 / Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the Imperial Royal Guard can engage in a dizzying maneuver with a whirling pike, causing every hostile creature within 10 feet to make a Strength Saving Throw (DC 17) or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Inquisitor, Grand",
+    "ability": "Spinning Double Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Grand",
+    "ability": "Dark Lightning",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Grand",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The inquisitor is a 12th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 18, +10 to hit with power attacks). The inquisitor has 41 force points and knows the following force powers:\nAt-Will: denounce, force disarm, force push/pull, mind trick, saber throw, slow\n1st level: dark side tendrils, drain vitality, fear, force jump, sap vitality, sense force\n2nd level: animate weapon, force sight, stun\n3rd level: improved dark side tendrils, choke, force suppression, horror, sever force\n4th level: dominate beast, drain life\n5th level: dominate mind, siphon life",
+    "automation": null
+  },
+  {
+    "name": "Inquisitor, Knight",
+    "ability": "Spinning Double Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Knight",
+    "ability": "Doublesaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Knight",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The inquisitor is a 5th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 13, +5 to hit with force attacks). The inquisitor has 18 force points and knows the following force powers:\nAt-Will: denounce, force disarm, saber throw, slow\n1st level: dark side tendrils, fear, force jump, hex, sense force\n2nd level: force sight, stun",
+    "automation": null
+  },
+  {
+    "name": "Inquisitor, Master",
+    "ability": "Spinning Double Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Master",
+    "ability": "Double Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Master",
+    "ability": "Dark Lightning",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Inquisitor, Master",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The inquisitor is a 10th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 14, +6 to hit with power attacks). The inquisitor has 33 force points and knows the following force powers:\nAt-Will: denounce, force disarm, force push/pull, mind trick, saber throw, slow\n1st level: dark side tendrils, force jump, sap vitality, sense force\n2nd level: animate weapon, drain vitality, force sight, stun\n3rd level: improved dark side tendrils, choke, force suppression, sever force\n4th level: drain life",
+    "automation": null
+  },
+  {
+    "name": "JK-13 Security Droid",
+    "ability": "Stunning Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "JK-13 Security Droid",
+    "ability": "Slicing Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jakrab",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jawa Scrapper",
+    "ability": "Ion Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jawa Scrapper",
+    "ability": "Ion Grenade (3/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jawa Shaman",
+    "ability": "Vibrostaff",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jawa Shaman",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The jawa is a 4th-level forcecaster. Its\nforcecasting ability is Wisdom (save DC 12, +4 to hit\nwith power attacks). The jawa has 18 force points and knows the following powers:\nAt will: affect mind, give life, spare the dying\n1st level: beast trick, heal, heroism\n2nd level: restoration, stun",
+    "automation": null
+  },
+  {
+    "name": "Jawa Tinkerer",
+    "ability": "Tech-Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The jawa is a 1st-level tech-caster. Its\ntech-casting ability is Inteligence (save DC 12, +4 to hit\nwith power attacks). The jawa has 6 tech points and knows the following powers:\nAt will: electroshock, mending, on/off\n1st level: oil slick, overload, repair droid",
+    "automation": null
+  },
+  {
+    "name": "Jubba Bird",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jubba Bird",
+    "ability": "Force Sensitive",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "At-will: The jubba bird innately knows the following force powers: sense emotions The jubba bird\u00e2\u20ac\u2122s forcecasting ability is Wisdom (power save DC 12, +4 to hit with force attacks).",
+    "automation": null
+  },
+  {
+    "name": "Jundland Wastes Womp Rat",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Juggernaut",
+    "ability": "Lightsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Juggernaut",
+    "ability": "Conquering Presence (1/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Juggernaut",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The juggernaut is a 9th-level forcelcaster. Its forcecasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks) and it has 38 force points. The juggernaut knows the following force powers:\n\nCantrip (at will): *affect mind*, *denounce*, *feedback*, *overcharge saber*, *saber ward*\n1st level (4 slots): *force jump*, *improved feedback*, *sap vitality*, *wound*\n2nd level (3 slots): *darkness*, *drain vitality*, *force sight*\n3rd level (3 slots): *choke*, *force scream*, *sever force*\n4th level (3 slots): *dominate beast*, *force immunity*, *shroud of darkness*\n5th level (1 slots): *greater feedback*, *improved force scream*, *steel wind strike*\n6th level (1 slots): *rage*",
+    "automation": null
+  },
+  {
+    "name": "Junk Behemoth",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Junk Behemoth",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Junk Droid",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Junk Droid",
+    "ability": "Vibroblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Juvenile Rancor",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Juvenile Rancor",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "K'lor'slug",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "KX-Series Security Droid",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kaadu",
+    "ability": "Hooves",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Katarn",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Katarn",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Katarn",
+    "ability": "Diving Ambush",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the katarn drops on a target from above and then hits it with a bite attack on the same turn, the target takes an extra 3 (1d6) kinetic damage per 10 feet fallen, up to 21 (6d6). If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone. If the katarn misses, it takes half normal falling damage.",
+    "automation": null
+  },
+  {
+    "name": "Kath Hound",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Baatar",
+    "ability": "Greater Lig Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Baatar",
+    "ability": "Shoni Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Baatar",
+    "ability": "Shoni Spear Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Baatar",
+    "ability": "Leadership (Recharges after a Short or Long Rest)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Lig Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Greater Shoni Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Greater Shoni Spear Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Outland Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Blackarm",
+    "ability": "Incite Rampage (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khagan",
+    "ability": "Blade of Plague",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khagan",
+    "ability": "Blade of Pain",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khagan",
+    "ability": "Leadership (Recharges after a Short or Long Rest)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khan",
+    "ability": "Lig Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khan",
+    "ability": "Greater Shoni Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khan",
+    "ability": "Greater Shoni Spear Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khan",
+    "ability": "Outland Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Khan",
+    "ability": "Leadership (Recharges after a Short or Long Rest)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Warrior",
+    "ability": "Lig Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Warrior",
+    "ability": "Shoni Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Warrior",
+    "ability": "Shoni Spear Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Tarkhan",
+    "ability": "Lig Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Tarkhan",
+    "ability": "Greater Shoni Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Tarkhan",
+    "ability": "Greater Shoni Spear Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Kolkpravis Tarkhan",
+    "ability": "Outland Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Tail Stinger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Venom Spray (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Adult",
+    "ability": "Swat Away",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The dragon makes a claw attack. If the attack hits, the target must succeed on a DC 18 Strength saving throw or be pushed 15 feet in a straight line away from the dragon. If the saving throw fails by 5 or more, the target falls prone.",
+    "automation": null
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Poisonous Saliva (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Greater",
+    "ability": "Sand Swimmer",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The greater krayt dragon dives into the ground, sand blasting all creatures around it. Each creature within 15 feet of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) kinetic damage and be knocked prone. The greater krayt dragon is now burrowed.",
+    "automation": null
+  },
+  {
+    "name": "Krayt Dragon, Juvenile",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Juvenile",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Krayt Dragon, Juvenile",
+    "ability": "Poisonous Saliva (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "LOM Series Protocol Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "LOM Series Protocol Droid",
+    "ability": "Legendary Resistance (1/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the droid fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "LR1K Sonic Cannon",
+    "ability": "Sonic Blast",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Lesser Bogwing",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Lylek",
+    "ability": "Leg Spear",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Lylek",
+    "ability": "Tail Stinger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Lylek",
+    "ability": "Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Maalraas",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Maalraas",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Maalraas",
+    "ability": "Force Sensitive",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "At-will: force camouflage The maalraas\u00e2\u20ac\u2122s force casting ability is Wisdom (power save DC 11, +3 to hit with force attacks). The maalraas innately knows the following force powers:",
+    "automation": null
+  },
+  {
+    "name": "Manifestation of Abeloth",
+    "ability": "Tentacles",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Manifestation of Abeloth",
+    "ability": "Will",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Manifestation of Abeloth",
+    "ability": "Innate Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Abeloth\u00e2\u20ac\u2122s forceasting ability is Charisma (force save DC 23). Abeloth can innately cast the following force powers:\nAt will: coerce mind, sense force\n3/day each: fear, force suppression, telekinesis\n1/day each: telekinetic wave, force lightning cone",
+    "automation": null
+  },
+  {
+    "name": "Manifestation of Abeloth",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the manifestation of abeloth fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Manifestation of Abeloth",
+    "ability": "Draining Lightning",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Massiff",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Marksman-H Remote",
+    "ability": "Stunner",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Melee Destroyer Droid",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Melee Destroyer Droid",
+    "ability": "Rend",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Apprentice",
+    "ability": "Mistryl Unarmed Strikes",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Apprentice",
+    "ability": "Dart",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Master",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Master",
+    "ability": "Holdout Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Prime",
+    "ability": "Holdout Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Prime",
+    "ability": "Lightwhip",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mistryl Prime",
+    "ability": "Tech Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Mistryl is a 5th level tech caster (tech save DC 13, +5 to hit with power attacks, 22 tech points). The Mistryl knows the following powers.\nAt Will: encrypted message, light, poison spray\n1st Level: alarm, decryption program, holographic disguise\n2nd Level: concealed caltrops, infiltrate, paralyze humanoid\n3rd Level: invisibility to cameras, tactical advantage",
+    "automation": null
+  },
+  {
+    "name": "Mistryl Prime",
+    "ability": "Tripping Lash",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the Mistryl Prime can make a Lightwhip attack at disadvantage. If the attack hits, deal damage as normal, and the hit creature must make a Strength saving throw (DC 16) or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Mob",
+    "ability": "Improvised Weapons Melee",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mob",
+    "ability": "Improvised Weapons Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mob",
+    "ability": "Improvised Weapons Melee-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mob",
+    "ability": "Improvised Weapons Ranged-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Monkey-Lizard",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mole Serpent, Adult",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Moof",
+    "ability": "Gore",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Moof",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the moof moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Mott",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mucous Salamander",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mucous Salamander",
+    "ability": "Claw (Solid Form Only)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mynock",
+    "ability": "Energy Drain",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mynock Swarm",
+    "ability": "Energy Drain",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Narglatch",
+    "ability": "Pounce",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Narglatch",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Narglatch",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "NR-N99 Persuader-Class Enforcer",
+    "ability": "Ion Cannons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "NR-N99 Persuader-Class Enforcer",
+    "ability": "Heavy Repeating Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "NR-N99 Persuader-Class Enforcer",
+    "ability": "Crushing Stride (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "NR-N99 Persuader-Class Enforcer",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Navy Pilot",
+    "ability": "Light Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Navy Trooper",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Nerf",
+    "ability": "Gore",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Nerf",
+    "ability": "Spit",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Nerf",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the nerf moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Nuna",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Nuna",
+    "ability": "Talons (inflated)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Nuna",
+    "ability": "Inflate (Recharges after a Short or Long Rest)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the nuna increases in size for 1 minute. Anything it is wearing or carrying does not increase in size. While inflated, the nuna is Small, doubles its damage dice on attacks (included in the attacks), and makes Charisma (Intimidation) checks with advantage. If the nuna lacks the room to become Small, it attains the maximum size possible in the space available.",
+    "automation": null
+  },
+  {
+    "name": "Officer, Junior",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Officer, Senior",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Opee Sea Killer",
+    "ability": "Tongue",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Opee Sea Killer",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Orbalisk Swarm",
+    "ability": "Attach",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Padawan",
+    "ability": "Shotosaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Padawan",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The padawan is a 4th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks) and it has 16 force points. The padawan knows the following force powers:\n\nCantrip (at will): *give life*, *guidance*, *spare the dying*, *turbulence*\n1st level (4 slots): *cloud mind*, *heal*, *project*, *valor*\n2nd level (3 slots): *calm emotions*, *force barrier*",
+    "automation": null
+  },
+  {
+    "name": "Pelko Bug",
+    "ability": "Barbs",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Pelko Bug Swarm",
+    "ability": "Barbs",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Pistoeka Sabotage Droid",
+    "ability": "Miniature Plasma Cutter",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Porg",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Probe Killer Swarm",
+    "ability": "Leg Slash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Purge Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Purge Trooper",
+    "ability": "Electrostaff",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Purge Trooper",
+    "ability": "Volley (Recharge 6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul",
+    "ability": "Savage Leap",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the rakghoul moves at least 20 feet toward a creature and then hits it with a claw attack on the same turn, the target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the rakghoul can make one bite attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "R2 Series Astromech Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul, Hulking",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul, Hulking",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rakghoul, Hulking",
+    "ability": "Savage Leap",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the rakghoul moves at least 20 feet toward a creature and then hits it with a claw attack on the same turn, the target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the rakghoul can make one bite attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Rathtar",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rathtar",
+    "ability": "Flailing Arms",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rathtar",
+    "ability": "Grasping Tentacles",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rathtar, Dwarf",
+    "ability": "Flailing Arms",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rathtar, Dwarf",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Rathtar, Dwarf",
+    "ability": "Grasping Arms",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The rathtar can have up to eight arms at a time. Each arm can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying an arm deals no damage to the rathtar, which can extrude a replacement arm on its next turn. An arm can also be broken if a creature takes an action and succeeds on a DC 15 Strength check against it.",
+    "automation": null
+  },
+  {
+    "name": "Riot",
+    "ability": "Improvised Weapons Melee",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Riot",
+    "ability": "Improvised Weapons Ranged",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Riot",
+    "ability": "Improvised Weapons Melee-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Riot",
+    "ability": "Improvised Weapons Ranged-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ronto",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ronto",
+    "ability": "Stomp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ronto",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Ronto moves at least 20 feet straight toward a creature and then hits it with a Ram attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the Ronto can make one stomp attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Rock Wart",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "SD-K4 Assassin Droid",
+    "ability": "Leg Slash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "STAP",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Sage",
+    "ability": "Shotosaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Force Sage",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The sage is a 9th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 15, +7 to hit with spell attacks) and it has 36 force points. The sage knows the following force powers:\n\nCantrip (at will): *mind trick*, *saber ward*, *turbulence*, *2 other powers*\n1st level (4 slots): *breath control*, *battle precognition*, *force jump*, *saber reflect*\n2nd level (3 slots): *battle mediation*, *force confusion*, *phasewalk*\n3rd level (3 slots): *force suppression*, *sever force*, *telekinetic gust*\n4th level (3 slots): *force immunity*, *freedom of movement*\n5th level (1 slots): *improved battle meditation*",
+    "automation": null
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Water Torrent (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Swallow",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the sando aqua monster fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Sando Aqua Monster",
+    "ability": "Whirlpool (Costs 2 Actions)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "A creature must make a DC 21 Dexterity saving throw the first time on a turn that it enters the whirlpool or that the whirlpool enters its space, including when the whirlpool first appears. A creature takes 6d8 kinetic damage on a failed save, or half as much damage on a successful one. In addition, a Large or smaller creature that fails the save must succeed on a DC 21 Strength saving throw or become restrained in the whirlpool until the power ends. When a creature starts its turn restrained by the whirlpool, the creature is pulled 5 feet deeper inside it, unless the creature is at the bottom. A restrained creature moves with the whirlpool and is submerged when the effect ends, unless the creature has some means to stay afloat. A restrained creature can use an action to make a DC 21 Strength or Dexterity check. If successful, the creature is no longer restrained by the whirlpool and is hurled 3d6x10 feet away from it in a random direction. The whirlpool ends at the beginning of the monster's turn unless the monster used the Whirlpool legendary action to maintain the whirlpool. The monster creates a whirlpool in the water at a point within 30 feet that it can see. The whirlwind is a 10-foot-radius, 30-foot-deep cylinder centered on that point. On subsequent turns, the monster can use the Whirlpool legendary action to maintain and move the whirlpool up to 30 feet in any direction along the surface of the water. The whirlpool sucks up any medium or smaller objects that aren't secured to anything and that aren't worn or carried by anyone.",
+    "automation": null
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Swallow",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Pheromones (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the sarlacc, adult fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Grasping Tentacles",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The sarlacc can have up to eight tentacles at a time. Each tentacle can be attacked (AC 18; 40 hit points; immunity to psychic damage). A tentacle can also be broken if a creature takes an action and succeeds on a DC 22 Strength check against it. Destroying a tentacle in either way deals no damage to the sarlacc, which can extrude a replacement tentacle on its next turn, but it causes the sarlacc to spend a legendary action for no effect. If the sarlacc has no legendary actions remaining this turn to spend, the sarlacc regains one fewer spent legendary actions at the start of its next turn than it would otherwise regain. The sarlacc can be forced to spend no more than two legendary actions in this way.",
+    "automation": null
+  },
+  {
+    "name": "Sarlacc, Adult",
+    "ability": "Earth-Shaking Movement",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The sarlacc sends a shockwave through the ground in a 120-foot-radius circle centered on itself. That area becomes difficult terrain for 1 round. Each creature on the ground in the area must succeed on a DC 22 Constitution saving throw. A creature takes 41 (6d10 + 8) sonic damage and is knocked prone on a failed save, or half as much damage and is not knocked prone on a successful one. A creature that fails the save by 5 or more is pulled 15 feet downwards and towards the sarlacc.",
+    "automation": null
+  },
+  {
+    "name": "Mercenary Scout",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mercenary Scout",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Scrange",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Scrange",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Scurrier",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Scurrier",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Seer",
+    "ability": "Shotosaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Seer",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The seer is a 6th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks) and it has 24 force points. The seer knows the following force powers:\n\nCantrip (at will): *give life*, *guidance*, *spare the dying*, *turbulence*\n1st level (4 slots): *battle precognition*, *burst of speed*, *heal*, *project*\n2nd level (3 slots): *force barrier*, *force enlightenment*, *stun*\n3rd level (3 slots): *knight speed*, *share life*",
+    "automation": null
+  },
+  {
+    "name": "Shaak",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Sergeant",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Sergeant",
+    "ability": "Vibrosword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Sergeant",
+    "ability": "Leadership (Recharges after a Short or Long Rest).",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Shrub",
+    "ability": "Rake",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Shyrack",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sibian Hound",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sith Probe Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Sketto",
+    "ability": "Blood Drain",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Snow Wampa",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Snow Wampa",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Planetary Defense Soldier",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Planetary Defense Soldier",
+    "ability": "Vibroblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Spotlight Sloth",
+    "ability": "Fist",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Spotlight Sloth",
+    "ability": "Fling Mud",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Spy",
+    "ability": "Hold-out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Spy",
+    "ability": "Techblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Starweird",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Starweird",
+    "ability": "Telepathic Scream (1/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Starweird",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The starweird is a 7th-level forcecaster. Its forcecasting ability is Wisdom (power save DC 15, +7 to hit with force attacks) and it has 31 force points. The starweird knows the following force powers:\nAt-will: denounce, force push/pull, shock\n1st-level: curse, sap vitality, sense force\n2nd-level: drain vitality, force sight\n3rd-level: choke, force lightning\n4th-level: drain life",
+    "automation": null
+  },
+  {
+    "name": "Steep",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Steelpecker",
+    "ability": "Beak",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stintaril",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stintaril Swarm",
+    "ability": "Bites",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Super Tactical Droid",
+    "ability": "Biopistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Super Tactical Droid",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the super tactical droid fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Super Tactical Droid",
+    "ability": "Tactical Technology",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the tactical droid casts a tech power that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the power and to succeed on the required saving throw.",
+    "automation": null
+  },
+  {
+    "name": "Super Tactical Droid",
+    "ability": "Techcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Techcasting. The tactical droid is a 13th-level techcaster. Its techcasting ability is Intelligence (power save DC18, +10 to hit with tech attacks) and it has 57 tech points. The tactical droid knows the following tech powers:\nAt-will: assess the situation, encrypted message, electroshock, poison spray, cryogenic burst, combustive shot\n1st-level: homing rockets, expeditious retreat, repair droid\n2nd-level: mirror image, charge power cell\n3rd-level: explosion, tactical advantage\n4th-level: sensor probe, synchronicity\n5th-level: mass repair droid, toxic cloud\n6th-level: security protocols\n7th-level: tactical superiority",
+    "automation": null
+  },
+  {
+    "name": "Swamp Slug",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swamp Slug",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swamp Slug",
+    "ability": "Vile Stench",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Any creature that starts its turn within 10 feet of the slug must succeed on a DC 15 Constitution saving throw or take 9 (2d8) poison damage.",
+    "automation": null
+  },
+  {
+    "name": "Swamp Wampa",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swamp Wampa",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swamp Wampa",
+    "ability": "Putrid Smell",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The wampa has disadvantage on Dexterity (Stealth) checks. At the start of each wampas turns, each creature within 5 feet of it must succeed on a DC 14 Constitution saving throw or take 10 (4d4) poison damage.",
+    "automation": null
+  },
+  {
+    "name": "Swarm of Monkey-Lizards",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swarm of Porgs",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swarm of Porgs",
+    "ability": "Bite-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swarm of Shyracks",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Swarm of Shyracks",
+    "ability": "Bite-50",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "T3-Series Utility Droid",
+    "ability": "Hold-Out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "T3-Series Utility Droid",
+    "ability": "Techcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The technician droid is a 2nd-level techcaster. Its techcasting ability is Intelligence (spell save DC 12, +4 to hit with tech attacks). It has 10 tech points and knows the following tech powers:\nAt-will: electroshock, encrypted message, mending, on/off\n1st level: decryption program, energy shield, holographic disguise, repair droid, tracer bolt",
+    "automation": null
+  },
+  {
+    "name": "T-Series Tactical Droid",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "T-Series Tactical Droid",
+    "ability": "Innate Tech-casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Innate Tech-casting. The T-series Tactical droid can innately cast the following tech powers (tech save DC 14): assess the situation, encrypted message, on/off, alarm, element of surprise (3/day), repair droid, stack the deck",
+    "automation": null
+  },
+  {
+    "name": "Tauntaun",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "TX-225 Occupier Tank",
+    "ability": "Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "TX-225 Occupier Tank",
+    "ability": "Blaster Cannon Volley (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "TX-225 Occupier Tank",
+    "ability": "Frightful Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Terentatek",
+    "ability": "Tusks",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Terentatek",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Terentatek",
+    "ability": "Rock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mercenary Thug",
+    "ability": "Slugthrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mercenary Thug",
+    "ability": "Vibroclub",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mercenary Thug",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Elite Warrior",
+    "ability": "Trandoshan Greatsword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Elite Warrior",
+    "ability": "Slugthrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Elite Warrior",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Hunter",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Hunter",
+    "ability": "Trandoshan Shortsword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Huntmaster",
+    "ability": "Trandoshan Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Huntmaster",
+    "ability": "Javelin",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Huntmaster",
+    "ability": "Shield Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Huntmaster",
+    "ability": "Leadership (Recharges after a short or long rest)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan T'Doshok",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan T'Doshok",
+    "ability": "Mortar Gun (Blaster Form)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan T'Doshok",
+    "ability": "Mortar Gun (Grenade Launcher Form)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan T'Doshok",
+    "ability": "Dioxus Grenade (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan T'Doshok",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Trandoshan T'doshok fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Trandoshan Warrior",
+    "ability": "Trandoshan Double-Sword",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trandoshan Warrior",
+    "ability": "Trandoshan Double-Sword (Bonus Action Attack)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tree",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Captain",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Captain",
+    "ability": "Frag Grenade (3/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Captain",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Captain",
+    "ability": "Leadership (Recharges after a Short or Long Rest)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The Trooper Captain can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the Trooper Captain. A creature can benefit from only one Leadership die at a time.",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Trooper, Demolitions",
+    "ability": "Fragmentation Grenades (6/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Demolitions",
+    "ability": "Set Mine (4/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Demolitions",
+    "ability": "Breaching Charge (4/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Demolitions",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Flame",
+    "ability": "Flamethrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Flame",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Flame",
+    "ability": "Superheated Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Jump",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Jump",
+    "ability": "Wrist Launcher",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Mounted",
+    "ability": "Vibrolance",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Mounted",
+    "ability": "Assault Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Mounted",
+    "ability": "Trample (Mounted Only)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Mounted",
+    "ability": "Flamethrower (Recharges after a Short or Long Rest)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Scout",
+    "ability": "Marksman Blaster (Unmounted Only)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Scout",
+    "ability": "Hold-out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Scout",
+    "ability": "Vibrodagger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shore",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shore",
+    "ability": "Stock Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shore",
+    "ability": "Thermal Grenade (1/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Sniper",
+    "ability": "Sniper Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Sniper",
+    "ability": "Vibrodagger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper",
+    "ability": "Massed Fire",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper",
+    "ability": "Vibrobaton",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tuk'ata",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tuk'ata",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tuk'ata",
+    "ability": "Poisonous Stingers",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusk Cat",
+    "ability": "Hooves",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusk Cat",
+    "ability": "Tusks",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusk Cat",
+    "ability": "Trampling Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the tusk cat moves at least 20 feet straight toward a creature and then hits it with a tusk attack on the same turn, that target must succeed on a DC 15 Strength saving throw or be knocked prone. If the target is prone, the tusk cat can make one hooves attack against it as a bonus action.",
+    "automation": null
+  },
+  {
+    "name": "Tusken Brute",
+    "ability": "Gaffi Stick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusken Chieftain",
+    "ability": "Gaffi Stick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusken Chieftain",
+    "ability": "Cycler Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusken Raider",
+    "ability": "Gaffi Stick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Tusken Raider",
+    "ability": "Cycler Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twirrl",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Uprising",
+    "ability": "Improvised Melee Weapon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Uprising",
+    "ability": "Improvised Ranged Weapon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Veermok",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Veermok",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Veermok",
+    "ability": "Rock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vessel of Abeloth",
+    "ability": "Shotosaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vessel of Abeloth",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the vessel of abeloth fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Vessel of Abeloth",
+    "ability": "Forcecasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Forcecasting. Abeloth is an 18th-level forcecaster. Her Forcecasting Ability is Charisma (force save DC 20, +12 to hit with force powers). Abeloth has 77 force points and knows the following force powers:\nAt will: burst, feedback, force push/pull, give life, saber reflect, shock\n1st level: cloud mind, force mask, force throw, project\n2nd level: coerce mind, hallucination\n3rd level: force lightning, force repulse, knight speed, telekinetic storm\n4th level: drain life, mind trap\n5th level: dominate mind, greater feedback, siphon life\n6th level: mass coerce mind, telekinetic burst\n7th level: force project, whirlwind\n8th level: death field, earthquake, telekinetic wave\n9th level: master feedback",
+    "automation": null
+  },
+  {
+    "name": "Vesuvague Tree",
+    "ability": "Constrict",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vines",
+    "ability": "Vines",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vornskr",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vornskr",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Viper Probe Droid",
+    "ability": "Blaster Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Viper Probe Droid",
+    "ability": "Self-Destruct",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Voxyn",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Voxyn",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Voxyn",
+    "ability": "Sonic Blast (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vulptex",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vulture-Class Droid",
+    "ability": "Slam (ranged)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Vulture-Class Droid",
+    "ability": "Slam (melee)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "War Wyrm",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "War Wyrm",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "War Wyrm",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the war wyrm fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "War Wyrm",
+    "ability": "Cloud of Dust",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The wyrm lashes out and scatters a dusty wake. Each creature within 10 feet of the wyrm, including around a corner, must succeed on a DC 15 Constitution saving throw or be blinded until the end of the wyrm's next turn. A creature that succeeds on the saving throw is immune to this effect until the end of the wyrm's next turn.",
+    "automation": null
+  },
+  {
+    "name": "Weaponized Gonk Droid",
+    "ability": "Kick",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Weaponized Gonk Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Weaponized Gonk Droid",
+    "ability": "Explosive Destruction",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Gonk droid is reduced to zero hit points, it explodes. Each creature within 20 feet of it must make a DC 13 Dexterity saving throw, taking 6d6 fire damage on a failed save, or half as much on a successful one.",
+    "automation": null
+  },
+  {
+    "name": "Whisper Bird",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Woodoo",
+    "ability": "Beak",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Woodoo",
+    "ability": "Talons",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Woodoo",
+    "ability": "Shriek",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Woodoo",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the woodoo moves at least 20 feet straight toward a target and then hits it with a beak attack on the same turn, the target takes an extra 11 (2d10) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Wookiee Berserker",
+    "ability": "Vibroaxe",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wookiee Engineer",
+    "ability": "Vibromace",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wookiee Engineer",
+    "ability": "Tech Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "Tech Casting. The wookiee engineer is a 5th level tech caster (tech save DC 13, + 5 to hit with tech attacks). The wookiee engineer has 23 tech points and knows the following tech powers:\nAt will: electrical burst, mending, on/off\n1st level: element of surprise, kolto pack, repair droid\n2nd level: hold droid, overheat\n3rd level: enhance weapon, fabricate trap",
+    "automation": null
+  },
+  {
+    "name": "Wookiee Hunter",
+    "ability": "Vibroblade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wookiee Hunter",
+    "ability": "Bowcaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wookiee Hunter",
+    "ability": "Bowcaster Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Worrt",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Worrt",
+    "ability": "Tongue",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wraid",
+    "ability": "Ram",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wraid",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wraid",
+    "ability": "Charge",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
+    "automation": null
+  },
+  {
+    "name": "Wyyyschokk",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Wyyyschokk",
+    "ability": "Web (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ysalamir",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Ysalamiri Swarm",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Z-58 Series Security Droid",
+    "ability": "Shockprod",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zalaaca",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Purge Trooper, Electrovoulge",
+    "ability": "Electrovoulge",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Purge Trooper, Electrovoulge",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The purge trooper, electrovoulge's spellcasting ability is Strength (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\nAt will: *saber reflect*, *saber ward*",
+    "automation": null
+  },
+  {
+    "name": "Zombie, Trooper",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Trooper",
+    "ability": "Undead Fortitude",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If damage reduces the zombie, trooper to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is fire or from a critical hit. On a success, the zombie, trooper drops to 1 hit point instead.",
+    "automation": null
+  },
+  {
+    "name": "Zombie, Swarm",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Swarm",
+    "ability": "Flesh Entomb (5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Greater Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Greater Trooper",
+    "ability": "Slam",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Engineer",
+    "ability": "Ion Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Engineer",
+    "ability": "Hold-out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Engineer",
+    "ability": "Electroshock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Engineer",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The trooper, engineer's spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day each: *overheat*, *paralyze humanoid*, *shocking ray*\n3/day each: *energy shield*, *kolto pack*",
+    "automation": null
+  },
+  {
+    "name": "Trooper, Rocket Assault",
+    "ability": "Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Rocket Assault",
+    "ability": "Hold-out",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Rocket Assault",
+    "ability": "Rocket Launcher (Fragmentation) (5/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Rocket Assault",
+    "ability": "Rocket Launcher (Ion) (1/Day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Rocket Assault",
+    "ability": "Explosives Fighting Style",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When a creature rolls a 1 on the saving throw against the trooper's rocket, they treat the effect\u00e2\u20ac\u2122s damage as if it had rolled the maximum (20 for fragmentation and 12 for ion).",
+    "automation": null
+  },
+  {
+    "name": "AT-ED",
+    "ability": "Cheek Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "AT-ED",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the AT-ED is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "AT-ED",
+    "ability": "Tech Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The AT-ED is a 3rd-level techcaster. Its techcasting ability is Intelligence (tech save DC 14, +6 to hit with tech powers, 10 tech points). It knows the following tech powers:\n\nAt-will: *assess the situation*, *itemize*\n1st level: *analyze*, *expeditious retreat*, *gleaming outline*, *spot the weakness*, *target lock*\n2nd level: *detect traps*, *frequency scan*, *motivator boost*",
+    "automation": null
+  },
+  {
+    "name": "E-XD-Series Infiltrator Droid",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "E-XD-Series Infiltrator Droid",
+    "ability": "Twin Wrist Blasters",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "E-XD-Series Infiltrator Droid",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the droid is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "E-XD-Series Infiltrator Droid",
+    "ability": "Explosive Destruction",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the E-XD droid is reduced to zero hit points, it begins a countdown, and at the end of the initiative order on the following turn, it explodes. Each creature within 30 feet of it must make a DC 17 Dexterity saving throw, taking 42 (12d6) Energy damage on a failed save, or half as much on a successful one.",
+    "automation": null
+  },
+  {
+    "name": "E-XD-Series Infiltrator Droid",
+    "ability": "Tech Casting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The E-XD is an 18th-level techcaster. Its techcasting ability is Intelligence (tech save DC 16, +8 to hit with tech powers, 23 tech points). It knows the following tech powers:\n\nAt-will: *assess the situation, itemize, mending, on/off*\n1st level: *analyze, copy, countermeasures, decryption program, expeditious retreat, gleaming outline, preparedness, repair droid, spot the weakness, target lock*\n2nd level: *detect traps, enhance droid, frequency scan, motivator boost, release, smuggle*\n3rd level: *invisibility to cameras, read memory*\n4th level: *scan area, synchronicity*\n5th level: *greater analyze, override interface, skill protocol*",
+    "automation": null
+  },
+  {
+    "name": "Trooper, Shadow",
+    "ability": "Assault Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shadow",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shadow",
+    "ability": "Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shadow",
+    "ability": "Flash Grenade (recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Possessed Hunter",
+    "ability": "Heavy pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Possessed Hunter",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Possessed Hunter",
+    "ability": "Shield Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Technician",
+    "ability": "Hold-out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Technician",
+    "ability": "Welding Torch",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Technician",
+    "ability": "Repair (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Technician",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The trooper, technician's spellcasting ability is Intelligence (spell save DC 12, +4 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\nAt will: *assess the situation*, *ion blast*, *on/off*, *reboot*, *short circuit*\n2/day each: *kolto pack*, *spot the weakness*",
+    "automation": null
+  },
+  {
+    "name": "Trooper, EVO",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, EVO",
+    "ability": "Flechette Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, EVO",
+    "ability": "Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, EVO",
+    "ability": "Environmental Armor (2/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the trooper would make a Strength or Dexterity saving throw, it can choose to make a Constitution saving throw instead.",
+    "automation": null
+  },
+  {
+    "name": "Trooper, Shadow EVO",
+    "ability": "Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shadow EVO",
+    "ability": "Flechette Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Shadow EVO",
+    "ability": "Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Vibrobaton",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Shotgun",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Blaster Volley (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Frag Grenade (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase 0",
+    "ability": "Jump Pack (Recharge 5-6)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the Phase Zero Dark Trooper can move double its movement speed, ignoring difficult terrain.",
+    "automation": null
+  },
+  {
+    "name": "Dark Trooper, Phase I",
+    "ability": "Wrist Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase I",
+    "ability": "Shield Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase II",
+    "ability": "Assault Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase II",
+    "ability": "Assault Cannon Barrage (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase II",
+    "ability": "Underslung Missile Launcher",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Assault Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Assault Cannon Barrage (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Shoulder Missile Launcher",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Shoulder Missile Barrage (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Trooper, Phase III",
+    "ability": "Frag Grenade (5/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Saber",
+    "ability": "Lightsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Saber",
+    "ability": "Goading Taunt",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the cultist picks one creature it can see. The creature must make a DC 12 Wisdom saving throw or move fifteen feet closer to the cultist. This movement does not provoke opportunity attacks.",
+    "automation": null
+  },
+  {
+    "name": "Cultist, Lifeweaver",
+    "ability": "Drain Vitality",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Lifeweaver",
+    "ability": "Sap Vitality",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Lifeweaver",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The cultist, lifeweaver's spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n2/day: *siphon life*\n3/day each: *drain life*, *share life*",
+    "automation": null
+  },
+  {
+    "name": "Cultist, Electromancer",
+    "ability": "Shock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Electromancer",
+    "ability": "Charged Touch",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Electromancer",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The cultist, electromancer's spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day: *force chain lightning*\n3/day each: *force lightning*, *kinetite*",
+    "automation": null
+  },
+  {
+    "name": "Cultist, Rifleman",
+    "ability": "E-11 Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Rifleman",
+    "ability": "Goading Taunt",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the cultist picks one creature it can see. The creature must make a DC 12 Wisdom saving throw or move fifteen feet closer to the cultist. This movement does not provoke opportunity attacks.",
+    "automation": null
+  },
+  {
+    "name": "Cultist, Bonebreaker",
+    "ability": "Crushing Grasp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Bonebreaker",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The cultist, bonebreaker's spellcasting ability is Charisma (spell save DC 16, +8 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day: *crush*\n2/day: *choke*\n3/day each: *convulsion*, *tremor*",
+    "automation": null
+  },
+  {
+    "name": "Cultist, Master",
+    "ability": "Crushing Grasp",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Master",
+    "ability": "Shock",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Master",
+    "ability": "Charged Touch",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Master",
+    "ability": "Drain Vitality",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cultist, Master",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The cultist, master's spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day each: *chain lightning*, *crush*, *siphon life*\n3/day each: *choke*, *drain life*, *force lightning*, *share life*",
+    "automation": null
+  },
+  {
+    "name": "Reborn Acolyte",
+    "ability": "Lightsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Reborn Warrior",
+    "ability": "Dual-Phase Lightsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Reborn Master",
+    "ability": "Doublesaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Reborn Master",
+    "ability": "Saber Throw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Tail",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Frightening Presence",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Tentacle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Roggwart",
+    "ability": "Cybernetic Arm",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The roggwart's innate spellcasting ability is Strength (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n\n2/day: *pressure crush*",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: B1-A Battle Droid",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: B1-A Battle Droid",
+    "ability": "Droid Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: B2-A Super Battle Droid",
+    "ability": "Wrist Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: B2-A Super Battle Droid",
+    "ability": "Droid Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: B2-A Super Battle Droid",
+    "ability": "Wrist Blaster Volley (Recharge 6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: B2-A Super Battle Droid",
+    "ability": "Wrist Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: B2-A Super Battle Droid",
+    "ability": "Droid Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper",
+    "ability": "Fireteam Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper",
+    "ability": "Massed Fire",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Demolitions",
+    "ability": "Fragmentation Grenade (3/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Demolitions",
+    "ability": "Set Mine (2/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Demolitions",
+    "ability": "Breaching Charge (2/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Trooper, Demolitions",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Demolitions",
+    "ability": "Fragmentation Grenades (6/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Demolitions",
+    "ability": "Set Mine (4/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Demolitions",
+    "ability": "Breaching Charge (4/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Demolitions",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Flame",
+    "ability": "Flamethrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Flame",
+    "ability": "Superheated Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Flame",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Flame",
+    "ability": "Flamethrower",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Flame",
+    "ability": "Blaster Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Flame",
+    "ability": "Superheated Bash",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Scout",
+    "ability": "Marksman Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Scout",
+    "ability": "Hold-out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Trooper, Scout",
+    "ability": "Vibrodagger Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Scout",
+    "ability": "Marksman Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Scout",
+    "ability": "Hold-out Blaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Trooper, Scout",
+    "ability": "Vibrodagger Assault",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Disciple",
+    "ability": "Stinger",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Dark Disciple",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark disciple fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Dark Disciple",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark disciple is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Dark Disciple",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The dark disciple's spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day each: *improved force intuition*, *telekinetic shield*\n2/day: *force repulse*\n3/day each: *force reflect*, *force throw*, *sever force*",
+    "automation": null
+  },
+  {
+    "name": "Puppeted Dark Disciple",
+    "ability": "Sith Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Puppeted Dark Disciple",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark disciple fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Puppeted Dark Disciple",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark disciple is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Puppeted Dark Disciple",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The puppeted dark disciple's spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\n1/day each: *crush*, *greater kinetite*, *improved force intuition*, *improved force scream*, *siphon life*, *telekinetic shield*, *wrack*\n2/day: *force repulse*\n3/day each: *force reflect*, *force throw*, *sever force*",
+    "automation": null
+  },
+  {
+    "name": "Spirit of Marka Ragnos",
+    "ability": "Force Saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Spirit of Marka Ragnos",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the dark lord spirit fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Spirit of Marka Ragnos",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The spirit of marka ragnos's spellcasting ability is Charisma (spell save DC 20, +13 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *coerce mind*, *fear*, *improved feedback*, *sense force*, *sever force*\n1/day each: *dominate monster*, *improved force camouflage*, *mass animation*\n3/day each: *darkness*, *dominate mind*, *force lightning*, *force project*, *force suppression*, *sanctuary*, *telekinesis*",
+    "automation": null
+  },
+  {
+    "name": "Spirit of Marka Ragnos",
+    "ability": "Dark Lightning",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Alchemy",
+    "ability": "Bite",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Zombie, Alchemy",
+    "ability": "Claws",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Yevethan Commando",
+    "ability": "Dewclaw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Yevethan Commando",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Yevethan Supercommando",
+    "ability": "Dewclaw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Yevethan Supercommando",
+    "ability": "Sniper Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Yevethan Supercommando",
+    "ability": "Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jedi Redeemer",
+    "ability": "Greatsaber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Jedi Redeemer",
+    "ability": "Legendary Resistance (3/day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Jedi Redeemer fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Jedi Redeemer",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The jedi redeemer's spellcasting ability is Wisdom (spell save DC 21, +13 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *force disarm*, *force push/pull*, *mind trick*, *saber reflect*, *saber throw*\n1/day each: *crush*, *dominate mind*, *mass coerce mind*, *master speed*, *stasis*, *telekinesis*, *telekinetic burst*\n2/day each: *choke*, *dominate beast*, *force immunity*, *freedom of movement*, *knight speed*, *telekinetic storm*\n3/day each: *calm emotions*, *cloud mind*, *coerce mind*, *force confusion*, *force jump*, *force propel*, *force throw*, *slow descent*, *stun*",
+    "automation": null
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Heavy Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Force of Personality",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Inspiring Leader (3/day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "As a bonus action, the Senator can grant an ally a +7 bonus that can be applied to the next attack roll, ability check, or saving throw that the target makes.",
+    "automation": null
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Legendary Resistance (3/day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Galactic Senator fails a saving throw, she can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Galactic Senator",
+    "ability": "Tyrannical Strike (3/day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Galactic Senator hits a creature with a weapon attack, she can use her reaction to issue a one-word command to a creature who can see or hear her. Add 1d10 to the attack\u00e2\u20ac\u2122s damage roll, and the target must succeed on a DC 19 Wisdom saving throw. On a failed save, the target must follow the command on its next turn.",
+    "automation": null
+  },
+  {
+    "name": "Legendary Corellian Smuggler",
+    "ability": "Modified DL44 Blaster Pistol",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Legendary Corellian Smuggler",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Legendary Corellian Smuggler",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "When the Smuggler fails a saving throw, he can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Legendary Corellian Smuggler",
+    "ability": "Avoidance",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Smuggler is subjected to an effect that allows it to make a saving throw to only take half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Legendary Corellian Smuggler",
+    "ability": "Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The legendary corellian smuggler is a 11th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, 8 to hit with spell attacks). It has the following wizard spells prepared:\nCantrips (at will): *assess the situation, combustive shot, encrypted message*\n1st level (4 slots): *element of surprise, flash, oil slick, smoke cloud, stack the deck, target lock*\n2nd level (3 slots): *charge powercell, infiltrate, mirror image, smuggle, translocate*\n3rd level (3 slots): *debilitating gas, invisibility to cameras*\n4th level (3 slots): *salvo*\n5th level (2 slots): *mislead, override interface, shutdown*",
+    "automation": null
+  },
+  {
+    "name": "Legendary Wookiee Smuggler",
+    "ability": "Modified Wookiee Bowcaster",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Legendary Wookiee Smuggler",
+    "ability": "Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Legendary Wookiee Smuggler",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Legendary Wookiee Smuggler fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Stellar Legionnaire",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stellar Legionnaire",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stellar Legionnaire",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Legionnaire is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Legionnaire instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Stellar Legionnaire",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The stellar legionnaire's spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Stellar Legionnaire",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Stellar Legionnaire",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Stellar Legionnaire",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Legionnaire is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Legionnaire instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Stellar Legionnaire",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The fireteam: stellar legionnaire's spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Squad: Stellar Legionnaire",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Stellar Legionnaire",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Stellar Legionnaire",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Legionnaire is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Legionnaire instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Squad: Stellar Legionnaire",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The squad: stellar legionnaire's spellcasting ability is Intelligence (spell save DC 13, +5 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Stellar Tribune",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stellar Tribune",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stellar Tribune",
+    "ability": "Solar Pike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Stellar Tribune",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Tribune is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Tribune instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Stellar Tribune",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The stellar tribune's spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Stellar Tribune",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Stellar Tribune",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Stellar Tribune",
+    "ability": "Solar Pike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Stellar Tribune",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Tribune is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Tribune instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Stellar Tribune",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The fireteam: stellar tribune's spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Squad: Stellar Tribune",
+    "ability": "Hidden Blade",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Stellar Tribune",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Stellar Tribune",
+    "ability": "Solar Pike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Stellar Tribune",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Stellar Tribune is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Tribune instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Squad: Stellar Tribune",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The squad: stellar tribune's spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It can innately cast the following spells, requiring no components:\n1/day each: *acid dart*, *burst of flame*, *overheat*\n3/day each: *flame sweep*, *poison dart*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Hidden Blade (Fine)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Echani Unarmed Strike",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Solar Pike (Fine)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Vapor Projector - Cryo (Fine)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Vapor Projector - Corrosive (Fine)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Vapor Projector - Incendiary (Fine)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Twisuns Legate is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Stellar Tribune instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Twisuns Legate",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The twisuns legate's spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *flame sweep*, *poison dart*, *ring of fire*, *smoke cloud*\n1/day each: *cryogenic spray*, *immolate*, *paralyze creature*\n3/day each: *acid dart*, *burst of flame*, *overheat*",
+    "automation": null
+  },
+  {
+    "name": "Mandalorian Initiate",
+    "ability": "Wristrifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Initiate",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Initiate",
+    "ability": "Wristrifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Initiate",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Initiate",
+    "ability": "Wristrifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Initiate",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Trooper",
+    "ability": "Heavy Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Trooper",
+    "ability": "Heavy Carbine - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Trooper",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Trooper",
+    "ability": "Rocketpack",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Trooper",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The mandalorian trooper's spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *tri-shot*, *wire line*\n3/day each: *flame sweep*, *homing rockets*",
+    "automation": null
+  },
+  {
+    "name": "Fireteam: Mandalorian Trooper",
+    "ability": "Heavy Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Trooper",
+    "ability": "Heavy Carbine - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Trooper",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Trooper",
+    "ability": "Rocketpack Assault (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Fireteam: Mandalorian Trooper",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The fireteam: mandalorian trooper's spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *tri-shot*, *wire line*\n3/day each: *flame sweep*, *homing rockets*",
+    "automation": null
+  },
+  {
+    "name": "Squad: Mandalorian Trooper",
+    "ability": "Heavy Carbine",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Trooper",
+    "ability": "Heavy Carbine - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Trooper",
+    "ability": "Vibrosabre",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Trooper",
+    "ability": "Rocketpack Assault (2/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Squad: Mandalorian Trooper",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The squad: mandalorian trooper's spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *tri-shot*, *wire line*\n3/day each: *flame sweep*, *homing rockets*",
+    "automation": null
+  },
+  {
+    "name": "Mandalorian Brawler",
+    "ability": "Revolver",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Brawler",
+    "ability": "Revolver - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Brawler",
+    "ability": "Crushgaunt",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Brawler",
+    "ability": "Keldabe Kiss",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Brawler",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The mandalorian brawler's spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *stinger*, *tri-shot*, *wire line*\n1/day each: *flaming shots*, *wire bind*\n2/day each: *flame sweep*, *tracer bolt*\n3/day each: *homing rockets*, *wire tow*",
+    "automation": null
+  },
+  {
+    "name": "Mandalorian Supercommando",
+    "ability": "EE-3 Carbine Rifle - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Supercommando",
+    "ability": "Rocketpack (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Supercommando",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The mandalorian supercommando's spellcasting ability is Wisdom (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *stinger*, *tri-shot*, *wire line*\n1/day: *wire bind*\n2/day each: *flame sweep*, *tracer bolt*\n3/day each: *homing rockets*, *wire tow*",
+    "automation": null
+  },
+  {
+    "name": "Mandalorian Heavy Gunner",
+    "ability": "Blaster Cannon - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Heavy Gunner",
+    "ability": "Blaster Cannon - Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Heavy Gunner",
+    "ability": "Rocketpack (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Heavy Gunner",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The mandalorian heavy gunner's spellcasting ability is Wisdom (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *stinger*, *tri-shot*, *wire line*\n1/day: *wire bind*\n2/day each: *flame sweep*, *tracer bolt*\n3/day each: *homing rockets*, *wire tow*",
+    "automation": null
+  },
+  {
+    "name": "Engineer, Cryotech",
+    "ability": "Cryorifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Engineer, Cryotech",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The engineer, cryotech's spellcasting ability is Intelligence (spell save DC 18, +10 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *rime shot*\n1/day each: *carbon impact*, *carbonite explosion*\n2/day each: *carbon fog*, *carbonite*, *cryogenic spray*, *cryogenic storm*, *delayed cryogenic explosion*, *flash freeze*, *hypothermia*\n3/day each: *carbon blast*, *cold snap*, *cryogenic blast*, *cryogenic blow*, *cryogenic volley*, *cryogenic wave*, *deep freeze*, *subzero*",
+    "automation": null
+  },
+  {
+    "name": "Engineer, Pyrotech",
+    "ability": "Pyrorifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Engineer, Pyrotech",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The engineer, pyrotech's spellcasting ability is Intelligence (spell save DC 18, +10 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *extinguish*, *jet of flame*\n1/day each: *delayed explosion*, *greater explosion*, *greater immolate*, *greater nuclear explosion*, *greater sabotage charges*\n2/day each: *afterburner*, *explosive afterimage*, *firestorm*, *immolate*, *magma jet*, *nuclear explosion*, *steam cloud*\n3/day each: *burst of flame*, *explosion*, *flame sweep*, *flaming shots*, *oil slick*, *ring of fire*",
+    "automation": null
+  },
+  {
+    "name": "Weapons Team, Heavy Laser",
+    "ability": "Mounted Laser Cannon - Rapid",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Weapons Team, Heavy Laser",
+    "ability": "Mounted Laser Cannon - Burst",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Engineer, Electrotech",
+    "ability": "Electrorifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Engineer, Electrotech",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The engineer, electrotech's spellcasting ability is Intelligence (spell save DC 18, +10 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *electrical burst*, *electroshock*, *ion blast*, *ionic strike*\n1/day each: *ionic explosion*, *paralyzing field*, *voltaic electromesh*\n2/day each: *electromagnetic surge*, *greater accelerate*\n3/day each: *electromagnetic bond*, *electromesh*, *shocking ray*, *voltaic shielding*",
+    "automation": null
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo Zero)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo One)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo Two)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo Three)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo Four)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Heavy Pistol (Tempo Five)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Rocketpack (1/day)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Mandalorian Pistolero",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The mandalorian pistolero's spellcasting ability is Wisdom (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *stinger*, *tri-shot*, *wire line*\n1/day: *wire bind*\n2/day each: *flame sweep*, *tracer bolt*\n3/day each: *homing rockets*, *wire tow*",
+    "automation": null
+  },
+  {
+    "name": "Elite Purge Trooper",
+    "ability": "Blaster Rifle",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Elite Purge Trooper",
+    "ability": "Electrostaff",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Elite Purge Trooper",
+    "ability": "Volley (Recharge 6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Elite Purge Trooper, Electrovoulge",
+    "ability": "Electrovoulge",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Elite Purge Trooper, Electrovoulge",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The elite purge trooper, electrovoulge's spellcasting ability is Strength (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components:\nAt will: *saber reflect*, *saber ward*",
+    "automation": null
+  },
+  {
+    "name": "Cyborg Assassin",
+    "ability": "High-Frequency Vibrocutter",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Cyborg Assassin",
+    "ability": "Evasion",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Cyborg Assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Cyborg Assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+    "automation": null
+  },
+  {
+    "name": "Imperial Knight",
+    "ability": "Great-saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Knight",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The imperial knight's spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *battle meditation*, *burst of speed*, *disperse force*, *heroism*, *valor*",
+    "automation": null
+  },
+  {
+    "name": "Imperial Knight Master",
+    "ability": "Great-saber",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Imperial Knight Master",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The imperial knight master's spellcasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *battle meditation*, *burst of speed*, *disperse force*, *heroism*, *valor*\n1/day each: *improved battle meditation*, *improved force barrier*",
+    "automation": null
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Crush Claw",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Pulse Wave Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Shockwave Generator Rods (Recharge 5-6)",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Legendary Resistance (3/Day)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the Phrik-Armored Basilisk War Droid fails a saving throw, it can choose to succeed instead.",
+    "automation": null
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Relentless (Legendary)",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "If the basilisk war droid takes damage that reduces it to 0 hit points or below, it can make a DC 10 Constitution saving throw to instead be reduced to 1. If it takes additional damage, it can repeat this save, with each additional use increasing the DC by 5. ",
+    "automation": null
+  },
+  {
+    "name": "Phrik-Armored Basilisk War Droid",
+    "ability": "Innate Spellcasting",
+    "complete": false,
+    "source": "Resolute 2.0 Bestiary",
+    "description": "The phrik-armored basilisk war droid's spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no components:\nAt will: *homing rockets*",
+    "automation": null
+  },
+  {
+    "name": "TIE/LN Starfighter",
+    "ability": "Twin Laser Cannon",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
+  }
+]

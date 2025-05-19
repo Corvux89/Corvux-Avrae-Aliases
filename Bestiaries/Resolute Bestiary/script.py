@@ -10,8 +10,8 @@ automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
 todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
 
 
-def processBestiaryBuilderAPI(bestiaryID, fileName, autoMode, creatureFile):
-    url = f"https://bestiarybuilder.com/api/export/bestiary/{bestiaryID}"
+def processBeastiaryBuilderAPI(BeastiaryID, fileName, autoMode, creatureFile):
+    url = f"https://bestiarybuilder.com/api/export/bestiary/{BeastiaryID}"
     r = urllib.request.urlopen(url)
     data = json.load(r)
 
@@ -132,4 +132,4 @@ def get_type(object, type_list):
         for child in object["hit"]:
             get_type(child,type_list)
 
-processBestiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w", 'Bestiaries\\Resolute Bestiary\\Resolute Ground.json')
+processBeastiaryBuilderAPI("67606b7cd4d3ec37d67ec64a", 'Bestiaries\\Resolute Bestiary\\KFC Ground.json', "w", 'Bestiaries\\Resolute Bestiary\\Resolute Ground.json')
