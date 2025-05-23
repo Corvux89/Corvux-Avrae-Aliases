@@ -314,13 +314,24 @@
                             "onTrue": [
                                 {
                                     "type": "target",
+                                    "target": "self",
+                                    "effects": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Bansche Purifier MENAD Pro Mk I - AC Bonus Parent",
+                                            "save_as": "peff"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "target",
                                     "target": "each",
                                     "effects": [
                                         {
                                             "type": "ieffect2",
-                                            "name": "Bansche Purifier MENAD Pro MK I",
+                                            "name": "Bansche Purifier MENAD Pro MK I - AC Bonus",
                                             "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
-                                            "duration": 1,
+                                            "parent": "peff",
                                             "effects": {
                                                 "ac_bonus": 1
                                             }
@@ -335,9 +346,14 @@
                                     "effects": [
                                         {
                                             "type": "ieffect2",
-                                            "name": "Bansche Purifier MENAD Pro MK I",
+                                            "name": "Bansche Purifier MENAD Pro Mk I - AC Bonus Parent",
+                                            "save_as": "peff"
+                                        },
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Bansche Purifier MENAD Pro MK I - AC Bonus",
                                             "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
-                                            "duration": 1,
+                                            "parent": "peff",
                                             "effects": {
                                                 "ac_bonus": 1
                                             }
@@ -365,13 +381,24 @@
                             "onTrue": [
                                 {
                                     "type": "target",
+                                    "target": "self",
+                                    "effects": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Bansche Purifier MENAD Pro Mk I - Save Bonus Parent",
+                                            "save_as": "peff"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "target",
                                     "target": "each",
                                     "effects": [
                                         {
                                             "type": "ieffect2",
-                                            "name": "Bansche Purifier MENAD Pro MK I",
+                                            "name": "Bansche Purifier MENAD Pro MK I - Save Bonus",
                                             "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
-                                            "duration": 1,
+                                            "parent": "peff",
                                             "effects": {
                                                 "save_bonus": 1
                                             }
@@ -386,9 +413,14 @@
                                     "effects": [
                                         {
                                             "type": "ieffect2",
+                                            "name": "Bansche Purifier MENAD Pro Mk I - Save Bonus Parent",
+                                            "save_as": "peff"
+                                        },
+                                        {
+                                            "type": "ieffect2",
                                             "name": "Bansche Purifier MENAD Pro MK I",
                                             "desc": "When you cast a tech power with this wristpad that gives you a bonus to AC or saving throws, you can increase that bonus by +1",
-                                            "duration": 1,
+                                            "parent": "peff",
                                             "effects": {
                                                 "save_bonus": 1
                                             }

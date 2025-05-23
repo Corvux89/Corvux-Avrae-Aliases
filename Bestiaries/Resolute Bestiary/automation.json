@@ -110,10 +110,8 @@
   {
     "name": "Adolescent Acklay",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "AX-108 Sentry Gun",
@@ -126,14 +124,6 @@
     "ability": "Shotosaber",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Force Acolyte",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The acolyte is a 1st-level Forcecaster. Its Forcecasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks) and it has 6 force points. The acolyte knows the following force powers:\n\nAt-will: *denounce*, *force push/pull*, *saber ward*\n1st level: *cloud mind*, *saber reflect*, *slow*",
-    "automation": null
   },
   {
     "name": "Adolescent Bantha",
@@ -192,10 +182,8 @@
   {
     "name": "Adolescent Exogorth",
     "ability": "Legendary Resistance (1/Day)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the adolescent exogorth fails a saving throw, it can choose to succeed instead.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adolescent Rancor",
@@ -230,10 +218,8 @@
   {
     "name": "Adult Acklay",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adult Acklay",
@@ -292,10 +278,8 @@
   {
     "name": "Adult Bantha",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the bantha moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the bantha can make one stomp attack against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adult Dewback",
@@ -350,10 +334,8 @@
   {
     "name": "Adult Exogorth",
     "ability": "Legendary Resistance (3/Day)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the adult exogorth fails a saving throw, it can choose to succeed instead.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adult Rancor",
@@ -446,10 +428,8 @@
   {
     "name": "Ancient Rancor",
     "ability": "Legendary Resistance (3/Day)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the rancor fails a saving throw, it can choose to succeed instead.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Aiwha",
@@ -468,14 +448,6 @@
     "ability": "Doublesaber",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Apprentice",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The apprentice is a 4th-level forcelcaster. Its forcecasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks) and it has 12 force points. The apprentice knows the following force powers:\n\nAt-will: *denounce*, *overcharge saber*, *saber ward*\n1st level (4 slots): *curse*, *saber reflect*, *sap vitality*\n2nd level (3 slots): *drain vitality*, *force camouflage*",
-    "automation": null
   },
   {
     "name": "Armored Assault Tank (AAT)",
@@ -666,14 +638,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "BB Series Astromech Droid",
-    "ability": "Techcasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The astromech is a 3rd level tech caster (tech save DC 13, +5 to hit with power attacks, 15 tech points). The astromech knows the following powers.\n\nCantrip (at will): *jet of flame*, *mending*, *minor hologram*, *on/off*\n1st level (4 slots): *decryption program*, *expeditious retreat*, *hologram*, *repair droid*, *target lock*\n2nd level (2 slots): *translocate*, *motivator boost*",
-    "automation": null
-  },
-  {
     "name": "BX-5C Series Supercommando Droid",
     "ability": "Blaster Carbine",
     "complete": true,
@@ -796,10 +760,8 @@
   {
     "name": "Bor Gullet",
     "ability": "Legendary Resistance (3/Day)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the bor gullet fails a saving throw, it can choose to succeed instead.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Bor Gullet",
@@ -1014,14 +976,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Dark Lord",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The dark lord is a 18th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 17, +9 to hit with spell attacks) and it has 72 force points. The dark lord knows the following force powers:\n\nAt-will: *affect mind*, *denounce*, *force push/pull*, *mind trick*, *saber ward*, *shocking grasp*, *saber reflect*\n1st level: *battle precognition*, *force body*, *hex*, *force reflect*\n2nd level: *battle meditation*, *darkness*, *phasewalk*\n3rd level: *force lightning*, *force suppression*, *sever force*\n4th level: *dominate beast*, *force immunity*, *shocking shield*\n5th level: *improved battle meditation*, *improved phasewalk*, *telekinesis*  \n6th level: *force chain lightning*, *improved force immunity*  \n7th level: *force lightning cone*  \n8th level: *force storm*",
-    "automation": null
-  },
-  {
     "name": "Dark Lord Spirit",
     "ability": "Force Saber",
     "complete": true,
@@ -1130,22 +1084,6 @@
     "automation": null
   },
   {
-    "name": "Emperor's Hand",
-    "ability": "Techcasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The emperor's hand is a 5th-level techcaster (spell save DC 15, +7 to hit with power attacks, 22 tech points). The emperor's hand knows the following powers:\n\nCantrip (at will): *light*, *poison spray*, *venomous strike*\n1st level (4 slots): *alarm*, *holographic disguise*, *poison dart*, *tranquilizer*\n2nd level (3 slots): *darkvision*, *infiltrate*, *paralyze humanoid*, *smuggle*, *truth serum*\n3rd level (2 slots): *invisibility to cameras*, *tech override*",
-    "automation": null
-  },
-  {
-    "name": "Emperor's Hand",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The emperor's hand is a 5th-level forcecaster (spell save DC 17, +9 to hit with spell attacks, 24 force points). The emperor's hand knows the following powers:\n\nCantrip (at will): *affect mind*, *force disarm*, *mind trick*\n1st level (4 slots): *breath control*, *force body*, *force jump*, *sense emotion*, *slow descent*\n2nd level (3 slots): *coerce mind*, *dark shaer*, *force confusion*\n3rd level (2 slots): *knight speed*, *force repulse*",
-    "automation": null
-  },
-  {
     "name": "Energy Spider",
     "ability": "Bite",
     "complete": true,
@@ -1190,10 +1128,8 @@
   {
     "name": "Fathier",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the fathier moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the fathier can make another attack with its hooves against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Fambaa Howdah",
@@ -1250,14 +1186,6 @@
     "ability": "Feasting Bite (1/day)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Flesh Raider Apprentice",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Flesh Raider Apprentice is a 4th-level forcecaster. Its forcecasting ability is Charisma (Power save DC 12, +3 to hit with force attacks) and it has 13 force points. The Flesh Raider Apprentice knows the following force powers: \n\nCantrip (at will): *denounce*, *lightning charge*, *saber reflect*, *saber ward*\n1st level (4 slots): *curse*, *sap vitality*\n2nd level (3 slots): *drain vitality*, *force camouflage*",
-    "automation": null
   },
   {
     "name": "Flesh Raider Berserker",
@@ -1727,14 +1655,6 @@
   },
   {
     "name": "Hutt Crime Lord",
-    "ability": "Innate Tech Casting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Hutt\u00e2\u20ac\u2122s innate tech casting ability is intelligence (tech save DC 16). It can innately cast the following powers:\nAt will: assess the situation\n3/day: absorb energy, element of surprise, fabricate trap, oil slick, smuggle, spot the weakness, stack the deck, tactical barrier\n1/day: kolto cloud, tactical advantage",
-    "automation": null
-  },
-  {
-    "name": "Hutt Crime Lord",
     "ability": "Legendary Resistance (3/Day)",
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
@@ -1872,14 +1792,6 @@
     "automation": null
   },
   {
-    "name": "ISB Infiltrator",
-    "ability": "Techcasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The infiltrator is a 3rd-level techcaster. Its techcasting ability is Intelligence (tech save DC 13, +5 to hit with tech powers). It has 15 tech points and knows the following tech powers:\nAt will: electrical burst, encrypted message, on/off\n1st-level: holographic disguise, smoke cloud, tranquilizer\n2nd-level: infiltrate, shocking ray",
-    "automation": null
-  },
-  {
     "name": "ISB Officer",
     "ability": "Blaster Pistol",
     "complete": true,
@@ -1908,14 +1820,6 @@
     "ability": "Doublesword",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Imperial Guard Champion",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The Royal Guard Champion\u00e2\u20ac\u2122s innate forcecasting ability is Wisdom (force save DC 16, +8 to hit with force powers). It can innately cast the following Force Powers:\nAt will: enfeeble\n2/day each: battle meditation, fear, battle precognition",
-    "automation": null
   },
   {
     "name": "Imperial Guard Sentinel",
@@ -1956,14 +1860,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Inquisitor, Grand",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor is a 12th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 18, +10 to hit with power attacks). The inquisitor has 41 force points and knows the following force powers:\nAt-Will: denounce, force disarm, force push/pull, mind trick, saber throw, slow\n1st level: dark side tendrils, drain vitality, fear, force jump, sap vitality, sense force\n2nd level: animate weapon, force sight, stun\n3rd level: improved dark side tendrils, choke, force suppression, horror, sever force\n4th level: dominate beast, drain life\n5th level: dominate mind, siphon life",
-    "automation": null
-  },
-  {
     "name": "Inquisitor, Knight",
     "ability": "Spinning Double Saber",
     "complete": true,
@@ -1974,14 +1870,6 @@
     "ability": "Doublesaber",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Inquisitor, Knight",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor is a 5th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 13, +5 to hit with force attacks). The inquisitor has 18 force points and knows the following force powers:\nAt-Will: denounce, force disarm, saber throw, slow\n1st level: dark side tendrils, fear, force jump, hex, sense force\n2nd level: force sight, stun",
-    "automation": null
   },
   {
     "name": "Inquisitor, Master",
@@ -2000,14 +1888,6 @@
     "ability": "Dark Lightning",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Inquisitor, Master",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The inquisitor is a 10th-level forcecaster. It\u00e2\u20ac\u2122s forcecasting ability is Charisma (force save DC 14, +6 to hit with power attacks). The inquisitor has 33 force points and knows the following force powers:\nAt-Will: denounce, force disarm, force push/pull, mind trick, saber throw, slow\n1st level: dark side tendrils, force jump, sap vitality, sense force\n2nd level: animate weapon, drain vitality, force sight, stun\n3rd level: improved dark side tendrils, choke, force suppression, sever force\n4th level: drain life",
-    "automation": null
   },
   {
     "name": "JK-13 Security Droid",
@@ -2046,22 +1926,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Jawa Shaman",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The jawa is a 4th-level forcecaster. Its\nforcecasting ability is Wisdom (save DC 12, +4 to hit\nwith power attacks). The jawa has 18 force points and knows the following powers:\nAt will: affect mind, give life, spare the dying\n1st level: beast trick, heal, heroism\n2nd level: restoration, stun",
-    "automation": null
-  },
-  {
-    "name": "Jawa Tinkerer",
-    "ability": "Tech-Casting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The jawa is a 1st-level tech-caster. Its\ntech-casting ability is Inteligence (save DC 12, +4 to hit\nwith power attacks). The jawa has 6 tech points and knows the following powers:\nAt will: electroshock, mending, on/off\n1st level: oil slick, overload, repair droid",
-    "automation": null
-  },
-  {
     "name": "Jubba Bird",
     "ability": "Talons",
     "complete": true,
@@ -2092,14 +1956,6 @@
     "ability": "Conquering Presence (1/Day)",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Juggernaut",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The juggernaut is a 9th-level forcelcaster. Its forcecasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks) and it has 38 force points. The juggernaut knows the following force powers:\n\nCantrip (at will): *affect mind*, *denounce*, *feedback*, *overcharge saber*, *saber ward*\n1st level (4 slots): *force jump*, *improved feedback*, *sap vitality*, *wound*\n2nd level (3 slots): *darkness*, *drain vitality*, *force sight*\n3rd level (3 slots): *choke*, *force scream*, *sever force*\n4th level (3 slots): *dominate beast*, *force immunity*, *shroud of darkness*\n5th level (1 slots): *greater feedback*, *improved force scream*, *steel wind strike*\n6th level (1 slots): *rage*",
-    "automation": null
   },
   {
     "name": "Junk Behemoth",
@@ -2804,14 +2660,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Padawan",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The padawan is a 4th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks) and it has 16 force points. The padawan knows the following force powers:\n\nCantrip (at will): *give life*, *guidance*, *spare the dying*, *turbulence*\n1st level (4 slots): *cloud mind*, *heal*, *project*, *valor*\n2nd level (3 slots): *calm emotions*, *force barrier*",
-    "automation": null
-  },
-  {
     "name": "Pelko Bug",
     "ability": "Barbs",
     "complete": true,
@@ -2982,10 +2830,8 @@
   {
     "name": "Ronto",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the Ronto moves at least 20 feet straight toward a creature and then hits it with a Ram attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the Ronto can make one stomp attack against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Rock Wart",
@@ -3010,14 +2856,6 @@
     "ability": "Shotosaber",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "Force Sage",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The sage is a 9th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 15, +7 to hit with spell attacks) and it has 36 force points. The sage knows the following force powers:\n\nCantrip (at will): *mind trick*, *saber ward*, *turbulence*, *2 other powers*\n1st level (4 slots): *breath control*, *battle precognition*, *force jump*, *saber reflect*\n2nd level (3 slots): *battle mediation*, *force confusion*, *phasewalk*\n3rd level (3 slots): *force suppression*, *sever force*, *telekinetic gust*\n4th level (3 slots): *force immunity*, *freedom of movement*\n5th level (1 slots): *improved battle meditation*",
-    "automation": null
   },
   {
     "name": "Sando Aqua Monster",
@@ -3162,14 +3000,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Seer",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The seer is a 6th-level forcecaster. Its forcecasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks) and it has 24 force points. The seer knows the following force powers:\n\nCantrip (at will): *give life*, *guidance*, *spare the dying*, *turbulence*\n1st level (4 slots): *battle precognition*, *burst of speed*, *heal*, *project*\n2nd level (3 slots): *force barrier*, *force enlightenment*, *stun*\n3rd level (3 slots): *knight speed*, *share life*",
-    "automation": null
-  },
-  {
     "name": "Shaak",
     "ability": "Ram",
     "complete": true,
@@ -3284,14 +3114,6 @@
     "source": "Resolute 2.0 Bestiary"
   },
   {
-    "name": "Starweird",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The starweird is a 7th-level forcecaster. Its forcecasting ability is Wisdom (power save DC 15, +7 to hit with force attacks) and it has 31 force points. The starweird knows the following force powers:\nAt-will: denounce, force push/pull, shock\n1st-level: curse, sap vitality, sense force\n2nd-level: drain vitality, force sight\n3rd-level: choke, force lightning\n4th-level: drain life",
-    "automation": null
-  },
-  {
     "name": "Steep",
     "ability": "Bite",
     "complete": true,
@@ -3335,14 +3157,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "When the tactical droid casts a tech power that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the power and to succeed on the required saving throw.",
-    "automation": null
-  },
-  {
-    "name": "Super Tactical Droid",
-    "ability": "Techcasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Techcasting. The tactical droid is a 13th-level techcaster. Its techcasting ability is Intelligence (power save DC18, +10 to hit with tech attacks) and it has 57 tech points. The tactical droid knows the following tech powers:\nAt-will: assess the situation, encrypted message, electroshock, poison spray, cryogenic burst, combustive shot\n1st-level: homing rockets, expeditious retreat, repair droid\n2nd-level: mirror image, charge power cell\n3rd-level: explosion, tactical advantage\n4th-level: sensor probe, synchronicity\n5th-level: mass repair droid, toxic cloud\n6th-level: security protocols\n7th-level: tactical superiority",
     "automation": null
   },
   {
@@ -3420,14 +3234,6 @@
     "ability": "Hold-Out",
     "complete": true,
     "source": "Resolute 2.0 Bestiary"
-  },
-  {
-    "name": "T3-Series Utility Droid",
-    "ability": "Techcasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The technician droid is a 2nd-level techcaster. Its techcasting ability is Intelligence (spell save DC 12, +4 to hit with tech attacks). It has 10 tech points and knows the following tech powers:\nAt-will: electroshock, encrypted message, mending, on/off\n1st level: decryption program, energy shield, holographic disguise, repair droid, tracer bolt",
-    "automation": null
   },
   {
     "name": "T-Series Tactical Droid",
@@ -3822,10 +3628,8 @@
   {
     "name": "Tusk Cat",
     "ability": "Trampling Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the tusk cat moves at least 20 feet straight toward a creature and then hits it with a tusk attack on the same turn, that target must succeed on a DC 15 Strength saving throw or be knocked prone. If the target is prone, the tusk cat can make one hooves attack against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Tusken Brute",
@@ -3905,14 +3709,6 @@
     "complete": false,
     "source": "Resolute 2.0 Bestiary",
     "description": "If the vessel of abeloth fails a saving throw, it can choose to succeed instead.",
-    "automation": null
-  },
-  {
-    "name": "Vessel of Abeloth",
-    "ability": "Forcecasting",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "Forcecasting. Abeloth is an 18th-level forcecaster. Her Forcecasting Ability is Charisma (force save DC 20, +12 to hit with force powers). Abeloth has 77 force points and knows the following force powers:\nAt will: burst, feedback, force push/pull, give life, saber reflect, shock\n1st level: cloud mind, force mask, force throw, project\n2nd level: coerce mind, hallucination\n3rd level: force lightning, force repulse, knight speed, telekinetic storm\n4th level: drain life, mind trap\n5th level: dominate mind, greater feedback, siphon life\n6th level: mass coerce mind, telekinetic burst\n7th level: force project, whirlwind\n8th level: death field, earthquake, telekinetic wave\n9th level: master feedback",
     "automation": null
   },
   {

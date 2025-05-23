@@ -1205,11 +1205,6 @@
     {
         "Class": "Guardianlight",
         "subclass": "Drallig",
-        "counters": []
-    },
-    {
-        "Class": "Guardianlight",
-        "subclass": "Drallig",
         "counters": [
             {
                 "name": "Way of the Wyyyschook",
@@ -1288,6 +1283,133 @@
                 "reset": "long",
                 "classLevel": "GuardianlightLevel",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "The Way of the Gundark - Stance",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "verb": "enters",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "The Way of the Gundark - Stance",
+                                    "duration": 10,
+                                    "effects": {
+                                        "damage_bonus": "{max(wisdomMod//2, charismaMod//2, 1)}"
+                                    },
+                                    "attacks": [
+                                        {
+                                            "attack": {
+                                                "name": "The Way of the Gundark - Save",
+                                                "_v": 2,
+                                                "activation_type": 8,
+                                                "verb": "uses",
+                                                "automation": [
+                                                    {
+                                                        "type": "target",
+                                                        "target": "each",
+                                                        "effects": [
+                                                            {
+                                                                "type": "save",
+                                                                "stat": "con",
+                                                                "success": [],
+                                                                "fail": [
+                                                                    {
+                                                                        "type": "ieffect2",
+                                                                        "name": "Gundarked",
+                                                                        "duration": 1,
+                                                                        "end": true,
+                                                                        "tick_on_caster": true,
+                                                                        "desc": "Can't take reactions"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Once per turn when you hit with a melee weapon attack, the target must make a Constitution saving throw against your Universal Force Save DC. On a failed save, the target can't take reactions until the end of your next turn."
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "The Way of the Gundark",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As a bonus action, you can enter an aggressive stance for one minute. While in this stance, your melee weapon attacks deal additional damage equal to half your Wisdom or Charisma modifier (Your choice, rounded down, minimum of +1). Additionally, once per turn when you hit with a melee weapon attack, the target must make a Constitution saving throw against your Universal Force Save DC. On a failed save, the target can't take reactions until the end of your next turn.\n\nThis effect ends early if you are incapacitated or die. Once you've used this feature, you can't use it again until you finish a long rest."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Pulverizing Blow",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Prone",
+                                            "duration": "-1",
+                                            "effects": {
+                                                "attack_advantage": "-1"
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "remove_ieffect"
+                                                        }
+                                                    ],
+                                                    "label": "Stand Up",
+                                                    "verb": "stands up",
+                                                    "style": "1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Channel the Force",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "Once per turn when you hit with a melee weapon attack, you can expend a use of your Channel the Force to attempt to unbalance your opponent. The target must make a Strength saving throw. On a failed save, it is pushed up to 10 feet away from you and knocked prone."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -1940,6 +2062,133 @@
                 "reset": "long",
                 "classLevel": "GuardiandarkLevel",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "The Way of the Gundark - Stance",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "verb": "enters",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "The Way of the Gundark - Stance",
+                                    "duration": 10,
+                                    "effects": {
+                                        "damage_bonus": "{max(wisdomMod//2, charismaMod//2, 1)}"
+                                    },
+                                    "attacks": [
+                                        {
+                                            "attack": {
+                                                "name": "The Way of the Gundark - Save",
+                                                "_v": 2,
+                                                "activation_type": 8,
+                                                "verb": "uses",
+                                                "automation": [
+                                                    {
+                                                        "type": "target",
+                                                        "target": "each",
+                                                        "effects": [
+                                                            {
+                                                                "type": "save",
+                                                                "stat": "con",
+                                                                "success": [],
+                                                                "fail": [
+                                                                    {
+                                                                        "type": "ieffect2",
+                                                                        "name": "Gundarked",
+                                                                        "duration": 1,
+                                                                        "end": true,
+                                                                        "tick_on_caster": true,
+                                                                        "desc": "Can't take reactions"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Once per turn when you hit with a melee weapon attack, the target must make a Constitution saving throw against your Universal Force Save DC. On a failed save, the target can't take reactions until the end of your next turn."
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "The Way of the Gundark",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As a bonus action, you can enter an aggressive stance for one minute. While in this stance, your melee weapon attacks deal additional damage equal to half your Wisdom or Charisma modifier (Your choice, rounded down, minimum of +1). Additionally, once per turn when you hit with a melee weapon attack, the target must make a Constitution saving throw against your Universal Force Save DC. On a failed save, the target can't take reactions until the end of your next turn.\n\nThis effect ends early if you are incapacitated or die. Once you've used this feature, you can't use it again until you finish a long rest."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Pulverizing Blow",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Prone",
+                                            "duration": "-1",
+                                            "effects": {
+                                                "attack_advantage": "-1"
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "remove_ieffect"
+                                                        }
+                                                    ],
+                                                    "label": "Stand Up",
+                                                    "verb": "stands up",
+                                                    "style": "1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Channel the Force",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "Once per turn when you hit with a melee weapon attack, you can expend a use of your Channel the Force to attempt to unbalance your opponent. The target must make a Strength saving throw. On a failed save, it is pushed up to 10 feet away from you and knocked prone."
+                        }
+                    ]
+                }
             }
         ]
     },

@@ -5,6 +5,7 @@ import re
 print("Starting")
 
 to_automate_keywords = ["saving throw", "dc", "shocked until", 'to hit']
+to_automate_exclude_names = ['forcecasting', 'tech-casting', 'techcasting', 'innate tech casting']
 
 automation_file = "Bestiaries\\Resolute Bestiary\\automation.json"
 todo_file = "Bestiaries\\Resolute Bestiary\\Critter Todo.py"
@@ -65,10 +66,11 @@ def processBeastiaryBuilderAPI(BeastiaryID, fileName, autoMode, creatureFile):
                    )
 
         for a in actions:
-            if (a.get('description') and any(
+            if ((a.get('description') and any(
                 re.search(rf'\b{x}\b', a.get('description').lower())
                 for x in to_automate_keywords
-            )) or (a.get('name') and 'recharge' in a.get('name').lower()):
+            )) or (a.get('name') and 'recharge' in a.get('name').lower()
+                   )) and (a.get('name') and a.get('name').lower() not in to_automate_exclude_names):
                 try:
                     auto=a.get('automation',{})
                     if isinstance(auto, list):

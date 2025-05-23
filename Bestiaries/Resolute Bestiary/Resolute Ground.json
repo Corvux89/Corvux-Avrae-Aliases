@@ -3225,7 +3225,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 16,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -5237,7 +5280,28 @@
       {
         "name": "Legendary Resistance (1/Day)",
         "description": "If the adolescent exogorth fails a saving throw, it can choose to succeed instead.",
-        "automation": null
+        "automation": {
+          "name": "Legendary Resistance",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Legendary Resistance Used",
+                  "stacking": true
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the adolescent exogorth fails a saving throw, it can choose to succeed instead."
+            }
+          ]
+        }
       },
       {
         "name": "Huge Strength",
@@ -5828,7 +5892,7 @@
     "hitdice": "11d12 + 55",
     "speed": "40ft.",
     "ability_scores": {
-      "prof_bonus": 4,
+      "prof_bonus": 3,
       "strength": 25,
       "dexterity": 10,
       "constitution": 20,
@@ -6035,7 +6099,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 19,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action."
+            }
+          ]
+        }
       },
       {
         "name": "Pin",
@@ -6137,11 +6244,11 @@
           "3": []
         }
       },
-      "caster_dc": 12,
-      "caster_sab": 4,
+      "caster_dc": 11,
+      "caster_sab": 3,
       "caster_mod": 0,
-      "innate_dc": 12,
-      "innate_sab": 4,
+      "innate_dc": 11,
+      "innate_sab": 3,
       "innate_mod": 0
     },
     "passiveperc": 10
@@ -6988,7 +7095,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the bantha moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the bantha can make one stomp attack against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 18,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the bantha moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the bantha can make one stomp attack against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -8109,7 +8259,28 @@
       {
         "name": "Legendary Resistance (3/Day)",
         "description": "If the adult exogorth fails a saving throw, it can choose to succeed instead.",
-        "automation": null
+        "automation": {
+          "name": "Legendary Resistance",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Legendary Resistance Used",
+                  "stacking": true
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the adult exogorth fails a saving throw, it can choose to succeed instead."
+            }
+          ]
+        }
       },
       {
         "name": "Gargantuan Strength",
@@ -9675,7 +9846,28 @@
       {
         "name": "Legendary Resistance (3/Day)",
         "description": "If the rancor fails a saving throw, it can choose to succeed instead.",
-        "automation": null
+        "automation": {
+          "name": "Legendary Resistance",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Legendary Resistance Used",
+                  "stacking": true
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the rancor fails a saving throw, it can choose to succeed instead."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -18748,7 +18940,28 @@
       {
         "name": "Legendary Resistance (3/Day)",
         "description": "If the bor gullet fails a saving throw, it can choose to succeed instead.",
-        "automation": null
+        "automation": {
+          "name": "Legendary Resistance",
+          "_v": 2,
+          "verb": "uses",
+          "automation": [
+            {
+              "type": "target",
+              "target": "self",
+              "effects": [
+                {
+                  "type": "ieffect2",
+                  "name": "Legendary Resistance Used",
+                  "stacking": true
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the bor gullet fails a saving throw, it can choose to succeed instead."
+            }
+          ]
+        }
       },
       {
         "name": "Psychic Link",
@@ -28059,7 +28272,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the fathier moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the fathier can make another attack with its hooves against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 14,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the fathier moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the fathier can make another attack with its hooves against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -71737,7 +71993,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the Ronto moves at least 20 feet straight toward a creature and then hits it with a Ram attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the Ronto can make one stomp attack against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 12,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the Ronto moves at least 20 feet straight toward a creature and then hits it with a Ram attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the Ronto can make one stomp attack against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -92415,7 +92714,50 @@
       {
         "name": "Trampling Charge",
         "description": "If the tusk cat moves at least 20 feet straight toward a creature and then hits it with a tusk attack on the same turn, that target must succeed on a DC 15 Strength saving throw or be knocked prone. If the target is prone, the tusk cat can make one hooves attack against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 15,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the tusk cat moves at least 20 feet straight toward a creature and then hits it with a tusk attack on the same turn, that target must succeed on a DC 15 Strength saving throw or be knocked prone. If the target is prone, the tusk cat can make one hooves attack against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [

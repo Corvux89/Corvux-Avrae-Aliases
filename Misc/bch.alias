@@ -1,0 +1,8 @@
+<drac2>
+com = combat()
+
+map = com.get_combatant("map")
+
+return err(map.effects[0])
+
+</drac2>
