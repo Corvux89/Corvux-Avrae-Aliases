@@ -103,6 +103,62 @@
                 "display": "bubble",
                 "desc": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest."
             }
+        ],
+        "actions": [
+            {
+                "level": 1,
+                "action": {
+                    "name": "(SW) Second Wind",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Second Wind",
+                            "amount": "1",
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "FighterLevel",
+                            "value": "caster.levels.get('Fighter')",
+                            "onError": "0"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "FighterDefensiveAugment",
+                            "onError": 0,
+                            "name": "augment"
+                        },
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "-(1d10 + {FighterLevel}) [heal]"
+                                },
+                                {
+                                    "type": "condition",
+                                    "condition": "augment and augment > 0",
+                                    "onFalse": [],
+                                    "onTrue": [
+                                        {
+                                            "type": "temphp",
+                                            "amount": "{-lastDamage}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. - DEV"
+                        }
+                    ]
+                }
+            }
         ]
     },
     {

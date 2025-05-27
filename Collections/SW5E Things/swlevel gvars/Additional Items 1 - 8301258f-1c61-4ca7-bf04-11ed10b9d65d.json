@@ -1529,6 +1529,14 @@
         ]
     },
     {
+        "name": "Fighter Defensive Augment",
+        "cvar": {
+            "name": "FighterDefensiveAugment",
+            "default": 0,
+            "value": 1
+        }
+    },
+    {
         "name": "Flexible Rending",
         "counters": [
             {
