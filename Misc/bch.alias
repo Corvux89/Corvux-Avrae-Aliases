@@ -1,8 +1,44 @@
 <drac2>
-com = combat()
+using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
+args = argparse(&ARGS&)
+stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+attack = ''' {
+        "name": "Cell, Power - Assault Cannon",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "1d12+{dexterityMod} [energy]",
+                                "overheal": false
+                            }
+                        ],
+                        "miss": [],
+                        "attackBonus": "proficiencyBonus+dexterityMod"
+                    },
+                    {
+                        "type": "counter",
+                        "counter": "Assault Cannon",
+                        "amount": "1",
+                        "allowOverflow": false,
+                        "errorBehaviour": "raise"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Burst 4, Power cell (range 90/360), Reload 4, Strength 15, Two-handed"
+            }
+        ],
+        "_v": 2
+    }'''
 
-map = com.get_combatant("map")
 
-return err(map.effects[0])
 
+return err(sup.get_damage_str(attack))
 </drac2>

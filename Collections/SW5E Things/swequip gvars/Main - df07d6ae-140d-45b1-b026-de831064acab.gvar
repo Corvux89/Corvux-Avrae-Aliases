@@ -50,9 +50,13 @@ def processAttacks(attacks, args):
 
         if args.get('bstat'):
             stat = f'{[x for x in stats if args.last("bstat").lower() in x][0]}Mod'
-            bonus = sup.get_attack_bonus(attack)
-            bonus = bonus.replace('dexterityMod', stat).replace('strengthMod', stat)
-            attack = attack.replace(sup.get_attack_bonus(attack), f"{bonus}")
+
+            if "burst" in a.name.lower():
+                bonus = sup.get_save_dc(attack)
+            else:
+                bonus = sup.get_attack_bonus(attack)
+            new_bonus = bonus.replace('dexterityMod', stat).replace('strengthMod', stat)
+            attack = attack.replace(bonus, f"{new_bonus}")
 
         if args.get('b'):
             attack = attack.replace('attackBonus": "', f'attackBonus": "{args.last("b")}+')

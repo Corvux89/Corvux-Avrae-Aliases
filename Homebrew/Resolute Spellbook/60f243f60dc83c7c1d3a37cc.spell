@@ -26368,6 +26368,10 @@
                         "desc": "{amount}"
                     }
                 ]
+            },
+            {
+                "type": "text",
+                "text": "A protective barrier surrounds you, manifesting as crackling lightning that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 lightning damage.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 2nd level or higher, both the temporary hit points and the lightning damage increase by 5 for each slot."
             }
         ],
         "classes": "None",

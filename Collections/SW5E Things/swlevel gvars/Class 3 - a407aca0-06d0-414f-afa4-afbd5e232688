@@ -295,10 +295,105 @@
             {
                 "name": "Force-Empowered Tech",
                 "level": 7,
-                "value": "wisdomMod",
+                "value": "proficiencyBonus",
                 "classLevel": "SentinellightLevel",
                 "reset": "short",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Disruption Pulse",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "int",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Disrupted",
+                                            "duration": 1,
+                                            "end": true,
+                                            "desc": "First attack attempted with a weapon has disadvantage."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can send out a 30 foot cone of electromagnetically-charged energy to overload enemy weapons. Each creature within the cone that is wearing or carrying a weapon with electric components must make an Intelligence saving throw. If the weapon is being worn, this save is made with disadvantage. On a failed save, the first attack they attempt to make with that weapon has disadvantage. A creature with multiple weapons must make a separate save for each weapon."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Forced Override",
+                    "verb": "uses",
+                    "activation_type": 8,
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you cast a tech power that requires a saving throw, you can impose disadvantage on the save (no action required)."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Techcasting Insight",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "check",
+                                    "ability": "arcana",
+                                    "contestAbility": "arcana",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can attempt to determine another creature’s experience with techcasting. When you do so, you make an Intelligence (Technology) check contested by the target’s Intelligence (Technology) check. If you succeed, you immediately learn the target’s techcasting Max Power Level, as well as any tech powers currently affecting the target."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -832,10 +927,105 @@
             {
                 "name": "Force-Empowered Tech",
                 "level": 7,
-                "value": "charismaMod",
+                "value": "proficiencyBonus",
                 "classLevel": "SentineldarkLevel",
                 "reset": "short",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Disruption Pulse",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "int",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Disrupted",
+                                            "duration": 1,
+                                            "end": true,
+                                            "desc": "First attack attempted with a weapon has disadvantage."
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can send out a 30 foot cone of electromagnetically-charged energy to overload enemy weapons. Each creature within the cone that is wearing or carrying a weapon with electric components must make an Intelligence saving throw. If the weapon is being worn, this save is made with disadvantage. On a failed save, the first attack they attempt to make with that weapon has disadvantage. A creature with multiple weapons must make a separate save for each weapon."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Forced Override",
+                    "verb": "uses",
+                    "activation_type": 8,
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "When you cast a tech power that requires a saving throw, you can impose disadvantage on the save (no action required)."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 7,
+                "action": {
+                    "name": "Force-Empowered Tech - Techcasting Insight",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "check",
+                                    "ability": "arcana",
+                                    "contestAbility": "arcana",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Force-Empowered Tech",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can attempt to determine another creature’s experience with techcasting. When you do so, you make an Intelligence (Technology) check contested by the target’s Intelligence (Technology) check. If you succeed, you immediately learn the target’s techcasting Max Power Level, as well as any tech powers currently affecting the target."
+                        }
+                    ]
+                }
             }
         ]
     },

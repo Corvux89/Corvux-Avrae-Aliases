@@ -1,7 +1,6 @@
 # SWEQUIP Additional Weapons Module
 
 using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
-using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
 ch = character()
 
 def biting(attack, args):
@@ -255,12 +254,17 @@ def rapid(attack, args):
     a = load_json(attack)
     rNum = 2 if args.last('rapid') == 'True' else int(args.last('rapid'))
     dc = f"8+{sup.get_attack_bonus(attack)}" if not args.get('dc') else int(args.last('dc'))
-    dtype = sup.get_damage_type(sup.get_damage_str(attack))
+    dmg_str = sup.get_damage_str(attack)
+    dtype = sup.get_damage_type(dmg_str)
     die = sup.get_damage_die(attack)
+
+    start = dmg_str.find("{")+1
+    end = dmg_str.find("}", start)
+    mod = dmg_str[start:end]
 
     numDie = die[:die.find('d')]
     dieType = die[die.find('d')+1:]
-    d_str = f"{int(numDie)*2}d{dieType}" + "+{dexterityMod}" + f" [{dtype}]"
+    d_str = f"{int(numDie)*2}d{dieType}" + "+{"+ mod + "}" + f" [{dtype}]"
     on_hit = sup.get_on_hit_effects(attack)
     for e in on_hit:
         if e.type=="damage":

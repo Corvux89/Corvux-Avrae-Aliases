@@ -240,6 +240,84 @@
                 "classLevel": "BerserkerLevel",
                 "desc": "Once per round, when you deal damage that includes your rage damage, you can cause a localized explosion around the recipient of that damage. Each creature within 5 feet of the damaged creature other than you takes acid, cold, fire, ion, or lightning damage (your choice) equal to your rage damage bonus, and you gain resistance to the chosen damage type until the end of your next turn."
             }
+        ],
+        "actions": [
+            {
+                "level": 5,
+                "action": {
+                    "name": "Explosive Resilience",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "clevel",
+                            "value": "{max(int(caster.levels.get('Berserker',0)),0)}"
+                        },
+                        {
+                            "type": "variable",
+                            "value": "BerserkerOffensiveAugments",
+                            "onError": 0,
+                            "name": "augments"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "dmgBonus",
+                            "value": "2+(clevel>8)+(clevel>12)+(clevel>16)+augments",
+                            "fixedValue": "true"
+                        },
+                        {
+                            "type": "condition",
+                            "condition": "choice",
+                            "onTrue": [
+                                {
+                                    "type": "target",
+                                    "target": "each",
+                                    "effects": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{dmgBonus} [{choice}]"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "target",
+                                    "target": "self",
+                                    "effects": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Explosive Resilience",
+                                            "effects": {
+                                                "resistances": [
+                                                    "{choice}"
+                                                ]
+                                            },
+                                            "duration": 2,
+                                            "end": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "counter",
+                                    "counter": "Explosive Resilience",
+                                    "amount": 1,
+                                    "errorBehaviour": "raise"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Once per round, when you deal damage that includes your rage damage, you can cause a localized explosion around the recipient of that damage. Each creature within 5 feet of the damaged creature other than you takes acid, cold, fire, ion, or lightning damage (your choice) equal to your rage damage bonus, and you gain resistance to the chosen damage type until the end of your next turn.\n\nYou can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest."
+                                }
+                            ],
+                            "onFalse": [
+                                {
+                                    "type": "text",
+                                    "text": "Please use `-choice` to specify the damage type. Ex: `!a 'Explosive Resilience' -choice fire`"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
         ]
     },
     {
