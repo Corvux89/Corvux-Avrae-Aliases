@@ -274,12 +274,11 @@ def rapid(attack, args):
             break
     counter = {"type": "counter", "counter": f"{sup.processName(a.name)}", "amount": f"{rNum}", "allowOverflow": False,
                "errorBehaviour": "raise"}
-    on_hit.append(counter)
     save = {"type": "save", "stat": "dex", "fail": on_hit, "success": [], "dc": f"{dc}"}
     target = {"type": "target", "target": "all", "effects": [save]}
     text = {"type": "text", "text": f"{sup.getProperties(attack)}, rapid {rNum}"}
 
-    rapid = {"name": f"Rapid - {a.name}", "_v": 2, "automation": [target, text]}
+    rapid = {"name": f"Rapid - {a.name}", "_v": 2, "automation": [target, counter, text]}
 
     if args.get('gunstyle'):
         rapid, new = gunning_style(dump_json(rapid), args)
