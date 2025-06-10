@@ -1,44 +1,82 @@
 <drac2>
-using(sup="8b78365a-5c05-4c8f-8364-fbde2e3de862")
-args = argparse(&ARGS&)
-stats = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
-attack = ''' {
-        "name": "Cell, Power - Assault Cannon",
-        "automation": [
-            {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                    {
-                        "type": "attack",
-                        "hit": [
-                            {
-                                "type": "damage",
-                                "damage": "1d12+{dexterityMod} [energy]",
-                                "overheal": false
-                            }
-                        ],
-                        "miss": [],
-                        "attackBonus": "proficiencyBonus+dexterityMod"
-                    },
-                    {
-                        "type": "counter",
-                        "counter": "Assault Cannon",
-                        "amount": "1",
-                        "allowOverflow": false,
-                        "errorBehaviour": "raise"
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "Burst 4, Power cell (range 90/360), Reload 4, Strength 15, Two-handed"
-            }
-        ],
-        "_v": 2
-    }'''
+ch = character()
+com = combat()
+a = argparse(&ARGS&)
+cc = "Faction Item 2"
+try:
+    roles = {r.name for r in ctx.author.get_roles()}
+except:
+    return err("Cannot use this in a DM channel")
+
+dmg_map = {
+    "azure guardians": "force",
+    "clover conclave": "lightning",
+    "crimson blades": "magical slashing",
+    "falcon eyes": "psychic",
+    "order of the copper dragon": "fire",
+    "silver wolves": "magical piercing",
+    "sunstone lotus": "radiant"
+}
+
+dmg_type = None
+if ctx.author.id == 530165055212486656:
+    dmg_type = "magical bludgeoning"
+else:
+    for role in roles:
+        if role.lower() in dmg_map:
+            dmg_type = dmg_map[role.lower()]
+            break
+
+if not dmg_type:
+    return err("Damage type not ascertained. Join a faction first.")
+
+if ch.cc_exists(cc) and ch.cc(cc).max != ch.stats.prof_bonus:
+    ch.delete_cc(cc)
+
+ch.create_cc_nx(cc,0,ch.stats.prof_bonus,"long","star")
+
+targets = a.get('t', default=[])
+combatants = []
+if com:
+    for x in targets:
+        if (combatant := com.get_combatant(x)):
+            combatants.append(combatant)
+        else:
+            combatants += com.get_group(x).combatants
 
 
+if ch.get_cc(cc):
+    results_body = []
+    results_footer = []
+    total_damage = 0
 
-return err(sup.get_damage_str(attack))
+    if com:
+        for c in combatants:
+            d = c.damage(f"1d4 [{dmg_type}]")
+            f_str = f'-f "{c.name}|{d.damage}"'
+            total_damage += d.total
+            results_body.append(f_str)
+            results_footer.append(f'{str(c)}')
+    else:
+        r = vroll(f"1d4 [{dmg_type}]")
+        results_body.append(f''' -f "Meta|**Damage**: {r}" ''')
+
+    if len(combatants)>1 and total_damage != 0:
+        results_body.append(f''' -f "**__Total {'Damage' if total_damage > 0 else 'Healing'}__**: {total_damage}" ''')
+
+    results_body.append(f''' -f "Faction Item 2|*Wondrous Item, Uncommon*\n\nThis item is a small medal engraved with the individual factions' logo on the front.\n\nWhile carrying this item, when you hit with an attack, you can deal an extra 1d4 damage to one target of the attack. You can use this property a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.\n\nThe damage type is determined by your faction, as detailed below.\n\nDamage Type per Faction:\nGuild Recruiter: Magical Bludgeoning\n🛡️ Force\n🍀 Lightning\n🗡️ Magical Slashing\n🦅 Psychic\n🐉 Fire\n🐺 Magical Piercing\n🪷 Radiant" ''')
+
+    if not a.get('i'):
+        ch.mod_cc(cc, -1)
+
+        results_body.append(f''' -f "{cc}|{ch.cc_str(cc)}" ''')
+
+    footer = "\n".join(results_footer)
+    body = "\n".join(results_body)
+
+    return f'''embed -footer "{footer}" {body} -title "{ch.name} uses {cc}" '''
+
+else:
+    return err("Not enough uses remaining.")
+
 </drac2>

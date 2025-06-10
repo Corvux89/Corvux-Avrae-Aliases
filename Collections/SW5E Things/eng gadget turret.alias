@@ -48,6 +48,9 @@ attack = {"name": "Sentry Turret - Attack", "_v": 2, "automation": [
          ]}
     ]}]}
 
+if ch.cc_exists("Sentry Turret") and ch.cc("Sentry Turret").max < intelligenceMod:
+    ch.delete_cc("Sentry Turret")
+
 ch.create_cc_nx("Sentry Turret", 0, intelligenceMod, "short", "bubble")
 v = ch.get_cc("Sentry Turret") or "-i" in args
 

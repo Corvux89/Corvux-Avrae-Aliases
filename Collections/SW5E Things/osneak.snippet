@@ -5,7 +5,7 @@ lvl = int(get("OperativeLevel",0))
 die_map = [6, 8, 10, 12]
 num_die = ceil(lvl / 2) + int(a.last('os',0))
 
-dmg = f"{num_die}d{die_map[min(int(ch.get_cvar("OperativeOffensiveAugment", 0)),3)]}"
+dmg = f"{num_die}d{die_map[min(int(ch.get_cvar('OperativeOffensiveAugment', 0)),3)]}"
 
 if lvl > 0:
     base = f"-d {dmg}"
