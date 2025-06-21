@@ -2036,6 +2036,11 @@
         "name": "Missile, Fragmentation - Wrist Launcher",
         "automation": [
             {
+                "type": "roll",
+                "dice": "1d10",
+                "name": "damage"
+            },
+            {
                 "type": "target",
                 "target": 1,
                 "effects": [
@@ -2056,11 +2061,6 @@
                 "type": "target",
                 "target": "all",
                 "effects": [
-                    {
-                        "type": "roll",
-                        "dice": "1d10",
-                        "name": "damage"
-                    },
                     {
                         "type": "save",
                         "stat": "dex",
@@ -2292,6 +2292,11 @@
         "name": "Missile, Ion - Wrist Launcher",
         "automation": [
             {
+                "type": "roll",
+                "dice": "1d6",
+                "name": "damage"
+            },
+            {
                 "type": "target",
                 "target": 1,
                 "effects": [
@@ -2312,11 +2317,6 @@
                 "type": "target",
                 "target": "all",
                 "effects": [
-                    {
-                        "type": "roll",
-                        "dice": "1d6",
-                        "name": "damage"
-                    },
                     {
                         "type": "save",
                         "stat": "dex",

@@ -472,15 +472,23 @@
                             },
                             {
                                 "type": "condition",
-                                "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                                "condition": "target.hp <= 0",
+                                "onFalse": [],
                                 "onTrue": [
                                     {
-                                        "type": "ieffect2",
-                                        "name": "Disintegrated",
-                                        "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                                        "type": "save",
+                                        "stat": "con",
+                                        "dc": "13",
+                                        "success": [],
+                                        "fail": [
+                                            {
+                                                "type": "ieffect2",
+                                                "name": "Disintegrated",
+                                                "desc": "Dies immediately without making death saving throws.\n - A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized."
+                                            }
+                                        ]
                                     }
-                                ],
-                                "onFalse": []
+                                ]
                             }
                         ],
                         "miss": [],

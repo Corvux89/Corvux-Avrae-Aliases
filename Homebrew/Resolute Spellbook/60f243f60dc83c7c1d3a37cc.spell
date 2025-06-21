@@ -4783,7 +4783,37 @@
         "duration": "Instantaneous",
         "ritual": false,
         "description": "You erode the vitality of one creature you can see in range. Make a ranged force attack against the creature. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-        "concentration": false
+        "concentration": false,
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "miss": [],
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "1d8 [necrotic]",
+                                "cantripScale": true
+                            },
+                            {
+                                "type": "ieffect2",
+                                "name": "Dark Transfer",
+                                "duration": 1,
+                                "tick_on_caster": true,
+                                "desc": "Can't regain hit points"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You erode the vitality of one creature you can see in range. Make a ranged force attack against the creature. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+            }
+        ]
     },
     {
         "name": "(SW) Darkness",
@@ -26978,5 +27008,40 @@
         "ritual": false,
         "description": "The next time you hit with a melee weapon attack during this power’s duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is not a droid or construct, it must make a Wisdom saving throw or be frightened of you until the power ends. As an action, the creature can make a Wisdom check against your force save DC to steel its resolve and end this power.",
         "concentration": true
+    },
+    {
+        "name": "Blaster Calibration",
+        "level": 0,
+        "school": "Tech",
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "Touch",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 minute",
+        "ritual": false,
+        "description": "A simple blaster you are holding is calibrated by linking it to your techcasting focus. For the duration, you can use your techcasting ability instead of Dexterity for the attack and damage rolls of ranged attacks using that blaster, and the blaster’s damage die becomes a d6. The damage die does not change if the blaster deals ion damage. The blaster also becomes enhanced, if it isn’t already, and you become procient with it, if you aren’t already. The ower ends if you cast it again or if you let go of the blaster.",
+        "concentration": false,
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Blaster Calibration",
+                        "duration": 10
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "A simple blaster you are holding is calibrated by linking it to your techcasting focus. For the duration, you can use your techcasting ability instead of Dexterity for the attack and damage rolls of ranged attacks using that blaster, and the blaster’s damage die becomes a d6. The damage die does not change if the blaster deals ion damage. The blaster also becomes enhanced, if it isn’t already, and you become procient with it, if you aren’t already. The ower ends if you cast it again or if you let go of the blaster."
+            }
+        ]
     }
 ]
