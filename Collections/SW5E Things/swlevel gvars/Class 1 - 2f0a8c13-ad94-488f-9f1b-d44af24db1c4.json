@@ -276,7 +276,8 @@
                                     "effects": [
                                         {
                                             "type": "damage",
-                                            "damage": "{dmgBonus} [{choice}]"
+                                            "damage": "{dmgBonus} [{choice}]",
+                                            "fixedValue": true
                                         }
                                     ]
                                 },

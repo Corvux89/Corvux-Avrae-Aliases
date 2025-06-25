@@ -4771,6 +4771,36 @@
         "name": "Dark Transfer",
         "level": 0,
         "school": "Force",
+        "automation": [
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "1d8 [necrotic]",
+                                "cantripScale": true
+                            },
+                            {
+                                "type": "ieffect2",
+                                "name": "Dark Transfer",
+                                "duration": "1",
+                                "desc": "Can't regain hit points",
+                                "tick_on_caster": true
+                            }
+                        ],
+                        "miss": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You erode the vitality of one creature you can see in range. Make a ranged force attack against the creature. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+            }
+        ],
         "classes": "Dark",
         "subclasses": "",
         "casttime": "1 action",
@@ -4783,37 +4813,7 @@
         "duration": "Instantaneous",
         "ritual": false,
         "description": "You erode the vitality of one creature you can see in range. Make a ranged force attack against the creature. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-        "concentration": false,
-        "automation": [
-            {
-                "type": "target",
-                "target": "each",
-                "effects": [
-                    {
-                        "type": "attack",
-                        "miss": [],
-                        "hit": [
-                            {
-                                "type": "damage",
-                                "damage": "1d8 [necrotic]",
-                                "cantripScale": true
-                            },
-                            {
-                                "type": "ieffect2",
-                                "name": "Dark Transfer",
-                                "duration": 1,
-                                "tick_on_caster": true,
-                                "desc": "Can't regain hit points"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "text",
-                "text": "You erode the vitality of one creature you can see in range. Make a ranged force attack against the creature. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn.\n\nThis power's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
-            }
-        ]
+        "concentration": false
     },
     {
         "name": "(SW) Darkness",
@@ -9555,7 +9555,70 @@
         "duration": "Instantaneous",
         "ritual": false,
         "description": "You create three arcs of lightning that streak toward targets of your choice within range. Make a ranged force attack for each arc. On a hit, the target takes 1d12 lightning damage. If two or more arcs hit the same target, it must make a Constitution saving throw. On a failed save, it becomes shocked until the end of its next turn.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you create two additional bolts for each slot level above 2nd.",
-        "concentration": false
+        "concentration": false,
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Forked Lightning - Parent",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "name": "Forked Lightning - Save",
+                                    "_v": 2,
+                                    "activation_type": 8,
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "each",
+                                            "effects": [
+                                                {
+                                                    "type": "save",
+                                                    "stat": "con",
+                                                    "success": [],
+                                                    "fail": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Shocked",
+                                                            "duration": 1,
+                                                            "end": true,
+                                                            "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "miss": [],
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "1d12 [lightning]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You create three arcs of lightning that streak toward targets of your choice within range. Make a ranged force attack for each arc. On a hit, the target takes 1d12 lightning damage. If two or more arcs hit the same target, it must make a Constitution saving throw. On a failed save, it becomes shocked until the end of its next turn.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you create two additional bolts for each slot level above 2nd."
+            }
+        ]
     },
     {
         "name": "(SW) Freedom of Movement",
@@ -27013,6 +27076,23 @@
         "name": "Blaster Calibration",
         "level": 0,
         "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Blaster Calibration",
+                        "duration": "10"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "A simple blaster you are holding is calibrated by linking it to your techcasting focus. For the duration, you can use your techcasting ability instead of Dexterity for the attack and damage rolls of ranged attacks using that blaster, and the blaster’s damage die becomes a d6. The damage die does not change if the blaster deals ion damage. The blaster also becomes enhanced, if it isn’t already, and you become procient with it, if you aren’t already. The ower ends if you cast it again or if you let go of the blaster."
+            }
+        ],
         "classes": "",
         "subclasses": "",
         "casttime": "1 bonus action",
@@ -27025,7 +27105,25 @@
         "duration": "1 minute",
         "ritual": false,
         "description": "A simple blaster you are holding is calibrated by linking it to your techcasting focus. For the duration, you can use your techcasting ability instead of Dexterity for the attack and damage rolls of ranged attacks using that blaster, and the blaster’s damage die becomes a d6. The damage die does not change if the blaster deals ion damage. The blaster also becomes enhanced, if it isn’t already, and you become procient with it, if you aren’t already. The ower ends if you cast it again or if you let go of the blaster.",
-        "concentration": false,
+        "concentration": false
+    },
+    {
+        "name": "Ricochet Shot",
+        "level": 4,
+        "school": "Tech",
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "Touch",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "upt to 1 minute",
+        "ritual": false,
+        "description": "You empower a blaster weapon you are holding. The next time you make a ranged weapon attack with the blaster, you repeat the attack up to five additional times, each against a different target of the creature’s choice within the weapon's range, without expending additional ammunition. Each target must be within 30 feet of another target. These repeated attacks ignore cover. The power then ends.",
+        "concentration": true,
         "automation": [
             {
                 "type": "target",
@@ -27033,14 +27131,15 @@
                 "effects": [
                     {
                         "type": "ieffect2",
-                        "name": "Blaster Calibration",
-                        "duration": 10
+                        "name": "Ricochet Shot - Parent",
+                        "duration": 10,
+                        "parent": "ieffect"
                     }
                 ]
             },
             {
                 "type": "text",
-                "text": "A simple blaster you are holding is calibrated by linking it to your techcasting focus. For the duration, you can use your techcasting ability instead of Dexterity for the attack and damage rolls of ranged attacks using that blaster, and the blaster’s damage die becomes a d6. The damage die does not change if the blaster deals ion damage. The blaster also becomes enhanced, if it isn’t already, and you become procient with it, if you aren’t already. The ower ends if you cast it again or if you let go of the blaster."
+                "text": "You empower a blaster weapon you are holding. The next time you make a ranged weapon attack with the blaster, you repeat the attack up to five additional times, each against a different target of the creature’s choice within the weapon's range, without expending additional ammunition. Each target must be within 30 feet of another target. These repeated attacks ignore cover. The power then ends."
             }
         ]
     }

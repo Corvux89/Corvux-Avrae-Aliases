@@ -1194,7 +1194,8 @@
                                     "effects": [
                                         {
                                             "type": "damage",
-                                            "damage": "-(1d12+{max(intelligenceMod,1)}) [healing]"
+                                            "damage": "-(1d12+{max(intelligenceMod,1)}) [healing]",
+                                            "fixedValue": true
                                         }
                                     ]
                                 }
@@ -1216,7 +1217,8 @@
                                             "effects": [
                                                 {
                                                     "type": "damage",
-                                                    "damage": "-(1d10+{max(intelligenceMod,1)}) [healing]"
+                                                    "damage": "-(1d10+{max(intelligenceMod,1)}) [healing]",
+                                                    "fixedValue": true
                                                 }
                                             ]
                                         }
@@ -1238,7 +1240,8 @@
                                                     "effects": [
                                                         {
                                                             "type": "damage",
-                                                            "damage": "-(1d8+{max(intelligenceMod,1)}) [healing]"
+                                                            "damage": "-(1d8+{max(intelligenceMod,1)}) [healing]",
+                                                            "fixedValue": true
                                                         }
                                                     ]
                                                 }
@@ -1256,7 +1259,8 @@
                                                     "effects": [
                                                         {
                                                             "type": "damage",
-                                                            "damage": "-(1d6+{max(intelligenceMod,1)}) [healing]"
+                                                            "damage": "-(1d6+{max(intelligenceMod,1)}) [healing]",
+                                                            "fixedValue": true
                                                         }
                                                     ]
                                                 }
