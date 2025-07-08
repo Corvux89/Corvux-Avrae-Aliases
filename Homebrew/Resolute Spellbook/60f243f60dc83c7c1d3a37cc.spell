@@ -4587,7 +4587,77 @@
         "duration": "Concentration, up to 1 minute",
         "ritual": false,
         "description": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher.",
-        "concentration": true
+        "concentration": true,
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Dark Rejuvenation - Parent",
+                        "duration": "10 if spell_level < 2 else 100 if spell_level < 3 else 3600",
+                        "desc": "{spell_level}",
+                        "parent": "ieffect",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "name": "Dark Rejuvenation - THP",
+                                    "_v": 2,
+                                    "verb": "uses",
+                                    "activation_type": 8,
+                                    "list_display_override": "Use `-amt` to specify the amount of damage dealt",
+                                    "automation": [
+                                        {
+                                            "type": "counter",
+                                            "counter": "ishouldneverexist",
+                                            "amount": 0,
+                                            "errorBehaviour": "ignore"
+                                        },
+                                        {
+                                            "type": "condition",
+                                            "condition": "lastCounterRequestedAmount > 0",
+                                            "onTrue": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "variable",
+                                                            "name": "maxAmount",
+                                                            "value": "ieffect.desc.split()[-1] if (int(ieffect.desc.split()[-1])>=3 and int(ieffect.desc.split()[-1]) > spell) else spell",
+                                                            "onErrror": "spell"
+                                                        },
+                                                        {
+                                                            "type": "temphp",
+                                                            "amount": "{min(maxAmount,lastCounterRequestedAmount//5)}"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "text": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher."
+                                                }
+                                            ],
+                                            "onFalse": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Use `-amt` to specify the amount of damage dealt."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher."
+            }
+        ]
     },
     {
         "name": "Dark Shear",
@@ -8722,24 +8792,6 @@
         "concentration": false
     },
     {
-        "name": "Force Reflect",
-        "level": 1,
-        "school": "Force",
-        "classes": "Universal",
-        "subclasses": "",
-        "casttime": "1 reaction, which you take in response to being hit by a ranged attack",
-        "range": "Self",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Instantaneous",
-        "ritual": false,
-        "description": "In response to being attacked, you attempt to deflect the attack with the Force. When you use this power, the damage you take from the attack is reduced by 1d10. If you reduce the damage to 0 and the damage is energy, force, ion, kinetic, lightning, necrotic, or sonic, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 30 feet and a long range of 90 feet. On a hit, the target takes the triggering attack's normal damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage reduction increases by 1d10 for each slot level above 1st.",
-        "concentration": false
-    },
-    {
         "name": "Force Repulse",
         "level": 3,
         "school": "Force",
@@ -9543,19 +9595,6 @@
         "name": "Forked Lightning",
         "level": 2,
         "school": "Force",
-        "classes": "Dark",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "60ft",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Instantaneous",
-        "ritual": false,
-        "description": "You create three arcs of lightning that streak toward targets of your choice within range. Make a ranged force attack for each arc. On a hit, the target takes 1d12 lightning damage. If two or more arcs hit the same target, it must make a Constitution saving throw. On a failed save, it becomes shocked until the end of its next turn.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you create two additional bolts for each slot level above 2nd.",
-        "concentration": false,
         "automation": [
             {
                 "type": "target",
@@ -9567,9 +9606,8 @@
                         "attacks": [
                             {
                                 "attack": {
-                                    "name": "Forked Lightning - Save",
                                     "_v": 2,
-                                    "activation_type": 8,
+                                    "name": "Forked Lightning - Save",
                                     "automation": [
                                         {
                                             "type": "target",
@@ -9578,20 +9616,21 @@
                                                 {
                                                     "type": "save",
                                                     "stat": "con",
-                                                    "success": [],
                                                     "fail": [
                                                         {
                                                             "type": "ieffect2",
                                                             "name": "Shocked",
-                                                            "duration": 1,
+                                                            "duration": "1",
                                                             "end": true,
                                                             "desc": "A shocked creature can’t take reactions.\n - On its turn, a shocked creature can take either an action or a bonus action, but not both."
                                                         }
-                                                    ]
+                                                    ],
+                                                    "success": []
                                                 }
                                             ]
                                         }
-                                    ]
+                                    ],
+                                    "activation_type": 8
                                 }
                             }
                         ]
@@ -9604,13 +9643,13 @@
                 "effects": [
                     {
                         "type": "attack",
-                        "miss": [],
                         "hit": [
                             {
                                 "type": "damage",
                                 "damage": "1d12 [lightning]"
                             }
-                        ]
+                        ],
+                        "miss": []
                     }
                 ]
             },
@@ -9618,7 +9657,20 @@
                 "type": "text",
                 "text": "You create three arcs of lightning that streak toward targets of your choice within range. Make a ranged force attack for each arc. On a hit, the target takes 1d12 lightning damage. If two or more arcs hit the same target, it must make a Constitution saving throw. On a failed save, it becomes shocked until the end of its next turn.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you create two additional bolts for each slot level above 2nd."
             }
-        ]
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60ft",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You create three arcs of lightning that streak toward targets of your choice within range. Make a ranged force attack for each arc. On a hit, the target takes 1d12 lightning damage. If two or more arcs hit the same target, it must make a Constitution saving throw. On a failed save, it becomes shocked until the end of its next turn.\n\n**Force Potency.** When you cast this power using a force slot of 3rd level or higher, you create two additional bolts for each slot level above 2nd.",
+        "concentration": false
     },
     {
         "name": "(SW) Freedom of Movement",
@@ -14021,24 +14073,6 @@
         "ritual": false,
         "description": "As you expel kolto, up to six creatures of your choice that you can see within range regain hit points equal to 2d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the healing increases by 2d4 for each slot level above 3rd.",
         "concentration": false
-    },
-    {
-        "name": "Kolto Dispenser",
-        "level": 2,
-        "school": "Tech",
-        "classes": "None",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "60 feet (5-foot cube)",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "up to 1 minute",
-        "ritual": false,
-        "description": "You establish a mobile first aid station that radiates kolto in a 5-foot cube you can see within range.\r\n\r\nUntil the power ends, whenever you or a creature you can see moves into the station's space for the first time on a turn or starts its turn there, you can cause the station to restore 1d6 hit points to that creature (no action required). The station can heal a number of times equal to 1 + your techcasting ability modifier (minimum of twice). After healing that number of times, the station disintegrates. This power has no effect on droids or constructs.\r\n\r\nAs a bonus action on your turn, you can move the station up to 30 feet to a space you can see.\r\n\r\n***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the healing increases by 1d6 for each slot level above 2nd.",
-        "concentration": true
     },
     {
         "name": "Kolto Infusion",
@@ -20516,7 +20550,7 @@
         "automation": [
             {
                 "type": "roll",
-                "dice": "1d6",
+                "dice": "1d8",
                 "name": "reflect",
                 "cantripScale": true
             },
@@ -20580,7 +20614,7 @@
             },
             {
                 "type": "text",
-                "text": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+                "text": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d8. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
             }
         ],
         "classes": "Universal",
@@ -20594,7 +20628,7 @@
         },
         "duration": "Instantaneous",
         "ritual": false,
-        "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d6. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \r\n\r\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d8. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
         "concentration": false
     },
     {
@@ -27111,6 +27145,24 @@
         "name": "Ricochet Shot",
         "level": 4,
         "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Ricochet Shot - Parent",
+                        "duration": "10",
+                        "parent": "ieffect"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You empower a blaster weapon you are holding. The next time you make a ranged weapon attack with the blaster, you repeat the attack up to five additional times, each against a different target of the creature’s choice within the weapon's range, without expending additional ammunition. Each target must be within 30 feet of another target. These repeated attacks ignore cover. The power then ends."
+            }
+        ],
         "classes": "",
         "subclasses": "",
         "casttime": "1 bonus action",
@@ -27123,7 +27175,200 @@
         "duration": "upt to 1 minute",
         "ritual": false,
         "description": "You empower a blaster weapon you are holding. The next time you make a ranged weapon attack with the blaster, you repeat the attack up to five additional times, each against a different target of the creature’s choice within the weapon's range, without expending additional ammunition. Each target must be within 30 feet of another target. These repeated attacks ignore cover. The power then ends.",
-        "concentration": true,
+        "concentration": true
+    },
+    {
+        "name": "Force Reflect",
+        "level": 1,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "2d10",
+                "name": "reflect",
+                "higher": {
+                    "2": "1d10",
+                    "3": "2d10",
+                    "4": "3d10",
+                    "5": "4d10",
+                    "6": "5d10",
+                    "7": "6d10",
+                    "8": "7d10",
+                    "9": "8d10"
+                },
+                "fixedValue": true
+            },
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "condition",
+                        "condition": "choice and int(reflect) >=int(choice)",
+                        "onTrue": [
+                            {
+                                "type": "damage",
+                                "damage": "-{choice} [healing]"
+                            }
+                        ],
+                        "onFalse": [
+                            {
+                                "type": "condition",
+                                "condition": "choice",
+                                "onTrue": [
+                                    {
+                                        "type": "damage",
+                                        "damage": "-{reflect} [healing]"
+                                    }
+                                ],
+                                "onFalse": [
+                                    {
+                                        "type": "text",
+                                        "text": "use `-choice` to set how much damage you are reflecting. Ex: `-choice 4`"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "condition",
+                        "condition": "choice and int(reflect) >= int(choice)",
+                        "onTrue": [
+                            {
+                                "type": "attack",
+                                "hit": [
+                                    {
+                                        "type": "damage",
+                                        "damage": "{choice}"
+                                    }
+                                ],
+                                "miss": []
+                            }
+                        ],
+                        "onFalse": []
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "In response to being attacked, you attempt to deflect the attack with the Force. When you use this power, the damage you take from the attack is reduced by 2d10. If you reduce the damage to 0 and the damage is energy, force, ion, kinetic, lightning, necrotic, or sonic, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 30 feet and a long range of 90 feet. On a hit, the target takes the triggering attack's normal damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage reduction increases by 1d10 for each slot level above 1st."
+            }
+        ],
+        "classes": "Universal",
+        "subclasses": "",
+        "casttime": "1 reaction, which you take in response to being hit by a ranged attack",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "In response to being attacked, you attempt to deflect the attack with the Force. When you use this power, the damage you take from the attack is reduced by 2d10. If you reduce the damage to 0 and the damage is energy, force, ion, kinetic, lightning, necrotic, or sonic, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 30 feet and a long range of 90 feet. On a hit, the target takes the triggering attack's normal damage.\r\n\r\n***Force Potency.*** When you cast this power using a force slot of 2nd level or higher, the damage reduction increases by 1d10 for each slot level above 1st.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
+        "name": "Injection",
+        "level": 3,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "attack",
+                        "hit": [
+                            {
+                                "type": "damage",
+                                "damage": "4d12 [poison]",
+                                "higher": {
+                                    "4": "1d12 [poison]",
+                                    "5": "2d12 [poison]",
+                                    "6": "3d12 [poison]",
+                                    "7": "4d12 [poison]",
+                                    "8": "5d12 [poison]",
+                                    "9": "6d12 [poison]"
+                                }
+                            },
+                            {
+                                "type": "save",
+                                "stat": "con",
+                                "fail": [
+                                    {
+                                        "type": "ieffect2",
+                                        "name": "Poisoned",
+                                        "duration": "10",
+                                        "effects": {
+                                            "attack_advantage": "-1",
+                                            "check_dis": [
+                                                "all"
+                                            ]
+                                        },
+                                        "buttons": [
+                                            {
+                                                "automation": [
+                                                    {
+                                                        "type": "target",
+                                                        "target": "self",
+                                                        "effects": [
+                                                            {
+                                                                "type": "save",
+                                                                "stat": "con",
+                                                                "fail": [],
+                                                                "success": [
+                                                                    {
+                                                                        "type": "remove_ieffect"
+                                                                    }
+                                                                ],
+                                                                "dc": "ieffect.desc.split()[-1]"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "label": "Resist Poison (End of Turn)"
+                                            }
+                                        ],
+                                        "end": true,
+                                        "desc": "{lastSaveDC}",
+                                        "tick_on_caster": true
+                                    }
+                                ],
+                                "success": []
+                            }
+                        ],
+                        "miss": []
+                    }
+                ]
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Touch",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You prick a target with a syringe dripping with toxins. Make a melee tech attack against a creature within reach. On a hit, the target takes 4d12 poison damage and must make a successful Constitution saving throw or become poisoned for 1 minute. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the target is no longer poisoned.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the damage increases by 1d12 for each slot level above 3rd.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
+        "name": "Afterburner",
+        "level": 3,
+        "school": "Tech",
         "automation": [
             {
                 "type": "target",
@@ -27131,16 +27376,239 @@
                 "effects": [
                     {
                         "type": "ieffect2",
-                        "name": "Ricochet Shot - Parent",
-                        "duration": 10,
-                        "parent": "ieffect"
+                        "name": "Afterburner",
+                        "duration": "10",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Burning Jets",
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "all",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "1d6 [fire]",
+                                                    "higher": {
+                                                        "4": "1d6 [fire]",
+                                                        "5": "2d6 [fire]",
+                                                        "6": "3d6 [fire]",
+                                                        "7": "4d6 [fire]",
+                                                        "8": "5d6 [fire]",
+                                                        "9": "6d6 [fire]"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "verb": "flies by with",
+                                    "phrase": "When you move within 5 feet of a creature or object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn."
+                                }
+                            }
+                        ],
+                        "end": true,
+                        "conc": true,
+                        "desc": "You ignite a fiery propulsion system, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks. If you have a speed other than walking, such as flying or swimming, this speed increase applies to that speed as well.\n\nWhen you move within 5 feet of a creature or object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn."
                     }
                 ]
             },
             {
                 "type": "text",
-                "text": "You empower a blaster weapon you are holding. The next time you make a ranged weapon attack with the blaster, you repeat the attack up to five additional times, each against a different target of the creature’s choice within the weapon's range, without expending additional ammunition. Each target must be within 30 feet of another target. These repeated attacks ignore cover. The power then ends."
+                "text": "You ignite a fiery propulsion system, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks. If you have a speed other than walking, such as flying or swimming, this speed increase applies to that speed as well.\n\nWhen you move within 5 feet of a creature or object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.\n\n***Overcharge Tech.***\nWhen you cast this power using a tech slot of 4th level or higher, increase your speed by 5 feet for each slot level above 3rd.\n\nAdditionally, the power deals an additional 1d6 fire damage for each slot level above 3rd.",
+                "title": "Afterburner"
             }
-        ]
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Up to 1 minute",
+        "ritual": false,
+        "description": "You ignite a fiery propulsion system, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks. If you have a speed other than walking, such as flying or swimming, this speed increase applies to that speed as well.\n\nWhen you move within 5 feet of a creature or object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.",
+        "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, increase your speed by 5 feet for each slot level above 3rd. \n\nAdditionally, the power deals an additional 1d6 fire damage for each slot level above 3rd.",
+        "concentration": true
+    },
+    {
+        "name": "Kolto Dispenser",
+        "level": 2,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Kolto Dispenser",
+                        "duration": "10",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Dispense Kolto",
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "all",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "-2d6 [healing]",
+                                                    "higher": {
+                                                        "3": "-2d6 [healing]",
+                                                        "4": "-4d6 [healing]",
+                                                        "5": "-6d6 [healing]",
+                                                        "6": "-8d6 [healing]",
+                                                        "7": "-10d6 [healing]",
+                                                        "8": "-12d6 [healing]",
+                                                        "9": "-14d6 [healing]"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "phrase": "Until the power ends, whenever you or a creature you can see moves into the station's space for the first time on a turn or starts its turn there, you can cause the station to restore 2d6 hit points to that creature (no action required). The station can heal a number of times equal to 1 + your techcasting ability modifier (minimum of twice). After healing that number of times, the station disintegrates. This power has no effect on droids or constructs."
+                                }
+                            }
+                        ],
+                        "end": true,
+                        "conc": false,
+                        "tick_on_caster": true
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "Until the power ends, whenever you or a creature you can see moves into the station's space for the first time on a turn or starts its turn there, you can cause the station to restore 2d6 hit points to that creature (no action required). The station can heal a number of times equal to 1 + your techcasting ability modifier (minimum of twice). After healing that number of times, the station disintegrates. This power has no effect on droids or constructs.\n\nAs a bonus action on your turn, you can move the station up to 30 feet to a space you can see."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "60 feet (5-foot cube)",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 minute",
+        "ritual": false,
+        "description": "You establish a mobile first aid station that radiates kolto in a 5-foot cube you can see within range.\n\nUntil the power ends, whenever you or a creature you can see moves into the station's space for the first time on a turn or starts its turn there, you can cause the station to restore 2d6 hit points to that creature (no action required). The station can heal a number of times equal to 1 + your techcasting ability modifier (minimum of twice). After healing that number of times, the station disintegrates. This power has no effect on droids or constructs.\n\nAs a bonus action on your turn, you can move the station up to 30 feet to a space you can see.",
+        "higherlevels": "***Overcharge Tech.*** When you cast this power using a tech slot of 3rd level or higher, the healing increases by 2d6 for each slot level above 2nd.",
+        "concentration": true
+    },
+    {
+        "name": "Rebound",
+        "level": 1,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "text",
+                "text": "Your projectile rebounds to strike your foe. You repeat the triggering ranged weapon attack against the same target. If you had advantage on the triggering attack, you don't have it for this attack. You must use the new roll."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 reaction, which you take when you miss with a ranged weapon attack",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "Your projectile rebounds to strike your foe. You repeat the triggering ranged weapon attack against the same target. If you had advantage on the triggering attack, you don't have it for this attack. You must use the new roll.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
+        "name": "Magnetic Burst",
+        "level": 2,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "2d6 [kinetic]",
+                "name": "damage",
+                "higher": {
+                    "3": "1d6",
+                    "4": "2d6",
+                    "5": "3d6",
+                    "6": "4d6",
+                    "7": "5d6",
+                    "8": "6d6",
+                    "9": "7d6"
+                }
+            },
+            {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                            {
+                                "type": "ieffect2",
+                                "name": "Prone",
+                                "duration": "-1",
+                                "effects": {
+                                    "attack_advantage": "-1"
+                                },
+                                "buttons": [
+                                    {
+                                        "automation": [
+                                            {
+                                                "type": "remove_ieffect"
+                                            }
+                                        ],
+                                        "label": "Stand Up",
+                                        "verb": "stands up"
+                                    }
+                                ],
+                                "desc": "A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition"
+                            },
+                            {
+                                "type": "damage",
+                                "damage": "{damage}",
+                                "fixedValue": true
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "({damage})/2",
+                                "fixedValue": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You send out a burst of magnetic energy, either pushing or pulling on all metal around you. All creatures wearing metal armor or made of metal within 60 feet of you must make a Strength saving throw. On a failed save, a creature takes 2d6 kinetic damage, is knocked prone and is either pulled 20 feet towards you or pushed 20 feet away from you. On a successful save, a creature takes half as much damage, and isn't pushed or knocked prone.\n\nIn addition, all unsecured metal objects are either pulled within 5 feet of you or are pushed 60 feet away from you.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd or higher, the damage increases by 1d6 for each slot level above 2nd."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You send out a burst of magnetic energy, either pushing or pulling on all metal around you. All creatures wearing metal armor or made of metal within 60 feet of you must make a Strength saving throw. On a failed save, a creature takes 2d6 kinetic damage, is knocked prone and is either pulled 20 feet towards you or pushed 20 feet away from you. On a successful save, a creature takes half as much damage, and isn't pushed or knocked prone.\n\nIn addition, all unsecured metal objects are either pulled within 5 feet of you or are pushed 60 feet away from you.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd or higher, the damage increases by 1d6 for each slot level above 2nd.",
+        "concentration": false
     }
 ]

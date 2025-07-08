@@ -36,7 +36,7 @@
     "automation": [
       {
         "type": "condition",
-        "condition": "target.hp <= 0",
+        "condition": "target and target.hp <= 0",
         "onTrue": [
           {
             "type": "save",

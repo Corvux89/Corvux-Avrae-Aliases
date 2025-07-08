@@ -15,6 +15,10 @@
         "name": "Adrenaline",
         "level": 1
     },
+    "afterburner": {
+        "name": "Afterburner",
+        "level": 3
+    },
     "aid droid": {
         "name": "Aid Droid",
         "level": 1
@@ -314,6 +318,10 @@
     "inflitrate": {
         "name": "Inflitrate",
         "level": 2
+    },
+    "injection": {
+        "name": "Injection",
+        "level": 3
     },
     "instant translocation": {
         "name": "Instant Translocation",
@@ -803,6 +811,10 @@
         "name": "Kolto Dispenser",
         "level": 2
     },
+    "magnetic burst": {
+        "name": "Magnetic Burst",
+        "level": 2
+    },
     "magnetic field": {
         "name": "Magnetic Field",
         "level": 2
@@ -866,6 +878,10 @@
     "reboot": {
         "name": "Reboot",
         "level": 0
+    },
+    "rebound": {
+        "name": "Rebound",
+        "level": 1
     },
     "rebound shot": {
         "name": "Rebound Shot",

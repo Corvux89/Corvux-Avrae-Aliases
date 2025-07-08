@@ -1,5 +1,1430 @@
 [
     {
+        "Class": "Operative",
+        "hitDie": "d8",
+        "subclassLevel": 3,
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Bad Feeling",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "counter",
+                            "counter": "Bad Feeling",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest."
+                        }
+                    ]
+                }
+            }
+        ],
+        "counters": [
+            {
+                "name": "Bad Feeling",
+                "classLevel": "OperativeLevel",
+                "value": 1,
+                "level": 3,
+                "display": "bubble",
+                "reset": "long",
+                "desc": "You have a wary eye, bordering on paranoia. When you roll for initiative, you can move up to your speed. This movement happens before the initiative order is determined."
+            },
+            {
+                "name": "Stroke of Luck",
+                "classLevel": "OperativeLevel",
+                "level": 20,
+                "value": 1,
+                "display": "bubble",
+                "reset": "short",
+                "desc": "You have an uncanny knack for succeeding when you need to. Your Dexterity and Intelligence scores increase by 2. Your maximum for those scores increases by 2. Additionally, if your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20."
+            },
+            {
+                "name": "Skill's Exploit",
+                "classLevel": "OperativeLevel",
+                "level": 1,
+                "value": "proficiencyBonus",
+                "display": "bubble",
+                "reset": "long",
+                "desc": "You learn an exploit that enhances your ability to apply your knowledge to combat situations. You can take this exploit multiple times."
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Acquisitions",
+        "counters": []
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Beguiler Light",
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 3,
+                "value": "OperativeLevel",
+                "modifier": "wisdomMod",
+                "reset": "long",
+                "display": "default",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Fascinating Display",
+                "level": 3,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Enthralling Vigor",
+                "level": 13,
+                "value": "charismaMod",
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Distracting Countenance",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Beguiler Dark",
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 3,
+                "value": "OperativeLevel",
+                "modifier": "charismaMod",
+                "reset": "long",
+                "display": "default",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Fascinating Display",
+                "level": 3,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Enthralling Vigor",
+                "level": 13,
+                "value": "charismaMod",
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Distracting Countenance",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Gunslinger",
+        "counters": [
+            {
+                "name": "Dive for Cover",
+                "level": 3,
+                "value": "dexterityMod",
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Quickdraw",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Sharpshooter",
+        "counters": [],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Disarming Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "dc": "8+proficiencyBonus+dexterityMod",
+                                    "success": [],
+                                    "fail": []
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "You attempt to disarm a creature with your attack. The target must succeed on a Strength saving throw or be forced to drop one item of your choice that it’s holding. The object lands at its feet."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Penetrating Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "operativeLevel",
+                            "value": "caster.levels.get('Operative')"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "OperativeOffensiveAugment",
+                            "value": "OperativeOffensiveAugment",
+                            "onError": 0
+                        },
+                        {
+                            "type": "variable",
+                            "name": "dieSize",
+                            "value": "6 + (2*OperativeOffensiveAugment)"
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "attack",
+                                    "attackBonus": "0",
+                                    "miss": [],
+                                    "hit": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "2d{dieSize} [kinetic]"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You attempt to damage another target with the same attack. Choose a second target within 15 feet of and directly behind your initial target. If the original attack roll would hit the second target, it takes two dice worth of Sneak Attack damage.\n\nThe damage is of the same type dealt by the original attack.\n\n**NOTE** Use the `-attackroll` param with this automation to run it with the same to-hit roll from the original attack to see if it will hit the new target, or use the `hit` keyword if you know if will hit."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Placed Shots - Suppressive Shot",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "wis",
+                                    "dc": "8+proficiencyBonus+dexterityMod",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You attempt to pin the target to its location. The target must succeed on a Wisdom saving throw or be frightened of you until the end of its next turn."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Disabling",
+        "counters": [
+            {
+                "name": "Neck Snap",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Lethality",
+        "counters": [
+            {
+                "name": "Poisoner",
+                "level": 9,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Performance",
+        "counters": [
+            {
+                "name": "Dance of Death",
+                "level": 13,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Pugnacity",
+        "counters": []
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Ruffian",
+        "counters": [
+            {
+                "name": "Master Duelist",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Saboteur",
+        "counters": [
+            {
+                "name": "Tech Points",
+                "level": 3,
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    3,
+                    4,
+                    4,
+                    5,
+                    5,
+                    6,
+                    6,
+                    7,
+                    7,
+                    8,
+                    8,
+                    9,
+                    9,
+                    10,
+                    10
+                ],
+                "display": "default",
+                "modifier": "intelligenceMod",
+                "classLevel": "OperativeLevel",
+                "reset": "short",
+                "desc": "You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+            },
+            {
+                "name": "Droid Companion",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "display": "bubble",
+                "classLevel": "OperativeLevel",
+                "reset": "long"
+            },
+            {
+                "name": "Sabotage",
+                "level": 17,
+                "value": 1,
+                "display": "bubble",
+                "classLevel": "OperativeLevel",
+                "reset": "long"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Sawbones",
+        "counters": [
+            {
+                "name": "Self-Sustain",
+                "level": 17,
+                "value": 1,
+                "display": "bubble",
+                "classLevel": "OperativeLevel",
+                "reset": "short"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Shadow Killer",
+        "counters": [
+            {
+                "name": "Venomous",
+                "level": 3,
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "reset": "short",
+                "classLevel": "OperativeLevel",
+                "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Apply Venom",
+                    "_v": 2,
+                    "verb": "Coats their weapon with venom",
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "operativeLevel",
+                            "value": "caster.levels.get('Operative')"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "numDie",
+                            "value": "1 if operativeLevel < 5 else 2 if operativeLevel < 9 else 3 if operativeLevel < 13 else 4 if operativeLevel < 17 else 5"
+                        },
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Envenomed Weapon",
+                                    "duration": 10,
+                                    "attacks": [
+                                        {
+                                            "attack": {
+                                                "name": "Venomous - Poison Target",
+                                                "_v": 2,
+                                                "automation": [
+                                                    {
+                                                        "type": "variable",
+                                                        "name": "operativeLevel",
+                                                        "value": "caster.levels.get('Operative')"
+                                                    },
+                                                    {
+                                                        "type": "variable",
+                                                        "name": "numDie",
+                                                        "value": "1 if operativeLevel < 5 else 2 if operativeLevel < 9 else 3 if operativeLevel < 13 else 4 if operativeLevel < 17 else 5"
+                                                    },
+                                                    {
+                                                        "type": "roll",
+                                                        "dice": "{numDie}d4+{intelligenceMod} [poison]",
+                                                        "name": "damage"
+                                                    },
+                                                    {
+                                                        "type": "target",
+                                                        "target": "each",
+                                                        "effects": [
+                                                            {
+                                                                "type": "save",
+                                                                "stat": "con",
+                                                                "dc": "8+proficiencyBonus+intelligenceMod",
+                                                                "success": [
+                                                                    {
+                                                                        "type": "damage",
+                                                                        "damage": "({damage})/2"
+                                                                    }
+                                                                ],
+                                                                "fail": [
+                                                                    {
+                                                                        "type": "damage",
+                                                                        "damage": "{damage}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "A creature hit by the coated weapon must make a Constitution saving throw (DC = 8 + your proficiency bonus + your Intelligence modifier), taking {{numDie}}d4 + your Intelligence modifier poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying."
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Venomous",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "As an action, you can use one of your doses to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the coated weapon must make a Constitution saving throw (DC = 8 + your proficiency bonus + your Intelligence modifier), taking {{numDie}}d4 + your Intelligence modifier poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Scrapper",
+        "counters": []
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Surveillance",
+        "counters": [
+            {
+                "name": "Hijack Senses",
+                "level": 3,
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Hitchikers Guide",
+                "level": 6,
+                "value": "proficiencyBonus",
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            },
+            {
+                "name": "Hostile Take Over",
+                "level": 3,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "OperativeLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Operative",
+        "subclass": "Grenadier",
+        "counters": [],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Flashbang Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "con",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Deafened",
+                                            "duration": 1,
+                                            "tick_on_caster": true,
+                                            "desc": "A deafened creature can’t hear and automatically fails any ability check that requires hearing.",
+                                            "effects": {
+                                                "ckeck_dis": [
+                                                    "perception",
+                                                    "investigation"
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a disorienting explosion. The target must make a Constitution saving throw. On a failed save the target becomes deafened until the start of your next turn, and has disadvantage on all Wisdom(Perception) and Intelligence(Investigation) checks until the start of your next turn."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Impactful Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "str",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": []
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a powerful kinetic explosion. The target must make a Strength saving throw. On a failed save, the target is pushed up to 15 feet in a direction of your choice."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            },
+            {
+                "level": 3,
+                "action": {
+                    "name": "Sundering Blast",
+                    "_v": 2,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "dc": "8+proficiencyBonus+intelligenceMod",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Sundering Blast",
+                                            "duration": 1,
+                                            "tick_on_caster": true,
+                                            "desc": "Disadvantage on the first waeapon attack roll"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You trigger a corrosive explosion. The target must make a Dexterity saving throw. On a failed save, the target has disadvantage on the first weapon attack roll it makes before the start of your next turn."
+                        }
+                    ],
+                    "activation_type": 8
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "hitDie": "d8",
+        "subclassLevel": 3,
+        "counters": [
+            {
+                "name": "Superiority Dice",
+                "level": 1,
+                "value": [
+                    3,
+                    3,
+                    4,
+                    4,
+                    5,
+                    5,
+                    6,
+                    6,
+                    7,
+                    7,
+                    8,
+                    8,
+                    9,
+                    9,
+                    10,
+                    10,
+                    11,
+                    11,
+                    12,
+                    12
+                ],
+                "reset": "short",
+                "display": "bubble",
+                "desc": "You have two superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice column of the scholar table. This die changes as you gain scholar levels, as shown in the Academic Superiority column of the scholar table. A superiority die is expended when you use it.\n\nYou regain all of your expended superiority dice when you finish a short or long rest.",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Sage Advice",
+                "level": 2,
+                "value": 1,
+                "display": "bubble",
+                "reset": "long$13$short",
+                "classLevel": "ScholarLevel",
+                "desc": "You can spend 1 minute spreading your knowledge and experience, advising those around you. When you do so, choose a skill or tool you are proficient with and a number of friendly creatures up to your Intelligence modifier within 30 feet of you who can hear you and who can understand you. Once within the next hour, the next time each creature would make an ability check with the chosen skill or tool, they may add their proficiency bonus to the roll if they are not already proficient. A creature may only benefit from this feature once. If a creature is targeted by this feature again before using it, they can choose to retain the first benefit or replace it with the new skill or tool instead.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest. Starting at 13th level, you regain the ability to use it after you complete a short or long rest."
+            },
+            {
+                "name": "Calm and Collected",
+                "level": 14,
+                "value": "proficiencyBonus",
+                "classLevel": "ScholarLevel",
+                "display": "bubble",
+                "reset": "long",
+                "desc": "When you make a saving throw caused by an effect you can see, you may gain a bonus to the saving throw equal to your Intelligence modifier."
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Physician",
+        "counters": [
+            {
+                "name": "Field Surgeon",
+                "level": 6,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Resuscitate",
+                "level": 9,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Panacea",
+                "level": 17,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ],
+        "actions": [
+            {
+                "level": 9,
+                "action": {
+                    "name": "Resuscitate",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "-({abs(target.hp)}+1) [stabilizes]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Resuscitate",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "Through your medical studies you have learned to delay seemingly inevitable death. As a bonus action, you can stabilize a creature you can touch that has 0 hit points.\n\nAdditionally, as an action, you can tend to a creature you can touch that has died since the end of your last turn. The creature immediately regains 1 hit point and stabilizes. Once you’ve used this feature, you must complete a short or long rest before you can use it again."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 17,
+                "action": {
+                    "name": "Panacea",
+                    "_v": 2,
+                    "verb": "uses",
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "damage",
+                                    "damage": "-({target.max_hp - target.hp}) [healing]"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "You’ve developed the formula to concoct a cure-all miracle solution: a panacea. Over the course of 10 minutes, you can expend rare medical supplies worth 1,000 cr to create your panacea in a simple syringe. The panacea retains its potency for 24 hours. As a bonus action, a creature can use the panacea. Alternatively, as an action, they can administer it to another creature within 5 feet.\n\nThe target has its exhaustion level reduced by one and regains all of its hit points. If the target is diseased, poisoned, paralyzed, or stunned, the condition ends.\n\nOnce you create a panacea, you can’t create another until you finish a long rest."
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Gambler",
+        "counters": []
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Politician",
+        "counters": [
+            {
+                "name": "Force of Personality",
+                "level": 6,
+                "value": "proficiencyBonus",
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Reassemble",
+                "level": 9,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Tactician",
+        "counters": [
+            {
+                "name": "All-Out Attack",
+                "level": 17,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Archaeologist Light",
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 3,
+                "value": "ScholarLevel",
+                "modifier": "max(wisdomMod,charismaMod,intelligenceMod)",
+                "reset": "long",
+                "display": "default",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Psychometric Analysis",
+                "level": 9,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Knowledge is Power",
+                "level": 17,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Arcaheologist Dark",
+        "counters": [
+            {
+                "name": "Force Points",
+                "level": 3,
+                "value": "ScholarLevel",
+                "modifier": "max(wisdomMod,charismaMod,intelligenceMod)",
+                "reset": "long",
+                "display": "default",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Psychometric Analysis",
+                "level": 9,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Knowledge is Power",
+                "level": 17,
+                "value": 1,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Chef",
+        "counters": [
+            {
+                "name": "Emergency Supplements",
+                "level": 3,
+                "value": 1,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Explorer",
+        "counters": []
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Geneticist",
+        "counters": [
+            {
+                "name": "Mutagenic Transformation",
+                "level": 6,
+                "value": 2,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Occultist",
+        "counters": [
+            {
+                "name": "Curse of Objurgation",
+                "level": 3,
+                "value": "proficiencyBonus",
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            },
+            {
+                "name": "Voodoo Doll",
+                "level": 9,
+                "value": 2,
+                "reset": "long",
+                "display": "bubble",
+                "classLevel": "ScholarLevel"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Slicer",
+        "counters": [
+            {
+                "name": "Tech Points",
+                "level": 3,
+                "value": [
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    3,
+                    4,
+                    4,
+                    5,
+                    5,
+                    6,
+                    6,
+                    7,
+                    7,
+                    8,
+                    8,
+                    9,
+                    9,
+                    10,
+                    10
+                ],
+                "display": "default",
+                "modifier": "intelligenceMod",
+                "classLevel": "ScholarLevel",
+                "reset": "short",
+                "desc": "You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+            },
+            {
+                "name": "Redirect Error",
+                "level": 9,
+                "value": 1,
+                "display": "bubble",
+                "classLevel": "ScholarLevel",
+                "reset": "long"
+            }
+        ]
+    },
+    {
+        "Class": "Scholar",
+        "subclass": "Zoologist",
+        "counters": [
+            {
+                "name": "Feral Ferocity",
+                "level": 17,
+                "value": 1,
+                "display": "bubble",
+                "classLevel": "ScholarLevel",
+                "reset": "long"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "hitDie": "d10",
+        "subclassLevel": 3,
+        "counters": [
+            {
+                "name": "Tech Points",
+                "value": "intelligenceMod",
+                "modifier": "ScoutLevel",
+                "level": 2,
+                "classLevel": "ScoutLevel",
+                "display": "default",
+                "reset": "short",
+                "desc": "You have a number of tech points equal to your scout level, as shown in the Tech Points column of the scout table, + your Intelligence modifier. You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Bulwark",
+        "counters": [
+            {
+                "name": "Personal Barrier",
+                "value": [
+                    0,
+                    0,
+                    6,
+                    8,
+                    10,
+                    12,
+                    14,
+                    16,
+                    18,
+                    20,
+                    22,
+                    24,
+                    26,
+                    28,
+                    30,
+                    32,
+                    34,
+                    36,
+                    38,
+                    40
+                ],
+                "modifier": "intelligenceMod",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "display": "default",
+                "reset": "short",
+                "desc": "You gain access to a powerful personal barrier. Whenever you complete a short or long rest, you create a barrier on yourself that lasts until you finish a short or long rest. That barrier has hit points equal to twice your scout level + your Intelligence modifier. Your barrier can never have hit points greater than twice your scout level + your Intelligence modifier."
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Hunter",
+        "counters": []
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Slayer",
+        "counters": []
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Stalker",
+        "counters": [
+            {
+                "name": "Concealment",
+                "level": 7,
+                "value": "intelligenceMod",
+                "display": "bubble",
+                "classLevel": "ScoutLevel",
+                "reset": "short"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Artellerist",
+        "counters": []
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Deadeye",
+        "counters": [
+            {
+                "name": "Superiority Dice",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": "proficiencyBonus"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Illusionist",
+        "counters": [
+            {
+                "name": "Holographic Decoy",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": "proficiencyBonus"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Inquisitor",
+        "counters": [
+            {
+                "name": "Sense Force",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": "intelligenceMod"
+            },
+            {
+                "name": "Inquisitor's Wrath",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": 1,
+                "modifier": "intelligenceMod"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Mastermind",
+        "counters": [
+            {
+                "name": "Emergency Planning",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            },
+            {
+                "name": "Exploit Weakness",
+                "level": 15,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Mechanist",
+        "counters": [
+            {
+                "name": "Potent Tech",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": "proficiencyBonus"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Mechanist (Companion)",
+        "counters": [
+            {
+                "name": "Droid Companion",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": 1,
+                "modifier": "intelligenceMod"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Predator",
+        "counters": [
+            {
+                "name": "Hunting Party",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": "intelligenceMod"
+            },
+            {
+                "name": "Predator's Resolve",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Teleportation",
+        "counters": [
+            {
+                "name": "Personal Teleporter",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": "intelligenceMod"
+            },
+            {
+                "name": "Reprisal",
+                "level": 15,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Triage",
+        "counters": [
+            {
+                "name": "Mark of Triage",
+                "level": 3,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            },
+            {
+                "name": "Double Dose",
+                "level": 7,
+                "classLevel": "ScoutLevel",
+                "reset": "long",
+                "display": "bubble",
+                "value": "proficiencyBonus"
+            },
+            {
+                "name": "Adrenaline/Tranquilizer",
+                "level": 11,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            },
+            {
+                "name": "Focus/Dizziness",
+                "level": 11,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            },
+            {
+                "name": "Toughen/Weaken",
+                "level": 11,
+                "classLevel": "ScoutLevel",
+                "reset": "short",
+                "display": "bubble",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Swarm",
+        "counters": [
+            {
+                "name": "Writhing Tide",
+                "level": 7,
+                "value": "proficiencyBonus-1",
+                "display": "bubble",
+                "classLevel": "ScoutLevel",
+                "reset": "long"
+            },
+            {
+                "name": "Swarming Dispersal",
+                "level": 15,
+                "value": "proficiencyBonus-1",
+                "display": "bubble",
+                "classLevel": "ScoutLevel",
+                "reset": "long"
+            }
+        ]
+    },
+    {
+        "Class": "Scout",
+        "subclass": "Retraction",
+        "counters": [
+            {
+                "name": "Double Wire",
+                "level": 11,
+                "value": "intelligenceMod+proficiencyBonus",
+                "display": "bubble",
+                "classLevel": "ScoutLevel",
+                "reset": "long"
+            }
+        ]
+    },
+    {
         "Class": "Sentinellight",
         "hitDie": "d8",
         "subclassLevel": 3,

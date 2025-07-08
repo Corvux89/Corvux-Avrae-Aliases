@@ -325,7 +325,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -342,7 +342,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -745,7 +745,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -762,7 +762,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -1194,7 +1194,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                                        "condition": "target and target.hp <= 0 and lastSaveRollTotal < 13",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -1980,7 +1980,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                                        "condition": "target and target.hp <= 0 and lastSaveRollTotal < 13",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -2222,7 +2222,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                                        "condition": "target and target.hp <= 0 and lastSaveRollTotal < 13",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -2796,7 +2796,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                                        "condition": "target and target.hp <= 0 and lastSaveRollTotal < 13",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -3310,7 +3310,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -3327,7 +3327,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -3720,7 +3720,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -3737,7 +3737,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -4129,7 +4129,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -4146,7 +4146,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -4539,7 +4539,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",
@@ -4556,7 +4556,7 @@
                                     },
                                     {
                                         "type": "condition",
-                                        "condition": "target.hp <= 0",
+                                        "condition": "target and target.hp <= 0",
                                         "onTrue": [
                                             {
                                                 "type": "ieffect2",

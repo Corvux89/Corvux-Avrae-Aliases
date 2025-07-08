@@ -1616,11 +1616,11 @@
         }
     },
     {
-        "name": "Aquinos Form",
+        "name": "Aqinos Form",
         "actions": [
             {
                 "action": {
-                    "name": "Aquinos Form",
+                    "name": "Aqinos Form",
                     "_v": 2,
                     "activation_type": 3,
                     "automation": [
@@ -1630,7 +1630,7 @@
                             "effects": [
                                 {
                                     "type": "ieffect2",
-                                    "name": "Aquinos Form",
+                                    "name": "Aqinos Form",
                                     "duration": 1
                                 }
                             ]
@@ -1981,7 +1981,7 @@
                                                                 "stat": "str",
                                                                 "dc": "8+proficiencyBonus+strengthMod",
                                                                 "fail": [],
-                                                                "succdess": []
+                                                                "success": []
                                                             }
                                                         ]
                                                     },

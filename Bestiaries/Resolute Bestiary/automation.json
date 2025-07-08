@@ -224,10 +224,8 @@
   {
     "name": "Adult Acklay",
     "ability": "Pin",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "The acklay can forgo a Claw attack in an attempt to pin a target, making the target make a DC 19 Strength saving throw or be restrained. The target can attempt to make the saving throw again as an action on their turn to escape.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adolescent Reek",

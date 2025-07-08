@@ -1402,6 +1402,7 @@
                                     "type": "ieffect2",
                                     "name": "Ignited",
                                     "duration": 1,
+                                    "end": true,
                                     "buttons": [
                                         {
                                             "label": "Ignited - End of Turn",

@@ -18,7 +18,7 @@ def biting(attack, args):
     if 'range' and 'reload' not in prop:
         auto = sup.get_on_hit_effects(attack)
         condition = {"type": "condition",
-                     "condition": "target.hp <= 0 and lastSaveRollTotal < 13",
+                     "condition": "target and target.hp <= 0 and lastSaveRollTotal < 13",
                      "onTrue": [effect],
                      "onFalse": []}
         text = {"type": "text", "title": "Biting", "text": "When you would make a melee weapon attack with a weapon with the biting property, you can instead force the target to make a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon, or the biting number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the first attack it makes before the end of its next turn has disadvantage."}
@@ -33,10 +33,10 @@ def biting(attack, args):
     condition = {"type": "condition", "onFalse": []}
 
     if '"stat": "con"' in attack:
-        condition["condition"] = "target.hp <= 0 and lastSaveRollTotal < 13"
+        condition["condition"] = "target and target.hp <= 0 and lastSaveRollTotal < 13"
         condition["onTrue"] = [effect]
     else:
-        condition["condition"] = "target.hp <= 0"
+        condition["condition"] = "target and target.hp <= 0"
         condition["onTrue"] = [save]
 
     for n in a.automation:
@@ -124,10 +124,10 @@ def disintegrate(attack, args):
     condition = {"type": "condition", "onFalse": []}
 
     if '"stat": "con"' in attack:
-        condition["condition"] = "target.hp <= 0 and lastSaveRollTotal < 13"
+        condition["condition"] = "target and target.hp <= 0 and lastSaveRollTotal < 13"
         condition["onTrue"] = [effect, text]
     else:
-        condition["condition"] = "target.hp <= 0"
+        condition["condition"] = "target and target.hp <= 0"
         condition["onTrue"] = [save, text]
 
     for n in a.automation:

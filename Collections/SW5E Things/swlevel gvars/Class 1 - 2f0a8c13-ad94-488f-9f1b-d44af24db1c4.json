@@ -1404,6 +1404,14 @@
         "subclass": "Wildfire",
         "counters": [
             {
+                "name": "Incinerate",
+                "level": 3,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ConsulardarkLevel",
+                "value": "proficiencyBonus"
+            },
+            {
                 "name": "Roaring Force",
                 "level": 10,
                 "value": 1,
@@ -1428,6 +1436,159 @@
                 "reset": "long",
                 "classLevel": "ConsularlightLevel",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 1,
+                "action": {
+                    "name": "Incinerate",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "ConsularLevel",
+                            "value": "max(caster.levels.get('Consularlight',0), caster.levels.get('Consulardark',0))",
+                            "onError": 0
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Incinerate - Ignited",
+                                    "duration": "10",
+                                    "buttons": [
+                                        {
+                                            "automation": [
+                                                {
+                                                    "type": "remove_ieffect"
+                                                }
+                                            ],
+                                            "label": "Put Flames Out",
+                                            "verb": "Puts Themself Out",
+                                            "style": "3"
+                                        },
+                                        {
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{ieffect.desc.split()[-1]} [fire]",
+                                                            "cantripScale": false
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "text": "- A creature that is ignited suffers fire damage at the end of each of its turns\n- If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."
+                                                }
+                                            ],
+                                            "label": "Let it Burn",
+                                            "verb": "Lets the Flames Go Out",
+                                            "style": "4"
+                                        }
+                                    ],
+                                    "end": true,
+                                    "desc": "{1+(ConsularLevel>=14)}d6+{ConsularLevel//2}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Incinerate",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You gain resistance to fire damage and have advantage on saving throws against the ignited condition.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher that requires a force attack or saving throw, you can cause one creature that you hit or fails its saving throw to become engulfed in fiery force energy for 1 minute. The creature takes fire damage equal to 1d6 + half your consular level at the start of each of its turns. A creature engulfed in flames this way (or another creature within 5 feet of it) can use its action to end this effect. If a creature is engulfed in fiery force energy and ignited simultaneously, it only takes them (or another creature within 5 feet of them) one action to remove both effects.\n\nYou can use this feature twice, and gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you finish a short or long rest. If you have no more uses remaining, you can spend 1 force point to use it again."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 6,
+                "action": {
+                    "name": "Spread Like Wildfire",
+                    "_v": 2,
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "ConsularLevel",
+                            "value": "max(caster.levels.get('Consularlight',0), caster.levels.get('Consulardark',0))",
+                            "onError": 0
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{1+(ConsularLevel>=14)}d6 [fire]"
+                                        },
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Wildfire - Ignited",
+                                            "duration": "1",
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "remove_ieffect"
+                                                        }
+                                                    ],
+                                                    "label": "Put Flames Out",
+                                                    "verb": "Puts Themself Out",
+                                                    "style": "3"
+                                                },
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "target",
+                                                            "target": "self",
+                                                            "effects": [
+                                                                {
+                                                                    "type": "damage",
+                                                                    "damage": "{ieffect.desc.split()[-1]} [fire]",
+                                                                    "cantripScale": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "text",
+                                                            "text": "- A creature that is ignited suffers fire damage at the end of each of its turns\n- If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."
+                                                        }
+                                                    ],
+                                                    "label": "Let it Burn",
+                                                    "verb": "Lets the Flames Go Out",
+                                                    "style": "4"
+                                                }
+                                            ],
+                                            "end": true,
+                                            "desc": "{1+(ConsularLevel>=14)}d6"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Incinerate feature, you can use your reaction and spend 1 force point to cause it and each creature within 5 feet of it to make a Dexterity saving throw. Any creature that fails its save takes 1d6 fire damage and becomes ignited (1d6) until the end of its next turn. The initial damage caused by this feature and the damage of the ignited condition both increase to 2d6 when you reach 14th level.\n\nIn addition, if a power you cast deals energy, lightning, or force damage, you expend 1 additional force point to change that damage to fire. When you do so, the damage ignores resistance to fire damage and treats immunity as resistance."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -2418,6 +2579,14 @@
         "subclass": "Wildfire",
         "counters": [
             {
+                "name": "Incinerate",
+                "level": 3,
+                "reset": "short",
+                "display": "bubble",
+                "classLevel": "ConsulardarkLevel",
+                "value": "proficiencyBonus"
+            },
+            {
                 "name": "Roaring Force",
                 "level": 10,
                 "value": 1,
@@ -2442,6 +2611,159 @@
                 "reset": "long",
                 "classLevel": "ConsulardarkLevel",
                 "display": "bubble"
+            }
+        ],
+        "actions": [
+            {
+                "level": 1,
+                "action": {
+                    "name": "Incinerate",
+                    "_v": 2,
+                    "activation_type": 8,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "ConsularLevel",
+                            "value": "max(caster.levels.get('Consularlight',0), caster.levels.get('Consulardark',0))",
+                            "onError": 0
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Incinerate - Ignited",
+                                    "duration": "10",
+                                    "buttons": [
+                                        {
+                                            "automation": [
+                                                {
+                                                    "type": "remove_ieffect"
+                                                }
+                                            ],
+                                            "label": "Put Flames Out",
+                                            "verb": "Puts Themself Out",
+                                            "style": "3"
+                                        },
+                                        {
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "self",
+                                                    "effects": [
+                                                        {
+                                                            "type": "damage",
+                                                            "damage": "{ieffect.desc.split()[-1]} [fire]",
+                                                            "cantripScale": false
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "text": "- A creature that is ignited suffers fire damage at the end of each of its turns\n- If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."
+                                                }
+                                            ],
+                                            "label": "Let it Burn",
+                                            "verb": "Lets the Flames Go Out",
+                                            "style": "4"
+                                        }
+                                    ],
+                                    "end": true,
+                                    "desc": "{1+(ConsularLevel>=14)}d6+{ConsularLevel//2}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "counter",
+                            "counter": "Incinerate",
+                            "amount": 1,
+                            "errorBehaviour": "raise"
+                        },
+                        {
+                            "type": "text",
+                            "text": "You gain resistance to fire damage and have advantage on saving throws against the ignited condition.\n\nAdditionally, when you cast a damage-dealing force power of 1st level or higher that requires a force attack or saving throw, you can cause one creature that you hit or fails its saving throw to become engulfed in fiery force energy for 1 minute. The creature takes fire damage equal to 1d6 + half your consular level at the start of each of its turns. A creature engulfed in flames this way (or another creature within 5 feet of it) can use its action to end this effect. If a creature is engulfed in fiery force energy and ignited simultaneously, it only takes them (or another creature within 5 feet of them) one action to remove both effects.\n\nYou can use this feature twice, and gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you finish a short or long rest. If you have no more uses remaining, you can spend 1 force point to use it again."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 6,
+                "action": {
+                    "name": "Spread Like Wildfire",
+                    "_v": 2,
+                    "activation_type": 4,
+                    "automation": [
+                        {
+                            "type": "variable",
+                            "name": "ConsularLevel",
+                            "value": "max(caster.levels.get('Consularlight',0), caster.levels.get('Consulardark',0))",
+                            "onError": 0
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "save",
+                                    "stat": "dex",
+                                    "success": [],
+                                    "fail": [
+                                        {
+                                            "type": "damage",
+                                            "damage": "{1+(ConsularLevel>=14)}d6 [fire]"
+                                        },
+                                        {
+                                            "type": "ieffect2",
+                                            "name": "Wildfire - Ignited",
+                                            "duration": "1",
+                                            "buttons": [
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "remove_ieffect"
+                                                        }
+                                                    ],
+                                                    "label": "Put Flames Out",
+                                                    "verb": "Puts Themself Out",
+                                                    "style": "3"
+                                                },
+                                                {
+                                                    "automation": [
+                                                        {
+                                                            "type": "target",
+                                                            "target": "self",
+                                                            "effects": [
+                                                                {
+                                                                    "type": "damage",
+                                                                    "damage": "{ieffect.desc.split()[-1]} [fire]",
+                                                                    "cantripScale": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "text",
+                                                            "text": "- A creature that is ignited suffers fire damage at the end of each of its turns\n- If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the creature is no longer ignited."
+                                                        }
+                                                    ],
+                                                    "label": "Let it Burn",
+                                                    "verb": "Lets the Flames Go Out",
+                                                    "style": "4"
+                                                }
+                                            ],
+                                            "end": true,
+                                            "desc": "{1+(ConsularLevel>=14)}d6"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "When a creature takes damage from your Incinerate feature, you can use your reaction and spend 1 force point to cause it and each creature within 5 feet of it to make a Dexterity saving throw. Any creature that fails its save takes 1d6 fire damage and becomes ignited (1d6) until the end of its next turn. The initial damage caused by this feature and the damage of the ignited condition both increase to 2d6 when you reach 14th level.\n\nIn addition, if a power you cast deals energy, lightning, or force damage, you expend 1 additional force point to change that damage to fire. When you do so, the damage ignores resistance to fire damage and treats immunity as resistance."
+                        }
+                    ]
+                }
             }
         ]
     },
@@ -2473,814 +2795,6 @@
                 "reset": "long",
                 "display": "bubble",
                 "classLevel": "ConsulardarkLevel"
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclassLevel": 3,
-        "hitDie": "d8",
-        "counters": [
-            {
-                "name": "Tech Points",
-                "level": 1,
-                "value": [
-                    2,
-                    4,
-                    6,
-                    8,
-                    10,
-                    12,
-                    14,
-                    16,
-                    18,
-                    20,
-                    22,
-                    24,
-                    26,
-                    28,
-                    30,
-                    32,
-                    34,
-                    36,
-                    38,
-                    40
-                ],
-                "modifier": "intelligenceMod",
-                "display": "default",
-                "reset": "short",
-                "classLevel": "EngineerLevel",
-                "desc": "You have a number of tech points equal to your engineer level x 2, as shown in the Tech Points column of the engineer table, + your Intelligence modifier. You use these tech points to cast tech powers. You regain all expended tech points when you finish a short or long rest."
-            },
-            {
-                "name": "Potent Aptitude",
-                "level": 1,
-                "value": "proficiencyBonus",
-                "display": "bubble",
-                "reset": "short",
-                "classLevel": "EngineerLevel",
-                "desc": "Your technological experience lends you an uncommon insight that you can use to bolster your allies. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Potent Aptitude die, a d4. This die changes as you gain engineer levels, as shown in the Potent Aptitude column of the engineer table.\n\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 beforedeciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost.\n\nA creature can have only one Potent Aptitude die at a time.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown in the engineer table. You regain any expended uses when you finish a short or long rest."
-            },
-            {
-                "name": "Infuse Item",
-                "level": 2,
-                "display": "bubble",
-                "value": 1,
-                "reset": "long",
-                "desc": "You gain the ability to temporarily enhance a weapon or armor. At the end of a long rest, you can touch one unenhanced object that is a suit of armor, a shield, or a simple or martial weapon. Until the end of your next long rest or until you die, the object becomes an enhanced item, granting a +1 bonus to AC if it’s armor or a shield or a +1 bonus to attack and damage rolls if it’s a weapon.\n\nOnce you’ve used this feature, you can’t use it again until you finish a long rest.\n\nThis bonus increases to +2 at 10th level and +3 at 15th level.",
-                "classLevel": "EngineerLevel"
-            }
-        ],
-        "actions": [
-            {
-                "level": 1,
-                "action": {
-                    "name": "Potent Aptitude",
-                    "_v": 2,
-                    "activation_type": 3,
-                    "verb": "uses",
-                    "automation": [
-                        {
-                            "type": "variable",
-                            "value": "{caster.levels.get('Engineer')}",
-                            "name": "level"
-                        },
-                        {
-                            "type": "variable",
-                            "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
-                            "name": "die"
-                        },
-                        {
-                            "type": "target",
-                            "target": "each",
-                            "effects": [
-                                {
-                                    "type": "ieffect2",
-                                    "name": "Potent Aptitude",
-                                    "duration": 100,
-                                    "desc": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost.\n{2 if choice == 'gott' else 1}d{die}",
-                                    "buttons": [
-                                        {
-                                            "label": "Use Potent Aptitude",
-                                            "verb": "is using assistance",
-                                            "style": 3,
-                                            "automation": [
-                                                {
-                                                    "type": "remove_ieffect"
-                                                },
-                                                {
-                                                    "type": "roll",
-                                                    "dice": "{ieffect.desc.split()[-1]}",
-                                                    "name": "Potent Aptitude"
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "text": "The creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. Once the Potent Aptitude die is rolled, it is lost."
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "title": "Meta",
-                            "text": "**Die to add:** {2 if choice == 'gott' else 1}d{die}"
-                        },
-                        {
-                            "type": "text",
-                            "text": "Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost."
-                        },
-                        {
-                            "type": "counter",
-                            "counter": "Potent Aptitude",
-                            "amount": 1,
-                            "errorBehaviour": "raise"
-                        },
-                        {
-                            "type": "condition",
-                            "condition": "choice == 'gott'",
-                            "onFalse": [],
-                            "onTrue": [
-                                {
-                                    "type": "counter",
-                                    "counter": "Goggles of the Tinkerer",
-                                    "amount": 1,
-                                    "errorBehaviour": "raise"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "Once per turn, when you use a Potent Aptitude feature, you can spend 1 charge to roll the Potent Aptitude dice twice and add them together.",
-                                    "title": "Goggles of the Tinkerer"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Armormech",
-        "counters": [
-            {
-                "name": "Armormech's Celerity",
-                "level": 14,
-                "value": "intelligenceMod",
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "When you take the Attack action or use your action to a cast a tech power of 1st-level or higher, you can make one weapon attack as a bonus action.\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Armstech",
-        "counters": [
-            {
-                "name": "Targeting Matrix",
-                "level": 14,
-                "value": "intelligenceMod",
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "When you cast a tech power that allows you to force creatures in an area to make a saving throw, you can instead make an attack roll with your modified weapon against a single target that would be in the range of the power. On a hit, the target suffers the effects as though they failed their saving throw. If the power would affect more than one creature, it instead affects only one.\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain any expended uses when you finish a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Gadgeteer",
-        "counters": [
-            {
-                "name": "Versatile Direction",
-                "level": 6,
-                "value": "intelligenceMod",
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "You can take a second bonus action on each of your turns. You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest."
-            }
-        ],
-        "actions": [
-            {
-                "level": "3",
-                "action": {
-                    "name": "Projected Barrier - Environmental Barrier",
-                    "_v": 2,
-                    "activation_type": 3,
-                    "verb": "uses",
-                    "automation": [
-                        {
-                            "type": "variable",
-                            "value": "{caster.levels.get('Engineer')}",
-                            "name": "level"
-                        },
-                        {
-                            "type": "variable",
-                            "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
-                            "name": "die"
-                        },
-                        {
-                            "type": "condition",
-                            "condition": "choice in 'acidcoldfireforcelightningnecroticpoisonpsychicsonic'",
-                            "onTrue": [
-                                {
-                                    "type": "roll",
-                                    "dice": "1d{die}+{level}",
-                                    "name": "barrierAmt",
-                                    "displayName": "Barrier HP"
-                                },
-                                {
-                                    "type": "target",
-                                    "target": "each",
-                                    "effects": [
-                                        {
-                                            "type": "ieffect2",
-                                            "name": "Environmental Barrier",
-                                            "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
-                                            "buttons": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
-                                    "title": "Projected Barrier"
-                                },
-                                {
-                                    "type": "text",
-                                    "title": "Environmental Barrier",
-                                    "text": "You project an environmental barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + your engineer level. Whenever a creature with this barrier takes damage (one of acid, cold, fire, force, lightning, necrotic, poison, psychic, or sonic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
-                                },
-                                {
-                                    "type": "counter",
-                                    "counter": "Potent Aptitude",
-                                    "amount": 1,
-                                    "errorBehaviour": "raise"
-                                }
-                            ],
-                            "onFalse": [
-                                {
-                                    "type": "text",
-                                    "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Environmental Barrier' -t zo1 -choice cold`"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            },
-            {
-                "level": "3",
-                "action": {
-                    "name": "Projected Barrier - Physical Barrier",
-                    "_v": 2,
-                    "activation_type": 3,
-                    "verb": "uses",
-                    "automation": [
-                        {
-                            "type": "variable",
-                            "value": "{caster.levels.get('Engineer')}",
-                            "name": "level"
-                        },
-                        {
-                            "type": "variable",
-                            "value": "4 if level < 5 else 6 if level < 9 else 8 if level < 13 else 10 if level < 17 else 12",
-                            "name": "die"
-                        },
-                        {
-                            "type": "condition",
-                            "condition": "choice in 'energyionkinetic'",
-                            "onTrue": [
-                                {
-                                    "type": "roll",
-                                    "dice": "1d{die}+{ceil(level/2)}",
-                                    "name": "barrierAmt",
-                                    "displayName": "Barrier HP"
-                                },
-                                {
-                                    "type": "target",
-                                    "target": "each",
-                                    "effects": [
-                                        {
-                                            "type": "ieffect2",
-                                            "name": "Physical Barrier",
-                                            "desc": "Barrier HP: {barrierAmt}\n - Damage Type: {choice}",
-                                            "buttons": []
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "As a bonus action while wearing your gadgeteer harness, you can expend a use of your Potent Aptitude to project a barrier on a friendly creature you can see within 30 feet. A creature can only have one barrier active at a time.",
-                                    "title": "Projected Barrier"
-                                },
-                                {
-                                    "type": "text",
-                                    "title": "Physical Barrier",
-                                    "text": "You project a physical barrier that lasts until the end of your next short or long rest. The barrier has a number of hit points equal to the amount rolled on your Potent Aptitude die + half your engineer level. Whenever a creature with this barrier takes damage (one of energy, ion, or kinetic, chosen by you when you activate the effect), the barrier takes the damage instead. If this damage reduces the barrier to 0 hit points, the creature take any remaining damage.\n\nDamage Type: {choice}"
-                                },
-                                {
-                                    "type": "counter",
-                                    "counter": "Potent Aptitude",
-                                    "amount": 1,
-                                    "errorBehaviour": "raise"
-                                }
-                            ],
-                            "onFalse": [
-                                {
-                                    "type": "text",
-                                    "text": "Please use `-choice` to specify the damage type the barrier protects against.\nEx: `!a 'Projected Barrier - Physical Barrier' -t zo1 -choice kinetic`"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Unstable",
-        "counters": [
-            {
-                "name": "Modification Slots",
-                "level": 3,
-                "value": [
-                    0,
-                    0,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    8,
-                    8,
-                    9,
-                    9,
-                    9,
-                    9
-                ],
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "Your tinkercannon come equipped with four overrides, and they gain more at higher levels, as shown in the Modification Slots column of the engineer table. Each time you trigger an Unstable Engineering Surge, you can use an override to reroll the percentile dice. You must use the new result, you can only do this once per surge, and each time you do so in excess of your proficiency bonus (resetting on a long rest) your maximum tech points is reduced by 1 until you complete a long rest. You regain all expended overrides when you complete a long rest."
-            }
-        ],
-        "actions": [
-            {
-                "level": 3,
-                "action": {
-                    "name": "Unstable Volley",
-                    "_v": 2,
-                    "activation_type": 3,
-                    "automation": [
-                        {
-                            "type": "roll",
-                            "dice": "1d6",
-                            "name": "damage",
-                            "cantripScale": true
-                        },
-                        {
-                            "type": "target",
-                            "target": "each",
-                            "effects": [
-                                {
-                                    "type": "save",
-                                    "stat": "dex",
-                                    "fail": [
-                                        {
-                                            "type": "damage",
-                                            "damage": "{damage} [lightning]"
-                                        }
-                                    ],
-                                    "success": [
-                                        {
-                                            "type": "damage",
-                                            "damage": "{damage}/2 [lightning]"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "counter",
-                            "counter": "Potent Aptitude",
-                            "amount": 1,
-                            "errorBehaviour": "raise"
-                        },
-                        {
-                            "type": "text",
-                            "text": "While wielding your tinkercannon, as a bonus action you can expend one use of your Potent Aptitude to launch a volley of unstable energy at a surface located within 30 feet of you that you can see. This energy adheres to the surface for 1 minute, after which it erupts. As a part of this bonus action, or as a bonus action on a following turn, you can cause the energy to erupt early. Each creature within 5 feet of it must make a Dexterity saving throw against your tech save DC. A creature takes 1d6 lightning damage on a failed save, or half as much on a successful one.\\n\\nThe range at which you can launch your volley increases to 60 feet at 9th level, and 120 feet at 17th level.\\n\\nThis damage increases when you reach certain levels in this class, increasing to 2d6 at 5th level, 3d6 at 11th level, and 4d6 at 17th level"
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Artificer",
-        "counters": []
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Astrotech",
-        "counters": [
-            {
-                "name": "Direct Controller",
-                "level": 6,
-                "value": "proficiencyBonus",
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "Your mastery of droids improves your ability to manipulate them. When you cast a power that could affect only droids or constructs, and you only affect droids with the power, you can choose to treat the power as if cast at your Max Power Level.\n\nYou can use this feature a number of times equal to your proficiency bonus, as shown in the engineer table. You regain all expended uses when you complete a long rest."
-            },
-            {
-                "name": "Modification Slots",
-                "level": 3,
-                "value": [
-                    0,
-                    0,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    8,
-                    8,
-                    9,
-                    9,
-                    9,
-                    9
-                ],
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "Lastly, while bonded and within 10 feet of you, when you would use your action to cast a 1st-level tech power, you can instead have your droid companion cast it. You still expend tech points as normal, and if the power requires concentration, it still uses your concentration. Your droid companion must use its action, and it uses its tech attack modifier and tech save DC instead of your own. At 5th level, your droid can cast 2nd-level tech powers in this way. This increases to 3rd-level powers at 9th level, 4th-level powers at 13th level, and 5th-level powers at 17th level. When you cast a power, you consume a number of uses of this feature equal to that power’s level."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Audiotech",
-        "counters": [
-            {
-                "name": "Potent Amplitude",
-                "level": 3,
-                "value": 2,
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel"
-            },
-            {
-                "name": "Legendary Coda",
-                "level": 18,
-                "value": 1,
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "You’ve gained mastery over your modified instrument. As an action, you can end your enhanced song in a triumphant blast of power with an effect determined by the song you are playing.\n\nOnce you’ve used this feature, you must complete a long rest before you can use it again."
-            }
-        ],
-        "actions": [
-            {
-                "level": 5,
-                "action": {
-                    "name": "Battle Song Enhancement",
-                    "_v": 2,
-                    "automation": [
-                        {
-                            "type": "condition",
-                            "condition": "len(targets) <=1",
-                            "onTrue": [
-                                {
-                                    "type": "target",
-                                    "target": "each",
-                                    "effects": [
-                                        {
-                                            "type": "attack",
-                                            "miss": [],
-                                            "hit": [
-                                                {
-                                                    "type": "damage",
-                                                    "damage": "1d8 [sonic]"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "attack",
-                                            "miss": [],
-                                            "hit": [
-                                                {
-                                                    "type": "damage",
-                                                    "damage": "1d8 [sonic]"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
-                            "onFalse": [
-                                {
-                                    "type": "target",
-                                    "target": "each",
-                                    "effects": [
-                                        {
-                                            "type": "attack",
-                                            "miss": [],
-                                            "hit": [
-                                                {
-                                                    "type": "damage",
-                                                    "damage": "1d8 [sonic]"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "text": "While playing your Song of Battle, as an action, you can send forth busts of directed sonic energy, make two ranged power attacks. These attacks can target the same creature different ones. Make separate attack rolls for each burst. The attack has a range equal to the radius of your song, and deals 1d8 sonic damage on a hit."
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Biochem",
-        "counters": [
-            {
-                "name": "Epicenter",
-                "level": 14,
-                "value": 1,
-                "display": "bubble",
-                "reset": "short",
-                "classLevel": "EngineerLevel",
-                "desc": "As a reaction when you take damage from a creature within 15 feet of you that you can see, you can use one of your mixtures. The effects of the mixture release in a 15-foot-radius sphere centered on you, and if the mixture requires a saving throw, you automatically succeed on it. Additionally, the affected area is difficult terrain to creatures other than you until the end of your next turn.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Biotech",
-        "counters": []
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Construction",
-        "counters": [
-            {
-                "name": "Modification Slots",
-                "level": 3,
-                "value": [
-                    0,
-                    0,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    8,
-                    8,
-                    9,
-                    9,
-                    9,
-                    9
-                ],
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "You can deploy your choice from these structures a combined total of four times, and you gain more uses at higher levels, as shown in the Modification Slots column of the engineer table. Each time you use this feature in excess of your proficiency bonus, your tech point maximum is reduced by 1 until you complete a long rest. You regain all expended uses when you complete a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Cybertech",
-        "counters": [
-            {
-                "name": "Quickslice",
-                "level": 6,
-                "value": 1,
-                "reset": "short",
-                "display": "bubble",
-                "classLevel": "EngineerLevel"
-            },
-            {
-                "name": "Maximum Output",
-                "level": 18,
-                "classLevel": "EngineerLevel",
-                "value": 1,
-                "display": "bubble",
-                "desc": "When you cast a tech power, you can choose to deal maximum damage or provide maximum healing with that power.\n\nOnce you’ve used this feature, you must complete a short or long rest before you can use it again."
-            }
-        ],
-        "actions": [
-            {
-                "level": 3,
-                "action": {
-                    "name": "Insightful Casting - Create Tech Points",
-                    "_v": 2,
-                    "verb": "uses",
-                    "activation_type": 2,
-                    "automation": [
-                        {
-                            "type": "counter",
-                            "counter": "Potent Aptitude",
-                            "amount": 1,
-                            "errorBehaviour": "raise"
-                        },
-                        {
-                            "type": "variable",
-                            "value": "lastCounterUsedAmount*2",
-                            "name": "restore"
-                        },
-                        {
-                            "type": "counter",
-                            "counter": "Tech Points",
-                            "amount": "-restore",
-                            "fixedValue": true
-                        },
-                        {
-                            "type": "text",
-                            "text": "You can expend uses of your Potent Aptitude to gain additional tech points, or expend tech points to gain additional Potent Aptitude uses.\n\n*Creating Tech Points.* You can transform a single use of Potent Aptitude into two tech points as a bonus action on your turn. These additional tech points can exceed your maximum. Any tech points you create with this feature vanish when you finish a short rest.\n\n*Creating Potent Aptitude.* As a bonus action on your turn, you can expend two tech points to gain a single use of your Potent Aptitude."
-                        }
-                    ]
-                }
-            },
-            {
-                "level": 3,
-                "action": {
-                    "name": "Insightful Casting - Create Potent Aptitude",
-                    "_v": 2,
-                    "verb": "uses",
-                    "activation_type": 2,
-                    "automation": [
-                        {
-                            "type": "counter",
-                            "counter": "Tech Points",
-                            "amount": 2,
-                            "errorBehaviour": "raise"
-                        },
-                        {
-                            "type": "variable",
-                            "value": "floor(lastCounterUsedAmount/2)",
-                            "name": "restore"
-                        },
-                        {
-                            "type": "counter",
-                            "counter": "Potent Aptitude",
-                            "amount": "-restore",
-                            "fixedValue": true
-                        },
-                        {
-                            "type": "text",
-                            "text": "You can expend uses of your Potent Aptitude to gain additional tech points, or expend tech points to gain additional Potent Aptitude uses.\n\n*Creating Tech Points.* You can transform a single use of Potent Aptitude into two tech points as a bonus action on your turn. These additional tech points can exceed your maximum. Any tech points you create with this feature vanish when you finish a short rest.\n\n*Creating Potent Aptitude.* As a bonus action on your turn, you can expend two tech points to gain a single use of your Potent Aptitude."
-                        }
-                    ]
-                }
-            },
-            {
-                "level": 6,
-                "action": {
-                    "name": "Quickslice",
-                    "_v": 2,
-                    "activation_type": 4,
-                    "verb": "uses",
-                    "automation": [
-                        {
-                            "type": "target",
-                            "target": "self",
-                            "effects": [
-                                {
-                                    "type": "check",
-                                    "ability": "intelligence",
-                                    "dc": "10"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "counter",
-                            "counter": "Quickslice",
-                            "amount": 1,
-                            "errorBehaviour": "raise"
-                        },
-                        {
-                            "type": "text",
-                            "text": "When a creature you can see casts a tech power, you may use your reaction to attempt to download that tech power to your wristpad for later use if it is of a level for which you can cast.\n\nMake an ability check using your techcasting ability with proficiency. The DC equals 10 + two times the power’s level. On a success you store the power for later use. On a failure, the power is not stored. You can cast powers stored in your wristpad as if you had learned them and they do not count against your tech powers known.\n\nOnce you have used this feature on a creature, you cannot do so again on the same creature until you complete a short or long rest.\n\nYou can store an amount of levels worth of tech powers equal to your engineer level at a time. Additionally, you can choose replace or remove one or more tech powers learned by this feature each time you use it."
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Munitions",
-        "counters": [
-            {
-                "name": "Collateral Damage",
-                "level": 18,
-                "value": "max(intelligenceMod,1)",
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "When an ammunition you control affects an area, you can choose to maximize its explosive potential. A radius or cone area doubles in size, or a line area doubles in either length or width (your choice).\n\nYou can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you complete a long rest."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Strategic",
-        "counters": [
-            {
-                "name": "Aura of Command",
-                "level": 3,
-                "value": [
-                    0,
-                    0,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    7,
-                    7,
-                    8,
-                    8,
-                    8,
-                    8,
-                    9,
-                    9,
-                    9,
-                    9
-                ],
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel"
-            },
-            {
-                "name": "Superiority Dice",
-                "level": 3,
-                "value": "proficiencyBonus",
-                "display": "bubble",
-                "reset": "short",
-                "classLevel": "EngineerLevel"
-            },
-            {
-                "name": "High Command",
-                "level": 18,
-                "value": 1,
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "Any battle is yours to control.\n\nWhen you roll a critical hit with an attack, you can expend a superiority die to immediately take an additional turn. Once you use this ability you cannot use it again until you finish a long rest.\n\nIn addition, you can expend four tech points to regain an expended superiority die, or expend a superiority die to regain four expended tech points, both up to their maximums."
-            }
-        ]
-    },
-    {
-        "Class": "Engineer",
-        "subclass": "Prismatic",
-        "counters": [
-            {
-                "name": "Material Refraction",
-                "level": 14,
-                "value": 2,
-                "display": "bubble",
-                "reset": "long",
-                "classLevel": "EngineerLevel",
-                "desc": "Weapon attacks using your modified beam cannon's penetrating property now target all creatures in a line up to its normal range, originating from you.\n\nAdditionally, when you attack your initial target with your modified beam cannon or a tech power that requires an attack roll or Dexterity saving throw to resist damage, you can choose to expend a number of tech points up to your proficiency bonus to cause the effect to split on impact into an equal number of projectiles. The original attack or effect is resolved, and you can then target a number of creatures equal to the number of projectiles within 30 feet of the original target, making subsequent attack rolls with equal bonus to hit or imposing the saving throw DC equal to that of the original target. On a hit or failed saving throw, the secondary target takes half the damage of the original effect. You cannot target the original target creature again with the secondary attack or saving throw.\n\nYou can use this ability twice per long rest."
             }
         ]
     }

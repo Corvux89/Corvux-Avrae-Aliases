@@ -121,7 +121,6 @@
 # TODO: Expanded Missing Poison Food and Drink
 # TODO: Expanded Missing Projected Shield
 # TODO: Expanded Missing Purify Food and Drink
-# TODO: Expanded Missing Rebound
 # TODO: Expanded Missing Record Self
 # TODO: Expanded Missing Repulsorlift Disk
 # TODO: Expanded Missing Searing Blow
@@ -158,7 +157,6 @@
 # TODO: Expanded Missing Lesser Fabricate
 # TODO: Expanded Missing Lesser Squad Shield
 # TODO: Expanded Missing Luminous Swarm
-# TODO: Expanded Missing Magnetic Burst
 # TODO: Expanded Missing Modify Parameters
 # TODO: Expanded Missing Noxious Fumes
 # TODO: Expanded Missing Null Zone
@@ -179,7 +177,6 @@
 # TODO: Expanded Missing Unstable Prototype
 # TODO: Expanded Missing Watchful Eye
 # TODO: Expanded Missing Weapons Malfunction
-# TODO: Expanded Missing Afterburner
 # TODO: Expanded Missing Analyze Area
 # TODO: Expanded Missing Autopilot Program
 # TODO: Expanded Missing Blinding Blow
@@ -197,7 +194,6 @@
 # TODO: Expanded Missing Greater Poison Dart
 # TODO: Expanded Missing Holographic Decoy
 # TODO: Expanded Missing Illusive Blow
-# TODO: Expanded Missing Injection
 # TODO: Expanded Missing Ion Pulse
 # TODO: Expanded Missing Magma Jet
 # TODO: Expanded Missing Magnetism
@@ -234,7 +230,6 @@
 # TODO: Expanded Missing Piercing Vision
 # TODO: Expanded Missing Reconstructive Electromesh
 # TODO: Expanded Missing Resonance Field
-# TODO: Expanded Missing Ricochet Shot
 # TODO: Expanded Missing Sabotage Tech
 # TODO: Expanded Missing Scalding Water
 # TODO: Expanded Missing Shield Tech: Medical Regulator
@@ -314,7 +309,6 @@
 # TODO: Expanded Missing Spectrum Barrier
 # TODO: Expanded Missing Spectrum Field
 # TODO: Expanded Missing Toxic Explosion
-# TODO: Aziz Tech Power Missing Blaster Calibration
 # TODO: Aziz Tech Power Missing Boomerang Shot
 # TODO: Aziz Tech Power Missing Spectrum Blaster
 # TODO: Aziz Tech Power Missing Construct Turret
@@ -355,7 +349,6 @@
 # TODO: Cryogenic Wave
 # TODO: Danger Sense
 # TODO: Dark Rejuvenation
-# TODO: Dark Transfer
 # TODO: (SW) Darkness
 # TODO: (SW) Darkvision
 # TODO: Death Field
@@ -413,7 +406,6 @@
 # TODO: Force Mask
 # TODO: Force Meld
 # TODO: Force Project
-# TODO: Force Reflect
 # TODO: Force Sight
 # TODO: Force Suppression
 # TODO: Force Trance
@@ -421,7 +413,6 @@
 # TODO: Force Weapon
 # TODO: Force Whisper
 # TODO: Foresight
-# TODO: Forked Lightning
 # TODO: (SW) Freedom of Movement
 # TODO: Frequency Scan
 # TODO: Friendly Fire
@@ -460,7 +451,6 @@
 # TODO: Jump Jet
 # TODO: Kill
 # TODO: Kolto Cloud
-# TODO: Kolto Dispenser
 # TODO: Kolto Reserve
 # TODO: Kolto Waves
 # TODO: (SW) Light

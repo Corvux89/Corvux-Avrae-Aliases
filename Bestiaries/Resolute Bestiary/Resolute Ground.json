@@ -6147,7 +6147,68 @@
       {
         "name": "Pin",
         "description": "The acklay can forgo a Claw attack in an attempt to pin a target, making the target make a DC 19 Strength saving throw or be restrained. The target can attempt to make the saving throw again as an action on their turn to escape.",
-        "automation": null
+        "automation": {
+          "name": "Pin",
+          "_v": 2,
+          "verb": "attempts to",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 19,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Restrained by {name}",
+                      "effects": {
+                        "save_dis": [
+                          "dex"
+                        ]
+                      },
+                      "desc": "4 slow levels\n - Attack rolls against the creature have advantage\n - Disadvantage on dex saving throws",
+                      "parent": "peff",
+                      "buttons": [
+                        {
+                          "label": "Resist the Pin",
+                          "style": 4,
+                          "verb": "attempts to fight the Acklay",
+                          "automation": [
+                            {
+                              "type": "target",
+                              "target": "self",
+                              "effects": [
+                                {
+                                  "type": "save",
+                                  "stat": "str",
+                                  "dc": 19,
+                                  "fail": [],
+                                  "success": [
+                                    {
+                                      "type": "remove_ieffect"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "The acklay can forgo a Claw attack in an attempt to pin a target, making the target make a DC 19 Strength saving throw or be restrained. The target can attempt to make the saving throw again as an action on their turn to escape."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -13942,7 +14003,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium droid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium droid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       }
     ],
@@ -89204,7 +89265,7 @@
       },
       {
         "name": "Squad",
-        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form.",
         "automation": null
       }
     ],
@@ -91934,7 +91995,7 @@
     "traits": [
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -114670,7 +114731,7 @@
     "traits": [
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium droid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium droid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -116008,7 +116069,7 @@
     "traits": [
       {
         "name": "Squad",
-        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -116581,7 +116642,7 @@
     "hitdice": "8d12 + 16",
     "speed": "30ft.",
     "ability_scores": {
-      "prof_bonus": 3,
+      "prof_bonus": 2,
       "strength": 14,
       "dexterity": 15,
       "constitution": 14,
@@ -116591,13 +116652,13 @@
     },
     "saves": {
       "strengthSave": {
-        "value": 5,
+        "value": 4,
         "prof": 1,
         "adv": null,
         "bonus": 0
       },
       "dexteritySave": {
-        "value": 5,
+        "value": 4,
         "prof": 1,
         "adv": null,
         "bonus": 0
@@ -116653,7 +116714,7 @@
         "adv": null
       },
       "stealth": {
-        "value": 5,
+        "value": 4,
         "prof": 1,
         "bonus": 0,
         "adv": null
@@ -116731,13 +116792,13 @@
         "adv": null
       },
       "perception": {
-        "value": 4,
+        "value": 3,
         "prof": 1,
         "bonus": 0,
         "adv": null
       },
       "survival": {
-        "value": 4,
+        "value": 3,
         "prof": 1,
         "bonus": 0,
         "adv": null
@@ -116790,8 +116851,8 @@
       "Petrified",
       "Prone",
       "Restrained",
-      "Stunned",
-      "shocked"
+      "shocked",
+      "Stunned"
     ],
     "traits": [
       {
@@ -116801,7 +116862,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium creature. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium creature. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -116944,14 +117005,14 @@
           "3": []
         }
       },
-      "caster_dc": 11,
-      "caster_sab": 3,
+      "caster_dc": 10,
+      "caster_sab": 2,
       "caster_mod": 0,
-      "innate_dc": 11,
-      "innate_sab": 3,
+      "innate_dc": 10,
+      "innate_sab": 2,
       "innate_mod": 0
     },
-    "passiveperc": 14
+    "passiveperc": 13
   },
   {
     "name": "Squad: Trooper, Scout",
@@ -117181,8 +117242,8 @@
       "Petrified",
       "Prone",
       "Restrained",
-      "Stunned",
-      "shocked"
+      "shocked",
+      "Stunned"
     ],
     "traits": [
       {
@@ -117192,7 +117253,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium creature. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium creature. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -121763,7 +121824,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -122155,7 +122216,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -122946,7 +123007,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -123369,7 +123430,7 @@
       },
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -124671,7 +124732,7 @@
     "traits": [
       {
         "name": "Squad",
-        "description": "The squad can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.\n",
+        "description": "The squad can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The squad is immune to any power or effect that would alter its form.\n",
         "automation": null
       },
       {
@@ -125826,7 +125887,7 @@
       },
       {
         "name": "Squad",
-        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The fireteam can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
@@ -126289,7 +126350,7 @@
       },
       {
         "name": "Squad",
-        "description": "The fireteam can occupy another creature\u00e2\u20ac\u2122s space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form, but has vulnerability to damage dealt from abilities or attacks that target an area, such as certain powers or burst attacks.",
+        "description": "The fireteam can occupy another creature's space and vice versa, and can move through openings large enough for a Medium humanoid. The fireteam is immune to any power or effect that would alter its form.",
         "automation": null
       },
       {
