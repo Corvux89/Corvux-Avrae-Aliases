@@ -1,31 +1,95 @@
 <drac2>
 args = &ARGS&
+a = argparse(args)
+com = combat()
+level = a.last('l',1, type_=int)
 conditions = load_json(get_gvar('4c60fcdd-3247-4d28-99b9-d222b763f9ac'))
+save = a.last('save').lower()[:3] if a.last('save') else None
+dc = a.last('dc', 10, type_=int)
+
+SaveTypes = ["dex", "str", "con", "wis", "int", "cha"]
+StatTypes = ["dexterity", "strength", "constitution", "wisdom", "intelligence", "charisma"]
 
 if len(args)>1 and "-" not in args[1]:
     lookup = " ".join([args[0], args[1]])
+    
 elif len(args) == 0:
-    return err(f"Need to lookup something. Ex: `{ctx.prefix}swcondition blinded`")
+    return f'''help {ctx.alias} -here'''
 else:
     lookup = args[0]
 
+def get_description(condition):
+    start = 0
+    desc = []
+    while start < len(condition.get('desc')):
+        end = start + 1024
+        while end < len(condition.get('desc')) and condition.get('desc')[end] != ' ':
+            end -= 1
+        if end == start:
+            end = start + 1024
+        desc.append(condition.get('desc')[start:end].strip())
+        start = end
+    return desc
+
+def replace_key(value, combatant):
+    return value.replace('$half_max_hp$', f'{combatant.max_hp//2}')
+
+
 for c in conditions:
     if lookup.lower() in c.get('name').lower():
-        start = 0
-        desc = []
-        while start < len(c.get('desc')):
-            end = start + 1024
-            while end < len(c.get('desc')) and c.get('desc')[end] != ' ':
-                end -= 1
-            if end == start:
-                end = start + 1024
-            desc.append(c.get('desc')[start:end].strip())
-            start = end
+        desc = get_description(c)
+        if not (targets := a.get('t')):
+            
+            out = f'''embed -title "Condition: {c.get('name')}" '''
+            for d in desc:
+                out += f''' -f "{'Description' if desc.index(d) == 0 else ''}|{d}"'''
+            return out
+        else:
+            combatants = []
 
-        out = f'''embed -title "Condition: {c.get('name')}" '''
-        for d in desc:
-            out += f''' -f "{'Description' if desc.index(d) == 0 else ''}|{d}"'''
-        return out
+            if com:
+                for x in targets:
+                    if (combatant := com.get_combatant(x)):
+                        combatants.append(combatant)
+                    else:
+                        combatants += com.get_group(x).combatants
+                
+                if 'effects' in c:
+                    fields = []
+                    effect = c.get('effects', [])[level-1]
+                    caster = com.me if 'caster' in args else None
+                    s = None
 
-return f'''embed -title "Condition not found" -desc "Cannot find a condition by the name `{lookup}`" '''
+                    for combatant in combatants:
+                        passive_effects = effect.get('effects')
+                        f_str = []
+
+                        if passive_effects:
+                            for k,v in passive_effects.items():
+                                if typeof(passive_effects[k]) == 'SafeList':
+                                    for ix, x in enumerate(passive_effects[k]):
+                                        passive_effects[k][ix] = replace_key(x, combatant)
+                                else:
+                                    passive_effects[k] = replace_key(v, combatant)
+                        if save:
+                            s = combatant.save(save, True if 'adv' in args else False if 'dis' in args else None)
+                            f_str.append(f'''**{StatTypes[SaveTypes.index(save)].title()} Save:** {s}; {'Automatic Failure!' if 'fail' in args else 'Automatic Pass!' if 'pass' in args else 'Failure!' if s.total < dc else 'Success!'}''')
+                        
+                        if (save and ('fail' in args or s.total < dc)) or not save:
+                            eff = combatant.add_effect(effect.get('name'), desc=effect.get('desc'), duration=a.last('dur'), end=True if 'end' in args else None, passive_effects=passive_effects, tick_on_combatant_id=caster.id if caster else None, buttons=effect.get('buttons'))
+                            f_str.append(f"**Effect**: {str(eff)}")
+                        
+                        details = "\n".join(f_str)
+                        fields.append(f''' -f "{combatant.name}|{details}"''')
+                            
+                    for d in desc:
+                        fields.append(f''' -f "{'Effect' if desc.index(d) == 0 else ''}|{d}"''')
+
+                    field_str = "\n".join(fields)
+                    return f'''embed -title "{c.get('name').replace('$name$', caster.name if caster else ctx.author.display_name)}"  {field_str}'''
+                else:
+                    return f'''embed -title "Condition automation not found" -desc "Cannot find any automation for `{lookup}`" '''
+            else:
+                pass
+return f'''help {ctx.alias} -here'''
 </drac2>
