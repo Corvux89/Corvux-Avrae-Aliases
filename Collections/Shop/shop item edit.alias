@@ -1,0 +1,57 @@
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+if not args:
+    return f"help {ctx.alias} -here"
+
+# Setup Shop
+if shop := s.get_shop():
+    if not s.is_manager():
+        output = f'''-title "Shopping Disaster" -desc "You're a shopper not a manager/owner."'''
+    inventory = shop.get('inventory', {})
+    item = s.get_item(args[0])
+
+    if not item:
+        output = f'''-title "Shopping Disaster" -desc "This item is not in the shops inventory.\n\nUse `{ctx.prefix}{ctx.alias} item edit` or `{ctx.prefix}{ctx.alias} item add' instead."'''
+        return s.build_embed(output)
+
+    if a.last('name'):
+        remove = item.copy()
+        remove["quantity"] = 0
+        s.modify_inventory(remove)
+
+    item["name"] = a.last('name', item.get('name'), type_=str)
+    item["quantity"] = a.last('qty', item.get('quantity', 1), type_=int)
+    item["price"] = a.last('p', item.get('price', 0), type_=int)
+    item["currency"] = a.last('c', item.get('currency', 'gp'), type_=str)
+    item["category"] = a.last('cat', item.get('category'), type_=str)
+    item["image_url"] = a.last('img', item.get('image_url'), type_=str)
+
+    if a.last('m'):
+        item["margin"] = a.last('m', item.get('margin'))
+
+    success, i = s.modify_inventory(item)
+    
+    if not success:
+        output = f'''-title "Shopping Disaster" -desc "{i}"'''
+        return s.build_embed(output)
+
+    output = (f'''-title "{item.get("name")} edited" 
+                  -desc "
+                  **Category**: {item.get('category','')}
+                  **Quantity**: {item.get('quantity'):,}
+                  **Price**: {item.get('price'):,} {item.get('currency')}
+                  **Margin**: {item.get('margin')}" -thumb "{item.get('image_url')}"''')      
+
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+return s.build_embed(output)
+</drac2>

@@ -1,0 +1,75 @@
+embed
+<drac2>
+DEFAULT_COIN_EMOJIS = {
+    "cp": "<:DDBCopper:953399505129205830>",
+    "sp": "<:DDBSilver:953399505124995122>",
+    "ep": "<:DDBElectrum:953399505129205831>",
+    "gp": "<:DDBGold:953399505062080594>",
+    "pp": "<:DDBPlatinum:953399504739106847>"
+}
+
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+user_id = args[0] if args else None
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+# Setup Shop
+if shop := s.get_shop():
+    logs = shop.get('logs')
+    desc = ""
+    debts = {"pp": 0, "gp": 0, "ep": 0, "sp": 0, "cp": 0}
+    credits = {"pp": 0, "gp": 0, "ep": 0, "sp": 0, "cp": 0}
+    total = {"pp": 0, "gp": 0, "ep": 0, "sp": 0, "cp": 0}
+    transactions = 0
+
+    # Eventually see if we can get this to have filters too
+    for log in logs:
+        if user_id:
+            try:
+                if int(user_id) != log.get('user_id'):
+                    continue
+            except:
+                err("Parameter must be a user id")
+        transactions += 1
+        if log.get('type') == 'buy':
+            debts[log.get('currency')] += log.get('cost')
+            total[log.get('currency')] += log.get('cost')
+
+            desc += (f'''**{log.get('quantity'):,}x{log.get('item')} for +{log.get('cost'):,}{log.get('currency')}**:
+                         *Shop*  --> <@{log.get('user_id')}> ({log.get('char')})
+                         <t:{log.get('timestamp')}:f>
+                         
+                         ''')
+        else:
+            credits[log.get('currency')] += log.get('cost')
+            total[log.get('currency')] -= log.get('cost')
+            desc += (f'''**{log.get('quantity'):,}x{log.get('item')} for -{log.get('cost'):,}{log.get('currency')}**:
+                         <@{log.get('user_id')}> ({log.get('char')}) --> *Shop*
+                         <t:{log.get('timestamp')}:f>
+                         
+                         ''')
+
+    debit_str = " ".join(f"{DEFAULT_COIN_EMOJIS.get(k)} {v:,}{k}" for k, v in debts.items())
+    credit_str = " ".join(f"{DEFAULT_COIN_EMOJIS.get(k)} {v:,}{k}" for k, v in credits.items())
+    total_str = " ".join(f"{DEFAULT_COIN_EMOJIS.get(k)} {v:,}{k}" for k,v in total.items())
+
+    desc += (f'''**Summary of {transactions} transactions**:
+                 **Total Debts**:   {debit_str}
+                 **Total Credits**: {credit_str}
+                 
+                 **Totals**: {total_str}''')
+
+
+    output = f'''-title "{shop.get('name')} Transaction Log{f' for `{user_id}`' if user_id else ''}" -desc "{desc}"'''    
+
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+
+return s.build_embed(output)
+</drac2>

@@ -242,10 +242,8 @@
   {
     "name": "Adolescent Reek",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adolescent Varactyl",
@@ -255,11 +253,9 @@
   },
   {
     "name": "Adolescent Varactyl",
-    "ability": "Trampling Charge (Gorgon)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
-    "automation": null
+    "ability": "Trampling Charge",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adult Bantha",
@@ -374,10 +370,8 @@
   {
     "name": "Adult Reek",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 18 (4d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Adult Varactyl",
@@ -387,11 +381,9 @@
   },
   {
     "name": "Adult Varactyl",
-    "ability": "Trampling Charge (Gorgon)",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
-    "automation": null
+    "ability": "Trampling Charge",
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Ancient Rancor",
@@ -724,10 +716,8 @@
   {
     "name": "Boar-wolf",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the boar-wolf moves at least 20 feet toward a target and hits it with a tusk attack on that turn, the target takes an extra 7 (2d6) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Boar-wolf",
@@ -1594,10 +1584,8 @@
   {
     "name": "Horned Kath Hound",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the hound moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the hound can make another attack with its tusks against it as a bonus action.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Hrumph",
@@ -1608,10 +1596,8 @@
   {
     "name": "Hrumph",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the hrumph moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Hssiss",
@@ -2492,10 +2478,8 @@
   {
     "name": "Moof",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the moof moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Mott",
@@ -2596,10 +2580,8 @@
   {
     "name": "Nerf",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the nerf moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Nuna",
@@ -3856,10 +3838,8 @@
   {
     "name": "Woodoo",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the woodoo moves at least 20 feet straight toward a target and then hits it with a beak attack on the same turn, the target takes an extra 11 (2d10) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Wookiee Berserker",
@@ -3926,10 +3906,8 @@
   {
     "name": "Wraid",
     "ability": "Charge",
-    "complete": false,
-    "source": "Resolute 2.0 Bestiary",
-    "description": "If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
-    "automation": null
+    "complete": true,
+    "source": "Resolute 2.0 Bestiary"
   },
   {
     "name": "Wyyyschokk",

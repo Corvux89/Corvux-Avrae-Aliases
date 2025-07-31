@@ -1593,7 +1593,7 @@
                 "effects": [
                     {
                         "type": "damage",
-                        "damage": "{caster.spellbook.spell_mod}{'' if caster.levels.total_level < 5 else '+1d8' if caster.levels.total_level < 11 else '+2d8' if caster.levels.total_level < 17 else '+3d8' } [kinetic]"
+                        "damage": "{'0' if not caster or caster.levels.total_level < 5 else '1d8' if caster.levels.total_level < 11 else '2d8' if caster.levels.total_level < 17 else '3d8' } [psychic]"
                     }
                 ]
             },
@@ -3111,7 +3111,7 @@
                                     }
                                 ],
                                 "label": "Let it Burn",
-                                "verb": "Lets the Flames Go Out",
+                                "verb": "Continues to burn",
                                 "style": "4",
                                 "defaultCastingMod": "max(intelligenceMod,0)"
                             }
@@ -4575,19 +4575,6 @@
         "name": "Dark Rejuvenation",
         "level": 1,
         "school": "Force",
-        "classes": "Dark",
-        "subclasses": "",
-        "casttime": "1 bonus action",
-        "range": "Self",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "Concentration, up to 1 minute",
-        "ritual": false,
-        "description": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher.",
-        "concentration": true,
         "automation": [
             {
                 "type": "target",
@@ -4597,21 +4584,16 @@
                         "type": "ieffect2",
                         "name": "Dark Rejuvenation - Parent",
                         "duration": "10 if spell_level < 2 else 100 if spell_level < 3 else 3600",
-                        "desc": "{spell_level}",
-                        "parent": "ieffect",
                         "attacks": [
                             {
                                 "attack": {
-                                    "name": "Dark Rejuvenation - THP",
                                     "_v": 2,
-                                    "verb": "uses",
-                                    "activation_type": 8,
-                                    "list_display_override": "Use `-amt` to specify the amount of damage dealt",
+                                    "name": "Dark Rejuvenation - THP",
                                     "automation": [
                                         {
                                             "type": "counter",
                                             "counter": "ishouldneverexist",
-                                            "amount": 0,
+                                            "amount": "0",
                                             "errorBehaviour": "ignore"
                                         },
                                         {
@@ -4625,8 +4607,7 @@
                                                         {
                                                             "type": "variable",
                                                             "name": "maxAmount",
-                                                            "value": "ieffect.desc.split()[-1] if (int(ieffect.desc.split()[-1])>=3 and int(ieffect.desc.split()[-1]) > spell) else spell",
-                                                            "onErrror": "spell"
+                                                            "value": "ieffect.desc.split()[-1] if (int(ieffect.desc.split()[-1])>=3 and int(ieffect.desc.split()[-1]) > spell) else spell"
                                                         },
                                                         {
                                                             "type": "temphp",
@@ -4646,10 +4627,15 @@
                                                 }
                                             ]
                                         }
-                                    ]
+                                    ],
+                                    "verb": "uses",
+                                    "activation_type": 8,
+                                    "list_display_override": "Use `-amt` to specify the amount of damage dealt"
                                 }
                             }
-                        ]
+                        ],
+                        "desc": "{spell_level}",
+                        "parent": "ieffect"
                     }
                 ]
             },
@@ -4657,7 +4643,20 @@
                 "type": "text",
                 "text": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher."
             }
-        ]
+        ],
+        "classes": "Dark",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Concentration, up to 1 minute",
+        "ritual": false,
+        "description": "Through the Dark Side, you thrive on the destruction of your enemies. For the duration of this power, at the start of each of your turns, if you made one or more melee attacks that inflicted at least 5 points of damage since the start of your previous turn, you gain 1 temporary hit point for every 5 points of damage you inflicted with your most damaging attack. The maximum number of temporary hit points you can gain in this way in one turn is equal to your forcecasting ability modifier.\n\n**Force Potency.** When you cast this power using a force slot of 2nd level or higher, the duration of the power is concentration, up to 10 minutes. If you use a force slot of 3rd level or higher, the duration is 1 hour. Using a force slot of 3rd level or higher grants a duration that doesn't require concentration. In addition, the maximum number of temporary hit points you can gain from this power in one turn is equal to your forcecasting ability modifier or the level of the slot you used to cast this power, whichever is higher.",
+        "concentration": true
     },
     {
         "name": "Dark Shear",
@@ -13493,6 +13492,10 @@
                         ],
                         "desc": "If the target willingly takes a reaction before the start of your next turn, it immediately takes ion damage, and the power ends.\n{1 if level < 5 else 2 if level < 11 else 3 if level < 17 else 4}d6",
                         "tick_on_caster": true
+                    },
+                    {
+                        "type": "text",
+                        "text": "As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in an ionic discharge. If the target willingly takes a reaction before the start of your next turn, it immediately takes 1d6 ion damage, and the power ends. \r\n\r\nThis power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra 1d6 ion damage to the target, and the damage the target takes for taking reactions increases to 2d6. Both damage rolls increase by 1d6 at 11th level and 17th level."
                     }
                 ]
             }
@@ -20628,7 +20631,7 @@
         },
         "duration": "Instantaneous",
         "ritual": false,
-        "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d8. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d6 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+        "description": "In response to being attacked, you raise your weapon to attempt to deflect. When you you use this power, the damage you take from the attack is reduced by 1d8. If you reduce the damage to 0, you're wielding a lightweapon or vibroweapon, and the damage is energy or ion, you can reflect the attack at a target within range as part of the same reaction. Make a ranged force attack at a target you can see. The attack has a normal range of 20 feet and a long range of 60 feet. On a hit, the target takes the triggering attack's normal damage. \n\nThe power's damage reduction increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
         "concentration": false
     },
     {
@@ -26308,24 +26311,6 @@
         "concentration": true
     },
     {
-        "name": "Vengeful Charge",
-        "level": 0,
-        "school": "Force",
-        "classes": "Dark",
-        "subclasses": "",
-        "casttime": "1 action",
-        "range": "Varies",
-        "components": {
-            "verbal": false,
-            "somatic": false,
-            "material": ""
-        },
-        "duration": "1 round",
-        "ritual": false,
-        "description": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails.\n\nOn a hit, the target suffers the attack's normal effects, and it becomes afflicted with an irrational hatred of you. Until the end of its next turn, it cannot willingly move away from you. If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends.\n\nAt 5th level, the attack deals an extra 1d8 psychic damage to the target, and the damage the target takes upon hitting or missing you with an attack increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
-        "concentration": false
-    },
-    {
         "name": "Venomous Strike",
         "level": 0,
         "school": "Tech",
@@ -27409,7 +27394,7 @@
                             }
                         ],
                         "end": true,
-                        "conc": true,
+                        "conc": false,
                         "desc": "You ignite a fiery propulsion system, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks. If you have a speed other than walking, such as flying or swimming, this speed increase applies to that speed as well.\n\nWhen you move within 5 feet of a creature or object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn."
                     }
                 ]
@@ -27609,6 +27594,191 @@
         "duration": "Instantaneous",
         "ritual": false,
         "description": "You send out a burst of magnetic energy, either pushing or pulling on all metal around you. All creatures wearing metal armor or made of metal within 60 feet of you must make a Strength saving throw. On a failed save, a creature takes 2d6 kinetic damage, is knocked prone and is either pulled 20 feet towards you or pushed 20 feet away from you. On a successful save, a creature takes half as much damage, and isn't pushed or knocked prone.\n\nIn addition, all unsecured metal objects are either pulled within 5 feet of you or are pushed 60 feet away from you.\n\nOvercharge Tech. When you cast this power using a tech slot of 3rd or higher, the damage increases by 1d6 for each slot level above 2nd.",
+        "concentration": false
+    },
+    {
+        "name": "Magma Jet",
+        "level": 3,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "roll",
+                "dice": "5d8 [fire]",
+                "name": "damage",
+                "higher": {
+                    "3": "1d8",
+                    "4": "1d8",
+                    "5": "2d8",
+                    "6": "3d8",
+                    "7": "4d8",
+                    "8": "5d8",
+                    "9": "6d8"
+                }
+            },
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Magma Jet",
+                        "duration": "1",
+                        "attacks": [
+                            {
+                                "attack": {
+                                    "_v": 2,
+                                    "name": "Magma Jet – Start of Next Turn",
+                                    "automation": [
+                                        {
+                                            "type": "target",
+                                            "target": "all",
+                                            "effects": [
+                                                {
+                                                    "type": "damage",
+                                                    "damage": "2d8 [fire]",
+                                                    "fixedValue": true
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "proper": true,
+                                    "activation_type": 2
+                                }
+                            }
+                        ],
+                        "end": true,
+                        "tick_on_caster": true
+                    }
+                ]
+            },
+            {
+                "type": "target",
+                "target": "each",
+                "effects": [
+                    {
+                        "type": "save",
+                        "stat": "dex",
+                        "fail": [
+                            {
+                                "type": "damage",
+                                "damage": "{damage}",
+                                "fixedValue": true
+                            },
+                            {
+                                "type": "ieffect2",
+                                "name": "Magma Jetted",
+                                "duration": "1",
+                                "desc": "Targets who failed the saving throw take 2d8 fire damage at the start of the caster's next turn.",
+                                "tick_on_caster": true
+                            }
+                        ],
+                        "success": [
+                            {
+                                "type": "damage",
+                                "damage": "({damage})/2",
+                                "fixedValue": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You fire a cone of magma at your enemies. Each creature in a 30-foot cone must make a Dexterity saving throw. A creature takes 5d8 fire damage on a failed save, or half as much damage on a successful one. In addition, each creature that failed the saving throw takes 2d8 fire damage at the start of your next turn. The ground within the affected area becomes difficult terrain for one minute.\n\nThe magma ignites any flammable objects in the area that aren't being worn or carried.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the initial damage increases by 1d8 for each slot level above 3rd."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Self (30-foot cone)",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "Instantaneous",
+        "ritual": false,
+        "description": "You fire a cone of magma at your enemies. Each creature in a 30-foot cone must make a Dexterity saving throw. A creature takes 5d8 fire damage on a failed save, or half as much damage on a successful one. In addition, each creature that failed the saving throw takes 2d8 fire damage at the start of your next turn. The ground within the affected area becomes difficult terrain for one minute.\n\nThe magma ignites any flammable objects in the area that aren't being worn or carried.\n\n***Overcharge Tech.*** When you cast this power using a tech slot of 4th level or higher, the initial damage increases by 1d8 for each slot level above 3rd.",
+        "higherlevels": "",
+        "concentration": false
+    },
+    {
+        "name": "Vengeful Charge",
+        "level": 0,
+        "school": "Force",
+        "automation": [
+            {
+                "type": "target",
+                "target": "all",
+                "effects": [
+                    {
+                        "type": "roll",
+                        "dice": "1d1",
+                        "name": "tast",
+                        "cantripScale": true,
+                        "hidden": true
+                    },
+                    {
+                        "type": "damage",
+                        "damage": "{{lastRoll-1}}d8 [psychic]",
+                        "cantripScale": false
+                    },
+                    {
+                        "type": "ieffect2",
+                        "name": "Vengefully Charged",
+                        "duration": "1",
+                        "buttons": [
+                            {
+                                "automation": [
+                                    {
+                                        "type": "target",
+                                        "target": "self",
+                                        "effects": [
+                                            {
+                                                "type": "damage",
+                                                "damage": "{ieffect.desc.split()[-1]} [psychic]",
+                                                "higher": {
+                                                    "1": "",
+                                                    "5": ""
+                                                },
+                                                "cantripScale": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "- Until the end of its next turn, it cannot willingly move away from you. \n- If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends."
+                                    }
+                                ],
+                                "label": "Vengeful Charge Feedback",
+                                "verb": "takes damage from Vengeful Charge",
+                                "style": "4",
+                                "defaultCastingMod": "charismaMod"
+                            }
+                        ],
+                        "end": true,
+                        "desc": "{{\"1d8\"}}{{'' if level < 5 else \"+1d8\" if level < 11 else \"+2d8\" if level < 17 else \"+3d8\"}}"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails.\n\nOn a hit, the target suffers the attack's normal effects, and it becomes afflicted with an irrational hatred of you. Until the end of its next turn, it cannot willingly move away from you. If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends.\n\nAt 5th level, the attack deals an extra 1d8 psychic damage to the target, and the damage the target takes upon hitting or missing you with an attack increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level."
+            }
+        ],
+        "classes": "",
+        "subclasses": "",
+        "casttime": "1 action",
+        "range": "Self (Varies)",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "1 round",
+        "ritual": false,
+        "description": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails.\n\nOn a hit, the target suffers the attack's normal effects, and it becomes afflicted with an irrational hatred of you. Until the end of its next turn, it cannot willingly move away from you. If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends.\n\nAt 5th level, the attack deals an extra 1d8 psychic damage to the target, and the damage the target takes upon hitting or missing you with an attack increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
+        "higherlevels": "",
         "concentration": false
     }
 ]

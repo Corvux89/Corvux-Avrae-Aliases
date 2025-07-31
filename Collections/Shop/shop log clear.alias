@@ -1,0 +1,27 @@
+embed
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+# Setup Shop
+if shop := s.get_shop():
+    shop["logs"] = []
+    
+    s.update_shop(shop)
+
+    output = f'''-title "{shop.get('name')} Transaction Log" -desc "{desc}"'''    
+
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+
+output += f''' -footer "{ctx.prefix}{ctx.alias} v1.0 | Created by Corvux"'''
+
+return output
+</drac2>

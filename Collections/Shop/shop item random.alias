@@ -1,0 +1,31 @@
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+if not args:
+    return f"help {ctx.alias} -here"
+
+# Setup Shop
+if shop := s.get_shop():
+    if not s.is_manager():
+        output = f'''-title "Shopping Disaster" -desc "You're a shopper not a manager/owner."'''
+        return s.build_embed(output)
+        
+    items = s.randomize_inventory(int(args[0]))
+
+    item_str = "\n".join(f"{k:<26}  {v:>6,}" for k,v in items.items())
+
+    desc = (f'''```{item_str}```''')
+
+    output = (f'''-title "Done Rolling inventory!" -desc "Items Added\n{desc}"''')
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+return s.build_embed(output)
+</drac2>

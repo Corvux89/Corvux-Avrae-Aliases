@@ -3,7 +3,7 @@ c = character()
 com = combat()
 a = argparse(&ARGS&)
 targ = a.get('t')
-cover = &ARGS&[0]
+cover = &ARGS&[0] if &ARGS& else None
 dur = 1
 
 if not cover:

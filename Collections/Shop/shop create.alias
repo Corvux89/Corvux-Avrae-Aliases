@@ -1,0 +1,28 @@
+embed
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+if not args:
+    return f"help {ctx.alias} create -here"
+
+# Setup Shop
+if shop := s.get_shop():
+    output = f'''-desc "A shop already exists in this chanel. Either use `{ctx.prefix}{ctx.alias} rename` to rename it or `{ctx.prefix}{ctx.alias} close` to close it before running this command."'''
+else:
+    shop_name = args[0]
+    shop = s.new_shop(shop_name,
+                      buy=a.last('nobuy', True, type_=bool),
+                      margin=a.last('margin', 1, type_=float))
+    s.update_shop(shop)
+
+    output =  f'''-title "{ctx.author.display_name} created a shop called {shop_name}" -desc "To manage the shop use the following commands:\n\n - `{ctx.prefix}{ctx.alias}`"'''
+
+return s.build_embed(output)
+</drac2>

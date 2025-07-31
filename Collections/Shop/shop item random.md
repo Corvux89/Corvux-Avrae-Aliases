@@ -1,0 +1,1 @@
+Randomly generate inventory

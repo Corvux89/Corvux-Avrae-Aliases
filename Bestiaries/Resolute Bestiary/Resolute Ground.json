@@ -6537,7 +6537,55 @@
       {
         "name": "Charge",
         "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "15",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [
@@ -6864,9 +6912,52 @@
     "condition_immune": [],
     "traits": [
       {
-        "name": "Trampling Charge (Gorgon)",
+        "name": "Trampling Charge",
         "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 14,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -9278,7 +9369,55 @@
       {
         "name": "Charge",
         "description": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 18 (4d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "4d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "15",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the reek moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 18 (4d8) kinetic damage. If the target is Large or smaller, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [
@@ -9605,9 +9744,52 @@
     "condition_immune": [],
     "traits": [
       {
-        "name": "Trampling Charge (Gorgon)",
+        "name": "Trampling Charge",
         "description": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Trampling Charge",
+          "_v": 2,
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": 14,
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the varactyl moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the varactyl can make another attack with its bite against it as a bonus action."
+            }
+          ]
+        }
       }
     ],
     "actions": [
@@ -18384,7 +18566,55 @@
       {
         "name": "Charge",
         "description": "If the boar-wolf moves at least 20 feet toward a target and hits it with a tusk attack on that turn, the target takes an extra 7 (2d6) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d6 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "13",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the boar-wolf moves at least 20 feet toward a target and hits it with a tusk attack on that turn, the target takes an extra 7 (2d6) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       },
       {
         "name": "Keen Ears and Nose",
@@ -40371,7 +40601,51 @@
       {
         "name": "Charge",
         "description": "If the hound moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the hound can make another attack with its tusks against it as a bonus action.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "13",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the hound moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the hound can make another attack with its tusks against it as a bonus action."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       },
       {
         "name": "Pack Tactics",
@@ -40700,7 +40974,55 @@
       {
         "name": "Charge",
         "description": "If the hrumph moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "15",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the hrumph moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [
@@ -62334,7 +62656,55 @@
       {
         "name": "Charge",
         "description": "If the moof moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "15",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the moof moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       },
       {
         "name": "Beast of Burden",
@@ -65553,7 +65923,55 @@
       {
         "name": "Charge",
         "description": "If the nerf moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "15",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the nerf moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [
@@ -99173,7 +99591,55 @@
       {
         "name": "Charge",
         "description": "If the woodoo moves at least 20 feet straight toward a target and then hits it with a beak attack on the same turn, the target takes an extra 11 (2d10) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d10 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "13",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the woodoo moves at least 20 feet straight toward a target and then hits it with a beak attack on the same turn, the target takes an extra 11 (2d10) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [
@@ -101003,7 +101469,55 @@
       {
         "name": "Charge",
         "description": "If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
-        "automation": null
+        "automation": {
+          "name": "Charge",
+          "automation": [
+            {
+              "type": "target",
+              "target": "each",
+              "effects": [
+                {
+                  "type": "damage",
+                  "damage": "2d8 [kinetic]"
+                },
+                {
+                  "type": "save",
+                  "stat": "str",
+                  "dc": "10",
+                  "success": [],
+                  "fail": [
+                    {
+                      "type": "ieffect2",
+                      "name": "Prone",
+                      "duration": "-1",
+                      "effects": {
+                        "attack_advantage": "-1"
+                      },
+                      "buttons": [
+                        {
+                          "automation": [
+                            {
+                              "type": "remove_ieffect"
+                            }
+                          ],
+                          "label": "Stand Up",
+                          "verb": "stands up",
+                          "style": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone."
+            }
+          ],
+          "_v": 2,
+          "activation_type": 2
+        }
       }
     ],
     "actions": [

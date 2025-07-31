@@ -1,0 +1,24 @@
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+# Setup Shop
+if shop := s.get_shop():
+    if not s.is_manager():
+        output = f'''-title "Shopping Disaster" -desc "You're a shopper not a manager/owner."'''
+        return s.build_embed(output)
+
+    s.close_shop()
+
+    output = f'''-title "{shop.get('name')} is now closed."'''
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+return s.build_embed(output)
+</drac2>

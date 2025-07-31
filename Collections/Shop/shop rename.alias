@@ -1,0 +1,30 @@
+embed
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+if not args:
+    return f"help {ctx.alias} -here"
+
+# Setup Shop
+if shop := s.get_shop():
+    if not s.is_manager():
+        output = f'''-title "Shopping Disaster" -desc "You're a shopper not a manager/owner."'''
+    shop_name = " ".join(args)
+    shop['name'] = shop_name
+    s.update_shop(shop)
+
+    output = f'''-title "Shop renamed to {shop_name}"'''    
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+
+output += f''' -footer "{ctx.prefix}{ctx.alias} v1.0 | Created by Corvux"'''
+
+return output
+</drac2>

@@ -1,0 +1,42 @@
+<drac2>
+# Arguments
+using(s='2ef273f3-efd8-4feb-bbe9-692f592a3bd0')
+args = &ARGS&
+a = argparse(args)
+
+# Initial Validation
+if not combat():
+    return err("Channel must be in combat for this collection to work.")
+
+if not args:
+    return f"help {ctx.alias} -here"
+
+# Setup Shop
+if shop := s.get_shop():
+    inventory = shop.get('inventory', {})
+    item = inventory.get(args[0])
+
+    if not item:
+        output = f'''-title "Shopping Disaster" -desc "This item is not in the shops inventory"'''
+
+        return s.build_embed(output)
+
+    success, log = s.buy_item(item, a.last('qty', 1, type_=int), bagname=a.last('bag', character().get_cvar('shopping_bag')))
+
+    if success:
+        output = (f'''-title "{character().name} makes a purchase!" 
+                      -desc "**Item**: {item.get('name')}
+                             **Price**: {item.get('price'):,}{item.get('currency')}
+                             
+                             The shopkeeper hands over **{log.get('quantity'):,}x{item.get('name')}** and it was automatically added to your `!bag {log.get('bag')}` pouch!
+
+                             💰You pay {log.get('cost'):,}{log.get('currency')} in exchange."
+                      -thumb "{image}"''')
+    else:
+        output = f'''-title "Shopping Disaster" -desc "{log}"'''
+
+else:
+    output = f'''-title "Shopping Disaster" -desc "A shop doesn't exist in this channel yet. Please use `{ctx.prefix}{ctx.alias} create` first."'''
+
+return s.build_embed(output)
+</drac2>
