@@ -189,7 +189,9 @@ def buy_item(item, quantity, **kwargs):
 
     baglib.modify_item(bagsLoaded, item.get('name'), quantity, bagname, True)
 
-    modify_inventory(item.get('name'), item.get('quantity')-quantity, item.get('price'), item.get('currency'))
+    item['quantity']-=quantity
+
+    modify_inventory(item)
 
     baglib.save_bags(bagsLoaded)
 
