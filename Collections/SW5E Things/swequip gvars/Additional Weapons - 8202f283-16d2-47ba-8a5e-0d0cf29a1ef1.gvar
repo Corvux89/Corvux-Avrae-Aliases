@@ -206,7 +206,7 @@ def sonorous(attack, args):
               "end": True}
     damage = {"type": "damage", "damage": "1d4 [sonic]", "fixedValue": True}
 
-    save = {"type": "save", "stat": "dex", "dc": f"{dc}", "fail": [damage, effect], "success": []}
+    save = {"type": "save", "stat": "con", "dc": f"{dc}", "fail": [damage, effect], "success": []}
 
     for n in a.automation:
         if n.type == "target":

@@ -25,6 +25,11 @@ default_settings = {
 }
 
 settings = load_json(get_svar("shops", dump_json(default_settings)))
+if not 'shopkeeper_role' in settings:
+    settings.update({"shopkeeper_role": "Shopkeeper"})
+if not 'default_bag' in settings:
+    settings.update({"default_bag": "Shopping Bag"})
+
 item_reference = load_json(get_svar("shop_items", "[]"))
 
 # Helpers

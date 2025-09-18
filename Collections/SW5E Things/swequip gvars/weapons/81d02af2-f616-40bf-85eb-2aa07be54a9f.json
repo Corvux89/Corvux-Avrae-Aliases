@@ -4222,7 +4222,7 @@
             },
             {
                 "type": "text",
-                "text": "Dexterity 13, Dire 1, Luminous, Versatile (1d8)"
+                "text": "Dexterity 13, Dire 1, Luminous, Versatile (1d12)"
             }
         ],
         "_v": 2
@@ -4239,7 +4239,7 @@
                         "hit": [
                             {
                                 "type": "damage",
-                                "damage": "1d8+{strengthMod} [energy]",
+                                "damage": "1d12+{strengthMod} [energy]",
                                 "overheal": false
                             }
                         ],
@@ -4250,7 +4250,7 @@
             },
             {
                 "type": "text",
-                "text": "Dexterity 13, Dire 1, Luminous, Versatile (1d8)"
+                "text": "Dexterity 13, Dire 1, Luminous, Versatile (1d12)"
             }
         ],
         "_v": 2

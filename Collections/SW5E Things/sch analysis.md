@@ -12,5 +12,6 @@ __Variations__
                 -> `Rancor's Discipline` will work if setup via automated actions
 **Geneticist**  -> Will account for Mutagenic Transformation
                 -> `Adapted Hide` will work as well if setup via automated actions
+                -> `Mutagenic Hardiness` will work as well if setup via automated actions
 **Politician**  -> Weill setup Motivating Diplomat
                 -> `Charming Feint` will work as well if setup via automated actions

@@ -60,19 +60,22 @@ if v:
             if tar.name == com.me.name:
                 if subclass == "Geneticist" and lvl >= 6:
                     ac_mod = mod if "AdaptedHide" in discoveries else ceil(mod/2)
+                    trans_buttons = [{"label":"End Mutagenic Transformation","verb":"transforms back","automation":[{"type":"remove_ieffect"}]}]
+
+                    if "MutagenicHardiness" in discoveries:
+                        trans_buttons.append({"label":"Mutagenic Hardiness - Start of Turn","verb":"beefs up","style":3,"automation":[{"type":"target","target":"self","effects":[{"type":"temphp","amount":f"{lvl//2}+{mod}"}]},{"type":"text","text":"Your hit point maximum increases by a number equal to your level, and it increases by 1 every time you gain a level. When you undergo your mutagenic transformation, and at the beginning of each of your turns, you gain temporary hit points equal to your half your scholar level + your Critical Analysis ability modifer for the duration."}]})
+
                     buttons.append({"label": "Use Mutagenic Transformation", "verb": "begins to transform", "style": 3,
                                     "automation": [{"type": "text", "text": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier."},
                                                    {"type": "target", "target": "self", "effects": [{
                                         "type": "ieffect2", "name": "Mutagenic Transformation", "duration": 600,
                                         "desc": f"You can attack twice, instead of once, whenever you take the Attack action on your turn.\n - Your Strength score becomes equal to your Critical Analysis score.\n - 'You gain a bonus to your AC equal to {'' if 'AdaptedHide' in discoveries else 'half '}your Critical Analysis ability modifer (minimum of +1) if it doesn’t already include that modifier.",
                                         "effects": {"ac_bonus": f"{max(1, ac_mod)}"},
-                                        "buttons": [{
-                                            "label": "End Mutagenic Transformation",
-                                            "verb": "transforms back",
-                                            "automation": [{"type": "remove_ieffect"}]}]},
+                                        "buttons": trans_buttons},
                                         {"type": "counter",
                                          "counter": "Mutagenic Transformation",
                                          "amount": 1, "errorBehaviour": "raise"}]}]})
+                    
                 elif subclass == "Politician":
                     amt = ceil(mod/2)
                     effects["ac_bonus"] = amt

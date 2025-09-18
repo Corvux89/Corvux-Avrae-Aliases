@@ -701,6 +701,15 @@
         ]
     },
     {
+        "name": "Mutagenic Hardiness",
+        "cvar": {
+            "name": "SWFeats",
+            "default": "{}",
+            "node": "Discoveries",
+            "append": "MutagenicHardiness"
+        }
+    },
+    {
         "name": "Naturalist",
         "actions": [
             {

@@ -1588,12 +1588,19 @@
         "school": "Force",
         "automation": [
             {
-                "type": "target",
-                "target": "each",
-                "effects": [
+                "type": "condition",
+                "condition": "caster.levels.total_level >= 5",
+                "onFalse": [],
+                "onTrue": [
                     {
-                        "type": "damage",
-                        "damage": "{'0' if not caster or caster.levels.total_level < 5 else '1d8' if caster.levels.total_level < 11 else '2d8' if caster.levels.total_level < 17 else '3d8' } [psychic]"
+                        "type": "target",
+                        "target": "each",
+                        "effects": [
+                            {
+                                "type": "damage",
+                                "damage": "{'0' if not caster or caster.levels.total_level < 5 else '1d8' if caster.levels.total_level < 11 else '2d8' if caster.levels.total_level < 17 else '3d8' } [psychic]"
+                            }
+                        ]
                     }
                 ]
             },
@@ -27780,5 +27787,42 @@
         "description": "As part of the action used to cast this power, you must make a melee attack with a weapon against one creature within your weapon's reach, otherwise the power fails.\n\nOn a hit, the target suffers the attack's normal effects, and it becomes afflicted with an irrational hatred of you. Until the end of its next turn, it cannot willingly move away from you. If it makes an attack against you before the end of its next turn, it immediately takes 1d8 psychic damage, and the power ends.\n\nAt 5th level, the attack deals an extra 1d8 psychic damage to the target, and the damage the target takes upon hitting or missing you with an attack increases to 2d8. Both damage rolls increase by 1d8 at 11th level and 17th level.",
         "higherlevels": "",
         "concentration": false
+    },
+    {
+        "name": "Oscillator Boost",
+        "level": 1,
+        "school": "Tech",
+        "automation": [
+            {
+                "type": "target",
+                "target": "self",
+                "effects": [
+                    {
+                        "type": "ieffect2",
+                        "name": "Oscillator Boost",
+                        "duration": 10,
+                        "desc": "On your turn, you can make melee attacks with the affected vibroweapon against creatures up to 20 feet away from you as if they were 5 feet away from you. The attacks deal sonic damage instead of their usual weapon damage type. Effects that require the weapon to make physical contact with the target, such as poison, are not triggered by attacks made in this way."
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "You empower a vibroweapon you are holding, allowing it to launch concussive blasts. For the duration of the power, on your turn, you can make melee attacks with the affected vibroweapon against creatures up to 20 feet away from you as if they were 5 feet away from you. The attacks deal sonic damage instead of their usual weapon damage type. Effects that require the weapon to make physical contact with the target, such as poison, are not triggered by attacks made in this way."
+            }
+        ],
+        "classes": "None",
+        "subclasses": "",
+        "casttime": "1 bonus action",
+        "range": "Self",
+        "components": {
+            "verbal": false,
+            "somatic": false,
+            "material": ""
+        },
+        "duration": "up to 1 minute",
+        "ritual": false,
+        "description": "You empower a vibroweapon you are holding, allowing it to launch concussive blasts. For the duration of the power, on your turn, you can make melee attacks with the affected vibroweapon against creatures up to 20 feet away from you as if they were 5 feet away from you. The attacks deal sonic damage instead of their usual weapon damage type. Effects that require the weapon to make physical contact with the target, such as poison, are not triggered by attacks made in this way.",
+        "higherlevels": "",
+        "concentration": true
     }
 ]

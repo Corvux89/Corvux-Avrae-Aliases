@@ -2061,6 +2061,68 @@
                 "display": "bubble",
                 "classLevel": "GuardianlightLevel"
             }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Way of the Vornskr - Mark",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Way of the Vornskr Style - Marking",
+                                    "desc": "If that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack.",
+                                    "save_as": "peff",
+                                    "duration": 1,
+                                    "actions": [
+                                        {
+                                            "name": "Way of the Vornskr - Shift Mark",
+                                            "_v": 2,
+                                            "activation_type": 8,
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "each",
+                                                    "effects": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Marked by {name}",
+                                                            "desc": "{name} have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.",
+                                                            "parent": "ieffect"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Marked by {name}",
+                                    "desc": "{name} have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.",
+                                    "parent": "peff"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "As a bonus action, you can take a savage stance, designating one creature you can see within 10 feet of you as your prey for 1 minute. You have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.\n\nThis effect ends early if you are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest."
+                        }
+                    ]
+                }
+            }
         ]
     },
     {
@@ -2839,6 +2901,68 @@
                 "reset": "long",
                 "display": "bubble",
                 "classLevel": "GuardiandarkLevel"
+            }
+        ],
+        "actions": [
+            {
+                "level": 3,
+                "action": {
+                    "name": "Way of the Vornskr - Mark",
+                    "_v": 2,
+                    "activation_type": 3,
+                    "automation": [
+                        {
+                            "type": "target",
+                            "target": "self",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Way of the Vornskr Style - Marking",
+                                    "desc": "If that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack.",
+                                    "save_as": "peff",
+                                    "duration": 1,
+                                    "actions": [
+                                        {
+                                            "name": "Way of the Vornskr - Shift Mark",
+                                            "_v": 2,
+                                            "activation_type": 8,
+                                            "automation": [
+                                                {
+                                                    "type": "target",
+                                                    "target": "each",
+                                                    "effects": [
+                                                        {
+                                                            "type": "ieffect2",
+                                                            "name": "Marked by {name}",
+                                                            "desc": "{name} have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.",
+                                                            "parent": "ieffect"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "target",
+                            "target": "each",
+                            "effects": [
+                                {
+                                    "type": "ieffect2",
+                                    "name": "Marked by {name}",
+                                    "desc": "{name} have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.",
+                                    "parent": "peff"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "As a bonus action, you can take a savage stance, designating one creature you can see within 10 feet of you as your prey for 1 minute. You have advantage on attack rolls against the creature. If the target drops to 0 hit points, you can use a bonus action on a subsequent turn to mark a new creature.\n\nThis effect ends early if you are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest."
+                        }
+                    ]
+                }
             }
         ]
     },

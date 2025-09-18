@@ -4927,7 +4927,7 @@
             },
             {
                 "type": "text",
-                "text": "Dexterity 11, Hidden, Keen 1, Versatile (1d10)"
+                "text": "Dexterity 11, Hidden, Keen 1, Versatile (1d12)"
             }
         ],
         "_v": 2,
@@ -4945,7 +4945,7 @@
                         "hit": [
                             {
                                 "type": "damage",
-                                "damage": "1d10+{strengthMod} [energy]",
+                                "damage": "1d12+{strengthMod} [energy]",
                                 "overheal": false
                             }
                         ],
@@ -4956,7 +4956,7 @@
             },
             {
                 "type": "text",
-                "text": "Dexterity 11, Hidden, Keen 1, Versatile (1d10)"
+                "text": "Dexterity 11, Hidden, Keen 1, Versatile (1d12)"
             }
         ],
         "_v": 2,
